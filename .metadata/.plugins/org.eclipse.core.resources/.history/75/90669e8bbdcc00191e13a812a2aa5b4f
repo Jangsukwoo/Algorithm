@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class 보이저1호 {
+
+	static int N,M;
+	static char[][] Map;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		Map = new char[N][M];
+		sc.nextLine();
+		for(int i=0; i<N;i++) {
+			Map[i] = sc.nextLine().toCharArray();
+		}
+		for(int i=0;i<N;i++) {
+			for(int j=0;j<M;j++) {
+				System.out.print(Map[i][j]);
+			}
+			System.out.println();
+		}
+			
+		
+	
+	}
+}

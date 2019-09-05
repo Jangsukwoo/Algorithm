@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class 보이저1호 {
+
+	static int N,M,PR,PC;
+	static int maxSecond=1;
+	static boolean infinite,blackhole;
+	static char[][] Map;
+	static char[] direction= {'U','R','D','L'}; //상 우 하 좌
+	static boolean[][][] checkMap;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		Map = new char[N][M];
+
+		sc.nextLine();
+		for(int i=0; i<N;i++) Map[i] = sc.nextLine().toCharArray();
+		PR = sc.nextInt()-1;
+		PC = sc.nextInt()-1;
+
+		shoot();
+
+	}
+	private static void shoot() {
+		for(int dir=0; dir<4;dir++){//4방향 시그널
+
+			checkMap = new boolean[N][M][4];
+			checkMap[PR][PC][dir]=true;
+
+			int cR = PR;
+			int cC = PC;
+			int cDir = dir;
+			blackhole = false;
+			while(true){//발사
+				cR = cR + dr[cDir];
+				cC = cC+ dc[cDir];
+				if(rangeCheck(cR,cC)){//영역만족	
+					checkMap[cR][cC][cDir]=true;
+					if(Map[cR][cC]=='C') break; //블랙홀이면 탈출
+					else if(Map[cR][cC]=='\\'){
+						switch(cDir) {
+						case 0:{
+							cDir = 3;
+							break;
+						}
+						}
+					}
+				}
+				else break;//영역 벗어나면 break;
+
+
+			}
+
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if((nr>=0&&nr<N) && (nc>=0 && nc<M)) return true;
+		return false;
+	}
+}

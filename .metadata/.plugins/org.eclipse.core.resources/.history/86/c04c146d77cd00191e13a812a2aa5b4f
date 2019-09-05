@@ -1,0 +1,125 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class ICE{
+	int row;
+	int col;
+	int height;
+
+	ICE(int row,int col,int height){
+		this.row = row;
+		this.col = col;
+		this.height = height;
+	}
+}
+
+public class 빙산 {
+	static int N,M,year;//N행 M열
+	static int[][] sea;
+	static int[][] copyMap;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	static Queue<ICE> iceQueue = new LinkedList<ICE>();
+	static boolean devideCheck;
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		sea = new int[N][M];
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				sea[row][col] = sc.nextInt();
+				if(sea[row][col]!=0) iceQueue.add(new ICE(row, col, sea[row][col])); //빙산들 큐에 넣기
+			}
+		}
+		
+		
+		while(!iceQueue.isEmpty()){//BFS
+			System.out.println("바다는");
+			for(int row=0;row<N;row++) {
+				for(int col=0;col<M;col++) {
+					System.out.print(sea[row][col]+" ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+			
+			
+			int iceSize = iceQueue.size();
+			copyMap = sea.clone();
+			for(int i=0; i<iceSize;i++) {//pop
+				ICE curICE = iceQueue.poll();
+				int zero = 0;
+				
+				for(int dir=0;dir<4;dir++) {//4방향 검사
+					int nr = curICE.row+dr[dir];
+					int nc = curICE.col+dc[dir];	
+					if(rangeCheck(nr,nc)){//영역 만족하고
+						if(sea[nr][nc]==0) { //바닷물이면
+							zero++;//0의 개수 카운팅
+						}
+					}
+				}//4면 검사 끝
+			
+				int interval = curICE.height-zero;
+				if(interval>=0){//아직 바닷물보다 높으면   
+					iceQueue.add(new ICE(curICE.row,curICE.col,interval)); //다시 큐에 넣음
+				}
+				else copyMap[curICE.row][curICE.col]=0;//아니면 0으로 바꿈
+
+			}//모든 빙산에 대해 조사가 끝났으니 덩어리 조사
+			sea = copyMap.clone()
+			year++;
+			
+			System.out.println("수면처리후");
+			for(int row=0;row<N;row++) {
+				for(int col=0;col<M;col++) {
+					System.out.print(sea[row][col]+" ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+			
+			copyMap = sea.clone();
+			
+//			
+//			int count=0;
+//			for(int row=0;row<N;row++){//DFS로 덩어리 조사
+//				for(int col=0;col<M;col++) {
+//					if(copyMap[row][col]>0) {//한번 다녀왔는데 
+//						count++;
+//						if(count==2) { //또있으면
+//							devideCheck=true;
+//							break;
+//						}
+//						dfs(row,col);//출발 
+//					}
+//				}
+//				if(devideCheck) break;
+//			}
+//			if(devideCheck) break;
+//			
+		}
+		
+		System.out.println(year);
+	}
+	private static void dfs(int row, int col) {
+		for(int dir=0;dir<4;dir++) {
+			int nr = row+dr[dir];
+			int nc = col+dc[dir];
+			if(rangeCheck(nr, nc)) {
+				if(copyMap[nr][nc]>0) {
+					copyMap[nr][nc]=0;
+					dfs(nr,nc);
+				}
+			}
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if((nr>=0 && nr<N) && (nc>=0 && nc<M)) return true;
+		return false;
+	}
+}
