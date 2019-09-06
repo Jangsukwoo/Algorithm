@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
-
-//코드 출처 https://baelanche.tistory.com/176
-
-
+import java.util.Scann
+er;
+//코드 출처
 public class 색종이붙이기 {
 	static int[][] paperMap = new int[10][10];
 	static int[] paperCount = new int[6];
