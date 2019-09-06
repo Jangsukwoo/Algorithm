@@ -35,6 +35,10 @@ public class 색종이붙이기 {
 
 
 			minimum = Math.min(usePaper,minimum);//최소값 비교 후 갱신
+
+
+
+
 			return;
 		}
 
