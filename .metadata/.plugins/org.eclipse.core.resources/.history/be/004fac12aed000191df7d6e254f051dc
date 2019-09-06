@@ -23,34 +23,34 @@ public class 색종이붙이기 {
 		}
 		dfs(0);
 
-		if(minimum!=(Integer.MAX_VALUE/2)) System.out.println(minimum);
-		else System.out.println("-1"); 
+		if(minimum!=(Integer.MAX_VALUE/2)) System.out.println(minimum);//�ּҰ��� ������ �ִ� ��츸
+		else System.out.println("-1"); //�ƴϸ� 0
 
 	}
 	private static void dfs(int idx) {
 		if(usePaper>minimum) return;
-		if(attachPaperSize==paperSize){
-
-
+		if(attachPaperSize==paperSize){//�� ���� ���
+//			int min=0;
+//			for(int i=1;i<=5;i++) min+=paperCount[i];
 			minimum = Math.min(usePaper,minimum);
-
-
-
-
+//			System.out.println("����������");
+//			view();
+//			for(int i=1;i<=5;i++) System.out.print("������"+i+"����"+paperCount[i]+" ");
+//			System.out.println("�̴ϸذ�"+minimum);
 			return;
 		}
 
 		for(int row=0;row<10;row++){
-			for(int col=0;col<10;col++){ 
+			for(int col=0;col<10;col++){ //�ʰ˻�
 
 
-				if(paperMap[row][col]==1){
+				if(paperMap[row][col]==1){//�����̸�
 
 
 					for(int paper=1;paper<=5;paper++){
-						if(paperCount[paper]<5) {
+						if(paperCount[paper]<5) {//���� 5�� �̸��̰�
 
-							if(attach(paper,row,col)){
+							if(attach(paper,row,col)){//�ٿ����� ���������� 
 								System.out.println("����");
 								view();
 								paperCount[paper]++;
@@ -63,7 +63,7 @@ public class 색종이붙이기 {
 								view();
 							}
 
-						}
+						}//5�� ���� �� �������� 
 					}         
 				}
 			}
@@ -83,28 +83,28 @@ public class 색종이붙이기 {
 		int endCol = curCol+paper;
 		for(int row=curRow;row<endRow;row++) {
 			for(int col=curCol;col<endCol;col++) {
-				paperMap[row][col]=1;
+				paperMap[row][col]=1;//�ٽ� 1��
 				attachPaperSize--;
 			}
 		}
 
 	}
-	private static boolean attach(int paper,int curRow,int curCol) {
+	private static boolean attach(int paper,int curRow,int curCol) {//�ٿ�����
 		int endRow = curRow+paper;
 		int endCol = curCol+paper;
-		if(rangeCheck(endRow,endCol)) {
+		if(rangeCheck(endRow,endCol)) {//���������̰�
 			for(int row=curRow;row<endRow;row++) {
 				for(int col=curCol;col<endCol;col++) {
-					if(paperMap[row][col]==0){
-						return false;
+					if(paperMap[row][col]==0){//0�� ������
+						return false;//��������
 					}
 				}
 			}
-			
-			
+			//�� �����ٸ� ���� �� �ִ� ���̹Ƿ�
+			//����
 			for(int row=curRow;row<endRow;row++) {
 				for(int col=curCol;col<endCol;col++) {
-					paperMap[row][col]=0;
+					paperMap[row][col]=0;//0���� ��������
 					attachPaperSize++;
 				}
 			}

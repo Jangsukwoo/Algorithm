@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+//코드 출처 https://baelanche.tistory.com/176
 public class Devbaelanche {
     
     static int paper[] = {0, 5, 5, 5, 5, 5};

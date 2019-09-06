@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
  
-
+//0,1,2,3 - »óÇÏÁÂ¿ì
 class Atomic{
     int row;
     int col;
@@ -22,7 +22,7 @@ class Atomic{
 }
  
  
-public class ì›ìì†Œë©¸ {
+public class ¿øÀÚ¼Ò¸ê {
     static int T,N,sumEnergy;
     static Atomic[] atomicQueue = new Atomic[1001];
     static int[][] testMap;
@@ -42,8 +42,8 @@ public class ì›ìì†Œë©¸ {
             rear=0;
             atomicQueueSize=0;
             for(int i=0;i<N;i++) {         	
-                int x = (sc.nextInt()+1000)*2; 
-                int y = (sc.nextInt()+1000)*2; 
+                int x = (sc.nextInt()+1000)*2; //¿­
+                int y = (sc.nextInt()+1000)*2; //Çà
                 int dir = sc.nextInt();
                 int K = sc.nextInt();              
                 push(new Atomic(y,x,dir,K));
@@ -57,7 +57,7 @@ public class ì›ìì†Œë©¸ {
     private static void Move() {
  
         while(!atomicQueueisempty()){
-             
+             //¸Ê ´Ù½Ã
             int atomequeueSize = atomicQueueSize;
             for(int i=0;i<atomequeueSize;i++) {
  
@@ -65,45 +65,45 @@ public class ì›ìì†Œë©¸ {
                 int nr = currentAtomic1.row+dr[currentAtomic1.dir];
                 int nc = currentAtomic1.col+dc[currentAtomic1.dir];     
                                 
-                if(rangeCheck(nr,nc)) { 
+                if(rangeCheck(nr,nc)) { //ÀÌµ¿Àº ¼º°ø
                      
-                    
-                    if(testMap[nr][nc]==0) {
+                    //
+                    if(testMap[nr][nc]==0) {//ÀÌµ¿ÇÑ °÷ÀÌ »õ ¶¥ÀÌ¸é
                          
                          
-                        push(new Atomic(nr,nc,currentAtomic1.dir,currentAtomic1.energy));
+                        push(new Atomic(nr,nc,currentAtomic1.dir,currentAtomic1.energy));//±×´ë·Î ³ÖÀ½
                         testMap[nr][nc]+=1;
                     }
                      
-                    else if(testMap[nr][nc]>=1){
+                    else if(testMap[nr][nc]>=1){//´©±º°¡ ¹âÀº°÷ÀÌ¶ó¸é ³ÖÁö¾Ê°í ¿¡³ÊÁö ³Ö°í skip
                      
                         sumEnergy += currentAtomic1.energy;
                         testMap[nr][nc]+=1;
                     }
                 }
-            }
+            }//Ã³À½ÀÌµ¿ 
              
-            int newatomequeueSize = atomicQueueSize;
+            int newatomequeueSize = atomicQueueSize;//ÀÜ·ù ¿øÀÚ
              
-            
+            //»ıÁ¸ check
             for(int i=0;i<newatomequeueSize;i++) {   
                 Atomic currentAtomic = pop();    
-                if(testMap[currentAtomic.row][currentAtomic.col]==1){
+                if(testMap[currentAtomic.row][currentAtomic.col]==1){//1ÀÌ¸é ÀÚ±â ÀÚ½Å¸¸ ¹âÀº°Å´Ï±î     
                      
-                    push(new Atomic(currentAtomic.row,currentAtomic.col,currentAtomic.dir,currentAtomic.energy));
+                    push(new Atomic(currentAtomic.row,currentAtomic.col,currentAtomic.dir,currentAtomic.energy));//±×´ë·Î
                 }
                  
-                else if(testMap[currentAtomic.row][currentAtomic.col]>1){
+                else if(testMap[currentAtomic.row][currentAtomic.col]>1){//1º¸´Ù Å©¸é ¾î¶² ¿øÀÚ°¡ ¿Í¼­ Á×Àº°Å´Ï±î ´õÇÔ.
  
                     sumEnergy += currentAtomic.energy;
                 }
                 testMap[currentAtomic.row][currentAtomic.col] = 0;
-            }
+            }//Ã³À½ÀÌµ¿ 
         }   
     }
     private static boolean rangeCheck(int nr, int nc) {
-        if((nr>=0 && nr<4001) && (nc>=0 && nc<4001)) return true; 
-        return false; 
+        if((nr>=0 && nr<4001) && (nc>=0 && nc<4001)) return true; //¿µ¿ª ¸¸Á·
+        return false; //¹üÀ§ ¹Û
     }
 
 	private static boolean atomicQueueisempty() {

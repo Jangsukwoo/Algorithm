@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ìƒ‰ì¢…ì´ë¶™ì´ê¸° {
+public class »öÁ¾ÀÌºÙÀÌ±â {
 	static int[][] paperMap = new int[10][10];
 	static int[] paperCount = new int[6];
 	static int minimum = (Integer.MAX_VALUE/2);
@@ -23,35 +23,35 @@ public class ìƒ‰ì¢…ì´ë¶™ì´ê¸° {
 		}
 		dfs(0);
 
-		if(minimum!=(Integer.MAX_VALUE/2)) System.out.println(minimum);
-		else System.out.println("-1"); 
+		if(minimum!=(Integer.MAX_VALUE/2)) System.out.println(minimum);//ÃÖ¼Ò°ª¿¡ º¯µ¿ÀÌ ÀÖ´Â °æ¿ì¸¸
+		else System.out.println("-1"); //¾Æ´Ï¸é 0
 
 	}
 	private static void dfs(int idx) {
 		if(usePaper>minimum) return;
-		if(attachPaperSize==paperSize){
-
-
+		if(attachPaperSize==paperSize){//´Ù ºÙÀÎ °æ¿ì
+//			int min=0;
+//			for(int i=1;i<=5;i++) min+=paperCount[i];
 			minimum = Math.min(usePaper,minimum);
-
-
-
-
+//			System.out.println("»çÀÌÁî°°Àº°æ¿ì");
+//			view();
+//			for(int i=1;i<=5;i++) System.out.print("»çÀÌÁî"+i+"°¹¼ö"+paperCount[i]+" ");
+//			System.out.println("¹Ì´Ï¸Ø°ª"+minimum);
 			return;
 		}
 
 		for(int row=0;row<10;row++){
-			for(int col=0;col<10;col++){ 
+			for(int col=0;col<10;col++){ //¸Ê°Ë»ç
 
 
-				if(paperMap[row][col]==1){
+				if(paperMap[row][col]==1){//»öÁ¾ÀÌ¸é
 
 
 					for(int paper=1;paper<=5;paper++){
-						if(paperCount[paper]<5) {
+						if(paperCount[paper]<5) {//¾ÆÁ÷ 5°³ ¹Ì¸¸ÀÌ°í
 
-							if(attach(paper,row,col)){
-								System.out.println("ï¿½ï¿½ï¿½ï¿½");
+							if(attach(paper,row,col)){//ºÙ¿´À»¶§ ¼º°øÇßÀ¸¸é 
+								System.out.println("ºÙÀÓ");
 								view();
 								paperCount[paper]++;
 								usePaper++;
@@ -59,11 +59,11 @@ public class ìƒ‰ì¢…ì´ë¶™ì´ê¸° {
 								paperCount[paper]--;
 								usePaper--;
 								detach(paper,row,col);
-								System.out.println("ï¿½E");
+								System.out.println("ŒE");
 								view();
 							}
 
-						}
+						}//5°³ ¾ÆÁ÷ ´Ù ¸ø½èÀ¸¸é 
 					}         
 				}
 			}
@@ -83,28 +83,28 @@ public class ìƒ‰ì¢…ì´ë¶™ì´ê¸° {
 		int endCol = curCol+paper;
 		for(int row=curRow;row<endRow;row++) {
 			for(int col=curCol;col<endCol;col++) {
-				paperMap[row][col]=1;
+				paperMap[row][col]=1;//´Ù½Ã 1·Î
 				attachPaperSize--;
 			}
 		}
 
 	}
-	private static boolean attach(int paper,int curRow,int curCol) {
+	private static boolean attach(int paper,int curRow,int curCol) {//ºÙ¿©º¸±â
 		int endRow = curRow+paper;
 		int endCol = curCol+paper;
-		if(rangeCheck(endRow,endCol)) {
+		if(rangeCheck(endRow,endCol)) {//¿µ¿ª¾ÈÂÊÀÌ°í
 			for(int row=curRow;row<endRow;row++) {
 				for(int col=curCol;col<endCol;col++) {
-					if(paperMap[row][col]==0){
-						return false;
+					if(paperMap[row][col]==0){//0ÀÌ ÀÖÀ¸¸é
+						return false;//³¡³»¹ö¸²
 					}
 				}
 			}
-			
-			
+			//¾È ³¡³µ´Ù¸é ºÙÀÏ ¼ö ÀÖ´Â °ÍÀÌ¹Ç·Î
+			//ºÙÀÓ
 			for(int row=curRow;row<endRow;row++) {
 				for(int col=curCol;col<endCol;col++) {
-					paperMap[row][col]=0;
+					paperMap[row][col]=0;//0À¸·Î ¸¸µé¾î¹ö¸²
 					attachPaperSize++;
 				}
 			}
