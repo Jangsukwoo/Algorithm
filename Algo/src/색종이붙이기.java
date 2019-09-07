@@ -99,8 +99,8 @@ public class 색종이붙이기 {
 					}
 				}
 			}
-			
-			
+
+
 			for(int row=curRow;row<endRow;row++) {
 				for(int col=curCol;col<endCol;col++) {
 					paperMap[row][col]=0;

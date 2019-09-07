@@ -1,0 +1,30 @@
+package 순열조합;
+
+import java.util.Scanner;
+public class nCr{
+	public static int[] data;
+	public static boolean[] visit;
+	public static int N;
+	public static int M;
+	public static void nCrDFS(int idx, int cnt) {
+		if(cnt==M) {
+			for(int i=0;i<N;i++) if(visit[i]) System.out.print(data[i]+" ");
+			System.out.println();
+			return;
+		}
+		for(int i=idx; i<N; i++) {
+			visit[i]=true;
+			nCrDFS(i+1, cnt+1);
+			visit[i]=false;
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		data = new int[N];
+		visit = new boolean[N];
+		for(int i=0;i<N;i++) data[i] = i+1;
+		nCrDFS(0, 0);
+	}
+}

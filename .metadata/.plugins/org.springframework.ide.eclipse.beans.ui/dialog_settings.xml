@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.springframework.ide.eclipse.beans.ui.dialogs.BeanListSelectionDialog">
+		<item key="width" value="487"/>
+		<item key="height" value="699"/>
+		<item key="x" value="717"/>
+		<item key="y" value="49"/>
+	</section>
+</section>
