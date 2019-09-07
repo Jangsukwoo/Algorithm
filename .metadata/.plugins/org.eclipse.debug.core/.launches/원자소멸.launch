@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/Algo/src/원자소멸.java"/>
+        <listEntry value="/Algo/src/SWExpertAcademy/원자소멸.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="원자소멸"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="SWExpertAcademy.원자소멸"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Algo"/>
 </launchConfiguration>
