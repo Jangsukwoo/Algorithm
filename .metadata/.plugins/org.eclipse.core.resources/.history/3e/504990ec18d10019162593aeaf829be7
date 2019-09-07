@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//원하는 데이터에 대한 순열 구할 때
-
 public class nPr2{
 	public static int N;	
 	public static int M;
