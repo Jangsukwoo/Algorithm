@@ -1,0 +1,9 @@
+package AlgoSpot;
+
+import java.util.Scanner;
+
+public class 게임판덮기 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	}
+}

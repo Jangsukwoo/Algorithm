@@ -5,7 +5,55 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-09-06T21:03:29Z</updated>
+  <updated>2019-09-10T22:55:46Z</updated>
+  <entry>
+    <title>This Week in Spring - September 10, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/10/this-week-in-spring-september-10-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-09-10:3794</id>
+    <updated>2019-09-10T22:55:46Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another sunny installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Can you believe we&amp;rsquo;re now staring down Q4 2019? How time flies! &lt;/p&gt;
+&lt;p&gt;As i write this I&amp;rsquo;m sat in a Radisson Blu hotel in Oslo, Norway, for the epic JavaZone show. I&amp;rsquo;ve got &lt;em&gt;tons&lt;/em&gt; of wonderful memories at this hotel, often enjoyed with my friends on the Spring team, over many, many years. I love this show and am so glad to be back for the first time since 2015! &lt;/p&gt;
+&lt;p&gt;I landed today, recorded a few episodes of &lt;em&gt;Spring Tips&lt;/em&gt; (new season starting soon!), took an ill-timed nap, and now here we are! We&amp;rsquo;ve got a ton to cover so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/10/spring-boot-2-2-0-m6"&gt;Spring Boot 2.2.0.M6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/spring-session-for-apache-geode-pivotal-gemfire-2-2-0-m4-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.2.0.M4 Available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/spring-data-moore-rc3-released"&gt;Spring Data Moore RC3 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/spring-security-5-2-0-rc1-released"&gt;Spring Security 5.2.0.RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/spring-cloud-data-flow-2-3-0-m1-and-2-2-1-ga-released"&gt;Spring Cloud Data Flow 2.3.0.M1 and 2.2.1 GA Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/a-bootiful-podcast-gary-russell"&gt;A Bootiful Podcast: Gary Russell&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/06/spring-boot-2-1-8-available-now"&gt;Spring Boot 2.1.8 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/05/spring-hateoas-1-0-0-rc2-released"&gt;Spring HATEOAS 1.0.0.RC2 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/05/spring-framework-5-2-rc2-available-now"&gt;Spring Framework 5.2 RC2 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1171389640235868161"&gt;With its Kubernetes bet paying off, Cloud Foundry double down on developer experience&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1171389142690754561"&gt;A gentle reminder that Cloud Foundry is one of the biggest open source projects out there&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2019/09/09/this-month-in-rabbitmq-september-2019/"&gt;This Month in RabbitMQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://dev.to/azure/using-spring-security-with-azure-active-directory-mga"&gt;Using Spring Security with Azure Active Directory &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1169557449587724288"&gt;Spring Data JDBC is now available from the Spring Initializr - hurray!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.javacodegeeks.com/microservices-metrics.html"&gt;Cool to see our Micrometer project play so key a role in this article on metrics for microservices&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/@roivanoff/spring-gateway-custom-filter-c33cb9d48682"&gt;This is a cool article on how to write custom filters with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1169176670043082752"&gt;We&amp;rsquo;re making so much progress! Did you know that our Spring Framework documentation now has Java &lt;em&gt;and&lt;/em&gt; Kotlin examples for everything in the Core section?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.2.0.M6</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/10/spring-boot-2-2-0-m6" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2019-09-10:3793</id>
+    <updated>2019-09-10T13:18:58Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the sixth milestone of Spring Boot 2.2 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release contains &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.0.M6"&gt;over 140 issues and pull requests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;Spring Boot 2.2 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M6/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our next 2.2 release will be RC1 later this month with GA to follow in mid-October. If you haven&amp;rsquo;t already done so, now is a great time to try a 2.2 milestone and provide us with your feedback. If you want to get started with 2.2 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M6/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session for Apache Geode &amp; Pivotal GemFire 2.2.0.M4 Available!</title>
     <link rel="alternate" href="https://spring.io/blog/2019/09/06/spring-session-for-apache-geode-pivotal-gemfire-2-2-0-m4-available" />
@@ -1351,166 +1399,6 @@ Stopping registry ... done
   &lt;li&gt;Spring Boot on Twitter: &lt;a href="http://twitter.com/SpringBoot"&gt;@SpringBoot&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;the place to get started with all things Spring: &lt;a href="http://start.Spring.io"&gt;start.Spring.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing Spring Cloud Function 3.0.0.M2</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/15/announcing-spring-cloud-function-3-0-0-m2" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2019-08-15:3773</id>
-    <updated>2019-08-15T13:57:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the second Milestone of the Spring Cloud Function 3.0.0.M2. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;NOTE: Spring Cloud Function 3.0.0.M1 was primarily to establish compatibility with Spring Boot 2.2.x. and therefore went unannounced. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Spring Cloud Function 3.0.0.M2 modules are available for use in the &lt;a href="https://repo.spring.io/libs-milestone-local/org/springframework/cloud/"&gt;Spring Milestone&lt;/a&gt; repository. &lt;/p&gt;&lt;h3&gt;&lt;a href="#quick-highlights" class="anchor" name="quick-highlights"&gt;&lt;/a&gt;Quick highlights:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot 2.2.x&lt;/li&gt;
-  &lt;li&gt;Enhanced deployer (requires a separate blog)&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#notable-features-and-enhancements" class="anchor" name="notable-features-and-enhancements"&gt;&lt;/a&gt;Notable features and enhancements:&lt;/h3&gt;&lt;h5&gt;&lt;a href="#function-arity-multiple-inputs-outputs" class="anchor" name="function-arity-multiple-inputs-outputs"&gt;&lt;/a&gt;Function arity (multiple inputs/outputs)&lt;/h5&gt;
-&lt;p&gt;One of the biggest features introduced with this milestone is support for functions with multiple inputs and outputs. Important thing to point out is that this feature only makes sense in reactive world where you may want to pass several streams to a function for purposes of doing some type of aggregate/merge operation on such streams. For conventional cases you can always send multiple arguments using a Collection of some type.&lt;/p&gt;
-&lt;p&gt;To represent multiple inputs/outputs in &lt;em&gt;the type safe way&lt;/em&gt; to benefit from type conversion and other features mentioned earlier, we¡¯ve chosen &lt;code&gt;Tuple&lt;/code&gt; library from &lt;a href="https://projectreactor.io/docs/core/release/api/index.html?reactor/util/function/Tuples.html"&gt;project reactor&lt;/a&gt;, given that spring-cloud-function had it as a dependency at its core from its inception. However, in the future we also intend to support types like &lt;code&gt;BiFunction&lt;/code&gt; as well as POJO-style functions if we can determine the arity and types of inputs and outputs through some type of convention. &lt;/p&gt;
-&lt;p&gt;While the feature is new and in the process of being enhanced, it¡¯s already being utilised by few internal projects and you can try it as well. Here is an example:&lt;/p&gt;
-&lt;p&gt;Assume the following function:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
-public Function&amp;lt;Tuple2&amp;lt;Flux&amp;lt;String&amp;gt;, Flux&amp;lt;Integer&amp;gt;&amp;gt;, Flux&amp;lt;?&amp;gt;[]&amp;gt; repeater() {&#xD;
-  return tuple -&amp;gt; {&#xD;
-    Flux&amp;lt;String&amp;gt; stringFlux = tuple.getT1();&#xD;
-    Flux&amp;lt;Integer&amp;gt; integerFlux = tuple.getT2();&#xD;
-&#xD;
-    Flux&amp;lt;Integer&amp;gt; sharedIntFlux = integerFlux.publish().autoConnect(2);&#xD;
-&#xD;
-    Flux&amp;lt;String&amp;gt; repeated = stringFlux&#xD;
-      .zipWith(sharedIntFlux)&#xD;
-      .flatMap(t -&amp;gt; &#xD;
-            Flux.fromIterable(Collections.nCopies(t.getT2(), t.getT1())));&#xD;
-&#xD;
-    Flux&amp;lt;Integer&amp;gt; sum = sharedIntFlux&#xD;
-	.buffer(3, 1)&#xD;
-	.map(l -&amp;gt; l.stream().mapToInt(Integer::intValue).sum());&#xD;
-&#xD;
-    return new Flux[] { repeated, sum };&#xD;
-  };&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can invoke it as such:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;Function&amp;lt;Tuple2&amp;lt;Flux&amp;lt;String&amp;gt;, Flux&amp;lt;Integer&amp;gt;&amp;gt;, Flux&amp;lt;?&amp;gt;[]&amp;gt; repeater = catalog.lookup(&amp;quot;repeater&amp;quot;);&#xD;
-Flux&amp;lt;String&amp;gt; stringStream = Flux.just(&amp;quot;one&amp;quot;, &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;);&#xD;
-Flux&amp;lt;Integer&amp;gt; intStream = Flux.just(3, 2, 1);&#xD;
-Flux&amp;lt;?&amp;gt;[] result = repeater.apply(Tuples.of(stringStream, intStream));&#xD;
-result[0].subscribe(System.out::println);&#xD;
-result[1].subscribe(System.out::println);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;There will be a separate blog on this subject in the future.&lt;/p&gt;&lt;h5&gt;&lt;a href="#choice-of-programming-styles-reactive-imperative" class="anchor" name="choice-of-programming-styles-reactive-imperative"&gt;&lt;/a&gt;Choice of programming styles - reactive, imperative&lt;/h5&gt;
-&lt;p&gt;As before, functions could be implemented in imperative or reactive style via &lt;a href="https://projectreactor.io/"&gt;project reactor&lt;/a&gt;. However, in the previous versions we would &lt;em&gt;always&lt;/em&gt; apply reactive transformation on functions implemented using imperative style. For example, &lt;code&gt;Function&amp;lt;Foo, Foo&amp;gt;&lt;/code&gt; would become &lt;code&gt;Function&amp;lt;Flux&amp;lt;Foo&amp;gt;, Flux&amp;lt;Foo&amp;gt;&amp;gt;&lt;/code&gt;. With this release, this is no longer the case. Functions implemented in the imperative way could be looked up and invoked &lt;em&gt;as is&lt;/em&gt; (imperative) or as &lt;em&gt;reactive&lt;/em&gt;.&lt;br/&gt;For example, let&amp;rsquo;s assume the following configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
-public Function&amp;lt;String, String&amp;gt; uppercase() {&#xD;
-	return v -&amp;gt; v.toUpperCase();&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can access this function as it is written:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;Function&amp;lt;String, String&amp;gt; function = functionCatalog.lookup(&amp;quot;uppercase&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or as reactive equivalent:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;Function&amp;lt;Flux&amp;lt;String&amp;gt;, Flux&amp;lt;String&amp;gt;&amp;gt; reactiveFunction = functionCatalog.lookup(&amp;quot;uppercase&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Spring Cloud Function will automatically adapt.&lt;/p&gt;&lt;h5&gt;&lt;a href="#transparent-type-conversion-of-inputs-and-outputs" class="anchor" name="transparent-type-conversion-of-inputs-and-outputs"&gt;&lt;/a&gt;Transparent type conversion of inputs and outputs.&lt;/h5&gt;
-&lt;p&gt;One of the new features that comes with this milestone is transparent type conversion at the function core, so while some of it was already present in the web adapter, it is now available at the level of function invocation allowing any type of function consumers (not just web) to benefit from it. One of the primary benefits of this feature is realised when composing functions (for more on this later).&lt;br/&gt;For example, assume the following functions: &lt;code&gt;Function&amp;lt;Foo, Foo&amp;gt; foo()&lt;/code&gt; and &lt;code&gt;Function&amp;lt;Bar, Bar&amp;gt; bar()&lt;/code&gt; composed as &lt;code&gt;foo|bar&lt;/code&gt;. While it would not work in the previous versions given type incompatibility between output of one and input of another, it is supported now providing the appropriate &lt;em&gt;conversion strategies&lt;/em&gt; are available.&lt;br/&gt;Such &lt;em&gt;conversion strategies&lt;/em&gt; are standard Spring&amp;rsquo;s &lt;code&gt;ConversionService&lt;/code&gt; and &lt;code&gt;MessageConverters&lt;/code&gt;. And while we&amp;rsquo;re still in the process of refining this feature and providing detailed documentation, the &lt;code&gt;ConversionService&lt;/code&gt; and &lt;code&gt;MessageConverters&lt;/code&gt; that work for most cases (e.g., JSON) are already initialised by default.&lt;/p&gt;
-&lt;p&gt;For example, assume the following function configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
-public Function&amp;lt;Person, Person&amp;gt; uppercasePerson() {&#xD;
-  return person -&amp;gt; {&#xD;
-    return new Person(person.getName().toUpperCase(), person.getId());&#xD;
-  };&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To benefit from &lt;code&gt;MessageConverters&lt;/code&gt; we can invoke this function as &lt;code&gt;Function&amp;lt;Message&amp;lt;String&amp;gt;, Person&amp;gt;&lt;/code&gt; (or byte[] as a payload) thus employing the available JSON &lt;code&gt;MessageConverter&lt;/code&gt; to convert &lt;code&gt;String&lt;/code&gt; to &lt;code&gt;Person&lt;/code&gt; (see below).&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;Function&amp;lt;Message&amp;lt;String&amp;gt;, Person&amp;gt; uppercasePerson = catalog.lookup(&amp;quot;uppercasePerson&amp;quot;);&#xD;
-Person person =  uppercasePerson.apply(MessageBuilder.withPayload(&amp;quot;{\&amp;quot;name\&amp;quot;:\&amp;quot;bill\&amp;quot;,\&amp;quot;id\&amp;quot;:2}&amp;quot;).build()); 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Keep in mind that for functions written using reactive style nothing changes and the same &lt;em&gt;conversion strategies&lt;/em&gt; are applied.&lt;/p&gt;&lt;h5&gt;&lt;a href="#function-composition-and-adaptation" class="anchor" name="function-composition-and-adaptation"&gt;&lt;/a&gt;Function composition and adaptation;&lt;/h5&gt;
-&lt;p&gt;While function composition is not a new feature to Spring Cloud Function, it was refined with this milestone. &lt;/p&gt;
-&lt;p&gt;As before, you can compose functions via &amp;ldquo;|&amp;rdquo; or &amp;quot;,¡± characters. &lt;/p&gt;
-&lt;p&gt;As an additional benefit you can compose functions with different programming styles (e.g., reactive and imperative), you can compose &lt;em&gt;Supplier&lt;/em&gt; with &lt;em&gt;Function&lt;/em&gt;, &lt;em&gt;Supplier&lt;/em&gt; with &lt;em&gt;Consumer&lt;/em&gt;, &lt;em&gt;Function&lt;/em&gt; with &lt;em&gt;Consumer&lt;/em&gt; etc., - we will adapt.&lt;br/&gt;You can compose functions where output of the producer function does not match the input of the consumer function - we will convert.&lt;br/&gt;There will be a separate blog on this subject in the future and we&amp;rsquo;re also in the process of refining documentation.&lt;/p&gt;&lt;h4&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h4&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-function"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-function/"&gt;GitHub&lt;/a&gt; . &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.0.RC2 Released!</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/14/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-rc2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2019-08-14:3772</id>
-    <updated>2019-08-14T21:05:56Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring and Apache Geode communities, I am pleased to announce the release of &lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.1.0.RC2&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1.0.RC2&lt;/code&gt; can be obtained from &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/geode/spring-geode-starter/"&gt;repo.spring.io/libs-miletone&lt;/a&gt;, or declared as a dependency in either your Maven POM or Gradle build files:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;code&gt;org.springframework.geode:spring-geode-starter:1.1.0.RC2&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As with the &lt;a href="https://spring.io/blog/2019/08/02/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-rc1-released"&gt;previous release, 1.1.0.RC1&lt;/a&gt;, we continue our story on &lt;em&gt;caching&lt;/em&gt; using &lt;a href="https://geode.apache.org/"&gt;Apache Geode&lt;/a&gt; as a caching provider in &lt;a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache"&gt;Spring&amp;#8217;s Cache Abstraction&lt;/a&gt; for &lt;strong&gt;&lt;em&gt;Near Caching&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release contains a Sample &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-near.html"&gt;Guide&lt;/a&gt; along with &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.1.0.RC2/spring-geode-samples/caching/near"&gt;Code Example&lt;/a&gt;, a &lt;em&gt;Spring Boot&lt;/em&gt; application, to help you better understand the &lt;em&gt;Near Caching&lt;/em&gt; pattern applied and its concepts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This completes our coverage of the predominant caching patterns applied to modern, &lt;em&gt;Cloud-Native&lt;/em&gt;, &lt;em&gt;Microservices&lt;/em&gt; architectures and applications in practice today:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-look-aside.html"&gt;&lt;em&gt;Look-Aside Caching&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-inline.html"&gt;&lt;em&gt;Inline Caching&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-near.html"&gt;&lt;em&gt;Near Caching&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG 1.1.0.RELEASE (final GA), tentatively scheduled for &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/milestone/14"&gt;&lt;strong&gt;Wednesday, August 21st&lt;/strong&gt;&lt;/a&gt;.  See the &lt;a href="https://spring-calendar.cfapps.io/"&gt;Spring Release Calendar&lt;/a&gt; for schedule updates.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We will include 1 more Sample Guide and Code Example to cover HTTP Session state caching using &lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt;, and specifically, &lt;a href="https://github.com/spring-projects/spring-session-data-geode"&gt;Spring Session for Apache Geode&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;(HTTP) Session state caching is 1 of the most popular applications of caching in a Spring Boot, Microservices-based application, particularly in a Cloud environment where high availability and resiliency to failure are critically important.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, any feedback is welcomed and highly appreciated!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;P.S. Don&amp;#8217;t miss your opportunity to learn from the very best at this year&amp;#8217;s &lt;a href="https://springoneplatform.io/"&gt;SpringOne Platform 2019&lt;/a&gt; in &lt;strong&gt;Austin, TX&lt;/strong&gt; from &lt;strong&gt;October 7th to the 10th&lt;/strong&gt;.  Looking forward to seeing all of you there!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

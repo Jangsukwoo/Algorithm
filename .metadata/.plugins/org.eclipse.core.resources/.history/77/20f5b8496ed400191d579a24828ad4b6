@@ -1,0 +1,19 @@
+package AlgoSpot;
+
+import java.util.Scanner;
+
+public class 게임판덮기 {
+	static char[][] gameMap;
+	static int row,col;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			row = sc.nextInt();
+			col = sc.nextInt();
+			gameMap = new char[row][col];
+			sc.nextLine();
+			
+		}
+	}
+}
