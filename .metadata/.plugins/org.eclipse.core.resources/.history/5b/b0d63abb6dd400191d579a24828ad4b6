@@ -1,7 +1,0 @@
-package AlgoSpot;
-
-public class 게임판덮기 {
-	public static void main(String[] args) {
-
-	}
-}

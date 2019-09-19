@@ -5,7 +5,589 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-09-10T22:55:46Z</updated>
+  <updated>2019-09-17T13:58:45Z</updated>
+  <entry>
+    <title>Spring Session Corn-M4 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/17/spring-session-corn-m4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2019-09-17:3800</id>
+    <updated>2019-09-17T13:58:45Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;em&gt;This post was authored by &lt;a href="https://github.com/vpavic"&gt;Vedran Pavi?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community I¡¯m pleased to announce the releases of Spring Session &lt;code&gt;Corn-M4&lt;/code&gt;. This release is picked up by Spring Boot &lt;code&gt;2.2.0.M6&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="spring-session-corn-m4"&gt;&lt;a class="anchor" href="#spring-session-corn-m4"&gt;&lt;/a&gt;Spring Session &lt;code&gt;Corn-M4&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;Corn-M4&lt;/code&gt; release is based on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session core modules &lt;code&gt;2.2.0.M4&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data Geode &lt;code&gt;2.2.0.M4&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data MongoDB &lt;code&gt;2.2.0.RC2&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some of the highlights of Spring Session &lt;code&gt;2.2.0.M4&lt;/code&gt; are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;support for customizing configuration of session repositories using new &lt;code&gt;SessionRepositoryCustomizer&lt;/code&gt;/&lt;code&gt;ReactiveSessionRepositoryCustomizer&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;support for configuring transactional behavior for &lt;code&gt;JdbcOperationsSessionRepository&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;support for Spring Security&amp;#8217;s &lt;code&gt;AuthenticatedPrincipal&lt;/code&gt; in &lt;code&gt;SpringSessionBackedSessionRegistry&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Complete details of these releases can be found in &lt;a href="https://github.com/spring-projects/spring-session/milestone/66?closed=1"&gt;the changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-session/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-session/docs/2.2.0.M4/reference/html5/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-session"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.2.0.RC1 is released!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/17/spring-batch-4-2-0-rc1-is-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2019-09-09:3792</id>
+    <updated>2019-09-17T12:22:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Batch team, I am pleased to announce the release of Spring Batch 4.2.0.RC1. We have been working on some performance improvements in the core framework, and this post highlights the major changes.&lt;/p&gt;&lt;h2&gt;&lt;a href="#major-performance-improvements" class="anchor" name="major-performance-improvements"&gt;&lt;/a&gt;Major Performance Improvements&lt;/h2&gt;
+&lt;p&gt;We have made some performance improvements, including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#enhanced-step-partitioning"&gt;Enhanced Step Partitioning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#improved-job-stop"&gt;Improved Job Stop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#faster-writes-with-the-jpaitemwriter"&gt;Faster Writes with the &lt;code&gt;JpaItemWriter&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#optimized-bean-mapping-with-the-beanwrapperfieldsetmapper"&gt;Optimized Bean Mapping with the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a name="enhanced-step-partitioning"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#enhanced-step-partitioning" class="anchor" name="enhanced-step-partitioning"&gt;&lt;/a&gt;Enhanced Step Partitioning&lt;/h3&gt;
+&lt;p&gt;Starting a partitioned step is an area where the framework wasn&amp;rsquo;t well optimized. In this version, we have dug deep into the partitioning process to figure out the root cause of this performance issue. One of the main steps of the partitioning process is to find the last step execution (to see if the current execution is a restart). We found that looking up the last step execution involved loading all step executions from all job executions for a given job instance in-memory, which is obviously inefficient!&lt;/p&gt;
+&lt;p&gt;We replaced this code with a SQL query that does the lookup at the database level, to return only the last step execution. The results are outstanding: Partitioning a step execution into 5000 partitions is almost 10x faster with this approach, according to our benchmark &lt;a href="#footnotes"&gt;partitioned-step-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2716/perf-partitioning.png" alt="perf-partitioning" /&gt;&lt;/p&gt;
+&lt;a name="improved-job-stop"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#improved-job-stop" class="anchor" name="improved-job-stop"&gt;&lt;/a&gt;Improved Job Stop&lt;/h3&gt;
+&lt;p&gt;Things can go wrong when running a job.. and gracefully stopping a destructive job should be fast and efficient in order to avoid data corruption. Up until v4.1, stopping a job using the &lt;code&gt;CommandLineJobRunner&lt;/code&gt; suffered from a poor performance, due to loading all job executions in memory in order to find whether a job execution is currently running. With this approach, stopping a job can take minutes with a production database that has thousands of job executions in it!&lt;/p&gt;
+&lt;p&gt;In this release, we optimized the stop process by using a SQL query that does the filtering at the database level. Again, the results are impressive: With 100.000 job executions of a given job in the database, stopping the job is almost 40x faster with this approach, according to our benchmark &lt;a href="#footnotes"&gt;stop-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2422/perf-stop.png" alt="perf-stop" /&gt;&lt;/p&gt;
+&lt;a name="faster-writes-with-the-jpaitemwriter"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#faster-writes-with-the-code-jpaitemwriter-code" class="anchor" name="faster-writes-with-the-code-jpaitemwriter-code"&gt;&lt;/a&gt;Faster Writes with the &lt;code&gt;JpaItemWriter&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;JpaItemWriter&lt;/code&gt; uses the &lt;code&gt;javax.persistence.EntityManager#merge&lt;/code&gt; function to write items in a JPA persistence context. This makes sense when the persistent state of items is unknown or known to be an update. However, in many file ingestion jobs where data is known to be new and should be considered as inserts, using &lt;code&gt;javax.persistence.EntityManager#merge&lt;/code&gt; is not efficient.&lt;/p&gt;
+&lt;p&gt;In this release, we introduced a new option in the &lt;code&gt;JpaItemWriter&lt;/code&gt; to use &lt;code&gt;persist&lt;/code&gt; rather than &lt;code&gt;merge&lt;/code&gt; in such scenarios. With this new option, a file ingestion job that uses the &lt;code&gt;JpaItemWriter&lt;/code&gt; to insert 1 million items in a database is 2x faster according to our benchmark &lt;a href="#footnotes"&gt;jpa-writer-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2462/perf-jpaitemwriter.png" alt="perf-jpaitemwriter" /&gt;&lt;/p&gt;
+&lt;a name="optimized-bean-mapping-with-the-beanwrapperfieldsetmapper"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#optimized-bean-mapping-with-the-code-beanwrapperfieldsetmapper-code" class="anchor" name="optimized-bean-mapping-with-the-code-beanwrapperfieldsetmapper-code"&gt;&lt;/a&gt;Optimized Bean Mapping with the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt; provides a nice feature that lets us use fuzzy matching of field names of a given JavaBean (Camel case, nested properties, and so on). However, when field names match column names, exact matching can be enabled by setting the &lt;code&gt;distanceLimit&lt;/code&gt; parameter to 0.&lt;/p&gt;
+&lt;p&gt;In this release, we fixed a performance issue in the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt; that was introspecting field names by using reflection on each iteration, even when exact matching was requested (by setting &lt;code&gt;distanceLimit=0&lt;/code&gt;). The result is that item mapping is now 1.5x faster than the previous version according to our JMH benchmark [bean-mapping-benchmark (#footnotes):&lt;/p&gt;
+&lt;p align="center"&gt;&#xD;
+&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch1801/perf-mapping.png" alt="perf-mapping"&gt;&#xD;
+&lt;/p&gt;&lt;h2&gt;&lt;a href="#feedback" class="anchor" name="feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Please note that these numbers may vary in your case. We encourage you to try out Spring Batch 4.2.0.RC1 (which can be consumed with Spring Boot 2.2.0.M6) and share your feedback. Please refer to the change log of version &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17487"&gt;4.2.0.RC1&lt;/a&gt; and &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17628"&gt;4.2.0.M3&lt;/a&gt; for the complete list of changes.&lt;/p&gt;
+&lt;p&gt;Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/b_e_n_a_s"&gt;@b_e_n_a_s&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next&lt;/h2&gt;
+&lt;p&gt;We plan to stabilize this new release candidate for the upcoming Spring Batch 4.2.0.RELEASE planned for September 30th, 2019. Stay tuned!&lt;/p&gt;&lt;h2&gt;&lt;a href="#footnotes" class="anchor" name="footnotes"&gt;&lt;/a&gt;Footnotes&lt;/h2&gt;
+&lt;p&gt;All benchmarks have been performed on a Macbook Pro 16Go RAM, 2.9 GHz Intel Core i7 CPU, MacOS Mojave 10.14.5, Oracle JDK 1.8.0_201. You can find the source code of all benchmarks in the following links:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;partitioned-step-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2716"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2716&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;stop-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2422"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2422&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jpa-writer-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2462"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2462&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;bean-mapping-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch1801"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch1801&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - Sept 17, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/17/this-week-in-spring-sept-17-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-09-17:3799</id>
+    <updated>2019-09-17T07:30:31Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt; - and what a week it is! I&amp;rsquo;m at the epic annual &lt;em&gt;eventapalooza&lt;/em&gt; that is Oracle CodeOne (formerly &lt;em&gt;JavaOne&lt;/em&gt;). I just finished a talk today on reactive programming and I&amp;rsquo;ll have another talk on Kotlin on Wednesday. Don&amp;rsquo;t miss it! &lt;/p&gt;
+&lt;p&gt;Meanwhile, we&amp;rsquo;ve got a ton of things to get to this week so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/13/spring-boot-for-apache-geode-pivotal-gemfire-1-1-1-release-1-2-0-m2-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.1.RELEASE &amp;amp; 1.2.0.M2 Available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;If you listen to one podcast this week, listen to this latest and greatest installment of &lt;a href="https://spring.io/blog/2019/09/12/a-bootiful-podcast-spring-framework-co-founder-and-lead-juergen-hoeller-on-spring-framework-5-2-and-more"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt; with Spring Framework co-founder, and lead, Juergen Hoeller on Spring Framework 5.2, open-source, deciding the themes for a new release, his legendary journey as lead of Spring Framework, and more&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/12/spring-cloud-greenwich-sr3-released"&gt;Spring Cloud Greenwich.SR3 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/12/spring-vault-2-2-m1-available-now"&gt;Spring Vault 2.2 M1 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/simonbasle/status/1172515316578078722?s=12"&gt;Check out Reactor teammate Simon Basle&amp;rsquo;s talk on RSocket, from the epic JavaZone 2019 event last week&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1172516108903038979"&gt;The Spring Initializr - start dot spring dot io - now supports &lt;em&gt;dark mode&lt;/em&gt;!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://content.pivotal.io/engineers/a-technical-comparison-of-popular-api-gateways-with-apigee-edge-spring-cloud-gateway-and-ocelot"&gt;I really like this technical comparison of API Gateway technologies, including Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/flyway/flyway/issues/2502"&gt;I&amp;rsquo;d like to see Flyway supporting R2DBC, our reactive SQL datastore access SPI. Wouldn&amp;rsquo;t you?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1172041897323442178"&gt;It&amp;rsquo;s really great that Pivotal, along with organizations like Alibaba and Netifi, have launched the Reactive Foundation&lt;/a&gt;, whose first project will be RSocket.&lt;/li&gt;
+  &lt;li&gt;The FreeCodeCamp blog has an interesting looking &lt;a href="https://www.freecodecamp.org/news/spring-boot-tutorial/"&gt;tutorial on Spring Boot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Goodbye http://repo.spring (use https)</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/16/goodbye-http-repo-spring-use-https" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2019-09-17:3801</id>
+    <updated>2019-09-16T13:09:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;In response to our &lt;a href="https://spring.io/blog/2019/06/10/announcing-nohttp"&gt;nohttp announcement&lt;/a&gt;, &lt;a href="https://central.sonatype.org/articles/2019/Apr/30/http-access-to-repo1mavenorg-and-repomavenapacheorg-is-being-deprecated/"&gt;Maven Central&amp;#8217;s announcement&lt;/a&gt;, and &lt;a href="https://jfrog.com/blog/secure-jcenter-with-https/"&gt;JFrog&amp;#8217;s announcement&lt;/a&gt;, beginning January 15 2020, Spring&amp;#8217;s Maven Repository will no longer support HTTP. More concretely, &lt;a href="http://repo.spring.io" class="bare"&gt;http://repo.spring.io&lt;/a&gt; will not respond to requests. Users will need to ensure that they are using &lt;a href="https://repo.spring.io" class="bare"&gt;https://repo.spring.io&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.1.RELEASE &amp; 1.2.0.M2 Available!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/13/spring-boot-for-apache-geode-pivotal-gemfire-1-1-1-release-1-2-0-m2-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2019-09-13:3798</id>
+    <updated>2019-09-13T07:23:11Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring and Apache Geode communities, it is my pleasure to announce the release of &lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.1.1.RELEASE&lt;/code&gt; as well as &lt;code&gt;1.2.0.M2&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Bits for &lt;code&gt;1.1.1.RELEASE&lt;/code&gt; are available in &lt;a href="https://search.maven.org/search?q=spring-geode-starter"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Bits for the &lt;code&gt;1.2.0.M2&lt;/code&gt; release are available in the Spring &lt;a href="https://repo.spring.io/milestone/org/springframework/geode/spring-geode-starter/1.2.0.M2/"&gt;Milestone&lt;/a&gt; Repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SBDG &lt;code&gt;1.1.1.RELEASE&lt;/code&gt; has been upgraded to &lt;em&gt;Spring Boot&lt;/em&gt; &lt;code&gt;2.1.8.RELEASE&lt;/code&gt; while SBDG &lt;code&gt;1.2.0.M2&lt;/code&gt; has been upgraded to &lt;em&gt;Spring Boot&lt;/em&gt; &lt;code&gt;2.2.0.M6&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Additionally, both &lt;code&gt;1.2.0.M2&lt;/code&gt; and &lt;code&gt;1.1.1.RELEASE&lt;/code&gt; now support running your &lt;em&gt;Spring Boot&lt;/em&gt;, Apache Geode &lt;code&gt;ClientCache&lt;/code&gt; applications in &lt;a href="https://pivotal.io/platform"&gt;Pivotal Platform&lt;/a&gt; using &lt;a href="https://pivotal.io/pivotal-cloud-cache"&gt;Pivotal Cloud Cache (PCC)&lt;/a&gt; as a specific user.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="quoteblock"&gt;
+&lt;blockquote&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/44"&gt;Issue-44&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is useful if you are deploying &lt;em&gt;Spring Boot&lt;/em&gt; applications to Platform using PCC and the app needs read-only access.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In the words of the PCC product director, &lt;strong&gt;Pulkit Chandra&lt;/strong&gt;, "&lt;em&gt;With v1.9.0 we are introducing the concept of "shared service instances", which means an app in Space A can access a Cloud Cache cluster in Space B, but will only be able to "read" the data. This ensures for a healthy pattern of isolation for each domain cluster, where one space has the "read/write" access while others only have "read" access.&lt;/em&gt;"&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This capability and 1.9 are still in development, so this feature is tentatively planned for 1.9.  However, in anticipation for this UC in Pivotal Platform, SBDG has you covered.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This feature is not limited to only being used when deploying your Spring Boot apps to Pivotal Platform.  SBDG&amp;#8217;s support for a specific runtime user works equally well when running your Spring Boot apps off Platform, connected to an externally managed Apache Geode cluster.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#cloudfoundry-cloudcache-security-auth-runtime-user-configuration"&gt;documentation&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes in the &lt;code&gt;1.1.1.RELEASE&lt;/code&gt; see the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.1.1.RELEASE/spring-geode/src/main/resources/changelog.txt#L7-L24"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes in the &lt;code&gt;1.2.0.M2&lt;/code&gt; release, see the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.2.0.M2/spring-geode/src/main/resources/changelog.txt#L7-L48"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All efforts are now focused on getting to &lt;code&gt;1.2.0.M3&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In the next release you will be able to annotate your &lt;em&gt;Spring Boot&lt;/em&gt;, Apache Geode or Pivotal Cloud Cache based applications with the &lt;strong&gt;new&lt;/strong&gt; &lt;code&gt;@EnableClusterAware&lt;/code&gt; annotation and your app will seamlessly switch between local-only environments and a &lt;em&gt;client/server&lt;/em&gt; environment depending on whether a server or cluster of servers can be detected by SBDG.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Cluster-Aware, Spring Boot Apache Geode application&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@SpringBootApplication
+@EnableClusterAware
+class MySpringBootApacheGeodeClientCacheApplication { ... }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;When a cluster is present in your runtime environment, then the &lt;code&gt;@EnableClusterAware&lt;/code&gt; annotation (which is also meta-annotated with SDG&amp;#8217;s &lt;code&gt;@EnableClusterConfiguration&lt;/code&gt; annotation) will additionally push configuration metadata from your client to the server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For example, if you have any client Regions defined in your application (very common) that need to have server-side Regions by the same name, then SBDG will handle this for you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We think this will be a useful feature at development-time when you are potentially switching environments very rapidly, iterating on your application in order to get feedback quickly, such as being able to run tests and debug locally, and then push back to your test/staging environment for higher level acceptance and integration testing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A preview of this feature can already be found in the &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.2.x-SNAPSHOT/reference/html5/#geode-configuration-declarative-annotations-productivity"&gt;documentation&lt;/a&gt; for the &lt;code&gt;1.2.0.BUILD-SNAPSHOT&lt;/code&gt;.  Give it a try!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;code&gt;1.2.0.M3&lt;/code&gt; is tentatively scheduled for &lt;strong&gt;Tuesday, September 24th&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, your feedback is most welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Spring Framework co-founder and lead Juergen Hoeller on Spring Framework 5.2 and more</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/12/a-bootiful-podcast-spring-framework-co-founder-and-lead-juergen-hoeller-on-spring-framework-5-2-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-09-12:3797</id>
+    <updated>2019-09-12T17:56:59Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another extra-special, extra-long installment of A Bootiful Podcast. In this episode, I talk to Spring Framework lead and #2 co-founder of Spring itself, the one, the only, the amazing Juergen Hoeller. We talk about his tenure as the longest and most prolific contributor to Spring; designing clean code; the early days of Spring the project; new features in Spring Framework 5.2; the role of Kotlin, Project Loom, Graal in the Spring ecosystem; Spring&amp;rsquo;s role in the ecosystem; Java&amp;rsquo;s place and possibilities; and so much more.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/SpringJuergen"&gt;Juergen on Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://github.com/Spring-Projects/Spring-Framework"&gt;Spring Framework on Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/680122409&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Greenwich.SR3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/12/spring-cloud-greenwich-sr3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Ryan Baxter</name>
+    </author>
+    <id>tag:spring.io,2019-09-11:3795</id>
+    <updated>2019-09-12T16:41:12Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Service Release 3 (SR3) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Greenwich&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Greenwich.SR3/"&gt;Maven Central&lt;/a&gt;. You can check out the Greenwich &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes"&gt;release notes for more information&lt;/a&gt;. All issues closed in this release across all projects can be found in the &lt;a href="https://github.com/orgs/spring-cloud/projects/27"&gt;Spring Cloud Greenwich.SR3 project&lt;/a&gt; on GitHub&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-greenwich-release-train" class="anchor" name="notable-changes-in-the-greenwich-release-train"&gt;&lt;/a&gt;Notable Changes in the Greenwich Release Train&lt;/h2&gt;&lt;h3&gt;&lt;a href="#new-load-balancer-implementations" class="anchor" name="new-load-balancer-implementations"&gt;&lt;/a&gt;New Load Balancer Implementations&lt;/h3&gt;
+&lt;p&gt;Spring Cloud Greenwich.M3 is the first release containing both blocking and non-blocking load balancer client implementations as an alternative to Netflix Ribbon which has entered maintenance mode.&lt;/p&gt;
+&lt;p&gt;To use the new &lt;code&gt;BlockingLoadBalancerClient&lt;/code&gt; with a &lt;code&gt;RestTemplate&lt;/code&gt; you will need to include &lt;code&gt;org.springframework.cloud:spring-cloud-loadbalancer&lt;/code&gt; on your application¡¯s classpath. The same dependency can be used in a reactive application when using &lt;code&gt;@LoadBalanced WebClient.Builder&lt;/code&gt; - the only difference is that Spring Cloud will auto-configure a &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; instance. See the documentation for additional information. The new &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; can also be autowired and passed directly to &lt;code&gt;WebClient.Builder&lt;/code&gt; (see the documentation). For all these features, Project Reactor-based &lt;code&gt;RoundRobinLoadBalancer&lt;/code&gt; is used underneath.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/issues?q=is%3Aclosed+milestone%3A2.1.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues?q=is%3Aclosed+milestone%3A2.1.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-security" class="anchor" name="spring-cloud-security"&gt;&lt;/a&gt;Spring Cloud Security&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-security/issues?q=is%3Aclosed+milestone%3A2.1.4.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-kubernetes" class="anchor" name="spring-cloud-kubernetes"&gt;&lt;/a&gt;Spring Cloud Kubernetes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;DiscoveryClient&lt;/code&gt; implementation can now retrieve services from all namespaces&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/issues?q=is%3Aclosed+milestone%3A1.0.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation updates&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Retry filter now supports backoff policies&lt;/li&gt;
+  &lt;li&gt;Add the ability to provide custom metrics tags&lt;/li&gt;
+  &lt;li&gt;New request size filter factory&lt;/li&gt;
+  &lt;li&gt;Add support for Netty Wiretap&lt;/li&gt;
+  &lt;li&gt;More detailed information about routes added to &lt;code&gt;/actuator/gateway/routes&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/26?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Add the ability to add additional filters to &lt;code&gt;JerseyReplicationClient&lt;/code&gt; used by Eureka&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/issues?q=is%3Aclosed+milestone%3A2.1.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-bus" class="anchor" name="spring-cloud-bus"&gt;&lt;/a&gt;Spring Cloud Bus&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation updates&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-cloudfoundry" class="anchor" name="spring-cloud-cloudfoundry"&gt;&lt;/a&gt;Spring Cloud Cloudfoundry&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation updates&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation updates&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-config/issues?q=is%3Aclosed+milestone%3A2.1.4.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/issues?q=is%3Aclosed+milestone%3A2.1.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A2.1.3.RELEASE"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-aws" class="anchor" name="spring-cloud-aws"&gt;&lt;/a&gt;Spring Cloud Aws&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation updates&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=milestone%3A2.1.3.RELEASE+is%3Aclosed"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following modules were updated as part of Greenwich.SR3:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+      &lt;th&gt;Issues&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/62?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/14?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
+      &lt;td&gt;2.1.4.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-security/milestone/22?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
+      &lt;td&gt;Fishtown.SR4 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
+      &lt;td&gt;1.0.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/13?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
+      &lt;td&gt;2.1.7.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/26?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Dependencies &lt;/td&gt;
+      &lt;td&gt;Greenwich.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/81?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/40?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Dependencies Parent &lt;/td&gt;
+      &lt;td&gt;2.1.7.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter &lt;/td&gt;
+      &lt;td&gt;Greenwich.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud &lt;/td&gt;
+      &lt;td&gt;Greenwich.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
+      &lt;td&gt;2.1.4.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/68?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Release &lt;/td&gt;
+      &lt;td&gt;Greenwich.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
+      &lt;td&gt;2.0.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-function/milestone/18?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/42?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter Parent &lt;/td&gt;
+      &lt;td&gt;Greenwich.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
+      &lt;td&gt;1.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;2.1.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/53?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&lt;br/&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;Greenwich.SR3&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    ...&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
+dependencies {&#xD;
+classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE&amp;quot;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
+&#xD;
+dependencyManagement {&#xD;
+imports {&#xD;
+mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3&amp;#39;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Vault 2.2 M1 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/12/spring-vault-2-2-m1-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-09-12:3796</id>
+    <updated>2019-09-12T14:52:29Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;m excited to announce the availability of Spring Vault 2.2 M1. This release ships with over 90 fixed tickets in total, containing several features, bug fixes, and dependency upgrades.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The most notable new changes are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Support for PCF-based authentication by using instance identity certificates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kotlin extensions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builders for &lt;code&gt;RestTemplate&lt;/code&gt; and &lt;code&gt;WebClient&lt;/code&gt; to customize interceptors, filter functions, and default headers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vault namespace support (Vault Enterprise edition only).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@VaultPropertySource&lt;/code&gt; now supports versioned key-value backends.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added listener and events support to &lt;code&gt;LifecycleAwareSessionManager&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Support for the Jetty HTTP Client as an alternative reactive HTTP client.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reactive support for AWS IAM authentication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes, see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.0.M1/changelog.txt"&gt;changelog&lt;/a&gt;.
+Spring Vault 2.2 M1 is going to be picked up by Spring Cloud Vault 2.2 M3 for your convenience.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We are working towards Spring Vault 2.2 RC1, which will be available in a few weeks. We are aiming for a 2.2 GA release later this year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.0.M1/reference/html/"&gt;Documentation for 2.2.0.M1&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - September 10, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/09/10/this-week-in-spring-september-10-2019" />
@@ -602,803 +1184,6 @@ And let us know what you think!&lt;/p&gt;
   &lt;li&gt;&lt;a href="http://Dataflow.Spring.io"&gt;your resource for getting started with Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/672686666&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - August 27, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/27/this-week-in-spring-august-27-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-27:3781</id>
-    <updated>2019-08-27T08:07:21Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring!&lt;/em&gt; As I write this I&amp;rsquo;m in beautiful Bangalore, India, stuck in a monster of a traffic jam trying to make it to another meeting. I&amp;rsquo;m so elated to be here to connect with amazing people and organizations. I&amp;rsquo;m also excited that, this week, I&amp;rsquo;ll be speaking at the Bangalore Java User Group. Please, &lt;a href="https://www.meetup.com/BangaloreOpenJUG/events/264306790/"&gt;come out and say hi&lt;/a&gt;! &lt;/p&gt;
-&lt;p&gt;As usual, we&amp;rsquo;ve got a lot to cove so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I loved recording last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2019/08/23/a-bootiful-podcast-google-s-james-ward-okta-s-matt-raible-and-grand-cloud-s-ryan-knight-on-the-simplicity-continuum"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt; wherein I got to talk to Google&amp;rsquo;s James Ward, Okta&amp;rsquo;s Matt Raible and Grand Cloud&amp;rsquo;s Ryan Knight on the Simplicity Continuum&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/23/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-release-1-2-0-m1-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.0.RELEASE &amp;amp; 1.2.0.M1 Released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.instana.com/blog/collecting-custom-micrometer-metrics-has-never-been-easier/"&gt;Collecting Custom Micrometer metrics has never been easier - Instana&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/swlh/deploying-spring-boot-applications-15e14db25ff0"&gt;Deploying Spring Boot Applications - The Startup - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/nexocode/smooth-implementation-of-cqrs-es-with-spring-boot-and-axon-framework-26cc22e53a7f"&gt;Smooth implementation of CQRS/ES with Spring Boot and Axon framework&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://m.youtube.com/watch?index=1&amp;v=YyE8fyYJsbE&amp;list=PLjXUjSTUHs0SBkPlUEnkXcDqQKlyUOyAS&amp;t=105s"&gt;How To Keep the Layers of your Spring App Separate using Integration Tests - YouTube&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://ccbill.com/blog/spring-boot-and-context-handling"&gt;Spring Boot And Context Handling&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://investors.pivotal.io/news/financial-news/default.aspx"&gt;Pivotal has entered into an agreement to be accquired by VMWare&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://vladmihalcea.com/why-should-not-use-the-auto-jpa-generationtype-with-mysql-and-hibernate/"&gt;Why should not use the AUTO JPA GenerationType with MySQL and Hibernate - Vlad Mihalcea&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The Baeldung blog has an interesting post on using &lt;a href="https://www.baeldung.com/jhipster-authentication-external-service"&gt;JHipster (which is based on Spring Boot and which in turn uses Spring Security) to externally authenticate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Google's James Ward, Okta's Matt Raible and Grand Cloud's Ryan Knight on the Simplicity Continuum</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/23/a-bootiful-podcast-google-s-james-ward-okta-s-matt-raible-and-grand-cloud-s-ryan-knight-on-the-simplicity-continuum" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-23:3780</id>
-    <updated>2019-08-23T19:58:54Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans and welcome to another installment of a Bootiful Podcast! This week I had the pleasure of talking with Ryan Knight and with the two people with whom I am copresenting at SpringOne Platform 2019, James Ward and Matt Raible.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;James Ward on Twitter: &lt;a href="http://twitter.com/_JamesWard"&gt;@_JamesWard&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Matt Raible on Twitter: &lt;a href="http://twitter.com/MRaible"&gt;@mraible&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Ryan Knight on Twitter: &lt;a href="http://twitter.com/Knight_Cloud"&gt;@knight_cloud&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/670101815&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.0.RELEASE &amp; 1.2.0.M1 Released!</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/23/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-release-1-2-0-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2019-08-23:3779</id>
-    <updated>2019-08-23T19:09:33Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring and Apache Geode communities, it is my pleasure to announce the release of &lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.1.0.RELEASE&lt;/code&gt; and the &lt;code&gt;1.2.0.M1&lt;/code&gt; release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1.0.RELEASE&lt;/code&gt; is available in &lt;a href="https://search.maven.org/search?q=spring-geode-starter"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.2.0.M1&lt;/code&gt; is available in the &lt;a href="https://repo.spring.io/milestone/org/springframework/geode/spring-geode-starter/1.2.0.M1/"&gt;Spring Milestone&lt;/a&gt; repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="whats-new-120M1" class="sect0"&gt;&lt;a class="anchor" href="#whats-new-120M1"&gt;&lt;/a&gt;What&amp;#8217;s New in &lt;code&gt;1.2.0.M1&lt;/code&gt;&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.2.0.M1&lt;/code&gt; was a baseline release to align SBDG on latest GemFire/Geode and Spring bits:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Framework 5.2.0.RC1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Boot 2.2.0.M5&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Data Moore-RC2/2.2.0.RC2&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session Corn-M3/2.2.0.M3&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With Spring Data Moore, this additionally pulls in:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Apache Geode 1.9.0&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Pivotal GemFire 9.8.3&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h1 id="looking-back" class="sect0"&gt;&lt;a class="anchor" href="#looking-back"&gt;&lt;/a&gt;Looking Back&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.1&lt;/code&gt; covered a lot of ground.  In this release line we included many important changes and features to help developers stay productive and solve important and relevant problems.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Let&amp;#8217;s have a look back at a few highlights and worthy mentions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect3"&gt;
-&lt;h4 id="oneone-dependencies"&gt;&lt;a class="anchor" href="#oneone-dependencies"&gt;&lt;/a&gt;New Dependencies&lt;/h4&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1&lt;/code&gt; is based on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Framework 5.1.9.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Boot 2.1.7.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Data Lovelace-SR10/2.1.10.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session Bean-SR7/2.1.7.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With Spring Data Lovelace, this pulls in:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Apache Geode 1.6.0&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Pivotal GemFire 9.5.4&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the SBDG &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/wiki/Spring-Boot-for-Apache-Geode-and-Pivotal-GemFire-Version-Compatibility-Matrix"&gt;Version Compatibility Matrix&lt;/a&gt; for more details with regard to versions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect3"&gt;
-&lt;h4 id="caching"&gt;&lt;a class="anchor" href="#caching"&gt;&lt;/a&gt;Support for Caching Use Cases &amp;amp; Patterns&lt;/h4&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1&lt;/code&gt; now includes dedicated support for 3 of the most common &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-caching-provider-look-aside-near-inline"&gt;Caching Design Patterns&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-caching-provider-look-aside-caching"&gt;Look-Aside Caching&lt;/a&gt; along with a &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-look-aside.html"&gt;Guide&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.1.0.RELEASE/spring-geode-samples/caching/look-aside"&gt;Example Code&lt;/a&gt; to help you apply this pattern.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-caching-provider-inline-caching"&gt;Inline Caching&lt;/a&gt;, combined with the amazing power of &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-caching-provider-inline-caching-using-spring-data-repositories"&gt;Spring Data Repositories&lt;/a&gt;, also complete with a &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-inline.html"&gt;Guide&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.1.0.RELEASE/spring-geode-samples/caching/inline"&gt;Example Code&lt;/a&gt; to help you apply this pattern.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-caching-provider-near-caching"&gt;Near Caching&lt;/a&gt; along with a &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-near.html"&gt;Guide&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.1.0.RELEASE/spring-geode-samples/caching/near"&gt;Example Code&lt;/a&gt; to help you apply this pattern.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In addition, we cover 1 of the most common use cases for caching, &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-session"&gt;HTTP Session State Caching&lt;/a&gt;, which again, includes a &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/guides/caching-http-session.html"&gt;Guide&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.1.0.RELEASE/spring-geode-samples/caching/http-session"&gt;Example Code&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It&amp;#8217;s hard to argue that with the proliferation of Microservices in a Cloud context, caching will be 1 of the most common and important patterns used for Cloud-Native development.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;No longer is caching only needed to improve on performance when accessing data from a relational database.  Caching will be increasingly common and critical when a Microservice becomes the &lt;strong&gt;new&lt;/strong&gt; data source by which your application accesses information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is because networks are inherently prone to failures and incur a significant latency penalty anytime a network-hop happens.  This can prove to be fatal for applications under intense load, leading to all sorts of cascading failures (e.g. memory problems).  The goal is to minimize the unnecessary network calls as much as possible, which is quite easy to do especially when the proportion of reads far exceeds writes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Caching (HTTP) Session state will continue to be the most common form of caching.  Fortunately, the awesome power of &lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt;, and in particular &lt;a href="https://github.com/spring-projects/spring-session-data-geode#spring-session-for-apache-geode&amp;#8212;&amp;#8203;pivotal-gemfire"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire&lt;/a&gt;, to manage your Spring Boot application&amp;#8217;s Session state, for all types of Sessions (HTTP, &lt;em&gt;WebSockets&lt;/em&gt; and &lt;em&gt;WebSessions&lt;/em&gt; (Reactive)) is really simple.  Plus, &lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt;, with its support for a wide variety of backing stores (&lt;strong&gt;JDBC&lt;/strong&gt;, &lt;strong&gt;Redis&lt;/strong&gt;, &lt;strong&gt;MongoDB&lt;/strong&gt;, &lt;strong&gt;Hazelcast&lt;/strong&gt;, and of course, &lt;strong&gt;GemFire/Geode&lt;/strong&gt;) makes it stupid simple to switch providers if/when your requirements change.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect3"&gt;
-&lt;h4 id="hybrid-cloud"&gt;&lt;a class="anchor" href="#hybrid-cloud"&gt;&lt;/a&gt;Hybrid Cloud Deployments&lt;/h4&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With SBDG &lt;code&gt;1.1&lt;/code&gt;, you can now deploy your Spring Boot applications to &lt;a href="https://pivotal.io/platform"&gt;Pivotal CloudFoundry (PCF)&lt;/a&gt;, yet still connect those apps to external data sources.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Hybrid Cloud arrangements are common when data must be protected and kept on-prem.  It is also a very common intermediate step for companies trying to migrate to the cloud and modernize their stack.  Hybrid deployments enable companies to take an incremental approach to cloud adoption as opposed to an all or nothing approach.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Therefore SBDG includes &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#cloudfoundry-geode"&gt;first-class support&lt;/a&gt; for running your Spring Boot applications in PCF, yet connect those apps to externally managed, standalone Apache Geode or Pivotal GemFire clusters.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On a related note, in addition to Hybrid Cloud Deployments, SBDG additionally supports:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#cloudfoundry-cloudcache-multi-instance-using"&gt;Connecting to Multiple Pivotal Cloud Cache Instances&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#cloudfoundry-cloudcache-multi-instance-target"&gt;Pivotal Cloud Cache Instance Targeting&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect3"&gt;
-&lt;h4 id="making-the-switch"&gt;&lt;a class="anchor" href="#making-the-switch"&gt;&lt;/a&gt;Making the Switch&lt;/h4&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1&lt;/code&gt; (even before 1.1), has been focused on &lt;em&gt;developer productivity&lt;/em&gt;: helping users &lt;strong&gt;get up and running&lt;/strong&gt; as &lt;strong&gt;easily&lt;/strong&gt; and &lt;strong&gt;quickly&lt;/strong&gt; and &lt;strong&gt;reliably&lt;/strong&gt; as possible!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Part of the strategy is rooted in helping users and customers:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="olist arabic"&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;
-&lt;p&gt;Switch from &lt;em&gt;Open Source&lt;/em&gt; (&lt;a href="https://geode.apache.org/"&gt;Apache Geode&lt;/a&gt;) to &lt;em&gt;Commercial&lt;/em&gt; (&lt;a href="https://pivotal.io/pivotal-cloud-cache"&gt;Pivotal Cloud Cache&lt;/a&gt;)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Move from &lt;em&gt;Non-Managed&lt;/em&gt; (&lt;em&gt;Standalone, External&lt;/em&gt;) to &lt;em&gt;Managed&lt;/em&gt; environments (&lt;a href="https://pivotal.io/platform"&gt;Pivotal Cloud Foundry&lt;/a&gt;)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;With &lt;strong&gt;Little&lt;/strong&gt; to &lt;strong&gt;No&lt;/strong&gt; &lt;em&gt;code or configuration&lt;/em&gt; changes; It should just work!&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In fact, it is equally important that you can move both ways.  From &lt;em&gt;Managed&lt;/em&gt; back to &lt;em&gt;Standalone&lt;/em&gt; environments and from &lt;em&gt;Commercial&lt;/em&gt; back to &lt;em&gt;Open Source&lt;/em&gt;.  Again, it should just work!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;That is what the &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.1.x/reference/html5/#geode-gemfire-switch"&gt;switch&lt;/a&gt; is all about&amp;#8230;&amp;#8203; "&lt;em&gt;choice&lt;/em&gt;", and specifically, "your" &lt;em&gt;choice&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect3"&gt;
-&lt;h4 id="more-changes"&gt;&lt;a class="anchor" href="#more-changes"&gt;&lt;/a&gt;Many More Changes&lt;/h4&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Along with the changes mentioned above, there were several other changes that went into SBDG &lt;code&gt;1.1&lt;/code&gt; as well.  See the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/master/spring-geode/src/main/resources/changelog.txt#L22-L128"&gt;changelog&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id="whats-next" class="sect0"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All focus now shifts to SBDG &lt;code&gt;1.2&lt;/code&gt;.  There are several areas we will continue to invest in.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;First and foremost, &lt;em&gt;developer productivity&lt;/em&gt;, which cannot be overstated.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;What does this mean technically?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We are planning to introduce a new annotation, &lt;code&gt;@EnableClusterAware&lt;/code&gt;, that when declared along with your &lt;code&gt;@SpringBootApplication&lt;/code&gt; class, will enable you to move from a local development context (e.g. your IDE) to &lt;em&gt;client/server&lt;/em&gt; without needing to worry about connections details and configuration of your cluster.  SBDG will figure it out for you!  This will make "&lt;em&gt;switching&lt;/em&gt;" between environments (e.g. DEV &amp;amp; TEST/STAGING) even easier, especially as you are quickly iterating in development when debugging and testing your code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Targeted Runtime User Support&lt;/em&gt; (See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/44"&gt;Issue #44&lt;/a&gt;)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Additionally, we will enable developers in a PCF context to assign users with specific roles to their deployed Spring Boot applications when running the app.  This is important for certain UCs where the application must be ran in &lt;em&gt;read-only&lt;/em&gt; mode, where the app can only read data, but not modify it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Multi-Site Caching&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To compliment the &lt;em&gt;Look-Aside&lt;/em&gt;, &lt;em&gt;Inline&lt;/em&gt; and &lt;em&gt;Near Caching Patterns&lt;/em&gt;, we will provide another Guide along with Example Code showcasing the power of Multi-Site, WAN topologies as applied to caching, and how this helps further increase the availability and resilience of your application architecture (think &lt;em&gt;Active-Active&lt;/em&gt;, &lt;em&gt;Active-Passive&lt;/em&gt; , &lt;em&gt;Availability Zones&lt;/em&gt;, etc).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Inclusion on &lt;em&gt;Spring Initializer&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.2&lt;/code&gt; bits are making their way to &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;.  In the near future, you will be able to select Apache Geode as an option when developing Spring Boot applications, which will conveniently provide you with the &lt;code&gt;spring-geode-starter&lt;/code&gt; dependency.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All this and much more to come.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="feedback" class="sect0"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always your continued feedback is highly appreciated and welcomed.  It is your contributions that make SBDG a valuable project.  Thank you.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;P.S. Don¡¯t miss your opportunity to learn from the very best at this year¡¯s &lt;a href="https://springoneplatform.io/"&gt;SpringOne Platform 2019&lt;/a&gt; in &lt;strong&gt;Austin, TX&lt;/strong&gt; from &lt;strong&gt;October 7th&lt;/strong&gt; to the &lt;strong&gt;10th&lt;/strong&gt;. Looking forward to seeing all of you there!&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - August 20th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/20/this-week-in-spring-august-20th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-20:3778</id>
-    <updated>2019-08-20T17:23:07Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! I&amp;rsquo;m in delightful Denver and Boulder, Colorado, talking to customers and working with my buddies &lt;a href="http://twitter.com/mraible"&gt;Matt Raible&lt;/a&gt; and &lt;a href="http://twitter.com/_JamesWard"&gt;James Ward&lt;/a&gt; on our Spring One Platform 2019 talk. It&amp;rsquo;s going to be amazing!&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m oh-so-excited to be working on today&amp;rsquo;s roundup, as usual, because there&amp;rsquo;s a ton of good stuff to cover, so let&amp;rsquo;s get to it!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/19/spring-cloud-hoxton-m2-released"&gt;Spring Cloud Hoxton.M2 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/19/announcing-spring-cloud-stream-horsham-m3-3-0-0-m3"&gt;Announcing Spring Cloud Stream Horsham.M3 (3.0.0.M3)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/16/securing-services-with-spring-cloud-gateway"&gt;Securing Services with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s episode of a &lt;a href="https://spring.io/blog/2019/08/16/a-bootiful-podcast-brian-clozel"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interview Spring and Spring Boot teammate Brian Clozel&lt;/a&gt; about performance, RSocket, and so much more.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/15/announcing-spring-cloud-function-3-0-0-m2"&gt;Announcing Spring Cloud Function 3.0.0.M2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/14/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-rc2-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.0.RC2 Released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/14/spring-session-for-apache-geode-pivotal-gemfire-2-1-5-release-2-2-0-m3-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.5.RELEASE &amp;amp; 2.2.0.M3 Available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/14/spring-tools-4-3-2-released"&gt;Spring Tools 4.3.2 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The amazing Toshiaki Making has a great post on doing &lt;a href="https://blog.ik.am/entries/488"&gt;application-side TLS termination with Kubernetes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Congrats to the Vaadin team on releasing 14.0! Check out this list of the &lt;a href="https://vaadin.com/blog/top-14-new-features-in-vaadin-14"&gt;top 14 new features in Vaadin 14&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2019/08/12/this-month-in-rabbitmq-august-2019/"&gt;This Month in RabbitMQ&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.cloudfoundry.org/blog/how-to-get-certified-cloud-foundry-certified-developer-exam-version-2/"&gt;Become a Cloud Foundry Certified Developer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/tinesoft/spring-esdata-loader"&gt;Set of JUnit Rule/Extension to easily load data to test your spring-data elasticsearch-based projects&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I like this video by Maciej Walkowiak &lt;a href="https://www.youtube.com/watch?v=gIbr6-AR6T8"&gt;on doing secrets rotation on AWS RDS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Hoxton.M2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/19/spring-cloud-hoxton-m2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Ryan Baxter</name>
-    </author>
-    <id>tag:spring.io,2019-08-19:3777</id>
-    <updated>2019-08-19T20:04:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Milestone 2 (M2) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;. In addition you can view the &lt;a href="https://github.com/orgs/spring-cloud/projects/25"&gt;GitHub Project For Hoxton.M2&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
-&lt;p&gt;Spring Cloud Hoxton.M2 builds upon Spring Boot 2.2.0.M5.&lt;/p&gt;&lt;h3&gt;&lt;a href="#documentation-changes" class="anchor" name="documentation-changes"&gt;&lt;/a&gt;Documentation Changes&lt;/h3&gt;
-&lt;p&gt;The Hoxton.M2 docs have a new &lt;a href="https://cloud.spring.io/spring-cloud-static/Hoxton.M2/reference/html/spring-cloud.html"&gt;landing page&lt;/a&gt; as well as a new theme. The landing page will link you to the documentation for the specific project you are interested in.&lt;/p&gt;
-&lt;p&gt;Our documentation has a new theme. We hope you find that the new theme make the documentation easier to consume.&lt;/p&gt;&lt;h3&gt;&lt;a href="#new-load-balancer-implementations" class="anchor" name="new-load-balancer-implementations"&gt;&lt;/a&gt;New Load Balancer Implementations&lt;/h3&gt;
-&lt;p&gt;Spring Cloud Hoxton.M2 is the first release containing both blocking and non-blocking load balancer client implementations as an alternative to Netflix Ribbon which has entered maintenance mode.&lt;/p&gt;
-&lt;p&gt;To use the new &lt;code&gt;BlockingLoadBalancerClient&lt;/code&gt; with a &lt;code&gt;RestTemplate&lt;/code&gt; you will need to include &lt;code&gt;org.springframework.cloud:spring-cloud-loadbalancer&lt;/code&gt; on your application&amp;rsquo;s classpath. The same dependency can be used in a reactive application when using &lt;code&gt;@LoadBalanced WebClient.Builder&lt;/code&gt; - the only difference is that Spring Cloud will auto-configure a &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; instance. See the &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-commons/2.2.0.M2/reference/html/#_spring_resttemplate_as_a_load_balancer_client"&gt;documentation&lt;/a&gt; for additional information. The new &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; can also be autowired and passed directly to &lt;code&gt;WebClient.Builder&lt;/code&gt; (see the &lt;a href="https://cloud.spring.io/spring-cloud-commons/reference/html/#webflux-with-reactive-loadbalancer"&gt;documentation&lt;/a&gt;). For all these features, &lt;a href="https://projectreactor.io/"&gt;Project Reactor&lt;/a&gt;-based &lt;code&gt;RoundRobinLoadBalancer&lt;/code&gt; is used underneath.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/67?closed=1"&gt;Issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/27?closed=1"&gt;Issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;We have introduced new blocking and non-blocking load balancer implementations as an&lt;br/&gt; alternative to Netflix Ribbon which has entered maintenance mode.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/63?closed=1"&gt;Issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1166"&gt;Java DSL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1151"&gt;Kotlin DSL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1165"&gt;Added incremental build option for Gradle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1156"&gt;In-progress mode for contract development and API prototypeing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1142"&gt;Complete documentation rewrite&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1127"&gt;Added a switch to fail if no contracts were defined&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/881"&gt;Added option to generate stubs on the consumer side&lt;/a&gt;. When the producer hasn&amp;rsquo;t written the implementation, the consumer can still benefit from the stubs generated at runtime&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1150"&gt;Added an option to fetch contracts and stubs directly from a folder without unpacking them&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1135"&gt;Added TestNG support&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Bumped libraries&lt;/li&gt;
-  &lt;li&gt;Migrated a lot of code to Java&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/54?closed=1"&gt;Issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/commit/35b9de7f6ef1669012cee5337a3943e7c16cc55a"&gt;Updates to support the latest HATEOS changes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-stream" class="anchor" name="spring-cloud-stream"&gt;&lt;/a&gt;Spring Cloud Stream&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/19/announcing-spring-cloud-stream-horsham-m3-3-0-0-m3"&gt;Release Announcement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-bus" class="anchor" name="spring-cloud-bus"&gt;&lt;/a&gt;Spring Cloud Bus&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/39?closed=1"&gt;Issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1399"&gt;Sets Rate Limiting Sampler as the default&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1416"&gt;Cleares any MDC entries that match a whitelist entry for baggage or propagation key even if the ExtraPropagation API wasn&amp;rsquo;t called&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1408"&gt;Can send spans to Zipkin over ActiveMQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-function" class="anchor" name="spring-cloud-function"&gt;&lt;/a&gt;Spring Cloud Function&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/15/announcing-spring-cloud-function-3-0-0-m2"&gt;Release Announcement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following modules were updated as part of Hoxton.M2:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/67?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
-      &lt;td&gt;2.2.0.M1 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Dependencies &lt;/td&gt;
-      &lt;td&gt;Hoxton.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/27?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter &lt;/td&gt;
-      &lt;td&gt;Hoxton.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;1.1.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-task/milestone/40?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/63?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
-      &lt;td&gt;2.2.0.M4 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/54?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/15?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
-      &lt;td&gt;Horsham.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-stream/milestone/63?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/39?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/64?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud &lt;/td&gt;
-      &lt;td&gt;Hoxton.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
-      &lt;td&gt;1.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
-      &lt;td&gt;3.0.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-function/milestone/21?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Release &lt;/td&gt;
-      &lt;td&gt;Hoxton.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;repositories&amp;gt;&#xD;
-    &amp;lt;repository&amp;gt;&#xD;
-        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
-        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
-        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
-        &amp;lt;snapshots&amp;gt;&#xD;
-            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
-        &amp;lt;/snapshots&amp;gt;&#xD;
-    &amp;lt;/repository&amp;gt;&#xD;
-&amp;lt;/repositories&amp;gt;&#xD;
-&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Hoxton.M2&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
-    dependencies {&#xD;
-        classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE&amp;quot;&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-repositories {&#xD;
-    maven {&#xD;
-        url &amp;#39;https://repo.spring.io/milestone&amp;#39;&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-    imports {&#xD;
-        mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.M2&amp;#39;&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-    compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-    compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-    ...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing Spring Cloud Stream Horsham.M3 (3.0.0.M3)</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/19/announcing-spring-cloud-stream-horsham-m3-3-0-0-m3" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2019-08-19:3776</id>
-    <updated>2019-08-19T13:46:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the third Milestone of the Spring Cloud Stream Horsham.M3 (3.0.0.M3). &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;NOTE: Spring Cloud Stream 3.0.0.M1/M2 was primarily to establish compatibility with Spring Boot 2.2.x. and therefore went unannounced. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Spring Cloud Stream Horsham.M3 (3.0.0.M3) modules are available for use in the &lt;a href="https://repo.spring.io/libs-milestone-local/org/springframework/cloud/"&gt;Spring Milestone&lt;/a&gt; repository. &lt;/p&gt;&lt;h3&gt;&lt;a href="#quick-highlights" class="anchor" name="quick-highlights"&gt;&lt;/a&gt;Quick highlights:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot 2.2.x&lt;/li&gt;
-  &lt;li&gt;Spring Cloud Function 3.0.0.M2&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#notable-features-and-enhancements-for-this-milestone" class="anchor" name="notable-features-and-enhancements-for-this-milestone"&gt;&lt;/a&gt;Notable features and enhancements for this milestone:&lt;/h3&gt;&lt;h5&gt;&lt;a href="#emphasis-on-functional-programming-model" class="anchor" name="emphasis-on-functional-programming-model"&gt;&lt;/a&gt;Emphasis on functional programming model&lt;/h5&gt;
-&lt;p&gt;While we&amp;rsquo;re not (yet) deprecating &lt;code&gt;@StreamListener&lt;/code&gt; and/or &lt;code&gt;@EnableBinding&lt;/code&gt;, we are moving toward a simpler and more natural auto-configuration driven programming model.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
-public class MyApplicationConfiguration {&#xD;
-&#xD;
-    @Bean&#xD;
-    public Function&amp;lt;String, String&amp;gt; uppercase() {&#xD;
-        return value -&amp;gt; value.toUpperCase();&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The above is a completely functioning &lt;em&gt;spring-cloud-stream&lt;/em&gt; application. Notice the lack of &lt;code&gt;@StreamListener&lt;/code&gt; and &lt;code&gt;@EnableBinding&lt;/code&gt;. The fact that it&amp;rsquo;s a &lt;code&gt;Function&lt;/code&gt; bootstrapped in the context of spring-cloud-stream (since it&amp;rsquo;s on the classpath) effectively tell us all the information that &lt;code&gt;@StreamListener&lt;/code&gt; and &lt;code&gt;@EnableBinding&lt;/code&gt; were telling us before (e.g., Function maps to &lt;code&gt;Processor&lt;/code&gt; with default destination names as &amp;ldquo;input&amp;rdquo; and &amp;ldquo;output&amp;rdquo;). &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;NOTE: One of the improvements in spring-cloud-function is that we no longer auto-transform non-reactive functions to reactive functions. This means that your &lt;em&gt;imperative function&lt;/em&gt; will be wired as any other Message Handler (e.g., StreamListener) while &lt;em&gt;reactive function&lt;/em&gt; will be wired the same way as reactive listeners on spring-cloud-stream-reactive module (more on that in another blog) giving you more flexibility.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In the coming weeks we will be updating &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.0.M3/reference/html/spring-cloud-stream.html#spring_cloud_function"&gt;Functional Support&lt;/a&gt; documentation with more details.&lt;/p&gt;&lt;h5&gt;&lt;a href="#functional-support-in-kafka-streams" class="anchor" name="functional-support-in-kafka-streams"&gt;&lt;/a&gt;Functional support in Kafka Streams&lt;/h5&gt;
-&lt;p&gt;Kafka Streams binder now supports a first class function based programming model using which you can now write your Kafka Streams applications based on java.util.function support. This further reduces the boilerplate code that the applications need to write and allow the developers to focus on the business logic at hand. For further details, please visit &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.M3/reference/html/spring-cloud-stream-binder-kafka.html#_programming_model"&gt;Functional Style&lt;/a&gt; section for more details. We are planning to have another dedicated write up going over all the new features.&lt;/p&gt;
-&lt;p&gt;Other &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/milestone/63?closed=1"&gt;features, enhancements and bug fixes&lt;/a&gt;&lt;/p&gt;&lt;h4&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h4&gt;
-&lt;p&gt;One big feature we are planning to introduce in the next milestone is support for functions with multiple inputs and outputs for which there will be a separate blog.&lt;/p&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/"&gt;GitHub&lt;/a&gt; and or &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Securing Services with Spring Cloud Gateway</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/16/securing-services-with-spring-cloud-gateway" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2019-08-16:3775</id>
-    <updated>2019-08-16T16:00:00Z</updated>
-    <content type="html">&lt;p&gt;So far in this series, we&amp;rsquo;ve covered &lt;a href="https://benwilcock.github.io/spring-cloud-gateway-demo/getting_started.html"&gt;Getting Started&lt;/a&gt; and &lt;a href="https://benwilcock.github.io/spring-cloud-gateway-demo/runtime-discovery-and-service-hiding.html"&gt;Hiding Services&lt;/a&gt; with &lt;a href="https://spring.io/projects/spring-cloud-gateway"&gt;Spring Cloud Gateway&lt;/a&gt;. However, when we set about hiding our services, we didn&amp;rsquo;t secure them. In this article, we&amp;rsquo;ll correct this.&lt;/p&gt;
-&lt;p&gt;To secure our services, we&amp;rsquo;ll use the Token Relay pattern supported by OAuth 2.0 and the Javascript Object Signing &amp;amp; Encryption (JOSE) and JSON Web Tokens standards. This will give our users a means to identify themselves, authorize applications to view their profile and access the secured resources behind the gateway.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;All the code for this demo is published online &lt;a href="https://github.com/benwilcock/spring-cloud-gateway-demo/tree/master/security-gateway"&gt;in GitHub&lt;/a&gt; in the &lt;code&gt;secured-gateway&lt;/code&gt; folder. If you just want to run it without understanding how it was built, skip ahead to the section entitled &amp;ldquo;Running The Demo&amp;rdquo;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Before we run the demo, I want to draw your attention to the major components within it and how they were created. The diagram below shows the overall system design. It consists of a network of three services: a Single Sign-On Server, an API Gateway Server, and a Resource Server.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/bwilcock/20190801/demo.png" alt="Diagram illustrating the overarching architecture of the demo" title="Diagram illustrating the overarching architecture of the demo" /&gt;&lt;/p&gt;
-&lt;p&gt;The Resource Server is a regular Spring Boot application hidden behind the API Gateway. The API Gateway is built with Spring Cloud Gateway and delegates the management of user accounts and authorization to the Single Sign-On server. In order to create these three components, there are a number of small but important things to take into account. Let¡¯s take a look at what these were next.&lt;/p&gt;&lt;h2&gt;&lt;a href="#creating-a-user" class="anchor" name="creating-a-user"&gt;&lt;/a&gt;Creating A User&lt;/h2&gt;
-&lt;p&gt;In order to authenticate our users, we need two things: user account records and an OAuth2 compatible Authentication Provider (or server). There are many commercial OAuth2 authentication providers out there, but in our demo, we&amp;rsquo;re going to stick with open-source software and use Cloud Foundry¡¯s User Account &amp;amp; Authentication Server, more commonly referred to as the UAA.&lt;/p&gt;
-&lt;p&gt;The UAA is a Web Archive (WAR) that can be deployed onto any server that supports this format. In our case, we&amp;rsquo;ve chosen the open-source Apache Tomcat server. When running in Tomcat, the UAA provides OAuth and OpenId Connect authentication against its internal user account database.&lt;/p&gt;
-&lt;p&gt;For this demo, we¡¯ve built the UAA and Tomcat into a container image using a &lt;code&gt;Dockerfile&lt;/code&gt; (which you can examine in the &lt;code&gt;uaa&lt;/code&gt; folder). The other item to draw your attention to is the &lt;code&gt;uaa.yml&lt;/code&gt; file. This YAML file will configure our UAA with the user and password to use later when we¡¯re trying to access the Resource Server. It also contains the OAuth2 applications to register, and the keys required to perform JWT token encryption.&lt;/p&gt;
-&lt;p&gt;In the &lt;code&gt;uaa.yml&lt;/code&gt; we tell the UAA to add &lt;code&gt;user1&lt;/code&gt; to its account database and to grant this user the &lt;code&gt;resource.read&lt;/code&gt; scope. This is the scope the Resource Server will require to allow access.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;scim:&#xD;
-  groups:&#xD;
-    email: Access your email address&#xD;
-    resource.read: Allow access with &amp;#39;resource.read&amp;#39;&#xD;
-  users:&#xD;
-    - user1|password|user1@provider.com|first1|last1|uaa.user,profile,email,resource.read
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the &lt;code&gt;uaa.yml&lt;/code&gt; we also register our OAuth2 ¡®client¡¯ application. This registration tells the UAA that it should expect an application to identify itself as the &lt;code&gt;gateway&lt;/code&gt; and that this application will use the &lt;code&gt;authorization_code&lt;/code&gt; scheme. The gateway will expect to access various scopes including &lt;code&gt;resource.read&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;oauth:&#xD;
-...&#xD;
-  clients:&#xD;
-    gateway:&#xD;
-      name: gateway&#xD;
-      secret: secret&#xD;
-      authorized-grant-types: authorization_code&#xD;
-      scope: openid,profile,email,resource.read&#xD;
-      authorities: uaa.resource&#xD;
-      redirect-uri: http://localhost:8080/login/oauth2/code/gateway
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#integrating-the-uaa-with-spring-cloud-gateway" class="anchor" name="integrating-the-uaa-with-spring-cloud-gateway"&gt;&lt;/a&gt;Integrating The UAA with Spring Cloud Gateway&lt;/h2&gt;
-&lt;p&gt;As you can see in the &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-security/2.1.3.RELEASE/single/spring-cloud-security.html#_token_relay"&gt;Spring Cloud Security, OAuth2 Token Relay docs&lt;/a&gt;: &amp;ldquo;Spring Cloud Gateway can forward OAuth2 access tokens to the services it is proxying. In addition to logging in the user and grabbing a token, a filter extracts the access token for the authenticated user and puts it into a request header for downstream requests.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;This effectively means that there is very little work involved when integrating our Spring Cloud Gateway server with our chosen security mechanism when using Spring Cloud Security. The gateway will coordinate authentication with the single sign-on server on our behalf and ensure that downstream applications get a copy of the users access token when they need it.&lt;/p&gt;
-&lt;p&gt;In order to configure this feature, the first thing of note is the OAuth2 configuration in our gateway¡¯s &lt;code&gt;application.yml&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;security:&#xD;
-    oauth2:&#xD;
-      client:&#xD;
-        registration:&#xD;
-          gateway:&#xD;
-            provider: uaa&#xD;
-            client-id: gateway&#xD;
-            client-secret: secret&#xD;
-            authorization-grant-type: authorization_code&#xD;
-            redirect-uri-template: &amp;quot;{baseUrl}/login/oauth2/code/{registrationId}&amp;quot;&#xD;
-            scope: openid,profile,email,resource.read&#xD;
-        provider:&#xD;
-          uaa:&#xD;
-            authorization-uri: http://localhost:8090/uaa/oauth/authorize&#xD;
-            token-uri: http://uaa:8090/uaa/oauth/token&#xD;
-            user-info-uri: http://uaa:8090/uaa/userinfo&#xD;
-            user-name-attribute: sub&#xD;
-            jwk-set-uri: http://uaa:8090/uaa/token_keys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This configuration is doing two things. It¡¯s specifying our OAuth client registration information (which matches the &lt;code&gt;gateway&lt;/code&gt; application that we registered in the UAA earlier), and it is detailing where the OAuth authentication provider¡¯s services can be found (along with some other attributes such as the &lt;code&gt;jwk-set-uri&lt;/code&gt; which the gateway will use to verify the authenticity of the token). This config is essentially enabling our gateway to communicate effectively with the UAA.&lt;/p&gt;
-&lt;p&gt;The next item of interest here is the &lt;code&gt;GatewayApplication.java&lt;/code&gt; class. In this class, we have two things to take note of. The first is the inclusion of an autowired &lt;code&gt;TokenRelayGatewayFilterFactory&lt;/code&gt; and the second is the use of this class as a filter in the route configuration for our Resource Server:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Autowired&#xD;
-private TokenRelayGatewayFilterFactory filterFactory;&#xD;
-&#xD;
-@Bean&#xD;
-public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {&#xD;
-    return builder.routes()&#xD;
-            .route(&amp;quot;resource&amp;quot;, r -&amp;gt; r.path(&amp;quot;/resource&amp;quot;)&#xD;
-              .filters(f -&amp;gt; f.filters(filterFactory.apply())&#xD;
-                .removeRequestHeader(&amp;quot;Cookie&amp;quot;))&#xD;
-            .uri(&amp;quot;http://resource:9000&amp;quot;)) &#xD;
-            .build();&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The second is the configuration of the route. As discussed in the &lt;a href="https://benwilcock.github.io/spring-cloud-gateway-demo/runtime-discovery-and-service-hiding.html"&gt;Hiding Services&lt;/a&gt;, we must expose the Resource Server as a route, otherwise it will remain hidden inside our network. The &lt;code&gt;filterFactory.apply()&lt;/code&gt; method in the route declaration ensures that any exchanges intended for the Resource Server contain a JWT access token. The &lt;code&gt;removeRequestHeader(¡°Cookie¡±)&lt;/code&gt; tells the gateway to remove the users ¡°Cookie¡± header from the request during the routing operation (because downstream services don¡¯t need this, all they need is the JWT &lt;code&gt;access_token&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;The YAML configuration below achieves the same thing, but without the need for Java code:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;spring:&#xD;
-  cloud:&#xD;
-    gateway:&#xD;
-      routes:&#xD;
-        - id: resource&#xD;
-          uri: http://resource:9000&#xD;
-          predicates:&#xD;
-            - Path=/resource&#xD;
-          filters:&#xD;
-            - TokenRelay=&#xD;
-            - RemoveRequestHeader=Cookie
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With our gateway configured this way (using either Java or YAML), any user request heading to the Resource Server on the &lt;code&gt;/resource&lt;/code&gt; route will need a security &lt;code&gt;access_token&lt;/code&gt; in JWT format.&lt;/p&gt;&lt;h2&gt;&lt;a href="#creating-a-resource-server-and-securing-a-resource" class="anchor" name="creating-a-resource-server-and-securing-a-resource"&gt;&lt;/a&gt;Creating a Resource Server and Securing a Resource&lt;/h2&gt;
-&lt;p&gt;The Resource Server now requires only two things. The first is a &lt;code&gt;/resource&lt;/code&gt; endpoint that expects an authentication principal in the form of a JWT token. The second is some configuration to prevent access to the &lt;code&gt;/resource&lt;/code&gt; endpoint unless you have such a token.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;@RestController&lt;/code&gt; endpoint for &lt;code&gt;/resource&lt;/code&gt; expects a Jwt object as a method parameter. This parameter is decorated as the &lt;code&gt;@AuthenticationPrincipal&lt;/code&gt;. The method returns a simple string containing a message. This message confirms the resource was accessed and contains some basic details about the user.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@GetMapping(&amp;quot;/resource&amp;quot;)&#xD;
-public String resource(@AuthenticationPrincipal Jwt jwt) {&#xD;
-    return String.format(&amp;quot;Resource accessed by: %s (with subjectId: %s)&amp;quot; ,&#xD;
-            jwt.getClaims().get(&amp;quot;user_name&amp;quot;),&#xD;
-            jwt.getSubject());&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The security configuration is handled by the &lt;code&gt;SecurityConfig&lt;/code&gt; class. This class contains a bean method that configures the &lt;code&gt;ServerHttpSecurity&lt;/code&gt; object passed as a parameter in the &lt;code&gt;springSecurityFilterChain&lt;/code&gt; method signature. &lt;/p&gt;
-&lt;p&gt;This configuration declares that users asking to access the path &lt;code&gt;/resource&lt;/code&gt; must be authenticated and must have the OAuth2 scope &lt;code&gt;resource.read&lt;/code&gt; in their profile. The line &lt;code&gt;.oauth2ResourceServer().jwt()&lt;/code&gt; is telling the application that it must use the OAuth2 JWT specification as the security scheme.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;public class SecurityConfig {&#xD;
-&#xD;
-  @Bean&#xD;
-  SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) throws Exception {&#xD;
-    http&#xD;
-            .authorizeExchange()&#xD;
-             .pathMatchers(&amp;quot;/resource&amp;quot;).hasAuthority(&amp;quot;SCOPE_resource.read&amp;quot;)&#xD;
-              .anyExchange().authenticated()&#xD;
-              .and()&#xD;
-            .oauth2ResourceServer()&#xD;
-              .jwt();&#xD;
-    return http.build();&#xD;
-  }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, the Resource Server needs to know where it can find the public keys to validate the authenticity of the access token which it has been given. The UAA provides an endpoint which both the Resource Server and the Gateway rely upon at runtime to do this check. The endpoint is configured in the &lt;code&gt;application.yml&lt;/code&gt; for each application:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yaml"&gt;spring:&#xD;
-  security:&#xD;
-    oauth2:&#xD;
-      resourceserver:&#xD;
-        jwt:&#xD;
-          jwk-set-uri: http://uaa:8090/uaa/token_keys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You don¡¯t have to use an endpoint to grab these keys, you can bundle them into your application directly, but we¡¯ve chosen not to here. If you follow the &lt;code&gt;jwk-set-uri&lt;/code&gt; link in a browser when the demo is running, you¡¯ll see something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/bwilcock/20190801/keys.png" alt="An example of the token keys endpoint data showing a JSON object containing public keys" title="An example of the token keys endpoint data showing a JSON object containing public keys" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#running-the-demo" class="anchor" name="running-the-demo"&gt;&lt;/a&gt;Running The Demo&lt;/h2&gt;
-&lt;p&gt;As before, we¡¯ll use Docker Compose to keep things simple and emulate a real network. With the code checked out and Docker already running in the background, in the &lt;code&gt;security-gateway&lt;/code&gt; folder, execute the &lt;code&gt;build.sh&lt;/code&gt; script to compile the Resource Server and the Gateway applications into JAR¡¯s and then package these and the UAA into containers.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;$&amp;gt; cd security-gateway&#xD;
-$&amp;gt; ./build.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once this process has finished successfully, we can start the demo using &lt;code&gt;docker-compose up&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;$&amp;gt; docker-compose up
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When you do this, you will see a lot of output on your screen while all three servers start up, but after a couple of minutes, it should settle down.&lt;/p&gt;
-&lt;p&gt;Now, open a ¡®private¡¯ or ¡®incognito¡¯ browser window and navigate to &lt;a href="http://localhost:8080/resource"&gt;http://localhost:8080/resource&lt;/a&gt;. Immediately, the gateway will forward your browser to the UAA server and ask you to login using your username and password (in this case &lt;code&gt;user1&lt;/code&gt; and &lt;code&gt;password&lt;/code&gt;). The UAA will then ask you to ¡®Authorize¡¯ the gateway to read user1¡¯s profile. You¡¯ll be presented with the following screen to do this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/bwilcock/20190801/authorize.png" alt="An image showing the UAA autherisation screen used to autherise the application&amp;rsquo;s access to the read dot resource scope" title="An image showing the UAA authorisation screen used to autherise the application&amp;#39;s access to the read dot resource scope" /&gt;&lt;/p&gt;
-&lt;p&gt;Notice in particular the checkbox entitled ¡°Allow access with ¡®resource.read¡¯¡±. It¡¯s this scope that the Resource Server will check before allowing you access to the resource. &lt;/p&gt;
-&lt;p&gt;Once you click ¡®Authorize¡¯ you¡¯ll be forwarded to the &lt;code&gt;[/resource][7]&lt;/code&gt; endpoint which will show you some basic details about your user. You¡¯ll see a message similar to this, although your &lt;code&gt;subjectId&lt;/code&gt; will be different:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Resource accessed by: user1 (with subjectId: 43c7681a-6762-451e-8435-d503fd7a0c4d)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;This is the resource server confirming you could access the resource, and showing that you used user1¡¯s identity.&lt;/p&gt;
-&lt;p&gt;If you want to see some additional information about user1, navigate to &lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt; where a more complete user detail screen has been provided. It looks something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/bwilcock/20190801/user.png" alt="An image showing the full user details screen available once logged in and authorized" title="An image showing the full user details screen available once logged in and authorized" /&gt;&lt;/p&gt;
-&lt;p&gt;Finally, in the logs, we¡¯ve printed out the JWT token passed to the Resource Server so that you can inspect it. We wouldn¡¯t ever do this in production, but for demo purposes, we felt it would be helpful to see it. It looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;resource | TRACE --- SecuredServiceApplication: ***** JWT Token: eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vbG9jYWxob3N0OjgwODAvdWFhL3Rva2VuX2tleXMiLCJraWQiOiJrZXktaWQtMSIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJm (truncated...)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can copy this token in its entirety from the log and paste it into the JWT Debugger at &lt;a href="https://jwt.io/"&gt;jwt.io&lt;/a&gt;. This utility can parse the token and show you the contents. In the output, you¡¯ll find the username and the scopes associated with the user&amp;rsquo;s profile.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/bwilcock/20190801/jwt.png" alt="An image showing the jwt.org screen after parsing the JWT token generated by the UAA and used by our user to access reasources" title="An image showing the jwt.org screen after parsing the JWT token generated by the UAA and used by our user to access reasources" /&gt;&lt;/p&gt;
-&lt;p&gt;The logs themselves are also quite revealing (although the order is not guaranteed). They show much of what¡¯s going on as these three servers interact with each other. To see some edited log highlights with some additional notes, &lt;a href="secured-gateway-access-log.md"&gt;look here&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#finishing-up" class="anchor" name="finishing-up"&gt;&lt;/a&gt;Finishing Up&lt;/h2&gt;
-&lt;p&gt;When you&amp;rsquo;re done, use &lt;code&gt;Ctrl-C&lt;/code&gt; to shut down the Docker services. If for any reason this fails to work, you can also use &lt;code&gt;docker-compose down&lt;/code&gt; from the &lt;code&gt;security-gateway&lt;/code&gt; folder. With either technique, you should see output similar to this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;$&amp;gt; docker-compose down &#xD;
-Stopping gateway  ... done&#xD;
-Stopping service  ... done&#xD;
-Stopping registry ... done
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Further clean-up of Docker can be achieved using &lt;code&gt;docker-compose rm -f&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#and-finally-hellip" class="anchor" name="and-finally-hellip"&gt;&lt;/a&gt;And Finally&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;Why not have your developer dreams come true this year by signing up for &lt;a href="https://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt;? It¡¯s the premier conference for building scalable applications with Spring. Join thousands of other developers to learn, share, and have fun in Austin, TX from October 7th to 10th. Use the discount code S1P_Save200 when registering to save money on your ticket. If you need help convincing your manager try &lt;a href="https://springoneplatform.io/2019/convince-your-manager"&gt;these tips&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Brian Clozel</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/16/a-bootiful-podcast-brian-clozel" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-16:3774</id>
-    <updated>2019-08-16T04:29:19Z</updated>
-    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/666530666&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this installment, &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/SpringBoot"&gt;Spring Boot&lt;/a&gt; and Spring Framework engineer &lt;a href="http://twitter.com/BClozel"&gt;Brian Clozel (@bclozel)&lt;/a&gt; about all the new features - &lt;a href="http://twitter.com/RSocketIO"&gt;RSocket&lt;/a&gt; support, performance improvements and more - in Spring Framework 5.2 and Spring Boot 2.2.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Brian on Twitter: &lt;a href="http://twitter.com/BClozel"&gt;@bclozel &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Boot on Twitter: &lt;a href="http://twitter.com/SpringBoot"&gt;@SpringBoot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the place to get started with all things Spring: &lt;a href="http://start.Spring.io"&gt;start.Spring.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

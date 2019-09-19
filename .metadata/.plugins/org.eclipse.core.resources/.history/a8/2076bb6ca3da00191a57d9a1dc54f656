@@ -1,0 +1,13 @@
+package DP;
+
+import java.util.Scanner;
+
+public class 쉬운계단수 {
+	static int N;
+	static int[] num = new int[10];
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		
+	}
+}
