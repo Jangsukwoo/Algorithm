@@ -1,0 +1,18 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+//8방향
+//모래성이 쌓여있지 않은 개수
+//자기 모래성의 튼튼함보다 많거나 같으면 무너짐
+
+public class 모래성 {
+	
+	static int[][] sandCastle;
+	static int x,y;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		y = sc.nextInt();
+		x = sc.nextInt();
+	}
+}
