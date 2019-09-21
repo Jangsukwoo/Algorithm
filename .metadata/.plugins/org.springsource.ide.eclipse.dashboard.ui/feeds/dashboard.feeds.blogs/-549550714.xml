@@ -5,7 +5,56 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-09-17T13:58:45Z</updated>
+  <updated>2019-09-19T17:25:48Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Nicolai Parlog on Java Modularity</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/19/a-bootiful-podcast-nicolai-parlog-on-java-modularity" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-09-19:3804</id>
+    <updated>2019-09-19T17:25:48Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Manning&amp;rsquo;s &lt;em&gt;The Java Module System&lt;/em&gt; author Nicolai Parlog (&lt;a href="http://twitter.com/NipaFX"&gt;@nipafx&lt;/a&gt;) about Java modularity.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nicolai Parlog on Twitter: &lt;a href="http://twitter.com/NipaFX"&gt;@nipfax&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;NIcolai&amp;rsquo;s &lt;a href="http://www.manning.com/books/the-java-module-system"&gt;new book, Manning&amp;rsquo;s &lt;em&gt;The Java Module System&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/683439446&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tools 4.4.0 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/19/spring-tools-4-4-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2019-09-19:3803</id>
+    <updated>2019-09-19T14:21:50Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.4.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; major change: quick text search contributed to the Eclipse platform and ships to millions of Eclipse users now&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: updated to Eclipse 2019-09 release&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: various improvements to support the dark theme&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: deadlock during startuo fixed&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; improvement: updated to latest changes in Concourse YAML elements and attributes&lt;/li&gt;
+  &lt;li&gt;various additional bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-09-19-440-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-09-19-440-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.4.1 is scheduled to be released in late October 2019.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session Corn-M4 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/09/17/spring-session-corn-m4-released" />
@@ -150,6 +199,15 @@
     <updated>2019-09-16T13:09:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;In response to our &lt;a href="https://spring.io/blog/2019/06/10/announcing-nohttp"&gt;nohttp announcement&lt;/a&gt;, &lt;a href="https://central.sonatype.org/articles/2019/Apr/30/http-access-to-repo1mavenorg-and-repomavenapacheorg-is-being-deprecated/"&gt;Maven Central&amp;#8217;s announcement&lt;/a&gt;, and &lt;a href="https://jfrog.com/blog/secure-jcenter-with-https/"&gt;JFrog&amp;#8217;s announcement&lt;/a&gt;, beginning January 15 2020, Spring&amp;#8217;s Maven Repository will no longer support HTTP. More concretely, &lt;a href="http://repo.spring.io" class="bare"&gt;http://repo.spring.io&lt;/a&gt; will not respond to requests. Users will need to ensure that they are using &lt;a href="https://repo.spring.io" class="bare"&gt;https://repo.spring.io&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We are not going to redirect from http to https because it perpetuates the vulnerability. When the first request is made over http, a man in the middle (MITM) can prevent the redirect and replace the response with a malicious payload. Users that continue to use http will continue to be vulnerable to MITM attacks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is worth pointing out that redirecting to https is beneficial to browsers. This is because after the redirect to https within a browser, subsequent requests will then make any subsequent requests over https. The user is vulnerable in the initial request, but the number of vulnerable requests drops to just the initial requests. This can be further improved for a browser by using &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"&gt;Strict Transport Security&lt;/a&gt; to eliminate any initial requests to http going forward.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The browser behavior, which preserves state, is quite different from a CLI client which will continue to request every resource over http. This is why we are not doing a redirect. We want the CLI clients to fail fast so they know they need to protect themselves.&lt;/p&gt;
 &lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
@@ -1143,47 +1201,6 @@ And let us know what you think!&lt;/p&gt;
 &lt;p&gt;Spring Framework &lt;code&gt;5.2.0.RC2&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RC2"&gt;63 fixes and improvements&lt;/a&gt; and is our last stop before GA proper scheduled 3 weeks from now.&lt;/p&gt;
 &lt;p&gt;Next up is Spring Boot &lt;code&gt;2.2.0.M6&lt;/code&gt;, stay tuned!&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.0.RC2/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring: September 3, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/03/this-week-in-spring-september-3-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-09-03:3783</id>
-    <updated>2019-09-03T08:21:12Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;ve just finished celebrating Labor Day here in the Long home, in San Francisco, in the US. It was a fun day spent with family and friends, and I wasn&amp;rsquo;t sure if I could have any more fun but it&amp;rsquo;s Tuesday, and you know what that means: another epic installment of &lt;em&gt;This Week in Spring&lt;/em&gt;. I can&amp;rsquo;t believe we&amp;rsquo;re already in September, staring down the last few months of the year already! As usual, one of my favorite parts of the journey to the next year is the arrival of the &lt;a href="http://springoneplatform.io"&gt;epic SpringOne Platform&lt;/a&gt; show. This year is no different: I can&amp;rsquo;t wait to celebrate the show with friends in epic Austin, TX. Will you be there? &lt;a href="http://twitter.com/Starbuxman"&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I really enjoyed last week&amp;rsquo;s installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, an interview with &lt;a href="https://spring.io/blog/2019/08/30/a-bootiful-podcast-spring-cloud-data-flow-legend-ilayaperumal-gopinathan"&gt;Spring Cloud Data Flow legend Ilayaperumal Gopinathan&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Nfk4782Da0E"&gt;Check out this fantastic introduction to Spring Data Neo4j RX&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A nice article on DZone Microservices about &lt;a href="https://dzone.com/articles/contracts-for-microservices-with-openapi-and-sprin"&gt;Contracts for Microservices With OpenAPI and Spring Cloud Contract&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;DZone Java has a &lt;a href="https://dzone.com/articles/a-guide-to-spring-framework-annotations"&gt;A Guide to Spring Framework&amp;rsquo;s Annotations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I also enjoyed this introduction to the concept of &lt;a href="https://dzone.com/articles/autowiring-in-spring"&gt;autowiring in Spring &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/netifi_inc/status/1166770007260499970"&gt;This is interesing: Spring users will soon be able to leverage RSocket via a Netifi managed service on Alibaba Cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://developer.okta.com/blog/2019/08/28/reactive-microservices-spring-cloud-gateway"&gt;I &lt;em&gt;love&lt;/em&gt; Matt Raible&amp;rsquo;s &lt;em&gt;Secure Reactive Microservices with Spring Cloud Gateway&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting post by Emmanouil Gkatziouras on Dzone about how to add custom functionality &lt;a href="https://dzone.com/articles/add-custom-functionality-to-a-spring-data-reposito"&gt;to a Spring Data repository&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting post &lt;a href="https://dzone.com/articles/a-simple-state-machine-for-spring-boot-projects"&gt;on creating state-machines with Spring Boot&lt;/a&gt;, but &lt;em&gt;not&lt;/em&gt; Spring Statemachine. The post is interesting, but I&amp;rsquo;m not entirely persuaded that they couldn&amp;rsquo;t have done what they needed with Spring Statemachine. Either way, interesting read.&lt;/li&gt;
-  &lt;li&gt;Julien Dubois has published a very nice look at using R2DBC to &lt;a href="https://dev.to/azure/building-a-fully-reactive-and-scalable-spring-application-with-r2dbc-and-a-serverless-database-1jke"&gt;reactively talk to Microsoft SQL Server&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Cloud Data Flow legend Ilayaperumal Gopinathan</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/30/a-bootiful-podcast-spring-cloud-data-flow-legend-ilayaperumal-gopinathan" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-30:3782</id>
-    <updated>2019-08-30T06:17:20Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this week&amp;rsquo;s episode I talk to Spring Cloud Data Flow legend Ilayaperumal Gopinathan (&amp;ldquo;Illaya&amp;rdquo;) about his journey to open-source, batch processing and messaging, integration, and Spring Cloud Data Flow, and so much more. Enjoy!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/ilayaperumalg"&gt;Illaya on Twitter (@ilayaperumalg)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://Dataflow.Spring.io"&gt;your resource for getting started with Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/672686666&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

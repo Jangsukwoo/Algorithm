@@ -1,0 +1,14 @@
+package DP;
+
+import java.util.Scanner;
+
+public class 반도체설계 {
+	static int N;
+	static int[] port;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		port = new int[N];
+		for(int i=0;i<N;i++) port[i] = sc.nextInt();
+	}
+}

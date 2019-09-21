@@ -1,0 +1,16 @@
+package BAEKJOON;
+
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+public class 프린터큐 {
+	static int T;
+	static PriorityQueue<Integer> pq;
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	T = sc.nextInt();
+	for(int testcase=1;testcase<=T;testcase++) {
+		pq = new PriorityQueue<Integer>();
+	}
+	}
+}

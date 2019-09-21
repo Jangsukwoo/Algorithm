@@ -1,0 +1,7 @@
+package AlgoSpot;
+
+public class SynchronizingClocks {
+	public static void main(String[] args) {
+		
+	}
+}
