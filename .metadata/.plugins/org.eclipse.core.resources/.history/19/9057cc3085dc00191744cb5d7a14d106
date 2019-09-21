@@ -1,6 +1,6 @@
 package BAEKJOON;
 import java.util.LinkedList;
-//간단하게 풀수있는거였다. 자료구조적인 생각을 꼭 하자.
+//간단하게 풀수있는거였다.
 //태우 도움으로 품
 
 import java.util.PriorityQueue;
@@ -38,25 +38,21 @@ public class 프린터큐 {
 				q.add(new Document((char) ('A'+i),data));
 			}
 			//pq를 쓰는 목적은 가장 높은 중요도를 확인하기 위함
-			
-			/*
-			 * 기존 문서의 순서가 유지되어야 하기 때문에 큐에 데이터를 빼주면 다시 넣어서 순환하는 형식.
-			 */
-			
 			Document doc,doc2;
 			int count=0;
 			while(!q.isEmpty()) {
 				doc = q.peek();
 				doc2 = pq.peek();
-				if(doc.important<doc2.important){//우선순위가 작은 것은 뒤로 보낸다.
+				if(doc.important<doc2.important){//우선순위 작으면
 					q.poll();
 					q.add(doc);//뒤로넣기
 				}
-				else if(doc.important==doc2.important) {//가장 먼저 나와야할 데이터를 찾음
-					if(doc.name==target) {//실제로 찾는 값이면
+				else if(doc.important==doc2.important) {
+					if(doc.name==target) {
+						//System.out.println(doc.name);
 						result = count+1;
 						break;	
-					}else{//찾는 값이 아니면 해당사항이 아니므로 빼버린다.
+					}else{
 						q.poll();
 						pq.poll();
 						count++;

@@ -1,6 +1,6 @@
 package BAEKJOON;
 import java.util.LinkedList;
-//간단하게 풀수있는거였다. 자료구조적인 생각을 꼭 하자.
+//간단하게 풀수있는거였다.
 //태우 도움으로 품
 
 import java.util.PriorityQueue;
@@ -56,7 +56,7 @@ public class 프린터큐 {
 					if(doc.name==target) {//실제로 찾는 값이면
 						result = count+1;
 						break;	
-					}else{//찾는 값이 아니면 해당사항이 아니므로 빼버린다.
+					}else{
 						q.poll();
 						pq.poll();
 						count++;
