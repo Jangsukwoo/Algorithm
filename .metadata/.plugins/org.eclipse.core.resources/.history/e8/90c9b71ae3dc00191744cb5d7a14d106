@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class goToOffice {
+	public static void main(String[] args) {
+		
+	}
+}

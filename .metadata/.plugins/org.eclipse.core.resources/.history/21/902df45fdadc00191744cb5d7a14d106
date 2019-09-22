@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class MessageQueue {
+	static int MessageSize;
+	static int ConsumerSize;
+	static int[] Message;
+	static int[] Consumer;
+	public static void main(String[] args) {
+		
+	}
+}

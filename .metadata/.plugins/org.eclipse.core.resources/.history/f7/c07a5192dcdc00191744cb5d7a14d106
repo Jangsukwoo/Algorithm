@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class permutationK {
+	public static void main(String[] args) {
+		
+	}
+}

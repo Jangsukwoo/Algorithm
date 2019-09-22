@@ -1,0 +1,13 @@
+package CodingTest;
+
+import java.util.Scanner;
+
+public class Toilet {
+	static int N;
+	static int[] toilet = new int[151];
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	N = sc.nextInt();
+    	
+    }
+}

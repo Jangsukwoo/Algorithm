@@ -1,0 +1,18 @@
+package CodingTest;
+
+import java.util.Scanner;
+
+public class permutationK {
+	static int[] data;
+	static int K;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String line = sc.nextLine();
+		K = sc.nextInt();
+		char[] tempdata = line.toCharArray();
+		data = new int[tempdata.length];
+		for(int i=0; i<tempdata.length;i++){
+			
+		}
+	}
+}
