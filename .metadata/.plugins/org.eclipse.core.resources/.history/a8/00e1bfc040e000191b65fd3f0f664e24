@@ -12,7 +12,7 @@ package 최단경로알고리즘;
  * 
  */
 public class 다익스트라 {
-	static int[][] adjMatrix; //인접행렬 (노드의 연결관계 및 비용(가중치))
+	static int[][] adjMatrix; //인접행렬 (노드의 연결관계 및 비용)
 	static int[] dist;//출발지부터 최단거리 저장할 배열
 	static int[] path;//경로
 	static int[] visit;//방문체크
