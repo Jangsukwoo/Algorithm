@@ -1,0 +1,18 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 게리멘더링 {
+	static int N;
+	static int[] people;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = (sc.nextInt()+1);
+		people = new int[N];
+		for(int i=0;i<N;i++) {
+			people[i] = sc.nextInt();
+		}
+		
+		
+	}
+}

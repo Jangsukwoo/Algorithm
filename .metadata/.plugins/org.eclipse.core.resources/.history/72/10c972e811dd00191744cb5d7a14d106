@@ -1,0 +1,33 @@
+package CodingTest;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Multipleseries {
+	static TreeSet<Long> data;
+	static long limit = 1000000000000L;
+	static long result;
+	public static void main(String[] args) {
+		int n=1000000;
+		data = new TreeSet<Long>();
+		for(int i=1;i<=1000000;i++) {
+			long next=i+1;
+			long cur = i;
+			while(true){
+				if((cur*next)<=limit){
+					data.add((cur*next));
+					cur = (cur*next);
+					next = next+1;
+				}else break;
+			}
+		}
+		Iterator<Long> iter = data.iterator();
+		int c=1;
+		while(iter.hasNext()) {
+			result = iter.next();
+			if(c==n) break;
+			c++;
+		}
+		System.out.println(result);
+	}
+}

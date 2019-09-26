@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class MakingFood {
+	public static void main(String[] args) {
+
+	}
+}

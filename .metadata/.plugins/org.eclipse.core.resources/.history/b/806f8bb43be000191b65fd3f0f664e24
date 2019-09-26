@@ -1,0 +1,22 @@
+package 최단경로알고리즘;
+
+public class 다익스트라 {
+	static int[][] adjMatrix; //인접행렬 (노드의 연결관계)
+	static int[] dist;//출발지부터 최단거리 저장할 배열
+	static int[] path;//경로
+	static int[] visit;//방문체크
+	static int N; //노드의 수
+	static int INF = Integer.MAX_VALUE;
+	public static void main(String[] args) {
+		Dijkstra();
+		
+	}
+
+	private static void Dijkstra() {
+		for(int i=1;i<=N;i++) {
+			dist[i] = INF;
+		}//모든 거리는 일단 모르니까 INF
+		dist[1] = 0;//시작점은 0
+		
+	}
+}

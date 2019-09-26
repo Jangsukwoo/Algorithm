@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class MakingFood {
+
+	static int k;
+	public static void main(String[] args) {
+		int[] cook_times = {5,30,15,30,35,20,4};
+		int[][] order = 
+		
+	}
+}

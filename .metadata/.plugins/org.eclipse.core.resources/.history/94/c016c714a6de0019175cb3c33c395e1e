@@ -1,0 +1,12 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 게리멘더링 {
+	static int N;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}

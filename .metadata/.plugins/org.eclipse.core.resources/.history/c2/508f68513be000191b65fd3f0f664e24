@@ -1,0 +1,7 @@
+package 최단경로알고리즘;
+
+public class 다익스트라 {
+	public static void main(String[] args) {
+
+	}
+}

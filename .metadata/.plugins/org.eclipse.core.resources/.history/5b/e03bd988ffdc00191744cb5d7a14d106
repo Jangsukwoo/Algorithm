@@ -1,0 +1,19 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class mailBox {
+	static ArrayList<String> tempBox;
+	static ArrayList<String> mailBox;
+	public static void main(String[] args) {
+		String[] record = ["RECEIVE abcd@naver.com",
+		                   "RECEIVE zzkn@naver.com",
+		                   "DELETE", 
+		                   "RECEIVE qwerty@naver.com",
+		                   "SAVE", 
+		                   "RECEIVE QwerTY@naver.com"];
+		for(int r=0;r<record.length;r++) {
+			
+		}
+	}
+}

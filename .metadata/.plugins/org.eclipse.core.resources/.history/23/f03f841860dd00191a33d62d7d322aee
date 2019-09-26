@@ -1,0 +1,20 @@
+package codeTest;
+
+public class Test {
+	public static void main(String[] args) {
+		long result=1L;
+		long result50 = 1;
+		for(int i=50;i>0;i--) {
+			result50 = result50*i;
+		}
+		System.out.println(result50);
+		for(int i=50;i>25;i--) {
+			result = result*(i/(i-25));
+		}
+		for(int i=1;i<=25;i++) {
+			result = result*i;
+		}
+		System.out.println(result);
+		System.out.println("long최대사이즈"+Long.MAX_VALUE);
+	}
+}

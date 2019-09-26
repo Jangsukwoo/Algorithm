@@ -1,0 +1,8 @@
+package codeTest;
+
+public class Test {
+	public static void main(String[] args) {
+		long result=1L;
+		
+	}
+}
