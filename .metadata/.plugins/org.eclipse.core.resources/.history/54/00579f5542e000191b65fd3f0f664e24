@@ -38,12 +38,12 @@ public class 다익스트라 {
 			int minVal = INF;//최소값은 일단 INF
 
 			for(int j=1; j<N; j++){//최소값 추출
-				if(visit[j]==0 && minVal>dist[j]){ //방문 하지 않았고 알고 있는 경로중 가장 최단경로인 노드를 찾는다.
+				if(visit[j]==0 && minVal>dist[j]){
 					minNode = j;
 					minVal = dist[j];
 				}
 			}
-			visit[minNode]=1; //방문하지 않았고 최단 경로인 노드를 방문 체크
+			visit[minNode]=1; //최소 노드 체크
 			
 			
 			//Edge relaxation (간선 경감)
