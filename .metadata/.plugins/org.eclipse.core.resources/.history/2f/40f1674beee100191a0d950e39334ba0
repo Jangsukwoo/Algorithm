@@ -1,0 +1,15 @@
+package 구름;
+
+import java.util.Scanner;
+
+public class 술래가원하는숫자만들기 {
+	static int[] num;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String readline = sc.nextLine();
+		String[] numData = readline.split(" ");
+		for(int i=0;i<numData.length;i++) {
+			
+		}
+	}
+}

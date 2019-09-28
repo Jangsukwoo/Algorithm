@@ -1,0 +1,8 @@
+package 구름;
+
+public class 술래가원하는숫자만들기 {
+	static int[] num;
+	public static void main(String[] args) {
+		
+	}
+}
