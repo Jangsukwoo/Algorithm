@@ -1,0 +1,7 @@
+package 구름;
+
+public class KnightsMove {
+	public static void main(String[] args) {
+
+	}
+}

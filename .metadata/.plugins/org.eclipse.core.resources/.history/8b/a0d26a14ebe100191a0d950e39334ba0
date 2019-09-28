@@ -1,0 +1,27 @@
+package 구름;
+
+import java.util.Queue;
+import java.util.Scanner;
+class Horse{
+	int row,col,dist;
+	Horse(int r,int c,int d){
+		row = r;
+		col = c;
+		dist =d;
+	}
+}
+public class KnightsMove {
+	static int rowSize,colSize;
+	static int[][] chessBoard;
+	static boolean[][] visit;
+	static int[] dr = {-2,-1,1,2,2,1,-1,-2};
+	static int[] dc = {1,2,2,1,-1,-2,-2,-1};//1시방향부터 회전
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		rowSize = sc.nextInt();
+		colSize = sc.nextInt();
+		chessBoard = new int[rowSize][colSize];
+		visit = new boolean[rowSize][colSize];
+		
+	}
+}

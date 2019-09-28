@@ -1,0 +1,14 @@
+package 구름;
+
+import java.util.Scanner;
+
+public class 계수기만들기 {
+	static int m;
+	static int[] num;
+	static int[] max;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		m = sc.nextInt();
+		
+	}
+}
