@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-09-27T06:33:40Z</updated>
+  <updated>2019-09-28T12:48:00Z</updated>
+  <entry>
+    <title>Spring Framework 5.1.10 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/28/spring-framework-5-1-10-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2019-09-28:3810</id>
+    <updated>2019-09-28T12:48:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.1.10&lt;/code&gt; is available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.1.10&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.10.RELEASE"&gt;35 fixes and selected improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next week is going to be quite busy release-wise with Spring Framework 5.2 GA followed by a number of spring projects going GA as well. We&amp;rsquo;ll also have the first release candidate of Spring Boot 2.2, stay tuned!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.1.10.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Java Champion and Jetbrains Developer Advocate Mala Gupta</title>
     <link rel="alternate" href="https://spring.io/blog/2019/09/27/a-bootiful-podcast-java-champion-and-jetbrains-developer-advocate-mala-gupta" />
@@ -1133,23 +1148,6 @@ Spring Security 5.2.0.RC1! You can find the complete details in the &lt;a href="
 &lt;p&gt;You can see the full list of &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.3.0.M1"&gt;changes&lt;/a&gt; on Github.&lt;/p&gt;
 &lt;p&gt;The release 2.2.1 GA is mostly the bug fixes on 2.2.x base and you can see the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.2.1.RELEASE"&gt;changes&lt;/a&gt; on Github.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Gary Russell</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/06/a-bootiful-podcast-gary-russell" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-09-06:3789</id>
-    <updated>2019-09-06T09:21:16Z</updated>
-    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/677112024&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this installment, @starbuxman talks to Spring Integration lead Gary Russell about Apache Kafka, RabbitMQ, Spring Integration and more.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/gprussell?lang=en"&gt;Gary on Twitter (@gprussell)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/projects/spring-integration"&gt;the Spring Integration project page&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

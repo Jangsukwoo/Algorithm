@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class FrequencyPriorityQueue {
+	public static void main(String[] args) {
+
+	}
+}

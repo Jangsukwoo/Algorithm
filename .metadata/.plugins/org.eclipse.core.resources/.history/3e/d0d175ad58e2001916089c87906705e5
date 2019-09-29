@@ -1,0 +1,26 @@
+package CodingTest;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+
+
+public class BugsCardCollection {
+	static int N;
+	static String data;
+	static String readLine;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		HashMap<String,Integer> Map = new HashMap<String, Integer>();
+		N = sc.nextInt();
+		for(int i=0;i<N;i++) {
+			data = sc.next();
+			if(Map.containsKey(data)){
+				Map.put(data,1);
+			}else {
+				Map.put(data, (Map.get(data)+1));
+			}
+		}
+		System.out.println(Map.toString());
+	}
+}

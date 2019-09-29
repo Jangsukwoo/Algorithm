@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class getCandyGame {
+	public static void main(String[] args) {
+
+	}
+}
