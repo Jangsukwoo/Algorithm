@@ -1,0 +1,32 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 가장큰금민수 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		String data = " ";
+		char[] num;
+		boolean numCheck;
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		for(int i=4;i<=N;i++){
+			data = String.valueOf(i);
+			numCheck = false;
+			num = data.toCharArray();
+			for(int j=0;j<num.length;j++) {
+				if(num[j]!='4') {
+					numCheck =true;
+					System.out.println("탈출"+Arrays.toString(num));
+					break;
+				}
+			}
+			if(numCheck==false){//금민수인경우임
+				result.add(i);
+			}
+		}
+		System.out.println(result.toString());
+	}
+}
