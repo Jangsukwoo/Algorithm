@@ -1,0 +1,9 @@
+package Codeforce;
+
+public class SocialNetwork {
+	static int messages;
+	static int conversations;
+	public static void main(String[] args) {
+		
+	}
+}
