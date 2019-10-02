@@ -73,7 +73,7 @@ public class 게리멘더링 {
 				}
 			}
 			for(int node=0;node<N;node++) {
-				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합
+				if((caseNumber&(1<<node))==1 && ((1<<node)&visit)!=0){//1인 연합
 					q.add(node);
 					while(!q.isEmpty()){
 						int nodeNum = q.poll();
