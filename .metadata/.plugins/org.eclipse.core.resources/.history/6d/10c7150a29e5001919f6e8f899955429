@@ -61,31 +61,32 @@ public class 게리멘더링 {
 			for(int node=0;node<N;node++){//0부터 N번째 노드 검사. if문에 걸릴 때 까지 돌것
 				if((caseNumber&(1<<node))==0 && ((1<<node)&visit)==0){//0인 연합을 발견했고 
 					q.add(node);//발견된 노드를 큐에 넣은 뒤 
-					visit|=1<<node;
 					while(!q.isEmpty()){ //BFS를 돈다
-						int nodeNum = q.poll(); //노드넘버를 꺼내고 
-						sumA += people[nodeNum]; //0연합의 인구수로 집계 하고 
-						for(int i=0;i<N;i++) {//인접 노드를 찾는다.
-							if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)==0){//인접해있고 방문안했고 연합이 0이면 
-								q.add(i); //큐에 들어간다.
-								visit|=1<<i;//들어가면서 1로 방문했음을 마킹
+						int nodeSize = q.size();
+						for(int i=0;i<nodeSize;i++) {
+							int nodeNum = q.poll(); //노드넘버를 꺼내고
+							visit|=1<<nodeNum;//1로 방문 체크를 해준다. 
+							sumA += people[nodeNum]; //0연합의 인구수로 집계 하고 
+							for(int j=0;j<N;j++) {//인접 노드를 찾는다.
+								if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)==0){//인접해있고 방문안했고 연합이 0이면 
+									q.add(i); //큐에 들어간다. 
+								}
 							}
 						}
 					}
 					break;
 				}
 			}
-			for(int node=0;node<N;node++) { //1인 연합에 대한 조사. 위의 BFS와 동일
-				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합. !=0 인 이유를 이 코드를 다시 볼때마다 상기하길
+			for(int node=0;node<N;node++) {
+				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합
 					q.add(node);
-					visit|=1<<node;
 					while(!q.isEmpty()){
 						int nodeNum = q.poll();
+						visit|=1<<nodeNum;//방문체크
 						sumB += people[nodeNum];
 						for(int i=0;i<N;i++) {
 							if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)!=0){//인접해있고 방문안했고 연합이 1이면 
 								q.add(i);
-								visit|=1<<i;
 							}
 						}
 					}
@@ -99,5 +100,14 @@ public class 게리멘더링 {
 		if(min==(Integer.MAX_VALUE/2)) System.out.println("-1");
 		else System.out.println(min);
 		//view();
+	}
+	private static void view() {
+		for(int row=1;row<=N;row++) {
+			for(int col=1;col<=N;col++) {
+				System.out.print(area[row][col]);
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 }

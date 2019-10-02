@@ -68,7 +68,7 @@ public class 게리멘더링 {
 						for(int i=0;i<N;i++) {//인접 노드를 찾는다.
 							if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)==0){//인접해있고 방문안했고 연합이 0이면 
 								q.add(i); //큐에 들어간다.
-								visit|=1<<i;//들어가면서 1로 방문했음을 마킹
+								visit|=1<<i;
 							}
 						}
 					}
@@ -76,7 +76,7 @@ public class 게리멘더링 {
 				}
 			}
 			for(int node=0;node<N;node++) { //1인 연합에 대한 조사. 위의 BFS와 동일
-				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합. !=0 인 이유를 이 코드를 다시 볼때마다 상기하길
+				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합
 					q.add(node);
 					visit|=1<<node;
 					while(!q.isEmpty()){

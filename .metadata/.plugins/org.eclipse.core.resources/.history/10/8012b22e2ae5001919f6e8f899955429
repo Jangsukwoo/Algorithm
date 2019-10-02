@@ -76,7 +76,7 @@ public class 게리멘더링 {
 				}
 			}
 			for(int node=0;node<N;node++) { //1인 연합에 대한 조사. 위의 BFS와 동일
-				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합. !=0 인 이유를 이 코드를 다시 볼때마다 상기하길
+				if((caseNumber&(1<<node))!=0 && ((1<<node)&visit)==0){//1인 연합. !=0 인 이유를 이 코드를 볼때마다 상기하길
 					q.add(node);
 					visit|=1<<node;
 					while(!q.isEmpty()){
