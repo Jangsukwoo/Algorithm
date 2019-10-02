@@ -64,7 +64,7 @@ public class 게리멘더링 {
 						visit|=1<<nodeNum;//방문체크
 						sumA += people[nodeNum];
 						for(int i=0;i<N;i++) {
-							if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)!=0){//인접해있고 방문안했고 연합이 0이면 
+							if(area[nodeNum][i]==1 && ((1<<i)&visit)==0&&((1<<i)&caseNumber)==0){//인접해있고 방문안했고 연합이 0이면 
 								q.add(i);
 							}
 						}
