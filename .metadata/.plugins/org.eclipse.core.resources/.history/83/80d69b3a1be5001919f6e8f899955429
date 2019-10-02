@@ -89,7 +89,7 @@ public class 게리멘더링 {
 					break;
 				}
 			}
-			if(visit==((1<<N)-1)){//visit이 11111.... 이면 전부 방문했음을 뜻함 
+			if(visit==((1<<N)-1)){//visit이 1111이면
 				min = Math.min(Math.abs(sumA-sumB),min);
 			}
 		}

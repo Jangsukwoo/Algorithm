@@ -85,25 +85,25 @@ public class 게리멘더링 {
 								q.add(i);
 							}
 						}
+
 					}
-					break;
 				}
 			}
-			if(visit==((1<<N)-1)){//visit이 11111.... 이면 전부 방문했음을 뜻함 
-				min = Math.min(Math.abs(sumA-sumB),min);
-			}
+		if(visit==((1<<N)-1)){//visit이 1111이면
+			min = Math.min(Math.abs(sumA-sumB),min);
 		}
-		if(min==(Integer.MAX_VALUE/2)) System.out.println("-1");
-		else System.out.println(min);
-		//view();
 	}
-	private static void view() {
-		for(int row=1;row<=N;row++) {
-			for(int col=1;col<=N;col++) {
-				System.out.print(area[row][col]);
-			}
-			System.out.println();
+	if(min==(Integer.MAX_VALUE/2)) System.out.println("-1");
+	else System.out.println(min);
+	//view();
+}
+private static void view() {
+	for(int row=1;row<=N;row++) {
+		for(int col=1;col<=N;col++) {
+			System.out.print(area[row][col]);
 		}
 		System.out.println();
 	}
+	System.out.println();
+}
 }

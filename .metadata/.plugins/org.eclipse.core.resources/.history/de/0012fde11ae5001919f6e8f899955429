@@ -42,7 +42,7 @@ public class 게리멘더링 {
 		area = new int[N][N]; //인접행렬
 		min = (Integer.MAX_VALUE/2); //최소값
 		for(int i=0;i<N;i++) people[i] = sc.nextInt();
-
+	
 		for(int i=0;i<N;i++) {
 			int connect = sc.nextInt();
 			for(int j=0; j<connect;j++) {
@@ -50,7 +50,7 @@ public class 게리멘더링 {
 				area[i][target] = 1;
 			}
 		}
-
+		
 		for(int caseNumber=1,size=1<<N;caseNumber<(size-1);caseNumber++){ //BitMasking
 			//N이 4라면 비트는 4개이며
 			//0001부터 1110까지 모든 연합 경우의수 본다.
@@ -70,10 +70,7 @@ public class 게리멘더링 {
 							}
 						}
 					}
-					break;
 				}
-			}
-			for(int node=0;node<N;node++) {
 				if((caseNumber&(1<<node))==1 && ((1<<node)&visit)==0){//1인 연합
 					q.add(node);
 					while(!q.isEmpty()){
@@ -85,11 +82,11 @@ public class 게리멘더링 {
 								q.add(i);
 							}
 						}
+						
 					}
-					break;
 				}
-			}
-			if(visit==((1<<N)-1)){//visit이 11111.... 이면 전부 방문했음을 뜻함 
+			}	
+			if(visit==((1<<N)-1)){//visit이 1111이면
 				min = Math.min(Math.abs(sumA-sumB),min);
 			}
 		}
