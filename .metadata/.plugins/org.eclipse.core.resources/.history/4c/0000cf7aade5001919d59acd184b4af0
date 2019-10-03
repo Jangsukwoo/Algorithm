@@ -1,0 +1,8 @@
+package Samsung;
+
+public class 기출_나무재테크 {
+	static int N,M,K;
+	public static void main(String[] args) {
+
+	}
+}

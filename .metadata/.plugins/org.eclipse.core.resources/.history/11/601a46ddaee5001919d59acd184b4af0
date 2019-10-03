@@ -1,0 +1,39 @@
+package Samsung;
+/*
+ * 봄
+ * 나무가 자신의 나이만큼 양분 먹고 나이 1증가
+ * 나무가 여러그루면 나이가 어린 나무부터 먹음
+ * 양분이 부족하여 자신의 나이만큼 먹을 수 없다면 죽음
+ * 
+ * 여름
+ * 죽은 나무가 양분으로 변함
+ * 
+ */
+import java.util.Scanner;
+class Tree{
+	int row;
+	int col;
+	int age;
+	boolean dead;
+	public Tree(int r, int c, int a) {
+		row=r;
+		col=c;
+		age=a;
+		dead = false;
+	}
+}
+public class 기출_나무재테크 {
+	static int N,M,K;
+	static int[][] ground;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		K = sc.nextInt();
+		ground = new int[N+2][N+2];
+		for(int row=1;row<=N;row++) 
+			for(int col=1;col<=N;col++) ground[row][col] = sc.nextInt();
+		
+			
+	}
+}
