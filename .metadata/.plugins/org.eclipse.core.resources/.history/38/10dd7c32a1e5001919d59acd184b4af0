@@ -1,0 +1,36 @@
+package Samsung;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+class BlankArea{
+	int row;
+	int col;
+	public BlankArea(int r, int c){
+		row = r;
+		col = c;
+	}
+}
+public class 기출_연구소 {
+	static int rowSize; //세로
+	static int colSize; //가로
+	static int[][] area; //영역
+	static int maxSafeArea =0; //최대값
+	static ArrayList<BlankArea> blankList = new ArrayList<BlankArea>();// 0의 개수
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		rowSize = sc.nextInt();
+		colSize = sc.nextInt();
+		area = new int[rowSize][colSize];
+		for(int row=0;row<rowSize;row++) {
+			for(int col=0;col<colSize;col++) {
+				area[row][col] = sc.nextInt();
+				if(area[row][col]==0) blankList.add(new BlankArea(row,col));
+			}
+		}//입력 끝
+		int blankSize = blankList.size();//n
+		
+		//nCr 모든 경우의수 (n = blankSize, r = 3)
+		
+		for(int i=0;i<)
+	}
+}

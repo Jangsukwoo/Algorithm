@@ -1,0 +1,9 @@
+package Samsung;
+
+public class 기출_연구소 {
+	static int rowSize;
+	static int colSize;
+	public static void main(String[] args) {
+
+	}
+}
