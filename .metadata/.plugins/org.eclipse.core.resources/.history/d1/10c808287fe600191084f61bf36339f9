@@ -1,0 +1,28 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 기출_연구소3 {
+	static int N;//연구소 크기
+	static int M;//바이러스 개수
+	static int[][] area;
+	static int[][] areaNumberMap;
+	static boolean possible;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		area = new int[N][N];
+		areaNumberMap = new int[N][N];
+		int num=0;
+		for(int row=0;row<N;row++){
+			for(int col=0;col<N;col++){
+				areaNumberMap[row][col] = num;
+				area[row][col] = sc.nextInt();
+				num++;
+			}
+			
+		}
+	}
+}

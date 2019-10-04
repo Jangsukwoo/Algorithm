@@ -1,0 +1,9 @@
+package Samsung;
+
+public class 기출_연구소3 {
+	static int N;//연구소 크기
+	static int M;//바이러스 개수
+	public static void main(String[] args) {
+
+	}
+}
