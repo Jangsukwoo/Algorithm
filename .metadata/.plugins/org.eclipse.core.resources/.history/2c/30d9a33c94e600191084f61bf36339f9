@@ -30,10 +30,10 @@ public class 기출_연구소3 {
 	static int[] virusCase;
 	static int vCoordinationSize;
 	static Queue<VirusCoordination> virusQueue = new LinkedList<VirusCoordination>();
+	static boolean possible;
 	static int time = Integer.MAX_VALUE;
 	static int second;
 	static int zeroCount;
-	static int zero;
 	static int[] dr = {-1,0,1,0};
 	static int[] dc = {0,1,0,-1};//상우하좌
 	public static void main(String[] args) {
@@ -88,7 +88,7 @@ public class 기출_연구소3 {
 	}
 	private static void BFS() {
 		second=0;
-		zero=0;
+		int zero=0;
 		
 		while(!virusQueue.isEmpty()){ //체크 순서때문에 많이 틀렸음 코드 순서 중요성 명심하기
 			int size = virusQueue.size();
@@ -124,7 +124,19 @@ public class 기출_연구소3 {
 		System.out.println();
 	}
 	private static void testingAreaCheck(){
-		if(zero==zeroCount) time = Math.min(time,second);
+		possible = true;
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				if(testingArea[row][col]==0) {
+					possible = false;
+					break;
+				}
+			}
+			if(possible==false) break;
+		}
+		if(possible){//가능하니 time 갱신
+			time = Math.min(time,second);
+		}
 	}
 	private static boolean rangeCheck(int nr, int nc) {
 		if(nr>=0 && nr<N && nc>=0 && nc<N) return true;
