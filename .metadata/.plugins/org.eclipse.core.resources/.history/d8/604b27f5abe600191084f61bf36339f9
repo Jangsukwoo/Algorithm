@@ -1,0 +1,16 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 연구소2 {
+	static int N;
+	static int M;
+	static int[][] area;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		area = new int[N][N];
+		
+	}
+}

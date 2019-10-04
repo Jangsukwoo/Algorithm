@@ -1,0 +1,31 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class VirusRC{
+	int row;
+	int col;
+	public VirusRC(int r, int c){
+		row = r;
+		col = c;
+	}
+}
+public class 연구소2 {
+	static int N;
+	static int M;
+	static int[][] area;
+	static ArrayList<VirusCoordination2> possibleRC
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		area = new int[N][N];
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				area[row][col] = sc.nextInt();
+				if(area[row][col]==2)
+			}	
+		}	
+	}
+}
