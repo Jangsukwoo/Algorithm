@@ -1,0 +1,53 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ *냉장고 문제랑 비슷
+ *안겹치는 것의 합의 최대값
+ *-------------------DP로 접근 다시 풀기---------------------------
+ */
+class DayReservation{
+	int term;
+	int pay;
+	public DayReservation(int t, int p) {
+		term = t;
+		pay = p;
+	}
+}
+public class 기출_퇴사 {
+	static int N;
+	static int[] maxDaybenefit;
+	static int maxBenefit;
+	static DayReservation[] reservation;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		maxDaybenefit = new int[N];
+		reservation = new DayReservation[N];
+		for(int i=0;i<N;i++) {
+			int t = sc.nextInt();
+			int p = sc.nextInt();
+			reservation[i] = new DayReservation(t,p);
+		}//입력 끝
+
+		for(int startDay=0;startDay<N;startDay++){//첫날부터 시작해본다.
+			int benefit=0;
+			dfs(startDay,benefit);
+		}
+		System.out.println(maxBenefit);
+	}
+	private static void dfs(int startDay, int max) {
+		if((reservation[startDay].term+startDay)<=N){//퇴사날 포함한 전날이면
+			max +=reservation[startDay].pay;
+			int nextDay = reservation[startDay].term+startDay;
+			dfs(nextDay,max);
+		}
+		else{
+			maxBenefit = Math.max(max,maxBenefit);
+			return ;
+		}
+	}	
+	
+}
+
