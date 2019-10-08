@@ -1,0 +1,93 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 로봇 동작
+ * 현재 위치 청소
+ * 현재 방향 기준 왼쪽 방향으로 90도 탐색
+ * 아직 청소하지 않은 공간있으면 회전 후 전진
+ * 모두 청소되어있으면 바라보는 방향 유지 후 한칸 후진
+ * 후진 불가능하면 정지
+ * 
+ * 이미 청소되어있는 칸은 청소하지 않음.
+ * 벽 통과 불가
+ */
+class ROBOT{
+	int row;
+	int col;
+	int direction;
+	public ROBOT(int r, int c, int d) {
+		row = r;
+		col = c;
+		direction = d;
+	}
+}
+public class 기출_로봇청소기 {
+	static int N,M;//세로,가로
+	static int clean;
+	static int[][] map;
+	static boolean[][] cleanMap;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1}; //상우하좌
+	static ROBOT Robot;
+	static boolean robotOFF;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N =sc.nextInt();
+		M =sc.nextInt();
+		map = new int[N][M];
+		cleanMap = new boolean[N][M];
+		int r = sc.nextInt();
+		int c = sc.nextInt();
+		int d = sc.nextInt();
+		Robot = new ROBOT(r,c,d);
+		for(int row=0;row<M;row++) {
+			for(int col=0;col<N;col++) {
+				map[row][col] = sc.nextInt();
+				if(map[row][col]==1) cleanMap[row][col]=true;
+			}
+		}
+		
+		simulation();
+		System.out.println(clean);
+	}
+	private static void simulation() {
+		while(true){
+			cleanMap[Robot.row][Robot.col] = true;
+			int currentdir = Robot.direction;
+			boolean allSideCheck = true;
+			
+			for(int dir=0;dir<4;dir++){
+				int nextDir = currentdir-1;
+				if(nextDir == -1) nextDir = 3;
+				int nr = Robot.row+dr[nextDir];
+				int nc = Robot.col+dc[nextDir];
+				if(rangeCheck(nr,nc)){//영역 만족하고
+					if(cleanMap[nr][nc]==false){//청소하지않은 곳이면
+						clean++;
+						Robot.row = nr;
+						Robot.col = nc;
+						Robot.direction = nextDir;
+						allSideCheck = false;
+						break;
+					}
+				}
+			}
+			if(allSideCheck){//모든면을 체크했다면 청소할 곳이 없는 곳이므로
+				//방향을 유지한채 후진
+				int backR = Robot.row+1;
+				int backC = Robot.col;
+				if(rangeCheck(backR,backC)){//후진 가능
+					Robot.row = backR;
+					Robot.col = backC;
+					Robot.direction = currentdir;
+				}else break;//후진 불가능하면 작동 종료
+			}
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr>=0&&nr<M && nc>=0&&nc<N) return true;
+		return false;
+	}
+}

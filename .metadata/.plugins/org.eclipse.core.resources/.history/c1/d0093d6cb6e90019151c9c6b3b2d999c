@@ -1,0 +1,11 @@
+package Samsung;
+
+public class 기출_로봇청소기 {
+	static int N,M;//세로,가로
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	
+	public static void main(String[] args) {
+		
+	}
+}
