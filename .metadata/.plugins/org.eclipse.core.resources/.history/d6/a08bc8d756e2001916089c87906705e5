@@ -1,7 +1,0 @@
-package CodingTest;
-
-public class BugsCardCollection {
-	public static void main(String[] args) {
-
-	}
-}

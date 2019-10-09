@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 가장큰금민수 {
-	public static void main(String[] args) {
-
-	}
-}
