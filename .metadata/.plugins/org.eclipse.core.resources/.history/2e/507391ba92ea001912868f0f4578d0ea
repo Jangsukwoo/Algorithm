@@ -62,7 +62,7 @@ public class 기출_인구이동 {
 			allianceList.clear();
 			allianceMap = new int[N][N];
 			makeAlliance();
-			movePeople();
+			afterMove();
 			if(flag)break;
 			move++;
 		}
@@ -107,7 +107,7 @@ public class 기출_인구이동 {
 		}
 	}
 	
-	private static void movePeople() {
+	private static void afterMove() {
 		for(int row=0;row<N;row++) {
 			for(int col=0;col<N;col++){
 				int alliancePeople = allianceList.get((allianceMap[row][col]-1)).people;
