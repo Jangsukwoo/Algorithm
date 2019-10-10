@@ -1,0 +1,29 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 시작 450
+ * 
+ */
+public class 기출_연산자끼워넣기 {
+	static int N;//수의 개수
+	static int[] series;//수열
+	static int[] operationSeries;
+	static int[] operatorCount = new int[4];// 0:+, 1:-, 2:x, 3:/
+	static int max = 0;
+	static int min = Integer.MAX_VALUE;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		series = new int[N];
+		operationSeries = new int[N-1];
+		for(int i=0;i<N;i++) series[i] = sc.nextInt();
+		for(int i=0;i<4;i++) {
+			operatorCount[i] = sc.nextInt();
+			if(operatorCount[i]>0){
+				
+			}
+		}
+	}
+}

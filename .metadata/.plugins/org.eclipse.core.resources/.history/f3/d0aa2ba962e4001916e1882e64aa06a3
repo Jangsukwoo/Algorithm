@@ -1,7 +1,0 @@
-package Codeforce;
-
-public class Pipes {
-	public static void main(String[] args) {
-
-	}
-}

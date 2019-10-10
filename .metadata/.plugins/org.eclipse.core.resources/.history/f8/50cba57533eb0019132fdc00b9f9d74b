@@ -1,0 +1,18 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 시작 450
+ * 
+ */
+public class 기출_연산자끼워넣기 {
+	static int N;//수의 개수
+	static int[] series;//수열
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		series = new int[N];
+		for(int i=0;i<N;i++) series[i] = sc.nextInt();
+	}
+}

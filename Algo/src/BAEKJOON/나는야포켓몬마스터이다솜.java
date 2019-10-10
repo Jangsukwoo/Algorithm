@@ -30,7 +30,7 @@ public class 나는야포켓몬마스터이다솜 {
 			pokemonBookSearchName.put(pokemon,i+1);
 			pokemonBookSearchNum.put(i+1,pokemon);
 		}
-		for(int q=0;q<questions;q++) {//숫자인지 문자인지 더 좋은 판단할 때 이게 최선인가??
+		for(int q=0;q<questions;q++) {//숫자인지 문자인지 판단할 때 이게 최선인가??. 더 좋은 판단이 있을 것 같음...
 			String question = br.readLine();
 			char firstData = question.charAt(0);
 			if(firstData>='0' && firstData <='9'){//숫자면
