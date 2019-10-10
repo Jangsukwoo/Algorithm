@@ -1,0 +1,16 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 시작 612
+ * 
+ */
+public class 기출_톱니바퀴 {
+	static int[][] gearState = new int[4][8];
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		for(int row=0;row<4;row++)
+			for(int col=0;col<8;col++) gearState[row][col] = sc.nextInt();
+	}
+}
