@@ -1,9 +1,0 @@
-package Samsung;
-
-public class 기출_시험감독 {
-	static int N;
-	
-	public static void main(String[] args) {
-		
-	}
-}

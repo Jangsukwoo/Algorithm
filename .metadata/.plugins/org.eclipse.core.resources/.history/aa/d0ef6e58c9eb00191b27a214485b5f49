@@ -1,0 +1,9 @@
+package Samsung;
+
+public class 상시_배열돌리기4 {
+	static int N,M,K;//row,col,회전연산개수
+	static int[][] matrix;
+	public static void main(String[] args) {
+		
+	}
+}
