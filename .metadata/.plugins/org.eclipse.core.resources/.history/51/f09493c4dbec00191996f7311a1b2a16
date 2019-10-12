@@ -1,0 +1,53 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+class DayPerPee{
+	int day;
+	int pee;
+	public DayPerPee(int d, int p){
+		day = d;
+		pee = p;
+	}
+	
+}
+public class Taxi {
+	static int n = 10;
+	static int[] P = {5,7,8,2,4,6,1,8,9,10};
+	public static void main(String[] args) {
+		int a = solution(n,P);
+		System.out.println(a);
+	}
+	private static int solution(int n, int[] p) {
+		int min = Integer.MAX_VALUE;
+		int sum = 0;
+		int cnt=0;
+		ArrayList<DayPerPee> dppList = new ArrayList<DayPerPee>();
+		int[] dp = new int[10];
+		for(int day=0;day<10;day++){
+			if(p[day]<min){
+				cnt++;
+				dp[day] = 1;
+				min = p[day];
+				dppList.add(new DayPerPee(day,p[day]));
+			}
+		}
+		
+		if(cnt==1) {
+			sum = p[0]*10;
+		}
+		else {
+			int mark=0;
+			for(int i=1;i<10;i++){
+				if(dp[i]==1){//1나오면
+					
+				}
+			}
+		}
+		
+		
+		System.out.println(Arrays.toString(dp));
+		System.out.println(sum);
+		return 0;
+	}
+}

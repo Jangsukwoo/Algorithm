@@ -1,0 +1,40 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+class DayPerPee{
+	int day;
+	int pee;
+	public DayPerPee(int d, int p){
+		day = d;
+		pee = p;
+	}
+	
+}
+public class Taxi {
+	static int n = 10;
+	static int[] P = {5,7,8,2,4,6,1,8,9,10};
+	public static void main(String[] args) {
+		int a = solution(n,P);
+		System.out.println(a);
+	}
+	private static int solution(int n, int[] p) {
+		int min = Integer.MAX_VALUE;
+		int sum = 0;
+		ArrayList<DayPerPee> dppList = new ArrayList<DayPerPee>();
+		for(int day=0;day<10;day++){
+			if(p[day]<min){
+				min = p[day];
+				dppList.add(new DayPerPee(day,p[day]));
+			}
+		}
+		int size = dppList.size();
+		for(int i=0;i<size;i++) {
+			System.out.println(i+"번째");
+			System.out.println("날"+dppList.get(i).day);
+			System.out.println("값"+dppList.get(i).pee);
+		}
+		if(size==1) sum = dppList.get(0).pee*10;
+		return 0;
+	}
+}

@@ -5,7 +5,26 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-08T23:59:00Z</updated>
+  <updated>2019-10-11T01:58:46Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Spring mad scientist Andy Clement on AspectJ, SpEL, Eclipse, Graal and more</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/11/a-bootiful-podcast-spring-mad-scientist-andy-clement-on-aspectj-spel-eclipse-graal-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-10-11:3831</id>
+    <updated>2019-10-11T01:58:46Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this SpringOne Platform 2019 episode, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) interviews Spring mad scientist Andy Clement (&lt;a href="http://twitter.com/andy_clement"&gt;@andy_clement&lt;/a&gt;) on AspectJ, SpEL, Eclipse, the new Graal native image feature, being an Iron-Man triathlete, and more. &lt;/p&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/694048639&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/andy_clement"&gt;Andy Clement on Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/tree/master/spring-expression"&gt;the Spring Expression Language&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/AspectJ"&gt;AspectJ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graal-native"&gt;the Graal native image feature&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring (SpringOne Platform 2019 edition) - October 8th, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/08/this-week-in-spring-springone-platform-2019-edition-october-8th-2019" />
@@ -1568,43 +1587,6 @@ And let us know what you think!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Open Service Broker 3.1.0.M2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/30/spring-cloud-open-service-broker-3-1-0-m2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Roy Clarkson</name>
-    </author>
-    <id>tag:spring.io,2019-09-30:3814</id>
-    <updated>2019-09-30T14:15:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the 3.1.0.M2 release of Spring Cloud Open Service Broker, which includes some initial support for &lt;a href="https://www.openservicebrokerapi.org/blog/2019/06/21/announcing-open-service-broker-api-v2-15"&gt;Open Service Broker API v2.15&lt;/a&gt;. Thanks to the community for their significant contributions! This release includes the following &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker/issues?q=is%3Aclosed+milestone%3A3.1.0.M2"&gt;fixes and enhancements&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Upgrade to Spring Boot 2.1.8.RELEASE&lt;/li&gt;
-  &lt;li&gt;Add &lt;code&gt;maintenance_info&lt;/code&gt; field to Service Plan object&lt;/li&gt;
-  &lt;li&gt;Add &lt;code&gt;maximum_polling_duration&lt;/code&gt; field to Service Plan object&lt;/li&gt;
-  &lt;li&gt;Add &lt;code&gt;plan_updateable&lt;/code&gt; field to Service Plan object&lt;/li&gt;
-  &lt;li&gt;Return HTTP 400 when the required &lt;code&gt;service_id&lt;/code&gt; and/or &lt;code&gt;plan_id&lt;/code&gt; are missing or incorrect&lt;/li&gt;
-  &lt;li&gt;Return HTTP 202 when a service broker operation is in progress and an identical request is sent before the previous request completes&lt;/li&gt;
-  &lt;li&gt;Return JSON arrays instead of JSON objects for certain Service definition metadata&lt;/li&gt;
-  &lt;li&gt;Add support for custom base path of service broker controllers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
-  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;3.1.0.M2&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Use the Spring Milestone Repository:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;repository&amp;gt;&#xD;
-  &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
-  &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
-&amp;lt;/repository&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Spring Cloud Open Service Broker is a framework for building Spring Boot applications that implement the Open Service Broker API. The &lt;a href="https://www.openservicebrokerapi.org"&gt;Open Service Broker API&lt;/a&gt; project allows developers to deliver services to applications running within cloud native platforms such as Cloud Foundry, Kubernetes, and OpenShift.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.M2/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.M2/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

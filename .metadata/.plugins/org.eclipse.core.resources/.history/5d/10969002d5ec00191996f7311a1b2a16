@@ -1,0 +1,25 @@
+package CodingTest;
+
+public class Taxi {
+	static int n = 10;
+	static int[] P = {5,4,3,2,1,6,7,8,9,10};
+	public static void main(String[] args) {
+		int a = solution(n,P);
+	}
+	private static int solution(int n, int[] p) {
+		int min = Integer.MAX_VALUE;
+		int length = p.length;
+		int count=0;
+		int sum=0;
+		int cnt=2;
+		min = p[0];
+		sum = p[0]*10;
+		for(int day=1;day<10;day++){
+			if(p[day]<min) {
+				sum = min*(day+1) + (10-(day+1))*p[day];
+				min = p[day];
+			}
+		}
+		return 0;
+	}
+}

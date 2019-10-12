@@ -1,0 +1,27 @@
+package CodingTest;
+
+class RentCar{
+	String plate;
+	int odo;
+	
+	public RentCar(String p, int o) {
+		plate = p;
+		odo = o;
+	}
+}
+public class avante {
+	public static void main(String[] args) {
+		
+	}
+    public String solution(int n, String[] plates, int[] odo, int k, int[] drives){
+    	RentCar[] rentcar = new RentCar[n];
+    	for(int i=0;i<n;i++) {
+    		rentcar[i] = new RentCar(plates[i],odo[i]);
+    	}
+    	for(int i=0;i<k;i++) {
+    		
+    	}
+    	String answer = "";
+        return answer;
+    }
+}

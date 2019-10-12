@@ -1,0 +1,27 @@
+package CodingTest;
+
+public class FindX{
+	static int[] dr = {-1,-1,1,1};
+	static int[] dc = {-1,1,1,-1};
+	public static void main(String[] args) {
+		
+	}
+    public int solution(String[] board) {
+    	int N = board.length;
+    	int maxXlength = 0;
+    	char[][] map = new char[N][N];
+    	for(int i=0;i<N;i++) map[i] = board[i].toCharArray();
+    	for(int row=0;row<N;row++) {
+    		for(int col=0;col<N;col++){
+    			int multi=1;
+    			while(true){
+    				for(int dir=0;dir<4;dir++){
+    					
+    				}
+    			}
+    		}
+    	}
+        int answer = 0;
+        return answer;
+    }
+}
