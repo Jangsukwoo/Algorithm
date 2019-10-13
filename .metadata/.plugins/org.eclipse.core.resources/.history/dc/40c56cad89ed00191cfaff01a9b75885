@@ -1,5 +1,6 @@
 package Samsung;
 
+import java.util.Arrays;
 import java.util.Scanner;
 class RotateOperation{
 	int r;

@@ -1,5 +1,6 @@
 package Samsung;
 
+import java.util.Arrays;
 import java.util.Scanner;
 class RotateOperation{
 	int r;
@@ -38,13 +39,12 @@ public class 상시_배열돌리기4 {
 			rotateoperation[i] = new RotateOperation(r, c, s);
 		}
 		permutaion(0);
-		System.out.println(min);
 	}
 	private static void permutaion(int cnt) {
 		if(cnt==K){
+			System.out.println("경우는"+Arrays.toString(rotateCase));
 			setTestingMatrix();
 			rotateOperator();
-			updateMinimumValue();
 			return ;
 		}
 		for(int i=0;i<K;i++){
@@ -56,29 +56,35 @@ public class 상시_배열돌리기4 {
 			}
 		}
 	}
-	private static void updateMinimumValue(){
-		int sum=0;
-		for(int row=0;row<N;row++) {
-			sum=0;
-			for(int col=0;col<M;col++) sum+=testingmatrix[row][col];
-			min = Math.min(min,sum);
-		}
-	}
 	private static void rotateOperator() {
 		for(int i=0;i<K;i++){
+
 			int leftTopRow = rotateoperation[rotateCase[i]].r-rotateoperation[rotateCase[i]].s-1;
 			int leftTopCol = rotateoperation[rotateCase[i]].c-rotateoperation[rotateCase[i]].s-1;
 			int rightBottomRow = rotateoperation[rotateCase[i]].r+rotateoperation[rotateCase[i]].s-1;
 			int rightBottomCol = rotateoperation[rotateCase[i]].c+rotateoperation[rotateCase[i]].s-1;
+			System.out.println("돌리기전");
+			view();
 			while(true){
 				if(leftTopRow==rightBottomRow && leftTopCol==rightBottomCol) break;
 				else rotate(leftTopRow,leftTopCol,rightBottomRow,rightBottomCol);	
 				leftTopRow+=1;
 				leftTopCol+=1;
 				rightBottomRow-=1;
-				rightBottomCol-=1;
+				rightBottomCol-1=;
 			}			
+			System.out.println("돌리고난후");
+			view();
 		}
+	}
+	private static void view() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				System.out.print(testingmatrix[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 	private static void rotate(int ltR, int ltC, int rbR, int rbC){
 		int rtR = ltR;
@@ -115,15 +121,6 @@ public class 상시_배열돌리기4 {
 	private static void setTestingMatrix() {
 		for(int row=0;row<N;row++)
 			for(int col=0;col<M;col++) testingmatrix[row][col] = matrix[row][col];
-	}
-	private static void view() {
-		for(int row=0;row<N;row++) {
-			for(int col=0;col<M;col++) {
-				System.out.print(testingmatrix[row][col]+" ");
-			}
-			System.out.println();
-		}
-		System.out.println();
 	}
 
 }
