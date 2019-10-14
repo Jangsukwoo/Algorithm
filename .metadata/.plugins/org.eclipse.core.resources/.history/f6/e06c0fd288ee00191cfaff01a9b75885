@@ -1,0 +1,37 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ *시작 956 
+ * tetromino
+ */
+public class 기출_테트로미노 {
+	static int N,M;// N:세로, M:가로
+	static int[][] paper;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static int max;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		paper = new int[N][M];
+		for(int row=0;row<N;row++)
+			for(int col=0;col<M;col++) paper[row][col] = sc.nextInt();
+		setTetromino();
+	}
+	private static void setTetromino() {
+		// ㅡ 
+		int sum=0;
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++){
+				sum=0;
+				if(col+3<M){ // ㅡ
+					sum += paper[row][col]+paper[row][col+1]+paper[row][col+2]+paper[row][col+3];
+				}
+				
+			}
+		}
+	}
+}
