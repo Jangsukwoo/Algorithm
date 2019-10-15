@@ -1,0 +1,19 @@
+package Samsung;
+
+/*
+ * 시작 547
+ * 
+ * 
+ */
+import java.util.Scanner;
+
+public class 모의_보호필름 {
+	static int D,W,K;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package 순열조합;import java.util.Arrays;
+
+public class 비트마스킹 {
+	public static void main(String[] args) {
+		 int i,j;
+		 char arr[4] = {'a','b','c','d'};
+		 int n = 4;
+	}
+}

@@ -1,0 +1,22 @@
+package Samsung;
+/*
+ * 시작 200
+ * 
+ */
+import java.util.Scanner;
+
+public class 모의_핀볼게임 {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	static int N;
+	static int[][] board;
+	static int score;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			N = sc.nextInt();
+			board = new int[N][N];
+		}
+	}
+}

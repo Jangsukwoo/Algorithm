@@ -1,0 +1,108 @@
+package Samsung;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+/*
+ * 시작 200
+ * 
+ */
+import java.util.Scanner;
+class Pinball{
+	int row;
+	int col;
+	int dir;
+	int score;
+	int startR;
+	int startC;
+	public Pinball(int r, int c, int d, int sr, int sc){
+		row = r;
+		col = c;
+		dir =d;
+		startR = sr;
+		startC = sc;
+	}
+}
+public class 모의_핀볼게임 {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	static int N;
+	static int[][] board;
+	static boolean[][][] visitAnddirection;
+	static int maxscore;
+	static int startR, startC;
+	static Queue<Pinball> q = new LinkedList<Pinball>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			N = sc.nextInt();
+			board = new int[N][N];
+			visitAnddirection = new boolean[N][N][4];
+			q.clear();
+			maxscore=0;
+			for(int row=0;row<N;row++) {
+				for(int col=0;col<N;col++) {
+					board[row][col] = sc.nextInt();
+					if(board[row][col]==0){
+						q.add(new Pinball(row,col,0,row,col));
+						visitAnddirection[row][col][0]=true;
+					}
+				}
+			}
+			BFS();
+			System.out.println("#"+testcase+" "+maxscore);
+		}
+	}
+	private static void BFS() {
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				Pinball curPinball = q.poll();
+				for(int dir=0;dir<4;dir++){
+					int nr = curPinball.row+dr[dir];
+					int nc = curPinball.col+dc[dir];
+					if(nr==-1){ //벽을만난 4가지 경우
+						curPinball.dir = 3;
+						curPinball.score+=1;
+						if(!visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]){
+							q.add(curPinball);//좌표는 그대로 방향은 반대로
+							visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]=true;
+						}
+					}else if(nr==N){
+						curPinball.dir = 0;
+						curPinball.score+=1;
+						if(!visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]){
+							q.add(curPinball);//좌표는 그대로 방향은 반대로
+							visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]=true;
+						}
+					}else if(nc==-1){
+						curPinball.dir = 1;
+						curPinball.score+=1;
+						if(!visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]){
+							q.add(curPinball);//좌표는 그대로 방향은 반대로
+							visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]=true;
+						}
+					}else if(nc==N){
+						curPinball.dir = 2;
+						curPinball.score+=1;
+						if(!visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]){
+							q.add(curPinball);//좌표는 그대로 방향은 반대로
+							visitAnddirection[curPinball.row][curPinball.col][curPinball.dir]=true;
+						}
+					}else{//벽이 아님
+						if(nr==curPinball.startR && nc==curPinball.startC || board[nr][nc]==-1){//시작점이거나 블랙홀이면
+							maxscore = Math.max(maxscore,curPinball.score); //최대값 갱신 후 큐에 넣지않음
+						}else{
+							switch (board[nr][nc]){
+							case 0:
+								break;
+
+							}
+						}
+					}
+				}
+					
+			}
+		}
+	}
+}

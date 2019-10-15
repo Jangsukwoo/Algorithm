@@ -1,0 +1,10 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 모의_보호필름 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}
