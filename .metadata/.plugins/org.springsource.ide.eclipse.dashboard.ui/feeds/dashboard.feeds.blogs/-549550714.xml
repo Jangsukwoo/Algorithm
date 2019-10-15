@@ -5,7 +5,69 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-11T01:58:46Z</updated>
+  <updated>2019-10-14T16:43:00Z</updated>
+  <entry>
+    <title>Spring Cloud Stream - demystified and simplified</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Oleg Zhurakousky</name>
+    </author>
+    <id>tag:spring.io,2019-10-14:3833</id>
+    <updated>2019-10-14T16:43:00Z</updated>
+    <content type="html">&lt;p&gt;This is the first post in a series of blog posts meant to clarify and preview what&amp;rsquo;s coming in the upcoming releases of &lt;a href="https://spring.io/projects/spring-cloud-stream"&gt;spring-cloud-stream&lt;/a&gt; and &lt;a href="https://spring.io/projects/spring-cloud-function"&gt;spring-cloud-function&lt;/a&gt; (both 3.0.0).&lt;/p&gt;
+&lt;p&gt;Recently, I had a discussion with a user and heard something that prompted me to begin a series of blog posts (starting with this one) with the goal of both demystifying the true goals of &lt;em&gt;Spring Cloud Stream&lt;/em&gt; and &lt;em&gt;Spring Cloud Function&lt;/em&gt; projects as well as demonstrating their new features.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-integration-wrapper" class="anchor" name="spring-integration-wrapper"&gt;&lt;/a&gt;Spring Integration Wrapper?&lt;/h3&gt;
+&lt;p&gt;The specific phrase that prompted all this was - &lt;em&gt;&amp;quot;Spring Cloud Stream, being a light Spring Integration input/output router&amp;hellip;¡±&lt;/em&gt;. That&amp;rsquo;s an interesting perception, but I have to disagree. While it may have been inspired by Enterprise Integration Patterns (EIP) and builds on top of Spring Integration (SI), that last part is really just an implementation detail. Spring Cloud Stream (SCSt) as a framework was never about &lt;em&gt;&amp;ldquo;being a light Spring Integration input/output router&amp;rdquo;&lt;/em&gt;. In fact, this statement shows part of the problem, where SI (the framework of choice to support some of the internal requirements of SCSt) was somehow perceived to be the core of SCSt in such way that many perceive SCSt to be an extension or a wrapper to SI. It is not. It has always been about pure microservices and binding them to &lt;em&gt;sources&lt;/em&gt; and &lt;em&gt;targets&lt;/em&gt; of data (i.e., messaging systems) . Simple as that.&lt;br/&gt;If you abstract yourself far enough from knowing the internals of SCSt, you quickly realize that it is really a binding and activation framework. It binds a piece of code (provided by the user) to source/target of data exposed by the binder and activates such code according to binder implementation (for example, message arrival and so on). That is pretty much it.&lt;/p&gt;&lt;h3&gt;&lt;a href="#to-function-or-not-to-function" class="anchor" name="to-function-or-not-to-function"&gt;&lt;/a&gt;To Function or Not to Function?&lt;/h3&gt;
+&lt;p&gt;Historically, Spring Cloud Stream exposed an annotation-based configuration model that required the user to provide a lot of information that could be otherwise easily inferred, thus simplifying configuration. &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the following two code snippets&lt;/p&gt;
+&lt;p&gt;Annotation-based:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
+@EnableBinding(Processor.class)&#xD;
+public class SampleApplication  {&#xD;
+    @StreamListener(Processor.INPUT)&#xD;
+    @SendTo(Processor.OUTPUT)&#xD;
+    public String uppercase(String value) {&#xD;
+        return value.toUpperCase();&#xD;
+    }&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Function based (since v2.1.0):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
+public class SampleApplication  {&#xD;
+    @Bean&#xD;
+    public Function&amp;lt;String, String&amp;gt; uppercase() {&#xD;
+        return value -&amp;gt; value.toUpperCase();&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Both are valid and fully functioning SCSt applications. Both do the same thing and both produce the same result &amp;ndash; except that, in the annotation-based example, the user has to be aware of SCSt abstractions (that is, messaging, channels, binding, and so on) while the actual user code has nothing to do with any of them. That raises a question: Why? Spring has always been about &lt;em&gt;¡°you worry about functional requirements and we take care of non-functional (boilerplate)¡±&lt;/em&gt;. So, in the context of SCSt as a framework and its core goals of &amp;ldquo;binding and activating/triggering&amp;rdquo; we quickly realized that these abstractions are boilerplate and should not be leaked into the user¡¯s code, especially in the form of annotations, as they contribute to the binary dependency of such code on SCSt for no valid reason.&lt;br/&gt;Also, given that the basis for most new frameworks within spring portfolio is Spring Boot, think about Spring Boot&amp;rsquo;s core message &amp;ndash; the dependency (for example, a JAR) includes auto-configuration, which is effectively an &lt;em&gt;opinion on how we (Spring) believe things should be&lt;/em&gt;, while giving you a way to opt out. So, in this context, why do you need to provide so many instructions, especially through annotations (&lt;code&gt;EnableBinding, Processor, StreamListener&lt;/code&gt;, and others), where one can easily extract or infer the same information (in the context of SCSt ) by simply following some convention. For example, a function bean in the context of SCSt is a processor. We know that a processor has only one input destination and one output, and we know their names, so why do we need to explicitly state the known and the obvious? And so on&amp;hellip; Also, keep in mind that, while deriving all of that, we still preserve the use of the existing consumer and producer properties and all other configuration options. They still apply here, letting you configure and reconfigure the same things as you would with &lt;code&gt;StreamListener&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So, with that, I am also saying that we are starting on our slow journey of moving away from an annotation-based programming model and into a more agile, simple and Spring Boot-aligned, opinionated model of clearly documented and intuitive conventions with limited out-of-the-box configuration required of the user.&lt;/p&gt;
+&lt;p&gt;For more up to date information on functional support in spring-cloud-stream, please follow this &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/docs/src/main/asciidoc/spring-cloud-stream.adoc#spring_cloud_function"&gt;link&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Please feel free to provide any feedback.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Initializr 0.8.0 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/14/spring-initializr-0-8-0-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2019-10-14:3832</id>
+    <updated>2019-10-14T12:12:12Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I¡¯m happy to announce that Spring Initializr 0.8.0 has been released and is now available from repo.spring.io. For the first time, the release is also available from Maven Central!&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-io/initializr/releases/tag/v0.8.0.RELEASE"&gt;90 fixes, improvements and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
+&lt;p&gt;Spring Initializr 0.8 brings &lt;a href="https://spring.io/blog/2019/02/20/what-s-new-with-spring-initializr"&gt;a complete rewrite of the project generation API&lt;/a&gt; with dedicated abstractions for common assets of JVM-based projects:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Build systems with dedicated support for Apache Maven and Gradle (both Groovy and Kotlin DSLs).&lt;/li&gt;
+  &lt;li&gt;Languages with basic model and writer support for Java, Kotlin, and Groovy.&lt;/li&gt;
+  &lt;li&gt;High-level hook-point to tune the project structure with several convenient implementations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This release moves all our opinions that are running on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; to a dedicated optional module that you can build upon or ignore to use only your conventions. This should make the creation of a custom instance easier than ever!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-io/initializr"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/initializr/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/initializr/docs/0.8.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-initializr"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-io/initializr"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Spring mad scientist Andy Clement on AspectJ, SpEL, Eclipse, Graal and more</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/11/a-bootiful-podcast-spring-mad-scientist-andy-clement-on-aspectj-spel-eclipse-graal-and-more" />
@@ -1469,124 +1531,6 @@ public class InitializerConfiguration {&#xD;
   &lt;li&gt;Issue Tracker: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/issues"&gt;github.com/spring-projects/spring-data-r2dbc/issues&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-r2dbc/1.0.0.RC1/"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RC1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RC1/reference/html/"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RC1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data Moore goes GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/01/spring-data-moore-goes-ga" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2019-10-01:3816</id>
-    <updated>2019-10-01T13:27:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community and everyone who has contributed, it¡¯s my pleasure to announce that Spring Data Moore is now generally available from Maven Central and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Spring Data Moore requires JDK 8 or higher and specifically supports JDK 11 as the current long-term support branch as well as JDK 13 as the latest OpenJDK release. Here&amp;rsquo;s an excerpt from the &lt;a href="https://jira.spring.io/issues/?filter=16435"&gt;960 tickets&lt;/a&gt; that were addressed with this release train:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Imperative and Reactive EntityCallback APIs for immutable object support and as a base for future reactive auditing&lt;/li&gt;
-  &lt;li&gt;First-class support for Kotlin Coroutines&lt;/li&gt;
-  &lt;li&gt;Performance improvements&lt;/li&gt;
-  &lt;li&gt;Declarative aggregations and reactive Querydsl support Spring Data MongoDB repositories&lt;/li&gt;
-  &lt;li&gt;Reactive transaction manager in Spring Data MongoDB&lt;/li&gt;
-  &lt;li&gt;Reactive support for Spring Data Elasticsearch&lt;/li&gt;
-  &lt;li&gt;Redis Streams support with Spring Data Redis&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We will follow up with a detailed blog post in the coming days to explain selected features in detail.&lt;/p&gt;
-&lt;p&gt;To round things off, here are links to the reference documentation, changelogs, and artifacts of the individual project releases:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 1.1 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.1.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.1 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.1.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Gemfire 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 3.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 3.2 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.2.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring HATEOAS 1.0.0.RELEASE is released!</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/30/spring-hateoas-1-0-0-release-is-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Greg Turnquist</name>
-    </author>
-    <id>tag:spring.io,2019-09-30:3815</id>
-    <updated>2019-09-30T14:59:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring community, we&amp;#8217;re proud to announce the general availability of Spring HATEOAS 1.0.0.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here&amp;#8217;s the summary:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade to Spring Framework 5.2.0.RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade to Reactor Dysprosium-RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade to Jackson 2.10.0.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Clarify expected behaviour around EntityLinks when using Spring WebFlux.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Fix i18n support to work in broader scenarios.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Update documentation to show how to create an ALPS serving controller for profile purposes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Fix example in docs to reflect requirement for _prompt for property I18N.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Update reference docs to reflect new APIs, SPIs, and package structures.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;At this point, the &lt;code&gt;master&lt;/code&gt; branch has been bumped up to &lt;code&gt;1.1.0.BUILD-SNAPSHOT&lt;/code&gt; so we can start new work.
-Branch &lt;code&gt;1.0.x&lt;/code&gt; has been created and set to &lt;code&gt;1.0.1.BUILD-SNAPSHOT&lt;/code&gt; for maintenance purposes.
-And we&amp;#8217;re still maintaining &lt;code&gt;0.25.x&lt;/code&gt; to support Spring Boot 2.1
-If you find any bugs, let us know!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="community"&gt;&lt;a class="anchor" href="#community"&gt;&lt;/a&gt;Community support&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Community is important.
-That&amp;#8217;s why we opened a Spring HATEOAS &lt;a href="https://gitter.im/spring-projects/spring-hateoas"&gt;Gitter channel&lt;/a&gt;.
-Come and join us!
-If you are using Spring HATEOAS to build an API and have a question or are broken down somewhere, come and find us.
-The community is here to help.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Anything missing? Let us know! With over &lt;a href="https://docs.spring.io/spring-hateoas/docs/1.0.0.RELEASE/changelog.txt"&gt;13 closed issues&lt;/a&gt;, be sure to check things out.
-And let us know what you think!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Check out the project links below.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Links: &lt;a href="https://spring.io/projects/spring-hateoas"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-hateoas"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-hateoas/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-hateoas"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Being a full release, you can find the artifacts on Maven Central.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

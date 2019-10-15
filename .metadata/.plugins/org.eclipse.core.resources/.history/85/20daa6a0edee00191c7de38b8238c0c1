@@ -1,0 +1,14 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 기출_경사로 {
+	static int N,L;
+	static int[][] roadMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		L = sc.nextInt();
+		roadMap = new int[N][N];
+	}
+}

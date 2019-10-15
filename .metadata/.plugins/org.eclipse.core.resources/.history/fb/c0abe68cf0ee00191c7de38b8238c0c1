@@ -1,0 +1,33 @@
+package Samsung;
+
+/*
+ * 시작 1045
+ * 경사로의 길이 L
+ * 경사로의 높이는 무조건 1
+ * 
+ */
+
+import java.util.Scanner;
+
+public class 기출_경사로 {
+	static int N,L;
+	static int[][] roadMap;
+	static int possibleRoad;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		L = sc.nextInt();
+		roadMap = new int[N][N];
+		for(int row=0;row<N;row++)
+			for(int col=0;col<N;col++) roadMap[row][col] = sc.nextInt();
+		
+		possibleCheck();
+	}
+	private static void possibleCheck(){
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++){
+				
+			}
+		}
+	}
+}
