@@ -46,9 +46,9 @@ public class 기출_낚시왕 {
 			sharks[i] = new SharkInfo(i,r, c, s, d, z);
 			sea[r][c] = i;
 		}
-		sharks[0] = new SharkInfo(0,0,0,0,0,0);
+		sharks[0] = new SharkInfo(0,0, 0, 0, 0, 0);
 		for(int move=0;move<C;move++){//낚시꾼 이동
-			System.out.println("낚시");
+			System.out.println("잡기전");
 			viewSea();
 			for(int row=0;row<R;row++) {
 				
@@ -59,10 +59,10 @@ public class 기출_낚시왕 {
 					break;
 				}
 			}
-			System.out.println("전");
+			System.out.println("이동전");
 			viewSea();
 			moveSharks();
-			System.out.println("후");
+			System.out.println("이동후");
 			viewSea();
 		}
 		System.out.println(SharkSize);
@@ -114,7 +114,8 @@ public class 기출_낚시왕 {
 						curShark.row = diff; 
 						sea[curShark.row][curShark.col] = curShark.id;
 					}else {
-						dist =curShark.speed-((R-1)-curShark.row);
+						dist = Math.abs(curShark.speed-(R-1)-curShark.row);
+						System.out.println("dist값"+dist);
 						if((dist/(R-1))%2==0){//짝수면
 							sea[curShark.row][curShark.col] = 0;
 							curShark.row = (R-1)-(dist%(R-1));
@@ -138,7 +139,7 @@ public class 기출_낚시왕 {
 						curShark.col = diff; 
 						sea[curShark.row][curShark.col] = curShark.id;
 					}else {
-						dist =curShark.speed-((C-1)-curShark.col);
+						dist = Math.abs(curShark.speed-(C-1)-curShark.col);
 						if((dist/(C-1))%2==0){//짝수면
 							sea[curShark.row][curShark.col] = 0;
 							curShark.col = (C-1)-(dist%(C-1));

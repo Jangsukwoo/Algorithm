@@ -48,8 +48,6 @@ public class 기출_낚시왕 {
 		}
 		sharks[0] = new SharkInfo(0,0,0,0,0,0);
 		for(int move=0;move<C;move++){//낚시꾼 이동
-			System.out.println("낚시");
-			viewSea();
 			for(int row=0;row<R;row++) {
 				
 				if(sea[row][move]!=0){
