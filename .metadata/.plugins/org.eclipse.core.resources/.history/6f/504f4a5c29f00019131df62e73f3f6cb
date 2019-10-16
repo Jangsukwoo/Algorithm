@@ -1,0 +1,58 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/* 시작
+ * 모든 1을 덮는데 필요한 종이의 최소 개수
+ * 
+ */
+public class 상시_색종이붙이기 {
+	static int[][] paper;
+	static int[] papersize = new int[6];
+	static boolean[][] painted;
+	static int startR,startC;
+	static int min = Integer.MAX_VALUE;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		paper = new int[10][10];
+		for(int i=1;i<=5;i++) papersize[i] = 5;
+		for(int row=0;row<10;row++)
+			for(int col=0;col<10;col++) paper[row][col] = sc.nextInt();
+		dfs(0);
+		
+	}
+	private static void dfs(int use){
+		if(paperCheck()){
+			min = Math.min(min,use);
+			return ;
+		}
+		
+		for(int p=5;p>=1;p++){
+			if(papersize[p]>0){
+				if(possible(startR,startC)){
+					attach(startR,startC,p);
+					dfs()
+				}
+					
+				
+			}
+		}
+	}
+
+	private static void attach(int sR, int sC, int p) {
+		for(int row = sR;)
+	}
+	private static boolean paperCheck() {
+		for(int row=0;row<10;row++) {
+			for(int col=0;col<10;col++) {
+				if(paper[row][col]==1 && painted[row][col]==true) continue;
+				else if(paper[row][col]==1 && painted[row][col]==false) {
+					startR = row;
+					startC = col;
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}

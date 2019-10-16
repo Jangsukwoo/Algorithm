@@ -1,0 +1,17 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 
+ * 
+ */
+public class 상시_색종이붙이기 {
+	static int[][] paper;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		paper = new int[10][10];
+		for(int row=0;row<10;row++)
+			for(int col=0;col<10;col++) paper[row][col] = sc.nextInt();
+	}
+}
