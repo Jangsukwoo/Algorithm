@@ -37,6 +37,8 @@ public class 기출_낚시왕 {
 	static int R,C,M;
 	static int SharkSize;
 	static int[][] sea;
+	static SharkInfo[] sharks;
+	static boolean[][] visit;
 	static Queue<SharkInfo> beforeSharkQueue = new LinkedList<SharkInfo>();
 	static Queue<SharkInfo> afterSharkQueue = new LinkedList<SharkInfo>();
 	public static void main(String[] args) {
@@ -44,6 +46,7 @@ public class 기출_낚시왕 {
 		R = sc.nextInt();
 		C = sc.nextInt();
 		M = sc.nextInt();
+		sharks = new SharkInfo[M+1];
 		sea = new int[R][C];
 		for(int i=1;i<=M;i++){
 			int r = sc.nextInt()-1;
@@ -52,12 +55,13 @@ public class 기출_낚시왕 {
 			int d = sc.nextInt();
 			int z = sc.nextInt();
 			beforeSharkQueue.add(new SharkInfo(r, c, s, d, z));
-			sea[r][c] = z;
+			sea[r][c] = i;
 		}
 		for(int move=0;move<C;move++){//낚시꾼 이동
+			System.out.println("잡기전");
+			viewSea();
 			for(int row=0;row<R;row++) {
 				if(sea[row][move]!=0){
-					SharkSize+=sea[row][move];
 					sea[row][move]=0;
 					break;
 				}
@@ -69,7 +73,7 @@ public class 기출_낚시왕 {
 	private static void viewSea() {
 		for(int row=0;row<R;row++) {
 			for(int col=0;col<C;col++) {
-				System.out.print(sea[row][col]+" ");
+				System.out.print(sharks[sea[row][col]].size+" ");
 			}
 			System.out.println();
 		}
@@ -81,8 +85,7 @@ public class 기출_낚시왕 {
 			int diff=0;
 			int dist=0;
 			SharkInfo curShark = beforeSharkQueue.poll();
-			if(sea[curShark.row][curShark.col]==0 || curShark.size<sea[curShark.row][curShark.col]) continue; //죽은자리면 무시
-			//사이즈보다 작으면 죽은거라 무시
+			if(sea[curShark.row][curShark.col]==0) continue; //죽은자리면 무시
 			sea[curShark.row][curShark.col]=0; //현재 자리를 0으로 하고 다음 좌표를 향해 떠남 
 			switch (curShark.dir){
 			case 1: //위
@@ -105,7 +108,6 @@ public class 기출_낚시왕 {
 			case 2: //아래
 				diff = curShark.speed+curShark.row;
 				if(diff<R){
-					curShark.row = diff; 
 					afterSharkQueue.add(curShark);
 				}else {
 					dist =curShark.speed-((R-1)-curShark.row);
@@ -157,9 +159,8 @@ public class 기출_낚시왕 {
 		}
 		while(!afterSharkQueue.isEmpty()){
 			SharkInfo afterShark = afterSharkQueue.poll();
-			
 			sea[afterShark.row][afterShark.col] = Math.max(sea[afterShark.row][afterShark.col],afterShark.size);
-			beforeSharkQueue.add(afterShark);
+			
 		}
 	}
 }

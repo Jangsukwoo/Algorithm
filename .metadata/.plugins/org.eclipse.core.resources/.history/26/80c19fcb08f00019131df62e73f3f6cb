@@ -105,7 +105,6 @@ public class 기출_낚시왕 {
 			case 2: //아래
 				diff = curShark.speed+curShark.row;
 				if(diff<R){
-					curShark.row = diff; 
 					afterSharkQueue.add(curShark);
 				}else {
 					dist =curShark.speed-((R-1)-curShark.row);

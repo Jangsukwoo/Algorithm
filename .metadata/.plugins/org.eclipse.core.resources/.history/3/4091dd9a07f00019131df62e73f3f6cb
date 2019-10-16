@@ -52,7 +52,7 @@ public class 기출_낚시왕 {
 			int d = sc.nextInt();
 			int z = sc.nextInt();
 			beforeSharkQueue.add(new SharkInfo(r, c, s, d, z));
-			sea[r][c] = z;
+			sea[r][c] = i;
 		}
 		for(int move=0;move<C;move++){//낚시꾼 이동
 			for(int row=0;row<R;row++) {
@@ -69,7 +69,7 @@ public class 기출_낚시왕 {
 	private static void viewSea() {
 		for(int row=0;row<R;row++) {
 			for(int col=0;col<C;col++) {
-				System.out.print(sea[row][col]+" ");
+				System.out.println(sea[row][col]+" ");
 			}
 			System.out.println();
 		}
@@ -105,7 +105,6 @@ public class 기출_낚시왕 {
 			case 2: //아래
 				diff = curShark.speed+curShark.row;
 				if(diff<R){
-					curShark.row = diff; 
 					afterSharkQueue.add(curShark);
 				}else {
 					dist =curShark.speed-((R-1)-curShark.row);
@@ -157,7 +156,6 @@ public class 기출_낚시왕 {
 		}
 		while(!afterSharkQueue.isEmpty()){
 			SharkInfo afterShark = afterSharkQueue.poll();
-			
 			sea[afterShark.row][afterShark.col] = Math.max(sea[afterShark.row][afterShark.col],afterShark.size);
 			beforeSharkQueue.add(afterShark);
 		}

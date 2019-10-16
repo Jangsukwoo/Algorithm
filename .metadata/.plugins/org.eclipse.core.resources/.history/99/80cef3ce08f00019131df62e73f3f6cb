@@ -81,7 +81,7 @@ public class 기출_낚시왕 {
 			int diff=0;
 			int dist=0;
 			SharkInfo curShark = beforeSharkQueue.poll();
-			if(sea[curShark.row][curShark.col]==0 || curShark.size<sea[curShark.row][curShark.col]) continue; //죽은자리면 무시
+			if(sea[curShark.row][curShark.col]==0 || curShark.size!=sea[curShark.row][curShark.col]) continue; //죽은자리면 무시
 			//사이즈보다 작으면 죽은거라 무시
 			sea[curShark.row][curShark.col]=0; //현재 자리를 0으로 하고 다음 좌표를 향해 떠남 
 			switch (curShark.dir){
@@ -105,7 +105,6 @@ public class 기출_낚시왕 {
 			case 2: //아래
 				diff = curShark.speed+curShark.row;
 				if(diff<R){
-					curShark.row = diff; 
 					afterSharkQueue.add(curShark);
 				}else {
 					dist =curShark.speed-((R-1)-curShark.row);

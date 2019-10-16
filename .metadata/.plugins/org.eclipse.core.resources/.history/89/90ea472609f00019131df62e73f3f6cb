@@ -63,6 +63,7 @@ public class 기출_낚시왕 {
 				}
 			}
 			moveSharks();
+			viewSea();
 		}
 		System.out.println(SharkSize);
 	}
