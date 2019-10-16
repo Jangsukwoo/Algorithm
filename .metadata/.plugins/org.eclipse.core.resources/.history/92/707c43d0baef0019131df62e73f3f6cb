@@ -1,0 +1,37 @@
+package Samsung;
+
+import java.util.Scanner;
+/*시작 1100
+ *    윗 : 1 밑 : 6
+ *     2
+ *   4 1 3
+ *     5
+ *     6 
+ * 명령
+ * 동 : 1, 서 : 2, 북 : 3, 남 : 4
+ *
+ */
+public class 기출_주사위굴리기 {
+	static int N,M; //세로, 가로
+	static int x,y;
+	static int K;
+	static int[][] map;
+	static int[][] dice;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		x = sc.nextInt();
+		y = sc.nextInt();
+		K = sc.nextInt();
+		map = new int[N][M];
+		dice = {{0,2,0},{4,1,3},{0,5,0},{0,6,0}};
+		for(int row=0;row<N;row++)
+			for(int col=0;col<M;col++) map[row][col] = sc.nextInt();
+		for(int command=0;command<K;command++) {
+			
+		}
+			
+			
+	}
+}

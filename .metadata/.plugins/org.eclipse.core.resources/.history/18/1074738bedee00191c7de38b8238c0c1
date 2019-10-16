@@ -1,9 +1,0 @@
-package Samsung;
-
-public class 기출_경사로 {
-	static int N,L;
-	static int[][] roadMap;
-	public static void main(String[] args) {
-		
-	}
-}

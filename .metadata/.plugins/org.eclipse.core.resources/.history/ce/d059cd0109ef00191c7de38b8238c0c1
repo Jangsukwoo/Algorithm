@@ -1,7 +1,0 @@
-package Samsung;
-
-public class 모의_핀볼게임 {
-	public static void main(String[] args) {
-
-	}
-}

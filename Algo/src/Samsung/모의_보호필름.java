@@ -60,7 +60,8 @@ public class 모의_보호필름 {
 	}
 	private static void nCr(int idx, int cnt) {
 		if(cnt==inertDrugCount){ //D 위치 고름
-			for(int v=1;v<=inertDrugCount;v++) {//비트의 개수
+			//부분집합 구하기 
+			for(int v=1;v<=inertDrugCount;v++) {//비트의 개수 
 				visit = new boolean[inertDrugCount];
 				for(int i=0,size=1<<v;i<size;i++){//비트 종류
 					for(int k=0;k<v;k++){

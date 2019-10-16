@@ -1,0 +1,34 @@
+package Samsung;
+
+import java.util.Scanner;
+
+class SharkInfo{
+	int row;
+	int col;
+	int speed;
+	int dir;
+	int size;
+	public SharkInfo(int r, int c, int s, int d, int s){
+		row =r;
+		col =c;
+		speed = s;
+		dir = d;
+		size = s;
+	}
+}
+public class 기출_낚시왕 {
+	static int R,C,M;
+	static int SharkSize;
+	static int[][] sea;
+	static SharkInfo[] sharks;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		M = sc.nextInt();
+		for(int s=0;s<M;s++){
+			
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 기출_주사위굴리기 {
+	static int N,M;
+	static int x,y;
+	static int k;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		x = sc.nextInt();
+		y = sc.nextInt();
+		k = sc.nextInt();
+		
+	}
+}

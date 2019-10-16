@@ -151,5 +151,4 @@ public class 기출_톱니바퀴 {
 			break;
 		}
 	}
-	
 }

@@ -1,0 +1,14 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 기출_낚시왕 {
+	static int R,C,M;
+	static int SharkSize;
+	static int[][] sea;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}
+

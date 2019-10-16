@@ -1,0 +1,203 @@
+package Samsung;
+
+import java.util.Scanner;
+/*
+ * 시간내에 못품
+ * 이동처리에서 오래걸림 
+ * 
+ */
+class SharkInfo{
+	int id;
+	int row;
+	int col;
+	int speed;
+	int dir;
+	int size;
+	boolean life;
+	public SharkInfo(int i, int r, int c, int s, int d, int z){
+		id = i;
+		row =r;
+		col =c;
+		speed = s;
+		dir = d;
+		size = z;
+		life = true;
+	}
+}
+
+public class 기출_낚시왕 {
+	static int R,C,M;
+	static int SharkSize;
+	static int[][] sea;
+	static SharkInfo[] sharks;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		M = sc.nextInt();
+		sharks = new SharkInfo[M+1];
+		sea = new int[R][C];
+		for(int i=1;i<=M;i++){
+			int r = sc.nextInt()-1;
+			int c = sc.nextInt()-1;
+			int s = sc.nextInt();
+			int d = sc.nextInt();
+			int z = sc.nextInt();
+			sharks[i] = new SharkInfo(i,r, c, s, d, z);
+			sea[r][c] = i;
+		}
+		for(int move=0;move<C;move++){//낚시꾼 이동
+			for(int row=0;row<R;row++) {
+				if(sea[row][move]!=0){
+					SharkSize+=sharks[sea[row][move]].size;
+					sharks[sea[row][move]].life=false;
+					sea[row][move]=0;
+					break;
+				}
+			}
+			moveSharks();
+		}
+		System.out.println(SharkSize);
+	}
+	private static void moveSharks(){
+		for(int i=1;i<=M;i++){
+			int diff=0;
+			int dist=0;
+			int sharksize=0;
+			SharkInfo curShark = sharks[i];
+			if(sharks[i].life){
+				switch (curShark.dir){
+				case 1: //위
+					diff = curShark.row-curShark.speed;
+					if(diff>=0){
+						curShark.row = diff; 
+					}else {
+						dist = curShark.speed-curShark.row;
+						if((dist/(R-1))%2==0){//짝수면
+							curShark.row = dist%(R-1);
+							curShark.dir = 2;
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}	
+						}else {
+							curShark.col = (R-1)-dist%(R-1);
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}
+						}
+					}
+					break;
+				case 2: //아래
+					diff = curShark.speed+curShark.row;
+					if(diff<R){
+						curShark.row = diff; 
+					}else {
+						dist = curShark.speed-curShark.row;
+						if((dist/(R-1))%2==0){//짝수면
+							curShark.row = (R-1)-dist%(R-1);
+							curShark.dir = 1;
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}	
+						}else {
+							curShark.row = dist%(R-1);
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}
+						}
+					}
+					break; 
+				case 3: //오른쪽
+					diff = curShark.speed+curShark.col;
+					if(diff<C){
+						curShark.col = diff; 
+					}else {
+						dist = curShark.speed-curShark.col;
+						if((dist/(C-1))%2==0){//짝수면
+							curShark.col = (C-1)-dist%(C-1);
+							curShark.dir = 4;
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}	
+						}else {
+							curShark.col = dist%(C-1);
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}
+						}
+					}
+					break;
+				case 4: //왼쪽
+					diff = curShark.col-curShark.speed;
+					if(diff>=0){
+						curShark.col = diff; 
+					}else {
+						dist = curShark.speed-curShark.col;
+						if((dist/(C-1))%2==0){//짝수면
+							curShark.col = dist%(C-1);
+							curShark.dir = 3;
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}	
+						}else {
+							curShark.col = (C-1)-dist%(C-1);
+							if(sea[curShark.row][curShark.col]!=0){//도착 지점에 상어가 있다면
+								sharksize = sharks[sea[curShark.row][curShark.col]].size;
+								if(curShark.size>sharksize){//현재 도착한 녀석이 더 크면
+									sharks[sea[curShark.row][curShark.col]].life=false;
+									sea[curShark.row][curShark.col] = curShark.id;
+								}else {
+									sharks[curShark.id].life=false;
+								}
+							}
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+}
+
