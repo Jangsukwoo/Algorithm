@@ -41,6 +41,7 @@ public class 상시_괄호추가하기 {
 			r = s;
 			nCr(0,0);
 		}
+		//한개도 안하고 그냥 처리
 		System.out.println(max);
 
 	}
@@ -89,6 +90,7 @@ public class 상시_괄호추가하기 {
 				}
 			}
 		}
+		
 		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {

@@ -89,6 +89,7 @@ public class 상시_괄호추가하기 {
 				}
 			}
 		}
+		
 		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
