@@ -84,14 +84,12 @@ public class 상시_괄호추가하기 {
 					if(i%2!=0){//연산자면
 						operator = formula[i];
 					}else {
-						rightNum = Character.getNumericValue(formula[i]);
+						rightNum = formula[i];
 						leftNum = calculator(leftNum,rightNum,operator);
 					}
 				}
 			}
 		}
-		
-		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
 		long ans=0;

@@ -63,6 +63,7 @@ public class 상시_괄호추가하기 {
 		}
 	}
 	private static void caculate(){
+		System.out.println(Arrays.toString(visit));
 		long parenthesis=0;
 		long leftNum=0;
 		long rightNum=0;
@@ -84,13 +85,13 @@ public class 상시_괄호추가하기 {
 					if(i%2!=0){//연산자면
 						operator = formula[i];
 					}else {
-						rightNum = Character.getNumericValue(formula[i]);
+						rightNum = formula[i];
 						leftNum = calculator(leftNum,rightNum,operator);
 					}
 				}
 			}
 		}
-		
+		System.out.println(leftNum);
 		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {

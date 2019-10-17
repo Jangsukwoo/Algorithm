@@ -62,36 +62,10 @@ public class 상시_괄호추가하기 {
 			}
 		}
 	}
-	private static void caculate(){
-		long parenthesis=0;
-		long leftNum=0;
-		long rightNum=0;
-		char operator='0';
+	private static void caculate() {
 		for(int i=0;i<N;i++){
-			if(visit[i]==true && i<(N-2)){//괄호의 숫자면
-				long A = Character.getNumericValue(formula[i]);
-				long B = Character.getNumericValue(formula[i+2]);
-				parenthesis = calculator(A,B,formula[i+1]);
-				if(i>0){
-					leftNum = calculator(leftNum,parenthesis,operator);
-				}else if(i==0) {
-					leftNum = parenthesis;
-				}
-				i+=2;
-			}else{ //괄호 아닐 때
-				if(i==0) leftNum = Character.getNumericValue(formula[i]);
-				else{
-					if(i%2!=0){//연산자면
-						operator = formula[i];
-					}else {
-						rightNum = Character.getNumericValue(formula[i]);
-						leftNum = calculator(leftNum,rightNum,operator);
-					}
-				}
-			}
+			
 		}
-		
-		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
 		long ans=0;

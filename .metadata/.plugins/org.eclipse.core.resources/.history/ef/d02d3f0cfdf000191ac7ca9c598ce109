@@ -65,7 +65,6 @@ public class 상시_괄호추가하기 {
 	private static void caculate(){
 		long parenthesis=0;
 		long leftNum=0;
-		long rightNum=0;
 		char operator='0';
 		for(int i=0;i<N;i++){
 			if(visit[i]==true && i<(N-2)){//괄호의 숫자면
@@ -77,21 +76,17 @@ public class 상시_괄호추가하기 {
 				}else if(i==0) {
 					leftNum = parenthesis;
 				}
-				i+=2;
 			}else{ //괄호 아닐 때
 				if(i==0) leftNum = Character.getNumericValue(formula[i]);
 				else{
 					if(i%2!=0){//연산자면
 						operator = formula[i];
 					}else {
-						rightNum = Character.getNumericValue(formula[i]);
-						leftNum = calculator(leftNum,rightNum,operator);
+						leftNum = calculator(leftNum,parenthesis,operator);
 					}
 				}
 			}
 		}
-		
-		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
 		long ans=0;

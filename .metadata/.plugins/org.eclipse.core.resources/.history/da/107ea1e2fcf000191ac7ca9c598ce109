@@ -77,21 +77,15 @@ public class 상시_괄호추가하기 {
 				}else if(i==0) {
 					leftNum = parenthesis;
 				}
-				i+=2;
 			}else{ //괄호 아닐 때
 				if(i==0) leftNum = Character.getNumericValue(formula[i]);
 				else{
 					if(i%2!=0){//연산자면
 						operator = formula[i];
-					}else {
-						rightNum = Character.getNumericValue(formula[i]);
-						leftNum = calculator(leftNum,rightNum,operator);
 					}
 				}
 			}
 		}
-		
-		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
 		long ans=0;

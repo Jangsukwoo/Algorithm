@@ -37,7 +37,7 @@ public class 상시_괄호추가하기 {
 		else setSize = (operatorSize/2)+1;
 		//입력 끝
 		//1개 이상씩 묶어보는 처리
-		for(int s=0;s<=setSize;s++){
+		for(int s=1;s<=setSize;s++){
 			r = s;
 			nCr(0,0);
 		}
@@ -47,7 +47,7 @@ public class 상시_괄호추가하기 {
 	}
 	private static void nCr(int idx, int cnt) {
 		if(cnt==r){//다 묶음 
-			caculate();
+			
 			return;
 		}
 		for(int i=idx;i<(formulaSize-2);i+=2){
@@ -61,37 +61,6 @@ public class 상시_괄호추가하기 {
 				visit[i+2] = false;
 			}
 		}
-	}
-	private static void caculate(){
-		long parenthesis=0;
-		long leftNum=0;
-		long rightNum=0;
-		char operator='0';
-		for(int i=0;i<N;i++){
-			if(visit[i]==true && i<(N-2)){//괄호의 숫자면
-				long A = Character.getNumericValue(formula[i]);
-				long B = Character.getNumericValue(formula[i+2]);
-				parenthesis = calculator(A,B,formula[i+1]);
-				if(i>0){
-					leftNum = calculator(leftNum,parenthesis,operator);
-				}else if(i==0) {
-					leftNum = parenthesis;
-				}
-				i+=2;
-			}else{ //괄호 아닐 때
-				if(i==0) leftNum = Character.getNumericValue(formula[i]);
-				else{
-					if(i%2!=0){//연산자면
-						operator = formula[i];
-					}else {
-						rightNum = Character.getNumericValue(formula[i]);
-						leftNum = calculator(leftNum,rightNum,operator);
-					}
-				}
-			}
-		}
-		
-		max = Math.max(max,leftNum);
 	}
 	private static long calculator(long a, long b, char c) {
 		long ans=0;
