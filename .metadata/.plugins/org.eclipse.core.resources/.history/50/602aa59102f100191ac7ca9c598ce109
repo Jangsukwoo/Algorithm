@@ -16,7 +16,6 @@ import java.util.Stack;
  * --------------
  * 큐를 스택으로 바꾸니 통과함
  * 너무 신기하다.
- * 원리파악은 아직 못함 ㅠ
  */
 class DATA2{
 	long value;
