@@ -1,0 +1,14 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 상시_파이프옮기기 {
+	static int N;
+	static int[][] house;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		house = new int[N][N];
+		
+	}
+}

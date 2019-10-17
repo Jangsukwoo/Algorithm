@@ -5,7 +5,61 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-15T15:40:00Z</updated>
+  <updated>2019-10-16T20:03:10Z</updated>
+  <entry>
+    <title>Spring Boot 2.2.0</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/16/spring-boot-2-2-0" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2019-10-16:3838</id>
+    <updated>2019-10-16T20:03:10Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Boot team and everyone that has contributed, I am delighted to announce that Spring Boot 2.2.0 has been released and is available now from &lt;a href="http://repo.spring.io/release/"&gt;repo.spring.io&lt;/a&gt;, &lt;a href="http://search.maven.org/#search|ga|1|g%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt; and &lt;a href="https://bintray.com/bintray/jcenter/org.springframework.boot%3Aspring-boot/view"&gt;Bintray&lt;/a&gt;. This release adds a significant number of new features and improvements. For full &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#upgrading-from-spring-boot-21"&gt;upgrade instructions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#new-and-noteworthy"&gt;new and noteworthy&lt;/a&gt; features please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;release notes&lt;/a&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#what-rsquo-s-new-in-2-2" class="anchor" name="what-rsquo-s-new-in-2-2"&gt;&lt;/a&gt;What&amp;rsquo;s new in 2.2&lt;/h1&gt;&lt;h2&gt;&lt;a href="#dependency-upgrades" class="anchor" name="dependency-upgrades"&gt;&lt;/a&gt;Dependency upgrades&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.2 moves to new versions of several Spring projects:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring AMQP 2.2&lt;/li&gt;
+  &lt;li&gt;Spring Batch 4.2&lt;/li&gt;
+  &lt;li&gt;Spring Data Moore&lt;/li&gt;
+  &lt;li&gt;Spring Framework 5.2&lt;/li&gt;
+  &lt;li&gt;Spring HATEOAS 1.0&lt;/li&gt;
+  &lt;li&gt;Spring Integration 5.2&lt;/li&gt;
+  &lt;li&gt;Spring Kafka 2.3&lt;/li&gt;
+  &lt;li&gt;Spring Security 5.2&lt;/li&gt;
+  &lt;li&gt;Spring Session Corn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We¡¯ve also upgraded to the latest stable releases of other third-party libraries wherever possible. Some of the more notable third-party dependency upgrades in this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Elasticsearch 6.7&lt;/li&gt;
+  &lt;li&gt;Flyway 6.0&lt;/li&gt;
+  &lt;li&gt;Jackson 2.10&lt;/li&gt;
+  &lt;li&gt;JUnit 5.5&lt;/li&gt;
+  &lt;li&gt;Micrometer 1.3&lt;/li&gt;
+  &lt;li&gt;Reactor Dysprosium&lt;/li&gt;
+  &lt;li&gt;Solr 8.0&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#performance-improvements" class="anchor" name="performance-improvements"&gt;&lt;/a&gt;Performance improvements&lt;/h2&gt;
+&lt;p&gt;As part of our ongoing efforts to improve performance, we&amp;rsquo;ve made some significant progress in Spring Boot 2.2 on top of those made in 2.1. Applications will now start even faster and consume less memory while they do so. This can be particularly beneficial in environments with very tight memory constraints.&lt;/p&gt;&lt;h3&gt;&lt;a href="#lazy-initialization" class="anchor" name="lazy-initialization"&gt;&lt;/a&gt;Lazy initialization&lt;/h3&gt;
+&lt;p&gt;It is now possible to enable global lazy initialization to reduce startup time via the &lt;code&gt;spring.main.lazy-initialization&lt;/code&gt; property. Please note that using this feature does come at a cost:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Handling of HTTP requests may take longer while any deferred initialisation occurs&lt;/li&gt;
+  &lt;li&gt;Failures that would normally occur at startup will now not occur until later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please see &lt;a href="https://spring.io/blog/2019/03/14/lazy-initialization-in-spring-boot-2-2"&gt;this blog post&lt;/a&gt; for a broader discussion of the new feature and some guidance on when it should and should not be enabled.&lt;/p&gt;&lt;h2&gt;&lt;a href="#java-13-support" class="anchor" name="java-13-support"&gt;&lt;/a&gt;Java 13 support&lt;/h2&gt;
+&lt;p&gt;Following on from Spring Framework 5.2&amp;rsquo;s support for Java 13, Spring Boot 2.2 now also supports Java 13 while also remaining compatible with Java 11 and 8.&lt;/p&gt;&lt;h2&gt;&lt;a href="#immutable-code-configurationproperties-code-binding" class="anchor" name="immutable-code-configurationproperties-code-binding"&gt;&lt;/a&gt;Immutable &lt;code&gt;@ConfigurationProperties&lt;/code&gt; binding&lt;/h2&gt;
+&lt;p&gt;Configuration properties now support constructor-based binding, which allows a &lt;code&gt;@ConfigurationProperties&lt;/code&gt;-annotated class to be immutable. Constructor-based binding can be enabled by annotating a &lt;code&gt;@ConfigurationProperties&lt;/code&gt; class or one of its constructors with &lt;code&gt;@ConstructorBinding&lt;/code&gt;. Annotations such as &lt;code&gt;@DefaultValue&lt;/code&gt; and &lt;code&gt;@DateTimeFormat&lt;/code&gt; can be used on constructor parameters that are provided by configuration property binding.&lt;br/&gt;Please see the &lt;a href="https://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html/spring-boot-features.html#boot-features-external-config-constructor-binding"&gt;relevant section&lt;/a&gt; of the reference documentation for further details.&lt;/p&gt;&lt;h2&gt;&lt;a href="#rsocket-support" class="anchor" name="rsocket-support"&gt;&lt;/a&gt;RSocket Support&lt;/h2&gt;
+&lt;p&gt;Extensive auto-configuration has been added for RSocket along with a new starter, &lt;code&gt;spring-boot-starter-rsocket&lt;/code&gt;. Spring Security&amp;rsquo;s RSocket integration is also auto-configured when the &lt;code&gt;spring-security-rsocket&lt;/code&gt; is on the classpath. Please see the &lt;a href="https://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html//spring-boot-features.html#boot-features-rsocket"&gt;relevant section&lt;/a&gt; of the reference documentation for further details.&lt;/p&gt;&lt;h2&gt;&lt;a href="#health-indicator-groups" class="anchor" name="health-indicator-groups"&gt;&lt;/a&gt;Health indicator groups&lt;/h2&gt;
+&lt;p&gt;It is now possible to organize health indicators into groups. A typical example, if you deploy your application to Kubernetes, is that you may want different groups of health indicators for your ¡°liveness¡± and ¡°readiness¡± probes.&lt;/p&gt;
+&lt;p&gt;Groups can be configured via configuration properties. The following creates a custom group with only the DataSource indicator:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;management.endpoint.health.group.custom.include=db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The custom group can be invoked by hitting localhost:8080/actuator/health/custom. Check the &lt;a href="https://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html//production-ready-features.html#health-groups"&gt;updated reference documentation&lt;/a&gt; for more details.&lt;/p&gt;&lt;h2&gt;&lt;a href="#other-changes" class="anchor" name="other-changes"&gt;&lt;/a&gt;Other changes&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a whole host of other changes and improvements that are documented in the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;release notes&lt;/a&gt;. You can also find a list of deprecated classes and methods that we plan to remove in the next version.&lt;/p&gt;&lt;h1&gt;&lt;a href="#thank-you" class="anchor" name="thank-you"&gt;&lt;/a&gt;Thank you&lt;/h1&gt;
+&lt;br/&gt;
+&lt;p&gt;We want to take this opportunity to again thank all our users and contributors. We&amp;rsquo;ve now had over &lt;a href="https://github.com/spring-projects/spring-boot/graphs/contributors"&gt;600 people&lt;/a&gt; submit code, and there have been over &lt;a href="https://github.com/spring-projects/spring-boot/commits/master"&gt;23000 commits&lt;/a&gt; to the project.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask at &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;on Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Simple Event Driven Microservices with Spring Cloud Stream</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/15/simple-event-driven-microservices-with-spring-cloud-stream" />
@@ -1500,52 +1554,6 @@ A preview version is available on Maven Central as well:&lt;/p&gt;
 &lt;p&gt;Spring Batch 4.2 can be consumed by using Spring Boot 2.2.0.RC1. Please give it a try and share your feedback! Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/b_e_n_a_s"&gt;@b_e_n_a_s&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-batch-at-springone-platform" class="anchor" name="spring-batch-at-springone-platform"&gt;&lt;/a&gt;Spring Batch at SpringOne Platform&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt; is around the corner and will be held in Austin next week! Michael Minella and I will have the pleasure to share with you some of the nice new features of Spring Batch v4.2 in our joint talk &lt;a href="https://springoneplatform.io/2019/sessions/batch-processing-in-2019"&gt;Batch Processing in 2019&lt;/a&gt;. We hope to see you there!&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - October 1, 2019 - Spring Framework 5.2 Edition</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/01/this-week-in-spring-october-1-2019-spring-framework-5-2-edition" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-01:3817</id>
-    <updated>2019-10-01T18:45:53Z</updated>
-    <content type="html">&lt;p&gt;Oh emm geee y&amp;rsquo;all! We just released Spring Framework 5.2, complete with new RSocket support, and a slew of projects have followed suit in the intervening&amp;hellip; &lt;em&gt;day&lt;/em&gt;! I expect we&amp;rsquo;ll see more soon, followed not too far behind by Spring Boot! And, of course, next week is the biggest week in all of Springdom every week: SpringOne Platform 2019! &lt;/p&gt;
-&lt;p&gt;I can&amp;rsquo;t wait to get there, but first I&amp;rsquo;m off to Taipei for the JCCConf. THere&amp;rsquo;s a ton to get to let&amp;rsquo;s dive right in!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/30/spring-hateoas-1-0-0-release-is-released"&gt;Spring HATEOAS 1.0.0.RELEASE is released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/30/spring-cloud-open-service-broker-3-1-0-m2-released"&gt;Spring Cloud Open Service Broker 3.1.0.M2 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/30/spring-data-lovelace-sr11-released"&gt;Spring Data Lovelace SR11 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/30/spring-framework-5-2-goes-ga"&gt;Spring Framework 5.2 goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/30/spring-rest-docs-2-0-4-release"&gt;Spring REST Docs 2.0.4.RELEASE&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/28/spring-framework-5-1-10-available-now"&gt;Spring Framework 5.1.10 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/27/a-bootiful-podcast-java-champion-and-jetbrains-developer-advocate-mala-gupta"&gt;A Bootiful Podcast: Java Champion and Jetbrains Developer Advocate Mala Gupta&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/09/24/spring-boot-for-apache-geode-pivotal-gemfire-1-2-0-m3-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.2.0.M3 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/58130652/how-to-configure-rsocket-security-in-a-spring-boot-application-with-spring-secur"&gt;How to configure RSocket security in a Spring Boot application with Spring Security - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springrod/status/1178903600791085056?s=12"&gt;twitter.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1178773296839565312"&gt;https://twitter.com/springcentral/status/1178773296839565312&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@hantsy/reactive-programming-with-neo4j-fb926a423d33"&gt;Reactive programming with Neo4j - Hantsy - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://howtodoinjava.com/spring-boot2/rest/i18n-internationalization/"&gt;Spring Boot 2 - Internationalization (i18n) Auto-configuration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/pivotal/status/1177319466247438336?s=12"&gt;Pivotal have a cool tweet-bot that, if you star the tweet, it&amp;rsquo;ll remind you when the SpringOne Platform 2019 keynotes start next week)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://jaxenter.de/microservices-spring-cloud-pipelines-woock-87432"&gt;check out this German-language article on Spring Cloud Pipelines&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.codesolt.com/category/tutoriales/"&gt;I love these Spanish-language articles on Spring by Codesolt&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/mirromutth/status/1177921854524116992?s=12"&gt;They&amp;rsquo;ve updated the JAsync R2DBC MySQL implementation, get the bits and check it out!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Want to know why reactive programming is more relevant than ever in light of Project Loom? &lt;a href="https://www.reddit.com/r/java/comments/d9nxpo/r2dbc_08_release_candidate_1_released/f1ls3ot/?utm_name=iossmf"&gt;Spring Data lead Mark Paluch&lt;/a&gt; put it as best as I&amp;rsquo;ve ever seen anyone put it:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;gt; Reactive programming and Loom aim for different goals. Reactive is all about message passing and events, Loom is about scheduling.&lt;/p&gt;
-&lt;p&gt;&amp;gt; With Loom, consumption of streaming sources (Pub/Sub, change stream, live queries) remains as ugly as it currently is (Listeners, Message Containers). So basically, your code remains the same. You still require multiple server roundtrips or even query executions (&amp;ldquo;Paging&amp;rdquo;) to fetch a lot of data and latency behavior stays as-is because most APIs return a List. Your code has still to wait until a response arrives as today&amp;rsquo;s imperative drivers aren&amp;rsquo;t backpressure-aware and cannot request data while you&amp;rsquo;re processing the chunk you previously received.&lt;/p&gt;
-&lt;p&gt;&amp;gt; With Reactive Streams, any stream of data (Pub/Sub, change stream, live queries) is just yet another Publisher&lt;T&gt;. Consuming unbounded data sources does not look any different than consuming a query with a bounded result count.&lt;/p&gt;
-&lt;p&gt;&amp;gt; A proper, non-blocking Reactive Streams implementation comes with improved latency behavior because a Reactive Streams database driver can pre-fetch data from cursors as it is backpressure-aware. A stream does not require pagination for the sake of fetching lots of data because each element is emitted individually and there&amp;rsquo;s no need in the first place to aggregate data to a List. You get much better memory and latency characteristics by design.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/jbnizet/status/1178224705607802881?s=12"&gt;The latest version of SpringMockK 1.1.3, which provides &lt;code&gt;@MockBean&lt;/code&gt; and &lt;code&gt;@SpyBean&lt;/code&gt; but for MockK, not Mockito&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/aless_falappa/status/1177632974709444608?s=12"&gt;twitter.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/karthikr/status/1177321766198231040?s=12"&gt;They¡¯re starting to integrate R2DBC oath yugabyte DB&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This was a &lt;a href="https://twitter.com/siromaha/status/1177947412654166017?s=12"&gt;nice talk on R2DBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://dzone.com/articles/spring-boot-for-apache-geode-and-pivotal-gemfire-r"&gt;Spring Boot for Apache Geode and Pivotal GemFire Released (Ver. 1.2.0)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://r2dbc.io/2019/10/26/r2dbc-0-8-rc1-1-released"&gt;R2DBC 0.8 Release Candidate 1 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/vojtechruzicka/status/1177594271005904897?s=12"&gt;Come see Juergen Hoeller, cofounder of Spring Framework, and I as we bring the Spring in Prague!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,7 +1,0 @@
-package Samsung;
-
-public class 기출_주사위굴리기 {
-	public static void main(String[] args) {
-
-	}
-}

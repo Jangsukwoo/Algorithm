@@ -23,7 +23,6 @@
     <fullyQualifiedTypeName name="BAEKJOON.VirusRC"/>
     <fullyQualifiedTypeName name="sun.tools.java.ScannerInputReader"/>
     <fullyQualifiedTypeName name="Samsung.dayReservation"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="Samsung.DayReservation"/>
     <fullyQualifiedTypeName name="Samsung.ROBOT"/>
     <fullyQualifiedTypeName name="Samsung.Alliance"/>
@@ -42,16 +41,19 @@
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="CodingTest.RentCar"/>
     <fullyQualifiedTypeName name="java.lang.Readable"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Samsung.Pinball"/>
     <fullyQualifiedTypeName name="Samsung.Wormhole"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.TeeXMLDocumentFilterImpl"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="Samsung.SharkInfo"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Samsung.startRC"/>
 </qualifiedTypeNameHistroy>
