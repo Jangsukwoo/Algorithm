@@ -25,8 +25,8 @@ public class nCr{
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		N = sc.nextInt();
-		M = sc.nextInt();
+		N = sc.nextInt(); //데이터 사이즈
+		M = sc.nextInt(); //보고싶은 케이스의 사이즈
 		data = new int[N];
 		visit = new boolean[N];
 		for(int i=0;i<N;i++) data[i] = i+1;

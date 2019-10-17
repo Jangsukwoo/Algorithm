@@ -1,0 +1,33 @@
+package Samsung;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+/*
+ * 시작 754
+ * 연산자 : +,/,*
+ * 수 0~9
+ * 연산자가 1~2개면 최대 1묶음 
+ * 연산자가 3~4개면  최대 2묶음
+ * 연산자가 5~6개면 최대 3묶음
+ */
+public class 상시_괄호추가하기 {
+	static char[] formula;
+	static int N;
+	static long max = Long.MIN_VALUE;
+	static int operatorSize;
+	static int formulaSize;
+	static boolean [] visit;
+	static Stack<Character> stack;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		String readLine = sc.next();
+		formula = readLine.toCharArray();
+		formulaSize = formula.length;
+		visit = new boolean[formulaSize];
+		stack = new Stack<Character>();
+		operatorSize = formulaSize-1;
+		
+	}
+}
