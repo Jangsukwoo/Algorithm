@@ -84,23 +84,23 @@ public class 상시_다리만들기2 {
 		//현재 엣지를 두고 최소값 갱신
 		visitIsland = new boolean[islandSize];
 		int sum=0;
-
+		
 		int[][] testAdjMatrix = new int[islandSize][islandSize];
 		for(int row=1;row<islandSize;row++) {
 			for(int col=1;col<islandSize;col++){
 				if(row!=col) testAdjMatrix[row][col] = INF;
 			}
 		}
-
+		
 		int num = tryCase[0].from;
 		for(int i=0;i<(islandSize-2);i++){
 			testAdjMatrix[tryCase[i].from][tryCase[i].to] = tryCase[i].dist;
 			testAdjMatrix[tryCase[i].to][tryCase[i].from] = tryCase[i].dist;
 			sum+=tryCase[i].dist;
 		}
+		
 
-
-
+		
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(num);
 		visitIsland[num]=true;

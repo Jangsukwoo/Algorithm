@@ -1,6 +1,7 @@
 package Samsung;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -32,6 +33,7 @@ class EdgeInfo{
 public class 상시_다리만들기2 {
 	static int N,M;
 	static int[][] nation;
+	static boolean[] visit;
 	static boolean[] visitIsland;
 	static int min;
 	static int islandSize;
@@ -59,6 +61,8 @@ public class 상시_다리만들기2 {
 		min = INF;
 		setIsland();
 		setAdjMatrix();
+		view();
+		view2();
 		setForCombinationData();
 		combination(0,0);
 		if(min==INF) System.out.println("-1");
@@ -69,6 +73,15 @@ public class 상시_다리만들기2 {
 		dataSize= EdgeInfoList.size();
 		data = new int[dataSize];
 		tryCase = new EdgeInfo[islandSize-2];
+	}
+	private static void view2() {
+		for(int row=1;row<=(islandSize-1);row++) {
+			for(int col=1;col<=(islandSize-1);col++) {
+				System.out.print(adjMatrix[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 	private static void combination(int idx,int cnt) {
 		if(cnt==(islandSize-2)){//간선 개수만큼
@@ -84,39 +97,33 @@ public class 상시_다리만들기2 {
 		//현재 엣지를 두고 최소값 갱신
 		visitIsland = new boolean[islandSize];
 		int sum=0;
-
+		
 		int[][] testAdjMatrix = new int[islandSize][islandSize];
 		for(int row=1;row<islandSize;row++) {
 			for(int col=1;col<islandSize;col++){
 				if(row!=col) testAdjMatrix[row][col] = INF;
 			}
 		}
-
+		
 		int num = tryCase[0].from;
 		for(int i=0;i<(islandSize-2);i++){
 			testAdjMatrix[tryCase[i].from][tryCase[i].to] = tryCase[i].dist;
 			testAdjMatrix[tryCase[i].to][tryCase[i].from] = tryCase[i].dist;
-			sum+=tryCase[i].dist;
 		}
-
-
-
+		
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(num);
 		visitIsland[num]=true;
 		while(!q.isEmpty()){
+			System.out.println("?");
 			num = q.poll();
 			for(int col=1;col<=(islandSize-1);col++){
-				if(testAdjMatrix[num][col]>0 && testAdjMatrix[num][col]<INF && visitIsland[col]==false){
-					q.add(col);
-					visitIsland[col] = true;
+				if(testAdjMatrix[num][col]>0 && testAdjMatrix[num][col]<INF){
+					q.add(testAdjMatrix[num][col]);
+					visitIsland[num] = true;
 				}
 			}
 		}
-		for(int i=1;i<=(islandSize-1);i++) {
-			if(visitIsland[i]==false) return;
-		}
-
 		min = Math.min(sum,min);
 		return ;
 	}
@@ -148,6 +155,7 @@ public class 상시_다리만들기2 {
 				}
 			}
 		}
+
 	}
 	private static EdgeInfo getEdge(int row, int col, int from, int cnt, int dir) {
 		int nr = row+dr[dir];
@@ -171,6 +179,15 @@ public class 상시_다리만들기2 {
 			}else return null;
 		}
 	}
+	private static void view() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				System.out.print(nation[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	private static void setIsland() {
 		int island = 1;
 		//맵에 섬 넘버링
@@ -187,7 +204,7 @@ public class 상시_다리만들기2 {
 		islandSize = island;
 		adjMatrix = new int[islandSize][islandSize];		
 	}
-	private static void BFS(int island){
+	private static void BFS(int island) {
 		while(!q.isEmpty()){
 			int size = q.size();
 			for(int i=0;i<size;i++){
