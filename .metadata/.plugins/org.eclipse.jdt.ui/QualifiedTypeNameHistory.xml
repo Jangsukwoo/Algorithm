@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.code.Attribute.Array"/>
     <fullyQualifiedTypeName name="BAEKJOON.Document"/>
-    <fullyQualifiedTypeName name="java.lang.Long"/>
     <fullyQualifiedTypeName name="구름.ChessPieces"/>
     <fullyQualifiedTypeName name="java.util.TreeSet"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -16,7 +15,6 @@
     <fullyQualifiedTypeName name="java.util.Deque"/>
     <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
     <fullyQualifiedTypeName name="Samsung.BlankArea"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="Samsung.GroundTrees"/>
     <fullyQualifiedTypeName name="Samsung.VirusCoordination"/>
     <fullyQualifiedTypeName name="BAEKJOON.VirusCoordination2"/>
@@ -34,7 +32,6 @@
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="sun.text.normalizer.NormalizerImpl.ReorderingBuffer"/>
     <fullyQualifiedTypeName name="Samsung.RotateInformation"/>
-    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="Samsung.RotateOperation"/>
     <fullyQualifiedTypeName name="CodingTest.DayPerPee"/>
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
@@ -45,15 +42,21 @@
     <fullyQualifiedTypeName name="Samsung.Wormhole"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.TeeXMLDocumentFilterImpl"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Samsung.SharkInfo"/>
+    <fullyQualifiedTypeName name="Samsung.Pipe"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="Samsung.SharkInfo"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="Samsung.startRC"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="Samsung.DATA"/>
 </qualifiedTypeNameHistroy>

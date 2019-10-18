@@ -1,0 +1,15 @@
+package Samsung;
+
+import java.util.Scanner;
+
+public class 상시_다리만들기2 {
+	static int N,M;
+	static int[][] nation;
+	static int min;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		
+	}
+}

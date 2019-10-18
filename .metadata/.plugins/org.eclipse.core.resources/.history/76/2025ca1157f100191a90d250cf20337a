@@ -1,0 +1,8 @@
+package Samsung;
+
+public class 상시_다리만들기2 {
+	static int N,M;
+	public static void main(String[] args) {
+		
+	}
+}

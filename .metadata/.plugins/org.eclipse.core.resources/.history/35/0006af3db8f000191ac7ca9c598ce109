@@ -1,7 +1,0 @@
-package Samsung;
-
-public class 상시_괄호추가하기 {
-	public static void main(String[] args) {
-
-	}
-}
