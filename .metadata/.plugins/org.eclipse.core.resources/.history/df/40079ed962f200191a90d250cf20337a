@@ -1,0 +1,113 @@
+package Samsung;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * 645
+ * 침착하고 집중하자
+ * 상황파악 ->시뮬?완탐?
+ * ->시뮬 -> 구현
+ * ->완탐 -> 내부처리 자료구조 고민 + 구현방법 고민
+ * 
+ * ->구현
+ */
+class Ladder{
+	int row;
+	int col;
+	public Ladder(int r, int c) {
+		row = r;
+		col = c;
+	}
+}
+public class 사다리조작 {
+	static int N,M,H;//N:세로선 개수 , M은 가로선 개수 , H 가로선 놓을 수 있는 위치 개수
+	static int[][] ladder;
+	static boolean[][] putLadder;
+	static int addLadder;
+	static int r;
+	static int min;
+	static ArrayList<Ladder> ladderCase;
+	static int[] tryCase;
+	static int ladderCaseSize;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt()+1;
+		M = sc.nextInt();
+		H = sc.nextInt()+1;
+		ladder = new int[H][N];
+		putLadder = new boolean[H][N];
+		for(int i=0;i<M;i++){
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			ladder[a][b]=1;
+			ladder[a][b+1]=1;
+		}
+		makePossibleLadderCase();
+		System.out.println(ladderCaseSize);
+		view();
+		for(int ad=1;ad<=3;ad++) {
+			r = ad;
+			tryCase = new int[r];
+			dfs(0,0);
+		}
+		
+		//원래맵
+	
+
+	}
+	private static void makePossibleLadderCase() {
+		ladderCase = new ArrayList<Ladder>();
+		for(int row=1;row<H;row++) {
+			for(int col=1;col<(N-2);col++){
+				if(ladder[row][col]==0 && ladder[row][col+1]!=1 && ladder[row][col+2]!=1){
+					if(col==1) ladderCase.add(new Ladder(row, col));
+					else {
+						if(ladder[row][col-1]!=1) ladderCase.add(new Ladder(row, col));
+					}
+				}
+			}
+			if(ladder[row][N-2]==0 && ladder[row][N-3]!=1){
+				ladderCase.add(new Ladder(row, (N-2)));
+			}
+		}
+		ladderCaseSize = ladderCase.size();
+	}
+	private static void dfs(int idx, int cnt){
+		if(cnt==r){
+			putLadder();
+			view();
+			removeLadder();
+			return ;
+		}
+		for(int i=idx;i<ladderCaseSize;i++){
+			tryCase[cnt] = i;
+			dfs(i+1,cnt+1);
+		}
+	}
+	private static void removeLadder() {
+		for(int i=0;i<r;i++){
+			int row = ladderCase.get(tryCase[i]).row;
+			int col = ladderCase.get(tryCase[i]).col;
+			ladder[row][col]=0;
+			ladder[row][col+1]=0;
+		}
+	}
+	private static void putLadder() {
+		for(int i=0;i<r;i++){
+			int row = ladderCase.get(tryCase[i]).row;
+			int col = ladderCase.get(tryCase[i]).col;
+			ladder[row][col]=1;
+			ladder[row][col+1]=1;
+		}
+	}
+	private static void view() {
+		for(int row=1;row<H;row++) {
+			for(int col=1;col<N;col++) {
+				System.out.print(ladder[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+}
