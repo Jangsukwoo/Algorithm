@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Samsung.사다리조작&apos; to &apos;기출_사다리조작&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;Samsung.사다리조작&apos;&#x0D;&#x0A;- Renamed element: &apos;Samsung.기출_사다리조작&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;사다리조작&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Samsung{사다리조작.java[사다리조작" matchStrategy="1" name="기출_사다리조작" qualified="false" references="true" similarDeclarations="false" stamp="1571492800352" textual="false" version="1.0"/>
+</session>
