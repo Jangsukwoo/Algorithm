@@ -1,0 +1,26 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 에너지모으기 {
+	static int N;
+	static ArrayList<Integer> W = new ArrayList<Integer>();
+	static int max;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		for(int i=0;i<N;i++) W.add(sc.nextInt());
+		while(W.size()>=3){
+			int save=0;
+			int value=0;
+			for(int i=1;i<(W.size()-1);i++){
+				if(W.get(i-1)*W.get(i+1)>=value){
+					value = W.get(i-1)*W.get(i+1);
+					save = i;
+				}
+			}
+		}
+		System.out.println(max);
+	}
+}

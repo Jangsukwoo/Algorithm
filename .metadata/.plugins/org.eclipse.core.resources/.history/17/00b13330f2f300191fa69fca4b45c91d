@@ -1,0 +1,17 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 에너지모으기 {
+	static int N;
+	static int[] W;
+	static int max;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		W = new int[N];
+		for(int i=0;i<N;i++) W[i] = sc.nextInt();
+		
+		System.out.println(max);
+	}
+}
