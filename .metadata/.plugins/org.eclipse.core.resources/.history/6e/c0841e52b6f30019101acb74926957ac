@@ -1,0 +1,8 @@
+package BAEKJOON;
+
+public class Sam69 {
+	static int clap;
+	public static void main(String[] args) {
+		
+	}
+}
