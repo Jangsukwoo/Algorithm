@@ -1,0 +1,61 @@
+package 자료구조연습;
+
+import java.util.Scanner;
+
+/*
+ * 링크드리스트 직접 구현해서 풀어보자.
+ */
+class Node_16198{//노드
+	int data;
+	Node_16198 next;
+	public Node_16198(int e){
+		this.data = e;
+		this.next = null;
+	}
+}
+class LinkedList_16198{//구현할 연결리스트 (=자바 STL의 LinkedList)
+	Node_16198 Head;
+	Node_16198 Tail;
+	int size=0;
+	
+	public boolean add_first(int a){
+		Node_16198 new_node = new Node_16198(a);//새로운 노드
+		new_node.next = Head;//새로운 노드의 다음은 Head
+		Head = new_node;
+		size++;
+		if(Head.next==null) {
+			Tail = Head;
+		}
+		return true;
+	}
+	public boolean add(int a){
+		Node_16198 new_node = new Node_16198(a);//새로운 노드
+		if(size==0) {
+			add_first(a);
+		}
+		else {
+			Tail.next = new_node;
+			Tail = new_node;
+			size++;
+		}
+		return true;
+	}
+	public boolean add(int idx, int a) {
+		
+	}
+	public Node_16198 get(int idx) {
+		Node_16198 n = Head;
+		for(int i=0;i<idx;i++) n = n.next;
+		return n;
+	}
+}
+
+public class 백준_에너지모으기 {
+	static int N;
+	static int max;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		
+	}
+}
