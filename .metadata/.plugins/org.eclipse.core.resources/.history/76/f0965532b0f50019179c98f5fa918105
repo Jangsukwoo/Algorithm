@@ -1,0 +1,14 @@
+package BAEKJOON;
+
+import java.util.Collections;
+import java.util.Scanner;
+
+public class 밀비급일 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(true){
+			String readLine = sc.nextLine();
+			Collections.reverse(readLine);
+		}
+	}
+}
