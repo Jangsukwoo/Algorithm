@@ -1,0 +1,26 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+class Industrial{
+	int id;
+	int conut;
+	public Industrial(int i,int c){
+		this.id = i;
+		this.conut = c;
+	}
+}
+public class 단지번호붙이기 {
+	static char[][] industrialMap;
+	static int N;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		industrialMap = new char[N][];
+		sc.nextLine();
+		for(int line=0;line<N;line++) {
+			String readLine = sc.nextLine();
+			industrialMap[line] = readLine.toCharArray();
+		}
+	}
+}
