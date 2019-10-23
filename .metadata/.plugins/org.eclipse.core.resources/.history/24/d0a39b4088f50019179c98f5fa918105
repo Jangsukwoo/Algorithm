@@ -1,0 +1,23 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+
+public class 골드바흐의추측 {
+	static int N;
+	static boolean[] Eratosthenes = new boolean[10001];
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		makeEratosthenes();
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			N = sc.nextInt();
+			
+		}
+	}
+	private static void makeEratosthenes() {
+		for(int i=2;i<=10000;i++){
+			if(Eratosthenes[i]) continue;
+		}
+	}
+}

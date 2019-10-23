@@ -1,0 +1,44 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class RC3184{
+	int row;
+	int col;
+	public RC3184(int r, int c) {
+		this.row = r;
+		this.col = c;
+	}
+}
+public class 양 {
+	static int R,C;
+	static int wolf,sheep;
+	static char[][] garden;
+	static boolean[][] visit;
+	static Queue<RC3184> q = new LinkedList<RC3184>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		garden = new char[R][C];
+		sc.nextLine();
+		for(int r=0;r<R;r++) {
+			String line = sc.nextLine();
+			garden[r] = line.toCharArray();
+		}
+		for(int row=0;row<R;row++){
+			for(int col=0;col<C;col++) {
+				if((garden[row][col]=='v'||garden[row][col]=='o')&&visit[row][col]==false){
+					q.add(new RC3184(row,col));
+					BFS(row,col);
+				}
+			}
+		}
+	}
+	private static void BFS(int row, int col) {
+		// TODO Auto-generated method stub
+		
+	}
+}

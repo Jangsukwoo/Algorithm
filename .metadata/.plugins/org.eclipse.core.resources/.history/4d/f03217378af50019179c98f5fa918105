@@ -1,0 +1,34 @@
+package BAEKJOON;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class 골드바흐의추측 {
+	static int N;
+	static boolean[] Eratosthenes = new boolean[10001];
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		makeEratosthenes();
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			N = sc.nextInt();
+			int A = 0;
+			int B = 0;
+			for(int i=2;i<=(N/2);i++){
+				A = i;
+				B = N-i;
+				if(!Eratosthenes[A] && !Eratosthenes[B] && (A+B)==N) break;
+			}
+			System.out.println(A+" "+B);
+		}
+	}
+	private static void makeEratosthenes() {
+		for(int i=2;i<=10000;i++){
+			if(Eratosthenes[i]) continue;
+			for(int j=i+i;j<=10000;j+=i){
+				Eratosthenes[j] = true;
+			}
+		}
+	}
+}

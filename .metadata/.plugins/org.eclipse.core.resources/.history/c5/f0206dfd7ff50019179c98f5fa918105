@@ -1,0 +1,33 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * Eratosthenes' sieve 
+ * 음.. 소수 중에 2보다 큰 짝수는 있을 수 없음
+ */
+public class 소수구하기 {
+	static ArrayList<Integer> numList = new ArrayList<Integer>();
+	static ArrayList<Integer> EratosthenesList = new ArrayList<Integer>();
+	
+	static boolean[] Eratosthenes = new boolean[1000001];
+	static int N,M;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		Eratosthenes[1] = true; //소수는 true
+		Eratosthenes[2] = true;
+		Eratosthenes[3] = true;
+		setNumberList();
+		makeEratosThenesList();
+	}
+	private static void setNumberList(){
+		for(int num=1;num<=1000000;num++) EratosthenesList.add(num);
+	}
+	private static void makeEratosThenesList() {
+		// TODO Auto-generated method stub
+		
+	}
+}

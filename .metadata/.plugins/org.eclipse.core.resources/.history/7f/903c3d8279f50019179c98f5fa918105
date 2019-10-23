@@ -1,0 +1,12 @@
+package BAEKJOON;
+class RC3184{
+	int row;
+	int col;
+	public RC3184(int r, int c) {
+		this.row = r;
+		this.col = c;
+	}
+}
+public class 양 {
+
+}

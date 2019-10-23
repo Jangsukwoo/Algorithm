@@ -1,0 +1,16 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+
+public class 골드바흐의추측 {
+	static int N;
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			N = sc.nextInt();
+			
+		}
+	}
+}
