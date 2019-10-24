@@ -1,0 +1,16 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class X보다작은수 {
+	static int N,X;
+	static int[] num;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		X = sc.nextInt();
+		num = new int[N];
+		for(int i=0;i<N;i++) num[i] = sc.nextInt();
+		
+	}
+}

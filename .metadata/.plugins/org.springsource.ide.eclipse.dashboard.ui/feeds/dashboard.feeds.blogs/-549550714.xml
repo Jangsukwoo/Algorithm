@@ -5,7 +5,60 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-22T17:47:00Z</updated>
+  <updated>2019-10-24T14:39:21Z</updated>
+  <entry>
+    <title>Spring Tools 4.4.1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/24/spring-tools-4-4-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2019-10-24:3847</id>
+    <updated>2019-10-24T14:39:21Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.4.1 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; introducing the all-new mechanism to connect and disconnect to/from running Spring applications to show live data - take a look at the &lt;a href="https://github.com/spring-projects/sts4/wiki/Live-Application-Information#managing-live-data-connections-to-local-processes"&gt;wiki&lt;/a&gt; for details&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt;, &lt;em&gt;(Eclipse)&lt;/em&gt; enhancement: Goto Symbol now also works from XML bean files&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt;, &lt;em&gt;(Eclipse)&lt;/em&gt; fixed: Completion in &lt;code&gt;application.properties&lt;/code&gt; sometimes leaves some &amp;lsquo;garbage&amp;rsquo; text&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt;: improve performance of xml symbol scanning&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt;: updated lsp4xml to 0.9.1 to address (&lt;a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18212"&gt;CVE-2019-18212&lt;/a&gt;) + (&lt;a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18213"&gt;CVE-2019-18213&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt;: improve performance of xml symbol scanning&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; enhancement: added support for &lt;code&gt;registry-image&lt;/code&gt; resource type (&lt;a href="https://github.com/spring-projects/sts4/issues/380"&gt;#380&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-10-24-441-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-10-24-441-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.4.2 is scheduled to be released in late November 2019.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Vault 2.2.0.RC1 and 2.1.4.RELEASE available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/24/spring-vault-2-2-0-rc1-and-2-1-4-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-10-24:3846</id>
+    <updated>2019-10-24T12:16:16Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;d like to announce the availability of Spring Vault releases &lt;code&gt;2.2.0.RC1&lt;/code&gt; and &lt;code&gt;2.1.4.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Both releases ship with mostly bugfixes and dependency upgrades.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.0.RC1/changelog.txt"&gt;2.2.0.RC1 changelog&lt;/a&gt; respective &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.4.RELEASE/changelog.txt"&gt;2.1.4.RELEASE changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.0.RC1/reference/html/"&gt;Documentation for 2.2.0.RC1&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.4.RELEASE/reference/html/"&gt;Documentation for 2.1.4.RELEASE&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>The Reactive Revolution at SpringOne Platform 2019 (part 2/N)</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/22/the-reactive-revolution-at-springone-platform-2019-part-2-n" />
@@ -1669,44 +1722,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Reactor Dysprosium (3.3.x) goes GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/03/reactor-dysprosium-3-3-x-goes-ga" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Stephane Maldini</name>
-    </author>
-    <id>tag:spring.io,2019-10-03:3826</id>
-    <updated>2019-10-03T19:54:00Z</updated>
-    <content type="html">&lt;p&gt;Hello Reactor community,&lt;/p&gt;
-&lt;p&gt;On behalf of the Reactor team and its heroic new contributors, I am delighted to announce that Reactor Dysprosium can now be found on your preferred Maven repositories, like &lt;a href="https://repo.spring.io"&gt;this one&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;It is the fourth release train since Reactor Core 3.x and it includes &lt;code&gt;Reactor Core 3.3&lt;/code&gt;, &lt;code&gt;Reactor Netty 0.9&lt;/code&gt; and a newcomer, &lt;code&gt;Reactor Pool 0.1&lt;/code&gt;. Check out the major change logs and release notes:&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-core/releases/tag/v3.3.0.RELEASE"&gt;reactor-core 3.3.0.RELEASE&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-netty/releases/tag/v0.9.0.RELEASE"&gt;reactor-netty 0.9.0.RELEASE&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-pool/releases/tag/v0.1.0.RELEASE"&gt;reactor-pool 0.1.0.RELEASE&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Reactor Dysprosium modules still require JDK 8 or higher. They come with many performance improvements and we even have identified more areas to focus on the next patches and major releases. Please join me in giving a warm welcome to a new module to the family, Reactor Pool. It is the generic embeddable reactive object pool you were waiting for. It is used by Reactor Netty and we plan to build more features on top of it. As with Reactor Netty, we haven&amp;rsquo;t qualified a major &amp;ldquo;1.x&amp;rdquo; release as we expect tweaks before considering it API stable.&lt;/p&gt;
-&lt;p&gt;Be sure to try out the new Metrics support and &lt;a href="https://projectreactor.io/docs/netty/release/reference/index.html"&gt;documentation&lt;/a&gt; that have been introduced to Reactor Netty.&lt;/p&gt;
-&lt;p&gt;Alongside the release train we also introduce &lt;code&gt;Blockhound&lt;/code&gt;, &lt;a href="https://github.com/reactor/BlockHound/releases/tag/1.0.0.RELEASE"&gt;check its first 1.0.0.RELEASE&lt;/a&gt;. It&amp;rsquo;s a small util aimed at finding out if you are throwing a blocking wrench in your nice non blocking flow, whether it&amp;rsquo;s Reactor or any other non blocking library.&lt;/p&gt;
-&lt;p&gt;Finally, we have ended support for Bismuth with the release of &lt;code&gt;Dysprosium&lt;/code&gt;. We encourage our users to update to the latest and greatest. We are still supporting &lt;code&gt;Californium&lt;/code&gt; release train, which matches &lt;em&gt;Spring Boot 2.1.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.1.x&lt;/em&gt;. &lt;/p&gt;
-&lt;p&gt;See you at &lt;a href="https://springoneplatform.io"&gt;SpringOne in Austin&lt;/a&gt; for those of you coming by. &lt;/p&gt;
-&lt;p&gt;Stephane&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://http://projectreactor.io"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/reactor"&gt;GitHub&lt;/a&gt; | &lt;a href="https://projectreactor.io/docs"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/project-reactor"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Reactor Californium-SR12 is out</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/03/reactor-californium-sr12-is-out" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Stephane Maldini</name>
-    </author>
-    <id>tag:spring.io,2019-10-03:3827</id>
-    <updated>2019-10-03T19:41:13Z</updated>
-    <content type="html">&lt;p&gt;The 12th Service Release for Californium is out. As per tradition, it fixes several issues and bring improvements all around.&lt;/p&gt;
-&lt;p&gt;The release is available on your preferred maven central repository.&lt;/p&gt;
-&lt;p&gt;Change logs and release notes:&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-core/releases/tag/v3.2.12.RELEASE"&gt;reactor-core 3.2.12.RELEASE&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-netty/releases/tag/v0.8.12.RELEASE"&gt;reactor-netty 0.8.12.RELEASE&lt;/a&gt;&lt;/p&gt;&lt;h1&gt;&lt;a href="#bismuth-eol" class="anchor" name="bismuth-eol"&gt;&lt;/a&gt;Bismuth EOL&lt;/h1&gt;
-&lt;p&gt;With &lt;code&gt;Dysprosium-RELEASE&lt;/code&gt;, our &lt;em&gt;reactor-core 3.1.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.7.x&lt;/em&gt; lines will not receive further patches. We encourage our users to update to &lt;code&gt;Californium&lt;/code&gt; releases trains, which match &lt;em&gt;Spring Boot 2.1.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.1.x&lt;/em&gt;. &lt;/p&gt;
-&lt;p&gt;If you already are using &lt;em&gt;Spring Boot 2.2.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.2.x&lt;/em&gt;, you will be required to use &lt;code&gt;Dysprosium&lt;/code&gt; including &lt;em&gt;reactor-core 3.3.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.9.x&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://http://projectreactor.io"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/reactor"&gt;GitHub&lt;/a&gt; | &lt;a href="https://projectreactor.io/docs"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/project-reactor"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

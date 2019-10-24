@@ -1,0 +1,55 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 보물섬 {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static char[][] map;
+	static int R,C;
+	static int maxDistance;
+	static boolean[][] visit;
+	static Queue<int[]> q = new LinkedList<int[]>();//0:Row,1:Col
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		map = new char[R][C];
+		sc.nextLine();
+		for(int i=0;i<R;i++) {
+			String line = sc.nextLine();
+			map[i] = line.toCharArray();
+		}
+		for(int row=0;row<R;row++) {
+			for(int col=0;col<C;col++){
+				if(visit[row][col] ==false && map[row][col] =='L'){
+					q.add(new int[]{row,col});
+					visit[row][col] = true;
+					BFS();
+				}
+			}
+		}
+	}
+	private static void BFS() {
+		int dist=0;
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				int[] curRC = q.poll();
+				for(int dir=0;dir<4;dir++){
+					int nr = curRC[0]+dr[dir];
+					int nc = curRC[01]+dc[dir];
+					if(rangeCheck(nr,nc)) {
+						
+					}
+				}
+			}
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr>=0 && nr<R && nc>=0 && nc <C) return true;
+		return false;
+	}
+}
