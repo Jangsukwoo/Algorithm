@@ -1,0 +1,14 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 유기농배추 {
+	static int N,M;//가로,세로
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			
+		}
+	}
+}

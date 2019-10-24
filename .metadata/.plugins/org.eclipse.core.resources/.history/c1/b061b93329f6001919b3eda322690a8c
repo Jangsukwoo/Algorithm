@@ -1,0 +1,35 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 유기농배추 {
+	static int N,M,K;//세로크기,가로크기
+	static int[][] yard;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static boolean[][] visit;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			M = sc.nextInt();
+			N = sc.nextInt();
+			K = sc.nextInt();
+			yard = new int[N][M];
+			visit = new boolean[N][M];
+			for(int k=0;k<K;k++){
+				int m = sc.nextInt();
+				int n = sc.nextInt();
+				yard[n][m] = 1;
+			}
+			for(int row=0;row<N;row++) {
+				for(int col=0;col<M;col++){
+					if(visit[row][col]==false && yard[row][col]==1){
+						q.add(new int[]{row,col});
+					}
+				}
+			}
+		}
+	}
+}
