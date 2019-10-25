@@ -5,7 +5,26 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-24T14:39:21Z</updated>
+  <updated>2019-10-24T19:57:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Apache Tomcat, Netty and Spring Framework contributor Violeta Georgieva</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/24/a-bootiful-podcast-apache-tomcat-netty-and-spring-framework-contributor-violeta-georgieva" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-10-24:3848</id>
+    <updated>2019-10-24T19:57:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Apache Tomcat, Netty and Spring Framework engineer Violeta Georgieva (&lt;a href="http://twitter.com/violeta_g_g"&gt;@violeta_g_g&lt;/a&gt;).&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Violeta on &lt;a href="http://twitter.com/violeta_g_g"&gt;Twitter (@violeta_g_g)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;See her keynote &lt;a href="https://springoneplatform.io/2017/speakers/violeta-georgieva"&gt;with Spencer Gibb at SpringOne Platform 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this talk, &lt;a href="https://content.pivotal.io/slides/benefits-of-reactive-programming-with-reactor-and-spring-boot-2-violeta-georgieva"&gt;Benefits of Reactive Programming with Reactor and Spring Boot 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://projectReactor.io"&gt;Project Reactor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/701224858&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tools 4.4.1 released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/24/spring-tools-4-4-1-released" />
@@ -1613,115 +1632,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
     <updated>2019-10-04T11:12:18Z</updated>
     <content type="html">&lt;p&gt;Hi Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; (@starbuxman) interviews Oracle&amp;rsquo;s &lt;a href="http://twitter.com/GeertjanW"&gt;Geertjan Wielenga&lt;/a&gt; (@GeertjanW) about his new book (on developer advocacy) &amp;ldquo;Developer, Advocate!&amp;rdquo; &lt;/p&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/690906610&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.2.RELEASE and 1.2.0.RC1 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/03/spring-boot-for-apache-geode-pivotal-gemfire-1-1-2-release-and-1-2-0-rc1-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2019-10-02:3824</id>
-    <updated>2019-10-03T22:51:29Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring, Apache Geode, Pivotal GemFire and Pivotal Cloud Cache communities, I am pleased to announce the release of &lt;em&gt;Spring Boot for Apache Geode&lt;/em&gt;, Pivotal GemFire  and Pivotal Cloud Cache (PCC) &lt;code&gt;1.1.2.RELEASE&lt;/code&gt; as well as &lt;code&gt;1.2.0.RC1&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.1.2.RELEASE&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.1.9.RELEASE&lt;/code&gt; and is available in &lt;a href="https://search.maven.org/search?q=spring-geode-starter"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.2.0.RC1&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.2.0.RC1&lt;/code&gt; and is available in the Spring &lt;a href="https://repo.spring.io/milestone/org/springframework/geode/spring-geode-starter/1.2.0.RC1"&gt;Milestone&lt;/a&gt; Repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Additionally, SBDG &lt;code&gt;1.2.0.RC1&lt;/code&gt; bits can be included in a project generated with the &lt;em&gt;&lt;strong&gt;Spring Initializer&lt;/strong&gt;&lt;/em&gt; at &lt;a href="https://start.spring.io" class="bare"&gt;https://start.spring.io&lt;/a&gt;.  Simply type "&lt;em&gt;Geode&lt;/em&gt;" in the "&lt;em&gt;Search dependencies to add&lt;/em&gt;" input field and you will see the "&lt;em&gt;&lt;strong&gt;Spring for Apache Geode&lt;/strong&gt;&lt;/em&gt;" dependency appear as an option you can add.  This includes the &lt;code&gt;spring-geode-starter&lt;/code&gt; dependency in your project Maven or Gradle build files when you generate a project using the Initializer.  Check it out!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both SBDG &lt;code&gt;1.1.2.RELEASE&lt;/code&gt; and &lt;code&gt;1.2.0.RC1&lt;/code&gt; fix a critical issue in the &lt;em&gt;auto-configuration&lt;/em&gt; support for automatically configuring a &lt;code&gt;GemfireTemplate&lt;/code&gt; instance per Region declared in the Spring context as a bean. See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/55"&gt;Issue #55&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Additionally, SBDG &lt;code&gt;1.1.2.RELEASE&lt;/code&gt; includes:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Framework 2.1.10.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Boot 2.1.9.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Data Lovelace-SR11/2.1.11.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Session Bean-SR8&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.6.RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the SBDG &lt;code&gt;1.1.2.RELEASE&lt;/code&gt; &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.1.2.RELEASE/spring-geode/src/main/resources/changelog.txt#L7-L22"&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.2.0.RC1&lt;/code&gt; includes:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;New Sample with &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.2.x/reference/html5/guides/getting-started.html"&gt;Guide&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/tree/1.2.0.RC1/spring-geode-samples/intro/getting-started"&gt;Example Code&lt;/a&gt; on "&lt;em&gt;Getting Started&lt;/em&gt;" with SBDG.  The guide walks you through creating an SBDG application with &lt;em&gt;*Spring Initializer*&lt;/em&gt;, first using Apache Geode locally, then running in a client/server topology, and finally deploying the application to a Pivotal Platform environment using Pivotal Cloud Cache without any code or configuration changes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Includes a new Smoke Tests test suite to ensure common use cases and functions with SBDG work correctly.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Framework 5.2.0.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Boot 2.2.0.RC1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Data Moore-RELEASE/2.2.0.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Session Corn-RC1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrades to Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.2.0.RC1&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the SBDG &lt;code&gt;1.2.0.RC1&lt;/code&gt; &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.2.0.RC1/spring-geode/src/main/resources/changelog.txt#L7-L28"&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All roads lead to a SBDG 1.2 GA release (i.e. &lt;code&gt;1.2.0.RELEASE&lt;/code&gt;) now, just after &lt;em&gt;Spring Boot&lt;/em&gt; 2.2 GAs in mid-October.  So, feedback between now and then is important if you would like to see something in SBDG 1.2 before final GA.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;After that, SBDG 1.3 will be in development and we are planning a bit of project reorganization to more closely align with Spring Boot&amp;#8217;s GitHub project organization, making the project more intuitive to find things.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We want to hear from you!  Your feedback is crucial to the development of this project, and it is definitely most welcomed and appreciated.  So, give the new bits a try and let us know what you think.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

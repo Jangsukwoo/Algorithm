@@ -1,0 +1,28 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 미로탐색 {
+	static int N,M;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static char[][] map;
+	static boolean[][] visit;
+	static int dist;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		map = new char[N][M];
+		visit = new boolean[N][M];
+		sc.nextLine();
+		for(int row=0;row<N;row++) {
+			String readLine = sc.nextLine();
+			map[row] = readLine.toCharArray();
+		}
+		q.add(new int[] {0,0});
+	}
+}
