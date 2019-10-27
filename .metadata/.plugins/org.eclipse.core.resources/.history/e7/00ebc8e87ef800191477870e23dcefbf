@@ -1,0 +1,7 @@
+package BAEKJOON;
+
+public class 다음순열 {
+	public static void main(String[] args) {
+
+	}
+}

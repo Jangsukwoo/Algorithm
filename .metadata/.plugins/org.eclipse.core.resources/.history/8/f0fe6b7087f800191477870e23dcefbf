@@ -1,0 +1,35 @@
+package BAEKJOON;
+/*
+C++의 Next_permutation 동작 원리 파악 
+
+1.
+DATA를 오른쪽에서 왼쪽으로 읽으면서
+최초로 data[i-1] < data[i]가 발견되는 i값을 찾는다. 
+
+2.
+다시 오른쪽에서 왼쪽으로 읽으면서 
+j>=i 이면서
+data[j] >data[i-1]를 만족하는 최초의 j를 찾는다.
+ */
+import java.util.Scanner;
+
+public class 다음순열 {
+	static int N;
+	static int save = -1;
+	static int K;
+	static int[] targetData;
+	static int[] data;
+	static boolean result;
+	static boolean[] visit;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		targetData = new int[N];
+		data = new int[N];
+		visit = new boolean[N];
+		for(int i=0;i<N;i++) targetData[i] = sc.nextInt();
+		dfs(0);
+		if(!result) System.out.println("-1");
+	}
+	
+}
