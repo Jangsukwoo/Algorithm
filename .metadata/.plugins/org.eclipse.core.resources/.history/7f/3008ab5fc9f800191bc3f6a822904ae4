@@ -1,0 +1,15 @@
+package Math;
+
+import java.util.Scanner;
+
+public class 최대공약수와최소공배수 {
+	static int A,B;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt(); 
+		B = sc.nextInt();
+		//A와 B의 최대공약수
+		
+		
+	}
+}
