@@ -38,15 +38,15 @@ public class Next_permutation {
 		 */
 		for(int i=(N-1);i>=1;i--) {
 			if(data[i]>data[i-1]){
-				criteriaIndex = i; //발견된 i값이 criteriaIndex가 된다.
+				criteriaIndex = i;
 				break;//최초발견 기준값 저장 후 break;
 			}
 		}
 		
 		/*
 		 *2.
-		 *다시 오른쪽에서 왼쪽으로 읽는데 j>=criteriaIndex인 부분까지만 읽는다. 즉 1번에서 정한 criteriaIndex값의 오른쪽 영역만을 읽음.
-		 *여기서 data[j] >data[criteriaIndex-1]를 만족하는 최초의 j를 찾는다. 
+		 *다시 오른쪽에서 왼쪽으로 읽는데 j>=i인 부분까지만 읽는다. 즉 1번에서 정한 i값 기준 오른쪽 영역만을 읽음.
+		 *여기서 data[j] >data[i-1]를 만족하는 최초의 j를 찾는다. 
 		 */
 		
 		for(int j=(N-1);j>=criteriaIndex;j--){//오른쪽 영역만.criteria까지.
