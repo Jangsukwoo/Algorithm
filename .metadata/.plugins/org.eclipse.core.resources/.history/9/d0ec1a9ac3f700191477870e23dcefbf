@@ -1,0 +1,16 @@
+package BAEKJOON;
+
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 치즈 {
+	static Queue<int[]> airZone = Queue<int[]>();
+	static int[][] map;
+	static int H,W;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		H = sc.nextInt();
+		W = sc.nextInt();
+		map = new int[H][W];
+	}
+}

@@ -5,7 +5,457 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-24T19:57:00Z</updated>
+  <updated>2019-10-25T19:35:22Z</updated>
+  <entry>
+    <title>Spring Cloud Hoxton.RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/25/spring-cloud-hoxton-rc1-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ryan Baxter</name>
+    </author>
+    <id>tag:spring.io,2019-10-24:3850</id>
+    <updated>2019-10-25T19:35:22Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Release Candidate 1 (RC1) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Cloud Hoxton.RC1 is built upon Spring Boot 2.2.0.RELEASE, please use this release when using Spring Cloud Hoxton.RC1.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for PCF authentication.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/33?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuitbreaker" class="anchor" name="spring-cloud-circuitbreaker"&gt;&lt;/a&gt;Spring Cloud Circuitbreaker&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Added auto-configuration to collect circuit breaker metrics when using Resilience4J (&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/issues/47"&gt;#47&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Upgrade to Resilience4J 1.1.0&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;RSocket modules were moved to their own &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-rsocket"&gt;project&lt;/a&gt; in the Spring Cloud Incubator organization&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;[Use Micrometer metrics instead of in memory one enhancement (&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1477"&gt;https://github.com/spring-cloud/spring-cloud-sleuth/issues/1477&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aclosed+milestone%3A2.2.0.RC1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/71?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gcp" class="anchor" name="spring-cloud-gcp"&gt;&lt;/a&gt;Spring Cloud Gcp&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-gcp/issues?q=is%3Aclosed+milestone%3A1.1.0.RC1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bumped WireMock to 2.25.1&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1250"&gt;Add json-schema YAML contract definition to the documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues?q=is%3Aclosed+milestone%3A2.2.0.RC1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/66?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-task" class="anchor" name="spring-cloud-task"&gt;&lt;/a&gt;Spring Cloud Task&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Now has support for Micrometer task metrics for two Meters (Timer and LongTaskTimer) that produce the following time-series:
+    &lt;ul&gt;
+      &lt;li&gt;spring.cloud.task - shows task duration (updated only after the task has completed).&lt;/li&gt;
+      &lt;li&gt;spring.cloud.task.active - provides run time information about the non-completed tasks.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now honors &lt;code&gt;spring.batch.job.enabled=false&lt;/code&gt; even when fail-on-job-failure is set to true.&lt;/li&gt;
+  &lt;li&gt;Tasks launched using partitioning will now have external-execution-id populated.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-task/milestone/38?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following modules were updated as part of Hoxton.RC1:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+      &lt;th&gt;Issues&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/33?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
+      &lt;td&gt;1.0.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/milestone/2?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/30?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/68?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter &lt;/td&gt;
+      &lt;td&gt;Hoxton.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/71?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter Parent &lt;/td&gt;
+      &lt;td&gt;Hoxton.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
+      &lt;td&gt;1.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gcp/issues?q=is%3Aclosed+milestone%3A1.1.0.RC1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/57?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Dependencies Parent &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
+      &lt;td&gt;Horsham.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
+      &lt;td&gt;1.1.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/66?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Dependencies &lt;/td&gt;
+      &lt;td&gt;Hoxton.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Release &lt;/td&gt;
+      &lt;td&gt;Hoxton.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud &lt;/td&gt;
+      &lt;td&gt;Hoxton.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
+      &lt;td&gt;3.0.0.RC1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-function/milestone/24?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
+      &lt;td&gt;2.2.0.RC1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&lt;br/&gt;    &amp;lt;repositories&amp;gt;&#xD;
+        &amp;lt;repository&amp;gt;&#xD;
+            &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+            &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
+            &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+            &amp;lt;snapshots&amp;gt;&#xD;
+                &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
+            &amp;lt;/snapshots&amp;gt;&#xD;
+        &amp;lt;/repository&amp;gt;&#xD;
+    &amp;lt;/repositories&amp;gt;&#xD;
+&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;Hoxton.RC1&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    ...&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
+dependencies {&#xD;
+classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE&amp;quot;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+repositories {&#xD;
+maven {&#xD;
+url &amp;#39;https://repo.spring.io/milestone&amp;#39;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
+&#xD;
+dependencyManagement {&#xD;
+imports {&#xD;
+mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.RC1&amp;#39;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Open Service Broker 3.1.0.M3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/25/spring-cloud-open-service-broker-3-1-0-m3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2019-10-25:3851</id>
+    <updated>2019-10-25T17:09:01Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the 3.1.0.M3 release of Spring Cloud Open Service Broker. Support for &lt;a href="https://www.openservicebrokerapi.org/blog/2019/06/21/announcing-open-service-broker-api-v2-15"&gt;Open Service Broker API v2.15&lt;/a&gt; is now feature complete. Thanks to the community for your feedback and contributions! This release includes the following &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker/issues?q=is%3Aclosed+milestone%3A3.1.0.M3"&gt;fixes and enhancements&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade to Spring Boot 2.2.0.RELEASE&lt;/li&gt;
+  &lt;li&gt;Support updating a Service Instance context&lt;/li&gt;
+  &lt;li&gt;Add list of &lt;code&gt;endpoints&lt;/code&gt; to create and get Service Binding response bodies&lt;/li&gt;
+  &lt;li&gt;Support &lt;code&gt;X-Broker-API-Request-Identity&lt;/code&gt; request identity header&lt;/li&gt;
+  &lt;li&gt;Restrict &lt;code&gt;Operation&lt;/code&gt; strings to 10,000 characters in the response body&lt;/li&gt;
+  &lt;li&gt;Fix an issue where &lt;code&gt;ServiceInstanceBindingDoesNotExistException&lt;/code&gt; was incorrectly extended from &lt;code&gt;RuntimeException&lt;/code&gt;, instead of &lt;code&gt;ServiceBrokerException&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;3.1.0.M3&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use the Spring Milestone Repository:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;repository&amp;gt;&#xD;
+  &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+  &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+&amp;lt;/repository&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Spring Cloud Open Service Broker is a framework for building Spring Boot applications that implement the Open Service Broker API. The &lt;a href="https://www.openservicebrokerapi.org"&gt;Open Service Broker API&lt;/a&gt; project allows developers to deliver services to applications running within cloud native platforms such as Cloud Foundry, Kubernetes, and OpenShift.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.M3/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.M3/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Stream - and Spring Integration.</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2019-10-24:3849</id>
+    <updated>2019-10-25T15:26:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;If you listened to &lt;a href="https://spring.io/team/olegz"&gt;Oleg Zhurakousky&lt;/a&gt;'s talk at Spring One Platform 2019 about &lt;a href="https://springoneplatform.io/2019/sessions/event-driven-with-spring"&gt;Spring Cloud Stream &amp;amp; Functions&lt;/a&gt; or read his recent blog posts about &lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;Simplified Spring Cloud Stream&lt;/a&gt; and &lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;Functional Spring Cloud Stream&lt;/a&gt;, you may want to say:
+"Wait! What happened with Spring Integration support? What do I now do with my &lt;code&gt;@ServiceActivator&lt;/code&gt; or &lt;code&gt;IntegrationFlow&lt;/code&gt;? I used to deal with the &lt;code&gt;Sink.input()&lt;/code&gt; as a channel to consume binder destination with some Spring Integration logic!"
+As Oleg mentions in his blog post, it is still possible with existing &lt;code&gt;@EnableBinding&lt;/code&gt; and so on, but we are moving away from that model, so how can we still benefit from all the features of Spring Integration in the world of &lt;em&gt;functional&lt;/em&gt; Spring Cloud Stream?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In this blog post, I expand on the functional features of Spring Cloud Stream in the context of Spring Integration and its importance in the modern function-based streams!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="spring-integration-as-a-function"&gt;&lt;a class="anchor" href="#spring-integration-as-a-function"&gt;&lt;/a&gt;Spring Integration as a Function?!&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Yes, we can indeed make a simple &lt;code&gt;Function&lt;/code&gt; bridge, which would call a &lt;code&gt;MessageChannel.send()&lt;/code&gt;, but we can also do it with Messaging Gateway abstraction in Spring Integration, as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;@MessagingGateway(defaultRequestChannel = "myIntegrationServiceChannel")
+public interface MessageFunction
+                  extends Function&amp;lt;Message&amp;lt;InputData&amp;gt;, Message&amp;lt;OutputData&amp;gt;&amp;gt; { }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Given that the resulting bean is an extension to &lt;code&gt;java.util.function.Function&lt;/code&gt;, it is a fully valid Spring Cloud Function and Spring Cloud Stream binding candidate.
+Its generic input/output argument types are used by Spring Cloud Stream to perform a proper payload conversion before and after.
+Also, headers are carried from the binder to the downstream integration flow and back.
+This is good, but we still need to be aware of channels and provide a few SI-specific annotations  to connect such a gateway with our flow (boilerplate).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With Java DSL for Spring Integration, we can go further and take away more boilerplate code while gaining the benefit of using functional Spring Cloud Stream.
+What we need is the same &lt;code&gt;gateway&lt;/code&gt; approach but in DSL style.
+The &lt;code&gt;uppercase&lt;/code&gt; sample in Oleg&amp;#8217;s blog post would be as follows with Spring Integration:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;@SpringBootApplication
+public class SampleApplication  {
+
+    @Bean
+    public IntegrationFlow uppercaseFlow() {
+        return IntegrationFlows.from(Function.class,
+                             gateway -&amp;gt; gateway.beanName("uppercase"))
+                   .&amp;lt;String, String&amp;gt;transform(String::toUpperCase)
+                   .get();
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;An uppercase conversion use-case is silly enough to implement with Spring Integration, but imagine that we need to do some hard logic like &lt;code&gt;split&lt;/code&gt;, &lt;code&gt;scatter-gather&lt;/code&gt; with parallel calls to external services, and then &lt;code&gt;aggregate&lt;/code&gt;, do some auditing, and, only in the end, return a result from our function to an output destination.
+All of that and more can be implemented with Spring Integration, its EIP support, Java DSL abstraction and, of course, the aforementioned function wrapper.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;java.util.function.Consumer&lt;/code&gt; and &lt;code&gt;java.util.function.Supplier&lt;/code&gt; interfaces can be used in a similar way with appropriate logic in the gateway proxy around them according to their contract.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can see more information about function support in the Spring Integration &lt;a href="https://docs.spring.io/spring-integration/docs/current/reference/html/messaging-endpoints.html#functions-support"&gt;Reference Manual&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="what-about-reactive-streams"&gt;&lt;a class="anchor" href="#what-about-reactive-streams"&gt;&lt;/a&gt;What about Reactive Streams?&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Everything we have showed before was about &lt;strong&gt;imperative&lt;/strong&gt; functions, which are triggered per event.
+The &lt;strong&gt;reactive&lt;/strong&gt; functions are triggered only once by passing an entire stream of events as a &lt;code&gt;Flux&lt;/code&gt; into a function. The Reactive Streams support in Spring Integration helps you to write reactive Spring Integration flows, which can be exposed as functions within Spring Cloud Stream.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The following sample shows how to build a reactive function wrapper around a reactive Spring Integration call:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;public interface FluxFunction extends Function&amp;lt;Flux&amp;lt;String&amp;gt;, Flux&amp;lt;String&amp;gt;&amp;gt; { }
+
+@Bean
+public IntegrationFlow rsocketUpperCaseRequestFlow(
+                           ClientRSocketConnector clientRSocketConnector) {
+    return IntegrationFlows.from(FluxFunction.class,
+                        gateway -&amp;gt; gateway.beanName("uppercase"))
+            .handle(RSockets.outboundGateway("/uppercase")
+                    .command(RSocketOutboundGateway.Command.requestStreamOrChannel)
+                    .expectedResponseType(String.class)
+                    .clientRSocketConnector(clientRSocketConnector))
+            .get();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While it is still that silly to implement &lt;code&gt;uppercase&lt;/code&gt; over RSocket, the goal of this sample is to give you an idea of how more complex use cases can be addressed with Spring Integration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Here, we get a &lt;code&gt;Flux&lt;/code&gt; passed into a function and propagate it into an RSocket requester for a &lt;code&gt;request channel&lt;/code&gt; interaction model.
+A result &lt;code&gt;Flux&lt;/code&gt; is passed back to the function return through a &lt;code&gt;replyChannel&lt;/code&gt; header internally in Spring Integration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Another reactive sample might be like transferring data from a &lt;strong&gt;push&lt;/strong&gt; model to a &lt;strong&gt;pull&lt;/strong&gt; model.
+In other words represent a stream of event as a &lt;code&gt;Supplier&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;@Bean
+public Publisher&amp;lt;Message&amp;lt;byte[]&amp;gt;&amp;gt; httpSupplierFlow() {
+    return IntegrationFlows.from(WebFlux.inboundChannelAdapter("/requests"))
+            .toReactivePublisher();
+}
+
+@Bean
+public Supplier&amp;lt;Flux&amp;lt;Message&amp;lt;byte[]&amp;gt;&amp;gt;&amp;gt; httpSupplier(
+                    Publisher&amp;lt;Message&amp;lt;byte[]&amp;gt;&amp;gt; httpRequestPublisher) {
+    return () -&amp;gt; Flux.from(httpRequestPublisher);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This way, incoming HTTP requests land in a source &lt;code&gt;Flux&lt;/code&gt; for pulling downstream by the output binder destination, honoring back-pressure and other Reactive Streams requirements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more information about Reactive Streams support in Spring Integration, see the  &lt;a href="https://docs.spring.io/spring-integration/docs/current/reference/html/reactive-streams.html#reactive-streams"&gt;Reference Manual&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="summary"&gt;&lt;a class="anchor" href="#summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration is still a vital part of Spring Cloud Stream microservices development. Its functional support allows complex use cases that fall into the category of Enterprise Integration Patterns to be exposed as Java functions, providing for a consistent execution model within Spring Cloud Stream.
+In fact, by using this foundation, &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-app-starters"&gt;Spring Cloud Stream App Starters&lt;/a&gt; will eventually be replaced with function implementations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Please feel free to provide any feedback!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;P.S. For those who are impatient about Kotlin, I would like to share a recently started &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-kotlin-dsl"&gt;Spring Integration Kotlin DSL&lt;/a&gt; project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Apache Tomcat, Netty and Spring Framework contributor Violeta Georgieva</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/24/a-bootiful-podcast-apache-tomcat-netty-and-spring-framework-contributor-violeta-georgieva" />
@@ -1023,615 +1473,6 @@ public class SampleApplication  {&#xD;
   &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/58130652/how-to-configure-rsocket-security-in-a-spring-boot-application-with-spring-secur"&gt;How to configure RSocket security in a Spring Boot application with Spring Security - Stack Overflow&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://twitter.com/springrod/status/1178903600791085056?s=12"&gt;This thread by Rod Johnson inviting people to contribute elements of style when writing Spring Boot-based applications&lt;/a&gt; is pretty epic!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>What's new in Spring Data Moore?</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/08/what-s-new-in-spring-data-moore" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Christoph Strobl</name>
-    </author>
-    <id>tag:spring.io,2019-09-18:3802</id>
-    <updated>2019-10-08T20:58:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Data Moore ships with 16 modules and over 700 tickets completed.
-It includes tons of improvements and new features across the portfolio and has a strong focus on three major topics: Reactive, Kotlin, and Performance.
-The release adds features such as declarative reactive transactions and Coroutines/Flow support and comes with up to &lt;a href="#performance"&gt;60%&lt;sup&gt;*&lt;/sup&gt;&lt;/a&gt; faster finder methods.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Let&amp;#8217;s start with a look at some of the Reactive features of Moore.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="declarative-reactive-transactions"&gt;&lt;a class="anchor" href="#declarative-reactive-transactions"&gt;&lt;/a&gt;Declarative, reactive transactions&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;a href="https://spring.io/blog/2018/09/27/what-s-new-in-spring-data-lovelace"&gt;Lovelace Release&lt;/a&gt; introduced early support for reactive transactions in a closure-fashioned style that left some room for improvements.
-The following listing shows that style:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Reactive Transactions in Lovelace (with MongoDB)&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public Mono&amp;lt;Process&amp;gt; doSomething(Long id) {
-
-  return template.inTransaction().execute(txTemplate -&amp;gt; {
-
-    return txTemplate.findById(id)
-      .flatMap(it -&amp;gt; start(txTemplate, it))
-      .flatMap(it -&amp;gt; verify(it))
-      .flatMap(it -&amp;gt; finish(txTemplate, it));
-
-  }).next();
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the preceding snippet, the transaction has to be initiated by explicitly calling &lt;code&gt;inTransaction()&lt;/code&gt; with a transaction-aware template within the closure, calling &lt;code&gt;next()&lt;/code&gt; at the end to turn the returned &lt;code&gt;Flux&lt;/code&gt; into a &lt;code&gt;Mono&lt;/code&gt; to satisfy the method signature, even though &lt;code&gt;findById(・)&lt;/code&gt; already emits only a single element.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Obviously, this is not the most intuitive way of doing reactive transactions.
-So let&amp;#8217;s have a look at the same flow using declarative reactive transaction support.
-As with Spring&amp;#8217;s &lt;a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/data-access.html#transaction"&gt;transaction support&lt;/a&gt;, you need a component to handle the transaction for you.
-For reactive transactions, a &lt;code&gt;ReactiveTransactionManager&lt;/code&gt; is currently provided by the MongoDB and R2DBC modules.
-The following listing shows such a component:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@EnableTransactionManagement
-class Config extends AbstractReactiveMongoConfiguration {
-
-  // ・
-
-  @Bean
-  ReactiveTransactionManager mgr(ReactiveMongoDatabaseFactory f) {
-    return new ReactiveMongoTransactionManager(f);
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;From there, you can annotate methods with &lt;code&gt;@Transactional&lt;/code&gt; and rely on the infrastructure to start, commit, and roll back transactional flows to handle the lifecycle via the &lt;a href="https://projectreactor.io/docs/core/release/reference/#context"&gt;Reactor Context&lt;/a&gt;.
-This lets you turn the code from Lovelace into the following listing, removing the need for the closure with its scoped template and the superfluous &lt;code&gt;Flux&lt;/code&gt; to &lt;code&gt;Mono&lt;/code&gt; transformation:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Declarative Reactive Transactions in Moore (with MongoDB)&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Transactional
-public Mono&amp;lt;Process&amp;gt; doSomething(Long id) {
-
-  return template.findById(id)
-    .flatMap(it -&amp;gt; start(template, it))
-    .flatMap(it -&amp;gt; verify(it))
-    .flatMap(it -&amp;gt; finish(template, it));
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="reactive-elasticsearch"&gt;&lt;a class="anchor" href="#reactive-elasticsearch"&gt;&lt;/a&gt;Reactive Elasticsearch repositories&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Another notable addition to the reactive family can be found in one of the community modules, with Spring Data Elasticsearch now offering reactive template and repository support built upon a fully reactive Elasticsearch REST client that in turn is based on Spring&amp;#8217;s &lt;code&gt;WebClient&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The client offers first class support for everyday search operations by exposing a familiar API close to the &lt;em&gt;Java High-Level REST Client&lt;/em&gt;, making necessary cuts where needed.
-The combination of the template and repository API lets you, if needed, seamlessly transition to reactive without getting lost.
-The following listing shows how to configure Elasticsearch to use a reactive client:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Reactive Elasticsearch&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Config extends AbstractReactiveElasticsearchConfiguration {
-
-  // ・
-
-  @Bean
-  public ReactiveElasticsearchClient reactiveClient() {
-    return ReactiveRestClients.create(localhost());
-  }
-}
-
-@Autowired
-ReactiveElasticsearchTemplate template;
-
-//・
-
-Criteria criteria = new Criteria("topics").contains("spring")
-    .and("date").greaterThanEqual(today())
-
-Flux&amp;lt;Conference&amp;gt; result = template.find(new CriteriaQuery(criteria), Conference.class);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="reactive-querydsl"&gt;&lt;a class="anchor" href="#reactive-querydsl"&gt;&lt;/a&gt;Reactive Querydsl&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Speaking of getting lost in transition: &lt;a href="http://www.querydsl.com/"&gt;Querydsl&lt;/a&gt; (&amp;#8592; plain HTTP / NO HTTPS) offers a remarkable way of defining type safe queries for several data stores and has been supported for non-reactive data access for quite a while already.
-To support it in reactive scenarios, we added a reactive execution layer that lets you run &lt;code&gt;Predicate&lt;/code&gt; backed queries.
-The &lt;code&gt;ReactiveQuerydslPredicateExecutor&lt;/code&gt;, when added to the repository interface, provides all entry points, as the following example shows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Reactive Querydsl&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;interface SampleRepository extends ・, ReactiveQuerydslPredicateExecutor&amp;lt;・&amp;gt; {
-  // ・
-}
-
-@Autowired
-SampleRepository repository;
-
-// ・
-Predicate predicate = QCustomer.customer.lastname.eq("Matthews");
-Flux&amp;lt;Customer&amp;gt; result = repository.findAll(predicate);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="kotlin-coroutines"&gt;&lt;a class="anchor" href="#kotlin-coroutines"&gt;&lt;/a&gt;Support for Kotlin coroutines and MongoDB criteria API DSL&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Along the lines of the enhanced reactive support in Moore, we continued the Kotlin story that we already started with the Lovelace Release.
-In particular, we provide several extensions for &lt;a href="https://kotlinlang.org/docs/reference/coroutines-overview.html"&gt;Kotlin Coroutines&lt;/a&gt; and Flows by such offering methods as &lt;code&gt;awaitSingle()&lt;/code&gt; and &lt;code&gt;asFlow()&lt;/code&gt;.
-The following method uses the &lt;code&gt;awaitSingle()&lt;/code&gt; method:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Kotlin Coroutine Support&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;val result = runBlocking {
-  operations.query&amp;lt;Person&amp;gt;()
-   .matching(query(where("lastname").isEqualTo("Matthews")))
-   .awaitSingle()
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Another great enhancement that uses Kotlin language features was contributed by the community, adding a type safe query DSL for the Spring Data MongoDB criteria API.
-This lets you transform code such as &lt;code&gt;query(where("lastname").isEqualTo("Matthews"))&lt;/code&gt; to the following notation:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Kotlin type safe queries&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;val people = operations.query&amp;lt;Person&amp;gt;()
-  .matching(query(Person::lastname isEqualTo "Matthews"))
-  .all()&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="performance"&gt;&lt;a class="anchor" href="#performance"&gt;&lt;/a&gt;Performance improvements&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Along with crafting all these new features, we also took some time to investigate potential bottlenecks of the current implementations and found some areas for improvement.
-This included getting rid of &lt;code&gt;Optional&lt;/code&gt;, capturing lambdas and stream execution in a lot of places, adding caches, and avoiding unnecessary lookup operations. In the end, the benchmarks showed an almost 60% increase of throughput for JPA single attribute finder methods, such as &lt;code&gt;findByTitle(・)&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;img src='data:image/png;base64,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' &gt;&lt;/img&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is great and was worth the time it took! However, and I want to be clear about this, all benchmarks use clean-room scenarios that avoid any kind of overhead whatsoever. If you move them to a more real-world scenario (for example, by replacing an in-memory H2 database with an actual production-ready database), results look way different, as performance throttles shift to the network interaction, query execution and result transmission. The improvements are still visible but are usually down to single-digit percentages.
-The benchmarks can be found in this &lt;a href="https://github.com/spring-projects/spring-data-dev-tools/tree/master/benchmark"&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="entity-callback-api"&gt;&lt;a class="anchor" href="#entity-callback-api"&gt;&lt;/a&gt;New entity callback API&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We also refined our existing hooks to intercept an entity&amp;#8217;s lifecycle during persistence operations by moving away from the current &lt;code&gt;ApplicationEvent&lt;/code&gt;-based approach to a more direct interaction model.
-The &lt;code&gt;EntityCallback&lt;/code&gt; API introduces better support for immutable types, provides runtime guarantees, and also seamlessly integrates into a reactive flow.
-Of course, we still support and publish &lt;code&gt;ApplicationEvents&lt;/code&gt;, but we highly recommend switching to &lt;code&gt;EntityCallbacks&lt;/code&gt; when changes to the processed entity should be made.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the following sample, the &lt;code&gt;BeforeConvertCallback&lt;/code&gt; modifies a given immutable entity by using a &lt;code&gt;wither&lt;/code&gt; method that assigns an &lt;code&gt;id&lt;/code&gt; to a copy of the entity, which is then returned and, in the next step, converted into the store specific representation:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;EntityCallback API&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
-BeforeConvertCallback&amp;lt;Person&amp;gt; beforeConvert() {
-
-  return (entity, collection) -&amp;gt; {
-    return entity.withId(・);
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Other than with &lt;code&gt;ApplicationEvents&lt;/code&gt; (which could be configured with an &lt;code&gt;AsyncTaskExecutor&lt;/code&gt;, leaving it pretty much open when the action is executed), the &lt;code&gt;EntityCallback&lt;/code&gt; API guarantees to be invoked right before the actual event is triggered. Even in a reactive stream. The following listing shows how it works:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Reactive EntityCallback API&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
-ReactiveBeforeConvertCallback&amp;lt;Person&amp;gt; beforeConvert() {
-
-  return (entity, collection) -&amp;gt; {
-    return Mono.just(entity.withId(・));
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="redis-streams"&gt;&lt;a class="anchor" href="#redis-streams"&gt;&lt;/a&gt;Support for Redis Streams&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Speaking of streams, Spring Data Redis now has support for Redis Streams, which have almost nothing to do with reactive streams but are a new Redis append-only data structure that models a log where each entry consists of an id (typically a timestamp plus a sequence number) and multiple key/value pairs.
-Along with the usual suspects, such as adding to the log and reading from it, Spring Data Redis provides containers that allow infinite listening and processing of entries added to the log.
-It works like &lt;code&gt;tail -f&lt;/code&gt; but for a Redis Stream.
-The following example shows a Redis stream listener:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Redis Streams listener&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Autowired
-RedisConnectionFactory factory;
-
-StreamListener&amp;lt;String, MapRecord&amp;lt;・&amp;gt;&amp;gt; listener =
-  (msg) -&amp;gt; {
-
-    // ・ msg.getId()
-    // ・ msg.getStream()
-    // ・ msg.getValue()
-  };
-
-StreamMessageListenerContainer container = StreamMessageListenerContainer.create(factory));
-
-container.receive(StreamOffset.fromStart("my-stream"), listener);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;StreamMessageListenerContainer&lt;/code&gt; in the preceding sample reads all existing entries of &lt;code&gt;my-stream&lt;/code&gt; and gets notified about newly added ones.
-For each message received, the &lt;code&gt;StreamListener&lt;/code&gt; is invoked.
-A single container can receive messages from multiple streams.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Of course, stream-like structures are best consumed by a reactive infrastructure, as the following example shows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;StreamReceiver receiver = // ・
-
-receiver.receive(StreamOffset.fromStart("my-stream"))
-  .doOnNext(msg -&amp;gt; {
-      // ・
-  })
-  .subscribe();&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="multiple-out-parameters-jpa"&gt;&lt;a class="anchor" href="#multiple-out-parameters-jpa"&gt;&lt;/a&gt;Multiple out parameters for JPA stored procedures&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On the JPA side of things, a tiny improvement now lets you have multiple &lt;code&gt;OUT&lt;/code&gt; parameters for stored procedures, which are returned within a &lt;code&gt;Map&lt;/code&gt;.
-The following example shows how to do so:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Out parameters with JPA Stored Procedures&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@NamedStoredProcedureQuery(name = "User.s1p", procedureName = "s1p",
-  parameters = {
-    @StoredProcedureParameter(mode = IN, name = "in_1", type = ・),
-    @StoredProcedureParameter(mode = OUT, name = "out_1", type = ・),
-    @StoredProcedureParameter(mode = OUT, name = "out_2", type = ・)})
-@Table(name = "SD_User")
-class User { ・ }
-
-interface UserRepository extends JpaRepository&amp;lt;・&amp;gt; {
-
-  @Procedure(name = "User.s1p")
-  Map&amp;lt;String, Integer&amp;gt; callS1P(@Param("in_1") Integer arg);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All of the out parameters declared in JPA&amp;#8217;s &lt;code&gt;@StoredProcedureParameter&lt;/code&gt; annotations will eventually be available in the &lt;code&gt;Map&lt;/code&gt; returned by the repository query method.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="declarative-mongodb-aggregations"&gt;&lt;a class="anchor" href="#declarative-mongodb-aggregations"&gt;&lt;/a&gt;Declarative MongoDB aggregations on repository methods&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With MongoDB, complex data processing is done with &lt;a href="https://docs.mongodb.com/manual/reference/operator/aggregation/"&gt;Aggregations&lt;/a&gt; for which Spring Data offers a specific (fluent) API with abstractions for the operations and expressions. However, Stackoverflow taught us that people tend to craft their aggregations on the command line and translate those into Java code later on. That translation turned out to be one major pain point.&lt;br&gt;
-So we took the opportunity to introduce &lt;code&gt;@Aggregation&lt;/code&gt; as a direct way to run aggregations in a repository method. The following example shows how to do so:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Declarative MongoDB Aggregations&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;interface OrderRepository extends CrudRepository&amp;lt;Order, Long&amp;gt; {
-
-  @Aggregation("{ $group : { _id : '$cust_id', total : { $sum : '$amount' }}}")
-  List&amp;lt;TotalByCustomer&amp;gt; totalByCustomer(Sort sort);
-
-  @Aggregation(pipeline = {
-    "{ $match : { customerId : ?0 }}",
-    "{ $count : total }"
-  })
-  Long totalOrdersForCustomer(String customerId);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Like its relative, the &lt;code&gt;@Query&lt;/code&gt; annotation, &lt;code&gt;@Aggregation&lt;/code&gt; supports parameter replacement and adds sorting to the aggregation if provided by a query method argument, as shown in the preceding example.
-We even took it one step further, extracting single-attribute document values for methods that return simple types, such as the &lt;em&gt;totalOrdersForCustomer&lt;/em&gt; method in the preceding example. The &lt;code&gt;$count&lt;/code&gt; stage in this case returns a document like &lt;code&gt;{"total" : 101 }&lt;/code&gt; that normally requires mapping to either plain &lt;code&gt;org.bson.Document&lt;/code&gt; or a corresponding domain type. However, since the method declares &lt;code&gt;Long&lt;/code&gt; as its return type, we inspect the result document and extract / convert the value from there, removing the need of the dedicated type.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="more"&gt;&lt;a class="anchor" href="#more"&gt;&lt;/a&gt;There&amp;#8217;s much more for you to explore&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To round things off for now, I want to mention some additional features across other modules. If you&amp;#8217;re interested in all of them, please have a look at our &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Moore"&gt;release wiki&lt;/a&gt; or refer to the "What&amp;#8217;s New" section in the reference documentation of the individual modules. So, without further ado, here are yet more improvements provided by this release:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Gemfire/Apache Geode: Improved SSL support &amp;amp; dynamic port configuration&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;JDBC: Read only properties, SQL generation &amp;amp; embeddable load options&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;REST: making use of HATEOAS 1.0 and all the cool stuff in there!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MongoDB: Reactive GridFS, declarative collation support &amp;amp; JSON Schema generator&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;neo4j: Spatial types &amp;amp; exists projections&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Apache Cassandra: Range queries, Optimistic locking and auditing support&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Redis: Cluster caching and non blocking connect methods&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Elasticsearch: High Level REST Client support &amp;amp; non Jackson based entity mapping&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you&amp;#8217;d like to know more, &lt;a href="https://www.youtube.com/watch?v=jwdhZcCOock"&gt;here&lt;/a&gt;'s a 30-minute presentation recorded at SpringOne 2019 in Austin, TX.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Hoxton.M3 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/05/spring-cloud-hoxton-m3-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Spencer Gibb</name>
-    </author>
-    <id>tag:spring.io,2019-10-04:3829</id>
-    <updated>2019-10-05T00:38:52Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that Milestone 3 (M3) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in the &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
-&lt;p&gt;This milestone release is compatible with Spring Boot 2.2.0.RC1.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuit-breaker" class="anchor" name="spring-cloud-circuit-breaker"&gt;&lt;/a&gt;Spring Cloud Circuit Breaker&lt;/h3&gt;
-&lt;p&gt;We welcome Spring Cloud Circuit Breaker as a new project under the Spring Cloud release train. This project provides an abstraction API for adding circuit breakers to your application. At the time of this blog post, there are four supported implementations:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Resilience4j&lt;/li&gt;
-  &lt;li&gt;Spring Retry&lt;/li&gt;
-  &lt;li&gt;Hystrix (in &lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-hystrix/src/main/java/org/springframework/cloud/netflix/hystrix/HystrixCircuitBreaker.java"&gt;spring-cloud-netflix&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Sentinel (in &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-sentinel"&gt;spring-cloud-alibaba&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;See the &lt;a href="https://spring.io/blog/2019/04/16/introducing-spring-cloud-circuit-breaker"&gt;annoucement blog post&lt;/a&gt; for more information.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;p&gt;An Environment Repository supporting AWS S3.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;p&gt;Many improvements were made to support Spring&amp;rsquo;s Reactive stack. A &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt; was created. Updates were also made to Spring Cloud Loadbalancer to use this new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;. A new &lt;code&gt;spring-cloud-starter-loadbalancer&lt;/code&gt; was added.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-cloudfoundry" class="anchor" name="spring-cloud-cloudfoundry"&gt;&lt;/a&gt;Spring Cloud Cloudfoundry&lt;/h3&gt;
-&lt;p&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
-&lt;p&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;p&gt;Support was added for using the new &lt;code&gt;ReactiveLoadBalancer&lt;/code&gt;. RSocket support was updated to implement features of the RSocket Routing and Forwarding specification extension.&lt;/p&gt;
-&lt;p&gt;RSocket support in Spring Cloud Gateway will be a technology preview when Hoxton is released until the RSocket Routing and Forwarding specification extension is finalized and the RSocket Java implementation is updated accordingly.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
-&lt;p&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt; and the new Spring Cloud Circuit Breaker API implementation for Hystrix.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-kubernetes" class="anchor" name="spring-cloud-kubernetes"&gt;&lt;/a&gt;Spring Cloud Kubernetes&lt;/h3&gt;
-&lt;p&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;p&gt;Support was added for Spring Kafka.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;p&gt;OpenFeign was updated to 10.4.0.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;p&gt;Support was added for AWS SQS, Spring Kafka, and Quartz.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
-&lt;p&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt; and for Consul&amp;rsquo;s consistency mode.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h3&gt;
-&lt;p&gt;Support was added for PCF Authentication and the &lt;code&gt;X-Vault-Namespace&lt;/code&gt;.&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;The following modules were updated as part of Hoxton.M3:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/69?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-cloudfoundry/milestone/14?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-aws/milestone/26?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/29?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/84?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;1.1.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/15?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
-      &lt;td&gt;2.2.0.M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-task/milestone/40?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/64?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/55?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/16?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-security/milestone/21?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/42?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
-      &lt;td&gt;Horsham.M4 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-stream/milestone/64?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/65?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
-      &lt;td&gt;1.0.0.M1 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/44?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;2.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
-      &lt;td&gt;1.2.0.M3 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
-      &lt;td&gt;3.0.0.M3 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-function/milestone/23?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, and on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The following listing shows how to get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;    &amp;lt;repositories&amp;gt;&#xD;
-        &amp;lt;repository&amp;gt;&#xD;
-            &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
-            &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
-            &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
-            &amp;lt;snapshots&amp;gt;&#xD;
-                &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
-            &amp;lt;/snapshots&amp;gt;&#xD;
-        &amp;lt;/repository&amp;gt;&#xD;
-    &amp;lt;/repositories&amp;gt;&#xD;
-&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Hoxton.M3&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The following listing shows how to get started with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
-dependencies {&#xD;
-classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE&amp;quot;&#xD;
-}&#xD;
-}&#xD;
-&#xD;
-repositories {&#xD;
-maven {&#xD;
-url &amp;#39;https://repo.spring.io/milestone&amp;#39;&#xD;
-}&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-imports {&#xD;
-mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.M3&amp;#39;&#xD;
-}&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Oracle's Geertjan Wielenga on his new book "Developer, Advocate!"</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/04/a-bootiful-podcast-oracle-s-geertjan-wielenga-on-his-new-book-developer-advocate" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-04:3828</id>
-    <updated>2019-10-04T11:12:18Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; (@starbuxman) interviews Oracle&amp;rsquo;s &lt;a href="http://twitter.com/GeertjanW"&gt;Geertjan Wielenga&lt;/a&gt; (@GeertjanW) about his new book (on developer advocacy) &amp;ldquo;Developer, Advocate!&amp;rdquo; &lt;/p&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/690906610&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
