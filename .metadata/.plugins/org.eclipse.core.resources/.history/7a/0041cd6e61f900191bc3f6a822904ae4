@@ -57,10 +57,9 @@ public class 맥주마시면서걸어가기 {
 				}
 			}
 			//플로이드 와샬
-			//와샬 쓸 때 가장 바깥쪽 반복문은 거쳐가는 노드의 번호 k이다. 순서 중요!
-			for(int k=0;k<placeSize;k++) {
-				for(int i=0;i<placeSize;i++) {
-					for(int j=0;j<placeSize;j++){
+			for(int i=0;i<placeSize;i++) {
+				for(int j=0;j<placeSize;j++) {
+					for(int k=0;k<placeSize;k++){
 						if(adjMatrix[i][k]!=INF && adjMatrix[k][j]!=INF && i!=j){//k를 거치는게 INF가 아니면 
 							adjMatrix[i][j] = Math.min(adjMatrix[i][j],adjMatrix[i][k]+adjMatrix[k][j]);
 						}
@@ -71,5 +70,14 @@ public class 맥주마시면서걸어가기 {
 			else sb.append("happy"+"\n");
 		}
 		System.out.println(sb.toString());
+	}
+	private static void view() {
+		for(int row=0;row<placeSize;row++) {
+			for(int col=0;col<placeSize;col++) {
+				System.out.print(adjMatrix[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 }
