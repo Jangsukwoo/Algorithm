@@ -22,23 +22,19 @@ public class 맥주마시면서걸어가기 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		
 		for(int testcase=1;testcase<=T;testcase++){
 			convenienceStore = sc.nextInt();//편의점 개수
-			
 			//상근이 집+편의점개수+페스티벌 목적지 = 1+convenienceStore+1
 			//따라서
 			placeSize = convenienceStore+2;
 			adjMatrix = new int[placeSize][placeSize];
-			
 			//인접행렬이고 인덱스 0은 상근이집, 인덱스 N-1은 페스티벌
 			nodes = new Object[placeSize];
 			for(int i = 0;i<placeSize;i++){
 				int x = sc.nextInt();
 				int y = sc.nextInt();
-				nodes[i] = new int[]{x,y}; //Object -> int[]
+				nodes[i] = new int[]{x,y}; 
 			}
-			
 			//인접행렬 만들기
 			for(int row=0;row<placeSize;row++){
 				for(int col=0;col<placeSize;col++){
@@ -47,12 +43,11 @@ public class 맥주마시면서걸어가기 {
 						int[] nodeA = (int[]) nodes[row]; //Object -> int[]로 다운 캐스팅
 						int[] nodeB = (int[]) nodes[col];
 						int dist = Math.abs(nodeA[0]-nodeB[0])+Math.abs(nodeA[1]-nodeB[1]);//맨해튼 거리
-						
-						if(dist>1000){//두 노드의 사이 거리가 1000이 넘으면 맥주20캔으로도 불가능한 거리
+						if(dist>1000){
 							adjMatrix[row][col] = INF;
 							continue;
 						}
-						else adjMatrix[row][col] = 1; //아니면 갈수 있음을 뜻하는 1로 적는다. 이 문제에서 거리값은 중요하지 않기도하고.
+						else adjMatrix[row][col] = dist;
 					}
 				}
 			}

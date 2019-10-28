@@ -52,7 +52,7 @@ public class 맥주마시면서걸어가기 {
 							adjMatrix[row][col] = INF;
 							continue;
 						}
-						else adjMatrix[row][col] = 1; //아니면 갈수 있음을 뜻하는 1로 적는다. 이 문제에서 거리값은 중요하지 않기도하고.
+						else adjMatrix[row][col] = 1; //아니면 갈수 있음을 뜻하는 1로 적는다.
 					}
 				}
 			}
@@ -66,6 +66,7 @@ public class 맥주마시면서걸어가기 {
 					}
 				}
 			}
+			view();
 			if(adjMatrix[0][placeSize-1]==INF) sb.append("sad"+"\n");
 			else sb.append("happy"+"\n");
 		}
