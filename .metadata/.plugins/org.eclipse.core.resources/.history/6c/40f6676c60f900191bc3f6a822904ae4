@@ -60,7 +60,7 @@ public class 맥주마시면서걸어가기 {
 			for(int i=0;i<placeSize;i++) {
 				for(int j=0;j<placeSize;j++) {
 					for(int k=0;k<placeSize;k++){
-						if(adjMatrix[i][k]!=INF && adjMatrix[k][j]!=INF && i!=j){//k를 거치는게 INF가 아니면 
+						if(adjMatrix[i][k]!=INF && adjMatrix[k][j]!=INF && i!=j){
 							adjMatrix[i][j] = Math.min(adjMatrix[i][j],adjMatrix[i][k]+adjMatrix[k][j]);
 						}
 					}
