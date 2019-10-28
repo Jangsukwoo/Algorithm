@@ -1,0 +1,14 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class 지능형기차 {
+	static int maxPeople;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<4;i++) {
+			int getON = sc.nextInt();//승차
+			int getOFF = sc.nextInt();//하차
+		}
+	}
+}

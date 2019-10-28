@@ -1,0 +1,7 @@
+package Simulation;
+
+public class 지능형기차 {
+	public static void main(String[] args) {
+
+	}
+}
