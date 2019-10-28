@@ -1,0 +1,17 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class RoundRobin{
+	static int N,T;//N = players, T = turn
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			N = sc.nextInt();
+			if(N==0) break;//끝
+			T = sc.nextInt();
+			
+		}
+		
+	}
+}

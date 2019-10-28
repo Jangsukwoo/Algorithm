@@ -68,14 +68,14 @@ public class 요리사 {
 		//결정된 식재료가 3개면 이중에 2개에 대한 모든 조합을 봐야하므로
 		//3C2를 뽑아서 값을 본다.
 	
-		nCrForFoodA(0,0);//A데이터 (음식A)에 대한 맛값
-		nCrForFoodB(0,0);//B데이터 (음식B)에 대한 맛값
+		rC2ForFoodA(0,0);//A데이터 (음식A)에 대한 맛값
+		rC2ForFoodB(0,0);//B데이터 (음식B)에 대한 맛값
 		
 		int diff = Math.abs(foodA-foodB); //차이값
 		
 		min = Math.min(diff,min); //값 업데이트
 	}
-	private static void nCrForFoodA(int idx, int cnt) {
+	private static void rC2ForFoodA(int idx, int cnt) {
 		if(cnt==2){
 			foodA+=synergyTable[material[0]][material[1]];
 			foodA+=synergyTable[material[1]][material[0]];
@@ -83,10 +83,10 @@ public class 요리사 {
 		}
 		for(int i=idx;i<r;i++){
 			material[cnt] = dataA[i];
-			nCrForFoodA(i+1,cnt+1);
+			rC2ForFoodA(i+1,cnt+1);
 		}
 	}
-	private static void nCrForFoodB(int idx, int cnt) {
+	private static void rC2ForFoodB(int idx, int cnt) {
 		if(cnt==2){
 			foodB+=synergyTable[material[0]][material[1]];
 			foodB+=synergyTable[material[1]][material[0]];
@@ -94,7 +94,7 @@ public class 요리사 {
 		}
 		for(int i=idx;i<r;i++){
 			material[cnt] = dataB[i];
-			nCrForFoodB(i+1,cnt+1);
+			rC2ForFoodB(i+1,cnt+1);
 		}
 	}
 	private static void setDataB(){
