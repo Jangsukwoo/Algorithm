@@ -1,0 +1,14 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 맥주마시면서걸어가기 {
+	static int[][] map;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			
+		}
+	}
+}
