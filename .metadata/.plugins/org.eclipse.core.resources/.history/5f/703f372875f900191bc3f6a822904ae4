@@ -1,0 +1,52 @@
+package SWExpertAcademy;
+
+import java.util.Arrays;
+import java.util.Scanner;
+/*
+ * 두 손님의 식성에 최대한 비슷한 음식 만들기
+ * 식재료 N개, N은 짝수
+ * 식재료 N/2를 해서 두개의 요리를 만들려 함.
+ * 음식은 A,B
+ * 맛의 차이가 최소가 되도록 재료를 배분해야함
+ * 식재료 i와 j에 대해서 시너지 Sij 발생.
+ * Sij 테이블이 주어짐.
+ * 두 음식간의 맛의 차이가 최소가 되는 경우를 찾고 최소값을 정답으로 출력
+ */
+public class 요리사 {
+	static int[][] synergyTable;
+	static int N;
+	static int[] dataA;
+	static int[] dataB;
+	static boolean[] visit;
+	static int r;
+	static int min;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			N = sc.nextInt();
+			r = N/2;
+			min = Integer.MAX_VALUE;
+			dataA = new int[r];
+			dataB = new int[r];
+			visit = new boolean[N+1];
+			synergyTable = new int[N+1][N+1];
+			for(int i=0;i<N;i++)
+				for(int j=0;j<N;j++) synergyTable[i][j] = sc.nextInt();
+			nCr(0,0);
+		}
+	}
+	private static void nCr(int idx,int cnt){
+		if(cnt==r){
+			int foodA =0;
+			int foodB =0;
+			System.out.println(Arrays.toString(data));
+			return;
+		}
+		for(int i=idx;i<N;i++){
+			dataA[cnt] = i+1;
+			visit[i+1] = true;
+			nCr(i+1,cnt+1);
+		}
+	}
+}
