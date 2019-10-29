@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-25T19:35:22Z</updated>
+  <updated>2019-10-28T16:52:00Z</updated>
+  <entry>
+    <title>Announcing Spring Cloud Stream Horsham.RC1 (3.0.0.RC1)</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/28/announcing-spring-cloud-stream-horsham-rc1-3-0-0-rc1" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Oleg Zhurakousky</name>
+    </author>
+    <id>tag:spring.io,2019-10-28:3852</id>
+    <updated>2019-10-28T16:52:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the first Release Candidate of the Spring Cloud Stream Horsham.RC1 (3.0.0.RC1). &lt;/p&gt;
+&lt;p&gt;Spring Cloud Stream Horsham.RC1 (3.0.0.RC1) modules are available for use in the &lt;a href="https://repo.spring.io/libs-milestone-local/org/springframework/cloud/"&gt;Spring Milestone&lt;/a&gt; repository. &lt;/p&gt;&lt;h3&gt;&lt;a href="#quick-highlights" class="anchor" name="quick-highlights"&gt;&lt;/a&gt;Quick highlights:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot 2.2.x&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Function 3.0.0.RC1&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#notable-features-and-enhancements-for-this-milestone" class="anchor" name="notable-features-and-enhancements-for-this-milestone"&gt;&lt;/a&gt;Notable features and enhancements for this milestone:&lt;/h3&gt;&lt;h5&gt;&lt;a href="#emphasis-on-functional-programming-model" class="anchor" name="emphasis-on-functional-programming-model"&gt;&lt;/a&gt;Emphasis on functional programming model&lt;/h5&gt;
+&lt;p&gt;As mentioned in the previous release blogs, with this release we are shifting to a simpler functional programming model. &lt;/p&gt;
+&lt;p&gt;In the nutshell a simple spring-boot application with at least one function bean is also a spring-cloud-stream application (as shown below).&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+public class MyApplicationConfiguration {&#xD;
+&#xD;
+    @Bean&#xD;
+    public Function&amp;lt;String, String&amp;gt; uppercase() {&#xD;
+        return value -&amp;gt; value.toUpperCase();&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For benefits and features as well as additional details please reference these recent blogs &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;Spring-Cloud-Stream - demystified &amp;amp; simplified&lt;/a&gt;&lt;br/&gt;&lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;Spring-Cloud-Stream - functional &amp;amp; reactive&lt;/a&gt;&lt;br/&gt;&lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;Spring-Cloud-Stream &amp;amp; Spring-Integration&lt;/a&gt;&lt;br/&gt;&lt;a href="https://spring.io/blog/2019/08/19/announcing-spring-cloud-stream-horsham-m3-3-0-0-m3"&gt;Spring Cloud Stream M3 release announcement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You should also checkout the updated &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.0.RC1/reference/html/"&gt;user guide&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE: User guide is still being updated so for up to date details you can also reference it&amp;rsquo;s &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/docs/src/main/asciidoc/spring-cloud-stream.adoc"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h5&gt;&lt;a href="#functional-support-in-kafka-streams" class="anchor" name="functional-support-in-kafka-streams"&gt;&lt;/a&gt;Functional support in Kafka Streams&lt;/h5&gt;
+&lt;p&gt;Kafka Streams binder now supports a first class function based programming model using which you can now write your Kafka Streams applications based on java.util.function support. This further reduces the boilerplate code that the applications need to write and allow the developers to focus on the business logic at hand. For further details, please visit &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RC1/reference/html/spring-cloud-stream-binder-kafka.html#_programming_model"&gt;Functional Style&lt;/a&gt; section for more details. We are planning to have another dedicated write up going over all the new features.&lt;/p&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/"&gt;GitHub&lt;/a&gt; and or &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Hoxton.RC1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/25/spring-cloud-hoxton-rc1-released" />
@@ -1417,61 +1453,6 @@ public class SampleApplication  {&#xD;
   &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/tree/master/spring-expression"&gt;the Spring Expression Language&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/AspectJ"&gt;AspectJ&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graal-native"&gt;the Graal native image feature&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring (SpringOne Platform 2019 edition) - October 8th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/08/this-week-in-spring-springone-platform-2019-edition-october-8th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-09:3830</id>
-    <updated>2019-10-08T23:59:00Z</updated>
-    <content type="html">&lt;p&gt;It&amp;rsquo;s here it&amp;rsquo;s finally here! My favorite time of the year! Happy SpringOne Platform week! This week I&amp;rsquo;m in amazing Austin, TX talking to anybody who wants to about all things Spring. There have been a &lt;em&gt;ton&lt;/em&gt; of amazing things announced at this show but one thing I&amp;rsquo;ve been excited to share with y&amp;rsquo;all is that we just announced the new Azure Spring Cloud runtime. (More on that in the links below)&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve been busy! I&amp;rsquo;m doing one talk with Microsoft on Azure Spring Cloud, and another with Okta / Google on simplifying the dev lifecycle. Also, I&amp;rsquo;m hosting the keynote tomorrow morning. So much to do, so little time! &lt;/p&gt;
-&lt;p&gt;I feel like this is a worthwhile time to mention how grateful I am that you&amp;rsquo;re all out there. This community is the biggest and the best and I am forever grateful to be a part of it. I&amp;rsquo;m so glad that I get to meet so many of you this week at this show. Without you, this should wouldn&amp;rsquo;t be possible! &lt;/p&gt;
-&lt;p&gt;Anyway, here are your gratuitous selfies and tweets!&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;I had waay too much fun with LTR &lt;a href="https://twitter.com/mraible?ref_src=twsrc%5Etfw"&gt;@mraible&lt;/a&gt; &lt;a href="https://twitter.com/saturnism?ref_src=twsrc%5Etfw"&gt;@saturnism&lt;/a&gt;, Lonnie and her husband Rex, &lt;a href="https://twitter.com/TrishPhoto?ref_src=twsrc%5Etfw"&gt;@TrishPhoto&lt;/a&gt; and &lt;a href="https://twitter.com/_JamesWard?ref_src=twsrc%5Etfw"&gt;@_JamesWard&lt;/a&gt; &lt;a href="https://twitter.com/s1p?ref_src=twsrc%5Etfw"&gt;@s1p&lt;/a&gt; ? thank you all so much! &lt;a href="https://t.co/0BYYvLdNu6"&gt;pic.twitter.com/0BYYvLdNu6&lt;/a&gt;&lt;/p&gt;&amp;mdash; Josh Long (?ñýõð, ???, ¬¥¬Ø¬à¬ê ¬­¬à¬ß¬Ô, ??? ????) (@starbuxman) &lt;a href="https://twitter.com/starbuxman/status/1181358792786755585?ref_src=twsrc%5Etfw"&gt;October 8, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;The power of ¡°simple¡±. &lt;a href="https://twitter.com/s1p?ref_src=twsrc%5Etfw"&gt;@s1p&lt;/a&gt; &lt;a href="https://twitter.com/pivotal?ref_src=twsrc%5Etfw"&gt;@Pivotal&lt;/a&gt; &lt;a href="https://twitter.com/VMware?ref_src=twsrc%5Etfw"&gt;@VMware&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/Tanzu?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#Tanzu&lt;/a&gt; SpringInitializr has 1M projects started every month. Check it out - &lt;a href="https://t.co/GCnvJ3SqL3"&gt;&lt;a href="https://t.co/GCnvJ3SqL3"&gt;https://t.co/GCnvJ3SqL3&lt;/a&gt;&lt;/a&gt;. We¡¯re just getting started! &lt;a href="https://t.co/Lz4ixUTtaA"&gt;pic.twitter.com/Lz4ixUTtaA&lt;/a&gt;&lt;/p&gt;&amp;mdash; Chad Sakac (@sakacc) &lt;a href="https://twitter.com/sakacc/status/1181217922280312833?ref_src=twsrc%5Etfw"&gt;October 7, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Hanging out with data / Greenplum legend Scott Yara &lt;a href="https://twitter.com/s1p?ref_src=twsrc%5Etfw"&gt;@s1p&lt;/a&gt; &lt;a href="https://t.co/45FJc5MZwk"&gt;pic.twitter.com/45FJc5MZwk&lt;/a&gt;&lt;/p&gt;&amp;mdash; Josh Long (?ñýõð, ???, ¬¥¬Ø¬à¬ê ¬­¬à¬ß¬Ô, ??? ????) (@starbuxman) &lt;a href="https://twitter.com/starbuxman/status/1181379597499338754?ref_src=twsrc%5Etfw"&gt;October 8, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Hanging out with &lt;a href="https://twitter.com/Microsoft?ref_src=twsrc%5Etfw"&gt;@Microsoft&lt;/a&gt; ¡®s legendary &lt;a href="https://twitter.com/Johnmont?ref_src=twsrc%5Etfw"&gt;@Johnmont&lt;/a&gt; &lt;a href="https://twitter.com/s1p?ref_src=twsrc%5Etfw"&gt;@s1p&lt;/a&gt; &lt;a href="https://t.co/JMKtvGuSBx"&gt;pic.twitter.com/JMKtvGuSBx&lt;/a&gt;&lt;/p&gt;&amp;mdash; Josh Long (?ñýõð, ???, ¬¥¬Ø¬à¬ê ¬­¬à¬ß¬Ô, ??? ????) (@starbuxman) &lt;a href="https://twitter.com/starbuxman/status/1181370931165442049?ref_src=twsrc%5Etfw"&gt;October 8, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Hey &lt;a href="https://twitter.com/s1p?ref_src=twsrc%5Etfw"&gt;@s1p&lt;/a&gt; I¡¯m hanging out with my friends from ?&lt;a href="https://twitter.com/Azure?ref_src=twsrc%5Etfw"&gt;@Azure&lt;/a&gt;? at the &lt;a href="https://twitter.com/Microsoft?ref_src=twsrc%5Etfw"&gt;@Microsoft&lt;/a&gt; booth. Would love to talk to you-come say hi &lt;a href="https://t.co/e8adJttufw"&gt;pic.twitter.com/e8adJttufw&lt;/a&gt;&lt;/p&gt;&amp;mdash; Josh Long (?ñýõð, ???, ¬¥¬Ø¬à¬ê ¬­¬à¬ß¬Ô, ??? ????) (@starbuxman) &lt;a href="https://twitter.com/starbuxman/status/1181677710696992769?ref_src=twsrc%5Etfw"&gt;October 8, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Big news! &lt;a href="https://twitter.com/ryanpmorgan?ref_src=twsrc%5Etfw"&gt;@ryanpmorgan&lt;/a&gt; and &lt;a href="https://twitter.com/Johnmont?ref_src=twsrc%5Etfw"&gt;@Johnmont&lt;/a&gt; announce Azure Spring Cloud. Fully managed service, jointly developed, for running Spring apps on &lt;a href="https://twitter.com/Azure?ref_src=twsrc%5Etfw"&gt;@Azure&lt;/a&gt;. &lt;a href="https://twitter.com/hashtag/SpringOne?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#SpringOne&lt;/a&gt; &lt;a href="https://t.co/ZEFtoSqCUs"&gt;pic.twitter.com/ZEFtoSqCUs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Bryan Friedman (@bryanfriedman) &lt;a href="https://twitter.com/bryanfriedman/status/1181583035260702722?ref_src=twsrc%5Etfw"&gt;October 8, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;And, without further ado, let&amp;rsquo;s get to this week&amp;rsquo;s extra packed and extra special installment. There are so many projects that &lt;em&gt;happened&lt;/em&gt; to go GA just before SpringOne, so don&amp;rsquo;t miss this incredible list! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://azure.microsoft.com/en-us/blog/introducing-azure-spring-cloud-fully-managed-service-for-spring-boot-microservices/"&gt;We are so pleased to &lt;em&gt;finally&lt;/em&gt; be able to announce the Azure Spring Cloud runtime option&lt;/a&gt;! Azure Spring Cloud is a partnership between Microsoft and Pivotal to provide a fully-managed environment to build and run Spring Cloud-powered microservices. It includes easy access to the Spring Cloud Config Server, the Eureka service registry, as well as other best-in-breed components like CosmosDB (a dropin replacement for a good many MongoDB applications) and Microsoft SQL Server. This is &lt;em&gt;huge&lt;/em&gt; news! I&amp;rsquo;m at SpringOne Platform 2019 and doing a joint session with Microsoft&amp;rsquo;s Julien Dubois to announce the details. Here is &lt;a href="https://content.pivotal.io/blog/azure-spring-cloud-a-new-way-to-run-spring-boot-apps-atop-kubernetes"&gt;the Pivotal blog on the partnership, too&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/08/what-s-new-in-spring-data-moore"&gt;What&amp;rsquo;s new in Spring Data Moore?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/05/spring-cloud-hoxton-m3-is-now-available"&gt;Spring Cloud Hoxton.M3 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/04/a-bootiful-podcast-oracle-s-geertjan-wielenga-on-his-new-book-developer-advocate"&gt;A Bootiful Podcast: Oracle&amp;rsquo;s Geertjan Wielenga on his new book &amp;ldquo;Developer, Advocate!&amp;rdquo;&lt;/a&gt;. The book has a chapter all about yours truly and - despite that - is still a great read for anyone pursuing a career in developer advocacy. And if you are, I hope you&amp;rsquo;ll join me in advocating for &lt;em&gt;bootiful&lt;/em&gt; applications, too! :-)&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/03/spring-boot-for-apache-geode-pivotal-gemfire-1-1-2-release-and-1-2-0-rc1-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.2.RELEASE and 1.2.0.RC1 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/03/reactor-californium-sr12-is-out"&gt;Reactor Californium-SR12 is out&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Next week, &lt;a href="https://www.meetup.com/Tech-Meetups-ING/events/264844748/"&gt;I&amp;rsquo;ll be in Amsterdam doing a talk - join me!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/03/reactor-dysprosium-3-3-x-goes-ga"&gt;Reactor Dysprosium (3.3.x) goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/03/spring-boot-2-2-0-rc1-has-been-released"&gt;Spring Boot 2.2.0 RC1 has been released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/02/spring-for-rabbitmq-spring-amqp-2-2-is-now-available"&gt;Spring for RabbitMQ (Spring AMQP) 2.2 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/02/spring-for-apache-kafka-2-3-is-now-available"&gt;Spring for Apache Kafka 2.3 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/02/spring-boot-2-1-9-available-now"&gt;Spring Boot 2.1.9 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/02/spring-session-for-apache-geode-pivotal-gemfire-2-1-6-release-and-2-2-0-rc1-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.6.RELEASE and 2.2.0.RC1 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/02/spring-integration-5-2-ga-available"&gt;Spring Integration 5.2 GA Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/01/spring-security-5-2-goes-ga"&gt;Spring Security 5.2 goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/01/spring-data-r2dbc-1-0-rc1-released"&gt;Spring Data R2DBC 1.0 RC1 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/01/spring-data-moore-goes-ga"&gt;Spring Data Moore goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=iuh_b1futro&amp;feature=share"&gt;Reactive Gateways with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/ryanpmorgan/status/1181588723173089280?s=12"&gt;twitter.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.confluent.io/blog/apache-kafka-spring-boot-tutorial-for-pivotal-application-service"&gt;How to Run Apache Kafka with Spring Boot on Pivotal Application Service (PAS)&lt;/a&gt; - a great post from our friends at Confluent!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/blog/cloud-native-application-bundles-a-simple-way-to-install-software-on-kubernetes-or-any-other-runtime?utm_campaign=content-social&amp;utm_content=1568123224&amp;utm_medium=social-sprout&amp;utm_source=twitter"&gt;Pivotal teamed up with Microsoft, Docker, HashiCorp, Bitnami, Pivotal, and many others to create Cloud Native Application Bundles (CNAB)&lt;/a&gt;. CNAB is an open source cloud-agnostic package format specification for bundling and installing distributed applications.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/rustyoliver/status/1180737891426689026?s=12"&gt;Create Neo4J nodes from Excel!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/olga_maciaszek/status/1180623087546572802?s=12"&gt;Spring Cloud Loadbalancer now has its own starter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/kkWIvw5sm9?amp=1"&gt;IBM&amp;rsquo;s Billy Korando has a great post on using Spring Cloud Contract&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@visweshwar/azure-functions-using-java-spring-with-ci-cd-using-azure-pipelines-part-2-44b341e9728e"&gt;Azure Functions using Java Spring with CI/CD using Azure Pipelines? Part 2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://cloudblogs.microsoft.com/opensource/2019/10/03/new-microsoft-azure-solutions-springone-platform-2019/"&gt;Unboxing new Microsoft Azure solutions at SpringOne Platform 2019 - Open Source Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.roytuts.com/jax-ws-soap-webservice-authentication-using-spring/"&gt;JAX-WS SOAP Webservice Authentication Example using Spring Boot - Roy Tutorials&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://dzone.com/articles/magic-of-kafka-with-spring-boot"&gt;A Tutorial on Kafka With Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Thanks to &lt;a href="http://twitter.com/devinsba"&gt;Brian Devins&lt;/a&gt;, we now have support &lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1218"&gt;for SQS Messaging in Spring Cloud Sleuth&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/58130652/how-to-configure-rsocket-security-in-a-spring-boot-application-with-spring-secur"&gt;How to configure RSocket security in a Spring Boot application with Spring Security - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springrod/status/1178903600791085056?s=12"&gt;This thread by Rod Johnson inviting people to contribute elements of style when writing Spring Boot-based applications&lt;/a&gt; is pretty epic!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
