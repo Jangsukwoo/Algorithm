@@ -1,0 +1,8 @@
+package BAEKJOON;
+
+public class 체스판위의공 {
+	static int R,C;
+	public static void main(String[] args) {
+		
+	}
+}

@@ -5,7 +5,45 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-28T16:52:00Z</updated>
+  <updated>2019-10-29T12:36:00Z</updated>
+  <entry>
+    <title>This Week in Spring - October 29th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/29/this-week-in-spring-october-29th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-10-29:3853</id>
+    <updated>2019-10-29T12:36:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Can you believe we&amp;rsquo;re already staring down November? I can&amp;rsquo;t! (We&amp;rsquo;re just two months away from the new year!) This week I&amp;rsquo;m in Chicago for meetings, and then - finally - I&amp;rsquo;m off to San Francisco and see the family. Then, it&amp;rsquo;s off to Europe for the Devoxx Ukraine and Devoxx Belgium events. I can&amp;rsquo;t wait to see everyone there! &lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m particularly looking forward to spending Halloween (on the 31st of October) in San Francisco with my kid. The entire family, including the dog, have Halloween costumes. We&amp;rsquo;re ready! (I&amp;rsquo;m going dressed as an application server.)&lt;/p&gt;
+&lt;img src = "https://pbs.twimg.com/media/EH9YPRPWsAA7dED?format=jpg&amp;name=medium"/&gt;
+&lt;p&gt;Alright, my friends, we&amp;rsquo;ve got tons of things to get to so let&amp;rsquo;s get started!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://dataflow.spring.io/docs/stream-developer-guides/"&gt;Have you seen our Spring Cloud Data Flow microsite?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/28/announcing-spring-cloud-stream-horsham-rc1-3-0-0-rc1"&gt;Announcing Spring Cloud Stream Horsham.RC1 (3.0.0.RC1)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-hoxton-rc1-released"&gt;Spring Cloud Hoxton.RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-open-service-broker-3-1-0-m3-released"&gt;Spring Cloud Open Service Broker 3.1.0.M3 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;Spring Cloud Stream - and Spring Integration.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://content.pivotal.io/practitioners/netflix-built-its-own-application-generator-to-boost-dev-productivity-heres-how-you-can-too"&gt;Netflix Built its Application Generator to Boost Dev Productivity. Here&amp;rsquo;s How You Can, Too.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2019/10/24/a-bootiful-podcast-apache-tomcat-netty-and-spring-framework-contributor-violeta-georgieva"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interviewed Apache Tomcat, Netty, and Spring Framework contributor Violeta Georgieva&lt;/a&gt;. She&amp;rsquo;s a legend and I was so happy to have the opportunity to talk to her!&lt;/li&gt;
+  &lt;li&gt;Id you liked that interview, you should check out one of Violeta Georgieva&amp;rsquo;s talks, like this one: &lt;a href="https://content.pivotal.io/slides/benefits-of-reactive-programming-with-reactor-and-spring-boot-2-violeta-georgieva"&gt;&lt;em&gt;Benefits of Reactive Programming with Reactor and Spring Boot 2&lt;/em&gt; &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/24/spring-tools-4-4-1-released"&gt;Spring Tools 4.4.1 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/24/spring-vault-2-2-0-rc1-and-2-1-4-release-available"&gt;Spring Vault 2.2.0.RC1 and 2.1.4.RELEASE available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/10/22/the-reactive-revolution-at-springone-platform-2019-part-2-n"&gt;The Reactive Revolution at SpringOne Platform 2019 (part 2/N)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Have you tried out the &lt;a href="https://code.visualstudio.com/docs/java/java-spring-boot"&gt;Spring Boot support in Visual Studio Code&lt;/a&gt;?&lt;/li&gt;
+  &lt;li&gt;It&amp;rsquo;s almost Halloween! Is there anything scarier than PHP? We don&amp;rsquo;t know, but we wanted to get in on the fun, so we made my second favorite place on the internet (&lt;a href="http://start.Spring.io"&gt;start.Spring.io&lt;/a&gt;), &lt;em&gt;after production&lt;/em&gt;, a little more&amp;hellip; &lt;em&gt;spooky&lt;/em&gt;&amp;hellip; in time for the holiday: &lt;a href="https://twitter.com/rseroter/status/1188806484618088448"&gt;Boooo(t)!&lt;/a&gt;. Great job to &lt;a href="https://twitter.com/oodamien"&gt;Damien Vitrac&lt;/a&gt; and the Spring Initializr design team!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/jfrog/status/1187673065674571776"&gt;Spring co-founder Juergen Hoeller and I were interviewed at the Joker conference in St. Petersburg, Russia &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cero_t/status/1187997274598625281?s=12"&gt;I love that there are so many Spring Cloud books in Taiwan&lt;/a&gt;! I only wish I could read them&amp;hellip; one day!&lt;/li&gt;
+  &lt;li&gt;You can build your application generator, like the Spring Initializr. See how &lt;a href="https://content.pivotal.io/practitioners/netflix-built-its-own-application-generator-to-boost-dev-productivity-heres-how-you-can-too"&gt;in this epic guide by Ben Wilcock&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1187648362956427264"&gt;Hurray! We just released Spring Tools 4.4.1, introducing the re-designed mechanism to show live information from your running Spring application&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rgielen/status/1187361615215316994?s=12"&gt;Introducing FxWeaver, a small library to help weave JavaFX FXML views with Spring support. It comes with a Spring Boot, JavaFX, FXML, and FxWeaver example&lt;/a&gt;. I may need to update my &lt;em&gt;Spring Tips&lt;/em&gt; video on &lt;a href="https://www.youtube.com/watch?v=lPy9mc_O_gU"&gt;using Spring Boot and JavaFX!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=sGX2ax97ZKA&amp;feature=youtu.be"&gt;This is an interesting Spring Boot + Freemarker tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out this great video by Ryan Baxter and Alexandre Roman on &lt;a href="https://www.youtube.com/watch?v=YTPUNesUIbI&amp;list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&amp;index=35&amp;t=0s"&gt;using Spring and Kubernetes together &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcloud/status/1186736912364724227"&gt;There&amp;rsquo;s nice new support for visualizing metrics with Spring Cloud Circuit Breaker and Resilience4J &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Announcing Spring Cloud Stream Horsham.RC1 (3.0.0.RC1)</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/28/announcing-spring-cloud-stream-horsham-rc1-3-0-0-rc1" />
@@ -1435,25 +1473,6 @@ public class SampleApplication  {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;This release moves all our opinions that are running on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; to a dedicated optional module that you can build upon or ignore to use only your conventions. This should make the creation of a custom instance easier than ever!&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-io/initializr"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/initializr/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/initializr/docs/0.8.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-initializr"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-io/initializr"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring mad scientist Andy Clement on AspectJ, SpEL, Eclipse, Graal and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/11/a-bootiful-podcast-spring-mad-scientist-andy-clement-on-aspectj-spel-eclipse-graal-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-11:3831</id>
-    <updated>2019-10-11T01:58:46Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this SpringOne Platform 2019 episode, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) interviews Spring mad scientist Andy Clement (&lt;a href="http://twitter.com/andy_clement"&gt;@andy_clement&lt;/a&gt;) on AspectJ, SpEL, Eclipse, the new Graal native image feature, being an Iron-Man triathlete, and more. &lt;/p&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/694048639&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/andy_clement"&gt;Andy Clement on Twitter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/tree/master/spring-expression"&gt;the Spring Expression Language&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/AspectJ"&gt;AspectJ&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graal-native"&gt;the Graal native image feature&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
