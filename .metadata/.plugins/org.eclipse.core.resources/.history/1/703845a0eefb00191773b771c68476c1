@@ -88,7 +88,7 @@ public class 카탄의개척자 {
 				if(catanMap[nr+dr[(dir+1)%6]][nc+dc[(dir+1)%6]]!=0) break; 
 				dir+=1;
 				dir%=6;
-			}//-> 나중에 또 활용이 가능할 것같은 회전 로직이므로 잘 외워두자
+			}
 			
 			//새로운 칸이 될 nr,nc의 인접 숫자를 체크
 			adjCheck= new boolean[6];

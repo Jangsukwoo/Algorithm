@@ -57,6 +57,16 @@ public class 카탄의개척자 {
 		System.out.println(sb.toString());
 	
 	}
+	private static void view() {
+		System.out.println("돌");
+		for(int row=0;row<200;row++) {
+			for(int col=0;col<200;col++) {
+				System.out.print(catanMap[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	private static void makePQ() {
 		for(int i=1;i<=5;i++) {
 			if(i==1) pq.add(new Tile(i,1));
@@ -77,18 +87,17 @@ public class 카탄의개척자 {
 			tile++;
 			nr = nr+dr[dir];
 			nc = nc+dc[dir];//다음 좌표
-		
-			//다음 칸에 대해 방향값을 실제로 더하진 않고
-			//+1 해본뒤 칸을 살핀다.
-			//칸을 살폈을 때 
-			//0이 아니라면 숫자가 있는 것이므로
-			//기존방향대로 직진한다.
-			//칸을 살폈는데 0이라면 방향 회전
 			while(true){//다음방향 찾아 회전
+				//다음 칸에 대해 방향값을 실제로 더하진 않고
+				//+1 해본뒤 칸을 살핀다.
+				//칸을 살폈을 때 
+				//0이 아니라면 숫자가 있는 것이므로
+				//기존방향대로 직진한다.
 				if(catanMap[nr+dr[(dir+1)%6]][nc+dc[(dir+1)%6]]!=0) break; 
+				//칸을 살폈는데 0이라면 방향 회전
 				dir+=1;
 				dir%=6;
-			}//-> 나중에 또 활용이 가능할 것같은 회전 로직이므로 잘 외워두자
+			}
 			
 			//새로운 칸이 될 nr,nc의 인접 숫자를 체크
 			adjCheck= new boolean[6];

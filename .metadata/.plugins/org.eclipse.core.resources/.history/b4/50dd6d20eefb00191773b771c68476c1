@@ -43,12 +43,9 @@ public class 카탄의개척자 {
 		centerRow = 100;
 		centerCol = 100;
 		
-		//1~5 pq에 세팅
 		makePQ();
-		
-		//카탄맵 세팅
 		makeCatanMap();
-
+		//view();
 		int T = sc.nextInt();
 		for(int testcase=1;testcase<=T;testcase++){
 			int n = sc.nextInt();
@@ -56,6 +53,16 @@ public class 카탄의개척자 {
 		}
 		System.out.println(sb.toString());
 	
+	}
+	private static void view() {
+		System.out.println("돌");
+		for(int row=0;row<200;row++) {
+			for(int col=0;col<200;col++) {
+				System.out.print(catanMap[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 	private static void makePQ() {
 		for(int i=1;i<=5;i++) {
@@ -77,18 +84,17 @@ public class 카탄의개척자 {
 			tile++;
 			nr = nr+dr[dir];
 			nc = nc+dc[dir];//다음 좌표
-		
-			//다음 칸에 대해 방향값을 실제로 더하진 않고
-			//+1 해본뒤 칸을 살핀다.
-			//칸을 살폈을 때 
-			//0이 아니라면 숫자가 있는 것이므로
-			//기존방향대로 직진한다.
-			//칸을 살폈는데 0이라면 방향 회전
 			while(true){//다음방향 찾아 회전
+				//다음 칸에 대해 방향값을 실제로 더하진 않고
+				//+1 해본뒤 칸을 살핀다.
+				//칸을 살폈을 때 
+				//0이 아니라면 숫자가 있는 것이므로
+				//기존방향대로 직진한다.
 				if(catanMap[nr+dr[(dir+1)%6]][nc+dc[(dir+1)%6]]!=0) break; 
+				//칸을 살폈는데 0이라면 방향 회전
 				dir+=1;
 				dir%=6;
-			}//-> 나중에 또 활용이 가능할 것같은 회전 로직이므로 잘 외워두자
+			}
 			
 			//새로운 칸이 될 nr,nc의 인접 숫자를 체크
 			adjCheck= new boolean[6];
@@ -100,25 +106,25 @@ public class 카탄의개척자 {
 			
 			//조건을 만족하는 후보군 꺼내보기
 			ArrayList<Tile> tmp = new ArrayList<Tile>();
-			for(int i=0;i<5;i++){//숫자는 총 5개니까 5번만 반복해본다.
+			for(int i=0;i<5;i++){
 				Tile curTile = pq.poll();
 				boolean possible = true;
-				for(int j=1;j<=5;j++){ //
-					if(adjCheck[j]){//인접(true)한 숫자면서 
-						if(j==curTile.id){//현재 후보 번호와 같으면 
-							possible = false;//불가능
-							tmp.add(curTile);//pq에 다시 넣기위해 임시 제외리스트에 넣음
+				for(int j=1;j<=5;j++){
+					if(adjCheck[j]){//true, 인접해있는 숫자와 
+						if(j==curTile.id){//꺼낸 수가 같으면 
+							possible = false;//불가능으로바꾸고
+							tmp.add(curTile);//제외리스트에 넣음
 							break;
 						}
 					}
 				}
-				if(possible){//가능한 경우
-					curTile.count+=1;//1개 누적
-					catanMap[nr][nc]=curTile.id; //칸에 적고		
+				if(possible){//가능하다면			
+					curTile.count+=1;
+					catanMap[nr][nc]=curTile.id;		
 					tileNumber[tile][0] = nr;
 					tileNumber[tile][1] = nc;
-					pq.add(curTile);//pq에 다시 넣는다.
-					for(Tile t : tmp) pq.add(t);//제외리스트에 있는 후보군들 다시 pq에 삽입
+					pq.add(curTile);
+					for(Tile t : tmp) pq.add(t);
 					break;
 				}
 			}
