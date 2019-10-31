@@ -1,0 +1,121 @@
+package Simulation;
+
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+/*
+ * 그림을 배열로 표현하는 부분이 까다롭다..
+ * 연습장에 엄청 그려보고 구현 방법 생각해냄
+ * 6개의 화살표
+ */
+class Tile implements Comparable<Tile>{
+	int id;
+	int count;
+	public Tile(int i, int c) {
+		id = i;
+		count = c;
+	}
+	@Override
+	public int compareTo(Tile o) {
+		if(this.count==o.count) return Integer.compare(this.id,o.id);
+		return Integer.compare(this.count,o.count);
+	}
+
+}
+public class 카탄의개척자 {
+	static int[] dr = {0,-1,-1,0,1,1};
+	static int[] dc = {1,1,0,-1,-1,0};//우->우상대각->상->좌->....->하 반시계방향
+	static int[][] catanMap;
+	static boolean[] adjCheck;
+	static int[][] tileNumber;
+	static int centerRow,centerCol;
+	static PriorityQueue<Tile> pq;
+	public static void main(String[] args){
+		view();
+		Scanner sc = new Scanner(System.in);
+		catanMap = new int[200][200];
+		tileNumber = new int[10001][2];
+		pq = new PriorityQueue<Tile>();
+		centerRow = 100;
+		centerCol = 100;
+		makePQ();
+		makeCatanMap();
+	
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			int n = sc.nextInt();
+			System.out.println(catanMap[tileNumber[n][0]][tileNumber[n][1]]);
+		}
+	
+	}
+	private static void view() {
+		System.out.println("돌");
+		for(int row=0;row<200;row++) {
+			for(int col=0;col<200;col++) {
+				System.out.print(catanMap[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	private static void makePQ() {
+		for(int i=1;i<=5;i++) {
+			if(i==1) pq.add(new Tile(i,1));
+			else pq.add(new Tile(i,0));
+		}
+	}
+	private static void makeCatanMap() {
+		int tile =1;
+		int dir=0;//처음 우 방향 시작
+		int nr = centerRow;
+		int nc = centerCol;//중앙 시작
+		tileNumber[1][0] = centerRow;
+		tileNumber[1][1]= centerCol;//타일 1번의 좌표
+		while(tile<=10000){
+			tile++;
+			nr = nr+dr[dir];
+			nc = nc+dc[dir];//다음 좌표
+			int nDir = (dir+1)%6;
+			while(true){//다음방향 찾아 회전
+				if(catanMap[nr+nDir][nc+nDir]!=0) break;
+				nDir+=1;
+				nDir%=6;
+			}
+			dir = nDir;//다음 방향 넣어주기
+			
+			//인접 숫자 체크
+			adjCheck= new boolean[6];
+			for(int d=0;d<6;d++){
+				int nnr = nr+dr[d];
+				int nnc = nc+dc[d];
+				if(catanMap[nnr][nnc]!=0) adjCheck[catanMap[nnr][nnc]]=true;
+			}//인접한 숫자 true
+			
+			//후보군 꺼내보기
+			ArrayList<Tile> tmp = new ArrayList<Tile>();
+			for(int i=0;i<5;i++){
+				Tile curTile = pq.poll();
+				boolean possible = true;
+				for(int j=1;j<=5;j++){
+					if(adjCheck[j]){//true인데 (인접해있는데)
+						if(j==curTile.id){//숫자가 같다?
+							possible = false;//불가능으로바꾸고
+							tmp.add(curTile);//제외리스트에 넣음
+							break;
+						}
+					}
+				}
+				if(possible){//가능하다면
+					curTile.count+=1;
+					catanMap[nr][nc]=curTile.id;
+					tileNumber[curTile.id][0] = nr;
+					tileNumber[curTile.id][1] = nc;
+					for(Tile t : tmp) pq.add(t);
+					break;
+				}
+			}
+		}
+	}
+}
+

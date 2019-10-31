@@ -1,0 +1,98 @@
+package Simulation;
+
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+/*
+ * 그림을 배열로 표현하는 부분이 까다롭다..
+ * 연습장에 엄청 그려보고 구현 방법 생각해냄
+ * 6개의 화살표
+ */
+class Tile implements Comparable<Tile>{
+	int id;
+	int count;
+	public Tile(int i, int c) {
+		id = i;
+		count = c;
+	}
+	@Override
+	public int compareTo(Tile o) {
+		if(this.count==o.count) return Integer.compare(this.count,o.count);
+		return Integer.compare(this.id,o.id);
+	}
+	
+}
+public class 카탄의개척자 {
+	static int[] dr = {0,-1,-1,-1,0,1,1,1};
+	static int[] dc = {1,1,0,-1,-1,-1,0,1};//우->우상대각->상->좌상대각->....->우하대각 반시계방향
+	//우 : 0, 상 : 2, 좌 : 4, 하 : 6
+	static int[][] catanMap;
+	static int[][] tileNumber;
+	static int centerRow,centerCol;
+	static PriorityQueue<Tile> pq;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		catanMap = new int[1000][1000];
+		tileNumber = new int[10001][2];
+		pq = new PriorityQueue<Tile>();
+		centerRow = 499;
+		centerCol = 499;
+		makePQ();
+		makeCatanMap();
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			
+		}
+		
+	}
+	private static void makePQ() {
+		for(int i=1;i<=5;i++) {
+			if(i==1) pq.add(new Tile(i,1));
+			else pq.add(new Tile(i,0));
+		}
+	}
+	private static void makeCatanMap() {
+		int tile = 0;
+		int dir=0;//시작
+		int curR = centerRow;
+		int curC = centerCol;
+		catanMap[curR][curC] = 1;
+		while(tile<=10000){
+			//다음 좌표 구하기
+			int nr = curR + dr[dir];
+			int nc = curC + dc[dir];//  다음좌표
+			int ndir = (dir+2)%6;
+			if(catanMap[nr][nc]==0){//0이면 갈 수 있다.
+				
+				//adj 배열에는 다음칸이 인접한 최대 3개의 값 넣기
+				int[] adj = new int[3];
+				for(int i=0;i<3;i++){
+					int nnr = nr+dr[(ndir+i)%7];
+					int nnc = nc+dc[(ndir+i)%7];
+					adj[i] = catanMap[nnr][nnc];
+				}
+				
+				//pq에서 꺼내면서 가능한 값 적기
+				ArrayList<Tile> tmp = new ArrayList<Tile>();//후보군에서 제외되면 임시로 저장될 리스트
+				for(int i=0;i<5;i++){//넣을 값 check
+					Tile curTile = pq.poll();
+					boolean possible = true;
+					for(int j=0;j<3;j++){
+						if(curTile.id==adj[j]){//같으면 안된다.
+							tmp.add(curTile);
+							possible =false;
+							break;
+						}
+					}
+					if(possible){//가능한 숫자면
+						catanMap[nr][nc] = curTile.id;
+						curTile.count+=1;
+						pq.add(curTile);
+						for(Tile t : tmp) pq.add(t);
+					}
+				}
+			}
+		}
+	}
+}
