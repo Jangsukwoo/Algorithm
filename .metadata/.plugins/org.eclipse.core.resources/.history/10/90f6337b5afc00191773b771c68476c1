@@ -1,0 +1,83 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class 체스판다시칠하기 {
+	static int N,M;//R,C size
+	static char[][] chessBoard;
+	static char[][] sampleBoardA;
+	static char[][] sampleBoardB;
+	static int minSquareValue = Integer.MAX_VALUE;
+	static int tmpMin;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		chessBoard = new char[N][M];
+		sampleBoardA = new char[8][8];
+		sampleBoardB = new char[8][8];
+		makeSampleBoard();
+		sc.nextLine();
+		for(int row=0;row<N;row++) {
+			String readLine = sc.nextLine();
+			chessBoard[row] = readLine.toCharArray();
+		}
+		for(int row=0;row<(N-8);row++) {
+			for(int col=0;col<(M-8);col++){
+				sliceBoardCheck(row,col);
+				minSquareValue = Math.min(minSquareValue,tmpMin);
+			}
+		}
+		System.out.println(minSquareValue);
+	}
+	private static void makeSampleBoard(){
+		for(int row=0;row<8;row++){
+			if(row%2==0) {//짝수 행
+				for(int col=0;col<8;col+=2){
+					sampleBoardA[row][col]='W';
+					sampleBoardB[row][col]='B';
+				}
+				for(int col=1;col<8;col+=2){
+					sampleBoardA[row][col]='B';
+					sampleBoardB[row][col]='W';
+				}
+			}
+			if(row%2!=0) { //홀수 행
+				for(int col=0;col<8;col+=2){
+					sampleBoardA[row][col]='B';
+					sampleBoardB[row][col]='W';
+				}
+				for(int col=1;col<8;col+=2){
+					sampleBoardA[row][col]='W';
+					sampleBoardB[row][col]='B';
+				}
+			}
+		}
+	}
+	private static void sliceBoardCheck(int sr, int sc){
+		tmpMin = 0;
+		int r=0,c=0;
+		switch (chessBoard[sr][sc]){
+		case 'W':
+			for(int row=sr;row<(sr+8);row++){
+				for(int col=sc;col<(sc+8);col++){
+					if(chessBoard[row][col]!=sampleBoardA[r][c]) tmpMin++;
+					if(tmpMin>=minSquareValue) return; //기존에 알고이는 최소값보다 크면 그냥 끝냄
+					c++;
+				}
+				r++;
+			}
+			break;
+		case 'B':
+			for(int row=sr;row<(sr+8);row++){
+				for(int col=sc;col<(sc+8);col++){
+					if(chessBoard[row][col]!=sampleBoardB[r][c]) tmpMin++;
+					if(tmpMin>=minSquareValue) return; //기존에 알고이는 최소값보다 크면 그냥 끝냄
+					c++;
+				}
+				r++;
+			}
+			break;
+		}
+	}
+}

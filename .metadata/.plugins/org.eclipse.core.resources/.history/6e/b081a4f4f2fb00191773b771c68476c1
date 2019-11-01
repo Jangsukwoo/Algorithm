@@ -1,0 +1,7 @@
+package Simulation;
+
+public class 체스판다시칠하기 {
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,14 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class 체스판다시칠하기 {
+	static int N,M;//R,C size
+	static char[][] chessBoard;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		chessBoard = new int[N][M];
+	}
+}

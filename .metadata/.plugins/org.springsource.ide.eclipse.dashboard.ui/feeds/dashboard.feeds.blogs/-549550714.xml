@@ -5,7 +5,120 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-29T12:36:00Z</updated>
+  <updated>2019-10-31T14:33:00Z</updated>
+  <entry>
+    <title>Spring Cloud Stream - Event Routing</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/31/spring-cloud-stream-event-routing" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Oleg Zhurakousky</name>
+    </author>
+    <id>tag:spring.io,2019-10-31:3854</id>
+    <updated>2019-10-31T14:33:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another post in a series of posts showcasing the new features of &lt;a href="https://spring.io/projects/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt; (SCSt).&lt;br/&gt;In previous posts (available &lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;here&lt;/a&gt;, &lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;here&lt;/a&gt; and &lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;here&lt;/a&gt;), we tried to provide justification for our shift to a functional programming model in Spring Cloud Stream (SCSt). It is less code and less configuration, and your code remains completely decoupled from the internals of SCSt.&lt;/p&gt;
+&lt;p&gt;Today, we&amp;rsquo;ll talk about routing with functions.&lt;br/&gt;Routing, in the context of SCSt, is the ability to either &lt;em&gt;a) route events to a particular event subscriber&lt;/em&gt; or &lt;em&gt;b) route an event produced by an event subscriber to a particular destination&lt;/em&gt;. To help more with the context, let&amp;rsquo;s quickly look at how things work in the annotation-based programming model. In this post, we&amp;rsquo;ll refer to it as route &amp;lsquo;TO&amp;rsquo; and route &amp;lsquo;FROM&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;For routing &lt;strong&gt;&lt;em&gt;TO&lt;/em&gt;&lt;/strong&gt; an event subscriber, we used the &lt;code&gt;condition&lt;/code&gt; attribute of the &lt;code&gt;StreamListener&lt;/code&gt; annotation, as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@StreamListener(target = Sink.INPUT, condition = &amp;quot;headers[&amp;#39;type&amp;#39;]==&amp;#39;order&amp;#39;&amp;quot;)&#xD;
+public void receiveOrders(Order order) {...}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/2.1.3.RELEASE/single/spring-cloud-stream.html#_using_streamlistener_for_content_based_routing"&gt;Here&lt;/a&gt; are more details on this approach.&lt;/p&gt;
+&lt;p&gt;And, for routing &lt;strong&gt;&lt;em&gt;FROM&lt;/em&gt;&lt;/strong&gt; an event subscriber, we used &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/2.1.3.RELEASE/single/spring-cloud-stream.html#dynamicdestination"&gt;Dynamically Bound Destinations&lt;/a&gt; - the approach that allows framework to bind to a destination based on some instruction provided within the individual event.&lt;/p&gt;&lt;h2&gt;&lt;a href="#event-routing-with-functions" class="anchor" name="event-routing-with-functions"&gt;&lt;/a&gt;Event Routing with Functions&lt;/h2&gt;
+&lt;p&gt;With the functional approach, we can do all of the above in a more clean and concise way with a few additional features.&lt;/p&gt;&lt;h4&gt;&lt;a href="#route-to" class="anchor" name="route-to"&gt;&lt;/a&gt;Route TO:&lt;/h4&gt;
+&lt;p&gt;Routing &amp;lsquo;TO&amp;rsquo; functions can be achieved by relying on the routing function feature available in &lt;a href="https://spring.io/projects/spring-cloud-function"&gt;Spring Cloud Function&lt;/a&gt; (SCF).&lt;br/&gt;You can enable routing explicitly by setting the &lt;code&gt;spring.cloud.stream.function.routing.enabled&lt;/code&gt; property or implicitly by setting the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; property and providing routing instruction with Spring Expression Language (SpEL). The routing instruction should result in the definition of the function to which to route, &amp;lsquo;TO&amp;rsquo;.&lt;br/&gt;For the purposes of binding, the name of the routing destination is &lt;code&gt;functionRouter-in-0&lt;/code&gt; (see &lt;code&gt;RoutingFunction.FUNCTION_NAME&lt;/code&gt; and the binding naming convention described &lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;here&lt;/a&gt;). &lt;/p&gt;
+&lt;p&gt;When a message is sent to this destination, the routing function tries to determine which actual function needs to process such an event. It first tries to access the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; message header and, if provided, determine the name of the actual function to invoke. This is the most dynamic approach. The second most dynamic approach is to provide a &lt;code&gt;spring.cloud.function.definition&lt;/code&gt; header, which should contain the definition of the function to which to route &amp;lsquo;TO&amp;rsquo;. Both approaches require explicit enablement of routing function by setting the &lt;code&gt;spring.cloud.stream.function.routing.enabled&lt;/code&gt; property.&lt;/p&gt;
+&lt;p&gt;As for additional features that were not available in previous versions, the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; can also be used as application property. For example, consider the case when the expression is the same regardless of the incoming event, as in the annotation-based example shown earlier in this post (for example, &lt;code&gt;spring.cloud.function.routing-expression=headers[&amp;#39;type&amp;#39;]==&amp;#39;order&amp;#39;&lt;/code&gt;). For this approach, you need not explicitly enable a routing function, given that &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; as an application property has the same effect. &lt;/p&gt;
+&lt;p&gt;Albeit trivial, the following is a complete example of one of the approaches described above:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
+public class RoutingStreamApplication {&#xD;
+&#xD;
+  public static void main(String[] args) {&#xD;
+      SpringApplication.run(RoutingStreamApplication.class,&#xD;
+	  &amp;quot;--spring.cloud.function.routing-expression=&amp;quot;&#xD;
+	  + &amp;quot;T(java.lang.System).nanoTime() % 2 == 0 ? &amp;#39;even&amp;#39; : &amp;#39;odd&amp;#39;&amp;quot;);&#xD;
+  }&#xD;
+  @Bean&#xD;
+  public Consumer&amp;lt;Integer&amp;gt; even() {&#xD;
+    return value -&amp;gt; System.out.println(&amp;quot;EVEN: &amp;quot; + value);&#xD;
+  }&#xD;
+&#xD;
+  @Bean&#xD;
+  public Consumer&amp;lt;Integer&amp;gt; odd() {&#xD;
+    return value -&amp;gt; System.out.println(&amp;quot;ODD: &amp;quot; + value);&#xD;
+  }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;By sending a message to the &lt;code&gt;functionRouter-in-0&lt;/code&gt; destination that is exposed by the binder (that is, rabbit or kafka), such a message will be routed to the appropriate (&amp;lsquo;even&amp;rsquo; or &amp;lsquo;odd&amp;rsquo;) &lt;code&gt;Consumer&lt;/code&gt; bean, based on the value of &lt;code&gt;nanoTime()&lt;/code&gt; at the time of message processing. &lt;/p&gt;&lt;h4&gt;&lt;a href="#route-from" class="anchor" name="route-from"&gt;&lt;/a&gt;Route FROM:&lt;/h4&gt;
+&lt;p&gt;As before, routing &amp;lsquo;FROM&amp;rsquo; relies on the Dynamically Bound Destinations feature of SCSt. However, as with routing &amp;lsquo;TO&amp;rsquo;, there are a number of additional features. &lt;/p&gt;
+&lt;p&gt;The following example shows the basics:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Autowired&#xD;
+private BinderAwareChannelResolver resolver;&#xD;
+&#xD;
+public Consumer&amp;lt;String&amp;gt; send(Message message) {   &#xD;
+     MessageChannel destination = resolver&#xD;
+        .resolveDestination(message.getHeaders().get(&amp;quot;type&amp;quot;))&#xD;
+     Message outgoingMessage = . . . // your code&#xD;
+     destination.send(outgoingMessage);&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All you need is a reference to &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt; (autowired in the proceeding example). Then you can use some logic to determine the destination name (in our case, we use the value of the &amp;lsquo;type&amp;rsquo; header). Once the destination name is determined, you can obtain a reference to it by using the &lt;code&gt;BinderAwareChannelResolver.resolveDestination(..)&lt;/code&gt; operation and sending a message to it. That is really all it takes.&lt;/p&gt;
+&lt;p&gt;The downside of the above approach is that some framework-specific abstractions leak into your code. Look at the fact that you need to be aware of &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt; and &lt;code&gt;MessageChannel&lt;/code&gt;, amongst other things. In fact, most of the code in the preceding example is boilerplate. &lt;/p&gt;
+&lt;p&gt;A more dynamic and less leaky approach is to rely on &lt;code&gt;spring.cloud.stream.sendto.destination&lt;/code&gt; property, which effectively does all of the above - but behind the scenes. The following example shows how to use this approach:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
+public class RoutingStreamApplication {&#xD;
+&#xD;
+  @Bean&#xD;
+  public Function&amp;lt;Message&amp;lt;String&amp;gt;, Message&amp;lt;String&amp;gt;&amp;gt; process() {&#xD;
+    return message -&amp;gt; {&#xD;
+      // some logic to process incoming message&#xD;
+      Message&amp;lt;String&amp;gt; outgoingMessage = MessageBuilder&#xD;
+		.withPayload(&amp;quot;Hello&amp;quot;)&#xD;
+		.setHeader(&amp;quot;spring.cloud.stream.sendto.destination&amp;quot;, &amp;quot;even&amp;quot;)&#xD;
+		.build();&#xD;
+       return outgoingMessage;&#xD;
+     };&#xD;
+  }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We no longer have to inject &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt;, perform resolution of &lt;code&gt;MessageChannel&lt;/code&gt;, and so on. We simply create a new &lt;code&gt;Message&lt;/code&gt; that specifies a header that is used by the framework to dynamically resolve destination.&lt;/p&gt;&lt;h4&gt;&lt;a href="#routing-sources" class="anchor" name="routing-sources"&gt;&lt;/a&gt;Routing Sources&lt;/h4&gt;
+&lt;p&gt;Last but not least, let&amp;rsquo;s look at another popular use case of a route &amp;lsquo;FROM&amp;rsquo; where the source of data originates outside the context of SCSt but needs to be routed to the appropriate destination:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Controller&#xD;
+public class SourceWithDynamicDestination {&#xD;
+    @Autowired&#xD;
+    private ObjectMapper jsonMapper;&#xD;
+&#xD;
+    private final EmitterProcessor&amp;lt;?&amp;gt; processor = EmitterProcessor.create();&#xD;
+&#xD;
+    @RequestMapping(path = &amp;quot;/&amp;quot;, method = POST, consumes = &amp;quot;*/*&amp;quot;)&#xD;
+    @ResponseStatus(HttpStatus.ACCEPTED)&#xD;
+    public void handleRequest(@RequestBody String body, &#xD;
+      @RequestHeader(HttpHeaders.CONTENT_TYPE) Object contentType) &#xD;
+      throws Exception {&#xD;
+        Map&amp;lt;String, String&amp;gt; payload = jsonMapper.readValue(body, Map.class);&#xD;
+        String destination = payload.get(&amp;quot;id&amp;quot;);&#xD;
+        Message&amp;lt;?&amp;gt; message =&#xD;
+          MessageBuilder.withPayload(payload)&#xD;
+           .setHeader(&amp;quot;spring.cloud.stream.sendto.destination&amp;quot;, destination)&#xD;
+           .build();&#xD;
+        processor.onNext(message);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    public Supplier&amp;lt;Flux&amp;lt;?&amp;gt;&amp;gt; source() {&#xD;
+        return () -&amp;gt; processor;&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we can see the result by running the following &lt;code&gt;curl&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; -X POST -d &amp;#39;{&amp;quot;id&amp;quot;:&amp;quot;customerId-1&amp;quot;,&amp;quot;bill-pay&amp;quot;:&amp;quot;100&amp;quot;}&amp;#39; http://localhost:8080
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, we use both a functional approach and a dusting of the reactive paradigm, by virtue of &lt;code&gt;Supplier&amp;lt;Flux&amp;lt;?&amp;gt;&amp;gt;&lt;/code&gt; bean. We have a simple MVC controller, and we want to route requests downstream, based on the value of the &amp;lsquo;id&amp;rsquo; attribute of the content.&lt;br/&gt;While the details of the &lt;code&gt;EmitterProcessor&lt;/code&gt; and its usage here are a subject for another post, what is important is that it demonstrates a fully functional application where HTTP requests are routed dynamically to destinations managed by the target binder.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE: At the time of this writing, the reference documentation is being actively updated to support the upcoming 3.0.0.RELEASE of SCSt, but you can always use the source of the &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/docs/src/main/asciidoc/spring-cloud-stream.adoc#event-routing"&gt;reference documentation&lt;/a&gt; for the most up-to-date information.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Check out &lt;a href="https://github.com/spring-cloud/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt; on GitHub.&lt;/p&gt;
+&lt;p&gt;Also, the previous blogs in the series:&lt;br/&gt;- &lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;Spring Cloud Stream - demystified and simplified&lt;/a&gt;&lt;br/&gt;&lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;- Spring Cloud Stream - functional and reactive&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;Spring Cloud Stream &amp;amp; Spring Integration&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - October 29th, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/29/this-week-in-spring-october-29th-2019" />
@@ -1452,27 +1565,6 @@ public class SampleApplication  {&#xD;
 &lt;p&gt;So, with that, I am also saying that we are starting on our slow journey of moving away from an annotation-based programming model and into a more agile, simple and Spring Boot-aligned, opinionated model of clearly documented and intuitive conventions with limited out-of-the-box configuration required of the user.&lt;/p&gt;
 &lt;p&gt;For more up to date information on functional support in spring-cloud-stream, please follow this &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/docs/src/main/asciidoc/spring-cloud-stream.adoc#spring_cloud_function"&gt;link&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Please feel free to provide any feedback.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Initializr 0.8.0 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/14/spring-initializr-0-8-0-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2019-10-14:3832</id>
-    <updated>2019-10-14T12:12:12Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I¡¯m happy to announce that Spring Initializr 0.8.0 has been released and is now available from repo.spring.io. For the first time, the release is also available from Maven Central!&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-io/initializr/releases/tag/v0.8.0.RELEASE"&gt;90 fixes, improvements and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;Spring Initializr 0.8 brings &lt;a href="https://spring.io/blog/2019/02/20/what-s-new-with-spring-initializr"&gt;a complete rewrite of the project generation API&lt;/a&gt; with dedicated abstractions for common assets of JVM-based projects:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Build systems with dedicated support for Apache Maven and Gradle (both Groovy and Kotlin DSLs).&lt;/li&gt;
-  &lt;li&gt;Languages with basic model and writer support for Java, Kotlin, and Groovy.&lt;/li&gt;
-  &lt;li&gt;High-level hook-point to tune the project structure with several convenient implementations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This release moves all our opinions that are running on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; to a dedicated optional module that you can build upon or ignore to use only your conventions. This should make the creation of a custom instance easier than ever!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-io/initializr"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/initializr/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/initializr/docs/0.8.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-initializr"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-io/initializr"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
