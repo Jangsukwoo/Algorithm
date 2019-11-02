@@ -1,0 +1,7 @@
+package Simulation;
+
+public class 공 {
+	public static void main(String[] args) {
+
+	}
+}

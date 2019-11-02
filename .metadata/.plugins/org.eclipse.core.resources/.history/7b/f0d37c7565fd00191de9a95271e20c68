@@ -1,0 +1,7 @@
+package Simulation;
+
+public class 회전하는큐 {
+	public static void main(String[] args) {
+
+	}
+}

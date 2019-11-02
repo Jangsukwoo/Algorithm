@@ -1,0 +1,11 @@
+package BAEKJOON;
+
+public class 공주님을구해라 {
+	static int N,M,T;//row,col,time
+	static int[][] castle;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,19 @@
+package Simulation;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.Scanner;
+
+public class 회전하는큐 {
+	static int N,M;
+	static ArrayList<Integer> dq;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		dq = new ArrayList<Integer>();
+		for(int num=1;num<=N;num++) dq.add(i-1);
+		
+	}
+}

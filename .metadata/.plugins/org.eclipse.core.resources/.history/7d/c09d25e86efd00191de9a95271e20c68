@@ -1,0 +1,9 @@
+package BAEKJOON;
+
+public class 공주님을구해라 {
+	static int N,M,T;//row,col,time
+	static int[][] castle;
+	public static void main(String[] args) {
+
+	}
+}
