@@ -1,0 +1,20 @@
+package Simulation;
+
+import java.util.Scanner;
+
+/*
+ * 7:36~
+ * 
+ * 
+ */
+public class 토너먼트 {
+	static int N;
+	static int jimin,hansu;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		jimin = sc.nextInt();
+		hansu = sc.nextInt();
+		
+	}
+}

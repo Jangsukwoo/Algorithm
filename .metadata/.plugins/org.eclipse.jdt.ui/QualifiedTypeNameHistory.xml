@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Deque"/>
-    <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
-    <fullyQualifiedTypeName name="Samsung.BlankArea"/>
     <fullyQualifiedTypeName name="Samsung.GroundTrees"/>
     <fullyQualifiedTypeName name="Samsung.VirusCoordination"/>
     <fullyQualifiedTypeName name="BAEKJOON.VirusCoordination2"/>
@@ -21,20 +18,17 @@
     <fullyQualifiedTypeName name="Samsung.RotateInformation"/>
     <fullyQualifiedTypeName name="Samsung.RotateOperation"/>
     <fullyQualifiedTypeName name="CodingTest.DayPerPee"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="CodingTest.RentCar"/>
     <fullyQualifiedTypeName name="java.lang.Readable"/>
     <fullyQualifiedTypeName name="Samsung.Pinball"/>
     <fullyQualifiedTypeName name="Samsung.Wormhole"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.TeeXMLDocumentFilterImpl"/>
-    <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="Samsung.SharkInfo"/>
     <fullyQualifiedTypeName name="Samsung.Pipe"/>
     <fullyQualifiedTypeName name="Samsung.startRC"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
-    <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="Samsung.DATA"/>
     <fullyQualifiedTypeName name="Samsung.RC17472"/>
     <fullyQualifiedTypeName name="Samsung.EdgeInfo"/>
@@ -48,16 +42,22 @@
     <fullyQualifiedTypeName name="java.net.Inet4Address"/>
     <fullyQualifiedTypeName name="BAEKJOON.RC2667"/>
     <fullyQualifiedTypeName name="BAEKJOON.RC3184"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="BAEKJOON.Participant"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="Simulation.Bracket"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="BAEKJOON.ChessBall"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Simulation.Tile"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

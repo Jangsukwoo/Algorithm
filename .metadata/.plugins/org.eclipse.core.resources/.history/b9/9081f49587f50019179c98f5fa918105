@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 골드바흐의추측 {
-	public static void main(String[] args) {
-
-	}
-}

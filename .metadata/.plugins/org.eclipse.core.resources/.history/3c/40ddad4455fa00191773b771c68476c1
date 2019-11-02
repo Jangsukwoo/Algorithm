@@ -1,9 +1,0 @@
-package BAEKJOON;
-
-public class 체스판위의공 {
-	static int R,C;
-	static int[] dr = {-1,-1,0,1,1,1,0,-1};
-	public static void main(String[] args) {
-		
-	}
-}
