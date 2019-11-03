@@ -71,17 +71,18 @@ public class 공주님을구해라 {
 	}
 	private static void BFS() {
 		while(!q.isEmpty()){
+			second++;
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int[] curRC = q.poll();
-				if(curRC[0]==(N-1) && curRC[1]==(M-1)){//공주면 제한시간내에 도달 가능
-					possible=true;
-					return;//끝
-				}
 				for(int dir=0;dir<4;dir++) {
 					int nr = curRC[0]+dr[dir];
 					int nc = curRC[1]+dc[dir];
 					if(rangeCheck(nr,nc)){//영역 만족하는데
+						if(nr==(N-1) && nc==(M-1)) {
+							possible=true;
+							return;//끝
+						}
 						switch(curRC[2]){ //그람이 있으면 1
 						case 0://그람이 없으면
 							if(castle[nr][nc]==0 && visit[nr][nc]==false){//맨땅이면 감
@@ -106,7 +107,6 @@ public class 공주님을구해라 {
 				}
 			}
 			if(second==T) return;
-			second++;
 			System.out.println(second+"초후");
 			view();
 		}

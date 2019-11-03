@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Samsung.GroundTrees"/>
-    <fullyQualifiedTypeName name="Samsung.VirusCoordination"/>
     <fullyQualifiedTypeName name="BAEKJOON.VirusCoordination2"/>
     <fullyQualifiedTypeName name="BAEKJOON.VirusRC"/>
     <fullyQualifiedTypeName name="sun.tools.java.ScannerInputReader"/>
@@ -42,22 +40,24 @@
     <fullyQualifiedTypeName name="java.net.Inet4Address"/>
     <fullyQualifiedTypeName name="BAEKJOON.RC2667"/>
     <fullyQualifiedTypeName name="BAEKJOON.RC3184"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="BAEKJOON.Participant"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="Simulation.Bracket"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="BAEKJOON.ChessBall"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Simulation.Tile"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.util.Deque"/>
+    <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>

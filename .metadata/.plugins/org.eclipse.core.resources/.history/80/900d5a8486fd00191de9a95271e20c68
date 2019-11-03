@@ -53,12 +53,8 @@ public class 공주님을구해라 {
 		castle = new int[N][M];
 		visit= new boolean[N][M];
 		moveCheck = new int[N][M];
-		for(int row=0;row<N;row++) {
-			for(int col=0;col<M;col++) {
-				castle[row][col] = sc.nextInt();
-				moveCheck[row][col] =castle[row][col];
-			}
-		}
+		for(int row=0;row<N;row++)
+			for(int col=0;col<M;col++) castle[row][col] = sc.nextInt();
 		
 		if(castle[0][0]==0)q.add(new int[]{0,0,0});
 		else if(castle[0][0]==2) q.add(new int[] {0,0,1});
@@ -71,17 +67,18 @@ public class 공주님을구해라 {
 	}
 	private static void BFS() {
 		while(!q.isEmpty()){
+			second++;
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int[] curRC = q.poll();
-				if(curRC[0]==(N-1) && curRC[1]==(M-1)){//공주면 제한시간내에 도달 가능
-					possible=true;
-					return;//끝
-				}
 				for(int dir=0;dir<4;dir++) {
 					int nr = curRC[0]+dr[dir];
 					int nc = curRC[1]+dc[dir];
 					if(rangeCheck(nr,nc)){//영역 만족하는데
+						if(nr==(N-1) && nc==(M-1)) {
+							possible=true;
+							return;//끝
+						}
 						switch(curRC[2]){ //그람이 있으면 1
 						case 0://그람이 없으면
 							if(castle[nr][nc]==0 && visit[nr][nc]==false){//맨땅이면 감
@@ -106,15 +103,14 @@ public class 공주님을구해라 {
 				}
 			}
 			if(second==T) return;
-			second++;
-			System.out.println(second+"초후");
-			view();
+			//System.out.println(second+"초후");
+			//view();
 		}
 	}
 	private static void view() {
 		for(int row=0;row<N;row++) {
 			for(int col=0;col<M;col++) {
-				System.out.print(moveCheck[row][col]+" ");
+				System.out.print(visit[row][col]+" ");
 			}
 			System.out.println();
 		}

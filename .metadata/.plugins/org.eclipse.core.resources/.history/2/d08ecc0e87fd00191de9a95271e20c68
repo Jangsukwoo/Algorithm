@@ -71,10 +71,11 @@ public class 공주님을구해라 {
 	}
 	private static void BFS() {
 		while(!q.isEmpty()){
+			second++;
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int[] curRC = q.poll();
-				if(curRC[0]==(N-1) && curRC[1]==(M-1)){//공주면 제한시간내에 도달 가능
+				if(curRC[0]==(N-1) && curRC[1]==(M-1)) {
 					possible=true;
 					return;//끝
 				}
@@ -106,7 +107,6 @@ public class 공주님을구해라 {
 				}
 			}
 			if(second==T) return;
-			second++;
 			System.out.println(second+"초후");
 			view();
 		}
