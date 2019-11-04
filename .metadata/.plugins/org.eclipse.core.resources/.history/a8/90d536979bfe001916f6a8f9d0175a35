@@ -95,6 +95,7 @@ public class 공주님을구해라 {
 							cnt++;
 							gramPossible=true;//가능
 							useGram = cnt+(M-1-nc)+(N-1-nr); //그람을 사용하면 무조건 갈 수 있으니 계산하고 끝낸다.
+							System.out.println("그람수"+useGram);
 							return ;
 						}else if(castle[nr][nc]==0 && visit[nr][nc]==false){
 							visit[nr][nc] = true;
@@ -124,13 +125,14 @@ public class 공주님을구해라 {
 					int nr = curRC[0]+dr[dir];
 					int nc = curRC[1]+dc[dir];
 					if(rangeCheck(nr,nc)){//영역 만족하는데
-						if(castle[nr][nc]!=1 && visit[nr][nc]==false){
+						if(castle[nr][nc]==0 && visit[nr][nc]==false){
 							visit[nr][nc] = true;
 							q.add(new int[] {nr,nc});
 						}
 					}
 				}
 			}
+			System.out.println(second);
 			if(second==T) return;
 			second++;
 			//System.out.println(second+"초후");

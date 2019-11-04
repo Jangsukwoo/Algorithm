@@ -131,6 +131,7 @@ public class 공주님을구해라 {
 					}
 				}
 			}
+			System.out.println(second);
 			if(second==T) return;
 			second++;
 			//System.out.println(second+"초후");
