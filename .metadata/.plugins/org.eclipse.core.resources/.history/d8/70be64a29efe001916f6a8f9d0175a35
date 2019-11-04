@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 /*
+ * 9:40~
  * 0은 땅
  * 1은 벽
  * 2는 그람
@@ -38,21 +39,6 @@ import java.util.Scanner;
 0 0 2 0
 1 1 1 1
 0 0 0 0
-
----
-
-차음에 BFS로 한번의 탐색을 통해서 그람의 획득까지 처리해주면 된다고 생각했는데
-그람 획득 후 왔던 길 통해서 다시 가도 최단경로로 가는 경우에 대한 처리를 고려하지 못했다.
-왜냐면 visit으로 이미 갔던 칸임을 체크했기 때문에
-그람을 먹고도 좋은 길로 다시 가지 못했다.
-따라서
-그람을 먹고 목적지를 가는경우와
-그람을 먹든 안먹든 출발지부터 목적지까지 한칸씩 가는 경우
-두가지의 경우를 봤어야 했다.
-그람을 먹고 목적지까지 단숨에 가는 bfs 하나와
-출발지에서 목적지까지 그냥 탐색해서 가는 bfs하나를 돌렸고
-flag처리릁 통해 해결할 수 있었다.. 
-구현보다는 접근이 잘못되어 오래걸린 문제다.
  */
 public class 공주님을구해라 {
 	static int N,M,T;//row,col,time
@@ -78,6 +64,8 @@ public class 공주님을구해라 {
 				castle[row][col] = sc.nextInt();
 			}
 		}
+		
+		
 		gramPossible = false;
 		findGram();//그람을 찾고 목적지까지 거리계산해본다.
 		result = Math.min(useGram,result);
@@ -90,7 +78,7 @@ public class 공주님을구해라 {
 		else if (gramPossible) System.out.println(useGram);
 		else System.out.println("Fail");
 	}
-	private static void findGram(){ //그람찾고 목적지까지 바로가기
+	private static void findGram(){
 		visit = new boolean[N][M];
 		q.add(new int[]{0,0,0});
 		visit[0][0] = true;
@@ -107,7 +95,6 @@ public class 공주님을구해라 {
 							cnt++;
 							gramPossible=true;//가능
 							useGram = cnt+(M-1-nc)+(N-1-nr); //그람을 사용하면 무조건 갈 수 있으니 계산하고 끝낸다.
-							if(useGram>T) gramPossible = false;
 							return ;
 						}else if(castle[nr][nc]==0 && visit[nr][nc]==false){
 							visit[nr][nc] = true;
@@ -136,7 +123,7 @@ public class 공주님을구해라 {
 				for(int dir=0;dir<4;dir++) {
 					int nr = curRC[0]+dr[dir];
 					int nc = curRC[1]+dc[dir];
-					if(rangeCheck(nr,nc)){//영역 만족하고
+					if(rangeCheck(nr,nc)){//영역 만족하는데
 						if(castle[nr][nc]!=1 && visit[nr][nc]==false){
 							visit[nr][nc] = true;
 							q.add(new int[] {nr,nc});
@@ -146,7 +133,18 @@ public class 공주님을구해라 {
 			}
 			if(second==T) return;
 			second++;
+			//System.out.println(second+"초후");
+			//view();
 		}
+	}
+	private static void view() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				System.out.print(visit[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 	private static boolean rangeCheck(int nr, int nc) {
 		if(nr>=0 && nr<N && nc>=0 && nc<M) return true;
