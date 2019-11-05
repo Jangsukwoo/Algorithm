@@ -1,8 +1,0 @@
-package Math;
-
-public class 최대공약수와최소공배수 {
-	static int A,B;
-	public static void main(String[] args) {
-
-	}
-}

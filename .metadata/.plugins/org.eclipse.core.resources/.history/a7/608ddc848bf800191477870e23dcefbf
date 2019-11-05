@@ -1,7 +1,0 @@
-package 순열조합;
-/*
- * 백준 "다음순열"ㄴ문제
- */
-public class Next_permutation {
-
-}

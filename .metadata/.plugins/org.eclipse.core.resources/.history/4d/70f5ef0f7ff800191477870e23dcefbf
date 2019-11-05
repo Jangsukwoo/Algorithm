@@ -1,9 +1,0 @@
-package BAEKJOON;
-
-public class 다음순열 {
-	static int N;
-	static int K = Integer.MAX_VALUE;
-	public static void main(String[] args) {
-		
-	}
-}
