@@ -1,0 +1,13 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class 문자열 {
+	static String A;
+	static String B;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.next();
+		B = sc.next();
+	}
+}
