@@ -1,0 +1,20 @@
+package 알고리즘;
+
+import java.util.Scanner;
+
+/*
+ * Traveling Salesman problem (TSP) 
+ * 어느 한 도시에서 출발하여 N개의 도시를 모두 거쳐 다시 원래의 도시로 되돌아 오는 순회 여행경로중
+ * 최단 경로 구하기
+ * 
+ */
+public class 외판원순회 {
+	static int N; //(2<=N<=16)
+	static int[][] weightMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		weightMap = new int[N][N];
+		
+	}
+}

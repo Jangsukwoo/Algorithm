@@ -8,6 +8,11 @@ import java.util.Scanner;
  * 에라토스 테네스의 체로 풀면
  * 2부터 시작해서 배수들을 전부 true로 바꾸고
  * false인 애들이 소수임을 명시하는 알고리즘임
+ * 
+ * https://blog.naver.com/yechan54/10168144809 
+ * O(N)으로 푸는 에라토스테네스 소스
+ * 
+ * 
  */
 public class 소수구하기 {
 	static boolean flag;
