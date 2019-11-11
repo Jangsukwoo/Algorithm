@@ -1,0 +1,55 @@
+package Simulation;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Stack;
+
+/*
+ * 3:00~
+ * 
+ */
+public class 키로거 {
+	static int cursorPoint;
+	static StringBuilder result = new StringBuilder();
+	static ArrayList<Character> password = new ArrayList<Character>();
+	static String input;
+	static Stack<Character> leftStack,rightStack;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			cursorPoint=0;
+			password.clear();
+			input = br.readLine();
+			detectPassword();
+			for(int i=0;i<password.size();i++) System.out.print(password.get(i));
+			System.out.println();
+		}
+	}
+	private static void detectPassword(){
+		int size = input.length();
+		for(int i=0;i<size;i++){
+			switch (input.charAt(i)){
+			case '<':	
+				if(cursorPoint>0) cursorPoint--;
+				break;
+			case '>':	
+				if(cursorPoint<password.size()) cursorPoint++;
+				break;
+			case '-':	
+				if(cursorPoint>0) {
+					password.remove(cursorPoint-1);
+					cursorPoint--;
+				}
+				
+				break;
+			default :
+				password.add(cursorPoint,input.charAt(i));
+				if((password.size()-1)==cursorPoint) cursorPoint++;
+				break;
+			}
+		}
+	}
+}

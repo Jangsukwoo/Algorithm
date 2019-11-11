@@ -1,0 +1,22 @@
+package Simulation;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * 
+ */
+public class 키로거 {
+	static int cursorPoint;
+	static StringBuilder result = new StringBuilder();
+	static ArrayList<Character> password = new ArrayList<Character>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++){
+			cursorPoint=0;
+			password.clear();
+			
+		}
+	}
+}
