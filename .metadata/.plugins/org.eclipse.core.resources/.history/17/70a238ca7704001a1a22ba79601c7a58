@@ -45,7 +45,7 @@ public class 외판원순회 {
 		}
 		int min = INF;
 		for(int city=0;city<N;city++){//다음 방문할 지점을 고름. 어느 지역이 들어오든 0부터 볼거니까 다 가겠다는뜻. 
-			//도시번호 마스킹
+			//도시번호를 보면서 마스킹
 			//방문하지 않았고 자기 자신이 아니면 
 			if((visit &(1<<city))==0 && weightMap[current][city]!=0) {//방문 안했고 경로가 존재하면
 				int dist = weightMap[current][city]+dfs(city,(visit|(1<<city)));//방문체크
