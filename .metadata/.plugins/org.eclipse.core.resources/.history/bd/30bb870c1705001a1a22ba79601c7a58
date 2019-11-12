@@ -1,0 +1,14 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 움직이는미로탈출 {
+	static char[][] maze;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		maze = new char[8][8];
+		for(int i=0;i<8;i++){
+			maze[i] = sc.nextLine().toCharArray();
+		}
+	}
+}
