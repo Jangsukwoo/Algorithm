@@ -1,0 +1,10 @@
+package 순열조합;
+
+import java.util.Scanner;
+
+public class N과M9 {
+	static int N,M;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	}
+}

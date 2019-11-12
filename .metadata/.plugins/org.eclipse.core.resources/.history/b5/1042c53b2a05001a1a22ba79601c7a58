@@ -1,0 +1,38 @@
+package Simulation;
+
+import java.util.Scanner;
+
+/*
+ * 뒤부터 채운다.
+ * 수식의 규칙성 찾아본다.
+ */
+public class 문자열화폐 {
+	static int N;
+	static int X;
+	static StringBuilder sb = new StringBuilder();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		X = sc.nextInt();
+		if(X>(N*26)) System.out.println("!");
+		else {
+			int alphabet = 26;
+			for(int i=N;i>=1;i--){
+				while(true){
+					System.out.println(sb.toString());
+					System.out.println("x값은"+X);
+					System.out.println("알파벳"+alphabet);
+					int portion = (X/alphabet);//몫
+					int mod = (X%alphabet);//나머지
+					if(portion>0 && ((mod>=(i-1))||mod==0)){
+						System.out.println("깎");
+						X = X-alphabet;
+						sb.append((char)('A'+(alphabet-1)));
+						break;
+					}else alphabet--;
+				}
+			}	
+		}
+		System.out.println(sb.reverse().toString());
+	}
+}
