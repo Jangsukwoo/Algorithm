@@ -1,0 +1,15 @@
+package Samsung;
+/*
+ * 08:07~
+ * 3x3 배열 A
+ * 연산의 형태는 두개
+ * R : 모든 행에 대해 정렬 (행의개수>=열의개수)
+ * C : 모든 열에 대해 정렬 (행의개수 <열의 개수)
+ * 
+ */
+public class 기출_이차원배열과연산 {
+	static int r,c,k;
+	public static void main(String[] args) {
+
+	}
+}
