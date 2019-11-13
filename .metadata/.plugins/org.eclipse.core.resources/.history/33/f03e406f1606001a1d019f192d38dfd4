@@ -109,7 +109,7 @@ public class 기출_이차원배열과연산 {
 			}
 		}
 	}
-	private static void sortCol() { //sortRow와 똑같이
+	private static void sortCol() {
 		int maxRowSize=0;
 		int[][] tempMap = new int[100][100];
 		for(int col=0;col<colSize;col++){//각 열에대해서

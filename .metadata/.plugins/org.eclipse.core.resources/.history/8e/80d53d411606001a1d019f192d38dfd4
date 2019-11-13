@@ -84,16 +84,16 @@ public class 기출_이차원배열과연산 {
 					number.add(new int[] {i,cnt[i]});
 				}	
 			}
-			Collections.sort(number, new Comparator<int[]>(){//빈도수에대해 정렬한다.
+			Collections.sort(number, new Comparator<int[]>() {
 				@Override
 				public int compare(int[] o1, int[] o2){
-					if(o1[1]==o2[1]) Integer.compare(o1[0],o2[0]);//빈도수가 같으면 숫자가 더 큰것으로
+					if(o1[1]==o2[1]) Integer.compare(o1[0],o2[0]);
 					return Integer.compare(o1[1],o2[1]);
 				}
 			});
-			if(maxColSize<number.size()) maxColSize= number.size();//새로 배열에 표현될 값에 대한 최대 사이즈 업데이트
+			if(maxColSize<number.size()) maxColSize= number.size();
 			int col=0;
-			for(int i=0;i<number.size();i++){ //임시 맵에 쓰고
+			for(int i=0;i<number.size();i++){
 				int[] value = number.get(i);
 				tempMap[row][col] = value[0];
 				tempMap[row][col+1] = value[1];
@@ -101,15 +101,15 @@ public class 기출_이차원배열과연산 {
 				if(col==100) break;//100개까지
 			}
 		}
-		colSize = (maxColSize*2); 
-		matrix = new int[rowSize][colSize]; //새롭게 배열 만든다.
-		for(int row=0;row<rowSize;row++){//복사
+		colSize = (maxColSize*2);
+		matrix = new int[rowSize][colSize];
+		for(int row=0;row<rowSize;row++) {
 			for(int col=0;col<colSize;col++){
 				matrix[row][col] = tempMap[row][col];
 			}
 		}
 	}
-	private static void sortCol() { //sortRow와 똑같이
+	private static void sortCol() {
 		int maxRowSize=0;
 		int[][] tempMap = new int[100][100];
 		for(int col=0;col<colSize;col++){//각 열에대해서
