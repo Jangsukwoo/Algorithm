@@ -1,7 +1,0 @@
-package 알고리즘;
-
-public class 외판원순회 {
-	public static void main(String[] args) {
-
-	}
-}

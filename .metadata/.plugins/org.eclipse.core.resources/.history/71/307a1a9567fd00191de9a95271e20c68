@@ -1,8 +1,0 @@
-package Simulation;
-
-public class 회전하는큐 {
-	static int N,M;
-	public static void main(String[] args) {
-		
-	}
-}
