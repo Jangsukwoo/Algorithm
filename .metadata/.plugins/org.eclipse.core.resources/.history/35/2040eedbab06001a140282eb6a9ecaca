@@ -1,0 +1,16 @@
+package Samsung;
+
+import java.util.Scanner;
+/*
+ * 3:55~
+ * 
+ */
+public class 게리맨더링2 {
+	static int N;
+	static int[][] A;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		A = new int[N][N];
+	}
+}
