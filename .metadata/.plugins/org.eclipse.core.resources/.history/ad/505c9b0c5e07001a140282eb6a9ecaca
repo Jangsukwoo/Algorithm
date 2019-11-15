@@ -20,7 +20,6 @@ import java.util.Scanner;
  * 보류
  * 어디가 틀린지 모르겠음..ㅠ
  * 
- * ->
  * 평균을 int가아닌 double로 하니까 풀렸다 ㅠ
  */
 public class 기출_원판돌리기 {

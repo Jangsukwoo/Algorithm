@@ -19,9 +19,6 @@ import java.util.Scanner;
  * 
  * 보류
  * 어디가 틀린지 모르겠음..ㅠ
- * 
- * ->
- * 평균을 int가아닌 double로 하니까 풀렸다 ㅠ
  */
 public class 기출_원판돌리기 {
 	static int N,M,T;//원판 N개, 원판에 적힌 숫자 M개, 회전 T번
@@ -68,7 +65,9 @@ public class 기출_원판돌리기 {
 				}
 			}
 			adJoinCheck();
+			view();
 		}
+		
 	}
 	private static void view() {
 		for(int i=1;i<=N;i++) {
@@ -118,6 +117,18 @@ public class 기출_원판돌리기 {
 				}
 			}
 		}
+		System.out.println("exist값:"+exist);
+		for(int i=1;i<=N;i++) {
+			for(int j=0;j<M;j++) {
+				System.out.print(circleBoard[i][j]);
+			}
+			System.out.println();
+			for(int j=0;j<M;j++) {
+				System.out.print(visit[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println();
 		if(exist) removeAdjoin(visit);
 		else averageCalculate();
 	}
@@ -125,6 +136,7 @@ public class 기출_원판돌리기 {
 	private static void averageCalculate() {
 		double cnt=0;
 		double sum=0;
+		double averge=0;
 		for(int i=1;i<=N;i++) {
 			for(int j=0;j<M;j++) {
 				if(circleBoard[i][j]!=0) {
@@ -134,6 +146,11 @@ public class 기출_원판돌리기 {
 			}
 		}
 		double av = sum/cnt;
+		averge = sum/cnt;
+		System.out.println("sum값"+sum);
+		System.out.println("cnt값"+cnt);
+		System.out.println("소수점까지평균"+av);
+		System.out.println("평균:"+averge);
 		for(int i=1;i<=N;i++) {
 			for(int j=0;j<M;j++) {
 				if(circleBoard[i][j]>av){
