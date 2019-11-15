@@ -8,7 +8,6 @@ import java.util.Scanner;
  * 5:02~
  * 어렵다.. 식세워서 식대로 구현하는거랑
  * 인구수 차이 조건 제대로 읽고 풀어야했다.
- * 7:22
  */
 public class 기출_게리맨더링2 {
 	static int N;
