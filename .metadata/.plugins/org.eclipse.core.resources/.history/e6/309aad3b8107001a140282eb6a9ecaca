@@ -1,0 +1,16 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 5:02~
+ * 
+ */
+public class 기출_게리맨더링2 {
+	static int N;
+	static int[][] A;
+	static int[][] aliance;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	}
+}
