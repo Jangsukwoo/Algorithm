@@ -1,0 +1,16 @@
+package Samsung;
+
+import java.util.Scanner;
+
+/*
+ * 4:41 ~
+ */
+public class 기출_새로운게임 {
+	static int N;
+	static int[][] chessMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		chessMap = new int[N][N];
+	}
+}

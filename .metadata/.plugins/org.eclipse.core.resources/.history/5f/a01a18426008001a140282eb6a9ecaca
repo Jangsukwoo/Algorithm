@@ -1,0 +1,10 @@
+package Simulation;
+
+import java.util.Stack;
+
+public class 고스택 {
+	static Stack<Integer> gostack = new Stack<Integer>();
+	public static void main(String[] args) {
+		
+	}
+}

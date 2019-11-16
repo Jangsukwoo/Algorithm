@@ -1,0 +1,74 @@
+package Samsung;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * 4:41 ~
+ * chessMap에서
+ * 0 : 땅
+ * 1 : 순서 리버스
+ * 2 : 벽
+ * 
+ * 말의 이동방향 
+ * 1: 우
+ * 2: 좌
+ * 3: 상
+ * 4: 하
+ * 
+ */
+class chessHorse{
+	int row;
+	int col;
+	int dir;
+	boolean reverse;
+	ArrayList<chessHorse> horseList;
+	public chessHorse(int r, int c, int d) {
+		row = r;
+		col = c;
+		dir = d;
+		horseList = new ArrayList<chessHorse>();
+		reverse = false;
+	}
+}
+public class 기출_새로운게임 {
+	static int N;
+	static int K;
+	static int[][] chessMap;
+	static int[][] horseMap;
+	static chessHorse[] horses;
+	static int turn;
+	static int[] dr = {0,0,1,-1};
+	static int[] dc = {1,-1,0,0};//우좌상하
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		K = sc.nextInt();
+		chessMap = new int[N][N];
+		horseMap = new int[N][N];
+		horses = new chessHorse[K];
+		
+		for(int row=0;row<N;row++)
+			for(int col=0;col<N;col++) chessMap[row][col] = sc.nextInt();
+		for(int k=0;k<K;k++){
+			int row = sc.nextInt()-1;
+			int col = sc.nextInt()-1;
+			int dir = sc.nextInt()-1;
+			horses[k] = new chessHorse(row,col,dir);
+			horseMap[row][col] = (k+1);
+		}
+		simulation();
+	}
+	private static void simulation() {
+		while(turn<1000){//최대 1000턴
+			for(int h=0;h<K;h++){//첫번째 말부터 순서대로 확인
+				for(int row=0;row<N;row++) {
+					for(int col=0;col<N;col++) {
+						if(horseMap[row][col])
+					}
+					
+				}
+			}
+		}
+	}
+}
