@@ -1,0 +1,20 @@
+package Simulation;
+
+import java.util.Scanner;
+
+public class 좌중을사로잡는건배사 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String line = sc.nextLine();
+		switch (line) {
+		case "걸.걸.걸":
+			System.out.println("더 사랑할걸, 더 참을걸, 더 즐길걸");
+			break;
+		case "사.우.나":
+			System.out.println("사랑과 우정을 나누자");
+			break;
+		
+
+		}
+	}
+}
