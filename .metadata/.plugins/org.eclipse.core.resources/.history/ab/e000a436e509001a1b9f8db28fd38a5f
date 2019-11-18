@@ -1,0 +1,25 @@
+package 브루트포스;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 독일 로또는 1~49 중에 숫자 6개를 고름
+ * 
+ */
+public class 로또 {
+	static int N;
+	static int[] data;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		while(true) {
+			String readLine = br.readLine();
+			StringTokenizer st = new StringTokenizer(readLine);
+			N = Integer.parseInt(st.nextToken());
+			data = new int[N];
+			for(int i=0;i<N;i++) data[i] = Integer.parseInt(st.nextToken());
+		}
+	}
+}

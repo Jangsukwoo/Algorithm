@@ -1,0 +1,10 @@
+package 브루트포스;
+/*
+ * 독일 로또는 1~49 중에 숫자 6개를 고름
+ * 
+ */
+public class 로또 {
+	public static void main(String[] args) {
+		
+	}
+}
