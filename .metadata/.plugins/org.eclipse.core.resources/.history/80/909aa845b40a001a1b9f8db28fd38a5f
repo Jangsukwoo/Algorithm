@@ -1,0 +1,16 @@
+package 자료구조연습;
+/*
+ * 식물의 수 N (최대 100000)
+ * 점프 수 K (최대 100000)
+ * A:우상
+ * B:우하
+ * C:좌상
+ * D:좌하
+ * 
+ * N개의 줄에는 식물의 좌표가 입력으로 주어짐.
+ */
+public class 개구리공주 {
+	public static void main(String[] args) {
+		
+	}
+}

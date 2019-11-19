@@ -5,7 +5,85 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-11-15T09:45:24Z</updated>
+  <updated>2019-11-19T03:28:22Z</updated>
+  <entry>
+    <title>This Week in Spring - November 18th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/11/19/this-week-in-spring-november-18th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-11-19:3875</id>
+    <updated>2019-11-19T03:28:22Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another of &lt;em&gt;This Week in Spring&lt;/em&gt;. We&amp;rsquo;ve got a lot to cover, so let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/18/spring-data-moore-sr2-and-lovelace-sr13-available"&gt;Spring Data Moore SR2 and Lovelace SR13 available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/15/a-bootiful-podcast-redhat-ibm-s-s-bastien-blanc-on-oauth-keycloak-the-french-riviera-and-more"&gt;A Bootiful Podcast: RedHat / IBM&amp;rsquo;s S?bastien Blanc on OAuth, KeyCloak, the French riviera, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-cloud-open-service-broker-3-1-0-rc1-released"&gt;Spring Cloud Open Service Broker 3.1.0.RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-4-0-2-3-8-released"&gt;Spring Security OAuth 2.4.0, 2.3.8 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update"&gt;Spring Security OAuth 2.0 Roadmap Update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/12/spring-cloud-hoxton-rc2-released"&gt;Spring Cloud Hoxton.RC2 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1196458944396484609"&gt;https://twitter.com/SpringData/status/1196458944396484609&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4-vew8ck_6g"&gt;My three hour masterclass on all things Reactive Spring from Devoxx Belgium 2019 is now online&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2019/11/13/this-month-in-rabbitmq-november-2019/"&gt;This Month in RabbitMQ: November 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://atos.net/en/2019/press-release_2019_10_09/289359"&gt;Atos Delivers Faster Cloud Adoption with New SyntBots Accelerators for Pivotal Platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://piotrminkowski.wordpress.com/2019/11/15/rate-limiting-in-spring-cloud-gateway-with-redis/"&gt;A nice post on doing rate limiting with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/dormaindrewitz/status/1195340680010166273?s=12"&gt;I&amp;rsquo;ll be doinng an Azure Spring Cloud webinar on 5 December 2019-join me!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/sharat_chander/status/1195030431587946496"&gt;I love Sharat Chandler&amp;rsquo;s tweets linking us to these videos for Java from &lt;em&gt;waaaaaaay&lt;/em&gt; back&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://gasparbarancelli.github.io/spring-native-query/"&gt;This looked interesting - Spring Native Query&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data Moore SR2 and Lovelace SR13 available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/11/18/spring-data-moore-sr2-and-lovelace-sr13-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-11-18:3874</id>
+    <updated>2019-11-18T16:02:23Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I&amp;rsquo;m pleased to announce the availability of the Spring Data &lt;code&gt;Moore SR2&lt;/code&gt; and &lt;code&gt;Lovelace SR13&lt;/code&gt; service releases.&lt;/p&gt;
+&lt;p&gt;Both releases fix 66 tickets in total, mostly bugfixes. We decided to ship both versions on short notice to address bugs around auditing and converter registration for a broader range of users, as we&amp;rsquo;ve noted an increased number of bug reports in both areas. If you use Spring Data through Spring Boot, you can consume the released artifacts by setting the &lt;code&gt;spring-data-releasetrain.version&lt;/code&gt; property to &lt;code&gt;Moore-SR2&lt;/code&gt; or &lt;code&gt;Lovelace-SR13&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Finally, here are links to the reference documentation, changelogs, and artifacts of the individual project releases:&lt;/p&gt;&lt;h2&gt;&lt;a href="#moore-sr2" class="anchor" name="moore-sr2"&gt;&lt;/a&gt;Moore SR2&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JDBC 1.1.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.1.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 4.1.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.1.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Geode 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 3.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 3.2.2 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.2.2.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.2.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.2.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#lovelace-sr13" class="anchor" name="lovelace-sr13"&gt;&lt;/a&gt;Lovelace SR13&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JDBC 1.0.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.0.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 4.0.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.0.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Geode 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 3.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 3.1.13 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.1.13.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.13.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.13.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.13.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: RedHat / IBM's S?bastien Blanc on OAuth, KeyCloak, the French riviera, and more</title>
     <link rel="alternate" href="https://spring.io/blog/2019/11/15/a-bootiful-podcast-redhat-ibm-s-s-bastien-blanc-on-oauth-keycloak-the-french-riviera-and-more" />
@@ -972,136 +1050,6 @@ az spring-cloud app deploy -n demo-app --jar-path target/demo-0.0.1-SNAPSHOT.jar
 &lt;p&gt;The first maintenance release of the 5.2 line includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.1.RELEASE"&gt;over 35 fixes and improvements&lt;/a&gt;. Spring Framework 5.1.11 &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.11.RELEASE"&gt;includes 7 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with corresponding Spring Boot releases (2.2.1 and 2.1.10).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.1.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Hibernate guru Vlad Mihalcea</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/31/a-bootiful-podcast-hibernate-guru-vlad-mihalcea" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-31:3855</id>
-    <updated>2019-10-31T22:22:14Z</updated>
-    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/706122148&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi Spring fans! in today&amp;rsquo;s episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/vlad_mihalcea"&gt;Vlad Mihalcea (@vlad_mihalcea)&lt;/a&gt; about Hibernate, databases, optimizations, and more. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/vlad_mihalcea"&gt;Vlad on Twitter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://vladmihalcea.com/"&gt;Vlad&amp;rsquo;s blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Stream - Event Routing</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/31/spring-cloud-stream-event-routing" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2019-10-31:3854</id>
-    <updated>2019-10-31T14:33:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another post in a series of posts showcasing the new features of &lt;a href="https://spring.io/projects/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt; (SCSt).&lt;br/&gt;In previous posts (available &lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;here&lt;/a&gt;, &lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;here&lt;/a&gt; and &lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;here&lt;/a&gt;), we tried to provide justification for our shift to a functional programming model in Spring Cloud Stream (SCSt). It is less code and less configuration, and your code remains completely decoupled from the internals of SCSt.&lt;/p&gt;
-&lt;p&gt;Today, we&amp;rsquo;ll talk about routing with functions.&lt;br/&gt;Routing, in the context of SCSt, is the ability to either &lt;em&gt;a) route events to a particular event subscriber&lt;/em&gt; or &lt;em&gt;b) route an event produced by an event subscriber to a particular destination&lt;/em&gt;. To help more with the context, let&amp;rsquo;s quickly look at how things work in the annotation-based programming model. In this post, we&amp;rsquo;ll refer to it as route &amp;lsquo;TO&amp;rsquo; and route &amp;lsquo;FROM&amp;rsquo;.&lt;/p&gt;
-&lt;p&gt;For routing &lt;strong&gt;&lt;em&gt;TO&lt;/em&gt;&lt;/strong&gt; an event subscriber, we used the &lt;code&gt;condition&lt;/code&gt; attribute of the &lt;code&gt;StreamListener&lt;/code&gt; annotation, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@StreamListener(target = Sink.INPUT, condition = &amp;quot;headers[&amp;#39;type&amp;#39;]==&amp;#39;order&amp;#39;&amp;quot;)&#xD;
-public void receiveOrders(Order order) {...}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/2.1.3.RELEASE/single/spring-cloud-stream.html#_using_streamlistener_for_content_based_routing"&gt;Here&lt;/a&gt; are more details on this approach.&lt;/p&gt;
-&lt;p&gt;And, for routing &lt;strong&gt;&lt;em&gt;FROM&lt;/em&gt;&lt;/strong&gt; an event subscriber, we used &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/2.1.3.RELEASE/single/spring-cloud-stream.html#dynamicdestination"&gt;Dynamically Bound Destinations&lt;/a&gt; - the approach that allows framework to bind to a destination based on some instruction provided within the individual event.&lt;/p&gt;&lt;h2&gt;&lt;a href="#event-routing-with-functions" class="anchor" name="event-routing-with-functions"&gt;&lt;/a&gt;Event Routing with Functions&lt;/h2&gt;
-&lt;p&gt;With the functional approach, we can do all of the above in a more clean and concise way with a few additional features.&lt;/p&gt;&lt;h4&gt;&lt;a href="#route-to" class="anchor" name="route-to"&gt;&lt;/a&gt;Route TO:&lt;/h4&gt;
-&lt;p&gt;Routing &amp;lsquo;TO&amp;rsquo; functions can be achieved by relying on the routing function feature available in &lt;a href="https://spring.io/projects/spring-cloud-function"&gt;Spring Cloud Function&lt;/a&gt; (SCF).&lt;br/&gt;You can enable routing explicitly by setting the &lt;code&gt;spring.cloud.stream.function.routing.enabled&lt;/code&gt; property or implicitly by setting the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; property and providing routing instruction with Spring Expression Language (SpEL). The routing instruction should result in the definition of the function to which to route, &amp;lsquo;TO&amp;rsquo;.&lt;br/&gt;For the purposes of binding, the name of the routing destination is &lt;code&gt;functionRouter-in-0&lt;/code&gt; (see &lt;code&gt;RoutingFunction.FUNCTION_NAME&lt;/code&gt; and the binding naming convention described &lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;here&lt;/a&gt;). &lt;/p&gt;
-&lt;p&gt;When a message is sent to this destination, the routing function tries to determine which actual function needs to process such an event. It first tries to access the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; message header and, if provided, determine the name of the actual function to invoke. This is the most dynamic approach. The second most dynamic approach is to provide a &lt;code&gt;spring.cloud.function.definition&lt;/code&gt; header, which should contain the definition of the function to which to route &amp;lsquo;TO&amp;rsquo;. Both approaches require explicit enablement of routing function by setting the &lt;code&gt;spring.cloud.stream.function.routing.enabled&lt;/code&gt; property.&lt;/p&gt;
-&lt;p&gt;As for additional features that were not available in previous versions, the &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; can also be used as application property. For example, consider the case when the expression is the same regardless of the incoming event, as in the annotation-based example shown earlier in this post (for example, &lt;code&gt;spring.cloud.function.routing-expression=headers[&amp;#39;type&amp;#39;]==&amp;#39;order&amp;#39;&lt;/code&gt;). For this approach, you need not explicitly enable a routing function, given that &lt;code&gt;spring.cloud.function.routing-expression&lt;/code&gt; as an application property has the same effect. &lt;/p&gt;
-&lt;p&gt;Albeit trivial, the following is a complete example of one of the approaches described above:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
-public class RoutingStreamApplication {&#xD;
-&#xD;
-  public static void main(String[] args) {&#xD;
-      SpringApplication.run(RoutingStreamApplication.class,&#xD;
-	  &amp;quot;--spring.cloud.function.routing-expression=&amp;quot;&#xD;
-	  + &amp;quot;T(java.lang.System).nanoTime() % 2 == 0 ? &amp;#39;even&amp;#39; : &amp;#39;odd&amp;#39;&amp;quot;);&#xD;
-  }&#xD;
-  @Bean&#xD;
-  public Consumer&amp;lt;Integer&amp;gt; even() {&#xD;
-    return value -&amp;gt; System.out.println(&amp;quot;EVEN: &amp;quot; + value);&#xD;
-  }&#xD;
-&#xD;
-  @Bean&#xD;
-  public Consumer&amp;lt;Integer&amp;gt; odd() {&#xD;
-    return value -&amp;gt; System.out.println(&amp;quot;ODD: &amp;quot; + value);&#xD;
-  }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;By sending a message to the &lt;code&gt;functionRouter-in-0&lt;/code&gt; destination that is exposed by the binder (that is, rabbit or kafka), such a message will be routed to the appropriate (&amp;lsquo;even&amp;rsquo; or &amp;lsquo;odd&amp;rsquo;) &lt;code&gt;Consumer&lt;/code&gt; bean, based on the value of &lt;code&gt;nanoTime()&lt;/code&gt; at the time of message processing. &lt;/p&gt;&lt;h4&gt;&lt;a href="#route-from" class="anchor" name="route-from"&gt;&lt;/a&gt;Route FROM:&lt;/h4&gt;
-&lt;p&gt;As before, routing &amp;lsquo;FROM&amp;rsquo; relies on the Dynamically Bound Destinations feature of SCSt. However, as with routing &amp;lsquo;TO&amp;rsquo;, there are a number of additional features. &lt;/p&gt;
-&lt;p&gt;The following example shows the basics:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Autowired&#xD;
-private BinderAwareChannelResolver resolver;&#xD;
-&#xD;
-public Consumer&amp;lt;String&amp;gt; send(Message message) {   &#xD;
-     MessageChannel destination = resolver&#xD;
-        .resolveDestination(message.getHeaders().get(&amp;quot;type&amp;quot;))&#xD;
-     Message outgoingMessage = . . . // your code&#xD;
-     destination.send(outgoingMessage);&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;All you need is a reference to &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt; (autowired in the proceeding example). Then you can use some logic to determine the destination name (in our case, we use the value of the &amp;lsquo;type&amp;rsquo; header). Once the destination name is determined, you can obtain a reference to it by using the &lt;code&gt;BinderAwareChannelResolver.resolveDestination(..)&lt;/code&gt; operation and sending a message to it. That is really all it takes.&lt;/p&gt;
-&lt;p&gt;The downside of the above approach is that some framework-specific abstractions leak into your code. Look at the fact that you need to be aware of &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt; and &lt;code&gt;MessageChannel&lt;/code&gt;, amongst other things. In fact, most of the code in the preceding example is boilerplate. &lt;/p&gt;
-&lt;p&gt;A more dynamic and less leaky approach is to rely on &lt;code&gt;spring.cloud.stream.sendto.destination&lt;/code&gt; property, which effectively does all of the above - but behind the scenes. The following example shows how to use this approach:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
-public class RoutingStreamApplication {&#xD;
-&#xD;
-  @Bean&#xD;
-  public Function&amp;lt;Message&amp;lt;String&amp;gt;, Message&amp;lt;String&amp;gt;&amp;gt; process() {&#xD;
-    return message -&amp;gt; {&#xD;
-      // some logic to process incoming message&#xD;
-      Message&amp;lt;String&amp;gt; outgoingMessage = MessageBuilder&#xD;
-		.withPayload(&amp;quot;Hello&amp;quot;)&#xD;
-		.setHeader(&amp;quot;spring.cloud.stream.sendto.destination&amp;quot;, &amp;quot;even&amp;quot;)&#xD;
-		.build();&#xD;
-       return outgoingMessage;&#xD;
-     };&#xD;
-  }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We no longer have to inject &lt;code&gt;BinderAwareChannelResolver&lt;/code&gt;, perform resolution of &lt;code&gt;MessageChannel&lt;/code&gt;, and so on. We simply create a new &lt;code&gt;Message&lt;/code&gt; that specifies a header that is used by the framework to dynamically resolve destination.&lt;/p&gt;&lt;h4&gt;&lt;a href="#routing-sources" class="anchor" name="routing-sources"&gt;&lt;/a&gt;Routing Sources&lt;/h4&gt;
-&lt;p&gt;Last but not least, let&amp;rsquo;s look at another popular use case of a route &amp;lsquo;FROM&amp;rsquo; where the source of data originates outside the context of SCSt but needs to be routed to the appropriate destination:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Controller&#xD;
-public class SourceWithDynamicDestination {&#xD;
-    @Autowired&#xD;
-    private ObjectMapper jsonMapper;&#xD;
-&#xD;
-    private final EmitterProcessor&amp;lt;?&amp;gt; processor = EmitterProcessor.create();&#xD;
-&#xD;
-    @RequestMapping(path = &amp;quot;/&amp;quot;, method = POST, consumes = &amp;quot;*/*&amp;quot;)&#xD;
-    @ResponseStatus(HttpStatus.ACCEPTED)&#xD;
-    public void handleRequest(@RequestBody String body, &#xD;
-      @RequestHeader(HttpHeaders.CONTENT_TYPE) Object contentType) &#xD;
-      throws Exception {&#xD;
-        Map&amp;lt;String, String&amp;gt; payload = jsonMapper.readValue(body, Map.class);&#xD;
-        String destination = payload.get(&amp;quot;id&amp;quot;);&#xD;
-        Message&amp;lt;?&amp;gt; message =&#xD;
-          MessageBuilder.withPayload(payload)&#xD;
-           .setHeader(&amp;quot;spring.cloud.stream.sendto.destination&amp;quot;, destination)&#xD;
-           .build();&#xD;
-        processor.onNext(message);&#xD;
-    }&#xD;
-&#xD;
-    @Bean&#xD;
-    public Supplier&amp;lt;Flux&amp;lt;?&amp;gt;&amp;gt; source() {&#xD;
-        return () -&amp;gt; processor;&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then we can see the result by running the following &lt;code&gt;curl&lt;/code&gt; command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; -X POST -d &amp;#39;{&amp;quot;id&amp;quot;:&amp;quot;customerId-1&amp;quot;,&amp;quot;bill-pay&amp;quot;:&amp;quot;100&amp;quot;}&amp;#39; http://localhost:8080
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here, we use both a functional approach and a dusting of the reactive paradigm, by virtue of &lt;code&gt;Supplier&amp;lt;Flux&amp;lt;?&amp;gt;&amp;gt;&lt;/code&gt; bean. We have a simple MVC controller, and we want to route requests downstream, based on the value of the &amp;lsquo;id&amp;rsquo; attribute of the content.&lt;br/&gt;While the details of the &lt;code&gt;EmitterProcessor&lt;/code&gt; and its usage here are a subject for another post, what is important is that it demonstrates a fully functional application where HTTP requests are routed dynamically to destinations managed by the target binder.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;NOTE: At the time of this writing, the reference documentation is being actively updated to support the upcoming 3.0.0.RELEASE of SCSt, but you can always use the source of the &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/blob/master/docs/src/main/asciidoc/spring-cloud-stream.adoc#event-routing"&gt;reference documentation&lt;/a&gt; for the most up-to-date information.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Check out &lt;a href="https://github.com/spring-cloud/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt; on GitHub.&lt;/p&gt;
-&lt;p&gt;Also, the previous blogs in the series:&lt;br/&gt;- &lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;Spring Cloud Stream - demystified and simplified&lt;/a&gt;&lt;br/&gt;&lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;- Spring Cloud Stream - functional and reactive&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;Spring Cloud Stream &amp;amp; Spring Integration&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
