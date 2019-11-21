@@ -1,0 +1,13 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 검문 {
+	static int N;
+	static int[] num;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		num = new int[N];
+	}
+}

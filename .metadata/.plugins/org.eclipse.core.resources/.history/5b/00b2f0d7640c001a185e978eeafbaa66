@@ -1,0 +1,12 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 수이어쓰기1 {
+	static int N;
+	static int size;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}
