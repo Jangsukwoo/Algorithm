@@ -1,0 +1,18 @@
+package SWExpertAcademy;
+
+import java.util.Scanner;
+
+/*
+ * N 최대 1000
+ */
+public class 간단한369게임 {
+	static int N;
+	static StringBuilder sb = new StringBuilder();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N =sc.nextInt();
+		for(int i=1;i<=N;i++){
+			string data = Integer.toString(i);
+		}
+	}
+}

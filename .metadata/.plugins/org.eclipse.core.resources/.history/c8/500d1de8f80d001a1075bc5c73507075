@@ -1,0 +1,12 @@
+package 알고리즘;
+/*
+ * N : 컴퓨터수, 최대 100대
+ * M : 총 연결관계
+ * 다음 M개의 줄은
+ * 연결관계 정보
+ */
+public class 바이러스_플로이드와샬 {
+	public static void main(String[] args) {
+
+	}
+}
