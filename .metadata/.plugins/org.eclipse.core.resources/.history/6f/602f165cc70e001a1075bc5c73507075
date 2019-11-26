@@ -6,7 +6,7 @@ public class Test {
 		System.out.println(size);
 		int num=0;
 		Integer a = 5;
-		Integer b = 10+a;
+		Integer b = 10;
 		System.out.println(a+b);
 		System.out.println((char)(num+'1'));
 	}
