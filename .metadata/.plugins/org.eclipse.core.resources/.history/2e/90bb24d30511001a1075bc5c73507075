@@ -1,0 +1,13 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class 치삼이의징검다리건너기 {
+	static int N;
+	static int W;
+	static int[][] ground;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	}
+}

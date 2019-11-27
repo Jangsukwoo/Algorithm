@@ -1,0 +1,50 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+/* 치삼이는 상,하,좌,우,대각선으로 이동 가능
+ * 땅,돌은 너무 뜨겁다.
+ * 돌이 있는 부분은 물이 차오르면 지나갈 수 있다.
+ * 물이 차오르는 위치가 주어짐.
+ * 물은 인접해있으면 퍼지게 되는데
+ * 상,하,좌,우로 인접한 경우만 퍼진다.
+ * 치삼이가 이동하는 것은 시간이 걸리지 않음.
+ * 치삼이가 1,1 -> N,N까지 가장 빠르게 도착하는 경우는 몇일?
+ * 
+ * 돌이 있는 부분은 물이 차오르면 식혀져서 지나갈 수 있다.
+ */
+public class 치삼이의징검다리건너기 {
+	static int N;
+	static int W;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	static int[][] ground;
+	static boolean[][] visit;
+	static boolean[][] water;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		W = sc.nextInt();
+		ground = new int[N][N];
+		for(int i=0;i<W;i++) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			q.add(new int[] {x,y});
+		}
+		sc.nextLine();
+		for(int row=0;row<N;row++) {
+			String readLine = sc.nextLine();
+			char[] data = readLine.toCharArray();
+			for(int col=0;col<N;col++) {
+				ground[row][col] = Character.getNumericValue(data[col]);
+			}
+		}//입력 끝
+		BFS();
+		
+	}
+	private static void BFS() {
+		
+	}
+}

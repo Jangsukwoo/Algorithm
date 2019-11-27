@@ -1,0 +1,20 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+/* 치삼이는 상,하,좌,우,대각선으로 이동 가능
+ * 땅,돌은 너무 뜨겁다.
+ * 돌이 있는 부분은 물이 차오르면 지나갈 수 있다.
+ * 물이 차오르는 위치가 주어짐.
+ * 
+ */
+public class 치삼이의징검다리건너기 {
+	static int N;
+	static int W;
+	static int[][] ground;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		W = sc.nextInt();
+	}
+}
