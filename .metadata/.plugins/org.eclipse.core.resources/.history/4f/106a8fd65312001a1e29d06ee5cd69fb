@@ -1,0 +1,12 @@
+package 브루트포스;
+
+/*
+ * 난쟁이 9명
+ * 합이 100이되는 난쟁이 찾기
+ * 
+ */
+public class 일곱난쟁이 {
+	public static void main(String[] args) {
+
+	}
+}

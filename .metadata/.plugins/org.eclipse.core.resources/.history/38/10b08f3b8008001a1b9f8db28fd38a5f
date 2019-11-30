@@ -1,7 +1,0 @@
-package Simulation;
-
-public class 좌중을사로잡는건배사 {
-	public static void main(String[] args) {
-
-	}
-}

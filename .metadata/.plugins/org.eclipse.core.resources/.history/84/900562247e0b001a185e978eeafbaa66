@@ -1,7 +1,0 @@
-package SWExpertAcademy;
-
-public class 최장증가부분수열 {
-	public static void main(String[] args) {
-
-	}
-}

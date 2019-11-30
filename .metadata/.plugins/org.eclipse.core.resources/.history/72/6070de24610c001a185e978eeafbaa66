@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 검문 {
-	public static void main(String[] args) {
-
-	}
-}

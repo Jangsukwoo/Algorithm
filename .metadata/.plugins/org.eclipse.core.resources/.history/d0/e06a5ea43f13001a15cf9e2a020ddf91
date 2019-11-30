@@ -1,0 +1,35 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+/*
+ * A->B 백준 16953번
+ * 정수 A와 B를 입력받아서
+ * 다음의 연산을 통해 A를 B를 만들려고 한다.
+ * 1. x2
+ * 2. 1을 수의 가장 오른쪽에 추가
+ * 
+ */
+public class FromAtoB {
+	static int A,B;
+	static boolean flag;
+	static int result;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt();
+		B = sc.nextInt();
+		dfs(A,0);
+		if(flag)System.out.println(result);
+		else System.out.println("-1");
+	}
+	private static void dfs(int a,int cnt) {
+		if(a>100000000 || a>B) return;
+		if(flag) return;
+		if(a==B){
+			flag=true;
+			return;
+		}
+		dfs(a*2,cnt+1);
+		dfs(a+1,cnt+1);
+	}
+}

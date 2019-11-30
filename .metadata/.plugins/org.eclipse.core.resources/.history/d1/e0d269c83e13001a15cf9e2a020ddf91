@@ -1,0 +1,12 @@
+package BAEKJOON;
+/*
+ * A->B 백준 16953번
+ * 정수 A와 B를 입력받아서
+ * 다음의 연산을 통해 A를 B를 만들려고 한다.
+ * 1. x2
+ * 2. 1을 수의 가장 오른쪽에 추가
+ * 
+ */
+public class FromAtoB {
+
+}
