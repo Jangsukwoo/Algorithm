@@ -1,0 +1,17 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 최장증가부분수열??
+ */
+public class 상자넣기 {
+	static int N;
+	static int[] box;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		box = new int[N];
+		
+	}
+}

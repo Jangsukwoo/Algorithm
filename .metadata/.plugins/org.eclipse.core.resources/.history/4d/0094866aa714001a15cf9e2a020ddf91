@@ -1,0 +1,23 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/*
+ * n보다 크고 2n보다 작거나 같은 소수의 개수
+ * 
+ */
+public class 베르트랑공준 {
+	static StringBuilder sb = new StringBuilder();
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		while(true){
+			String readLine = br.readLine();
+			int N = Integer.parseInt(readLine);
+			if(N==0) break;
+			
+		}
+		
+	}
+}

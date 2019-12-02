@@ -1,0 +1,27 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 최장증가부분수열??
+ * dp 배열에 메모이제이션하면서
+ * 가장 앞쪽 자리부터 구해나간다.  
+ */
+public class 상자넣기 {
+	static int N;
+	static int[] dp;
+	static int[] box;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		box = new int[N];
+		dp = new int[N];
+		dp[0] = 1;
+		for(int i=0;i<N;i++){
+			for(int j=0;j<i;j++){
+				
+			}
+			
+		}
+	}
+}
