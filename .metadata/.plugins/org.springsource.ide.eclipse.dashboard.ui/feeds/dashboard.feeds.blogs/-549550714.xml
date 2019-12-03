@@ -5,7 +5,50 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-11-29T07:04:39Z</updated>
+  <updated>2019-12-02T17:08:00Z</updated>
+  <entry>
+    <title>Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 1 - Programming Model</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Soby Chacko</name>
+    </author>
+    <id>tag:spring.io,2019-12-02:3891</id>
+    <updated>2019-12-02T17:08:00Z</updated>
+    <content type="html">&lt;p&gt;This is the first in a series of blog posts in which we will look at how stream processing applications are written using Spring Cloud Stream and Kafka Streams. &lt;/p&gt;
+&lt;p&gt;The &lt;b&gt;Spring Cloud Stream Horsham release (3.0.0)&lt;/b&gt; introduces several changes to the way applications can leverage Apache Kafka using the binders for Kafka and Kafka Streams.&lt;br/&gt;One of the major enhancements that this release brings to the table is first class support for writing apps by using a fully functional programming paradigm. This blog post gives an introduction to how this functional programming model can be used to develop stream processing applications with Spring Cloud Stream and Kafka Streams. In the subsequent blog posts in this series, we will look into more details. &lt;/p&gt;&lt;h2&gt;&lt;a href="#how-many-types-of-kafka-binders-are-there-under-spring-cloud-stream" class="anchor" name="how-many-types-of-kafka-binders-are-there-under-spring-cloud-stream"&gt;&lt;/a&gt;How many types of Kafka binders are there under Spring Cloud Stream?&lt;/h2&gt;
+&lt;p&gt;This is often a confusing question: Which binder should I use if I want to write applications based on Apache Kafka. Spring Cloud Stream provides two separate binders for Kafka - &lt;b&gt;spring-cloud-stream-binder-kafka&lt;/b&gt; and &lt;b&gt;spring-cloud-stream-binder-kafka-streams&lt;/b&gt;. As their names indicate, the first one is the one that you want to use if you want to write standard event-driven applications in which you want to use normal Kafka producers and consumers. On the other hand, if you want to develop stream processing applications with the Kafka Streams library, use the second binder. Once again, in this blog post, we will focus on the second binder for Kafka Streams. &lt;/p&gt;
+&lt;p&gt;One general note about this blog series. This is mainly looking at the touchpoints between Spring Cloud Stream and Kafka Streams and does not go into the details of Kafka Streams itself. In order to write non-trivial stream processing applications that use Kafka Streams, a deeper understanding of Kafka Streams library is highly recommended. This series only stays at the periphery on the actual Kafka Streams library and mainly focuses on how you can interact with it from a Spring Cloud Stream vantage point. &lt;/p&gt;&lt;h2&gt;&lt;a href="#bootstrapping-a-spring-cloud-stream-kafka-streams-application" class="anchor" name="bootstrapping-a-spring-cloud-stream-kafka-streams-application"&gt;&lt;/a&gt;Bootstrapping a Spring Cloud Stream Kafka Streams application&lt;/h2&gt;
+&lt;p&gt;At the heart of it, all Spring Cloud Stream applications are Spring Boot applications. In order to bootstrap a new project, go to the &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt; and then create a new project. Select &lt;b&gt;¡°Cloud Stream¡±&lt;/b&gt; and &lt;b&gt;¡°Spring for Apache Kafka Streams¡±&lt;/b&gt; as dependencies. This will generate a project with all the components that you need to start developing the application. Here is a screenshot from the initializr with the basic dependencies selected.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/spring-cloud/spring-cloud-stream-binder-kafka/master/docs/src/main/asciidoc/images/spring-initializr-kafka-streams.png" alt="spring-initializr-kafka-streams" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#show-me-a-simple-example-of-how-i-can-use-spring-cloud-stream-to-write-a-quick-kafka-streams-application" class="anchor" name="show-me-a-simple-example-of-how-i-can-use-spring-cloud-stream-to-write-a-quick-kafka-streams-application"&gt;&lt;/a&gt;Show me a simple example of how I can use Spring Cloud Stream to write a quick Kafka Streams application&lt;/h2&gt;
+&lt;p&gt;Here is a very basic, but functional, Kafka Streams application that is written by using Spring Cloud Stream¡¯s functional programming support:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootApplication&#xD;
+public class SimpleConsumerApplication {&#xD;
+&#xD;
+   @Bean&#xD;
+   public java.util.function.Consumer&amp;lt;KStream&amp;lt;String, String&amp;gt;&amp;gt; process() {&#xD;
+&#xD;
+       return input -&amp;gt;&#xD;
+               input.foreach((key, value) -&amp;gt; {&#xD;
+                   System.out.println(&amp;quot;Key: &amp;quot; + key + &amp;quot; Value: &amp;quot; + value);&#xD;
+               });&#xD;
+   }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see, this is a very trivial application that just prints to standard output but is, nonetheless, a full-blown Kafka Streams application. At the outer layer, we indicate that this is a boot application by using the &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation. Then we provide a &lt;code&gt;java.util.function.Consumer&lt;/code&gt; bean where we encapsulate our application¡¯s logic through a lambda expression. The consumer takes a &lt;b&gt;KStream&lt;/b&gt; as its input with both the key and the value represented as String types. &lt;/p&gt;
+&lt;p&gt;That¡¯s it. You can run this application against a Kafka broker and see it in action. Behind the scenes, the Kafka Streams binder for Spring Cloud Stream will convert this into a proper Kafka Streams application with a &lt;code&gt;StreamsBuilder&lt;/code&gt;, Kafka Streams topology, and so on. One of the prime tenets for Spring Cloud Stream is hiding the complexity and boilerplate away from the user so that the application developer can focus on the business issue at hand. Binder will take care of creating the Kafka Streams topology, connecting to a Kafka Cluster, binding to a topic and consuming data from that Kafka topic, which is bound as &lt;b&gt;KStream&lt;/b&gt; in this case. Usually, it is the responsibility of the application developer to do all these things if they are not using a framework such as Spring Cloud Stream. &lt;/p&gt;&lt;h2&gt;&lt;a href="#wait-a-minute-are-you-sure-this-is-going-to-work" class="anchor" name="wait-a-minute-are-you-sure-this-is-going-to-work"&gt;&lt;/a&gt;Wait a minute, Are you sure this is going to work?&lt;/h2&gt;
+&lt;p&gt;If you know Kafka Streams internals, you might be wondering if what is presented above will work or not. We haven¡¯t provided a number of basic things that Kafka Streams requires (such as the cluster information, application id, the topic to consume, Serdes to use, and so on). The short answer is that this is going to work without providing a single configuration property. This is because the binder will use a lot of reasonable defaults and make opinions as to what topics to consume from and so on. Nevertheless, for production use, we recommend providing all the applicable properties if the defaults used by the binder do not make sense.&lt;/p&gt;
+&lt;p&gt;Let¡¯s look at some of these basic things that Kafka Streams requires and how the binder provides default values for them. &lt;/p&gt;&lt;h2&gt;&lt;a href="#cluster-information" class="anchor" name="cluster-information"&gt;&lt;/a&gt;Cluster information&lt;/h2&gt;
+&lt;p&gt;By default, the binder will try to connect to a cluster that is running on &lt;b&gt;localhost:9092&lt;/b&gt;. If that is not the case, you can override that by using configuration properties available through Spring Cloud Stream. See the &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_setting_up_bootstrap_server_configuration"&gt;Spring Cloud Stream Reference Guide&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#application-id" class="anchor" name="application-id"&gt;&lt;/a&gt;Application ID&lt;/h2&gt;
+&lt;p&gt;In a Kafka Streams application, application.id is a mandatory field. Without it, you cannot start a Kafka Streams application. By default, the binder will generate an application ID and assign it to the processor. It uses the function bean name as a prefix. For e.g, if you have a consumer as above, the binder will generate the application ID as process-applicationId. You can override this using the strategies outlined here. See the &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_kafka_streams_application_id"&gt;Spring Cloud Stream Reference Guide&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#topic-to-consume-from" class="anchor" name="topic-to-consume-from"&gt;&lt;/a&gt;Topic to consume from&lt;/h2&gt;
+&lt;p&gt;For the above processor, you can provide the topic to consumes, as follows&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;spring.cloud.stream.bindings.process-in-0.destination: my-input-topic&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In this case, we are saying that, for the function bean (process) and its first input (in-0), it shall be bound to a Kafka topic named &lt;b&gt;my-input-topic&lt;/b&gt;. If you don¡¯t provide an explicit destination like this, the binder assumes that you are using a topic that is the same as the binding name (&lt;b&gt;process-in-0&lt;/b&gt;, in this case). &lt;/p&gt;&lt;h2&gt;&lt;a href="#serialization-and-deserialization-serdes" class="anchor" name="serialization-and-deserialization-serdes"&gt;&lt;/a&gt;Serialization and Deserialization (Serdes)&lt;/h2&gt;
+&lt;p&gt;Kafka Streams uses a special class called Serde to deal with data marshaling. It is essentially a wrapper around a deserializer on the inbound and a serializer on the outbound. Normally, you have to tell Kafka Streams what Serde to use for each consumer. Binder, however, infers this information by using the parametric types provided as part of Kafka Streams. For example, in the case of &lt;b&gt;KStream&amp;lt;String, String&amp;gt;&lt;/b&gt;, the binder assumes that it needs to use String deserializers. As always, you can override these in a number of ways. &lt;Provide links to the docs&gt;. We have an entire blog post in this series coming up that is dedicated to this topic.&lt;/p&gt;&lt;h2&gt;&lt;a href="#can-i-have-multiple-processors-in-a-single-boot-application" class="anchor" name="can-i-have-multiple-processors-in-a-single-boot-application"&gt;&lt;/a&gt;Can I have multiple processors in a single Boot application?&lt;/h2&gt;
+&lt;p&gt;Yes, you can. Spring Cloud Stream binder for Kafka Streams will make it easy to provide multiple processors expressed as &lt;b&gt;java.util.function.Function&lt;/b&gt; or &lt;b&gt;java.util.function.Consumer&lt;/b&gt; beans within a single application. The binder will isolate each such processor to its own application ID and StreamsBuilder. It ensures that there won¡¯t be any interference with each other. From a Kafka Streams angle, they are multiple processors with their own dedicated topology. Although this is a legitimate use-case when it comes to things like testing and trying out something really quick, having several processors within a single application can have the potential of making it a monolith that is harder to maintain. &lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this blog post, we saw a quick introduction to how Spring Cloud Stream¡¯s functional programming support can be used to write stream processing applications that use Kafka Streams. We saw that the binder takes care of a lot of infrastructure and configuration details, which lets you focus on the business logic at hand. In the next blog post, we are going to further explore this programming model to see how more non-trivial stream processing applications are developed with Spring Cloud Stream and Kafka Streams. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Spring Tools lead Martin Lippert</title>
     <link rel="alternate" href="https://spring.io/blog/2019/11/29/a-bootiful-podcast-spring-tools-lead-martin-lippert" />
@@ -1452,38 +1495,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
 ...&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 12, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/11/11/this-week-in-spring-november-12-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-11-11:3871</id>
-    <updated>2019-11-11T23:24:39Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;m in Sydney, Australia, where I&amp;rsquo;ll begin my tour of Australia, Singapore, Korea, China, and Japan for &lt;a href="https://connect.pivotal.io/summit_2019"&gt;the Pivotal Summit&lt;/a&gt;. I&amp;rsquo;ll &lt;em&gt;also&lt;/em&gt; be doing a Reactive Tour (nested inside the Pivotal Summit Tour) while &lt;a href="https://twitter.com/andyshi/status/1192513825007779842"&gt;in China&lt;/a&gt;. if you&amp;rsquo;re in any of the aforementioned countries, or in the Chinese cities of Shenzhen, Hangzhou, Beijing, and Shanghai, then &lt;a href="http://twitter.com/starbuxman"&gt;don&amp;rsquo;t hesitate to say hi! (@starbuxman)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Anyway my friends, we&amp;rsquo;ve got a lot to get to so let&amp;rsquo;s get to it!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/11/spring-boot-for-apache-geode-pivotal-gemfire-1-1-3-release-1-2-1-release-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.3.RELEASE &amp;amp; 1.2.1.RELEASE Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/07/a-bootiful-podcast-michael-simons-on-spring-boot-reactive-spring-data-neo4j-and-more"&gt;A Bootiful Podcast: Michael Simons on Spring Boot, reactive Spring Data Neo4j, and more&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/07/spring-vault-2-2-goes-ga"&gt;Spring Vault 2.2 goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/07/spring-boot-2-2-1-available-now"&gt;Spring Boot 2.2.1 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/springone-platform-2019-editors-picks"&gt;SpringOne Platform 2019 Editor&amp;rsquo;s Picks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/06/spring-integration-extensions-releases"&gt;Spring Integration Extensions Releases&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A nice talk over on InfoQ: &lt;a href="https://www.infoq.com/news/2019/11/cloud-platforms-demystified/"&gt;&lt;em&gt;Platforms Demystified: Cloud Foundry, Kubernetes, Eirini, and Knative&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://howtodoinjava.com/spring-boot2/testing/spring-integration-testing/amp/?__twitter_impression=true"&gt;Spring boot integration test example ? HowToDoInJava&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.jdriven.com/2019/11/spring-cloud-gateway-with-openid-connect-and-token-relay/"&gt;Spring Cloud Gateway with OpenID Connect and Token Relay - JDriven Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://piotrminkowski.wordpress.com/2019/11/06/microservices-with-spring-boot-spring-cloud-gateway-and-consul-cluster/amp/"&gt;Microservices with Spring Boot, Spring Cloud Gateway and Consul Cluster ? Piotr&amp;rsquo;s TechBlog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/quick-perf/quickperf"&gt;GitHub - quick-perf/quickperf: QuickPerf is a testing library for Java providing annotations to quickly evaluate some performance properties.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Just a friendly reminder that most of your favorite NoSQL datastores now have &lt;a href="https://twitter.com/starbuxman/status/1193718222345818112?s=20"&gt;reactive Spring Data implementations&lt;/a&gt; supporting non-blocking interactions with the datastores.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/andyshi/status/1192513825007779842?s=12"&gt;Are you going to be in Beijing, Hangzhou, Shanghai and Shenzhen? Join me, and my friends from Alibaba and Netifi, for our Reactive Tour 2019&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/webinars/dec-5-introducing-azure-spring-cloud-a-managed-runtime-for-spring-based-apps-webinar"&gt;Want to learn more about Azure Spring Cloud?&lt;/a&gt; Join me for a webinar on December 5th, come for the Spring and stay for production.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://myignite.techcommunity.microsoft.com/sessions/81594?source=sessions"&gt;I really enjoyed Microsoft&amp;rsquo;s Bruno Borges&amp;rsquo; talk on Spring Cloud on Azure&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=3eoAxphAUIg"&gt;Check out S?bastien Deleuze&amp;rsquo;s Devoxx 2019 talk on running Spring Boot applications as GraalVM native images&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.cloudfoundry.org/cve-2019-15225-15226/"&gt;CVE-2019-15225/15226: Envoy 1.11.1 vulnerability fixes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
