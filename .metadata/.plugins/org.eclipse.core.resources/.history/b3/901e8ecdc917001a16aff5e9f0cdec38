@@ -1,0 +1,19 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 
+ */
+public class 모의고사 {
+	static int[] first;
+	static int[] second;
+	static int[] third;
+	public static void main(String[] args) {
+		
+	}
+	public int[] solution(int[] answers) {
+        int[] answer = {};
+        return answer;
+    }
+}

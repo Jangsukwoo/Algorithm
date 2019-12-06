@@ -1,0 +1,52 @@
+package CodingStudy;
+/*
+ * String인  numbers 문자의 최대 사이즈 7
+ * 17,71 처럼 순서가 있으니 Permutation nPr 
+ */
+public class 소수찾기 {
+	static int prime;
+	static int n,r;
+	static boolean[] visit;
+	static char[] number;
+	static char[] data;
+	public static void main(String[] args) {
+		solution("17");
+	}
+    public static int solution(String numbers) {
+        int answer = 0;
+        data = numbers.toCharArray();
+        int n = numbers.length();
+        for(int i=1;i<=n;i++){//nPr
+        	visit = new boolean[n];
+        	number = new char[i];
+        	r = i;
+        	System.out.println("r값"+r);
+        	permutation(0);
+        	System.out.println("몇번?");
+        }
+        return answer;
+    }
+	private static void permutation(int cnt) {
+		System.out.println("cnt"+cnt);
+		System.out.println("돌?");
+		if(cnt==r){
+			System.out.println("몇번?");
+			String stringNumber="";
+			for(int i=0;i<r;i++){
+				stringNumber+=number[i];
+			}
+			int num = Integer.parseInt(stringNumber);
+			System.out.println(num);
+			return;
+		}
+		for(int i=0;i<n;i++){
+			if(visit[i]==false){
+				visit[i] = true;
+				System.out.println("돌돌??");
+				number[cnt] = data[i];
+				permutation(cnt+1);
+				visit[i] = false;
+			}
+		}
+	}
+}

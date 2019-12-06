@@ -1,0 +1,12 @@
+package CodingStudy;
+/*
+ * String인  numbers 문자의 최대 사이즈 7
+ * 
+ * 
+ */
+public class 소수찾기 {
+	public static void main(String[] args) {
+		int N = Integer.parseInt("011");
+		System.out.println(N);
+	}
+}

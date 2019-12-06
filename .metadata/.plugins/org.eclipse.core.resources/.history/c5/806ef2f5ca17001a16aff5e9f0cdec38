@@ -1,0 +1,35 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 
+ */
+public class 모의고사 {
+	static int[] series1 = {1,2,3,4,5};
+	static int[] series2 = {2,1,2,3,2,4,2,5};
+	static int[] series3 = {3,3,1,1,2,2,4,4,5,5};
+	static int[] first;
+	static int[] second;
+	static int[] third;
+	public static void main(String[] args) {
+
+	}
+	public int[] solution(int[] answers) {
+		int[] answer = {};
+		int size = answers.length;
+		makeSeries(size);
+		return answer;
+	}
+	private void makeSeries(int size){
+		first = new int[size];
+		second = new int[size];
+		third = new int[size];
+		for(int i=0;i<size;i++){
+			first[i] = series1[i%series1.length];
+			second[i] = series2[i%series2.length];
+			third[i] = series3[i%series3.length];
+		}
+	}
+	
+}

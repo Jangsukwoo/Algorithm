@@ -1,0 +1,18 @@
+package CodingStudy;
+/*
+ * String인  numbers 문자의 최대 사이즈 7
+ * 17,71 처럼 순서가 있으니 Permutation nPr 
+ */
+public class 소수찾기 {
+	static int prime;
+	static int n,r;
+	static int[] visit;
+	public static void main(String[] args) {
+		int N = Integer.parseInt("011");
+	}
+    public int solution(String numbers) {
+        int answer = 0;
+       
+        return answer;
+    }
+}

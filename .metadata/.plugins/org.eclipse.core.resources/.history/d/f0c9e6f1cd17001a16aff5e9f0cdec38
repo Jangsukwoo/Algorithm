@@ -1,0 +1,10 @@
+package CodingStudy;
+/*
+ * numbers 최대 사이즈 7
+ * 
+ */
+public class 소수찾기 {
+	public static void main(String[] args) {
+
+	}
+}
