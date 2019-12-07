@@ -8,15 +8,12 @@ package CodingStudy;
  * 111부터 999까지 Data set을 만들고
  * 지워나가는 형식으로 생각
  * 
- * 으로 접근 했으나 풀이법이 잘 떠오르지 않아서
- * 인터넷 참고해서 해결..ㅠ
- * 
  */
 public class 숫자야구 {
 	public static void main(String[] args) {
-		solution(new int[][]{{123,1,1},{356,1,0},{327,2,0},{489,0,1}});
+
 	}
-	public static int solution(int[][] baseball) {
+	public int solution(int[][] baseball) {
 		int answer = 0;
 		int querySize = baseball.length;
 		for(int num=111;num<=999;num++){
