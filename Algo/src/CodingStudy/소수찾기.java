@@ -31,7 +31,7 @@ public class 소수찾기 {
 		}
 		return prime;
 	}
-	private static void permutation(int cnt) {
+	private static void permutation(int cnt) {//DFS
 		if(cnt==r){
 			String stringNumber="";
 			for(int i=0;i<r;i++){

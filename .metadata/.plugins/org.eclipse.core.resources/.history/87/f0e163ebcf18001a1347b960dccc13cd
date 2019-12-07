@@ -1,0 +1,11 @@
+package CodingStudy;
+/*
+ * 카펫의 형태는 겨자
+ * 
+ */
+public class 카펫 {
+	
+	public static void main(String[] args) {
+		
+	}
+}

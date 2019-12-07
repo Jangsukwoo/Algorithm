@@ -1,0 +1,17 @@
+package CodingStudy;
+/*
+ * 카펫의 형태는 격자
+ * 중앙은 빨간색,모서리는 갈색
+ * 갈색 격자, 빨간색 격자 수가 입력으로 주어질 때
+ * 카펫의 행,열은 몇 by 몇인지?
+ * 
+ */
+public class 카펫 {
+	public static void main(String[] args) {
+		
+	}
+	 public int[] solution(int brown, int red) {
+	        int[] answer = {};
+	        return answer;
+	    }
+}
