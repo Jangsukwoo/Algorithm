@@ -1,0 +1,14 @@
+package CodingStudy;
+
+public class 단어변환 {
+	static boolean[] visit;
+	static int wordSize;
+	public static void main(String[] args) {
+
+	}
+    public int solution(String begin, String target, String[] words) {
+        int answer = 0;
+        wordSize = words.length;
+        return answer;
+    }
+}

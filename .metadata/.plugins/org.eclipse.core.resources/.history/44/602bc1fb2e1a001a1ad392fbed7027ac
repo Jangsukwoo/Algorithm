@@ -1,0 +1,26 @@
+package CodingStudy;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class 단어변환 {
+	static boolean[] visit;
+	static Queue<String> q = new LinkedList<String>();
+	static int answer;
+	static int wordSize;
+	public static void main(String[] args) {
+
+	}
+    public int solution(String begin, String target, String[] words) {
+        wordSize = words.length;
+        visit = new boolean[wordSize];
+        q.add(begin);
+        while(q.isEmpty()){
+        	int size = q.size();
+        	for(int i=0;i<size;i++){
+        		
+        	}
+        }
+        return answer;
+    }
+}

@@ -1,0 +1,35 @@
+package CodingStudy;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class 단어변환 {
+	static boolean[] visit;
+	static Queue<String> q = new LinkedList<String>();
+	static int answer;
+	static int wordSize;
+	public static void main(String[] args) {
+
+	}
+    public int solution(String begin, String target, String[] words) {
+        wordSize = words.length;
+        visit = new boolean[wordSize];
+        q.add(begin);
+        while(q.isEmpty()){
+        	int size = q.size();
+        	for(int i=0;i<size;i++){
+        		String currentWord = q.poll();
+        		for(int j=0;j<wordSize;j++){
+        			int changeCnt=0;
+        			for(int c=0;c<3;c++) {
+        				if(currentWord.charAt(c)==words[c].charAt(c)) changeCnt++;
+        			}
+        			if(changeCnt==2){
+        				
+        			}
+        		}
+        	}
+        }
+        return answer;
+    }
+}
