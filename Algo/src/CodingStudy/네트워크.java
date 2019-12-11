@@ -13,7 +13,6 @@ import java.util.Queue;
  * D-F
  * 네트워크의 개수는 2
  * 
- * vertex,edge
  */
 public class 네트워크 {
 	static Queue<Integer> q = new LinkedList<Integer>();
