@@ -1,0 +1,30 @@
+package CodingStudy;
+
+import java.util.ArrayList;
+/*
+ * 티켓이 5장이면 방문하는 도시는 6개
+ */
+public class 여행경로 {
+	static int N;
+	static ArrayList<String[]> pathList = new ArrayList<String[]>();
+	static String[] path;
+	static int pathSize;
+	static boolean[] useTicket;
+	static int depth;
+	public static void main(String[] args) {
+		solution(new String[][] {{"ICN","SFO"},{"ICN","ATL"},{"SFO","ATL"},{"ATL","ICN"},{"ATL","SFO"}});
+	}
+    public static String[] solution(String[][] tickets) {
+        String[] answer = {};
+        useTicket = new boolean[tickets.length];
+        pathSize = tickets.length+1;
+        path = new String[]
+        String start= "ICN";
+        dfs(start,tickets,0);
+        return answer;
+    }
+	private static void dfs(String start, String[][] tickets, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+}

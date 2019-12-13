@@ -1,0 +1,21 @@
+package CodingStudy;
+
+import java.util.ArrayList;
+
+public class 여행경로 {
+	static int N;
+	static ArrayList<String[]> pathList = new ArrayList<String[]>();
+	static ArrayList<String> path = new ArrayList<String>();
+	static boolean[] visit;
+	static int depth;
+	public static void main(String[] args) {
+		solution(new String[][] {{"ICN","SFO"},{"ICN","ATL"},{"SFO","ATL"},{"ATL","ICN"},{"ATL","SFO"}});
+	}
+    public static String[] solution(String[][] tickets) {
+        String[] answer = {};
+        visit = new boolean[tickets.length];
+        String start= "ICN";
+        dfs()
+        return answer;
+    }
+}

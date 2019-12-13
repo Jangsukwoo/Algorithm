@@ -1,7 +1,0 @@
-package CodingStudy;
-
-public class 단어변환 {
-	public static void main(String[] args) {
-
-	}
-}

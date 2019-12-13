@@ -5,7 +5,215 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-10T22:57:31Z</updated>
+  <updated>2019-12-12T19:49:38Z</updated>
+  <entry>
+    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.4.RELEASE &amp; 1.2.2.RELEASE Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/12/spring-boot-for-apache-geode-pivotal-gemfire-1-1-4-release-1-2-2-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2019-12-12:3909</id>
+    <updated>2019-12-12T19:49:38Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring, Apache Geode &amp;amp; Pivotal GemFire communities, it is my pleasure to announce the release of &lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.1.4.RELEASE&lt;/code&gt; as well as &lt;code&gt;1.2.2.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Both releases are available in &lt;a href="https://search.maven.org/artifact/org.springframework.geode/spring-geode-starter"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While SBDG &lt;code&gt;1.1.4.RELEASE&lt;/code&gt; primarily aligns with the latest Spring bits in its release line:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.1.12.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Boot &lt;code&gt;2.1.11.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data &lt;code&gt;Lovelace-SR14/2.1.14.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire (SSDG) &lt;code&gt;Bean-SR8/2.1.7.RELEASE&lt;/code&gt; (&lt;strong&gt;NEW&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And SBDG &lt;code&gt;1.2.2.RELEASE&lt;/code&gt; builds on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Boot &lt;code&gt;2.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data &lt;code&gt;Moore-SR3/2.2.3.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire (SSDG) &lt;code&gt;Corn-RELEASE/2.2.1.RELEASE&lt;/code&gt; (&lt;strong&gt;NEW&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Test for Apache Geode &amp;amp; Pivotal GemFire (STDG) &lt;code&gt;0.0.11.RELEASE&lt;/code&gt; (&lt;strong&gt;NEW&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SBDG &lt;code&gt;1.2.2.RELEASE&lt;/code&gt; additionally includes the following improvements:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Enhancements to &lt;code&gt;@EnableClusterAware&lt;/code&gt; Region bean detection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Changes the Pool used in the Spring Session Starter from (the legacy SDG) "gemfirePool" to the Apache Geode "DEFAULT" Pool for convenience, especially when getting started.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/milestone/26?closed=1"&gt;here&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.2.2.RELEASE/spring-geode/src/main/resources/changelog.txt#L7-L38"&gt;changelog&lt;/a&gt; for complete details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We will continue to address Issues in our &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;backlog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;1 improvement in a future release (~1.3 M1/M2) will include support to populate an Apache Geode or Pivotal GemFire Region using a &lt;code&gt;data.json&lt;/code&gt; file in the same way a Spring Boot user can use &lt;code&gt;data.sql&lt;/code&gt; to populate DBMS Tables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/67"&gt;Issue #67&lt;/a&gt; for full details and to track progress.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="conclusion"&gt;&lt;a class="anchor" href="#conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, any feedback is welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Thank you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session for Apache Geode &amp; Pivotal GemFire 2.1.7.RELEASE and 2.2.1.RELEASE Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/12/spring-session-for-apache-geode-pivotal-gemfire-2-1-7-release-and-2-2-1-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2019-12-12:3908</id>
+    <updated>2019-12-12T19:13:20Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring, Apache Geode and Pivotal GemFire communities, it is my pleasure to announce the release of &lt;em&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SSDG)  &lt;code&gt;2.1.7.RELEASE&lt;/code&gt; as well as &lt;code&gt;2.2.1.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Both releases are available in &lt;a href="https://search.maven.org/artifact/org.springframework.session/spring-session-data-geode"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While SSDG &lt;code&gt;2.1.7.RELASE&lt;/code&gt; primarily aligns with the latest Spring bits in its respective line:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.1.12.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Boot &lt;code&gt;2.1.11.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data &lt;code&gt;Lovelace-SR14/2.1.14.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session &lt;code&gt;Bean-SR8/2.1.9.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And SSDG &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; aligns with:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Boot &lt;code&gt;2.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data &lt;code&gt;Moore-SR3/2.2.3.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session &lt;code&gt;Corn-RELEASE/2.2.0.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SSDG &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; additionally includes the following improvements:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Converts all Spring Session OQL Indexes from HASH to FUNCTIONAL (RANGE) Indexes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds support to disable OQL Indexes created by SSDG.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And enhances the PdxSerializableSessionSerializer to mark the PDX identity field using the Session ID.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://github.com/spring-projects/spring-session-data-geode/milestone/20?closed=1"&gt;here&lt;/a&gt; for full details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Heading into the New Year (2020), we plan to tackle much of what is in our &lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;backlog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="conclusion"&gt;&lt;a class="anchor" href="#conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, feedback is welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.1.x EOL November 1st 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/10/spring-boot-2-1-x-eol-november-1st-2020" />
@@ -807,331 +1015,6 @@ public class SimpleConsumerApplication {&#xD;
 &lt;p&gt;Kafka Streams uses a special class called Serde to deal with data marshaling. It is essentially a wrapper around a deserializer on the inbound and a serializer on the outbound. Normally, you have to tell Kafka Streams what Serde to use for each consumer. Binder, however, infers this information by using the parametric types provided as part of Kafka Streams. For example, in the case of &lt;b&gt;KStream&amp;lt;String, String&amp;gt;&lt;/b&gt;, the binder assumes that it needs to use String deserializers. As always, you can override these in a number of ways. &lt;Provide links to the docs&gt;. We have an entire blog post in this series coming up that is dedicated to this topic.&lt;/p&gt;&lt;h2&gt;&lt;a href="#can-i-have-multiple-processors-in-a-single-boot-application" class="anchor" name="can-i-have-multiple-processors-in-a-single-boot-application"&gt;&lt;/a&gt;Can I have multiple processors in a single Boot application?&lt;/h2&gt;
 &lt;p&gt;Yes, you can. Spring Cloud Stream binder for Kafka Streams will make it easy to provide multiple processors expressed as &lt;b&gt;java.util.function.Function&lt;/b&gt; or &lt;b&gt;java.util.function.Consumer&lt;/b&gt; beans within a single application. The binder will isolate each such processor to its own application ID and StreamsBuilder. It ensures that there won¡¯t be any interference with each other. From a Kafka Streams angle, they are multiple processors with their own dedicated topology. Although this is a legitimate use-case when it comes to things like testing and trying out something really quick, having several processors within a single application can have the potential of making it a monolith that is harder to maintain. &lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this blog post, we saw a quick introduction to how Spring Cloud Stream¡¯s functional programming support can be used to write stream processing applications that use Kafka Streams. We saw that the binder takes care of a lot of infrastructure and configuration details, which lets you focus on the business logic at hand. In the next blog post, we are going to further explore this programming model to see how more non-trivial stream processing applications are developed with Spring Cloud Stream and Kafka Streams. &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Tools lead Martin Lippert</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/11/29/a-bootiful-podcast-spring-tools-lead-martin-lippert" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-11-29:3889</id>
-    <updated>2019-11-29T07:04:39Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In today&amp;rsquo;s episode Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Spring Tools lead Martin Lippert (&lt;a href="http://twitter.com/martinlippert"&gt;@martinlippert&lt;/a&gt;) about his time at Pivotal, and on the Spring team, his work on Spring Tools, and his work on language servers that now serve as the foundational integration for Spring users using Microsoft&amp;rsquo;s Visual Studio Code, emacs and Atom, among other things.&lt;/p&gt;
-&lt;p&gt;Thanks, dear listener, and Happy Thanksgiving!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://spring.io/tools"&gt;Spring Tools&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://spring.io/team/mlippert"&gt;Martin Lippert&amp;rsquo;s profile page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Thanksgiving"&gt;the Wikipedia description for Thanksgiving&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/720162076&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Hoxton Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/11/28/spring-cloud-hoxton-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Ryan Baxter</name>
-    </author>
-    <id>tag:spring.io,2019-11-27:3888</id>
-    <updated>2019-11-28T08:35:16Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the General Availability (RELEASE) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Hoxton.RELEASE/"&gt;Maven Central&lt;/a&gt;. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
-&lt;p&gt;Spring Cloud Hoxton.RELEASE is based on Spring Boot 2.2.1.RELEASE.&lt;/p&gt;&lt;h3&gt;&lt;a href="#documentation-changes" class="anchor" name="documentation-changes"&gt;&lt;/a&gt;Documentation Changes&lt;/h3&gt;
-&lt;p&gt;The Hoxton.RELEASE docs have a new &lt;a href="https://cloud.spring.io/spring-cloud-static/Hoxton.RELEASE/reference/html/spring-cloud.html"&gt;landing page&lt;/a&gt;, new theme and a &lt;a href="https://cloud.spring.io/spring-cloud-static/Hoxton.RELEASE/reference/html/documentation-overview.html#contract-documentation"&gt;single-page, multi-page and a pdf version&lt;/a&gt;.The landing page will link you to the documentation for the specific project you are interested in. We hope you find that the new documentation structure easier to consume.&lt;/p&gt;&lt;h3&gt;&lt;a href="#new-load-balancer-implementations" class="anchor" name="new-load-balancer-implementations"&gt;&lt;/a&gt;New Load Balancer Implementations&lt;/h3&gt;
-&lt;p&gt;Spring Cloud Hoxton.RELEASE is the first release containing both blocking and non-blocking load balancer client implementations as an alternative to Netflix Ribbon which has entered maintenance mode.&lt;/p&gt;
-&lt;p&gt;To use the new &lt;code&gt;BlockingLoadBalancerClient&lt;/code&gt; with a &lt;code&gt;RestTemplate&lt;/code&gt; you will need to include &lt;code&gt;org.springframework.cloud:spring-cloud-loadbalancer&lt;/code&gt; on your application&amp;rsquo;s classpath. The same dependency can be used in a reactive application when using &lt;code&gt;@LoadBalanced WebClient.Builder&lt;/code&gt; - the only difference is that Spring Cloud will auto-configure a &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; instance. See the &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-commons/2.2.0.M2/reference/html/#_spring_resttemplate_as_a_load_balancer_client"&gt;documentation&lt;/a&gt; for additional information. The new &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt; can also be autowired and passed directly to &lt;code&gt;WebClient.Builder&lt;/code&gt; (see the &lt;a href="https://cloud.spring.io/spring-cloud-commons/reference/html/#webflux-with-reactive-loadbalancer"&gt;documentation&lt;/a&gt;). For all these features, &lt;a href="https://projectreactor.io/"&gt;Project Reactor&lt;/a&gt;-based &lt;code&gt;RoundRobinLoadBalancer&lt;/code&gt; is used underneath.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt; and the new Spring Cloud Circuit Breaker API implementation for Hystrix.&lt;/li&gt;
-  &lt;li&gt;Added &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.0.RC2/reference/html/#disabling-spring-cloud-circuit-breaker-hystrix"&gt;property&lt;/a&gt; to disable Spring Cloud CircuitBreaker Hystrix auto-configuration&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-cloudfoundry" class="anchor" name="spring-cloud-cloudfoundry"&gt;&lt;/a&gt;Spring Cloud Cloudfoundry&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-bus" class="anchor" name="spring-cloud-bus"&gt;&lt;/a&gt;Spring Cloud Bus&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Documentation updates&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Applications running in the Pivotal Application Service (former PCF) can leverage container identity to authenticate using Vault&amp;rsquo;s PCF Authentication support.&lt;/li&gt;
-  &lt;li&gt;Support for Vault namespaces (Vault Enterprise feature) using the &lt;code&gt;X-Vault-Namespace&lt;/code&gt; header.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-kubernetes" class="anchor" name="spring-cloud-kubernetes"&gt;&lt;/a&gt;Spring Cloud Kubernetes&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Full documentation rewrite&lt;/li&gt;
-  &lt;li&gt;Major test class generation refactoring&lt;/li&gt;
-  &lt;li&gt;A lot of rewrite from Groovy to Java&lt;/li&gt;
-  &lt;li&gt;Added support for writing contracts in Kotlin and Java&lt;/li&gt;
-  &lt;li&gt;Added &lt;code&gt;inProgress&lt;/code&gt; flag to the contract DSL and runtime stub generation&lt;/li&gt;
-  &lt;li&gt;Added TestNG support for generated tests&lt;/li&gt;
-  &lt;li&gt;Numerous library version increments (including Groovy, WireMock and Pact)&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt; and for Consul&amp;rsquo;s consistency mode.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;An Environment Repository supporting AWS S3.&lt;/li&gt;
-  &lt;li&gt;Added the ability to &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.2.0.RC2/reference/html/#_decrpyting_plain_text"&gt;decrypt properties in plain text&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gcp" class="anchor" name="spring-cloud-gcp"&gt;&lt;/a&gt;Spring Cloud Gcp&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;BigQuery module added&lt;/li&gt;
-  &lt;li&gt;Created a separate starter for Cloud Foundry: spring-cloud-gcp-starter-cloudfoundry&lt;/li&gt;
-  &lt;li&gt;You can check out the &lt;a href="https://github.com/spring-cloud/spring-cloud-gcp/blob/master/CHANGELOG.adoc#120release-2019-11-26"&gt;changelog document&lt;/a&gt; for more information&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-stream" class="anchor" name="spring-cloud-stream"&gt;&lt;/a&gt;Spring Cloud Stream&lt;/h3&gt;
-&lt;p&gt;With this new Horsham.RELEASE (3.0.0) we begin our journey from annotation-driven to a significantly simpler functional approach. We have published a series of posts explaining and justifying this move:&lt;br/&gt;- &lt;em&gt;&lt;a href="https://spring.io/blog/2019/10/14/spring-cloud-stream-demystified-and-simplified"&gt;Spring Cloud Stream - demystified and simplified&lt;/a&gt;&lt;/em&gt;&lt;br/&gt;- &lt;em&gt;&lt;a href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive"&gt;Spring Cloud Stream - functional and reactive&lt;/a&gt;&lt;/em&gt;&lt;br/&gt;- &lt;em&gt;&lt;a href="https://spring.io/blog/2019/10/25/spring-cloud-stream-and-spring-integration"&gt;Spring Cloud Stream - and Spring Integration&lt;/a&gt;&lt;/em&gt;&lt;br/&gt;- &lt;em&gt;&lt;a href="https://spring.io/blog/2019/10/31/spring-cloud-stream-event-routing"&gt;Spring Cloud Stream - Event Routing&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;We have introduced new blocking and non-blocking load balancer implementations as an&lt;br/&gt; alternative to Netflix Ribbon which has entered maintenance mode.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;OpenFeign was updated to 10.4.0.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/177"&gt;Support for Spring Cloud LoadBalancer&lt;/a&gt; has been added&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-task" class="anchor" name="spring-cloud-task"&gt;&lt;/a&gt;Spring Cloud Task&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Micrometer support&lt;/li&gt;
-  &lt;li&gt;Updated documentation with improved format&lt;/li&gt;
-  &lt;li&gt;Task apps launched when using Spring Batch partitioning now have external-execution-id populated&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Added support for latest Brave (includes messaging sampling)&lt;/li&gt;
-  &lt;li&gt;Added an option for &lt;code&gt;onLastOperator&lt;/code&gt; Reactor tracing for improved performance&lt;/li&gt;
-  &lt;li&gt;Added Redis tracing&lt;/li&gt;
-  &lt;li&gt;Set default sampler to rate-limited sampler&lt;/li&gt;
-  &lt;li&gt;Added support for AWS SQS tracing&lt;/li&gt;
-  &lt;li&gt;Added support for Quartz tracing&lt;/li&gt;
-  &lt;li&gt;Added in-process propagation mechanism&lt;/li&gt;
-  &lt;li&gt;Defaults to Micrometer metrics for Zipkin reporting&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-aws" class="anchor" name="spring-cloud-aws"&gt;&lt;/a&gt;Spring Cloud Aws&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Bug fixes&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for the new &lt;code&gt;ReactiveDiscoveryClient&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-security" class="anchor" name="spring-cloud-security"&gt;&lt;/a&gt;Spring Cloud Security&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Bug fixes&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuitbreaker" class="anchor" name="spring-cloud-circuitbreaker"&gt;&lt;/a&gt;Spring Cloud Circuitbreaker&lt;/h3&gt;
-&lt;p&gt;We welcome Spring Cloud Circuit Breaker as a new project under the Spring Cloud release train. This project provides an abstraction API for adding circuit breakers to your application. At the time of this blog post, there are four supported implementations:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Resilience4j&lt;/li&gt;
-  &lt;li&gt;Spring Retry&lt;/li&gt;
-  &lt;li&gt;Hystrix (in &lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-hystrix/src/main/java/org/springframework/cloud/netflix/hystrix/HystrixCircuitBreaker.java"&gt;spring-cloud-netflix&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Sentinel (in &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-sentinel"&gt;spring-cloud-alibaba&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;See the &lt;a href="https://spring.io/blog/2019/04/16/introducing-spring-cloud-circuit-breaker"&gt;annoucement blog post&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Added auto-configuration to collect circuit breaker metrics when using Resilience4J (&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/issues/47"&gt;#47&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Upgrade to Resilience4J 1.1.0&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/commit/aacf4d35183de568e560f0b9d6e5b54fdd680ecc"&gt;Added property to disable Resilience4J auto-configuration&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-function" class="anchor" name="spring-cloud-function"&gt;&lt;/a&gt;Spring Cloud Function&lt;/h3&gt;
-&lt;p&gt;Lots of new features such as:&lt;br/&gt;- &lt;em&gt;Transparent type conversion&lt;/em&gt;&lt;br/&gt;- &lt;em&gt;Function Routing&lt;/em&gt;&lt;br/&gt;- &lt;em&gt;Function arity&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;More details in our &lt;a href="https://spring.io/blog/2019/11/25/announcing-the-release-of-spring-cloud-function-3-0-0-release"&gt;release announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support was added for using the new &lt;code&gt;ReactiveLoadBalancer&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;RSocket modules were moved to their own &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-rsocket"&gt;project&lt;/a&gt; in the Spring Cloud Incubator organization&lt;/li&gt;
-  &lt;li&gt;Added a &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.0.RC2/reference/html/#spring-cloud-circuitbreaker-filter-factory"&gt;filter&lt;/a&gt; which uses the new Spring Cloud CircuitBreaker library to provide circuit breakers to routes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following modules were updated as part of Hoxton.RELEASE:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter Parent &lt;/td&gt;
-      &lt;td&gt;Hoxton.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Dependencies Parent &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Dependencies &lt;/td&gt;
-      &lt;td&gt;Hoxton.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-cli/milestone/22?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/35?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;1.1.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/59?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Release &lt;/td&gt;
-      &lt;td&gt;Hoxton.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-build/milestone/27?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud &lt;/td&gt;
-      &lt;td&gt;Hoxton.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
-      &lt;td&gt;1.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
-      &lt;td&gt;Horsham.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-stream/milestone/67?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/68?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter &lt;/td&gt;
-      &lt;td&gt;Hoxton.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
-      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/70?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-zookeeper/milestone/27?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
-      &lt;td&gt;1.0.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/milestone/1?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
-      &lt;td&gt;3.0.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-function/milestone/26?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/32?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&lt;br/&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Hoxton.RELEASE&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
-dependencies {&#xD;
-classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE&amp;quot;&#xD;
-}&#xD;
-}&#xD;
-&#xD;
-&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-imports {&#xD;
-mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE&amp;#39;&#xD;
-}&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

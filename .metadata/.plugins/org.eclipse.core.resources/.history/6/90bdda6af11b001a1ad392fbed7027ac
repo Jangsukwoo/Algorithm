@@ -1,8 +1,0 @@
-package 알고리즘;
-
-public class 민균이의계략_LIS_최장증가부분수열 {
-	static int N;
-	public static void main(String[] args) {
-
-	}
-}

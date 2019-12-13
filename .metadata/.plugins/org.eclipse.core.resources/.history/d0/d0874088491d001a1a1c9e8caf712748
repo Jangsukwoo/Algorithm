@@ -1,0 +1,8 @@
+package CodingStudy;
+
+public class 여행경로 {
+	static int N;
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,12 @@
+package CodingStudy;
+
+public class 여행경로 {
+	static int N;
+	public static void main(String[] args) {
+		solution({{"ICN","SFO"},{"ICN","ATL"}, "{SFO","ATL"},{"ATL","ICN"},{"ATL","SFO"}}));
+	}
+    public String[] solution(String[][] tickets) {
+        String[] answer = {};
+        return answer;
+    }
+}
