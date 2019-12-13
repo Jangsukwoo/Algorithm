@@ -8,6 +8,8 @@ import java.util.Arrays;
  * String[][]에서
  * 첫번째 []는 티켓인덱스
  * 두번째 []의 0,1은 시작도시,도착도시 인덱스
+ * 
+ * 반복문으로 문자열 가공하는 처리에서 맨앞에 왜 널이 들어가는지?..
  */
 public class 여행경로 {
 	static int N;
@@ -31,18 +33,11 @@ public class 여행경로 {
         for(int i=0;i<pathList.size();i++){
         	String[] pathCase = pathList.get(i);
         	for(int j=0;j<pathCase.length;j++){
-        		System.out.println(pathCase[j]);
         		dictionary[i]+=pathCase[j]+",";
         	}
         }
         Arrays.sort(dictionary);//사전정렬
-//        for (String[] s : pathList) {
-//			System.out.println(Arrays.toString(s));
-//		}
-//        for(int i=0;i<dictionary.length;i++) {
-//        	System.out.println(dictionary[i].charAt(0));
-//        }
-        String answerTemp = dictionary[0].substring(4);
+        String answerTemp = dictionary[0].substring(4);//왜 널이들어가는지..
         answer = answerTemp.split(",");   
         return answer;
     }
@@ -56,7 +51,6 @@ public class 여행경로 {
 			if(tickets[ticketNumber][0].equals(start)){//start도시에서 시작하는 티켓이면서
 				if(useTicket[ticketNumber]==false){//사용하지않은 티켓이면
 					path[depth]=tickets[ticketNumber][0];
-					System.out.println();
 					useTicket[ticketNumber]=true;
 					dfs(tickets[ticketNumber][1],tickets,depth+1,ticketNumber);
 					useTicket[ticketNumber]=false;

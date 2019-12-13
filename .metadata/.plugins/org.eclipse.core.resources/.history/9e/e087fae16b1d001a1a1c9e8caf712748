@@ -1,0 +1,8 @@
+package BAEKJOON;
+
+public class 영역구하기 {
+	static int M,N;
+	public static void main(String[] args) {
+		
+	}
+}
