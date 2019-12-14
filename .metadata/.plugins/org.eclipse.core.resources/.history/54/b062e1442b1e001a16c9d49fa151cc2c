@@ -1,0 +1,38 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+/*
+ * daltonism(적록색약)
+ * 
+ * 문자 R,G,B로 채워진 N by N Map
+ * R = 빨강
+ * G = 초록
+ * B = 파랑
+ * 1<=N<=100
+ * 같은색으로 인접해있는 구역은 같은 구역으로 취급한다.
+ * 
+ * 문제 조건이 명확하게 명시 되어있지 않고
+ * 추측상 적색과 녹색을 같은색이라 판단한다 생각하고 문제 풀이 시작함
+ * 
+ * 일반 사람이 보는 색깔 영역의 개수와
+ * 적록색약인 사람이 보는 색깔 영역의 개수를 구하는 문제
+ */
+public class 적록색약 {
+	static int N;
+	static char[][] colorMap;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상 우 하 좌
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//입력 
+		N = sc.nextInt();
+		colorMap = new char[N][N];
+		sc.nextLine();
+		for(int line=0;line<N;line++){
+			String readLine = sc.nextLine();
+			colorMap[line] = readLine.toCharArray();
+		}
+	}
+}

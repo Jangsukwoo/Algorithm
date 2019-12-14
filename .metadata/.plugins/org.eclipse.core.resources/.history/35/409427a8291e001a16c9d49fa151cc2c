@@ -1,0 +1,12 @@
+package BAEKJOON;
+/*
+ * 문자 R,G,B로 채워진 N by N Map
+ * 
+ * 
+ */
+public class 적록색약 {
+	
+	public static void main(String[] args) {
+		
+	}
+}

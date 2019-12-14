@@ -1,0 +1,51 @@
+package test;
+
+import java.util.Scanner;
+
+/*
+ * 체스판 N by N
+ * 1<=N<=31
+ * 0<=K<=31
+ * 
+ */
+public class solution1 {
+	static int N,K;
+	static long result;
+	public static void main(String[] args) {
+		soulution(2,2);
+		/*
+		 * n^2
+		 * n^2 - (2n-1)
+		 * n^2 - (2n-1) -(2n-3) 점화식 
+		 */
+	}
+	private static int soulution(int n, int k) {
+		if(K>N) {
+			result = 0;
+		}
+		else {
+			long beforeValue=0;
+			long oddNumber = 1;
+			answer = 1;
+			for(int k=0;k<K;k++){//k의 개수만큼 첫번째 부터 구한다
+				if(k==0){//초항 n^2
+					beforeValue = N*N;
+				}
+				else{//두번째항부터 
+					beforeValue-=((2*N) - oddNumber);
+					oddNumber+=2;
+				}
+				result*=beforeValue%10007;
+				result%=10007;
+			}
+			getDivideKfactorial();	
+		}
+		return answer;
+		System.out.println(answer);
+	}
+	private static void getDivideKfactorial() {
+		for(int k=K;k>0;k--) {
+			answer/=k;
+		}
+	}
+}

@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 영역구하기 {
-	public static void main(String[] args) {
-		
-	}
-}
