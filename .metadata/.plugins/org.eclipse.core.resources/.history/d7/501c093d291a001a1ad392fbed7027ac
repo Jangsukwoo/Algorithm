@@ -1,7 +1,0 @@
-package CodingStudy;
-
-public class 네트워크 {
-	public static void main(String[] args) {
-		
-	}
-}
