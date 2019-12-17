@@ -1,0 +1,24 @@
+package CodingStudy;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+/*
+ * 스카이 콩콩 힘 A,B (2<=A,B<=30)
+ * 동규와 주미의 위치 N,M (0<=N,M<=100000)
+ * 점프는 좌,우
+ * 슈퍼점프는 현위치의 A 또는 B배
+ * 총 8가지의 방법
+ * 1. -1,1
+ * 2. -A,+A
+ * 3. -B,+B
+ * 4. A배,B배
+ */
+public class 돌다리 {
+	static int A,B;//스카이 콩콩의 힘 A,B
+	static int N,M;//동규의 위치, 주미의 위치
+	static Queue<Integer> q = new LinkedList<Integer>();
+	public static void main(String[] args) {
+
+	}
+}

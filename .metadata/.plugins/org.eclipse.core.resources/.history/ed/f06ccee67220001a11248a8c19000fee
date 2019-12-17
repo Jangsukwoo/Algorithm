@@ -1,0 +1,11 @@
+package CodingStudy;
+/*
+ *	RxC의 맵이 주어짐 
+ *	1<=R,C<=1000
+ */
+public class 불 {
+	
+	public static void main(String[] args) {
+
+	}
+}
