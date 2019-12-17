@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 지훈이가 먼저 이동하도록 id 변수를 두어서
  * 지훈이를 맨앞으로함 
  * 
- * 
+ * 풀고나서보니 큐를 두개 쓰면 굳이 순서를 먼저 정해주지 않아도 되겠다.
 4 4
 ####
 #.F#
@@ -69,16 +69,16 @@ public class 불 {
 			maze[row] = readLine.toCharArray();
 			for(int col=0;col<C;col++) {
 				if(maze[row][col]=='J') {
-					q.add(new FireAndJihun(0,0,row,col,1));//지훈,지훈을 뜻하는 아이디 2
+					q.add(new FireAndJihun(0,0,row,col,1));//지훈,지훈을 뜻하는 아이디 1
 					jihunVisit[row][col]=true;
 				}
 				if(maze[row][col]=='F') {
-					q.add(new FireAndJihun(row,col,0,0,2));//불,불을 뜻하는 아이디 1
+					q.add(new FireAndJihun(row,col,0,0,2));//불,불을 뜻하는 아이디 2
 					fireVisit[row][col]=true;
 				}
 			}
 		}
-		Collections.sort((List<FireAndJihun>) q); //id기준으로 정렬하면 지훈의 아이디가 맨 앞으로감 
+		Collections.sort((List<FireAndJihun>) q); //id기준으로 정렬하면 지훈의 아이디가 맨 앞으로감. 최초의 한번만 순서를 정해준다.
 		BFS();
 		if(escape) System.out.println(time);
 		else System.out.println("IMPOSSIBLE");

@@ -1,0 +1,16 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 단지의 개수 
+ */
+public class 단지번호붙이기 {
+	static char[][] village;
+	static int N;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		village = new char[N][N];
+	}
+}

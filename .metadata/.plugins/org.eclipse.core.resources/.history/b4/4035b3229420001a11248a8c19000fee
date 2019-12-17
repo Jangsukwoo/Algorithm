@@ -1,0 +1,8 @@
+package CodingStudy;
+
+public class 단지번호붙이기 {
+	
+	public static void main(String[] args) {
+		
+	}
+}
