@@ -5,7 +5,38 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-13T16:00:00Z</updated>
+  <updated>2019-12-18T07:54:10Z</updated>
+  <entry>
+    <title>This Week in Spring - December 18th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/18/this-week-in-spring-december-18th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-12-18:3912</id>
+    <updated>2019-12-18T07:54:10Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! This week I am in beautiful Tokyo, Japan, where I just spoke at the always lovely annual Spring Fest event. I loved the show and I hope that they got something out of my performance. &lt;/p&gt;
+&lt;p&gt;Last week was tough. Possibly the toughest week of my life. I didn&amp;rsquo;t publish an episode of &lt;a href="http://twitter.com/Bootiful_Podcast"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;&lt;/a&gt;, as such. You won&amp;rsquo;t see that episode reflected on the blog because it was my heartbroken dedication to my father, who passed away last week at the age of 81. No interview in that brief, less-than-20 minutes episode. &lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m feeling a little better and was glad to come back to the work of writing this blog and find that there was an absolute ton of good stuff to read and consume. I hope you get something out of it, too. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/13/flight-of-the-flux-3-hopping-threads-and-schedulers"&gt;Flight of the Flux 3 - Hopping Threads and Schedulers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/12/spring-boot-for-apache-geode-pivotal-gemfire-1-1-4-release-1-2-2-release-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.4.RELEASE &amp;amp; 1.2.2.RELEASE Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/12/spring-session-for-apache-geode-pivotal-gemfire-2-1-7-release-and-2-2-1-release-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.7.RELEASE and 2.2.1.RELEASE Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/10/spring-boot-2-1-x-eol-november-1st-2020"&gt;Spring Boot 2.1.x EOL November 1st 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn how LAIKA, a premier stop-motion animation studio in Portland, OR, &lt;a href="https://www.rabbitmq.com/blog/2019/12/16/laika-gets-creative-with-rabbitmq-as-the-animation-companys-it-nervous-system/"&gt;uses RabbitMQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-FWTC1eWKym7z9dKkQZruQz8QePaQ94sBeL1EGHEbiOj7w/viewform"&gt;Please take this survey to help us know what you&amp;rsquo;d like to change for Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Fellow Java Champion and Jetbrains&amp;rsquo; Trisha Gee concludes her epic series looking at Reactive Spring just in time for Christmas with this &lt;a href="https://blog.jetbrains.com/idea/2019/12/tutorial-reactive-spring-boot-spring-profiles-to-switch-clients/"&gt;latest installment introducing RSocket&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Not strictly speaking related to Spring, but generally good advice for anyone interested in software architectures: Simon Brown&amp;rsquo;s introduction to &lt;a href="http://www.codingthearchitecture.com/2016/04/25/layers_hexagons_features_and_components.html"&gt;Layers, hexagons, features and components&lt;/a&gt; is a worthy read.&lt;/li&gt;
+  &lt;li&gt;DZone has a nice post on &lt;a href="https://dzone.com/articles/an-implementation-of-spring-boot-with-spring-data"&gt;implementing Spring Boot with Spring Data JPA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Thanks everyone - &lt;a href="https://twitter.com/SpringData/status/1206513892077244417"&gt; the @SpringData handle has crossed 30,000 followers!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Our friends at Alibaba have open-sourced their Alibaba RSocket Broker &lt;a href="https://github.com/alibaba/alibaba-rsocket-broker"&gt;supporting meshes, streaming &amp;amp; IoT, among other things&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Greg Turnquist published a nice video, &lt;a href="https://m.youtube.com/watch?v=b66rXMgk8Iw&amp;feature=youtu.be"&gt;&lt;em&gt;Five Reasons to Use Spring Boot&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.brighttalk.com/webcast/14893/378835"&gt;Register now to make this webinar (tomorrow, Wednesday the 19th, 2019), on Spring Cloud Kubernetes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_-aGFW4huvg&amp;feature=youtu.be"&gt;I loved this second introduction to Spring Data Neo4j&amp;rsquo;s new Reactive implementation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This SpringOne Platform 2019 talk, &lt;a href="https://www.youtube.com/watch?v=7Faly8jORIw"&gt;&lt;em&gt;RabbitMQ &amp;amp; Kafka&lt;/em&gt;&lt;/a&gt; is now online and worth a watch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Flight of the Flux 3 - Hopping Threads and Schedulers</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/13/flight-of-the-flux-3-hopping-threads-and-schedulers" />
@@ -1130,38 +1161,6 @@ public Function&amp;lt;KStream&amp;lt;Long, Order&amp;gt;,&#xD;
 &lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with corresponding Spring Boot releases (2.2.2 and 2.1.11).&lt;/p&gt;
 &lt;p&gt;See you early 2020 for a full round of Spring Framework releases, from 4.3.x up to the 5.2.x generation. More on that in a future blog post, stay tuned!&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.2.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - December 3, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/03/this-week-in-spring-december-3-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-12-03:3893</id>
-    <updated>2019-12-03T09:38:26Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Can you believe - and I can&amp;rsquo;t, by the way - that we&amp;rsquo;re already in December 2019? The last month before the new year? The last month of this &lt;em&gt;decade&lt;/em&gt;? It defies belief! I can&amp;rsquo;t even imagine how we got this far so quickly, but it&amp;rsquo;s great that we did. I started writing &lt;em&gt;This Week in Spring&lt;/em&gt; in the first week of January 2011, so we&amp;rsquo;re fast approaching 9 years of &lt;em&gt;This Week in Spring&lt;/em&gt;! &lt;/p&gt;
-&lt;p&gt;As I write this I am in Toronto, Canada, for the last stop on the SpringOne Tour train for 2019. I enjoyed giving a two-hour talk introducing all sorts of stuff in the wide world of Reactive Spring yesterday. Now, I am just biding my time, preparing for my departure to Australia later today. I am off to Australia for two stops on the YOW! conference circuit. I wholely look forward to seeing everyone there! &lt;/p&gt;
-&lt;p&gt;Among other things, I am using my free time to prepare &lt;a href="https://content.pivotal.io/webinars/dec-5-introducing-azure-spring-cloud-a-managed-runtime-for-spring-based-apps-webinar"&gt;my Azure Spring Cloud talk for my upcoming December 5 webinar&lt;/a&gt;. If you haven&amp;rsquo;t already registered, you should! There&amp;rsquo;s so much to talk about in this brand new offering between Microsoft Azure, Pivotal and of course the Spring team, and you shouldn&amp;rsquo;t miss it! &lt;/p&gt;
-&lt;p&gt;As usual, friends, we&amp;rsquo;ve got a ton of stuff to get to so let&amp;rsquo;s dive right in! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model"&gt;Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 1 - Programming Model&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/29/a-bootiful-podcast-spring-tools-lead-martin-lippert"&gt;A Bootiful Podcast: Spring Tools lead Martin Lippert&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/28/spring-cloud-hoxton-released"&gt;Spring Cloud Hoxton Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/27/spring-integration-aws-2-3-ga-and-spring-cloud-stream-kinesis-binder-2-0-ga-available"&gt;Spring Integration AWS 2.3 GA and Spring Cloud Stream Kinesis Binder 2.0 GA Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/guides/gs/spring-boot-kubernetes/"&gt;Getting Started ¡¤ Spring Boot Kubernetes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/26/spring-cloud-open-service-broker-3-1-0-released"&gt;Spring Cloud Open Service Broker 3.1.0 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting post about the &lt;a href="https://dzone.com/articles/rsocket-broker-use-case-in-alibaba-cloud"&gt;RSocket Broker Use Cases in Alibaba Cloud &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/r2dbc/status/1201543303344336896?s=12"&gt;R2dbc is now GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://howtodoinjava.com/spring-boot/role-based-security-jaxrs-annotations/"&gt;Spring Boot - Role Based Security with JAX-RS Annotations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1200707528163770368"&gt;https://twitter.com/SpringData/status/1200707528163770368&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.jetbrains.com/idea/2019/11/tutorial-reactive-spring-boot-displaying-reactive-data"&gt;Tutorial: Reactive Spring Boot Part 6 ? Displaying Reactive Data | IntelliJ IDEA Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/making/rsc"&gt;making/rsc: RSocket Client CLI (RSC) that aims to be a curl for RSocket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Baeldung have updated their &lt;a href="https://www.baeldung.com/spring-autowire"&gt;guide to Spring&amp;rsquo;s &lt;code&gt;@Autowired&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://allegro.tech/2019/07/migrating-microservice-to-spring-webflux.html"&gt;Migrating a microservice to Spring WebFlux ¡¤ allegro.tech&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I like this (French-language) article on moving from Spring Cloud Netflix to the newer alternatives in Spring Cloud today. &lt;a href="https://javaetmoi.com/2019/11/desendettement-de-spring-cloud-netflix/"&gt;D?sendettement de Spring Cloud Netflix &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
