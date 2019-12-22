@@ -1,0 +1,64 @@
+package CodingStudy;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+/*
+ * 집에는 문이 두개 있음
+ * 한쪽 문에서 다른 쪽 문을 볼 수 있도록 거울을 설치
+ * 
+ * N by N 
+ * 1<=N<=50
+ * 
+ * #은 문
+ * .은 빛이 지나가는 곳
+ * *은 빛이 지나갈 수 없는 곳
+ * !은 거울을 설치 할 수 있는 위치
+ */
+public class 거울설치 {
+	static int N;
+	static char[][] house;
+	static boolean[][] visit;
+	static int[] dr = {-1,1,1,-1};
+	static int[] dc = {1,1,-1,-1,};//우상,우하,좌하,좌상
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static int[] entranceDoor = new int[2];
+	static int[] exitDoor = new int[2];
+	static boolean doorCheck;
+	static int answer;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		sc.nextLine();
+		house = new char[N][N];
+		visit = new boolean[N][N];
+		for(int read=0;read<5;read++) {
+			String readLine = sc.nextLine();
+			house[read] = readLine.toCharArray();
+			setDoorCoordination();
+
+		}
+		//처리
+		BFS();
+		
+	}
+	private static void setDoorCoordination() {
+		for(int col=0;col<N;col++) {	
+			if(house[read][col]=='#' && doorCheck==false){
+				entranceDoor[0] = read;
+				entranceDoor[1] = col;
+				break;
+			}
+			else if(house[read][col]=='#'&& doorCheck==true) {
+				exitDoor[0] = read;
+				exitDoor[1] = col;
+				break;
+			}
+		}
+	}
+	private static void BFS() {
+		// TODO Auto-generated method stub
+		
+	}
+}

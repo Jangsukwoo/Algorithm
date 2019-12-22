@@ -1,7 +1,0 @@
-package 알고리즘;
-
-public class 순환소수찾기_비둘기집원리 {
-	public static void main(String[] args) {
-
-	}
-}

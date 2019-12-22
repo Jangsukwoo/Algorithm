@@ -1,0 +1,7 @@
+package winterSDS;
+
+public class FastMessaging {
+	public static void main(String[] args) {
+
+	}
+}

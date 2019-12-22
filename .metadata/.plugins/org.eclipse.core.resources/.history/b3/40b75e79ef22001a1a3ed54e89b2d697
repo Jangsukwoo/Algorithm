@@ -1,0 +1,87 @@
+package winterSDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 쿼드 트리 
+ * N by N
+ * 4<=N<=64
+ * N은 2의 지수승
+ * 
+ * 최적 분할 쿼드-트리
+ * 쿼드-트리 분할 : 주어진 정방행렬을 동일한 크기의 정방 행렬 4개로 
+ * 최소 정방행렬(2x2)이 될때 까지 나누는 것
+ * 
+ * 정방행렬 대상이 될 때 1표시 
+ * 사분면 : quadrant
+ * 
+ *
+1
+8 1 41 46 54 93 48 96 35 36 29 56 44 77 12 12 81 93 4 27 56 61 18 20 87 85 59 55 95 45 82 89 26 3 62 96 91 62 81 66 60 65 23 81 56 93 63 21 42 22 86 2 57 30 79 99 65 51 42 86 31 57 43 25 4
+4 29 53 0 63 75 78 72 44 54 16 77 35 39 7 96 33
+4 59 48 27 92 42 91 62 44 47 98 8 94 59 46 21 3
+8 54 35 85 14 19 91 78 20 67 91 72 56 99 38 13 86 46 51 6 6 7 95 67 19 57 62 10 64 24 69 15 17 56 33 51 52 84 6 85 8 83 60 68 41 79 97 99 85 78 9 1 62 7 14 41 41 23 87 47 32 54 98 33 75
+ */
+public class QuadTree {
+	static int N;
+	static int[][] Matrix;
+	static StringBuilder sb;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			sb = new StringBuilder();
+			String readLine = br.readLine();
+			StringTokenizer st = new StringTokenizer(readLine);
+			N = Integer.parseInt(st.nextToken());
+			Matrix = new int[N][N];
+			for(int row=0;row<N;row++) {
+				for(int col=0;col<N;col++) {
+					Matrix[row][col] = Integer.parseInt(st.nextToken());
+				}
+			}
+			//처리
+			dfs(0,0,N);
+		}
+		System.out.println(sb.toString());
+	}
+	private static void dfs(int leftTopRow, int leftTopCol,int size) {
+		if(size==2){//2 by 2 행렬이면 더이상 정방행렬로 나눌 수 없으므로 여기서 종료  
+			return ;
+		}
+		int binaryValue = isDivide(leftTopRow,leftTopCol,size);//분할이 되는가?
+		if(binaryValue==1){//분할 가능하면
+			sb.append("1");
+			dfs(leftTopRow, leftTopCol,size/2);
+			dfs(leftTopRow,(leftTopCol+(size/2)),size/2);
+			dfs((leftTopRow+(size/2)),leftTopCol,size/2);
+			dfs((leftTopRow+(size/2)),(leftTopCol+(size/2)),size/2);
+		}else sb.append("0");
+	}
+	private static int isDivide(int leftTopRow, int leftTopCol, int size) {
+		double maxA = getMatrixMaxValue(leftTopRow,leftTopCol,leftTopRow+size,leftTopCol+size);//정방행렬 A의 최대값
+		double minB=0;
+		//제 1,2,3,4 분면 각각의 최대값
+		double maxB0 = getMatrixMaxValue(leftTopRow, leftTopCol, (leftTopRow+(size/2)), (leftTopCol+(size/2)));
+		double maxB1 = getMatrixMaxValue(leftTopRow, (leftTopCol+(size/2)),(leftTopRow+(size/2)),(leftTopCol+size));
+		double maxB2 = getMatrixMaxValue((leftTopRow+(size/2)),leftTopCol,(leftTopRow+size),(leftTopCol+(size/2)));
+		double maxB3 = getMatrixMaxValue((leftTopRow+(size/2)),(leftTopCol+(size/2)),(leftTopRow+size),(leftTopCol+size)); 
+		minB = Math.min(maxB0,maxB1);
+		minB = Math.min(minB,maxB2);
+		minB = Math.min(minB,maxB3);
+		if(maxA<=(minB*1.2)) return 1; //분할 가능
+		else return 0; //분할 불가능
+	}
+	private static double getMatrixMaxValue(int leftTopRow,int leftTopCol, int rightBottomRow, int rightBottomCol) {
+		double max=0;
+		for(int row=leftTopRow;row<rightBottomRow;row++) {
+			for(int col=leftTopCol;col<rightBottomCol;col++){
+				if(max>Matrix[row][col]) max = Matrix[row][col];
+			}
+		}
+		return max;
+	}
+}

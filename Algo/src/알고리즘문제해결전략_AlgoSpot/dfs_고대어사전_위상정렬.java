@@ -89,10 +89,12 @@ public class dfs_고대어사전_위상정렬 {
 	}
 	private static boolean isTopologicalSort() { //step 2. 위상정렬인지 확인하기 
 		//만들어진 그래프가 위상정렬이 되는지 dfs로 확인해본다. 선후관계가 정당한지?
+		
+		//dfsAll
 		for(int antecedent=0;antecedent<26;antecedent++) {
 			for(int trailing=0;trailing<26;trailing++) {
 				if(visit[antecedent]==false && alphabetGraph[antecedent][trailing]==1){//방향이 있으면서 방문하지 않은
-					dfs(antecedent); //dfsAll
+					dfs(antecedent); 
 				}
 			}	
 		}

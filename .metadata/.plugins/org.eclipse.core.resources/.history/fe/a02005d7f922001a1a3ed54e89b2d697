@@ -1,0 +1,42 @@
+package winterSDS;
+
+import java.util.Scanner;
+/*
+ * 선분 수 N
+ * 1<=N<=200000
+ * 선분의 좌표 
+ * 
+3
+3
+1 6
+2 5
+2 2
+1 1
+6 1
+6 2
+3 5
+4 6
+1
+1 1
+1 5
+5 1
+5 3
+1
+1 1
+1 5
+2 6
+9 6
+ */
+public class FastMessaging {
+	static int N; 
+	static long[] princeXY;
+	static long[] princessXY;
+	public static void main(String[] args) {
+		Scanner sc  = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			N = sc.nextInt();
+			
+		}
+	}
+}

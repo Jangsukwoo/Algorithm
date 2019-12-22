@@ -1,0 +1,196 @@
+package winterSDS;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+/*
+ * 완성된 스도쿠에서 
+ * K개의 숫자가 틀린 스도쿠가 주어진다.
+ * 1<=K<=3
+ * 
+ * 바꾸려는 좌표와 바꾸려는 값을 공백을 두어 출력
+2
+1
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 5 1 6
+9 8 2 6 1 7 3 5 4
+2 9 3 1 8 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1
+3
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 5 1 6
+9 8 2 6 4 7 3 5 4
+2 9 3 1 9 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1
+
+//정상스도쿠
+1
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 7 1 6
+9 8 2 6 1 7 3 5 4
+2 9 3 1 8 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1 
+
+1
+1
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 5 1 6
+9 8 2 6 1 7 3 5 4
+2 9 3 1 8 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1
+
+ */
+class Zone{
+	HashSet<Integer> row = new LinkedHashSet<Integer>();
+	HashSet<Integer> col = new LinkedHashSet<Integer>();
+	int leftTopRow;
+	int leftTopCol;
+	public Zone(int row,int col){
+		leftTopRow = row;
+		leftTopCol = col;
+	}
+}
+public class searchKforSudoku {
+	static int[][] sudokuMap;
+	static int[] countMap;//숫자 출현 빈도 저장하기
+	static int[] dr = {0,0,0,1,1,1,2,2,2};
+	static int[] dc = {0,1,2,0,1,2,0,1,2};
+	static int K;//(1<=K<=3)
+	static ArrayList<Integer> insertNumberList;
+	static ArrayList<Integer> duplicationNumberList;
+	static ArrayList<int[]> wrongPositionList;
+	static Zone[] boxZones;
+	static int find;
+	static boolean[] checkcheck = new boolean[10];
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		setBoxZone();
+		//printZone();
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			K = sc.nextInt();
+			sudokuMap = new int[9][9];
+			countMap = new int[10];
+			insertNumberList = new ArrayList<Integer>();
+			duplicationNumberList = new ArrayList<Integer>();
+			wrongPositionList = new ArrayList<int[]>();
+			for(int row=0;row<9;row++) {
+				for(int col=0;col<9;col++) {
+					sudokuMap[row][col] = sc.nextInt();
+				}
+			}
+		
+			//처리
+			findK();
+			System.out.println(Arrays.toString(countMap));
+			System.out.println(insertNumberList.toString());
+			System.out.println(duplicationNumberList.toString());
+		}
+	}
+	private static void printZone() {
+		for(int i=0;i<9;i++) {
+			System.out.println(i+"번째영역");
+			System.out.println(boxZones[i].row.toString());
+			System.out.println(boxZones[i].col.toString());
+		}
+		System.out.println();
+	}
+	private static void setBoxZone() {
+		boxZones = new Zone[9];
+		boxZones[0] = new Zone(0,0);
+		boxZones[1] = new Zone(0,3);
+		boxZones[2] = new Zone(0,6);
+		boxZones[3] = new Zone(3,0);
+		boxZones[4] = new Zone(3,3);
+		boxZones[5] = new Zone(3,6);
+		boxZones[6] = new Zone(6,0);
+		boxZones[7] = new Zone(6,3);
+		boxZones[8] = new Zone(6,6);
+		for(int i=0;i<9;i++) { //각 박스별로 
+			for(int dir=0;dir<9;dir++) {
+				boxZones[i].row.add(boxZones[i].leftTopRow+dr[dir]);
+				boxZones[i].col.add(boxZones[i].leftTopCol+dc[dir]);
+			}
+		}
+	}
+	private static void findK() {
+		setCountMap();
+		for(int row=0;row<9;row++) {
+			for(int col=0;col<9;col++) {
+
+				if(rowCheck(col) && colCheck(row) && boxCheck(row,col)) {
+					System.out.println("중복된좌표");
+					System.out.println("행"+(row+1));
+					System.out.println("열"+(col+1));
+					System.out.println("값"+sudokuMap[row][col]);
+				}
+			}
+		}
+	}
+	private static boolean boxCheck(int row, int col) {
+		int boxZone = 0;
+		boolean[] check = new boolean[10];	
+		for(int i=0;i<9;i++) {
+			if(boxZones[i].row.contains(row) && boxZones[i].col.contains(col)){//속한 영역 확인
+				boxZone = i;
+				break;
+			}
+		}
+		for(int dir=0;dir<9;dir++) {
+			if(check[sudokuMap[boxZones[boxZone].leftTopRow+dr[dir]][boxZones[boxZone].leftTopCol+dc[dir]]]==false) {
+				check[sudokuMap[boxZones[boxZone].leftTopRow+dr[dir]][boxZones[boxZone].leftTopCol+dc[dir]]]=true;	
+			}else return true;
+		}
+		return false;
+	}
+	private static boolean colCheck(int row){
+		boolean[] check = new boolean[10];
+		for(int col=0;col<9;col++) {
+			if(check[sudokuMap[row][col]]==false) check[sudokuMap[row][col]]=true;
+			else if((check[sudokuMap[row][col]]==true)) return true; //중복 발견
+		}
+		return false;
+	}
+	private static boolean rowCheck(int col) {
+		boolean[] check = new boolean[10];
+		for(int row=0;row<9;row++) {
+			if(check[sudokuMap[row][col]]==false) check[sudokuMap[row][col]]=true;
+			else if((check[sudokuMap[row][col]]==true)) return true; //중복 발견
+		}
+		return false;
+	}
+	private static void setCountMap() {
+		for(int row=0;row<9;row++) {
+			for(int col=0;col<9;col++) {
+				countMap[sudokuMap[row][col]]+=1;
+			}
+		}
+		for(int num=1;num<=9;num++) {
+			if(countMap[num]<9){
+				for(int i=0;i<(9-countMap[num]);i++) insertNumberList.add(num);
+			}
+			if(countMap[num]>9) {
+				for(int i=0;i<(countMap[num]-9);i++) duplicationNumberList.add(num);
+			}
+		}
+	}
+}

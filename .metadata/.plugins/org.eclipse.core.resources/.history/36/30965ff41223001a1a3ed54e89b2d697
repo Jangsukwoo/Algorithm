@@ -1,0 +1,57 @@
+package winterSDS;
+
+import java.util.Scanner;
+
+/*
+ * 완성된 스도쿠에서 
+ * K개의 숫자가 틀린 스도쿠가 주어진다.
+ * 1<=K<=3
+ * 
+ * 바꾸려는 좌표와 바꾸려는 값을 공백을 두어 출력
+2
+1
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 5 1 6
+9 8 2 6 1 7 3 5 4
+2 9 3 1 8 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1
+3
+3 2 4 8 9 1 5 6 7
+8 1 9 7 6 5 2 4 3
+7 5 6 3 4 2 1 9 8
+6 7 1 4 5 3 8 2 9
+4 3 5 9 2 8 5 1 6
+9 8 2 6 4 7 3 5 4
+2 9 3 1 9 6 4 7 5
+1 6 8 5 7 4 9 3 2
+5 4 7 2 3 9 6 8 1
+ */
+public class searchKforSudoku {
+	static int[][] sudokuMap;
+	static int[][] countMap;
+	static int K;//(1<=K<=3)
+	static int find;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			K = sc.nextInt();
+			sudokuMap = new int[9][9];
+			countMap = new int[10][10];
+			for(int row=0;row<9;row++) {
+				for(int col=0;col<9;col++) {
+					sudokuMap[row][col] = sc.nextInt();
+				}
+			}
+			//처리
+			findK();
+		}
+	}
+	private static void findK() {
+		
+	}
+}
