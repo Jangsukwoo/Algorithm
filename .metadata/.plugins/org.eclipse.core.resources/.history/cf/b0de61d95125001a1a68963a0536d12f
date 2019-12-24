@@ -1,0 +1,66 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 포도주 잔 선택시 포도주 모두 마심
+ * 연속으로 놓여있는 3잔은 마실 수 없음
+ * 
+ * 포도주 잔의 개수 n
+ * 1<=n<=10000
+ * dp??
+ * 처음 포도주부터 읽어나가면서 이 포도주를 마실건지 안마실건지 판단하기 위해 참조하는 boolean DP 배열을 만들었다.
+ * 1 2 3 4 5 6
+ * -> 6 16 16 25 33 33
+ * -> 0 10 23 23 31 32
+ */
+public class 포도주시식 {
+	static int n;
+	static int[] wine;
+	static boolean[][] dpOX;
+	static int[][] memo;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		wine = new int[n];
+		dpOX = new boolean[n][2];
+		memo = new int[n][2];
+		for(int i=0;i<n;i++) wine[i] = sc.nextInt();
+		dpOX[0][0] = true;
+		dpOX[0][1] = false;
+		memo[0][0] = wine[0];
+		memo[0][1] = 0;
+		if(n>1) {
+			dpOX[1][0] = true;
+			dpOX[1][1] = true;
+			memo[1][0] += wine[1];
+			memo[1][1] += wine[1];
+		}
+		if(n>2) {
+			for(int i=2;i<n;i++){
+				if(dpOX[i-2][0]==true && dpOX[i-1][0]==true) {
+					dpOX[i][0] = false;
+					memo[i][0] = memo[i-1][0];
+				}else {
+					dpOX[i][0] = true;
+					memo[i][0] = memo[i-1][0] +wine[i]; 
+				}
+				if(dpOX[i-2][1]==true && dpOX[i-1][1]==true) {
+					dpOX[i][1] = false;
+					memo[i][1] = memo[i-1][1];
+				}else {
+					dpOX[i][1] = true;
+					memo[i][1] = memo[i-1][1] +wine[i]; 
+				}
+			}	
+		}
+		for(int i=0;i<n;i++) {
+			System.out.print(memo[i][0]+" ");
+		}
+		System.out.println();
+		for(int i=0;i<n;i++){
+			System.out.print(memo[i][1]+" ");
+		}
+		System.out.println(Math.max(memo[n-1][0],memo[n-1][1]));
+	}
+}

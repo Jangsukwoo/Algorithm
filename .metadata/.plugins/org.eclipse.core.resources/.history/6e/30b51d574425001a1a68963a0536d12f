@@ -1,0 +1,13 @@
+package CodingStudy;
+/*
+ * 포도주 잔 선택시 포도주 모두 마심
+ * 연속으로 놓여있는 3잔은 마실 수 없음
+ * 
+ * 포도주 잔의 개수 n
+ * 1<=n<=10000
+ */
+public class 포도주시식 {
+	public static void main(String[] args) {
+		
+	}
+}

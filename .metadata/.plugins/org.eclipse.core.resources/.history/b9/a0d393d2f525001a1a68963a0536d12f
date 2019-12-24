@@ -1,0 +1,18 @@
+package CodingStudySamsung;
+
+import java.util.Scanner;
+
+/*
+ * 이용권의 종류 1일,1달,3달,1년
+ * 11월 12월에도 3달 이용권 사용가능
+ */
+public class 수영장 {
+	static int T;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		T = sc.nextInt();
+		for(int testcase<=1;testcast<=T;testcase++) {
+			
+		}
+	}
+}

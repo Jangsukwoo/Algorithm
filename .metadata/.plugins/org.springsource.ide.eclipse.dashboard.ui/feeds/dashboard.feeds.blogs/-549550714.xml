@@ -5,7 +5,52 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-21T03:34:00Z</updated>
+  <updated>2019-12-23T18:18:14Z</updated>
+  <entry>
+    <title>Spring for Apache Kafka 2.4 is Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/23/spring-for-apache-kafka-2-4-is-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Gary Russell</name>
+    </author>
+    <id>tag:spring.io,2019-12-23:3917</id>
+    <updated>2019-12-23T18:18:14Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;To support last week&amp;#8217;s Apache Kafka 2.4.0 release, I am pleased to announce that the Spring for Apache Kafka 2.4 - 2.4.0.RELEASE - is available in maven central.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This version is essentially functionally equivalent to 2.3.x, but is compiled against the 2.4.0 &lt;code&gt;kafka-clients&lt;/code&gt; and supports the new incremental rebalancing protocol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The 2.4.0 &lt;code&gt;kafka-clients&lt;/code&gt; are not binary compatible with Spring for Apache Kafka 2.3 so if you wish to use the 2.4.0 clients, you must upgrade to this version. See the appendix in the reference manual for how to override the jar versions, especially if you are using Spring Boot for dependency management and/or you are using the test embedded Kafka broker.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;At the time of writing, it is expected that the next Spring Boot version (2.3) will pull in 2.4.x of this project via its dependency management.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-kafka/docs/2.4.0..RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Roadmap and Hoxton and Greenwich Maintenance and EOL Announcements</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Spencer Gibb</name>
+    </author>
+    <id>tag:spring.io,2019-12-21:3916</id>
+    <updated>2019-12-23T14:27:00Z</updated>
+    <content type="html">&lt;p&gt;With the recent &lt;a href="https://spring.io/blog/2019/12/03/spring-framework-maintenance-roadmap-in-2020-including-4-3-eol"&gt;Spring Framework&lt;/a&gt; and &lt;a href="https://spring.io/blog/2019/12/10/spring-boot-2-1-x-eol-november-1st-2020"&gt;Spring Boot&lt;/a&gt; maintenance and roadmap posts, the Spring Cloud team is taking the opportunity to provide some insight to our future roadmap as well as the lifetimes of the Greenwich and Hoxton release trains.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-ilford" class="anchor" name="spring-cloud-ilford"&gt;&lt;/a&gt;Spring Cloud Ilford&lt;/h2&gt;
+&lt;p&gt;We would like to announce our next major release, Spring Cloud Ilford. This will be the first major release since the release of Spring Cloud Finchley, which provided support for Spring Boot 2.x and Spring Framework 5.x. By making Ilford a major release, it will allow us to remove modules that have entered &lt;a href="https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now#spring-cloud-netflix-projects-entering-maintenance-mode"&gt;maintenance mode&lt;/a&gt; and to complete the simplification of the release train &lt;a href="https://spring.io/blog/2019/07/24/simplifying-the-spring-cloud-release-train"&gt;announced earlier this year&lt;/a&gt;. It will also allow us to do some API refactoring that may introduce breaking changes.&lt;/p&gt;
+&lt;p&gt;Ilford will be released following Spring Framework 5.3 and Spring Boot 2.4 sometime in Q4 2020.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-hoxton" class="anchor" name="spring-cloud-hoxton"&gt;&lt;/a&gt;Spring Cloud Hoxton&lt;/h2&gt;
+&lt;p&gt;According to the &lt;a href="https://pivotal.io/support/oss"&gt;Pivotal Open Source Support Policy&lt;/a&gt;, major releases are supported for a period of three years. Finchley was first released in June 2018. Therefore, Hoxton, a minor release of the Finchley release train, will be supported until the end of June 2021 with regular releases. Starting in July 2021 Hoxton will enter a special maintenance period where only critical bug fixes and security patches will be released until the end of December 2021.&lt;/p&gt;
+&lt;p&gt;This will allow a full year of overlap between major versions.&lt;/p&gt;
+&lt;p&gt;Spring Boot 2.3.x, scheduled for release in Q2 2020, will be supported by a Hoxton Service Release soon after the Spring Boot release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-greenwich" class="anchor" name="spring-cloud-greenwich"&gt;&lt;/a&gt;Spring Cloud Greenwich&lt;/h2&gt;
+&lt;p&gt;Greenwich, a minor release of the Finchley release train, was released in January 2019. Its last regular Service Release will be in Jan 2020. After that, it will enter a special maintenance period where only critical bug fixes and security patches will be released until the end of December 2020. This will be the last release train to support Spring Boot 2.1.x.&lt;/p&gt;
+&lt;p&gt;Please see the &lt;a href="https://github.com/spring-cloud/spring-cloud-release/milestones?direction=asc&amp;sort=due_date&amp;state=open"&gt;release train milestones&lt;/a&gt; to track future releases and the new &lt;a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions"&gt;Supported Versions&lt;/a&gt; page to see version lifetime.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Hoxton Service Release 1 (SR1) is available.</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/21/spring-cloud-hoxton-service-release-1-sr1-is-available" />
@@ -1120,106 +1165,6 @@ public DlqPartitionFunction partitionFunction() {&#xD;
 &lt;p&gt;Kafka Streams binder allows the monitoring of the health of the underlying streams thread and it exposes the health-indicator metrics through a Spring Boot actuator endpoint. You can find more details &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_health_indicator"&gt;here&lt;/a&gt;. In addition to the health indicator, the binder also exposes Kafka Streams metrics through Micrometer meter-registry. All the basic metrics available through the KafkaStreams object is available in this registry. &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_accessing_kafka_streams_metrics"&gt;Here&lt;/a&gt; is where you can find more information on this. &lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this blog post, we saw the various strategies Kafka Streams uses to enable handling deserialization exceptions. On top of these, the Kafka Streams binder also provides a handler that lets you send error-prone payloads to a DLQ topic. We saw that the binder provides fine-grained control of working with these DLQ topics. &lt;/p&gt;
 &lt;p&gt;Thank you for reading this far! In the next blog post, we are going to see how the binder enables further customizations.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Batch 4.0.4, 4.1.3 and 4.2.1 available now!</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/04/spring-batch-4-0-4-4-1-3-and-4-2-1-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mahmoud Ben Hassine</name>
-    </author>
-    <id>tag:spring.io,2019-12-05:3898</id>
-    <updated>2019-12-04T22:27:00Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce the release of Spring Batch 4.0.4, 4.1.3 and 4.2.1 with bug fixes as well as documentation and dependencies updates. Please find the complete list of changes in the release notes: &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17484"&gt;4.0.4&lt;/a&gt;, &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17485"&gt;4.1.3&lt;/a&gt;, &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17741"&gt;4.2.1&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As we &lt;a href="https://spring.io/blog/2019/10/02/spring-batch-4-2-in-now-ga#what-rsquo-s-next"&gt;announced&lt;/a&gt; earlier this year, version 4.0.4 is the last release of the 4.0 line. The 4.1.x line will get another bug fix release next year and 4.1.4 will be the last release for this line. Please upgrade to v4.2+ at your earliest convenience as this is the primary active branch for the moment and which will be supported until the end of 2020.&lt;/p&gt;
-&lt;p&gt;The next feature release will be 4.3, with a GA planned for October 2020, aligned with Spring Framework 5.3 and Spring Boot 2.4. This release is expected to be the last feature branch of Spring Batch 4.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 3 - Data deserialization and serialization</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/04/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-3-data-deserialization-and-serialization" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Soby Chacko</name>
-    </author>
-    <id>tag:spring.io,2019-12-04:3896</id>
-    <updated>2019-12-04T16:45:21Z</updated>
-    <content type="html">&lt;p&gt;Part 1 - &lt;a href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model"&gt;Programming Model&lt;/a&gt;&lt;br/&gt;Part 2 - &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;Programming Model Continued&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Continuing on the previous two blog posts, in this series on writing stream processing applications with Spring Cloud Stream and Kafka Streams, now we will look at the details of how these applications handle deserialization on the inbound and serialization on the outbound. &lt;/p&gt;
-&lt;p&gt;All three major higher-level types in Kafka Streams - &lt;code&gt;KStream&amp;lt;K,V&amp;gt;&lt;/code&gt;, &lt;code&gt;KTable&amp;lt;K,V&amp;gt;&lt;/code&gt; and &lt;code&gt;GlobalKTable&amp;lt;K,V&amp;gt;&lt;/code&gt; - work with a key and a value. &lt;/p&gt;
-&lt;p&gt;With Spring Cloud Stream Kafka Streams support, keys are always deserialized and serialized by using the native &lt;code&gt;Serde&lt;/code&gt; mechanism. A &lt;code&gt;Serde&lt;/code&gt; is a container object where it provides a deserializer and a serializer. &lt;/p&gt;
-&lt;p&gt;Values, on the other hand, are marshaled by using either &lt;code&gt;Serde&lt;/code&gt; or the binder-provided message conversion. Starting with version 3.0 of the binder, using &lt;code&gt;Serde&lt;/code&gt; is the default approach. Using the message converters in Spring is an optional feature that you only need to use on special occasions.&lt;/p&gt;
-&lt;p&gt;Let¡¯s look at this processor:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public BiFunction&amp;lt;KStream&amp;lt;String, Long&amp;gt;, KTable&amp;lt;String, String&amp;gt;, KStream&amp;lt;String, Long&amp;gt;&amp;gt; process() {&#xD;
-  return (userClicksStream, userRegionsTable) -&amp;gt; (userClicksStream&#xD;
-        .leftJoin(userRegionsTable, (clicks, region) -&amp;gt; new RegionWithClicks(region == null ?&#xD;
-                    &amp;quot;UNKNOWN&amp;quot; : region, clicks),&#xD;
-              Joined.with(Serdes.String(), Serdes.Long(), null))&#xD;
-        .map((user, regionWithClicks) -&amp;gt; new KeyValue&amp;lt;&amp;gt;(regionWithClicks.getRegion(),&#xD;
-              regionWithClicks.getClicks()))&#xD;
-        .groupByKey(Grouped.with(Serdes.String(), Serdes.Long()))&#xD;
-        .reduce(Long::sum)&#xD;
-        .toStream());&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is the same processor we saw in the &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;previous blog&lt;/a&gt;. It has two inputs and an output. The first input binding is a &lt;code&gt;KStream&amp;lt;String, Long&amp;gt;&lt;/code&gt;. The key is of type &lt;code&gt;String&lt;/code&gt; and the value is a &lt;code&gt;Long&lt;/code&gt;. The next input binding is a &lt;code&gt;KTable&amp;lt;String, String&amp;gt;&lt;/code&gt;. Here, both key and value are of type &lt;code&gt;String.&lt;/code&gt; Finally, the output binding is a &lt;code&gt;KStream&amp;lt;String, Long&amp;gt;&lt;/code&gt; with the key as a &lt;code&gt;String&lt;/code&gt; and the value as a &lt;code&gt;Long&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;Normally, you have to tell the application the right &lt;code&gt;Serde&lt;/code&gt; to use as part of the application¡¯s configuration. However, when using the Kafka Streams binder, for most standard types, this information is inferred and you don¡¯t need to provide any special configuration.&lt;/p&gt;
-&lt;p&gt;The types that are inferred by the binder are those for which Kafka Streams provides out of the box &lt;code&gt;Serde&lt;/code&gt; implementations. These are those types:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Integer&lt;/li&gt;
-  &lt;li&gt;Long&lt;/li&gt;
-  &lt;li&gt;Short&lt;/li&gt;
-  &lt;li&gt;Double&lt;/li&gt;
-  &lt;li&gt;Float&lt;/li&gt;
-  &lt;li&gt;Byte[]&lt;/li&gt;
-  &lt;li&gt;UUID&lt;/li&gt;
-  &lt;li&gt;String&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In other words, if your &lt;code&gt;KStream&lt;/code&gt;, &lt;code&gt;KTable&lt;/code&gt;, or &lt;code&gt;GlobalKTable&lt;/code&gt; have these as the types for the key and the value, you don¡¯t need to provide any special &lt;code&gt;Serde&lt;/code&gt; configuration.&lt;/p&gt;&lt;h2&gt;&lt;a href="#providing-serde-objects-as-spring-beans" class="anchor" name="providing-serde-objects-as-spring-beans"&gt;&lt;/a&gt;Providing Serde objects as Spring Beans&lt;/h2&gt;
-&lt;p&gt;If the types are not from one of these, you can provide a bean of type &lt;code&gt;Serde&amp;lt;T&amp;gt;&lt;/code&gt;, and, if the generic type &lt;code&gt;T&lt;/code&gt; matches with the actual type, the binder will delegate that as the &lt;code&gt;Serde&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;For example, let&amp;rsquo;s say you have the following function signature:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-publicFunction&amp;lt;KStream&amp;lt;CustomKey, AvroIn&amp;gt;, KStream&amp;lt;CustomKey, AvroOut&amp;gt;&amp;gt; process() {&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then, the key and value types don¡¯t match with any of the known &lt;code&gt;Serde&lt;/code&gt; implementations. In that case, you have two options. The recommended approach is to provide a &lt;code&gt;Serde&lt;/code&gt; bean, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public Serde&amp;lt;CustomKey&amp;gt; customKeySerde(){ &#xD;
-  	return new CustomKeySerde();&#xD;
-}&#xD;
-&#xD;
-@Bean&#xD;
-public Serde&amp;lt;AvroIn&amp;gt; avroInSerde(){ &#xD;
-  	final SpecificAvroSerde&amp;lt;AvroIn&amp;gt; avroInSerde = new SpecificAvroSerde&amp;lt;&amp;gt;();&#xD;
-avroInSerde.configure(...);&#xD;
-return avroInSerde;&#xD;
-&#xD;
-}&#xD;
-&#xD;
-@Bean&#xD;
-public Serde&amp;lt;AvroOut&amp;gt; avroInSerde(){ &#xD;
- 	final SpecificAvroSerde&amp;lt;AvroOut&amp;gt; avroOutSerde = new SpecificAvroSerde&amp;lt;&amp;gt;();&#xD;
-avroOutSerde.configure(...);&#xD;
-return avroOutSerde;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#provide-serde-through-configuration" class="anchor" name="provide-serde-through-configuration"&gt;&lt;/a&gt;Provide Serde through Configuration&lt;/h2&gt;
-&lt;p&gt;If you don¡¯t want to provide &lt;code&gt;Serde&lt;/code&gt; as programmatically created Spring beans, you can also define these by using configuration, where you pass the fully qualified name of the &lt;code&gt;Serde&lt;/code&gt; implementation class, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.bindings.process-in-0.consumer.keySerde=CustomKeySerde&#xD;
-spring.cloud.stream.kafka.streams.bindings.process-in-0.consumer.valueSerde=io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde&#xD;
-&#xD;
-spring.cloud.stream.kafka.streams.bindings.process-out-0.producer.keySerde=CustomKeySerde&#xD;
-spring.cloud.stream.kafka.streams.bindings.process-out-0.producer.valueSerde=io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;By the way, setting Serde like this will have higher precedence even if you have matching beans since these configurations are set on the actual consumer and producer bindings. The binder gives it precedence since the user explicitly requested it. &lt;/p&gt;&lt;h2&gt;&lt;a href="#default-serde-and-falling-back-to-jsonserde" class="anchor" name="default-serde-and-falling-back-to-jsonserde"&gt;&lt;/a&gt;Default Serde and falling back to JsonSerde&lt;/h2&gt;
-&lt;p&gt;At this point, if the binder still cannot match any &lt;code&gt;Serde&lt;/code&gt;, it looks for a default one to match.&lt;/p&gt;
-&lt;p&gt;If all approaches fail to match one, the binder will fall back to the &lt;a href="https://docs.spring.io/spring-kafka/api/org/springframework/kafka/support/serializer/JsonSerde.html"&gt;JsonSerde&lt;/a&gt; implementation provided by Spring for Apache Kafka project. If you don¡¯t use any of the above mechanisms and let the binder fall back to &lt;code&gt;JsonSerde&lt;/code&gt;, you have to make sure that the classes are JSON-friendly.&lt;/p&gt;&lt;h2&gt;&lt;a href="#serde-used-inside-the-actual-business-logic" class="anchor" name="serde-used-inside-the-actual-business-logic"&gt;&lt;/a&gt;Serde used inside the actual business logic&lt;/h2&gt;
-&lt;p&gt;Kafka Streams has several API methods that need access to &lt;code&gt;Serde&lt;/code&gt; objects. For example, look at the method calls &lt;code&gt;joined&lt;/code&gt; or &lt;code&gt;groupBy&lt;/code&gt; from the earlier &lt;code&gt;BiFunction&lt;/code&gt; example processor. This is actually the responsibility of the application developer to provide, as the binder cannot help with any inference in those instances. In other words, the binder support for &lt;code&gt;Serde&lt;/code&gt; inference, matching a &lt;code&gt;Serde&lt;/code&gt; with a provided bean, and so on are applied only on the edges of your application, at either the input or the output bindings. Confusion may arise because, when you use the binder for developing Kafka Streams applications, you might think that the binder will completely hide the complexities of &lt;code&gt;Serde&lt;/code&gt;, which is a false impression. The binder helps you with the &lt;code&gt;Serde&lt;/code&gt; only on consuming and producing. Any &lt;code&gt;Serde&lt;/code&gt; required by your business logic implementation still needs to be provided by the application.&lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this blog post, we saw an overview of how the Kafka Streams binder for Spring Cloud Stream helps you with deserialization and serialization of the data. The binder can infer the key and value types used on the input and output bindings. We saw that the default is to always use native &lt;code&gt;Serde&lt;/code&gt; mechanism, but the binder gives you an option to disable this and delegate to Spring¡¯s message converters if need be. We also found out that any &lt;code&gt;Serde&lt;/code&gt; required by your business logic implementation still needs to be provided by the application. &lt;/p&gt;
-&lt;p&gt;In the next blog post, we will look at the various error handling mechanisms that Kafka Streams provides for deserialization and production of messages and how the binder supports them. &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
