@@ -21,8 +21,6 @@ import java.util.Scanner;
  * FTTF......
  * FFTT....
  * TTFFT......
- * 
- * 점화식을 세워봐야할듯하다. 구글링해서 참고하고 풀었음..
  */
 public class 포도주시식 {
 	static int n;
@@ -43,6 +41,6 @@ public class 포도주시식 {
 				memo[i] = Math.max(memo[i-1],value);
 			}
 		}
-		System.out.println(memo[n]);
+		System.out.println(Arrays.toString(memo));
 	}
 }

@@ -1,0 +1,20 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+/*
+ * M은 상자 가로의 개수(열)
+ * N은 상자 세로의 개수(행)
+ * 1<=M,N<=1000
+ * 
+ */
+public class 토마토{
+	static int N,M;//행,열
+	static int[][] box;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		box = new int[N][M];
+	}
+}
