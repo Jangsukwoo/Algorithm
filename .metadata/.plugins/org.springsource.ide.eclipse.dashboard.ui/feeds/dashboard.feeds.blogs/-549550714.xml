@@ -5,7 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-23T18:18:14Z</updated>
+  <updated>2019-12-24T10:08:25Z</updated>
+  <entry>
+    <title>This Week in Spring - December 24th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/24/this-week-in-spring-december-24th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-12-24:3918</id>
+    <updated>2019-12-24T10:08:25Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Can you believe it&amp;rsquo;s the 24th of December already? We&amp;rsquo;re already two days into Chanukah, and one day away from Christmas, one day away from Kwanza, and two days away from Boxing Day, among other holidays. And just a week away from the brand new year, the first year of the new decade! I can&amp;rsquo;t believe it! By the end of 2020, I&amp;rsquo;ll have been (officially) part of the Spring team for 10 years and I&amp;rsquo;ll have been doing these &lt;em&gt;This Week in Spring&lt;/em&gt; roundups for 10 years too. What a privilege it&amp;rsquo;s been to be a part of the team. &lt;/p&gt;
+&lt;p&gt;I love this time of year. It represents a time for me to be with my family, to celebrate, to rekindle my energies, and to gather for the new year. I am so excited to see what&amp;rsquo;s coming in 2020! I&amp;rsquo;m also excited because next week, this column - like every year before it - will be a special &lt;em&gt;This Year in Spring&lt;/em&gt; retrospective. &lt;/p&gt;
+&lt;p&gt;I wish you and yours the happiest of holidays! And now, without further ado, let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/23/spring-for-apache-kafka-2-4-is-available"&gt;Spring for Apache Kafka 2.4 is Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements"&gt;Spring Cloud Roadmap and Hoxton and Greenwich Maintenance and EOL Announcements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/21/spring-cloud-hoxton-service-release-1-sr1-is-available"&gt;Spring Cloud Hoxton Service Release 1 (SR1) is available.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really enjoyed talking to &lt;a href="https://spring.io/blog/2019/12/20/a-bootiful-podcast-reactor-teammate-simon-basl"&gt;Reactor teammate Simon Basl?&lt;/a&gt; in last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/19/spring-tools-4-5-0-released"&gt;Spring Tools 4.5.0 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/18/spring-for-apache-kafka-2-4-release-candidate"&gt;Spring for Apache Kafka 2.4 Release Candidate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Baeldung site has a nice look at &lt;a href="https://www.baeldung.com/spring-request-param"&gt;Spring&amp;rsquo;s &lt;code&gt;@RequestParam&lt;/code&gt; annotation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Java guides have a nice example of &lt;a href="https://www.javaguides.net/2019/11/spring-dependency-injection-tutorial-with-example.html"&gt;Spring dependency injection, complete with an example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Greg Whitaker has a nice &lt;a href="https://github.com/gregwhitaker/springboot-rsocketmetadata-example"&gt;example of using per-request RSocket Metadata in Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I like Greg Turnquist&amp;rsquo;s video &lt;a href="https://www.youtube.com/watch?v=ifw1Dn7VLlU&amp;feature=emb_title"&gt;on testing with Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1207966922740051973"&gt;The new Spring Tools 4.5.0 ships on top of the latest Eclipse 2019-12 edition&lt;/a&gt; - get the bits while they&amp;rsquo;re hot!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/ryanjbaxter/status/1207682736879816705?s=12"&gt;Spring Cloud Circuit Breaker for Resilience4j now available !&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/azure-supportability/how-to-create-azure-support-request?WT.mc_id=twitter-social-judubois"&gt;Good news everybody! The support channel for Azure Spring Cloud is now available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;An interesting post on the &lt;a href="https://howtodoinjava.com/spring-boot2/spring-boot-starter-parent-dependency/"&gt;Spring Boot starter parent&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring for Apache Kafka 2.4 is Available</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/23/spring-for-apache-kafka-2-4-is-available" />
@@ -1121,50 +1151,6 @@ public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer()
   &lt;li&gt;&lt;a href="https://medium.com/@kvbakas"&gt;Katrina&amp;rsquo;s Medium blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/723382387&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 4 - Error Handling</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/05/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-4-error-handling" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Soby Chacko</name>
-    </author>
-    <id>tag:spring.io,2019-12-05:3897</id>
-    <updated>2019-12-05T15:44:35Z</updated>
-    <content type="html">&lt;p&gt;Part 1 - &lt;a href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model"&gt;Programming Model&lt;/a&gt;&lt;br/&gt;Part 2 - &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;Programming Model Continued&lt;/a&gt;&lt;br/&gt;Part 3 - &lt;a href="https://spring.io/blog/2019/12/04/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-3-data-deserialization-and-serialization"&gt;Data deserialization and serialization&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Continuing with the series on looking at the Spring Cloud Stream binder for Kafka Streams, in this blog post, we are looking at the various error-handling strategies that are available in the Kafka Streams binder.&lt;/p&gt;
-&lt;p&gt;The error handling in Kafka Streams is largely centered around errors that occur during deserialization on the inbound and during production on the outbound. &lt;/p&gt;&lt;h2&gt;&lt;a href="#handling-deserialization-exceptions" class="anchor" name="handling-deserialization-exceptions"&gt;&lt;/a&gt;Handling Deserialization Exceptions&lt;/h2&gt;
-&lt;p&gt;Kafka Streams lets you register deserialization exception handlers. The default behavior is that, when you have a deserialization exception, it logs that error and fails the application (&lt;code&gt;LogAndFailExceptionHandler&lt;/code&gt;). It also lets you log and skip the record and continue the application (&lt;code&gt;LogAndContinueExceptionHandler&lt;/code&gt;). Normally, you provide the corresponding classes as part of the configuration. By using the binder, you can set these exception handlers either at the binder level, which will be applicable for the entire application or at the binding level, which gives you more fine-grained control.&lt;/p&gt;
-&lt;p&gt;Here¡¯s how you can set the deserialization exception handlers at the binder level:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.binder.deserializationExceptionHandler=logAndContinue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you have only a single processor with a single input, it is an easy way to set the deserialization exception handler on the binder as shown above. If you have multiple processors or inputs and if you want to control error handling on them separately, that needs to be set per input binding. Here is an example of doing so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.bindings.process-in-0.consumer.deserializationExceptionHandler=logAndContinue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Notice that the handler is actually set on the input binding &lt;code&gt;process-in-0&lt;/code&gt;. If you have more such input bindings, then that has to be explicitly set.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kafka-streams-and-the-dlq-dead-letter-queue" class="anchor" name="kafka-streams-and-the-dlq-dead-letter-queue"&gt;&lt;/a&gt;Kafka Streams and the DLQ (Dead Letter Queue)&lt;/h2&gt;
-&lt;p&gt;In addition to the two exception handlers that Kafka Streams provides, the binder provides a third option: a custom handler that lets you send the record in a deserialization error to a special DLQ. In order to activate this, you have to opt-in for this either at the binder or binding level, as explained above. &lt;/p&gt;
-&lt;p&gt;Here¡¯s how to do so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.binder.deserializationExceptionHandler=sendToDlq
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Keep in mind that, when using this setting at the binder, this activates the DLQ at the global level, and this will be applied against all the input topics through their bindings. If that&amp;rsquo;s not what you want to happen, you have to enable it per input binding. &lt;/p&gt;
-&lt;p&gt;By default, the DLQ name is named &lt;code&gt;error.&amp;lt;input-topic-name&amp;gt;.&amp;lt;application-id for kafka streams&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can replace &lt;code&gt;&amp;lt;input-topic-name&amp;gt;&lt;/code&gt; with the actual topic name. Note that this is &lt;strong&gt;not&lt;/strong&gt; the binding name but the actual topic name. &lt;/p&gt;
-&lt;p&gt;If the input topic is topic-1 and the Kafka Streams application ID is my-application, the default DLQ name will be &lt;code&gt;error.topic-1.my-application&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#changing-the-default-dlq-name-generated-by-the-binder" class="anchor" name="changing-the-default-dlq-name-generated-by-the-binder"&gt;&lt;/a&gt;Changing the default DLQ name generated by the binder:&lt;/h2&gt;
-&lt;p&gt;You can reset the default DLQ name, as follows:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;spring.cloud.stream.bindings.process-in-0.consumer.dlqName=input-1-dlq&lt;/code&gt; (Replace &lt;code&gt;process-in-0&lt;/code&gt; with the actual binding name)&lt;/p&gt;
-&lt;p&gt;If it has the required permissions on the broker, the binder provisioner will create all the necessary DLQ topics. If that&amp;rsquo;s not the case, these topics have to be created manually before the application starts.&lt;/p&gt;&lt;h2&gt;&lt;a href="#dlq-topic-and-partitions" class="anchor" name="dlq-topic-and-partitions"&gt;&lt;/a&gt;DLQ Topic and Partitions&lt;/h2&gt;
-&lt;p&gt;By default, the binder assumes that the DLQ topic is provisioned with the same number of partitions as the input topic. If that¡¯s not true (that is if the DLQ topic is provisioned with a different number of partitions), you have to tell the binder the partition to which to send the records by using a &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/blob/master/spring-cloud-stream-binder-kafka-core/src/main/java/org/springframework/cloud/stream/binder/kafka/utils/DlqPartitionFunction.java"&gt;DlqPartitionFunction&lt;/a&gt; implementation, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public DlqPartitionFunction partitionFunction() {&#xD;
-    return (group, record, ex) -&amp;gt; 0;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;There can only be one such bean present in the application. Therefore, you have to filter out the records by using a group (which is the same as the application ID when using the binder) in the event of multiple processors or inputs with separate DLQ topics.&lt;/p&gt;&lt;h2&gt;&lt;a href="#handling-producer-errors" class="anchor" name="handling-producer-errors"&gt;&lt;/a&gt;Handling producer errors&lt;/h2&gt;
-&lt;p&gt;All the exception handlers that we discussed so far deal only with errors surrounding deserialization of data. Kafka Streams also provides an ability to handle producer errors on the outbound. As of the 3.0. Release, the binder does not provide a first-class mechanism to support this. However, this doesn¡¯t mean that you can¡¯t use the producer exception handlers. You can use the various customizers that the binder relies on from &lt;a href="https://spring.io/projects/spring-kafka"&gt;Spring for Apache Kafka project&lt;/a&gt; to do that. These customizers are going to be the topic of our next blog post in this series.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kafka-streams-binder-health-indicator-and-metrics" class="anchor" name="kafka-streams-binder-health-indicator-and-metrics"&gt;&lt;/a&gt;Kafka Streams Binder Health Indicator and Metrics&lt;/h2&gt;
-&lt;p&gt;Kafka Streams binder allows the monitoring of the health of the underlying streams thread and it exposes the health-indicator metrics through a Spring Boot actuator endpoint. You can find more details &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_health_indicator"&gt;here&lt;/a&gt;. In addition to the health indicator, the binder also exposes Kafka Streams metrics through Micrometer meter-registry. All the basic metrics available through the KafkaStreams object is available in this registry. &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_accessing_kafka_streams_metrics"&gt;Here&lt;/a&gt; is where you can find more information on this. &lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this blog post, we saw the various strategies Kafka Streams uses to enable handling deserialization exceptions. On top of these, the Kafka Streams binder also provides a handler that lets you send error-prone payloads to a DLQ topic. We saw that the binder provides fine-grained control of working with these DLQ topics. &lt;/p&gt;
-&lt;p&gt;Thank you for reading this far! In the next blog post, we are going to see how the binder enables further customizations.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
