@@ -1,8 +1,5 @@
 package CodingStudy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -11,7 +8,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 /*
  * 컴퓨터 개수 : N (1<=N<=10000)
@@ -41,24 +37,20 @@ public class 효율적인해킹 {
 	static int max;
 	static int cnt;
 	static int[] hackingCount;
-	static int[] visit;
+	static boolean[] discover;
 	static ArrayList<ArrayList<Integer>> realationAdjList = new ArrayList<ArrayList<Integer>>();
-	static StringBuilder sb = new StringBuilder();
 	static HashSet<Integer> rootSet = new LinkedHashSet<Integer>();
 	static HashSet<Integer> indegreeSet = new LinkedHashSet<Integer>();
 	static ArrayList<Integer> hackingCase = new ArrayList<Integer>();
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
+		N = sc.nextInt();
+		M = sc.nextInt();
 		for(int i=0;i<=N;i++) realationAdjList.add(new ArrayList<Integer>());//인접리스트 생성
 		hackingCount = new int[N+1];
 		for(int relation=0;relation<M;relation++){
-			st = new StringTokenizer(br.readLine());
-			int A = Integer.parseInt(st.nextToken());
-			int B = Integer.parseInt(st.nextToken());
+			int A = sc.nextInt();
+			int B = sc.nextInt();
 			realationAdjList.get(B).add(A);
 			indegreeSet.add(A);
 			if(rootSet.contains(B)) continue;
@@ -68,27 +60,26 @@ public class 효율적인해킹 {
 			}
 		}
 		for (Integer num : rootSet) hackingCase.add(num);
-		
-		//처리
 		hacking();
-		
-		//출력
 		printAnswer();
 	}
-	private static void printAnswer(){//해킹 가장 많이 하는 컴퓨터들 출력
+	private static void printAnswer(){//해킹 가장 많이 하는 컴퓨터 
 		for(int num=1;num<=N;num++) {
 			if(hackingCount[num]==max) {
-				sb.append(num+" ");
+				System.out.print("num"+" ");
 			}
 		}
-		System.out.println(sb.toString());
 	}
 	private static void hacking(){//BFS로 전부 탐색해본다.
-		visit = new int[N+1];
+		discover = new boolean[N+1];
 		for(int i=0;i<hackingCase.size();i++) {
 			int trycase = hackingCase.get(i);
 			cnt=0;
-			
+			for(int num=1;num<=N;num++) {
+				if(discover[num]==false) {
+					
+				}
+			}
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}
@@ -101,17 +92,17 @@ public class 효율적인해킹 {
 		cnt=0;
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(trycase);
-		visit[trycase] = trycase;
+		discover[trycase]=true;
 		while(!q.isEmpty()){
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int currentComputerNumber = q.poll();
 				for(int target=0;target<realationAdjList.get(currentComputerNumber).size();target++) {
 					int targetNumber = realationAdjList.get(currentComputerNumber).get(target);
-					if(visit[targetNumber]!=currentComputerNumber) {
+					if(discover[targetNumber]==false) {
 						cnt++;
 						q.add(targetNumber);
-						visit[targetNumber] = trycase;
+						discover[targetNumber] = true;
 					}
 				}
 			}

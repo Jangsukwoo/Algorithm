@@ -101,17 +101,17 @@ public class 효율적인해킹 {
 		cnt=0;
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(trycase);
-		visit[trycase] = trycase;
+		discover[trycase]=true;
 		while(!q.isEmpty()){
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int currentComputerNumber = q.poll();
 				for(int target=0;target<realationAdjList.get(currentComputerNumber).size();target++) {
 					int targetNumber = realationAdjList.get(currentComputerNumber).get(target);
-					if(visit[targetNumber]!=currentComputerNumber) {
+					if(discover[targetNumber]==false) {
 						cnt++;
 						q.add(targetNumber);
-						visit[targetNumber] = trycase;
+						discover[targetNumber] = true;
 					}
 				}
 			}

@@ -108,10 +108,10 @@ public class 효율적인해킹 {
 				int currentComputerNumber = q.poll();
 				for(int target=0;target<realationAdjList.get(currentComputerNumber).size();target++) {
 					int targetNumber = realationAdjList.get(currentComputerNumber).get(target);
-					if(visit[targetNumber]!=currentComputerNumber) {
+					if(discover[targetNumber]==false) {
 						cnt++;
 						q.add(targetNumber);
-						visit[targetNumber] = trycase;
+						discover[targetNumber] = true;
 					}
 				}
 			}
