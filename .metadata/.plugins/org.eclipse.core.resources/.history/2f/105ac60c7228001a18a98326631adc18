@@ -44,8 +44,8 @@ public class 효율적인해킹 {
 		for(int i=0;i<=N;i++) realationAdjList.add(new ArrayList<Integer>());//인접리스트 생성
 		hackingCount = new int[N+1];
 		for(int relation=0;relation<M;relation++){
-			int A = sc.nextInt();
 			int B = sc.nextInt();
+			int A = sc.nextInt();
 			realationAdjList.get(B).add(A);
 			indegreeSet.add(A);
 			if(rootSet.contains(B)) continue;

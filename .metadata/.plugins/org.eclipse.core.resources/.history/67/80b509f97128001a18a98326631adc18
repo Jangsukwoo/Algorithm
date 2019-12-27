@@ -73,11 +73,10 @@ public class 효율적인해킹 {
 		Collections.sort(answerList);//오름차순 정렬
 	}
 	private static void hacking(){//BFS로 전부 탐색해본다.
-
+		discover = new boolean[N+1];
 		for(int i=0;i<hackingCase.size();i++) {
 			int trycase = hackingCase.get(i);
 			cnt=0;
-			discover = new boolean[N+1];
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}

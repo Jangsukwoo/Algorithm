@@ -46,7 +46,7 @@ public class 효율적인해킹 {
 		for(int relation=0;relation<M;relation++){
 			int A = sc.nextInt();
 			int B = sc.nextInt();
-			realationAdjList.get(B).add(A);
+			realationAdjList.get(A).add(B);
 			indegreeSet.add(A);
 			if(rootSet.contains(B)) continue;
 			else {				

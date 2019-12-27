@@ -48,13 +48,15 @@ public class 효율적인해킹 {
 			int B = sc.nextInt();
 			realationAdjList.get(B).add(A);
 			indegreeSet.add(A);
-			if(rootSet.contains(B)) continue;
+			if(hackingCase.contains(B)) continue;
 			else {				
 				if(indegreeSet.contains(B)) rootSet.remove(B);
-				else rootSet.add(B);
+				else {					
+					rootSet.add(B);
+					hackingCase.add(B);
+				}
 			}
 		}
-		for (Integer num : rootSet) hackingCase.add(num);
 		hacking();
 		setAnswerList();
 		printAnswer();
@@ -73,11 +75,10 @@ public class 효율적인해킹 {
 		Collections.sort(answerList);//오름차순 정렬
 	}
 	private static void hacking(){//BFS로 전부 탐색해본다.
-
 		for(int i=0;i<hackingCase.size();i++) {
+			discover = new boolean[N+1];
 			int trycase = hackingCase.get(i);
 			cnt=0;
-			discover = new boolean[N+1];
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}

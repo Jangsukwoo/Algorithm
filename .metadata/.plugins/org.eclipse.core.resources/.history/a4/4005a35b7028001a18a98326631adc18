@@ -55,6 +55,7 @@ public class 효율적인해킹 {
 			}
 		}
 		for (Integer num : rootSet) hackingCase.add(num);
+		System.out.println(hackingCase.toString());
 		hacking();
 		setAnswerList();
 		printAnswer();
@@ -73,11 +74,10 @@ public class 효율적인해킹 {
 		Collections.sort(answerList);//오름차순 정렬
 	}
 	private static void hacking(){//BFS로 전부 탐색해본다.
-
 		for(int i=0;i<hackingCase.size();i++) {
+			discover = new boolean[N+1];
 			int trycase = hackingCase.get(i);
 			cnt=0;
-			discover = new boolean[N+1];
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}
