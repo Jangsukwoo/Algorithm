@@ -45,7 +45,6 @@ public class 효율적인해킹 {
 	static ArrayList<ArrayList<Integer>> realationAdjList = new ArrayList<ArrayList<Integer>>();
 	static StringBuilder sb = new StringBuilder();
 	static HashSet<Integer> rootSet = new LinkedHashSet<Integer>();
-	static HashSet<Integer> indegreeSet = new LinkedHashSet<Integer>();
 	static ArrayList<Integer> hackingCase = new ArrayList<Integer>();
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		Scanner sc = new Scanner(System.in);
@@ -60,15 +59,12 @@ public class 효율적인해킹 {
 			int A = Integer.parseInt(st.nextToken());
 			int B = Integer.parseInt(st.nextToken());
 			realationAdjList.get(B).add(A);
-			indegreeSet.add(A);
 			if(rootSet.contains(B)) continue;
 			else {				
-				if(indegreeSet.contains(B)) rootSet.remove(B);
-				else rootSet.add(B);
+				rootSet.add(B);
+				hackingCase.add(B);
 			}
-		}
-		for (Integer num : rootSet) hackingCase.add(num);
-		
+		}		
 		//처리
 		hacking();
 		
@@ -88,6 +84,7 @@ public class 효율적인해킹 {
 		for(int i=0;i<hackingCase.size();i++) {
 			int trycase = hackingCase.get(i);
 			cnt=0;
+			
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}
@@ -107,7 +104,7 @@ public class 효율적인해킹 {
 				int currentComputerNumber = q.poll();
 				for(int target=0;target<realationAdjList.get(currentComputerNumber).size();target++) {
 					int targetNumber = realationAdjList.get(currentComputerNumber).get(target);
-					if(visit[targetNumber]!=trycase) {
+					if(visit[targetNumber]!=currentComputerNumber) {
 						cnt++;
 						q.add(targetNumber);
 						visit[targetNumber] = trycase;

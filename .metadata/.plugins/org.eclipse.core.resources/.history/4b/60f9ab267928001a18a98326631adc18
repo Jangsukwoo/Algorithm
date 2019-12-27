@@ -88,6 +88,7 @@ public class 효율적인해킹 {
 		for(int i=0;i<hackingCase.size();i++) {
 			int trycase = hackingCase.get(i);
 			cnt=0;
+			
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
 		}
