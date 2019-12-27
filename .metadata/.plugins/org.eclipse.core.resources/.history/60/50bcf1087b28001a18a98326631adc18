@@ -45,7 +45,9 @@ public class 효율적인해킹 {
 	static int[] visit;
 	static ArrayList<ArrayList<Integer>> realationAdjList = new ArrayList<ArrayList<Integer>>();
 	static StringBuilder sb = new StringBuilder();
-	static HashSet<Integer> hackingCase = new LinkedHashSet<Integer>();
+	static HashSet<Integer> rootSet = new LinkedHashSet<Integer>();
+	//static HashSet<Integer> indegreeSet = new LinkedHashSet<Integer>();
+	static ArrayList<Integer> hackingCase = new ArrayList<Integer>();
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		Scanner sc = new Scanner(System.in);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -59,6 +61,7 @@ public class 효율적인해킹 {
 			int A = Integer.parseInt(st.nextToken());
 			int B = Integer.parseInt(st.nextToken());
 			realationAdjList.get(B).add(A);
+			//indegreeSet.add(A);
 			hackingCase.add(B);
 		}
 		
@@ -79,7 +82,9 @@ public class 효율적인해킹 {
 	private static void hacking(){//BFS로 전부 탐색해본다.
 		visit = new int[N+1];
 		Arrays.fill(visit,-1);
-		for (Integer trycase : hackingCase) {
+		int size = hackingCase.size();
+		for(int i=0;i<size;i++) {
+			int trycase = hackingCase.get(i);
 			if(visit[trycase]!=-1) continue;
 			cnt=0;
 			BFS(trycase);//전부해킹

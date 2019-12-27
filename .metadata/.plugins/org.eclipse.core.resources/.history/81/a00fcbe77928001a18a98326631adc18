@@ -45,7 +45,9 @@ public class 효율적인해킹 {
 	static int[] visit;
 	static ArrayList<ArrayList<Integer>> realationAdjList = new ArrayList<ArrayList<Integer>>();
 	static StringBuilder sb = new StringBuilder();
-	static HashSet<Integer> hackingCase = new LinkedHashSet<Integer>();
+	static HashSet<Integer> rootSet = new LinkedHashSet<Integer>();
+	static HashSet<Integer> indegreeSet = new LinkedHashSet<Integer>();
+	static ArrayList<Integer> hackingCase = new ArrayList<Integer>();
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		Scanner sc = new Scanner(System.in);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -59,8 +61,14 @@ public class 효율적인해킹 {
 			int A = Integer.parseInt(st.nextToken());
 			int B = Integer.parseInt(st.nextToken());
 			realationAdjList.get(B).add(A);
-			hackingCase.add(B);
+			indegreeSet.add(A);
+			if(rootSet.contains(B)) continue;
+			else {				
+				if(indegreeSet.contains(B)) rootSet.remove(B);
+				else rootSet.add(B);
+			}
 		}
+		for (Integer num : rootSet) hackingCase.add(num);
 		
 		//처리
 		hacking();
@@ -79,8 +87,8 @@ public class 효율적인해킹 {
 	private static void hacking(){//BFS로 전부 탐색해본다.
 		visit = new int[N+1];
 		Arrays.fill(visit,-1);
-		for (Integer trycase : hackingCase) {
-			if(visit[trycase]!=-1) continue;
+		for(int i=0;i<hackingCase.size();i++) {
+			int trycase = hackingCase.get(i);
 			cnt=0;
 			BFS(trycase);//전부해킹
 			updateHackingCount(trycase);
@@ -99,8 +107,7 @@ public class 효율적인해킹 {
 			int size = q.size();
 			for(int i=0;i<size;i++) {
 				int currentComputerNumber = q.poll();
-				int currentComputersize = realationAdjList.get(currentComputerNumber).size();
-				for(int target=0;target<currentComputersize;target++) {
+				for(int target=0;target<realationAdjList.get(currentComputerNumber).size();target++) {
 					int targetNumber = realationAdjList.get(currentComputerNumber).get(target);
 					if(visit[targetNumber]!=trycase) {
 						cnt++;
