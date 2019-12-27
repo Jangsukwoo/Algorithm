@@ -1,0 +1,11 @@
+package CodingStudy;
+
+/*
+ * 컴퓨터 개수 : N (1<=N<=10000)
+ */
+public class 효율적인해킹 {
+	static int N,M;
+	public static void main(String[] args) {
+
+	}
+}
