@@ -1,0 +1,51 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class 효율적인해킹_DFS {
+	static int N,M;
+	static int max;
+	static int cnt;
+	static int[] hackingCount;
+	static boolean[] visit;
+	static ArrayList<ArrayList<Integer>> realationAdjList = new ArrayList<ArrayList<Integer>>();
+	static StringBuilder sb = new StringBuilder();
+	static HashSet<Integer> hackingCase = new LinkedHashSet<Integer>();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		for(int i=0;i<=N;i++) realationAdjList.add(new ArrayList<Integer>());//인접리스트 생성
+		hackingCount = new int[N+1];
+		for(int relation=0;relation<M;relation++){
+			st = new StringTokenizer(br.readLine());
+			int A = Integer.parseInt(st.nextToken());
+			int B = Integer.parseInt(st.nextToken());
+			realationAdjList.get(B).add(A);//From->To
+			hackingCase.add(B);
+		}
+		//처리
+		hacking();
+		//출력
+	}
+	private static void hacking(){
+		int hackingSize = hackingCase.size();
+		visit = new boolean[N+1];
+		for(int i=0;i<hackingSize;i++) {
+			dfs(0);
+		}
+	}
+	private static void dfs(int hackingCount) {
+		// TODO Auto-generated method stub
+		
+	}
+}

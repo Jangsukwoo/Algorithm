@@ -1,0 +1,76 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class 효율적인해킹_DFS {
+	static int N,M;
+	static int max;
+	static int cnt;
+	static int[] hackingCount;
+	static int[] visit;
+	static int startNumber;
+	static ArrayList<ArrayList<Integer>> relationAdjList = new ArrayList<ArrayList<Integer>>();
+	static StringBuilder sb = new StringBuilder();
+	static HashSet<Integer> hackingCase = new LinkedHashSet<Integer>();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		for(int i=0;i<=N;i++) relationAdjList.add(new ArrayList<Integer>());//인접리스트 생성
+		hackingCount = new int[N+1];
+		for(int relation=0;relation<M;relation++){
+			st = new StringTokenizer(br.readLine());
+			int A = Integer.parseInt(st.nextToken());
+			int B = Integer.parseInt(st.nextToken());
+			relationAdjList.get(B).add(A);//From->To
+			hackingCase.add(B);
+		}
+		//처리
+		hacking();
+		//출력
+		printAnswer();
+	}
+	private static void hacking(){
+		visit = new int[N+1];
+		for (Integer startcase : hackingCase) {
+			cnt=0;
+			startNumber = startcase;
+			visit[startcase] = startcase;
+			dfs(startcase);
+			updateHackingCount(startcase);
+		}
+	}
+	private static void printAnswer(){//해킹 가장 많이 하는 컴퓨터들 출력
+		for(int num=1;num<=N;num++) {
+			if(hackingCount[num]==max) {
+				sb.append(num+" ");
+			}
+		}
+		System.out.println(sb.toString());
+	}
+	private static void updateHackingCount(int computerNumber) {
+		hackingCount[computerNumber] = cnt;
+		max = Math.max(cnt,max);
+	}
+	private static void dfs(int currentComputerNumber) {
+		int caseSize = relationAdjList.get(currentComputerNumber).size();
+		for(int target=0;target<caseSize;target++){
+			int targetNumber = relationAdjList.get(currentComputerNumber).get(target);
+			if(visit[targetNumber]==false){
+				cnt++;
+				visit[targetNumber] = true;
+				dfs(targetNumber);
+				visit[targetNumber] = false;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package CodingStudyHW;
+/*
+ * N by M 맵
+ * 0: 이동가능
+ * 1: 벽
+ * 
+ * 1,1에서 N,M까지 이동하는 최단경로
+ * 
+ */
+public class 벽부수고이동하기 {
+	public static void main(String[] args) {
+
+	}
+}
