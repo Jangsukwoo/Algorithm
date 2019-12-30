@@ -1,0 +1,13 @@
+package SDS;
+/*
+ * 슬라이딩 윈도우 테크닉
+ * 
+ * Ex) Maximum Sum Subarray of Size K
+ * https://www.youtube.com/watch?v=__guhvzO540
+ * N개의 인트 배열과 양수 k가 주어진다.
+ * K 사이즈를 갖는 부분 수열중 최대 값을 찾기.
+ * 즉 K개로 이루어진 부분 수열의 최대값은 얼마인지를 찾기
+ */
+public class 시간복잡도_최솟값찾기_슬라이딩윈도우 {
+
+}

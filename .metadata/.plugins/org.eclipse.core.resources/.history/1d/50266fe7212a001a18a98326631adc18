@@ -1,0 +1,24 @@
+package SDS;
+
+import java.util.Scanner;
+
+/*
+ * 나무의 수 N, 상근이가 집으로 가져가려고 하는 나무의 길이 M
+ * 1<=N<=1000000
+ * 1<=M<=2000000000
+ * 
+ * 이분탐색의 전제조건 -> 정렬 
+ * int 최대값 : 21억
+ * 
+ * M미터의 나무를 가져가기 위해 설정해야하는 최대 절단점의 높이 구하기
+ */
+public class 시간복잡도_나무자르기 {
+	static long N,M;
+	static long[] tree;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextLong();
+		M = sc.nextLong();
+		tree = new long[N];
+	}
+}
