@@ -1,8 +1,0 @@
-package CodingStudy;
-/*
- * 동전의 종류 n
- * 동전을 활용해서 가치의 합이 k가 되도록하는 모든 경우의수 
- */
-public class 동전1 {
-
-}

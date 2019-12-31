@@ -1,0 +1,24 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * 구역의 개수 N (1<=N<=10)
+ * 1<=각 구역의 인구수<=100
+ * 
+ *  
+ */
+public class 게리맨더링 {
+	static int N;
+	static int[] areaPeople;
+	static ArrayList<ArrayList<Integer>> adjList = new ArrayList<ArrayList<Integer>>();
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(br.readLine());
+		
+	}
+}

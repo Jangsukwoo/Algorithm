@@ -1,0 +1,10 @@
+package CodingStudySamsungProblem;
+/*
+ * 구역의 개수 N
+ * 
+ */
+public class 게리맨더링 {
+	public static void main(String[] args) {
+		
+	}
+}

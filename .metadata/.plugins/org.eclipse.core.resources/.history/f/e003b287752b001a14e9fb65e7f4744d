@@ -1,0 +1,13 @@
+package CodingStudySamsungProblem;
+/*
+ * 구역의 개수 N (1<=N<=10)
+ * 1<=각 구역의 인구수<=100
+ * 
+ *  
+ */
+public class 게리맨더링 {
+	static int N;
+	public static void main(String[] args) {
+		
+	}
+}
