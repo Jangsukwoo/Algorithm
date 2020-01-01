@@ -1,0 +1,10 @@
+package CodingStudyHW;
+/* 입력
+ * 테스트케이스의 개수 T
+ * 
+ */
+public class 유기농배추 {
+	public static void main(String[] args) {
+		
+	}
+}

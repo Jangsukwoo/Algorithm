@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-27T03:26:34Z</updated>
+  <updated>2019-12-31T18:31:23Z</updated>
+  <entry>
+    <title>This Decade in Spring - Happy New Year Edition - December 31, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/12/31/this-decade-in-spring-happy-new-year-edition-december-31-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-12-31:3920</id>
+    <updated>2019-12-31T18:31:23Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans, and &lt;em&gt;HAPPY NEW YEAR&lt;/em&gt;! Welcome to another, extra-special installment of This Week in Spring. Normally, when writing the first post after or before the new year, I chronicle the most important moments in the last year. This year, seeing as we&amp;rsquo;re about to tip the scales and embark upon not just a new year but a new &lt;em&gt;decade&lt;/em&gt;, I&amp;rsquo;m going to do my level headed best to distill the biggest and the best for the Spring ecosystem in the last decade. The problem I face in writing this isn&amp;rsquo;t in coming up with things to mention, it&amp;rsquo;s in limiting the number of things I mention! &lt;/p&gt;
+&lt;p&gt;Where does one even start? It&amp;rsquo;s hard to believe we&amp;rsquo;ve come this far, as a community. Remember, the earliest pages of code in Spring date back to 2001, almost 19 years ago. Rod Johnson, the original creator of Spring, talked about Spring&amp;rsquo;s progression over the last &lt;a href="https://blog.atomist.com/eighteen-years-of-spring/"&gt;almost two decades in this blog post - &lt;em&gt;18 Years of Spring&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#this-decade-in-spring" class="anchor" name="this-decade-in-spring"&gt;&lt;/a&gt;This Decade in Spring&lt;/h2&gt;
+&lt;p&gt;Now, where do we begin? &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Spring Boot&lt;/strong&gt; - this one is pretty easy! Spring Boot is changing the world. When we on the Spring team announced the .4 release of Spring Boot back in 2013, none of us could have guessed how far it would go. It was an opinionated approach on Spring and the Java ecosystem it supports that embraces some of the best patterns from convention-over-configuration frameworks like Rails, Grails, Spring Roo and others while &lt;em&gt;also&lt;/em&gt; not sacrificing flexibility. Spring Boot is now - by far - the most widely used JVM library in the JVM ecosystem save for Java itself. All the major-scale online services use it. It&amp;rsquo;s been forged in the fires of production and the work, of late, has seen it go from being the most productive, powerful framework to being among the most performant frameworks. Who knows what the next decade will offer for the Spring developer, but I&amp;rsquo;ll bet it builds upon Spring Boot.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Spring Cloud&lt;/strong&gt; - if Spring Boot is an opinionated approach to building applications, Spring Cloud - which builds on Spring Boot - is an opinionated approach at building applications (microservices!) that are destined for the cloud. The cloud, for modern applications, &lt;em&gt;is&lt;/em&gt; production. Spring Cloud leverages the same Spring Boot autoconfiguration and supports an opinionated approach to building applications.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Java 8&lt;/strong&gt; - Java 8 came out in 2014 and revitalized the JVM. If it wasn&amp;rsquo;t clear with Spring Boot that Java was the ecosystem to bet on, this release cinched it. It showed that there was life yet in this workhorse ecosystem and introduced tons of new language and runtime features. Suddenly, Java syntax looked a lot more like some of its more contemporary siblings. It&amp;rsquo;s hard to underestimate how important Java 8 and deliver-new-features mindset the Java team has since embraced is to our ecosystem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Death of the Application Server&lt;/strong&gt; - While Spring Boot wasn&amp;rsquo;t the first to support alternative deployment models for JVM-based applications, it was the first to popularize it. It made clear that the application server, such as we knew them, were no longer relevant. Sure, you can run a Spring Boot application in an application server, but&amp;hellip;. why? You gained nothing and sacrificed, clearly sacrificed, a considerable amount to do so. Now, keep in mind, Pivotal/VMware are, and have been, one of the major investors into Apache Tomcat, the most prolific application server, so the death of the application server was a self-inflicted wound. We&amp;rsquo;re just fine with that. You can use Apache Tomcat, as a library, in Spring Boot, and millions already do. It&amp;rsquo;s just that you don&amp;rsquo;t have to. The HTTP server isn&amp;rsquo;t the same as your runtime, and that&amp;rsquo;s as it should be.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Cloud Native Applications&lt;/strong&gt; - Spring Boot assumed the runtime responsibilities of the application server, where the cloud stepped in to deliver the platform-centric responsibilities that the application server never could. These two things - smart applications powered by Spring Boot and smart platforms like Cloud Foundry and Kubernetes - have ushered in a new era of Cloud Native Java applications, a topic I love so much I wrote a book on it!&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#this-week-in-spring" class="anchor" name="this-week-in-spring"&gt;&lt;/a&gt;This Week in Spring&lt;/h2&gt;
+&lt;p&gt;Alright my friends, we&amp;rsquo;ve come a long way so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/pivotal/status/1211642643853258752"&gt;Pivotal is now officially part of VMware&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/12/27/microsoft-s-jialin-dai-on-the-various-spring-for-azure-starters"&gt;Microsoft&amp;rsquo;s Jialin Dai on the various Spring for Azure Starters&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.solstice.com/fwd/spring-cloud-dataflow-confluent-cloud"&gt;Getting Started with Spring Cloud DataFlow and Confluent Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.baeldung.com/spring-boot-color-banner"&gt; Baeldung has a nice post on one of the other most important things to come out of the last decade for the average Spring developer: color ASCII art banners!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.marcobehler.com/guides/java-microservices-a-practical-guide"&gt;This Practical Guide&lt;/a&gt; looks at using Spring Boot and Spring Cloud for microservices.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://dzone.com/articles/applying-cicd-to-java-apps-using-spring-boot"&gt;Applying CI/CD to Java Apps Using Spring Boot - DZone Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out the talk that Google&amp;rsquo;s James Ward, Okta&amp;rsquo;s Matt Raible and I gave at SpringOne Platform 2019: &lt;a href="https://www.infoq.com/presentations/simplicity-spring-cloud-services/"&gt;From Idea to Dev to Ops&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://mromeh.com/2019/12/26/spring-cloud-gateway-with-resilience4j-circuit-breaker/"&gt;This is a nice post on using Reislience4J and Spring Cloud CircuitBreaker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/@shelbyc0hen/what-the-flow-c707da1c3903"&gt;I love this post introducing the &lt;code&gt;Flow&lt;/code&gt; concept in Kotlin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Did you see the amazing Christmas-themed &lt;a href="https://twitter.com/oodamien/status/1209535981222842369?s=12"&gt;Spring Initializr&lt;/a&gt;? :D&lt;/li&gt;
+  &lt;li&gt;There are a ton of new features &lt;a href="https://www.infoq.com/news/2019/12/java14-feature-freeze/?itm_source=infoq&amp;itm_medium=popular_widget&amp;itm_campaign=popular_content_list&amp;itm_content="&gt;in Java 14 and you should check them out&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And, finally, my friends, it&amp;rsquo;s the end of the year. It&amp;rsquo;s new years day already in some parts of the world as I post this. I want to remind those of you who haven&amp;rsquo;t crossed the date line to not drinkn and code and not drink and drive. It&amp;rsquo;s dangerous out there. Stay safe, get a car home from tonight&amp;rsquo;s festivities if there&amp;rsquo;s even a moment of doubt. And, of course, to every one, everywhere, HAPPY NEW YEAR! &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Microsoft's Jialin Dai on the various Spring for Azure Starters</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/27/microsoft-s-jialin-dai-on-the-various-spring-for-azure-starters" />
@@ -1134,21 +1170,6 @@ public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer()
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.2.RELEASE"&gt;88 fixes, improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.1.11 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/06/spring-boot-2-1-11-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Madhura Bhave</name>
-    </author>
-    <id>tag:spring.io,2019-12-05:3899</id>
-    <updated>2019-12-06T03:22:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.11 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.11.RELEASE"&gt;53 fixes, improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.11.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
