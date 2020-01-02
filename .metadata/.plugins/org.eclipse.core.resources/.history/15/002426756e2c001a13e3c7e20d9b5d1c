@@ -1,0 +1,13 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+public class 경로찾기_BFS {
+	static int N;
+	static int[][] adjMatrix;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N= sc.nextInt();
+		adjMatrix = new int[N][N];
+	}
+}

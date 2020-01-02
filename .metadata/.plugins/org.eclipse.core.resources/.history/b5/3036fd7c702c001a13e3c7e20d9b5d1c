@@ -1,0 +1,49 @@
+package CodingStudyHW;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 경로찾기_BFS {
+	static int N;
+	static int[][] adjMatrix; //인접행렬
+	static boolean[] visit;
+	static Queue<Integer> q = new LinkedList<Integer>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N= sc.nextInt();
+		adjMatrix = new int[N][N];
+		for(int row=0;row<N;row++)
+			for(int col=0;col<N;col++) adjMatrix[row][col]=sc.nextInt();
+		
+		for(int startVertax=0;startVertax<3;startVertax++){//
+			BFS(startVertax);
+		}
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				System.out.print(adjMatrix[row][col]+" ");
+			}
+			System.out.println();
+		}
+	}
+	private static void BFS(int startVertax) {
+		visit = new boolean[N];
+		visit[startVertax] = true;
+		q.add(startVertax);
+		while(!q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				int currentVertax = q.poll();
+				for(int target=0;target<N;target++) {
+					if(adjMatrix[currentVertax][target]==1 && visit[target]==false) {
+						q.add(target);
+					}
+					if(adjMatrix[currentVertax][target]==1) {
+						adjMatrix[startVertax][currentVertax] =1;
+					}
+				}
+			}
+		}
+	}
+}
+

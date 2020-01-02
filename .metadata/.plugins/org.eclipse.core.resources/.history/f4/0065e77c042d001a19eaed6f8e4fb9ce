@@ -1,0 +1,16 @@
+package CodingStudySamsungProblem;
+/*
+ * 집의 크기 N by N
+ * 3<=N<=16
+ * 빈칸은 0 벽은 1
+ * 파이프를 옮기는 방법은 총 3가지 : →, ↘, ↓
+ * 0,0에서 N,N으로 가는 모든 경우의 수를 구하자.
+ * 
+ */
+public class 파이프옮기기1 {
+	static int N;
+	static int[][] house;
+	public static void main(String[] args) {
+		
+	}
+}

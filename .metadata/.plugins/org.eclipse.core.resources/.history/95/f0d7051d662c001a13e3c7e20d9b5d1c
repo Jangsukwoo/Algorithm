@@ -1,0 +1,11 @@
+package SDS;
+/*
+ * Two Pointer
+ * 스트링,배열,링크드리스
+ * O(n^2) or O(n^3)를 O(n)으로 줄여줄 수 있다.
+ */
+public class 시간복잡도_부분합_투포인터 {
+	public static void main(String[] args) {
+		
+	}
+}

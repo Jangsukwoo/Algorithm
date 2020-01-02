@@ -1,0 +1,62 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/*
+ * 집의 크기 N by N
+ * 3<=N<=16
+ * 빈칸은 0 벽은 1
+ * 파이프를 옮기는 방법은 총 3가지 : →, ↘, ↓
+ * 0,0에서 N,N으로 가는 모든 경우의 수를 구하자.
+ * 
+ */
+public class 파이프옮기기1 {
+	static int N;
+	static int[][] house;
+	static int[] dr = {0,1,1};
+	static int[] dc = {1,1,0}; // 0:→ 우, 1: ↘ 우하 , 2: ↓ 하
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static int caseCount;
+	
+	public static void main(String[] args) throws IOException {
+		//입력
+		input();
+		//처리
+		bfs();
+		//출력
+	}
+	private static void bfs() {
+		//최초의 파이프 좌표, 누워있는 상태
+		q.add(new int[] {0,1,0});//head의 row,col,누워있는 상태(우)
+		while(q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				int[] currentPipe = q.poll();
+				for(int dir=0;dir<3;dir++){//3가지 방향
+					
+				}
+			}
+		}
+		
+	}
+	
+	
+	private static void input() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		house = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				house[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+		
+	}
+}

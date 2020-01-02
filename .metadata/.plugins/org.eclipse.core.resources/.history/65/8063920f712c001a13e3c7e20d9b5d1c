@@ -1,0 +1,17 @@
+package codeTest;
+
+import java.util.Scanner;
+
+public class 유기농배추 {
+	static int M,N,K;
+	static int[][] farm;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int testcase=1;testcase<=T;testcase++) {
+			M = sc.nextInt();
+			N = sc.nextInt();
+			K = sc.nextInt();
+		}
+	}
+}

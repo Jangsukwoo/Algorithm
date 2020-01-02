@@ -1,0 +1,24 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+public class 경로찾기_BFS {
+	static int N;
+	static int[][] adjMatrix; //인접행렬
+	static boolean[] visit;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N= sc.nextInt();
+		adjMatrix = new int[N][N];
+		for(int row=0;row<N;row++)
+			for(int col=0;col<N;col++) adjMatrix[row][col]=sc.nextInt();
+		
+		for(int startVertax=0;startVertax<3;startVertax++){//
+			BFS(startVertax);
+		}
+	}
+	private static void BFS(int startVertax) {
+		visit = new boolean[N];
+		visit[startVertax] = true;
+	}
+}

@@ -1,0 +1,12 @@
+package CodingStudySamsungProblem;
+/*
+ * 집의 크기 N by N
+ * 3<=N<=16
+ */
+public class 파이프옮기기1 {
+	static int N;
+	static int[][] house;
+	public static void main(String[] args) {
+		
+	}
+}
