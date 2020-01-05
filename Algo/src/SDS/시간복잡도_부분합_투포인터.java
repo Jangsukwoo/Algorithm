@@ -64,9 +64,10 @@ public class 시간복잡도_부분합_투포인터 {
 				minLength = Math.min(minLength,(endPointer-startPointer+1));
 			}
 			
-			//이부분에 else면 endPonter++로 했더니 무한반복..
+			//이부분에 else면 endPointer++로 했더니 무한반복..
 			//sum>=target에 계속해서 걸려버려서 end가 도망가지 못했음 
 			endPointer++;
 		}
 	}
+
 }
