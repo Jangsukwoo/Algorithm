@@ -1,0 +1,11 @@
+package 자료구조연습;
+/*
+ * 세그먼트트리. 기본 뼈대는 이진트리
+ * 가장 밑에 리프노드들은 자식노드
+ * 
+ */
+public class 세그먼트트리 {
+	public static void main(String[] args) {
+		
+	}
+}

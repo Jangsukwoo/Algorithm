@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-12-31T18:31:23Z</updated>
+  <updated>2020-01-03T08:25:16Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Spring Boot and Spring Cloud co-founder Dr. Dave Syer</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/03/a-bootiful-podcast-spring-boot-and-spring-cloud-co-founder-dr-dave-syer" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-03:3922</id>
+    <updated>2020-01-03T08:25:16Z</updated>
+    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/737749519&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; talks to the one, the only, the inimitable, the amazing, his hero, the good &lt;a href="http://twitter.com/david_syer"&gt;Dr. Dave Syer&lt;/a&gt;, Spring Framework committer, former Spring Batch lead, former Spring Security OAuth lead, co-founder of both Spring Boot and Spring Cloud, etc. Statistically, if you&amp;rsquo;re using Spring today, you&amp;rsquo;re probably using code he wrote. This episode was recorded at SpringOne Platform 2019. Happy new year, and enjoy! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://github.com/dsyer"&gt;Dave on Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/david_syer"&gt;Dave on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Decade in Spring - Happy New Year Edition - December 31, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/12/31/this-decade-in-spring-happy-new-year-edition-december-31-2019" />
@@ -1155,21 +1172,6 @@ public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer()
   &lt;li&gt;Issue Tracker: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/issues"&gt;github.com/spring-projects/spring-data-r2dbc/issues&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://repo1.maven.org/maven2/org/springframework/data/spring-data-r2dbc/1.0.0.RELEASE/"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.2 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/06/spring-boot-2-2-2-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Brian Clozel</name>
-    </author>
-    <id>tag:spring.io,2019-12-06:3901</id>
-    <updated>2019-12-06T10:50:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.2 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.2.RELEASE"&gt;88 fixes, improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
