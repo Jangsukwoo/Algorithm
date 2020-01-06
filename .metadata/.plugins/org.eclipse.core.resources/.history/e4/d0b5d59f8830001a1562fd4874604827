@@ -51,8 +51,6 @@ public class 시간복잡도_나무자르기_이분탐색 {
 				if(remainTreeHeight<0) remainTreeHeight = 0;//음수는 존재하지 X
 				sumTreeHeight+=remainTreeHeight;//잘린 나무들의 합
 			}
-			
-			//이분으로 나누기 처리
 			if(sumTreeHeight>=M){//너무 많이 잘렸으면 
 				cutterMinHeight = cutterMiddleHeight+1;
 			}
