@@ -1,0 +1,16 @@
+package sds2;
+
+/*
+ * N개의 줄에 0~9
+ * 내려갈때 바로 아래의 수로 넘어가거나 
+ * 아래의 수에 붙어있는 수로 넘어갈 수 있음
+ * 1<=N<=100000
+ * 
+ * 얻을 수 있는 최대점수, 최소점수 츌력
+ */
+public class 내려가기_2일차 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}
