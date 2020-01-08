@@ -1,7 +1,0 @@
-package CodingStudyHW;
-
-public class 경로찾기_BFS {
-	public static void main(String[] args) {
-
-	}
-}

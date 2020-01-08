@@ -1,9 +1,0 @@
-package CodingStudyHW;
-
-public class 경로찾기_BFS {
-	static int N;
-	static int[][] adjMatrix;
-	public static void main(String[] args) {
-		
-	}
-}

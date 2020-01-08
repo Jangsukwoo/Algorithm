@@ -1,0 +1,116 @@
+package sds3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+/*
+ * () = 2
+ * [] = 3
+ * (X) = 2*X
+ * [X] = 3*X
+ * 올바른괄호 XY는 X+Y
+ * 
+ * 괄호가 쌍이 안맞으면 error처리
+ * 
+ */
+class DATA{
+	int id;//1,2,3,4,5 1~4는 괄호 종류, 5는 숫자
+	int value;
+	char bracket;
+	public DATA(int i, int v, char b) {
+		id = i;
+		value = v;
+		bracket = b;
+	}
+}
+public class 괄호의값_3일차 {
+	static Stack<DATA> stack = new Stack<>();
+	static char[] inputData;
+	static int answer;
+	static boolean error;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		inputData = br.readLine().toCharArray();
+		for(int i=0;i<inputData.length;i++){
+			if(stack.isEmpty()) {
+				DATA data = insert(inputData[i]);
+				stack.add(data);
+			}
+			else {//스택에 값이 존재하면
+				DATA data = insert(inputData[i]);
+				switch (data.id){
+				case 1:		
+					stack.add(new DATA(1,0,'('));
+					break;
+				case 2:		
+					if(stack.peek().id==5){//숫자인경우
+						int value=0;
+						while(!stack.isEmpty()){
+							if(stack.peek().id==5) {
+								DATA popdata = stack.pop();
+								value+=popdata.value;
+							} else break;
+						}
+						if(stack.isEmpty() || stack.peek().id!=1) {
+							error = true;
+							break;
+						}else if(stack.peek().id==1) {
+							stack.pop();
+							stack.add(new DATA(5,value*2,' '));
+						}
+					}
+					if(stack.peek().id==1) {
+						stack.pop();
+						stack.add(new DATA(5,2,' '));
+					}
+					break;
+				case 3:		
+					stack.add(new DATA(3,0,'('));
+					break;
+				case 4:		
+					if(stack.peek().id==5){//숫자인경우
+						int value=0;
+						while(!stack.isEmpty()){
+							if(stack.peek().id==5) {
+								DATA popdata = stack.pop();
+								value+=popdata.value;
+							}else break;					
+						}
+						if(stack.isEmpty() || stack.peek().id!=3) {
+							error = true;
+							break;
+						}else if(stack.peek().id==3) {
+							stack.pop();
+							stack.add(new DATA(5,value*3,' '));
+						}
+					}
+					if(stack.peek().id==3) {
+						stack.pop();
+						stack.add(new DATA(5,3,' '));
+					}
+					break;
+				}
+				
+			}
+			if(error) break;
+		}
+		while(!stack.isEmpty()) {
+			if(stack.peek().id==5) answer+=stack.pop().value;
+			else {
+				error = true;
+				break;
+			}
+		}
+		if(error || !stack.isEmpty()) System.out.println("0");
+		else System.out.println(answer);
+	}
+	private static DATA insert(char type) {//1,2 한쌍 , 3,4한쌍
+		if(type=='(') return new DATA(1,0,'(');
+		if(type==')') return new DATA(2,0,')');
+		if(type=='[') return new DATA(3,0,']');
+		if(type==']') return new DATA(4,0,'[');
+		return null;
+	}
+}

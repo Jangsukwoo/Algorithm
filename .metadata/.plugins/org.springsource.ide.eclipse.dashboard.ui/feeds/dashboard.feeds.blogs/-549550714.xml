@@ -5,7 +5,33 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-03T08:25:16Z</updated>
+  <updated>2020-01-07T18:28:17Z</updated>
+  <entry>
+    <title>This Week in Spring - 9th Anniversary Edition - January 7, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/07/this-week-in-spring-9th-anniversary-edition-january-7-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-07:3923</id>
+    <updated>2020-01-07T18:28:17Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This is also the 9th anniversary of the &lt;em&gt;This Week in Spring&lt;/em&gt; blog series. I started it the first Tuesday after the new year in January 2011. NINE years is a long time, and it&amp;rsquo;s been - and continues to be - a ton of fun. &lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve never missed an installment - every Tuesday for almost a decade, come heck or high water - I get this done. It&amp;rsquo;s always on Tuesday, my time - whatever time that is. If I&amp;rsquo;m in Tokyo or Shanghai or Sydney then the installment may very well post sometime in most people&amp;rsquo;s Monday, or if I&amp;rsquo;m in California or Hawaii or South America, then it might be posted sometime early into most people&amp;rsquo;s Wednesday. But it&amp;rsquo;s always my Tuesday. Some times, I&amp;rsquo;ve had to cheat and apply the Hawaii rule: it&amp;rsquo;s still Tuesday if it&amp;rsquo;s still Tuesday in Hawaii! But, it&amp;rsquo;s always Tuesday. Things have gotten easier for me. Nowadays, plenty of airplanes have Wi-Fi. And, our blog software now supports scheduled posts. So, almost no reason I should ever miss an installment unless I&amp;rsquo;m &lt;em&gt;very&lt;/em&gt; busy. &lt;/p&gt;
+&lt;p&gt;I find that this exercise - of finding the latest and greatest, analyzing it and sharing it - has been very beneficial for me. It&amp;rsquo;s not only connected me to the zeitgeist of an ever-expanding, amazing ecosystem, it&amp;rsquo;s also connected me to you: you can&amp;rsquo;t know how much it means to me when people send &lt;a href="mailto:josh@joshlong.com"&gt;me email (josh@joshlong.com)&lt;/a&gt;, or &lt;a href="http://twitter.com/starbuxman"&gt;direct messages (@starbuxman)&lt;/a&gt; with their exciting new content to post. I love that enthusiasm. It&amp;rsquo;s better than coffee! Thank you, community. You&amp;rsquo;re epic, and I couldn&amp;rsquo;t be more grateful. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Happy new year! In this first installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt; in the new year, I am delighted to have been able to bring you an interview with my hero, the amazing, the inimitable, the legendary, &lt;a href="https://spring.io/blog/2020/01/03/a-bootiful-podcast-spring-boot-and-spring-cloud-co-founder-dr-dave-syer"&gt;Spring Boot, and Spring Cloud co-founder Dr. Dave Syer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;We&amp;rsquo;d love your feedback on your &lt;a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-FWTC1eWKym7z9dKkQZruQz8QePaQ94sBeL1EGHEbiOj7w/viewform?usp=send_form"&gt;opinion of Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Did you see the Spring Cloud &lt;a href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements"&gt;roadmap published right before Christmas?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I like this blog, &lt;a href="https://medium.com/@santanu.mojumder/modernize-monolith-java-application-to-containerized-microservices-case-study-guide-7349a8e1f6a9"&gt;Modernize Monolith Java Application to Containerized Microservices&lt;/a&gt;, that looks at building microservices with Spring Boot&lt;/li&gt;
+  &lt;li&gt;I love Matt Raible&amp;rsquo;s tutorial over on the Okta blog, &lt;a href="https://developer.okta.com/blog/2020/01/06/crud-angular-9-spring-boot-2"&gt;&lt;em&gt;Build a CRUD App with Angular 9 and Spring Boot 2.2&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Oliver Drotbohm &lt;a href="https://www.infoq.com/presentations/monoliths-modules/"&gt;identifies the common issues in unstructured monoliths&lt;/a&gt; and discusses approaches to package design, component structure, transactions, and the usage of events, in this SpringOne Platform 2019 talk that&amp;rsquo;s now on InfoQ.&lt;/li&gt;
+  &lt;li&gt;I loved &lt;a href="https://www.infoq.com/presentations/spring-jib-scaffold-kubernetes/?itm_source=presentations_about_spring&amp;itm_medium=link&amp;itm_campaign=spring"&gt;this talk from Google&amp;rsquo;s Ray Tsang&lt;/a&gt; on tools - Jib, Skaffold - and best practices for Spring and Kubernetes.&lt;/li&gt;
+  &lt;li&gt;This is an interesting thread on Reddit: &lt;a href="https://www.reddit.com/r/java/comments/ehyvpo/is_reactive_stream_single_or_multi_threaded/"&gt;are Reactive Streams single threaded or multi-threaded&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is an interesting example on &lt;a href="https://github.com/gregwhitaker/springboot-rsocketbasicauth-example"&gt;doing RSocket BASIC authentication with Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This seems like an interesting usecase: &lt;a href="https://medium.com/@milosbiljanovic/springboot-autocomplete-with-elasticsearch-11ea95d58854"&gt;Spring Boot and Elasticsearch&lt;/a&gt;-powered autocompletion.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Spring Boot and Spring Cloud co-founder Dr. Dave Syer</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/03/a-bootiful-podcast-spring-boot-and-spring-cloud-co-founder-dr-dave-syer" />
@@ -1143,35 +1169,6 @@ public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer()
 &lt;p&gt;Notice that we start with the customizer for StreamsBuilderFactoryBean. However, inside it, we use a separate &lt;code&gt;KafkaStreamsCustomizer&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this blog post, we saw how the Kafka Streams binder in Spring Cloud Stream lets you customize the underlying &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; and the &lt;code&gt;KafkaStreams&lt;/code&gt; object. &lt;/p&gt;
 &lt;p&gt;Thank you for reading this far! Next, in the final blog post in this series, we will look at how the binder lets you deal with state stores and enabling interactive queries against them. &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data R2DBC goes GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/06/spring-data-r2dbc-goes-ga" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2019-12-06:3902</id>
-    <updated>2019-12-06T13:06:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am delighted to announce that Spring Data R2DBC 1.0 is generally available from &lt;a href="https://repo.spring.io/"&gt;repo.spring.io&lt;/a&gt; as well as Maven Central! &lt;/p&gt;
-&lt;p&gt;Spring Data R2DBC 1.0 is a non-blocking database client library for the &lt;a href="https://r2dbc.io/2019/12/02/r2dbc-0-8-0-goes-ga"&gt;just released R2DBC specification&lt;/a&gt; that lets you build reactive applications that use SQL databases. The most notable features of Spring Data R2DBC are:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Functional-reactive declaration of data access&lt;/li&gt;
-  &lt;li&gt;Fluent API&lt;/li&gt;
-  &lt;li&gt;Support for Transactions&lt;/li&gt;
-  &lt;li&gt;Named parameter support (Dialect-aware)&lt;/li&gt;
-  &lt;li&gt;Repositories&lt;/li&gt;
-  &lt;li&gt;Kotlin Coroutines extensions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Spring Data R2DBC 1.0 requires JDK 8 or higher and &lt;a href="https://r2dbc.io/drivers/"&gt;any R2DBC driver&lt;/a&gt;. Head over to &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; and add R2DBC to configure your dependencies or, if you&amp;rsquo;re already using the Spring Boot R2DBC starter, upgrade your &lt;code&gt;spring-boot-bom-r2dbc&lt;/code&gt; to &lt;code&gt;0.1.0.M3&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;Check out our byte-sized Getting Started Guide that explains &lt;a href="https://spring.io/guides/gs/accessing-data-r2dbc/"&gt;how to access data with R2DBC&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To round things off, here are links to the changelog, GitHub repository, and docs:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Project Repository: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc"&gt;github.com/spring-projects/spring-data-r2dbc&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Issue Tracker: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/issues"&gt;github.com/spring-projects/spring-data-r2dbc/issues&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://repo1.maven.org/maven2/org/springframework/data/spring-data-r2dbc/1.0.0.RELEASE/"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
