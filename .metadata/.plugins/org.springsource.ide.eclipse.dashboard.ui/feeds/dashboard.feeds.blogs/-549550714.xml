@@ -5,7 +5,103 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-07T18:28:17Z</updated>
+  <updated>2020-01-08T21:50:54Z</updated>
+  <entry>
+    <title>Spring Security 5.3.0.M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/08/spring-security-5-3-0-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Eleftheria Stein-Kousathana</name>
+    </author>
+    <id>tag:spring.io,2020-01-08:3924</id>
+    <updated>2020-01-08T21:50:54Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of
+Spring Security 5.3.0.M1! You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.M1"&gt;release notes&lt;/a&gt; and the highlights below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="saml"&gt;&lt;a class="anchor" href="#saml"&gt;&lt;/a&gt;SAML&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7654-allow-configuration-of-authenticationmanager-in-saml2login"&gt;&lt;a class="anchor" href="#gh-7654-allow-configuration-of-authenticationmanager-in-saml2login"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7654"&gt;gh-7654&lt;/a&gt; - Allow configuration of AuthenticationManager in saml2Login()&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7681-make-saml2authentication-serializable"&gt;&lt;a class="anchor" href="#gh-7681-make-saml2authentication-serializable"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7681"&gt;gh-7681&lt;/a&gt; - Make Saml2Authentication serializable&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="oauth-2-0"&gt;&lt;a class="anchor" href="#oauth-2-0"&gt;&lt;/a&gt;OAuth 2.0&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-5385-resource-server-support-for-multiple-trusted-jwt-access-token-issuers"&gt;&lt;a class="anchor" href="#gh-5385-resource-server-support-for-multiple-trusted-jwt-access-token-issuers"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/5385"&gt;gh-5385&lt;/a&gt; - Resource server support for multiple trusted JWT access token issuers&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7569-reactive-implementation-of-authorizedclientserviceoauth2authorizedclientmanager"&gt;&lt;a class="anchor" href="#gh-7569-reactive-implementation-of-authorizedclientserviceoauth2authorizedclientmanager"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7569"&gt;gh-7569&lt;/a&gt; - Reactive implementation of AuthorizedClientServiceOAuth2AuthorizedClientManager&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7592-add-oidcidtoken-builder"&gt;&lt;a class="anchor" href="#gh-7592-add-oidcidtoken-builder"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7592"&gt;gh-7592&lt;/a&gt; - Add OidcIdToken.Builder&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7593-add-oidcuserinfo-builder"&gt;&lt;a class="anchor" href="#gh-7593-add-oidcuserinfo-builder"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7593"&gt;gh-7593&lt;/a&gt; - Add OidcUserInfo.Builder&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="core"&gt;&lt;a class="anchor" href="#core"&gt;&lt;/a&gt;Core&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7785-idiomatic-kotlin-dsl-for-configuring-http-security-in-servlet-based-applications"&gt;&lt;a class="anchor" href="#gh-7785-idiomatic-kotlin-dsl-for-configuring-http-security-in-servlet-based-applications"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7785"&gt;gh-7785&lt;/a&gt; - Idiomatic Kotlin DSL for configuring HTTP security in servlet based applications&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="test"&gt;&lt;a class="anchor" href="#test"&gt;&lt;/a&gt;Test&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7789-oauth2-login-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7789-oauth2-login-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7789"&gt;gh-7789&lt;/a&gt; - OAuth2 Login MockMvc Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7712-opaque-token-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7712-opaque-token-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7712"&gt;gh-7712&lt;/a&gt; - Opaque token MockMvc Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7618-oidc-login-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7618-oidc-login-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7618"&gt;gh-7618&lt;/a&gt; - Oidc Login MockMvc Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7680-oidc-login-reactive-test-support"&gt;&lt;a class="anchor" href="#gh-7680-oidc-login-reactive-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7680"&gt;gh-7680&lt;/a&gt; - Oidc Login Reactive Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="web"&gt;&lt;a class="anchor" href="#web"&gt;&lt;/a&gt;Web&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7731-compositeserverhttpheaderswriter-should-execute-sequentially"&gt;&lt;a class="anchor" href="#gh-7731-compositeserverhttpheaderswriter-should-execute-sequentially"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7731"&gt;gh-7731&lt;/a&gt; - CompositeServerHttpHeadersWriter Should Execute Sequentially&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7723-delegatingserverlogouthandler-should-execute-sequentially"&gt;&lt;a class="anchor" href="#gh-7723-delegatingserverlogouthandler-should-execute-sequentially"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7723"&gt;gh-7723&lt;/a&gt; - DelegatingServerLogoutHandler Should Execute Sequentially&lt;/h5&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="https://docs.spring.io/spring-security/site/docs/5.2.0.M2/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
+| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - 9th Anniversary Edition - January 7, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/07/this-week-in-spring-9th-anniversary-edition-january-7-2020" />
@@ -1102,73 +1198,6 @@ RestTemplate restTemplate = new RestTemplate();&#xD;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream"&gt;Core Spring Cloud Stream GitHub&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka"&gt;Spring Cloud Stream Kafka Binder GitHub&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-samples"&gt;Spring Cloud Stream Samples&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stack Overflow&lt;/a&gt;&lt;br/&gt;&lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 5 - Application Customizations</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/06/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-5-application-customizations" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Soby Chacko</name>
-    </author>
-    <id>tag:spring.io,2019-12-06:3903</id>
-    <updated>2019-12-06T16:58:00Z</updated>
-    <content type="html">&lt;p&gt;Part 1 - &lt;a href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model"&gt;Programming Model&lt;/a&gt;&lt;br/&gt;Part 2 - &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;Programming Model Continued&lt;/a&gt;&lt;br/&gt;Part 3 - &lt;a href="https://spring.io/blog/2019/12/04/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-3-data-deserialization-and-serialization"&gt;Data deserialization and serialization&lt;/a&gt;&lt;br/&gt;Part 4 - &lt;a href="https://spring.io/blog/2019/12/05/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-4-error-handling"&gt;Error Handling&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this blog post, we continue our discussion on the support for Kafka Streams in Spring Cloud Stream. We are going to elaborate on the ways in which you can customize a Kafka Streams application. &lt;/p&gt;&lt;h2&gt;&lt;a href="#customizing-the-streamsbuilderfactorybean" class="anchor" name="customizing-the-streamsbuilderfactorybean"&gt;&lt;/a&gt;Customizing the StreamsBuilderFactoryBean&lt;/h2&gt;
-&lt;p&gt;Kafka Streams binder uses the &lt;a href="https://docs.spring.io/spring-kafka/docs/current/api/org/springframework/kafka/config/StreamsBuilderFactoryBean.html"&gt;StreamsBuilderFactoryBean&lt;/a&gt;, provided by the &lt;a href="https://spring.io/projects/spring-kafka"&gt;Spring for Apache Kafka&lt;/a&gt; project, to build the &lt;a href="https://kafka.apache.org/23/javadoc/org/apache/kafka/streams/StreamsBuilder.html"&gt;StreamsBuilder&lt;/a&gt; object that is the foundation for a Kafka Streams application. This factory bean is a Spring lifecycle bean. Oftentimes, this factory bean must be customized before it is started, for various reasons. As described in the &lt;a href="https://spring.io/blog/2019/12/05/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-4-error-handling"&gt;previous blog&lt;/a&gt; post on error handling, you need to customize the &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; if you want to register a production exception handler. Let¡¯s say that you have this producer exception handler:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;class IgnoreRecordTooLargeHandler implements ProductionExceptionHandler {&#xD;
-    &#xD;
-    public ProductionExceptionHandlerResponse handle(final ProducerRecord&amp;lt;byte[], byte[]&amp;gt; record,&#xD;
-                                                     final Exception exception) {&#xD;
-        if (exception instanceof RecordTooLargeException) {&#xD;
-            return ProductionExceptionHandlerResponse.CONTINUE;&#xD;
-        } else {&#xD;
-            return ProductionExceptionHandlerResponse.FAIL;&#xD;
-        }&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can register it directly by using configuration if you choose (using &lt;code&gt;default.production.exception.handler&lt;/code&gt;). &lt;/p&gt;
-&lt;p&gt;However, a more elegant approach, when using the binder, is to register this as part of the &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; customizer, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public StreamsBuilderFactoryBeanCustomizer customizer() {&#xD;
-    return fb -&amp;gt; {&#xD;
-        fb.getStreamsConfiguration().put(StreamsConfig.DEFAULT_PRODUCTION_EXCEPTION_HANDLER_CLASS_CONFIG,&#xD;
-                            IgnoreRecordTooLargeHandler.class);&#xD;
-    };&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note that, if you have multiple processors in the application, you can control which processor gets customization based on the application ID. For example, you can check on it this way:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;return factoryBean -&amp;gt; {&#xD;
-        if (factoryBean.getStreamsConfiguration().getProperty(StreamsConfig.APPLICATION_ID_CONFIG)&#xD;
-                .equals(&amp;quot;processor1-application-id&amp;quot;)) {
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is another example of setting a state listener:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer() {&#xD;
-    return sfb -&amp;gt; sfb.setStateListener((newState, oldState) -&amp;gt; {&#xD;
-         //Do some action here!&#xD;
-    });&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#customizing-kafkastreams-object" class="anchor" name="customizing-kafkastreams-object"&gt;&lt;/a&gt;Customizing KafkaStreams Object.&lt;/h2&gt;
-&lt;p&gt;The &lt;a href="https://kafka.apache.org/23/javadoc/org/apache/kafka/streams/KafkaStreams.html"&gt;KafkaStreams&lt;/a&gt; object is at the heart of any Kafka Streams application. &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; is responsible for creating the topology and then creating the &lt;code&gt;KafkaStreams&lt;/code&gt; object. Before starting the &lt;code&gt;KafkaStreams&lt;/code&gt; object, StreamsBuilderFactoryBean gives an opportunity to customize this &lt;code&gt;KafkaStreams&lt;/code&gt; object. For example, if you want to set an application-wide handler for uncaught exceptions you can do the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public StreamsBuilderFactoryBeanCustomizer streamsBuilderFactoryBeanCustomizer() {&#xD;
-    return factoryBean -&amp;gt; {&#xD;
-        factoryBean.setKafkaStreamsCustomizer(new KafkaStreamsCustomizer() {&#xD;
-            @Override&#xD;
-            public void customize(KafkaStreams kafkaStreams) {&#xD;
-                kafkaStreams.setUncaughtExceptionHandler((t, e) -&amp;gt; {&#xD;
-&#xD;
-                });&#xD;
-            }&#xD;
-        });&#xD;
-    };&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Notice that we start with the customizer for StreamsBuilderFactoryBean. However, inside it, we use a separate &lt;code&gt;KafkaStreamsCustomizer&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this blog post, we saw how the Kafka Streams binder in Spring Cloud Stream lets you customize the underlying &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; and the &lt;code&gt;KafkaStreams&lt;/code&gt; object. &lt;/p&gt;
-&lt;p&gt;Thank you for reading this far! Next, in the final blog post in this series, we will look at how the binder lets you deal with state stores and enabling interactive queries against them. &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
