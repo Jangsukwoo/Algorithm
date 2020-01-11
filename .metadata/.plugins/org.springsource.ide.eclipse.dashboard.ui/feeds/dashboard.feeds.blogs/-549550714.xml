@@ -5,7 +5,79 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-08T21:50:54Z</updated>
+  <updated>2020-01-10T17:31:43Z</updated>
+  <entry>
+    <title>Spring Integration AWS 2.3.1 &amp; Spring Cloud Stream Kinesis Binder 2.0.1 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/10/spring-integration-aws-2-3-1-spring-cloud-stream-kinesis-binder-2-0-1-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2020-01-10:3926</id>
+    <updated>2020-01-10T17:31:43Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Today it&amp;#8217;s my pleasure to announce patch releases of Spring Integration for Amazon Web Services extension version &lt;code&gt;2.3.1&lt;/code&gt; and Spring Cloud Stream Binder for AWS Kinesis version &lt;code&gt;2.0.1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These releases can be downloaded from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-aws:2.3.1.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you don&amp;#8217;t use Kinesis Binder.
+Or via Binder dependency:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.0.1.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Mostly these versions have bug fixes and some community feedback refinements.
+Plus they are upgraded to the latest dependencies. So, it is highly recommended to bump your projects to this latest versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Many thanks to everyone from the Community for all the feedback and contribution to these projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback is welcome via all the available communication channels!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With recently announced &lt;a href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements"&gt;Spring Cloud Ilford&lt;/a&gt;, we also are going to do some major changes in Spring Integration for AWS and Spring Cloud Stream Binder for AWS Kinesis to support AWS SDK v2. Everybody who&amp;#8217;s willing to help with this, you are welcome to contribute any possible way!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Cloud Stream Binder for AWS Kinesis resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Pivotal Labs Sydney director David Julia</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/10/a-bootiful-podcast-pivotal-labs-sydney-director-david-julia" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-10:3925</id>
+    <updated>2020-01-10T06:55:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Pivotal Labs Sydney director David Julia (&lt;a href="http://twitter.com/DavidJulia"&gt;@DavidJulia&lt;/a&gt;) about applied agile, testing strategy, architecture and more.&lt;/p&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/741177268&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Security 5.3.0.M1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/08/spring-security-5-3-0-m1-released" />
@@ -1020,184 +1092,6 @@ hello delayed parallel-1
   &lt;li&gt;Have you checked out this month&amp;rsquo;s &lt;a href="https://www.rabbitmq.com/blog/2019/12/07/this-month-in-rabbitmq-november-2019-recap/"&gt;&lt;em&gt;This Month in RabbitMQ&lt;/em&gt; roundup yet?&lt;/a&gt;&lt;br/&gt;conference-recording-recommendations-2019/)&lt;/li&gt;
   &lt;li&gt;I love Trisha Gee¡¯s tutorial series introducing &lt;a href="https://blog.jetbrains.com/idea/tag/tutorial-reactive-spring/"&gt; reactive Spring Boot.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.3.0 GA Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/09/spring-cloud-data-flow-2-3-0-ga-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Janne Valkealahti</name>
-    </author>
-    <id>tag:spring.io,2019-12-06:3904</id>
-    <updated>2019-12-09T19:16:48Z</updated>
-    <content type="html">&lt;p&gt;The release 2.3.0 delivers a lot of enhancements and generic compatibility changes for Spring Boot 2.2.x and Spring Cloud Hoxton.&lt;/p&gt;&lt;h2&gt;&lt;a href="#continuous-deployment-for-tasks" class="anchor" name="continuous-deployment-for-tasks"&gt;&lt;/a&gt;Continuous Deployment For Tasks&lt;/h2&gt;
-&lt;p&gt;As task applications evolve faster to keep up with business needs, the ability for new versions to be consumed via Data Flow in an automated way is needed. While Data Flow has supported the ability to register multiple versions of a task application in previous iterations, the ability to run them in a practical way by re-hydrating command line arguments, deployment properties, and application properties used in previous executions has been missing. In this version, the storage of those values in a manifest and the ability to both retrieve them to determine if an application needs to be upgraded and apply them to the new execution allows for developers to create continuous deployment flows for their task applications. All these capabilities are readily available through RESTful APIs, as well, so the overall CI/CD workflow for Tasks can be automated.&lt;/p&gt;&lt;h2&gt;&lt;a href="#scheduler-improvements" class="anchor" name="scheduler-improvements"&gt;&lt;/a&gt;Scheduler improvements&lt;/h2&gt;
-&lt;p&gt;Scheduling has been updated to support the Task¡¯s CI/CD features. Thus when the Kubernetes or Cloud Foundry Task-scheduler launches the application after the user updates the Task application to a new version, the next execution in Spring Cloud Data Flow will take advantage of these updates automatically.&lt;/p&gt;&lt;h2&gt;&lt;a href="#monitoring-improvements" class="anchor" name="monitoring-improvements"&gt;&lt;/a&gt;Monitoring improvements&lt;/h2&gt;
-&lt;p&gt;In this release, we have revised the monitoring architecture to drive towards a consistent experience in Local, Kubernetes, and Cloud Foundry.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Using &lt;a href="https://github.com/micrometer-metrics/prometheus-rsocket-proxy"&gt;Prometheus RSocket Proxy&lt;/a&gt; as a default approach for Prometheus-based monitoring of the &lt;a href="https://github.com/micrometer-metrics/prometheus-rsocket-proxy#support-for-short-lived-or-serverless-applications"&gt;short lived&lt;/a&gt; Tasks, as well as long-lived streaming applications, and across all supported platforms.&lt;/li&gt;
-  &lt;li&gt;Native &lt;a href="https://dataflow.spring.io/docs/2.3.0.SNAPSHOT/feature-guides/batch/monitoring/"&gt;monitoring of Spring Cloud Tasks and Spring Cloud Batch&lt;/a&gt;, complements to the existing monitoring support for streaming applications through Spring Cloud Streams.&lt;/li&gt;
-  &lt;li&gt;We have a few &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/monitoring-samples"&gt;monitoring-samples&lt;/a&gt;. You will find instructions for building custom Stream and Task applications integrated with the Data Flow Monitoring Architecture:&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/monitoring-samples/stream-apps"&gt;stream-apps&lt;/a&gt; - how to enable monitoring for custom built source, processor and sink apps.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/monitoring-samples/task-apps"&gt;task-apps&lt;/a&gt; - how to enable monitoring for custom built task apps.&lt;/li&gt;
-  &lt;li&gt;Allow using the monitoring architecture to implement elastic, auto-scaling adapters for stream pipelines.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/50398/70357194-37365c00-186e-11ea-9bc2-5dfe4924d114.gif" alt="SCDF-monitoring-promethesu-proxy" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#kubernetes-deployer-improvements" class="anchor" name="kubernetes-deployer-improvements"&gt;&lt;/a&gt;Kubernetes deployer improvements&lt;/h2&gt;
-&lt;p&gt;The following new capabilities are readily available as &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.3.0.RELEASE/reference/htmlsingle/#configuration-kubernetes-deployer"&gt;deployment properties&lt;/a&gt; in Kubrentes for both streaming and batch data pipelines.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for Node Affinity, Pod Affinity and Anti-Affinity&lt;/li&gt;
-  &lt;li&gt;Ability to add multiple ports to Service objects&lt;/li&gt;
-  &lt;li&gt;Allow customization of the container image used in StatefulSet deployments&lt;/li&gt;
-  &lt;li&gt;Implementation of Scaling API&lt;/li&gt;
-  &lt;li&gt;Support for custom init containers&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#helm-chart-improvements" class="anchor" name="helm-chart-improvements"&gt;&lt;/a&gt;Helm chart improvements&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ability to enable monitoring support using Prometheus and Grafana&lt;/li&gt;
-  &lt;li&gt;Try out the &lt;a href="https://hub.helm.sh/charts/stable/spring-cloud-data-flow"&gt;2.3 GA compatible version of the Helm Chart&lt;/a&gt; and let us know what you think!&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#scaling-api" class="anchor" name="scaling-api"&gt;&lt;/a&gt;Scaling API&lt;/h2&gt;
-&lt;p&gt;The addition of new scaling API is available to quickly alter the number of application instances without redeploying a whole stream with updates to the deployment properties. The Scaling API is agnostic to the target platform and can be used seamlessly with K8s, CF and Local.&lt;/p&gt;&lt;h2&gt;&lt;a href="#import-export-utility" class="anchor" name="import-export-utility"&gt;&lt;/a&gt;Import/Export Utility&lt;/h2&gt;
-&lt;p&gt;We also made it easier to work with multiple environments by adding &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.3.0.RELEASE/reference/htmlsingle/#_import_export_streams"&gt;Import/Export Streams&lt;/a&gt; feature which provides easy moving streams across different environments, e.g. dev, test, prod.&lt;/p&gt;&lt;h2&gt;&lt;a href="#security" class="anchor" name="security"&gt;&lt;/a&gt;Security&lt;/h2&gt;
-&lt;p&gt;Our journey to fully move into next generation Spring Security OAuth2 support is almost complete and we expect to finalize it in next releases. There is a blog post &lt;a href="https://spring.io/blog/2018/01/30/next-generation-oauth-2-0-support-with-spring-security"&gt;Next Generation OAuth 2.0 Support with Spring Security&lt;/a&gt; which outlined where things are going in a Spring world.&lt;/p&gt;&lt;h2&gt;&lt;a href="#developer-surveys" class="anchor" name="developer-surveys"&gt;&lt;/a&gt;Developer Surveys&lt;/h2&gt;
-&lt;p&gt;We have released one major release (2.0), three minor releases (2.1, 2.2, and 2.3), and several maintenance releases in 2019! Likewise, Spring Cloud Stream, Spring Cloud Task, Deployers, Skipper, Apps, and remaining others in the SCDF ecosystem independently evolved in isolation, as well.&lt;/p&gt;
-&lt;p&gt;Thank you, everyone, for your support, contributions, and participation!&lt;/p&gt;
-&lt;p&gt;As we are inching towards the New Year¡¯s, we wanted to reach out to the community to learn about your interests and feedback. Please take these super quick 1-page surveys and let us know.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://forms.gle/VWjQai7DzBTFNVof6"&gt;Spring Cloud Data Flow&lt;/a&gt;&lt;br/&gt;&lt;a href="https://forms.gle/z9ja25wQrDZSmeQb7"&gt;Spring Cloud Stream&lt;/a&gt;&lt;br/&gt;&lt;a href="https://forms.gle/upYHVn3wVJnHKbyB8"&gt;Spring Cloud Task&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Stream Processing with Spring Cloud Stream and Apache Kafka Streams. Part 6 - State Stores and Interactive Queries</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/09/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-6-state-stores-and-interactive-queries" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Soby Chacko</name>
-    </author>
-    <id>tag:spring.io,2019-12-09:3905</id>
-    <updated>2019-12-09T18:04:21Z</updated>
-    <content type="html">&lt;p&gt;Part 1 - &lt;a href="https://spring.io/blog/2019/12/02/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-1-programming-model"&gt;Programming Model&lt;/a&gt;&lt;br/&gt;Part 2 - &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;Programming Model Continued&lt;/a&gt;&lt;br/&gt;Part 3 - &lt;a href="https://spring.io/blog/2019/12/04/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-3-data-deserialization-and-serialization"&gt;Data deserialization and serialization&lt;/a&gt;&lt;br/&gt;Part 4 - &lt;a href="https://spring.io/blog/2019/12/05/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-4-error-handling"&gt;Error Handling&lt;/a&gt;&lt;br/&gt;Part 5 - &lt;a href="https://spring.io/blog/2019/12/06/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-5-application-customizations"&gt;Application Customizations&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this part (the sixth and final one of this series), we are going to look into the ways Spring Cloud Stream Binder for Kafka Streams supports state stores and interactive queries in Kafka Streams.&lt;/p&gt;&lt;h2&gt;&lt;a href="#named-state-stores" class="anchor" name="named-state-stores"&gt;&lt;/a&gt;Named State Stores&lt;/h2&gt;
-&lt;p&gt;When you have the need to maintain state in the application, Kafka Streams lets you materialize that state information into a named state store. There are several operations in Kafka Streams that require it to keep track of the state such as &lt;code&gt;count&lt;/code&gt;, &lt;code&gt;aggregate&lt;/code&gt;, &lt;code&gt;reduce&lt;/code&gt;, various &lt;code&gt;windowing&lt;/code&gt; operations, and others. Kafka Streams uses a special database called &lt;a href="https://rocksdb.org/"&gt;RocksDB&lt;/a&gt; for maintaining this state store in most cases (unless you explicitly change the store type). By default, the same information in the state store is backed up to a changelog topic as well as within Kafka, for fault-tolerant reasons. &lt;/p&gt;
-&lt;p&gt;When you explicitly materialize state like this into a named state store, this gives the ability for applications to query that state store at a later stage. This is a very powerful feature, as this gives you the ability to query into a database-like structure from within your Kafka Streams applications.&lt;/p&gt;&lt;h2&gt;&lt;a href="#consuming-data-as-ktable-or-globalktable" class="anchor" name="consuming-data-as-ktable-or-globalktable"&gt;&lt;/a&gt;Consuming data as KTable or GlobalKTable&lt;/h2&gt;
-&lt;p&gt;Kafka Streams binder-based applications can bind to destinations as &lt;code&gt;KTable&lt;/code&gt; or &lt;code&gt;GlobalKTable&lt;/code&gt;. &lt;code&gt;GlobalKTable&lt;/code&gt; is a special table type, where you get data from all partitions of an input topic, regardless of the instance that it is running. By contrast, a &lt;code&gt;KTable&lt;/code&gt; gives you only data from the respective partitions of the topic that the instance is consuming from. &lt;/p&gt;
-&lt;p&gt;The following is a function signature we saw earlier in this series of blog posts:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public Function&amp;lt;KStream&amp;lt;Long, Order&amp;gt;,&#xD;
-     Function&amp;lt;KTable&amp;lt;Long, Customer&amp;gt;,&#xD;
-           Function&amp;lt;GlobalKTable&amp;lt;Long, Product&amp;gt;, KStream&amp;lt;Long, EnrichedOrder&amp;gt;&amp;gt;&amp;gt;&amp;gt; process() {
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As you can see, this function has three input bindings, one &lt;code&gt;KStream&lt;/code&gt;, one &lt;code&gt;KTable&lt;/code&gt;, and another &lt;code&gt;GlobalKTable&lt;/code&gt;. Kafka Streams lets you materialize tables consumed like these into named state stores, given that these tables are based on a primary key. You can use the binding level property to materialize them into named state stores along with consumption. The following examples show how to do so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.bindings.process-in-1.consumer.materializedAs: incoming-store-1&#xD;
-spring.cloud.stream.kafka.streams.bindings.process-in-2.consumer.materializedAs: incoming-store-2
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#kafka-streams-dsl-operations-materialized-into-state-stores" class="anchor" name="kafka-streams-dsl-operations-materialized-into-state-stores"&gt;&lt;/a&gt;Kafka Streams DSL operations materialized into state stores&lt;/h2&gt;
-&lt;p&gt;There are various methods in the Kafka Streams high-level DSL, which returns table types such as &lt;code&gt;count&lt;/code&gt;, &lt;code&gt;aggregate&lt;/code&gt;, and &lt;code&gt;reduce&lt;/code&gt;. There are other operations that use state stores to keep track of information. For example, the various join method calls in &lt;code&gt;KStream&lt;/code&gt;, although they return a &lt;code&gt;KStream&lt;/code&gt; type, internally use state stores to keep the joined data. In summary, when Kafka Streams lets you materialize data either as a table or stream, it is materialized into a state store, much like data stored in a database table. &lt;/p&gt;&lt;h2&gt;&lt;a href="#explicit-state-stores-to-use-in-low-level-processors" class="anchor" name="explicit-state-stores-to-use-in-low-level-processors"&gt;&lt;/a&gt;Explicit state stores to use in low-level processors&lt;/h2&gt;
-&lt;p&gt;When using the processor API of Kafka Streams, which gives you more flexibility on how the stream is processed, you have to declare a state store beforehand and provide that to the StreamsBuilder. Kafka Streams binder can scan the application to detect beans of type StoreBuilder and then use that to create state stores and pass them along with the underlying StreamsBuilder through the StreamsBuilderFactoryBean. Here is a look at such beans:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
-public StoreBuilder myStore() {&#xD;
-  return Stores.keyValueStoreBuilder(&#xD;
-        Stores.persistentKeyValueStore(&amp;quot;my-store&amp;quot;), Serdes.Long(),&#xD;
-        Serdes.Long());&#xD;
-}&#xD;
-&#xD;
-@Bean&#xD;
-public StoreBuilder otherStore() {&#xD;
-  return Stores.windowStoreBuilder(&#xD;
-        Stores.persistentWindowStore(&amp;quot;other-store&amp;quot;,&#xD;
-              Duration.ofSeconds(3), Duration.ofSeconds(3),  false), Serdes.Long(),&#xD;
-        Serdes.Long());&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The two StoreBuilder beans are detected by the binder, and it then attaches them to the streams builder automatically. Later on, you can access them, in your processor API based applications, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;¡¦&#xD;
-KeyValueStore&amp;lt;Long, Long&amp;gt; state1;&#xD;
-WindowStore&amp;lt;Long, Long&amp;gt; state2;&#xD;
-...&#xD;
-@Bean&#xD;
-public java.util.function.Consumer&amp;lt;KStream&amp;lt;Object, String&amp;gt;&amp;gt; process() {&#xD;
-  return input -&amp;gt;&#xD;
-        input.process((ProcessorSupplier&amp;lt;Object, String&amp;gt;) () -&amp;gt; new Processor&amp;lt;Object, String&amp;gt;() {&#xD;
-           @Override&#xD;
-            public void init(ProcessorContext context) {&#xD;
-              state1 = (KeyValueStore&amp;lt;Long, Long&amp;gt;) context.getStateStore(&amp;quot;my-store&amp;quot;);&#xD;
-              state2 = (WindowStore&amp;lt;Long, Long&amp;gt;) context.getStateStore(&amp;quot;other-store&amp;quot;);&#xD;
-           }&#xD;
-&#xD;
-           @Override&#xD;
-           public void process(Object key, String value) {&#xD;
-              // processing code&#xD;
-           }&#xD;
-&#xD;
-           @Override&#xD;
-           public void close() {&#xD;
-              if (state1 != null) {&#xD;
-                 state1.close();&#xD;
-              }&#xD;
-              if (state2 != null) {&#xD;
-                 state2.close();&#xD;
-              }&#xD;
-           }&#xD;
-        }, &amp;quot;my-store&amp;quot;, &amp;quot;other-store&amp;quot;);&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;One quick note about the usage of the processor API in Kafka Streams binder-based applications. The only way you can use the low-level processor API when you use the binder is through a usage pattern of higher-level DSL and then combine that with a transform or process call on it, as shown in the preceding example. See &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_mixing_high_level_dsl_and_low_level_processor_api"&gt;here&lt;/a&gt; for more details on how the processor API can be used in a binder based application. &lt;/p&gt;
-&lt;p&gt;Instead of creating &lt;code&gt;StoreBuilder&lt;/code&gt; beans in the application, you can also use the &lt;code&gt;StreamsBuilderFactoryBean&lt;/code&gt; customizer which we saw in the &lt;a href="https://spring.io/blog/2019/12/06/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-5-application-customizations"&gt;previous blog&lt;/a&gt;, to add the state stores programmatically, if that is your preference. &lt;/p&gt;&lt;h2&gt;&lt;a href="#using-interactive-queries-to-query-data-from-state-stores" class="anchor" name="using-interactive-queries-to-query-data-from-state-stores"&gt;&lt;/a&gt;Using interactive queries to query data from state stores&lt;/h2&gt;
-&lt;p&gt;Kafka Streams lets you interactively query the data in the state store in real time as live stream processing is going on. The binder provides abstractions around this feature to make it easier to work with interactive queries. &lt;code&gt;InteractiveQueryService&lt;/code&gt; is a basic API that the binder provides to work with state store querying. You can usually inject this as a bean into your application and then invoke various API methods from it. Here is an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@Autowired&#xD;
-private InteractiveQueryService interactiveQueryService;&#xD;
- ¡¦&#xD;
- ...&#xD;
-ReadOnlyKeyValueStore&amp;lt;Object, Object&amp;gt; keyValueStore =&#xD;
-                                                interactiveQueryService.getQueryableStoreType(&amp;quot;my-store&amp;quot;, QueryableStoreTypes.keyValueStore());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then you can invoke various retrieval methods from the store and iterate through the result. There are various methods that you can invoke from these state stores based on your use case and the type of state store that you are using. Please refer to the Kafka Streams documentation for &lt;a href="https://kafka.apache.org/10/documentation/streams/developer-guide/interactive-queries.html"&gt;interactive queries&lt;/a&gt; for these various iteration methods available. &lt;/p&gt;&lt;h2&gt;&lt;a href="#interactive-queries-over-rpc-mechanisms" class="anchor" name="interactive-queries-over-rpc-mechanisms"&gt;&lt;/a&gt;Interactive Queries over RPC Mechanisms&lt;/h2&gt;
-&lt;p&gt;Oftentimes, you want to expose the state of your system from state stores over an RPC mechanism. You can combine Spring web support for writing powerful REST based applications in this manner. Here is a blueprint:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@RestController&#xD;
-public class Controller {&#xD;
-&#xD;
-		@RequestMapping(&amp;quot;/song/id&amp;quot;)&#xD;
-		public SongBean song(@RequestParam(value=&amp;quot;id&amp;quot;) Long id) {&#xD;
-			final ReadOnlyKeyValueStore&amp;lt;Long, Song&amp;gt; songStore =&#xD;
-					interactiveQueryService.getQueryableStore(¡°song-store¡±, QueryableStoreTypes.&amp;lt;Long, Song&amp;gt;keyValueStore());&#xD;
-&#xD;
-			final Song song = songStore.get(id);&#xD;
-			if (song == null) {&#xD;
-				throw new IllegalArgumentException(&amp;quot;...&amp;quot;);&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This REST controller can be accessed from a front end web application for example. &lt;/p&gt;
-&lt;p&gt;This usage pattern obviously raises concerns. What happens if there are multiple Kafka Streams application instances running? For instance, what if there are 3 instances in which each of them is pulling data from a single source partition? Which controller instance is going to be responsible for providing information for key &lt;em&gt;X&lt;/em&gt;? What if key &lt;em&gt;X&lt;/em&gt; is only hosted in partition 3 and that happens to be the instance 3, but the request landed on instance 1. This is obviously a problem, but Kafka Streams provides a solution for that. &lt;/p&gt;&lt;h2&gt;&lt;a href="#retrieving-a-key-from-the-right-instance" class="anchor" name="retrieving-a-key-from-the-right-instance"&gt;&lt;/a&gt;Retrieving a key from the right instance&lt;/h2&gt;
-&lt;p&gt;When you have multiple instances running and you want to use interactive queries, you have to set this property at the binder level:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.stream.kafka.streams.binder.configuration.application.server: &amp;lt;server&amp;gt;:&amp;lt;port&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then, in the controller method, you have to write logic that is similar to the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@RequestMapping(&amp;quot;/charts/top-five&amp;quot;)&#xD;
-@SuppressWarnings(&amp;quot;unchecked&amp;quot;)&#xD;
-public List&amp;lt;SongPlayCountBean&amp;gt; topFive(@RequestParam(value=&amp;quot;genre&amp;quot;) String genre) {&#xD;
-{&#xD;
-&#xD;
-org.apache.kafka.streams.state.HostInfo hostInfo = interactiveQueryService.getHostInfo(&amp;quot;store-name&amp;quot;,&#xD;
-                                                key, keySerializer);&#xD;
-&#xD;
-if (interactiveQueryService.getCurrentHostInfo().equals(hostInfo)) {&#xD;
-&#xD;
-    //query from the store that is locally available&#xD;
-}&#xD;
-else {&#xD;
-    //query from the remote host&#xD;
-RestTemplate restTemplate = new RestTemplate();&#xD;
-	return restTemplate.postForObject(&#xD;
-						String.format(&amp;quot;http://%s:%d/%s&amp;quot;, hostInfo.host(),&#xD;
-								hostInfo.port(), &amp;quot;charts/top-five?genre=Punk&amp;quot;), ¡¦);&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#summary" class="anchor" name="summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this blog, we saw the various ways in which Kafka Streams lets you materialize state information into state stores. The binder lets you consume data as &lt;code&gt;KTable&lt;/code&gt; or &lt;code&gt;GlobalKTable&lt;/code&gt; while allowing you to materialize that into a named state store. Kafka Streams has several operations in which state stores can be materialized as named stores. We saw that, when using the processor API in Kafka Streams, the application needs to create state store builder beans that the binder detects which it then passes along to Kafka Streams. Finally, we saw how these state stores can be queried by using interactive queries. We also saw the nuances involving multiple instances of an application and interactive queries against them. &lt;/p&gt;&lt;h2&gt;&lt;a href="#concluding-the-series-and-where-to-go-next-hellip" class="anchor" name="concluding-the-series-and-where-to-go-next-hellip"&gt;&lt;/a&gt;Concluding the series and Where to Go Next&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;Thank you for reading this blog series!&lt;/p&gt;
-&lt;p&gt;In this six-part series, we saw many features of Kafka Streams binder in Spring Cloud Stream, such as its &lt;a href="https://spring.io/blog/2019/12/03/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-2-programming-model-continued"&gt;programming models&lt;/a&gt;, &lt;a href="https://spring.io/blog/2019/12/04/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-3-data-deserialization-and-serialization"&gt;data serialization&lt;/a&gt;, &lt;a href="https://spring.io/blog/2019/12/05/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-4-error-handling"&gt;error handling&lt;/a&gt;, &lt;a href="https://spring.io/blog/2019/12/06/stream-processing-with-spring-cloud-stream-and-apache-kafka-streams-part-5-application-customizations"&gt;customization&lt;/a&gt;, and interactively querying the state stores. There are more features that we haven¡¯t covered as part of this series as we wanted to focus on the general theme of introducing the main features of this binder that was added or enhanced in version &lt;code&gt;3.0.0&lt;/code&gt;. For those additional features or to engage with the engineering team behind Spring Cloud Stream, please check out the various links provided in the resources section below.&lt;/p&gt;&lt;h2&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources:&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-kafka/3.0.0.RELEASE/reference/html/spring-cloud-stream-binder-kafka.html#_kafka_streams_binder"&gt;Kafka Streams Binder Docs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream"&gt;Core Spring Cloud Stream GitHub&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka"&gt;Spring Cloud Stream Kafka Binder GitHub&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-samples"&gt;Spring Cloud Stream Samples&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stack Overflow&lt;/a&gt;&lt;br/&gt;&lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
