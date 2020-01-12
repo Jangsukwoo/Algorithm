@@ -1,0 +1,8 @@
+package CodingTest;
+
+public class NathansProgram {
+	public static void main(String[] args) {
+		String[] T = new String[] = {"test1a","test2","test1b","test1c","test3"};
+		solution(T,R);
+	}
+}

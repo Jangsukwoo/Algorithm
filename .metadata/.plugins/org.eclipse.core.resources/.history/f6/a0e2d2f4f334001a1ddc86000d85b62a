@@ -1,0 +1,50 @@
+package CodingTest;
+
+public class NathansProgram {
+	static int N; //1<=N<=300
+	static boolean[] groups = new boolean[301]; //그룹 존재 flag
+	static boolean[] okGroups = new boolean[301];
+	static int[] groupEntireCnt = new int[301];
+	static int[] groupFrequencyCnt = new int[301];
+	public static void main(String[] args) {
+		String[] T = new String[] {"test1a","test2","test1b","test1c","test3"};
+		String[] R = new String[] {"Wrong answer","OK","Runtime error","OK","Time limit exceeded"};
+		System.out.println(solution(T,R));
+	}
+
+	private static int solution(String[] T, String[] R) {
+		int tSize =T.length;
+		double groupSize=0;
+		double okGroup=0;
+		for(int i=0;i<tSize;i++){
+			String data = T[i];//데이터
+			String groupStringNumber = "";
+			int groupNumber=0;
+			for(int j=0;j<data.length();j++){
+				if(data.charAt(j)>='0' && data.charAt(j)<='9') {
+					groupStringNumber+=data.charAt(j);
+				}
+			}
+			groupNumber = Integer.parseInt(groupStringNumber);
+			//현재 쳐다보고있는 그룹 소속 넘버
+			if(groups[groupNumber]==false) {
+				groups[groupNumber]=true;
+				System.out.println("그룹넘버는");
+				System.out.println(groupNumber);
+				groupSize++;
+			}
+			if(R[i].equals("OK")){//OK면
+				okGroups[groupNumber] = true;
+			}else {
+				System.out.println("ok가 아닌 그룹 넘버");
+				System.out.println(groupNumber);
+				okGroups[groupNumber] = false;
+			}
+		}
+		for(int i=1;i<=300;i++) if(okGroups[i]==true) okGroup++;
+		double score = (okGroup/groupSize)*100;
+		System.out.println(okGroup);
+		System.out.println(groupSize);
+		return (int) score;
+	}
+}

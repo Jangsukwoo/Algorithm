@@ -1,8 +1,8 @@
 package SDS;
 
 
-import java.math.BigInteger;
 import java.util.Scanner;
+
 
 /*
  * 사전에 수록되어 있는 모든 문자열은 N개의 a와 M개의 z로 이루어져 있음
@@ -18,6 +18,8 @@ import java.util.Scanner;
  */
 public class 사전_5일차 {
 	static long[][] dp;
+	static boolean impossible;
+	static long limit = 1000000000;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int a,z;
@@ -26,18 +28,13 @@ public class 사전_5일차 {
 		dp = new long[201][201];
 		StringBuilder sb = new StringBuilder();
 		long k=sc.nextLong();
-		if(combination(a+z,z)!=0) query(a,z,k,sb);
-		
-//		for(int row=0;row<101;row++) {
-//			for(int col=0;col<101;col++) {
-//				if(dp[row][col]!=0) {
-//					System.out.println(row+" "+col);
-//					System.out.println(dp[row][col]);
-//				}
-//			}
-//		}
-		
-		System.out.println(sb.toString());
+
+		combination(a+z,z);//다 구해놓는다.
+		if(dp[a+z][z]>=k) query(a,z,k,sb);
+		else impossible = true;
+
+		if(impossible) System.out.println("-1");
+		else System.out.println(sb.toString());
 	}
 	private static void query(int a, int z , long k, StringBuilder sb) {
 		if(a+z==0) return;
@@ -67,6 +64,6 @@ public class 사전_5일차 {
 		if(n<r) return 0;
 		else if(n==r || r==0) return 1;
 		else if(dp[n][r]!=0) return dp[n][r];
-		else return dp[n][r] = combination(n-1,r)+combination(n-1, r);
+		else return dp[n][r] = Math.min(limit,(combination(n-1,r)+combination(n-1, r-1)));
 	}
 }

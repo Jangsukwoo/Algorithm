@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CodingTest.twoPointer_naver&apos; to &apos;twoPointer&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;CodingTest.twoPointer_naver&apos;&#x0D;&#x0A;- Renamed element: &apos;CodingTest.twoPointer&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;twoPointer_naver&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;CodingTest{twoPointer_naver.java[twoPointer_naver" matchStrategy="1" name="twoPointer" qualified="false" references="true" similarDeclarations="false" stamp="1578817356966" textual="false" version="1.0"/>
+</session>

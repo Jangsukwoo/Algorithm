@@ -1,0 +1,34 @@
+package CodingTest;
+
+public class twoPointer_naver {
+	static int startPointer;
+	static int endPointer = 1;
+	static int MaxLength=1;
+	static int MaxIndex;
+	public static void main(String[] args) {
+		int[] A = new int[]{2,2,2,2,1,2,-1,2,1,3};
+		int[] B = new int[] {30,20,10}; 
+		soulution(A);
+		System.out.println(MaxLength);
+	}
+	private static void soulution(int[] A) {
+		int size = A.length;
+		int length=1;
+		while(endPointer<size) {
+			if(A[endPointer]>A[startPointer]) {
+				endPointer++;
+				startPointer++;
+				length++;
+				MaxLength = Math.max(length,MaxLength);
+			}
+			else {
+				MaxLength = Math.max(length,MaxLength);
+				MaxIndex = startPointer;
+				length=1;
+				endPointer++;
+				startPointer++;
+				System.out.println("스타트포인터"+startPointer);
+			}
+		}
+	}
+}
