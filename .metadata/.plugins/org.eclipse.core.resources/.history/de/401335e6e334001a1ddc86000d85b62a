@@ -1,8 +1,0 @@
-package CodingTest;
-
-public class twoPointer_naver {
-	static int startPointer,endPointer;
-	public static void main(String[] args) {
-		
-	}
-}

@@ -1,7 +1,0 @@
-package CodingTest;
-
-public class NathansProgram {
-	public static void main(String[] args) {
-		
-	}
-}

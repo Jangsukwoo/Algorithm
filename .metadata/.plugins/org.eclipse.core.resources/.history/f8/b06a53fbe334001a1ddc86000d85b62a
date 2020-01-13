@@ -1,9 +1,0 @@
-package CodingTest;
-
-public class twoPointer_naver {
-	static int startPointer,endPointer;
-	static int Max;
-	public static void main(String[] args) {
-		int[] A = new int[]{2,2,2,2,1,2,-1,2,1,3};
-	}
-}
