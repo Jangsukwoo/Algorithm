@@ -1,0 +1,50 @@
+package DP;
+/*
+ * knapSack
+ */
+import java.util.Scanner; 
+public class 수강과목{ 
+  static Scanner sc=new Scanner(System.in); 
+  public static void main(String[] args){ 
+      int num=sc.nextInt(); 
+      int weight=sc.nextInt(); 
+      int[][] arr=new int[num+1][weight+1]; 
+      Jewerly[] jewerly=new Jewerly[num+1]; 
+      for(int i=1;i<=num;i++) 
+          jewerly[i]=new Jewerly(sc.nextInt(),sc.nextInt()); 
+      for(int i=1;i<=num;i++){
+
+//1~num번째 보석까지 총 무게가 weight가 되는 가치합의 최댓값 
+          for(int j=1;j<=weight;j++){ 
+              if(jewerly[i].getWeight()<=j && arr[i-1][j]<=arr[i-1][j-jewerly[i].getWeight()]+jewerly[i].getValue()) 
+
+//i번째 보석의 무게가 j보다 작거나 같고,
+
+//이전 값이 이전 보석까지의 최적해에 i번째 가치를 더한값보다 작거나 같으면  
+
+                  arr[i][j]=arr[i-1][j-jewerly[i].getWeight()]+jewerly[i].getValue(); //이전 보석까지의 최적해에 i번째 가치를 더한다. 
+              else //아닐 경우 이전 값을 유지한다. 
+                  arr[i][j]=arr[i-1][j]; 
+          } 
+      } 
+      for(int i=1;i<=num;i++){ 
+      for(int j=1;j<=weight;j++) 
+      System.out.print(arr[i][j]+" "); 
+      System.out.println(); 
+      } 
+  } 
+} 
+class Jewerly{ //보석의 무게와 가격을 저장하기 위한 클래스 
+  private int weight; 
+  private int value; 
+  Jewerly(int weight, int value){ 
+      this.weight=weight; 
+      this.value=value; 
+  } 
+  public int getWeight(){ 
+      return weight; 
+  } 
+  public int getValue(){ 
+      return value; 
+  } 
+}
