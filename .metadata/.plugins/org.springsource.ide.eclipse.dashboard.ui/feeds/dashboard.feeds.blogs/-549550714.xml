@@ -5,7 +5,46 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-16T21:20:12Z</updated>
+  <updated>2020-01-17T08:42:00Z</updated>
+  <entry>
+    <title>Spring Vault 2.2.1.RELEASE and 2.1.5.RELEASE available</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/17/spring-vault-2-2-1-release-and-2-1-5-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2020-01-16:3930</id>
+    <updated>2020-01-17T08:42:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;d like to announce the availability of Spring Vault releases &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; and &lt;code&gt;2.1.5.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Both releases ship with mostly bugfixes and dependency upgrades. Spring Vault &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; ships also support to disable authentication and session management so it can be used with Vault Agent&amp;#8217;s cached authentication.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes, see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.1.RELEASE/changelog.txt"&gt;2.2.1.RELEASE changelog&lt;/a&gt; respective &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.5.RELEASE/changelog.txt"&gt;2.1.5.RELEASE changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With this release, we&amp;#8217;d also like to announce that Spring Vault 2.1.x is going to end of life in November 2020. We encourage all users to upgrade to the latest release of the 2.2.x line. You can find more details about the supported versions on our &lt;a href="https://github.com/spring-projects/spring-vault/wiki/Spring-Vault-Versions"&gt;versions overview&lt;/a&gt; in the GitHub repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.1.RELEASE/reference/html/"&gt;Documentation for 2.2.1.RELEASE&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.5.RELEASE/reference/html/"&gt;Documentation for 2.1.5.RELEASE&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Spring Cloud Services' Bella (Yuxin) Bai</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/17/a-bootiful-podcast-spring-cloud-services-bella-yuxin-bai" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-17:3934</id>
+    <updated>2020-01-17T03:21:33Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this week&amp;rsquo;s installment Josh Long (@starbuxman) talks to Spring Cloud Services teammate Bella (Yuxin) Bai.&lt;/p&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/744740773&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.2.3 released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/16/spring-boot-2-2-3-released" />
@@ -14,10 +53,10 @@
       <name>Andy Wilkinson</name>
     </author>
     <id>tag:spring.io,2020-01-16:3933</id>
-    <updated>2020-01-16T21:20:12Z</updated>
+    <updated>2020-01-16T21:20:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.3 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.3.RELEASE"&gt;75 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory:&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.2.3 which include fixes for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt; and &lt;a href="https://pivotal.io/security/cve-2020-5397"&gt;CVE-2020-5397&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.2.3 which contains fixes for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt; and &lt;a href="https://pivotal.io/security/cve-2020-5397"&gt;CVE-2020-5397&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -30,10 +69,10 @@
       <name>Andy Wilkinson</name>
     </author>
     <id>tag:spring.io,2020-01-16:3931</id>
-    <updated>2020-01-16T21:15:59Z</updated>
+    <updated>2020-01-16T21:15:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.12 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.12.RELEASE"&gt;39 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory:&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.1.13 which include a fixe for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.1.13 which contains a fix for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -994,54 +1033,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
 ...&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Reactor teammate Simon Basl?</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/20/a-bootiful-podcast-reactor-teammate-simon-basl" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-12-20:3914</id>
-    <updated>2019-12-20T11:43:41Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, I talk to Reactor teammate &lt;a href="http://twitter.com/SimonBasle"&gt;Simon Basl?&lt;/a&gt; about Nantes, France; DevFest Nantes; &lt;a href="http://Twitter.com/ProjectReactor"&gt;Project Reactor&lt;/a&gt; operators, and so much more.&lt;/p&gt;
-&lt;p&gt;Happy holidays from your friends on the Spring team to all of you!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/SimonBasle"&gt;Simon Basl?&lt;/a&gt; on Twitter&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.ProjectReactor.io"&gt;Project Reactor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/731355979&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tools 4.5.0 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/19/spring-tools-4-5-0-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2019-12-19:3913</id>
-    <updated>2019-12-19T09:24:42Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 4.5.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
-&lt;p&gt;Highlights from this release include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt;: Spring Tools 4 for Eclipse distribution updated to Eclipse 2019-12 release&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: progress updates from new live hover mechanism now appears in Eclipse as well&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: fixed NPE when deleting apps from CF via the boot dashboard&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: finish button was disabled after selecting an org/space when creating a CF target in the boot dashboard&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: better and more consistent labels for running processes in live hover actions across the board&lt;/li&gt;
-  &lt;li&gt;various improvements to the Spring Tools 4 user guide&lt;/li&gt;
-  &lt;li&gt;bugfixes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-12-19-450-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-12-19-450-release&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Spring Tools 4.5.1 is scheduled to be released in late January 2020.&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
