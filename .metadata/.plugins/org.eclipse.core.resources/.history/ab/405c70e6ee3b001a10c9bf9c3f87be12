@@ -1,0 +1,25 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 2차원 격자맵이 있고
+ * 0 : 빈칸
+ * 1 : 벽을 세울 수 있는 칸
+ * 2 : 바이러스
+ * 
+ * 1은 벽을 세울 수 있는 칸이고 맵에 최대 3개의 벽을 세울 수 있다.
+ * 
+ */
+public class 연구소 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int[][] lab;
+	static int maxSize;
+	public static void main(String[] args) {
+		setData();	
+	}
+	private static void setData() {
+		
+	}
+}

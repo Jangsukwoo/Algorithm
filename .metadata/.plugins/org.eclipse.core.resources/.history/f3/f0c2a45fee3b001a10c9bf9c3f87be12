@@ -1,0 +1,15 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.util.zip.InflaterInputStream;
+
+public class 연구소 {
+	static BufferedReader br = new BufferedReader(new InflaterInputStream(System.in));
+	public static void main(String[] args) {
+		setData();	
+	}
+	private static void setData() {
+
+	}
+}
