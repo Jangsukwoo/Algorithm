@@ -1,0 +1,26 @@
+package SDS복습;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+/*
+ * 1000000그루의 나무가 주어짐
+ * 
+ */
+public class 자료구조_생태학_트라이 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static class TrieNode{
+		TrieNode[] alphabet = new 
+	}
+	static class Trie{
+		TrieNode root;
+		public Trie() {
+			root = new TrieNode();
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+}

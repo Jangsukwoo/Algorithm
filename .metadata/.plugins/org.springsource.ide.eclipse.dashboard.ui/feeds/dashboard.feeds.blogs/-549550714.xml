@@ -5,7 +5,62 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-20T20:27:23Z</updated>
+  <updated>2020-01-22T08:56:05Z</updated>
+  <entry>
+    <title>Spring Tools 4.5.1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/22/spring-tools-4-5-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2020-01-22:3937</id>
+    <updated>2020-01-22T08:56:05Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.5.1 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: live hover mechanism now reports connection failures&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: Add support for async completions in 4.15 (&lt;a href="https://github.com/spring-projects/sts4/issues/402"&gt;#402&lt;/a&gt;) - PR from @gayanper&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: Early access builds for Eclipse 4.15 available&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: auto-completion inserted extra newline for params in &lt;code&gt;@Value&lt;/code&gt; annotations&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: Boot Dashboard cannot start app when Eclipse project name contains spaces (&lt;a href="https://github.com/spring-projects/sts4/issues/403"&gt;#403&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: NPE in PropertiesJavaDefinitionHandler.adjustedHighlightRangeForKey (&lt;a href="https://github.com/spring-projects/sts4/issues/401"&gt;#401&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: builds on Eclipse 4.14 include latest m2e snapshot components to fix an issue when running JUnit 5 tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.5.2 is scheduled to be released in late February 2020.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - January 21st, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/21/this-week-in-spring-january-21st-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-21:3936</id>
+    <updated>2020-01-21T14:10:40Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! It&amp;rsquo;s 6 am Tuesday, January 21st, 2020, and I&amp;rsquo;m buckled in and ready to take off for Atlanta, Georgia (by way of Denver, Colorado&amp;hellip;), where I&amp;rsquo;ll be speaking at the Atlanta Java User Group tonight! I&amp;rsquo;m so looking forward to seeing everyone there. It&amp;rsquo;s my first JUG appearance in the new year, too! &lt;/p&gt;
+&lt;p&gt;So, let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/20/spring-boot-2-2-4-released"&gt;Spring Boot 2.2.4 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/17/spring-vault-2-2-1-release-and-2-1-5-release-available"&gt;Spring Vault 2.2.1.RELEASE and 2.1.5.RELEASE available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2020/01/17/a-bootiful-podcast-spring-cloud-services-bella-yuxin-bai"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk to Spring Cloud Services&amp;rsquo; Bella (Yuxin) Bai&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-2-3-released"&gt;Spring Boot 2.2.3 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-1-12-released"&gt;Spring Boot 2.1.12 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-framework-5-2-3-5-1-13-5-0-16-and-4-3-26-releases"&gt;Spring Framework 5.2.3, 5.1.13, 5.0.16, and 4.3.26 releases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-data-neumann-m1-released"&gt;Spring Data Neumann M1 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/15/spring-data-moore-sr4-and-lovelace-sr15-released"&gt;Spring Data Moore SR4 and Lovelace SR15 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is an interesting post on two of my favorite pieces of cloud infrastructure: &lt;a href="https://www.starkandwayne.com/blog/running-cloud-foundry-on-kubernetes-using-kubecf/"&gt;Running Cloud Foundry on Kubernetes using KubeCF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.wavefront.com/how-to-instrument-and-monitor-your-springboot-2-application-on-kubernetes-using-wavefront/"&gt;How to Instrument and Monitor Your Spring Boot 2 Application in Kubernetes Using Wavefront - Wavefront by VMware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.2.4 released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/20/spring-boot-2-2-4-released" />
@@ -802,51 +857,6 @@ Spring Security 5.3.0.M1! You can find the complete details in the &lt;a href="h
   &lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/azure-supportability/how-to-create-azure-support-request?WT.mc_id=twitter-social-judubois"&gt;Good news everybody! The support channel for Azure Spring Cloud is now available!&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;An interesting post on the &lt;a href="https://howtodoinjava.com/spring-boot2/spring-boot-starter-parent-dependency/"&gt;Spring Boot starter parent&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring for Apache Kafka 2.4 is Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/23/spring-for-apache-kafka-2-4-is-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Gary Russell</name>
-    </author>
-    <id>tag:spring.io,2019-12-23:3917</id>
-    <updated>2019-12-23T18:18:14Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;To support last week&amp;#8217;s Apache Kafka 2.4.0 release, I am pleased to announce that the Spring for Apache Kafka 2.4 - 2.4.0.RELEASE - is available in maven central.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This version is essentially functionally equivalent to 2.3.x, but is compiled against the 2.4.0 &lt;code&gt;kafka-clients&lt;/code&gt; and supports the new incremental rebalancing protocol.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The 2.4.0 &lt;code&gt;kafka-clients&lt;/code&gt; are not binary compatible with Spring for Apache Kafka 2.3 so if you wish to use the 2.4.0 clients, you must upgrade to this version. See the appendix in the reference manual for how to override the jar versions, especially if you are using Spring Boot for dependency management and/or you are using the test embedded Kafka broker.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;At the time of writing, it is expected that the next Spring Boot version (2.3) will pull in 2.4.x of this project via its dependency management.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-kafka/docs/2.4.0..RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Roadmap and Hoxton and Greenwich Maintenance and EOL Announcements</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Spencer Gibb</name>
-    </author>
-    <id>tag:spring.io,2019-12-21:3916</id>
-    <updated>2019-12-23T14:27:00Z</updated>
-    <content type="html">&lt;p&gt;With the recent &lt;a href="https://spring.io/blog/2019/12/03/spring-framework-maintenance-roadmap-in-2020-including-4-3-eol"&gt;Spring Framework&lt;/a&gt; and &lt;a href="https://spring.io/blog/2019/12/10/spring-boot-2-1-x-eol-november-1st-2020"&gt;Spring Boot&lt;/a&gt; maintenance and roadmap posts, the Spring Cloud team is taking the opportunity to provide some insight to our future roadmap as well as the lifetimes of the Greenwich and Hoxton release trains.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-ilford" class="anchor" name="spring-cloud-ilford"&gt;&lt;/a&gt;Spring Cloud Ilford&lt;/h2&gt;
-&lt;p&gt;We would like to announce our next major release, Spring Cloud Ilford. This will be the first major release since the release of Spring Cloud Finchley, which provided support for Spring Boot 2.x and Spring Framework 5.x. By making Ilford a major release, it will allow us to remove modules that have entered &lt;a href="https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now#spring-cloud-netflix-projects-entering-maintenance-mode"&gt;maintenance mode&lt;/a&gt; and to complete the simplification of the release train &lt;a href="https://spring.io/blog/2019/07/24/simplifying-the-spring-cloud-release-train"&gt;announced earlier this year&lt;/a&gt;. It will also allow us to do some API refactoring that may introduce breaking changes.&lt;/p&gt;
-&lt;p&gt;Ilford will be released following Spring Framework 5.3 and Spring Boot 2.4 sometime in Q4 2020.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-hoxton" class="anchor" name="spring-cloud-hoxton"&gt;&lt;/a&gt;Spring Cloud Hoxton&lt;/h2&gt;
-&lt;p&gt;According to the &lt;a href="https://pivotal.io/support/oss"&gt;Pivotal Open Source Support Policy&lt;/a&gt;, major releases are supported for a period of three years. Finchley was first released in June 2018. Therefore, Hoxton, a minor release of the Finchley release train, will be supported until the end of June 2021 with regular releases. Starting in July 2021 Hoxton will enter a special maintenance period where only critical bug fixes and security patches will be released until the end of December 2021.&lt;/p&gt;
-&lt;p&gt;This will allow a full year of overlap between major versions.&lt;/p&gt;
-&lt;p&gt;Spring Boot 2.3.x, scheduled for release in Q2 2020, will be supported by a Hoxton Service Release soon after the Spring Boot release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-greenwich" class="anchor" name="spring-cloud-greenwich"&gt;&lt;/a&gt;Spring Cloud Greenwich&lt;/h2&gt;
-&lt;p&gt;Greenwich, a minor release of the Finchley release train, was released in January 2019. Its last regular Service Release will be in Jan 2020. After that, it will enter a special maintenance period where only critical bug fixes and security patches will be released until the end of December 2020. This will be the last release train to support Spring Boot 2.1.x.&lt;/p&gt;
-&lt;p&gt;Please see the &lt;a href="https://github.com/spring-cloud/spring-cloud-release/milestones?direction=asc&amp;sort=due_date&amp;state=open"&gt;release train milestones&lt;/a&gt; to track future releases and the new &lt;a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions"&gt;Supported Versions&lt;/a&gt; page to see version lifetime.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,0 +1,44 @@
+package SDS복습;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+
+/*
+ * 세그먼트트리 코드 안보고 쌩으로 만들어보기
+ * 
+ * setSegmentTree, updateSegmentTree, getSumFromSegmentTree 메소드 세개 구현해보기
+ */
+public class 자료구조_구간합구하기_세그먼트트리 {
+	static int N,M,K;
+	static int[] number;
+	static int[] segmentTree;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		number = new int[N];
+		segmentTree = new int[N*4];
+		for(int i=0;i<N;i++){
+			st = new StringTokenizer(br.readLine());
+			number[i] = Integer.parseInt(st.nextToken());
+		}
+		setSegmentTree(1,0,N-1);
+	}
+	private static int setSegmentTree(int node, int start, int end){
+		if(start==end) return segmentTree[start] = number[start]; //스타트가 아니라 node임 
+		int mid = (start+end)/2;
+		return segmentTree[node] = setSegmentTree(node*2, start, mid) + setSegmentTree((node*2)+1,mid+1, end);
+	}
+}

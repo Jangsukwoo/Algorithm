@@ -1,0 +1,7 @@
+package SDS복습;
+
+public class 자료구조_구간합구하기_세그먼트트리 {
+	public static void main(String[] args) {
+
+	}
+}

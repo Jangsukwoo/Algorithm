@@ -11,32 +11,36 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
-import java.util.TreeSet;
+import java.util.TreeMap;
 
 public class 생태학_3일차 {
-	static HashMap<String, Double> dictionary = new HashMap<>();
-	static TreeSet<String> dictionaryTree = new TreeSet<>();
+	static TreeMap<String, Integer> dictionary = new TreeMap();
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-	static double entireSize;
+	static int entireSize;
 	public static void main(String[] args) throws IOException {
 		while(true) {
 			String name = br.readLine();
-			if(name.equals("")) break;
-			if(dictionary.containsKey(name)) {
-				double cnt = dictionary.get(name);
-				dictionary.put(name,cnt+1);
-			}else dictionary.put(name,1.0);
-			dictionaryTree.add(name);
-			entireSize++;
-		}
-		double treeSize = dictionaryTree.size();
-		for(int i=0;i<treeSize;i++) {
-			String popname = dictionaryTree.pollFirst();
-			double portion = (dictionary.get(popname)/entireSize);
-			portion = Math.round(portion*1000000)/10000.0;
-			bw.write(popname+" "+portion+"\n");
+			
+			if(name.equals("")) break; //EOF
+			
+			if(dictionary.containsKey(name)){   //포함되어있으면 
+				int cnt = dictionary.get(name); 
+				dictionary.put(name,cnt+1); //카운팅
+			}
+			
+			else dictionary.put(name,1); //포함 안되어있으면 사전에 추가 
+	
+			entireSize++; //전체 종 수 
+		}//입력
+		
+		
+		
+		for(String popname : dictionary.keySet()) { //키 집합 돌면서 종 이름 하나씩 확인
+			
+			double portion =dictionary.get(popname);
+			
+			bw.write(popname+" "+String.format("%.4f", portion/entireSize*100)+"\n"); 
 		}
 		bw.flush();
 		bw.close();
