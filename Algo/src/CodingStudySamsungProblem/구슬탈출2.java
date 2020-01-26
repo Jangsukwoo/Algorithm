@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 /*
  * 빨간 구슬을 구멍을 통해 빼낸다.
@@ -34,9 +36,13 @@ public class 구슬탈출2{
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringTokenizer st;
 	static char[][] board;
-	static int N,M;//세로,가로
+	static boolean[][][][] visit;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static int N,M;//행,열
+	static Queue<BeadInfo> q = new LinkedList<BeadInfo>();
 	static int ans;
-	static class BeadInfo{
+	static class BeadInfo{ //구슬에 대한 정보 
 		//y = 행, x = 여
 		int ry; 
 		int rx;
@@ -59,7 +65,85 @@ public class 구슬탈출2{
 		N = Integer.parseInt(st.nextToken()); //세로 
 		M = Integer.parseInt(st.nextToken()); //가로
 		board = new char[N][M];
-		for(int row=0;row<N;row++) board[row] = br.readLine().toCharArray();
-		ans = 
+		visit = new boolean[N][M][N][M];
+		BeadInfo bead = new BeadInfo(0,0,0,0,0);
+		for(int row=0;row<N;row++) {
+			board[row] = br.readLine().toCharArray();
+			for(int col=0;col<M;col++) {
+				if(board[row][col]=='R') {
+					bead.ry = row;
+					bead.rx = col;
+				}else if(board[row][col]=='B') {
+					bead.by = row;
+					bead.bx = col;
+				}
+			}
+		}
+		visit[bead.ry][bead.rx][bead.by][bead.bx] = true;
+		q.add(bead);
+		ans = bfs();
+		if(ans==0) System.out.println("-1");
+		else System.out.println(ans);
+	}
+	private static int bfs(){
+		while(!q.isEmpty()){
+			BeadInfo cureentBeadInfo = q.poll();
+			if(cureentBeadInfo.count>10) break;
+			if(board[cureentBeadInfo.ry][cureentBeadInfo.rx]=='O' && board[cureentBeadInfo.by][cureentBeadInfo.bx]!='O') {
+				return cureentBeadInfo.count;
+			}
+			for(int dir=0;dir<4;dir++){
+				int nry = cureentBeadInfo.ry;
+				int nrx = cureentBeadInfo.rx;
+				int nby = cureentBeadInfo.by;
+				int nbx = cureentBeadInfo.bx;
+				//빨간구슬 이동
+				while(true) {
+					if(board[nry][nrx]!='#' && board[nry][nrx]!='O'){//구멍도 아니고 벽도 아니면 일단 굴림 
+						nry+=dr[dir];
+						nrx+=dc[dir];
+					}else {//밟은 땅이  O 또는 #일 경우임 
+						if(board[nry][nrx]=='#'){
+							nry-=dr[dir];
+							nrx-=dc[dir];
+						}
+						break;//벽이면 뒤로 한칸 후진
+					}
+				}
+				//파란구슬 이동
+				while(true) {
+					if(board[nby][nbx]!='#' && board[nby][nbx]!='O'){//구멍도 아니고 벽도 아니면 일단 굴림 
+						nby+=dr[dir];
+						nbx+=dc[dir];
+					}else {
+						if(board[nby][nbx]=='#'){
+							nby-=dr[dir];
+							nbx-=dc[dir];
+						}
+						break;//벽이면 뒤로 한칸 후진
+					}
+				}
+
+				//만약 빨간 구슬이랑 파랑 구슬이 같은 위치에 도달해있다면 더 멀리서온 구슬은 한칸 뒤로 후진시킨다.
+				if(nry==nby && nrx==nbx){
+					if(board[nry][nrx]!='O') {
+						int redDist = Math.abs(nry-cureentBeadInfo.ry) + Math.abs(nrx-cureentBeadInfo.rx);
+						int blueDist = Math.abs(nby-cureentBeadInfo.by) + Math.abs(nbx-cureentBeadInfo.bx);
+						if(redDist>blueDist) {
+							nry-=dr[dir];
+							nrx-=dc[dir];
+						}else {
+							nby-=dr[dir];
+							nbx-=dc[dir];
+						}
+					}
+				}
+				if(visit[nry][nrx][nby][nbx]==false){
+					visit[nry][nrx][nby][nbx] = true;
+					q.add(new BeadInfo(nry,nrx,nby,nbx,cureentBeadInfo.count+1));
+				}
+			}
+		}
+		return 0;
 	}
 }
