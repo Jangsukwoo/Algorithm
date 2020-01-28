@@ -1,0 +1,53 @@
+package SDS복습_그래프;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+/*
+ * 위상정렬 안보고 짜기. 큐 이용
+ */
+public class ACMCraft_위상정렬 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,K;
+	static ArrayList<Integer>[] edgeList;
+	static int[] buildTime;
+	static int[] indegree;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			topologicalSort();
+		}
+	}
+	private static void topologicalSort() {
+		
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		buildTime = new int[N+1];
+		indegree = new int[N+1];
+		edgeList = new ArrayList[N+1];
+		for(int i=1;i<=N;i++) edgeList[i] = new ArrayList<Integer>();
+		for(int i=1;i<=N;i++) buildTime[i] = Integer.parseInt(st.nextToken());
+		while(true) {
+			st = new StringTokenizer(br.readLine());
+			if(st.countTokens()==1) break;
+			else {
+				int u = Integer.parseInt(st.nextToken());
+				int v = Integer.parseInt(st.nextToken());
+				edgeList[u].add(v);
+				indegree[v]+=1;//진입차수 작성
+			}
+		}
+		
+	}
+}
