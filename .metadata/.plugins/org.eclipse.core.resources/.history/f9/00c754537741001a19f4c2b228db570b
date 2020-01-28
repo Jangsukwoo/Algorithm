@@ -1,0 +1,63 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+/*
+ * 가장 많이 먹을 수 있는 디저트의 종류.
+ * 직진하는 경우, 꺾는 경우 
+ */
+public class 디저트카페 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int[][] cafe;
+	static int[] dr = {-1,-1,1,1};
+	static int[] dc = {-1,1,1,-1};//좌하, 우하, 우상, 좌상 
+	static int startRow, startCol;
+	static int maxDist;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			setData();
+			bruteForce();
+		}
+	}
+	private static void bruteForce() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++){
+				startRow = row;
+				startCol = col;
+				int nr = row+dr[0];
+				int nc = col+dc[0];
+				//영역 만족하면
+				if(rangeCheck(nr,nc)) dfs(nr,nc,0,1,1,0);	
+			}
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr>=0 && nr<N && nc>=0 && nc <N) return true;
+		return false;
+	}
+	private static void dfs(int currentRow, int currentCol, int direction, int depth, int leftBottomDist, int turn){
+		//현재 좌표, 깊이, 간 거리, 왼쪽아래로 움직인 거리 
+		if(currentRow == startRow && currentCol == startCol){
+			maxDist = Math.max(depth, maxDist);
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		cafe = new int[N][N];
+		for(int row=0;row<N;row++){
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++){
+				cafe[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}
+

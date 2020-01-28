@@ -1,0 +1,30 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class 디저트카페 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			setData();
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		for(int row=0;row<N;row++){
+			for(int col=0;col<N;col++) {
+			}
+		}
+
+	}
+}
+}

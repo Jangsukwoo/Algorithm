@@ -1,0 +1,8 @@
+package CodingStudySamsung모의;
+
+public class 디저트카페 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}

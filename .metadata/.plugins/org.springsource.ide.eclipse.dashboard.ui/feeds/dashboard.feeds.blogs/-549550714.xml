@@ -5,7 +5,444 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-24T04:00:14Z</updated>
+  <updated>2020-01-27T17:09:00Z</updated>
+  <entry>
+    <title>Creating Docker images with Spring Boot 2.3.0.M1</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2020-01-23:3938</id>
+    <updated>2020-01-27T17:09:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot 2.3.0.M1 has just been released and it brings with it some interesting new features that can help you package up your Spring Boot application into Docker images. In this blog post we&amp;#8217;ll take a look at the typical ways developers create Docker images, and show how they can be improved by using these new features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="common-docker-techniques"&gt;&lt;a class="anchor" href="#common-docker-techniques"&gt;&lt;/a&gt;Common Docker Techniques&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Although it&amp;#8217;s always been possible to convert the fat jars produced by Spring Boot into Docker images, it&amp;#8217;s pretty easy to make less than optimal results.
+If you do a web search for "dockerize spring boot app", the chances are high you&amp;#8217;ll find an article or blog post suggesting you create a dockerfile that looks something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;FROM openjdk:8-jdk-alpine
+EXPOSE 8080
+ARG JAR_FILE=target/my-application.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Whilst this approach works fine, and it&amp;#8217;s nice and concise, there are a few things that are sub-optimal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The first problem with above file is that the jar file is not unpacked.
+There&amp;#8217;s always a certain amount of overhead when running a fat jar, and in a containerized environment this can be noticeable.
+It&amp;#8217;s generally best to unpack your jar and run in an exploded form.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The second issue with the file is that it isn&amp;#8217;t very efficient if you frequently update your application.
+Docker images are built in layers, and in this case your application and all its dependencies are put into a single layer.
+Since you probably recompile your code more often than you upgrade the version of Spring Boot you use, it&amp;#8217;s often better to separate things a bit more.
+If you put jar files in the layer before your application classes, Docker often only needs to change the very bottom layer and can pick others up from its cache.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Two new features are introduced in Spring Boot 2.3.0.M1 to help improve on these existing techniques: buildpack support and layered jars.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="buildpacks"&gt;&lt;a class="anchor" href="#buildpacks"&gt;&lt;/a&gt;Buildpacks&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you&amp;#8217;ve ever used an application platform such as Cloud Foundry or Heroku then you&amp;#8217;ve probably used a buildpack, perhaps without even realizing it!
+Buildpacks are the part of the platform that takes your application and converts it into something that the platform can actually run.
+For example, Cloud Foundry&amp;#8217;s Java buildpack will notice that you&amp;#8217;re pushing a &lt;code&gt;.jar&lt;/code&gt; file and automatically add a relevant JRE.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Until relatively recently buildpacks were tightly coupled to the platform and you couldn&amp;#8217;t easily use them independently.
+Thankfully they&amp;#8217;ve now broken free, and with &lt;a href="https://buildpacks.io/"&gt;Cloud Native Buildpacks&lt;/a&gt; you can use them to create Docker compatible images that you can run anywhere.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot 2.3.0.M1 includes buildpack support directly for both Maven and Gradle.
+This means you can just type a single command and quickly get a sensible image into your locally running Docker daemon.
+For Maven you can type &lt;code&gt;mvn spring-boot:build-image&lt;/code&gt;, with Gradle it&amp;#8217;s &lt;code&gt;gradle bootBuildImage&lt;/code&gt;.
+The name of the published image will be your application name and the tag will be the version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Let&amp;#8217;s have a look at an example using Maven:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First create a new Spring Boot project using start.spring.io:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ curl https://start.spring.io/starter.zip -d bootVersion=2.3.0.M1 -d dependencies=web -o demo.zip
+$ unzip demo.zip&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Next ensure you have a local Docker installed and running, then type:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ ./mvnw spring-boot:build-image&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It will take a little time to run the first time around, but subsequent calls will be quicker.
+You should see something like this in the build log:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;[INFO] Building image 'docker.io/library/demo:0.0.1-SNAPSHOT'
+[INFO]
+[INFO]  &amp;gt; Pulling builder image 'docker.io/cloudfoundry/cnb:0.0.43-bionic' 100%
+[INFO]  &amp;gt; Pulled builder image 'cloudfoundry/cnb@sha256:c983fb9602a7fb95b07d35ef432c04ad61ae8458263e7fb4ce62ca10de367c3b'
+[INFO]  &amp;gt; Pulling run image 'docker.io/cloudfoundry/run:base-cnb' 100%
+[INFO]  &amp;gt; Pulled run image 'cloudfoundry/run@sha256:ba9998ae4bb32ab43a7966c537aa1be153092ab0c7536eeef63bcd6336cbd0db'
+[INFO]  &amp;gt; Executing lifecycle version v0.5.0
+[INFO]  &amp;gt; Using build cache volume 'pack-cache-5cbe5692dbc4.build'
+[INFO]
+[INFO]  &amp;gt; Running detector
+[INFO]     [detector]    6 of 13 buildpacks participating
+...
+[INFO]
+[INFO]  &amp;gt; Running restorer
+[INFO]     [restorer]    Restoring cached layer 'org.cloudfoundry.openjdk:2f08c469c9a8adea1b6ee3444ba2a8242a7e99d87976a077faf037a9eb7f884b'
+...
+[INFO]
+[INFO]  &amp;gt; Running cacher
+[INFO]     [cacher]      Reusing layer 'org.cloudfoundry.openjdk:2f08c469c9a8adea1b6ee3444ba2a8242a7e99d87976a077faf037a9eb7f884b'
+[INFO]     [cacher]      Reusing layer 'org.cloudfoundry.jvmapplication:executable-jar'
+[INFO]     [cacher]      Caching layer 'org.cloudfoundry.springboot:spring-boot'
+[INFO]     [cacher]      Reusing layer 'org.cloudfoundry.springautoreconfiguration:46ab131165317d91fd4ad3186abf755222744e2d277dc413def06f3ad45ab150'
+[INFO]
+[INFO] Successfully built image 'docker.io/library/demo:0.0.1-SNAPSHOT'&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;That&amp;#8217;s it! Your application has been compiled, packaged and converted to a Docker image.
+You can test it using:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ docker run -it -p8080:8080 demo:0.0.1-SNAPSHOT&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+Unfortunately &lt;code&gt;M1&lt;/code&gt; does not support Windows but it should work fine on a Mac or in a Linux VM. If you&amp;#8217;re using Windows, please use &lt;code&gt;2.3.0.BUILD-SNAPSHOT&lt;/code&gt; for the time being.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The built-in support provided by Spring Boot provides a great way to get started with buildpacks.
+Since it&amp;#8217;s an implementation of the buildpack platform specification, it&amp;#8217;s also easy to migrate to more powerful buildpack tools such as &lt;a href="https://github.com/buildpacks/pack"&gt;&lt;code&gt;pack&lt;/code&gt;&lt;/a&gt; or &lt;a href="https://github.com/pivotal/kpack"&gt;&lt;code&gt;kpack&lt;/code&gt;&lt;/a&gt; with confidence that the same image will be produced.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="layered-jars"&gt;&lt;a class="anchor" href="#layered-jars"&gt;&lt;/a&gt;Layered Jars&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It&amp;#8217;s possible that you might not want to use buildpacks to create your images.
+Perhaps you have existing tools that are built around dockerfiles, or perhaps you just prefer them.
+Either way, we wanted to make it also easier to create optimized Docker images that can be built with a regular dockerfile so we&amp;#8217;ve added support for "layered jars".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot has always supported its own "fat jar" format that allows you to create an archive that you can run using &lt;code&gt;java -jar&lt;/code&gt;.
+If you&amp;#8217;ve ever looked into the contents of that jar, you&amp;#8217;d see a structure that looks like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;META-INF/
+  MANIFEST.MF
+org/
+  springframework/
+    boot/
+      loader/
+        ...
+BOOT-INF/
+  classes/
+    ...
+  lib/
+    ...&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The jar is organized into three main parts:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Classes used to bootstrap jar loading&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your application classes in &lt;code&gt;BOOT-INF/classes&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dependencies in &lt;code&gt;BOOT-INF/lib&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since this format is unique to Spring Boot, it&amp;#8217;s possible for us to evolve it in interesting ways.
+With Spring Boot &lt;code&gt;2.3.0.M1&lt;/code&gt; we&amp;#8217;re providing a new &lt;code&gt;layout&lt;/code&gt; type called &lt;code&gt;LAYERED_JAR&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you opt-in to the layered format and peek at the jar structure, you&amp;#8217;ll see something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;META-INF/
+  MANIFEST.MF
+org/
+  springframework/
+    boot/
+      loader/
+        ...
+BOOT-INF/
+  layers/
+    &amp;lt;name&amp;gt;/
+      classes/
+        ...
+      lib/
+        ...
+    &amp;lt;name&amp;gt;/
+      classes/
+        ...
+      lib/
+        ...
+  layers.idx&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You still see the bootstrap loader classes (you can still run &lt;code&gt;java -jar&lt;/code&gt;) but now the &lt;code&gt;lib&lt;/code&gt; and &lt;code&gt;classes&lt;/code&gt; folders have been split up and categorized into layers.
+There&amp;#8217;s also a new &lt;code&gt;layers.idx&lt;/code&gt; file that provides the order in which layers should be added.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Initially, we&amp;#8217;re providing the following layers out-of-the box:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dependencies&lt;/code&gt; (for regular released dependencies)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;snapshot-dependencies&lt;/code&gt; (for snapshot dependencies)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;resources&lt;/code&gt; (for static resources)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;application&lt;/code&gt; (for application classes and resources)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This layering is designed to separate code based on how likely it is to change between application builds. Library code is less likely to change between builds, so it is placed in its own layers to allow tooling to re-use the layers from cache. Application code is more likely to change between builds so it is isolated in a separate layer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="extracting-layers"&gt;&lt;a class="anchor" href="#extracting-layers"&gt;&lt;/a&gt;Extracting layers&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Even with the new format, there are still a few hoops you need to jump though in order to extract the files so that they can be copied by your &lt;code&gt;dockerfile&lt;/code&gt;.
+Those loader classes need to be in the root of your jar, but you probably want them in an actual layer when you build the image.
+Of course, you can do this with some combination of &lt;code&gt;unzip&lt;/code&gt; and &lt;code&gt;mv&lt;/code&gt;, but we&amp;#8217;ve tried to make it even easier by introducing the idea of "jar modes".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A &lt;code&gt;jarmode&lt;/code&gt; is a special system property that you can set when you launch the jar.
+It allows the bootstrap code to run something entirely different from your application.
+For example, something that extracts the layers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Here&amp;#8217;s how you can launch your jar with a &lt;code&gt;layertools&lt;/code&gt; jar mode:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ java -Djarmode=layertools -jar my-app.jar&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This will provide the following output:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;Usage:
+  java -Djarmode=layertools -jar my-app.jar
+
+Available commands:
+  list     List layers from the jar that can be extracted
+  extract  Extracts layers from the jar for image creation
+  help     Help about any command&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In this mode you can either &lt;code&gt;list&lt;/code&gt; or &lt;code&gt;extract&lt;/code&gt; layers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="writing-the-dockerfile"&gt;&lt;a class="anchor" href="#writing-the-dockerfile"&gt;&lt;/a&gt;Writing the &lt;code&gt;dockerfile&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Let&amp;#8217;s continue with the sample application that we generated above and add a &lt;code&gt;dockerfile&lt;/code&gt; to it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Start by editing the &lt;code&gt;pom.xml&lt;/code&gt; and add the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&amp;lt;build&amp;gt;
+	&amp;lt;plugins&amp;gt;
+		&amp;lt;plugin&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;
+			&amp;lt;configuration&amp;gt;
+				&amp;lt;layout&amp;gt;LAYERED_JAR&amp;lt;/layout&amp;gt;
+			&amp;lt;/configuration&amp;gt;
+		&amp;lt;/plugin&amp;gt;
+	&amp;lt;/plugins&amp;gt;
+&amp;lt;/build&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Then rebuild the jar:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ mvn clean package&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All being well, we should now have a layered jar with &lt;code&gt;jarmode&lt;/code&gt; support.
+Test it with the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ java -Djarmode=layertools -jar target/demo-0.0.1-SNAPSHOT.jar list&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You should see the following output which tells us the layers and the order that they should be added:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;dependencies
+snapshot-dependencies
+resources
+application&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We can now craft a &lt;code&gt;dockerfile&lt;/code&gt; that extracts and copies each layer.
+Here&amp;#8217;s an example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;FROM adoptopenjdk:11-jre-hotspot as builder
+WORKDIR application
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
+RUN java -Djarmode=layertools -jar application.jar extract
+
+FROM adoptopenjdk:11-jre-hotspot
+WORKDIR application
+COPY --from=builder application/dependencies/ ./
+COPY --from=builder application/snapshot-dependencies/ ./
+COPY --from=builder application/resources/ ./
+COPY --from=builder application/application/ ./
+ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is a multi-stage dockerfile.
+The &lt;code&gt;builder&lt;/code&gt; stage extracts the folders that are needed later.
+Each of the &lt;code&gt;COPY&lt;/code&gt; commands relates to the layers that we listed earlier.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To build the image we can run:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ docker build . --tag demo&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Then we can test it:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre&gt;$ docker run -it -p8080:8080 demo:latest&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="summary"&gt;&lt;a class="anchor" href="#summary"&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With buildpacks, dockerfiles and existing plugins such as &lt;a href="https://github.com/GoogleContainerTools/jib"&gt;jib&lt;/a&gt;, there&amp;#8217;s certainly no shortage of ways to create Docker images.
+Each approach has pros and cons, but hopefully the new features we&amp;#8217;re shipping in Spring Boot 2.3 will be helpful no matter which approach you choose.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot 2.3 is currently scheduled to be released at the end of April and we&amp;#8217;re very interested in feedback on the Docker images before then (raise issues, comment here or chat on Gitter).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Happy containerizing!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.4.0 M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-4-0-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2020-01-27:3943</id>
+    <updated>2020-01-27T13:06:26Z</updated>
+    <content type="html">&lt;h2&gt;&lt;a href="#ui-changes-to-stream-editor" class="anchor" name="ui-changes-to-stream-editor"&gt;&lt;/a&gt;UI Changes to Stream Editor&lt;/h2&gt;
+&lt;p&gt;Stream Editor went through a much-needed touch of love and should now be more visually appealing. Here¡¯s a simple screenshot what it looks like:&lt;br/&gt;&lt;img src="https://user-images.githubusercontent.com/50398/73159326-2e2f7180-40de-11ea-81e5-6c77898df6cd.png" alt="blog-new-stream-editor" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven-preemptive-authentication" class="anchor" name="maven-preemptive-authentication"&gt;&lt;/a&gt;Maven Preemptive Authentication&lt;/h2&gt;
+&lt;p&gt;Support for using Maven Wagon transport for HTTP has been added to the Maven Artifact Resolver infrastructure. The driver for this was a request from a user to be able to use preemptive authentication with JFrog¡¯s artifactory. Use of it is currently optional via a property but we¡¯re looking to make it default sometime in the future and possibly introduce more wagon transports which might provide interesting options to place your artifacts behind ssh, git or whatever Apache Wagon is able to provide. If you have a particular interest or experience of it, let us know.&lt;/p&gt;&lt;h2&gt;&lt;a href="#various-bug-fixes-and-enhancements" class="anchor" name="various-bug-fixes-and-enhancements"&gt;&lt;/a&gt;Various Bug Fixes and Enhancements&lt;/h2&gt;
+&lt;p&gt;Apart from a list above more detailed lists can be found from &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/92?closed=1"&gt;Iteration 159&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/95?closed=1"&gt;Iteration 160&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Audit can now track platform info&lt;/li&gt;
+  &lt;li&gt;Better error handling for platform-specific task cron scheduling&lt;/li&gt;
+  &lt;li&gt;Using Scheduled task arguments from a previous execution&lt;/li&gt;
+  &lt;li&gt;Task scheduling via shell&lt;/li&gt;
+  &lt;li&gt;Task Java DSL improvements&lt;/li&gt;
+  &lt;li&gt;Missing docs for scaling API&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#project-build-changes" class="anchor" name="project-build-changes"&gt;&lt;/a&gt;Project Build Changes&lt;/h2&gt;
+&lt;p&gt;Starting from this version we¡¯ve changed all Data Flow family projects to have our own parent pom in spring-cloud-dataflow-build order to have easier dependency handling and not to be so tightly dependant with spring-cloud-build.&lt;/p&gt;
+&lt;p&gt;We¡¯ve been using Travis CI in GitHub to build commits and pull requests and we¡¯re finally migrating to GitHub actions starting with spring-cloud-dataflow and spring-cloud-deployer-local. Experience is so good that we¡¯re rolling these out to other repos as well.&lt;/p&gt;
+&lt;p&gt;Integration testing is difficult and complex and for this we¡¯ve been using our own scripting against various CF and K8s environments. In those environments, we should only really test environment-specific things so we¡¯ve started to move some of these tests into docker and docker-compose so that it would be easier for any user to run tests that are not environment-specific.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.3.1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-3-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2020-01-27:3942</id>
+    <updated>2020-01-27T13:06:22Z</updated>
+    <content type="html">&lt;p&gt;This is a maintenance release for small bug fixes, enhancements, and dependency updates. Generally speaking, we¡¯re now on Spring Cloud Hoxton SR1. List of fixed issues can be found from &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues/3707"&gt;2.3.1 Issue List&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven-preemptive-authentication" class="anchor" name="maven-preemptive-authentication"&gt;&lt;/a&gt;Maven Preemptive Authentication&lt;/h2&gt;
+&lt;p&gt;Support for using Maven Wagon transport for HTTP has been added to the Maven Artifact Resolver infrastructure. The driver for this was a request from a user to be able to use preemptive authentication with JFrog¡¯s artifactory. Use of it is currently optional via a property but we¡¯re looking to make it default sometime in the future and possibly introduce more wagon transports which might provide interesting options to place your artifacts behind ssh, git or whatever Apache Wagon is able to provide.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Neo4j's mad scientist Michael Hunger on graphs, databases and relationships</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/24/neo4j-s-mad-scientist-michael-hunger-on-graphs-databases-and-relationships" />
@@ -795,145 +1232,6 @@ Plus they are upgraded to the latest dependencies. So, it is highly recommended 
     <updated>2020-01-10T06:55:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Pivotal Labs Sydney director David Julia (&lt;a href="http://twitter.com/DavidJulia"&gt;@DavidJulia&lt;/a&gt;) about applied agile, testing strategy, architecture and more.&lt;/p&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/741177268&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.3.0.M1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/08/spring-security-5-3-0-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Eleftheria Stein-Kousathana</name>
-    </author>
-    <id>tag:spring.io,2020-01-08:3924</id>
-    <updated>2020-01-08T21:50:54Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of
-Spring Security 5.3.0.M1! You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.M1"&gt;release notes&lt;/a&gt; and the highlights below:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="saml"&gt;&lt;a class="anchor" href="#saml"&gt;&lt;/a&gt;SAML&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7654-allow-configuration-of-authenticationmanager-in-saml2login"&gt;&lt;a class="anchor" href="#gh-7654-allow-configuration-of-authenticationmanager-in-saml2login"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7654"&gt;gh-7654&lt;/a&gt; - Allow configuration of AuthenticationManager in saml2Login()&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7681-make-saml2authentication-serializable"&gt;&lt;a class="anchor" href="#gh-7681-make-saml2authentication-serializable"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7681"&gt;gh-7681&lt;/a&gt; - Make Saml2Authentication serializable&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="oauth-2-0"&gt;&lt;a class="anchor" href="#oauth-2-0"&gt;&lt;/a&gt;OAuth 2.0&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-5385-resource-server-support-for-multiple-trusted-jwt-access-token-issuers"&gt;&lt;a class="anchor" href="#gh-5385-resource-server-support-for-multiple-trusted-jwt-access-token-issuers"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/5385"&gt;gh-5385&lt;/a&gt; - Resource server support for multiple trusted JWT access token issuers&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7569-reactive-implementation-of-authorizedclientserviceoauth2authorizedclientmanager"&gt;&lt;a class="anchor" href="#gh-7569-reactive-implementation-of-authorizedclientserviceoauth2authorizedclientmanager"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7569"&gt;gh-7569&lt;/a&gt; - Reactive implementation of AuthorizedClientServiceOAuth2AuthorizedClientManager&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7592-add-oidcidtoken-builder"&gt;&lt;a class="anchor" href="#gh-7592-add-oidcidtoken-builder"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7592"&gt;gh-7592&lt;/a&gt; - Add OidcIdToken.Builder&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7593-add-oidcuserinfo-builder"&gt;&lt;a class="anchor" href="#gh-7593-add-oidcuserinfo-builder"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7593"&gt;gh-7593&lt;/a&gt; - Add OidcUserInfo.Builder&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="core"&gt;&lt;a class="anchor" href="#core"&gt;&lt;/a&gt;Core&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7785-idiomatic-kotlin-dsl-for-configuring-http-security-in-servlet-based-applications"&gt;&lt;a class="anchor" href="#gh-7785-idiomatic-kotlin-dsl-for-configuring-http-security-in-servlet-based-applications"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7785"&gt;gh-7785&lt;/a&gt; - Idiomatic Kotlin DSL for configuring HTTP security in servlet based applications&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="test"&gt;&lt;a class="anchor" href="#test"&gt;&lt;/a&gt;Test&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7789-oauth2-login-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7789-oauth2-login-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7789"&gt;gh-7789&lt;/a&gt; - OAuth2 Login MockMvc Test Support&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7712-opaque-token-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7712-opaque-token-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7712"&gt;gh-7712&lt;/a&gt; - Opaque token MockMvc Test Support&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7618-oidc-login-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7618-oidc-login-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7618"&gt;gh-7618&lt;/a&gt; - Oidc Login MockMvc Test Support&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7680-oidc-login-reactive-test-support"&gt;&lt;a class="anchor" href="#gh-7680-oidc-login-reactive-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7680"&gt;gh-7680&lt;/a&gt; - Oidc Login Reactive Test Support&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="web"&gt;&lt;a class="anchor" href="#web"&gt;&lt;/a&gt;Web&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7731-compositeserverhttpheaderswriter-should-execute-sequentially"&gt;&lt;a class="anchor" href="#gh-7731-compositeserverhttpheaderswriter-should-execute-sequentially"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7731"&gt;gh-7731&lt;/a&gt; - CompositeServerHttpHeadersWriter Should Execute Sequentially&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-7723-delegatingserverlogouthandler-should-execute-sequentially"&gt;&lt;a class="anchor" href="#gh-7723-delegatingserverlogouthandler-should-execute-sequentially"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7723"&gt;gh-7723&lt;/a&gt; - DelegatingServerLogoutHandler Should Execute Sequentially&lt;/h5&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
-&lt;a href="https://docs.spring.io/spring-security/site/docs/5.2.0.M2/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
-| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - 9th Anniversary Edition - January 7, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/07/this-week-in-spring-9th-anniversary-edition-january-7-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-07:3923</id>
-    <updated>2020-01-07T18:28:17Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This is also the 9th anniversary of the &lt;em&gt;This Week in Spring&lt;/em&gt; blog series. I started it the first Tuesday after the new year in January 2011. NINE years is a long time, and it&amp;rsquo;s been - and continues to be - a ton of fun. &lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve never missed an installment - every Tuesday for almost a decade, come heck or high water - I get this done. It&amp;rsquo;s always on Tuesday, my time - whatever time that is. If I&amp;rsquo;m in Tokyo or Shanghai or Sydney then the installment may very well post sometime in most people&amp;rsquo;s Monday, or if I&amp;rsquo;m in California or Hawaii or South America, then it might be posted sometime early into most people&amp;rsquo;s Wednesday. But it&amp;rsquo;s always my Tuesday. Some times, I&amp;rsquo;ve had to cheat and apply the Hawaii rule: it&amp;rsquo;s still Tuesday if it&amp;rsquo;s still Tuesday in Hawaii! But, it&amp;rsquo;s always Tuesday. Things have gotten easier for me. Nowadays, plenty of airplanes have Wi-Fi. And, our blog software now supports scheduled posts. So, almost no reason I should ever miss an installment unless I&amp;rsquo;m &lt;em&gt;very&lt;/em&gt; busy. &lt;/p&gt;
-&lt;p&gt;I find that this exercise - of finding the latest and greatest, analyzing it and sharing it - has been very beneficial for me. It&amp;rsquo;s not only connected me to the zeitgeist of an ever-expanding, amazing ecosystem, it&amp;rsquo;s also connected me to you: you can&amp;rsquo;t know how much it means to me when people send &lt;a href="mailto:josh@joshlong.com"&gt;me email (josh@joshlong.com)&lt;/a&gt;, or &lt;a href="http://twitter.com/starbuxman"&gt;direct messages (@starbuxman)&lt;/a&gt; with their exciting new content to post. I love that enthusiasm. It&amp;rsquo;s better than coffee! Thank you, community. You&amp;rsquo;re epic, and I couldn&amp;rsquo;t be more grateful. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Happy new year! In this first installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt; in the new year, I am delighted to have been able to bring you an interview with my hero, the amazing, the inimitable, the legendary, &lt;a href="https://spring.io/blog/2020/01/03/a-bootiful-podcast-spring-boot-and-spring-cloud-co-founder-dr-dave-syer"&gt;Spring Boot, and Spring Cloud co-founder Dr. Dave Syer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;We&amp;rsquo;d love your feedback on your &lt;a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-FWTC1eWKym7z9dKkQZruQz8QePaQ94sBeL1EGHEbiOj7w/viewform?usp=send_form"&gt;opinion of Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Did you see the Spring Cloud &lt;a href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements"&gt;roadmap published right before Christmas?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I like this blog, &lt;a href="https://medium.com/@santanu.mojumder/modernize-monolith-java-application-to-containerized-microservices-case-study-guide-7349a8e1f6a9"&gt;Modernize Monolith Java Application to Containerized Microservices&lt;/a&gt;, that looks at building microservices with Spring Boot&lt;/li&gt;
-  &lt;li&gt;I love Matt Raible&amp;rsquo;s tutorial over on the Okta blog, &lt;a href="https://developer.okta.com/blog/2020/01/06/crud-angular-9-spring-boot-2"&gt;&lt;em&gt;Build a CRUD App with Angular 9 and Spring Boot 2.2&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Oliver Drotbohm &lt;a href="https://www.infoq.com/presentations/monoliths-modules/"&gt;identifies the common issues in unstructured monoliths&lt;/a&gt; and discusses approaches to package design, component structure, transactions, and the usage of events, in this SpringOne Platform 2019 talk that&amp;rsquo;s now on InfoQ.&lt;/li&gt;
-  &lt;li&gt;I loved &lt;a href="https://www.infoq.com/presentations/spring-jib-scaffold-kubernetes/?itm_source=presentations_about_spring&amp;itm_medium=link&amp;itm_campaign=spring"&gt;this talk from Google&amp;rsquo;s Ray Tsang&lt;/a&gt; on tools - Jib, Skaffold - and best practices for Spring and Kubernetes.&lt;/li&gt;
-  &lt;li&gt;This is an interesting thread on Reddit: &lt;a href="https://www.reddit.com/r/java/comments/ehyvpo/is_reactive_stream_single_or_multi_threaded/"&gt;are Reactive Streams single threaded or multi-threaded&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting example on &lt;a href="https://github.com/gregwhitaker/springboot-rsocketbasicauth-example"&gt;doing RSocket BASIC authentication with Spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This seems like an interesting usecase: &lt;a href="https://medium.com/@milosbiljanovic/springboot-autocomplete-with-elasticsearch-11ea95d58854"&gt;Spring Boot and Elasticsearch&lt;/a&gt;-powered autocompletion.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Boot and Spring Cloud co-founder Dr. Dave Syer</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/03/a-bootiful-podcast-spring-boot-and-spring-cloud-co-founder-dr-dave-syer" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-03:3922</id>
-    <updated>2020-01-03T08:25:16Z</updated>
-    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/737749519&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; talks to the one, the only, the inimitable, the amazing, his hero, the good &lt;a href="http://twitter.com/david_syer"&gt;Dr. Dave Syer&lt;/a&gt;, Spring Framework committer, former Spring Batch lead, former Spring Security OAuth lead, co-founder of both Spring Boot and Spring Cloud, etc. Statistically, if you&amp;rsquo;re using Spring today, you&amp;rsquo;re probably using code he wrote. This episode was recorded at SpringOne Platform 2019. Happy new year, and enjoy! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://github.com/dsyer"&gt;Dave on Github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/david_syer"&gt;Dave on Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
