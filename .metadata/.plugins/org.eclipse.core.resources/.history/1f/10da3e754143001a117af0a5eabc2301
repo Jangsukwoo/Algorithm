@@ -1,0 +1,39 @@
+package SDS복습_그래프;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * 다익스트라 안보고 구현하기
+ * 
+ * 특정 지점에서 다른 목적 지점까지 가는 최소비용으로 가는 최단경로를 찾는다.
+ * 
+ * 특정 정점을 pq에 넣은 후 연결된 엣지들중 가장 비용이 싼 다음 정점이 나올 수 있도록
+ * pq를 쓴다.
+ * 
+ * ElogV
+ * 
+ * 
+ */
+public class 다익스트라_최단경로 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int V,E;
+	static int startVertax;
+	static ArrayList<int[]>[] edgeList;//각 정점에 대해 
+	static int[] dist;
+	static boolean[] visit;
+	static int INF = 987654321;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}
