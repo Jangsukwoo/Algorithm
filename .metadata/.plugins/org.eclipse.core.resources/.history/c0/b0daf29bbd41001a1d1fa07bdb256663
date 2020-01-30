@@ -1,0 +1,59 @@
+package CodingTest;
+
+public class Delivery {
+
+	static int[] nowDelivery = new int[6];
+	static int answer;
+
+	int main() {
+		solution(4,7,2,4);
+	   return 0;
+	}
+	//물건이 문제 조건에 맞게 배정됐는지 확인
+	int checkDelivery(int n, int m, int t, int k) {
+	   int partialSum = 0;
+	   int totalSum = 0;
+	   for (int i = 0; i < t; i++) {
+	      partialSum += nowDelivery[i];
+	      totalSum += nowDelivery[i];
+	   }
+	   if (partialSum > k) {
+	      return 0;
+	   }
+	   for (int i = t; i < n; i++) {
+	      partialSum += nowDelivery[i];
+	      partialSum -= nowDelivery[i - t];
+	      totalSum += nowDelivery[i];
+	      if (partialSum > k) {
+	         return 0;
+	      }
+	   }
+	   if (totalSum < m) return 0;
+	   return 1;
+	   
+	}
+	void printNow(int n) {
+	   for (int i = 0; i < n; i++) {
+	      System.out.print(nowDelivery[i]);
+	   }
+	}
+	void simulateDelivery(int depth, int sum, int n, int m, int t, int k) {
+	   //배정이 끝났을 경우 답 확인
+	   if (depth == n) {
+	      if (checkDelivery(n,m ,t, k) == 1) {
+	         printNow(n);
+	         answer++;
+	      }
+	      return;
+	   }
+	   //각 날짜마다 물건 수 배정
+	   for (int i = 0; i <= m - sum; i++) {
+	      nowDelivery[depth] = i;
+	      simulateDelivery(depth + 1, sum + i, n, m,t,k);
+	   }
+	}
+	int solution(int n, int m, int t, int k) {
+	   simulateDelivery(0, 0, n, m, t, k);
+	   return answer;
+	}
+}

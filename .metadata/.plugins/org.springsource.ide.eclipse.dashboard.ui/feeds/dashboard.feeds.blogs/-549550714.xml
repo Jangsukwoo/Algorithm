@@ -5,7 +5,38 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-27T17:09:00Z</updated>
+  <updated>2020-01-28T23:29:39Z</updated>
+  <entry>
+    <title>This Week in Spring - January 28th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/28/this-week-in-spring-january-28th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-28:3944</id>
+    <updated>2020-01-28T23:29:39Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! How&amp;rsquo;re things, my friends? Can you believe we&amp;rsquo;re already nearly at the end of January? I have been knee-deep in code and coffee for these last several days and I&amp;rsquo;m running late for a meeting so, without further ado, let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Creating Docker images with Spring Boot 2.3.0.M1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-4-0-m1-released"&gt;Spring Cloud Data Flow 2.4.0 M1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-3-1-released"&gt;Spring Cloud Data Flow 2.3.1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interview &lt;a href="https://spring.io/blog/2020/01/24/neo4j-s-mad-scientist-michael-hunger-on-graphs-databases-and-relationships"&gt;Neo4j&amp;rsquo;s mad scientist Michael Hunger on graphs, databases, and relationships&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/23/spring-boot-2-3-0-m1-is-now-available"&gt;Spring Boot 2.3.0.M1 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/23/spring-integration-5-3-milestone-1-available"&gt;Spring Integration 5.3 Milestone 1 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/22/spring-tools-4-5-1-released"&gt;Spring Tools 4.5.1 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Want to run your own Azure Spring Cloud workshop? The team is constantly evolving their public workshop at &lt;a href="https://twitter.com/lyledodge/status/1221896155161743361"&gt;https://github.com/microsoft/azure-spring-cloud-training&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.theregister.co.uk/AMP/2020/01/08/java_support_visual_studio/"&gt;Improved Java support poured into Microsoft&amp;rsquo;s Visual Studio Code ? will it be enough to tempt developers? ? The Register&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/@TimvanBaarsen/first-look-at-cloud-native-buildpacks-support-in-spring-boot-2-3-milestone-1-ece8e72ed93f"&gt;First look at Cloud Native Buildpacks support in Spring Boot 2.3 Milestone 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Juan Medina has a nice post on &lt;a href="https://juan-medina.com/2020/01/22/optimizing-k8s-sv-02/"&gt;optimizing building optimized Spring-based Kubernetes services&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.jetbrains.com/idea/2020/01/intellij-idea-2020-1-eap/#code_insight_for_rdbc_reactive_sql_clients_for_micronaut_and_quarkus_and_other_rd_party_libraries"&gt;IntelliJ IDEA 2020.1 EAP: Java 14, improvements for Git and UI, and much more | IntelliJ IDEA Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This seems like an interesting video for getting &lt;a href="https://www.youtube.com/watch?v=M3jNn3HMeWg&amp;feature=youtu.be"&gt;started with Spring Webflux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/learn-spring-boot/"&gt;Learning Spring Boot: First as a Student, Then as a Teacher&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;One of the technologies that underpins Spring Boot 2.3&amp;rsquo;s new image building support is Cloud Native Buildpacks, about whose 2020 Roadmap &lt;a href="https://medium.com/buildpacks/cloud-native-buildpacks-2020-roadmap-b7e43876473a"&gt;you can learn more in this post on Medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ah, the familiar singleton. I tend to take it for granted, but it&amp;rsquo;s always worth introducing if you don&amp;rsquo;t have any exposure to it. Here&amp;rsquo;s a nice article from this last week that reuses some diagrams from the original Interface 21 training (the company before SpringSource which then got acquired by VMWare, which then spun out to form Pivotal, which is now again a recently accquired part of VMWare..)&lt;/li&gt;
+  &lt;li&gt;Richard Seroter has a &lt;em&gt;very&lt;/em&gt; nice article &lt;a href="https://seroter.wordpress.com/2020/01/28/lets-try-out-the-new-durable-replicated-quorum-queues-in-rabbitmq/"&gt;introducing the new replicated quorum queues in RabbitMQ &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Creating Docker images with Spring Boot 2.3.0.M1</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1" />
@@ -1219,19 +1250,6 @@ Plus they are upgraded to the latest dependencies. So, it is highly recommended 
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Pivotal Labs Sydney director David Julia</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/10/a-bootiful-podcast-pivotal-labs-sydney-director-david-julia" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-10:3925</id>
-    <updated>2020-01-10T06:55:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Pivotal Labs Sydney director David Julia (&lt;a href="http://twitter.com/DavidJulia"&gt;@DavidJulia&lt;/a&gt;) about applied agile, testing strategy, architecture and more.&lt;/p&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/741177268&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -60,7 +60,7 @@ public class ACMCraft_위상정렬 {
 				countTime[v] = Math.max(countTime[v], countTime[u]+buildTime[v]);
 				if(indegree[v]==0){
 					if(v==target) return;
-					q.offer(v);
+					q.offer(u);
 				}
 			}
 		}
