@@ -61,7 +61,7 @@ public class 최소신장트리_크루스칼_네트워크연결 {
 		Arrays.sort(edges);
 		
 		//Step 2.Union - Find로 묶어준다.
-		for(int i=0;i<M;i++){ //정렬된 모든 간선을 앞에서부터 보면서  묶어준다
+		for(int i=0;i<M;i++){
 			if(find(edges[i].from)!=find(edges[i].to)){//부모가 같지 않으면 묶어준다.
 				union(edges[i].from,edges[i].to);
 				answer+=edges[i].cost;
