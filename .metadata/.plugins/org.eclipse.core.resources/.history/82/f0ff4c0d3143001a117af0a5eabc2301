@@ -72,37 +72,14 @@ public class LCA_최소공통조상찾기 {
 			b = Integer.parseInt(st.nextToken());
 			//a와 b의 공통 조상 찾기 
 			int lca = findLca(a,b);
-			bw.write(lca+"\n");
 		}
-		bw.flush();
-		bw.close();
 	}
 
 	private static int findLca(int a, int b){
 		int lca = 0;
-		if(depth[a]>depth[b]){//a가 b보다 더 깊은 곳에 있으면
-			int tmp = a;
-			a = b;
-			b = tmp;
-		}//Swap을 통해 더 깊은 정점은 항상 b가되고 더 높은 정점은 a가 된다.
-		
-		for (int k = 17; k >= 0; k--) { //깊이 맞추기. 더 깊은 b를 a까지 끌어올려 맞춘다. 
-			if (depth[a] <= depth[parent[k][b]]){//b가 더 깊다면
-				b = parent[k][b];//b의 부모로
-			}
+		if(depth[a]>depth[b]){//a가 b보다 더 깊은 곳에 있으며
+			
 		}
-		//이 처리가 끝나면 a와 b는 같은 깊이에 위치한 정점이 된다.
-		
-		for (int k = 17; k >= 0; k--) { //부모 찾기. 부모가 같아질 때 까지 찾는다  
-			if (parent[k][a]!=parent[k][b]){//부모가 같지 않으면 계속 타고 올라간다.
-				a = parent[k][a];
-				b = parent[k][b];
-			}
-		}//조상찾기 끝
-		
-		//조상찾을 때 좀 더 시간을 줄이고 싶다면 이분탐색으로 찾으면된다.
-		lca = a;
-		if(a!=b) lca = parent[0][a];
 		return lca;
 	}
 
