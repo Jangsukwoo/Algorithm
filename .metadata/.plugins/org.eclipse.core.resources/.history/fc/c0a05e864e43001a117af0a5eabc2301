@@ -1,0 +1,35 @@
+package SDS복습_그래프;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+/*
+ * 벨만포드 알고리즘으로는 최단거리를 구하기는 힘들고
+ * 음의 사이클의 존재 유무를 알 수 있게된다.
+ * 
+ * 간선의 값이 음수가 있을 때 
+ * 사이클이 있는 경우 최단거리가 무한히 갱신되므로
+ * 
+ * 양의 값만 있다는 가정 하에 
+ * 최단거리를 구하는 알고리즘을 수행한 뒤
+ * 딱 한번 더 돌렸을 때 어떤 최단거리 값이 갱신이 되어버린다면
+ * 음의 사이클이 있다 라고 판단한다.
+ * 
+ * 
+ * 
+ * 자동으로 Import하는 단축키 ctrl+shift+O
+ * 
+ */
+public class 벨만포드_타임머신 {
+	static final int INF = 987654321;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int N,M;//도시의 개수, 버스 노선의 개수.
+	static int[] dist;
+	static boolean[] visit;
+	static ArrayList<int[]> edgeList;//간선정보
+	static boolean negativeCycle;
+	public static void main(String[] args) {
+
+	}
+}
