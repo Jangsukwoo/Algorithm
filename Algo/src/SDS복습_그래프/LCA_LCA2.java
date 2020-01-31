@@ -108,7 +108,7 @@ public class LCA_LCA2 {
 
 	private static void setDepthAndSparesTable() {
 		depth[1]=0; //1번은 루트노드니까 깊이 0
-		parent[0][1] = 0;//1번의 조상은 없으니 0
+		parent[0][1] = 1;//1번의 조상은 없으니 0
 		q.offer(1);//1번노드부터 시작
 		
 		//깊이 정보 만들기

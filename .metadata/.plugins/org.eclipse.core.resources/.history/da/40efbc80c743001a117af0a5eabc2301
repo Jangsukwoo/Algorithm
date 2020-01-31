@@ -1,0 +1,15 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.util.zip.InflaterInputStream;
+
+
+public class 점심식사시간 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	public static void main(String[] args) {
+
+	}
+}

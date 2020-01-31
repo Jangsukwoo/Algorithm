@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-01-28T23:29:39Z</updated>
+  <updated>2020-01-30T22:56:09Z</updated>
+  <entry>
+    <title>"The Phoenix Project" and "The Unicorn Project" author Gene Kim</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/01/30/the-phoenix-project-and-the-unicorn-project-author-gene-kim" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-01-30:3945</id>
+    <updated>2020-01-30T22:56:09Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to &amp;ldquo;The Phoenix Project&amp;rdquo; and &amp;ldquo;The Unicorn Project&amp;rdquo; author Gene Kim (&lt;a href="http://twitter.com/RealGeneKim"&gt;@RealGeneKim&lt;/a&gt;) about #DevOps, his experience of the industry, IT organizations and a MILLION TRILLION other things. I&amp;rsquo;d listen to this one first! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.amazon.com/Phoenix-Project-Helping-Business-Anniversary/dp/B00VATFAMI/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=&amp;sr="&gt;The Phoenix Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.amazon.com/Unicorn-Project-Developers-Disruption-Thriving/dp/B0812C82T9/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=&amp;sr="&gt;The Unicorn Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/752396113&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - January 28th, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/01/28/this-week-in-spring-january-28th-2020" />
@@ -1190,65 +1207,6 @@ testImplementation('org.springframework.boot:spring-boot-starter-test') {
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This post includes a brief introduction into the Reactive support in some of the Spring projects. As the wider Spring portfolio continues to adopt and support Reactive APIs, developers will gain more choice in whether to use imperative or reactive style programming in their applications. Additionally, this sample app demonstrates only a subset of the Spring projects that now offer Reactive support. Look for more in the future! If you have questions or issues with a specific Spring project, then please contact the maintainers on the relevant project GitHub page.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration AWS 2.3.1 &amp; Spring Cloud Stream Kinesis Binder 2.0.1 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/10/spring-integration-aws-2-3-1-spring-cloud-stream-kinesis-binder-2-0-1-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2020-01-10:3926</id>
-    <updated>2020-01-10T17:31:43Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Today it&amp;#8217;s my pleasure to announce patch releases of Spring Integration for Amazon Web Services extension version &lt;code&gt;2.3.1&lt;/code&gt; and Spring Cloud Stream Binder for AWS Kinesis version &lt;code&gt;2.0.1&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These releases can be downloaded from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-aws:2.3.1.RELEASE"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you don&amp;#8217;t use Kinesis Binder.
-Or via Binder dependency:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.0.1.RELEASE"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Mostly these versions have bug fixes and some community feedback refinements.
-Plus they are upgraded to the latest dependencies. So, it is highly recommended to bump your projects to this latest versions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Many thanks to everyone from the Community for all the feedback and contribution to these projects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Any feedback is welcome via all the available communication channels!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With recently announced &lt;a href="https://spring.io/blog/2019/12/23/spring-cloud-roadmap-and-hoxton-and-greenwich-maintenance-and-eol-announcements"&gt;Spring Cloud Ilford&lt;/a&gt;, we also are going to do some major changes in Spring Integration for AWS and Spring Cloud Stream Binder for AWS Kinesis to support AWS SDK v2. Everybody who&amp;#8217;s willing to help with this, you are welcome to contribute any possible way!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Cloud Stream Binder for AWS Kinesis resources:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
