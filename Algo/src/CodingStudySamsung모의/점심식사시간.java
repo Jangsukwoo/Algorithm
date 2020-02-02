@@ -81,7 +81,6 @@ public class 점심식사시간 {
 	private static void pickStair() {
 		for(int pick=0;pick<=N;pick++){
 			r = pick;
-			System.out.println("R값이"+r);
 			nCr(0,0);
 		}
 	}

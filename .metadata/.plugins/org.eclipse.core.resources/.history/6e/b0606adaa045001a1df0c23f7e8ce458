@@ -1,0 +1,77 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+/*
+ * 0은 빈칸
+ * 6은 벽
+ * 1~5는 CCTV
+ * 
+ * 
+ * 사각지대 최소 크기 
+ */
+public class 감시 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,M;//세로 가로
+	static int[][] map;
+	static int[][] testMap;
+	static int cctvSize;
+	static int[] cctvDirectionPick;
+	static int[] cctvs;
+	static int deadZone = Integer.MAX_VALUE;
+	static boolean[] visit;
+	public static void main(String[] args) throws IOException {
+		setData();
+		dfs(0);
+	}
+	private static void dfs(int depth) {
+		if(depth==cctvSize){
+			observation();
+			return;
+		}
+		for(int i=0;i<4;i++){
+			cctvDirectionPick[depth] = i;
+			dfs(depth+1);
+		}
+	}
+	private static void observation() {
+		for(int i=0;i<cctvSize;i++){
+			switch () {
+			case value:
+				
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		map = new int[N][M];
+		testMap = new int[N][M];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<M;col++) {
+				map[row][col] = Integer.parseInt(st.nextToken());
+				if(map[row][col]!=6 && map[row][col]!=0) cctvSize++;
+			}
+		}//입력
+		cctvDirectionPick = new int[cctvSize];
+		cctvs = new int[cctvSize];
+		int cctvIdx=0;
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				if(map[row][col]!=6 && map[row][col]!=0) cctvs[cctvIdx++] = map[row][col];
+			}
+		}
+	}
+}
