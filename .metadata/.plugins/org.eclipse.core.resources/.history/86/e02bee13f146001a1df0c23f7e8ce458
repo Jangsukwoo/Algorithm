@@ -1,0 +1,45 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class 탈주범검거 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,M,R,C,L;
+	static int Answer;
+	static int[][] Map;
+	static boolean[][] visit;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌 
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			bfs();
+		}
+	}
+	private static void bfs() {
+		Queue<int[]> q = new LinkedList<int[]>();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		//맵크기
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		//맨홀 위치
+		L = Integer.parseInt(st.nextToken());
+		Map = new int[N][M];
+		visit = new boolean[N][M];
+		visit[R][C] = true;
+	}
+}

@@ -1,0 +1,156 @@
+package codeTest;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 감시_주영씨{
+	static int N, M;
+	static int[][] Room = new int[10][10];
+	static boolean check[][] = new boolean[10][10];
+	static int dx[] = { 0,1,0,-1 };
+	static int dy[] = { 1,0,-1,0 };//동남서북
+	static int MMin = Integer.MAX_VALUE;
+	static int NNN = 0;
+	static ArrayList<Info> CCTV = new ArrayList<Info>();
+	static class Info{
+		int row;
+		int col;
+		int num;
+		public Info(int r, int c, int n) {
+			row = r;
+			col = c;
+			num = n;
+		}
+	}
+	public static void main(String[] args) 
+	{		
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		for (int i = 0; i < N; i++)
+		{
+			for (int j = 0; j < M; j++)
+			{
+				Room[i][j] = sc.nextInt();
+			if (Room[i][j] < 5 && Room[i][j]>0) {
+				CCTV.add(new Info(i,j,Room[i][j]));
+				NNN++;
+			}
+			else if (Room[i][j] == 5)
+			{
+				check[i][j] = true;
+				one(i, j, 0);
+				one(i, j, 1);
+				one(i, j, 2);
+				one(i, j, 3);
+			}
+			else if (Room[i][j] == 6)
+				check[i][j] = true;
+			}
+		}
+
+		//재귀로 cctv돌리기
+		Run(0);
+
+		System.out.println(MMin);
+	}
+
+
+	public static void one(int x, int y,int a)
+	{
+		int nx = x+dx[a]; int ny = y+dy[a];
+		while (nx >= 0 && ny >= 0 && nx < N && ny < M && Room[nx][ny] < 5)
+		{
+			check[nx][ny] = true;
+			nx += dx[a];
+			ny += dy[a];
+		}
+	}
+
+
+	public static void clearone(int x, int y, int a)
+	{
+		int nx = x + dx[a]; int ny = y + dy[a];
+		while (nx >= 0 && ny >= 0 && nx < N && ny < M && Room[nx][ny] < 5)
+		{
+			check[nx][ny] = false;
+			nx += dx[a];
+			ny += dy[a];
+		}
+	}
+
+
+	public static void Run(int idx)
+	{
+
+		if (idx == NNN)
+		{
+			//사각지대세기
+			int count = 0;
+			for (int i = 0; i < N; i++)
+			{
+				for (int j = 0; j < M; j++)
+				{
+					if (check[i][j] == false) count++;
+				}
+			}
+			MMin = Math.min(MMin, count);
+
+			return;
+		}
+
+		Info cctvN = CCTV.get(idx);
+
+		if (cctvN.num == 1)
+		{
+			for (int i = 0; i < 4; i++) {
+				check[cctvN.row][cctvN.col] = true;
+				one(cctvN.row, cctvN.col, i);
+				Run(idx + 1);
+				clearone(cctvN.row, cctvN.col, i);
+				check[cctvN.row][cctvN.col] = false;
+			}
+		}
+		else if (cctvN.num == 2)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				check[cctvN.row][cctvN.col] = true;
+				one(cctvN.row, cctvN.col, i);
+				one(cctvN.row, cctvN.col, i+2);
+				Run(idx + 1);
+				clearone(cctvN.row, cctvN.col, i);
+				clearone(cctvN.row, cctvN.col, i + 2);
+				check[cctvN.row][cctvN.col] = false;
+			}
+		}
+		else if (cctvN.num == 3)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				check[cctvN.row][cctvN.col] = true;
+				one(cctvN.row, cctvN.col, i);
+				one(cctvN.row, cctvN.col, (i + 1)%4);
+				Run(idx + 1);
+				clearone(cctvN.row, cctvN.col, i);
+				clearone(cctvN.row, cctvN.col, (i + 1) % 4);
+				check[cctvN.row][cctvN.col] = false;
+			}
+		}
+		else if (cctvN.num == 4)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				check[cctvN.row][cctvN.col] = true;
+				one(cctvN.row, cctvN.col, i);
+				one(cctvN.row, cctvN.col, (i + 1) % 4);
+				one(cctvN.row, cctvN.col, (i + 2) % 4);
+				Run(idx + 1);
+				clearone(cctvN.row, cctvN.col, i);
+				clearone(cctvN.row, cctvN.col, (i + 1) % 4);
+				clearone(cctvN.row, cctvN.col, (i + 2) % 4);
+				check[cctvN.row][cctvN.col] = false;
+			}
+		}
+	}
+}

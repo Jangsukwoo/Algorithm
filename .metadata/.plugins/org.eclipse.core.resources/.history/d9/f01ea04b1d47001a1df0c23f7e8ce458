@@ -1,0 +1,10 @@
+package CodingStudySamsungProblem;
+/*
+ * 다리만들기 2 크루스칼로 풀어보기
+ */
+public class 다리만들기2 {
+	
+	public static void main(String[] args) {
+		
+	}
+}

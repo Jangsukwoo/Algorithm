@@ -1,0 +1,54 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class 활주로건설 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,X;
+	static int[][] map;
+	static int answer;
+	static boolean[][] slipway;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			widthCheck();
+			heightCheck();
+		}
+	}
+	private static void widthCheck() {
+		boolean possible = true;
+		for(int row=0,height;row<N;row++){//한 가로씩
+			height = map[row][0];
+			possible = true;
+			for(int col=1;col<N;col++){//열검사
+				if(height!=map[row][col]){//같지 않고 
+					
+				}
+			}
+		}
+	}
+	private static void heightCheck() {
+		
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		X = Integer.parseInt(st.nextToken());
+		map = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				map[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/*
+ * 다리만들기 2 크루스칼로 풀어보기
+ */
+public class 다리만들기2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,M;
+	static int[][] islandMap;
+	static int[][] map;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	public static void main(String[] args) throws IOException {
+		setData();
+		setIslandMap();
+	}
+	private static void setIslandMap(){
+		int num=1;
+		boolean[][] visit = new boolean[N][M];
+		for(int row=0;row<N;row++){
+			for(int col=0;col<M;col++){
+				if(map[row][col]==1 && visit[row][col]==false){
+					Queue<int[]> q = new LinkedList<int[]>();
+					q.add(new int[] {row,col});
+					visit[row][col] = true;
+					islandMap[row][col] = num;
+					while(!q.isEmpty()){
+						int[] current = q.poll();
+						for(int dir=0;dir<4;dir++) {
+							int nr = current[0]+dr[dir];
+							int nc = current[1]+dc[dir];
+							if(rangeCheck(nr,nc)) {
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr>=0 && nr<N && nc>=0 && nc<M) return true;
+		return false;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		map = new int[N][M];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<M;col++){
+				map[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

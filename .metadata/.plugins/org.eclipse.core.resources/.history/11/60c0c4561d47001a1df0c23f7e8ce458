@@ -1,0 +1,18 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+/*
+ * 다리만들기 2 크루스칼로 풀어보기
+ */
+public class 다리만들기2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	
+	public static void main(String[] args) {
+		
+	}
+}

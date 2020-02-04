@@ -27,7 +27,7 @@ public class 미세먼지안녕 {
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringTokenizer st;
 	static int R,C,T;
-	static int remainDust=0;
+	static int remainDust;
 	static int[][] room;
 	static int[][] spreadAmountMap;
 	static int cleanerR1,cleanerC1;

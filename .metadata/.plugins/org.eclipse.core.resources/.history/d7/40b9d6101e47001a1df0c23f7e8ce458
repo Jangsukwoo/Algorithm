@@ -1,0 +1,43 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+/*
+ * 다리만들기 2 크루스칼로 풀어보기
+ */
+public class 다리만들기2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,M;
+	static int[][] islandMap;
+	static int[][] map;
+	public static void main(String[] args) throws IOException {
+		setData();
+		setIslandMap();
+	}
+	private static void setIslandMap(){
+		for(int row=0;row<N;row++){
+			for(int col=0;col<M;col++){
+				
+			}
+		}
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		map = new int[N][M];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<M;col++){
+				map[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}
