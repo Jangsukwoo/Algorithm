@@ -82,8 +82,7 @@ public class 다리만들기2 {
 			testAdjMatrix[pickEdges.get(i).to][pickEdges.get(i).from] = pickEdges.get(i).cost;
 		}
 
-		if(pickEdges.size()>0) {//이부분에서 런타임에러가 났다.
-			//고른 엣지가 있는 경우에만 처리를 해줬어야 하는데 없는 상태에서 get(0)을 해버리니 런타임에러가..흑흑
+		if(pickEdges.size()>0) {
 			int num = pickEdges.get(0).from;
 			Queue<Integer> q = new LinkedList<Integer>();
 			q.add(num);
@@ -126,7 +125,15 @@ public class 다리만들기2 {
 				vertax[from] = true;
 				vertax[to] = true;
 				edgeSize++;
+//				System.out.println("묶는다 ");
+//				System.out.println(from+"의부모"+parent[from]);
+//				System.out.println(to+"의부모"+parent[to]);
+//				System.out.println("엣지정보"+from+" "+to+"코스트"+edges.get(i).cost);
 				union(from,to);
+//				System.out.println("바뀜");
+//				System.out.println(from+"의부모"+parent[from]);
+//				System.out.println(to+"의부모"+parent[to]);
+//				System.out.println();
 				answer+=edges.get(i).cost;
 			}
 		}
