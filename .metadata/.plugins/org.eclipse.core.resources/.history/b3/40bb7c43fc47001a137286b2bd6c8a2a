@@ -15,7 +15,7 @@ import java.util.StringTokenizer;
  * 1초 후 한칸에 상어가 두마리 이상 있는 경우에는
  * 가장 크기가 큰 상어가 나머지를 다 잡아먹는다.
  * 
- * 모얌 그냥 점화식 안구하고 그냥 돌렸는데 통과됐다....괜히 고민하지말고 완탐해버리자
+ * 모얌 그냥 점화식 안구하고 그냥 돌렸는데 통과됐다....
  */
 public class 낚시왕 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

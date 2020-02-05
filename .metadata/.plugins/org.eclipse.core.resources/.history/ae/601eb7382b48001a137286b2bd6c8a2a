@@ -82,25 +82,24 @@ public class 다리만들기2 {
 			testAdjMatrix[pickEdges.get(i).to][pickEdges.get(i).from] = pickEdges.get(i).cost;
 		}
 
-		if(pickEdges.size()>0) {
-			int num = pickEdges.get(0).from;
-			Queue<Integer> q = new LinkedList<Integer>();
-			q.add(num);
-			visitIsland[num]=true;
-			while(!q.isEmpty()){
-				num = q.poll();
-				for(int col=1;col<=(islandSize-1);col++){
-					if(testAdjMatrix[num][col]>0 && testAdjMatrix[num][col]<INF && visitIsland[col]==false){
-						q.add(col);
-						visitIsland[col] = true;
-					}
+
+		int num = pickEdges.get(0).from;
+		Queue<Integer> q = new LinkedList<Integer>();
+		q.add(num);
+		visitIsland[num]=true;
+		while(!q.isEmpty()){
+			num = q.poll();
+			for(int col=1;col<=(islandSize-1);col++){
+				if(testAdjMatrix[num][col]>0 && testAdjMatrix[num][col]<INF && visitIsland[col]==false){
+					q.add(col);
+					visitIsland[col] = true;
 				}
 			}
-			for(int i=1;i<=(islandSize-1);i++) {
-				if(visitIsland[i]==false) {
-					possible= false;
-					return;
-				}
+		}
+		for(int i=1;i<=(islandSize-1);i++) {
+			if(visitIsland[i]==false) {
+				possible= false;
+				return;
 			}
 		}
 	}

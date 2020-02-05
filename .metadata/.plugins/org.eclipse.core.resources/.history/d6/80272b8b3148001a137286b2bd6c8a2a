@@ -147,7 +147,7 @@ public class 다리만들기2 {
 			bParent = tmp;
 		}
 		parent[aParent] = bParent;
-		if(height[aParent]==height[bParent]) height[bParent]++;
+		if(height[aParent]==height[bParent]) height[bParent]+=height[aParent];
 	}
 	private static int find(int a) {
 		if(a==parent[a]) return a;

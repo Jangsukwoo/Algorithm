@@ -5,7 +5,70 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-05T02:56:07Z</updated>
+  <updated>2020-02-05T15:30:15Z</updated>
+  <entry>
+    <title>Spring Security 5.3.0.RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/05/spring-security-5-3-0-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Eleftheria Stein-Kousathana</name>
+    </author>
+    <id>tag:spring.io,2020-02-05:3953</id>
+    <updated>2020-02-05T15:30:15Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of
+Spring Security 5.3.0.RC1! You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.RC1"&gt;release notes&lt;/a&gt; and the highlights below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="rsocket"&gt;&lt;a class="anchor" href="#rsocket"&gt;&lt;/a&gt;RSocket&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7935-add-rsocket-authentication-extension-support"&gt;&lt;a class="anchor" href="#gh-7935-add-rsocket-authentication-extension-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7935"&gt;gh-7935&lt;/a&gt; - Add RSocket Authentication Extension Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="oauth-2-0"&gt;&lt;a class="anchor" href="#oauth-2-0"&gt;&lt;/a&gt;OAuth 2.0&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7699-introduce-reactive-oauth2authorization-successfailure-handlers"&gt;&lt;a class="anchor" href="#gh-7699-introduce-reactive-oauth2authorization-successfailure-handlers"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7699"&gt;gh-7699&lt;/a&gt; - Introduce Reactive OAuth2Authorization success/failure handlers&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-4886-add-jackson-support-to-oauth2-session-related-classes"&gt;&lt;a class="anchor" href="#gh-4886-add-jackson-support-to-oauth2-session-related-classes"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/4886"&gt;gh-4886&lt;/a&gt; - Add Jackson support to OAuth2 session related classes&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="test"&gt;&lt;a class="anchor" href="#test"&gt;&lt;/a&gt;Test&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7828-add-oauth2login-reactive-test-support"&gt;&lt;a class="anchor" href="#gh-7828-add-oauth2login-reactive-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7828"&gt;gh-7828&lt;/a&gt; - Add oauth2Login Reactive Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7886-add-oauth2client-mockmvc-test-support"&gt;&lt;a class="anchor" href="#gh-7886-add-oauth2client-mockmvc-test-support"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7886"&gt;gh-7886&lt;/a&gt; - Add oauth2Client MockMvc Test Support&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="docs"&gt;&lt;a class="anchor" href="#docs"&gt;&lt;/a&gt;Docs&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7801-modernize-documentation-styling"&gt;&lt;a class="anchor" href="#gh-7801-modernize-documentation-styling"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7801"&gt;gh-7801&lt;/a&gt; - Modernize Documentation Styling&lt;/h5&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="https://docs.spring.io/spring-security/site/docs/5.3.0.RC1/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
+| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - February 4th, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/05/this-week-in-spring-february-4th-2020" />
@@ -1146,19 +1209,6 @@ fun someFlow() =
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.1.RELEASE/reference/html/"&gt;Documentation for 2.2.1.RELEASE&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.5.RELEASE/reference/html/"&gt;Documentation for 2.1.5.RELEASE&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Cloud Services' Bella (Yuxin) Bai</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/17/a-bootiful-podcast-spring-cloud-services-bella-yuxin-bai" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-17:3934</id>
-    <updated>2020-01-17T03:21:33Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this week&amp;rsquo;s installment Josh Long (@starbuxman) talks to Spring Cloud Services teammate Bella (Yuxin) Bai.&lt;/p&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/744740773&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
