@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
+
 /*
  * 낚시꾼은 한칸씩 옆으로 이동함.
  * 상어는 각자 방향과 크기를 가지고 있고 
@@ -14,7 +15,7 @@ import java.util.StringTokenizer;
  * 1초 후 한칸에 상어가 두마리 이상 있는 경우에는
  * 가장 크기가 큰 상어가 나머지를 다 잡아먹는다.
  * 
- * 
+ * 모얌 그냥 점화식 안구하고 그냥 돌렸는데 통과됐다....
  */
 public class 낚시왕 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,7 +25,7 @@ public class 낚시왕 {
 	static PriorityQueue<Shark>[][] aquariumPQueue;
 	static int[] dr = {-1,0,1,0};
 	static int[] dc = {0,1,0,-1};
-	static class Shark implements Comparator<Shark>{
+	static class Shark{
 		int row;
 		int col;
 		int speed;
@@ -37,21 +38,19 @@ public class 낚시왕 {
 			this.dir = dir;
 			this.size = size;
 		}
-		@Override
-		public int compare(Shark o1, Shark o2) {
-			return -Integer.compare(o1.size,o2.size);//크기 내림차순 
-		}
 	}
 	public static void main(String[] args) throws IOException {
 		setData();
 		fishing();
+		System.out.println(getSharkSize);
 	}
 
 	private static void fishing() {
 		for(int col=1;col<=C;col++){//낚시꾼 한칸씩 이동 
 			for(int row=1;row<=R;row++){//작살 
 				if(aquariumPQueue[row][col].size()>0){//상어가 있으면 
-					getSharkSize+=aquariumPQueue[row][col].poll().size;//상어를 빼고 크기를 더해준다.
+					int sharkSize = aquariumPQueue[row][col].poll().size;
+					getSharkSize+=sharkSize;//상어를 빼고 크기를 더해준다.
 					break;
 				}
 			}
@@ -64,17 +63,41 @@ public class 낚시왕 {
 		for(Shark currentShark : allSharkList){//한마리씩 이동 처리 
 			//상어가 가진 속도와 방향에 따라 1초 뒤에 위치 결정해주기
 			//다음 위치 결정식을 어떻게 세워야하나..
-			switch (currentShark.dir){
-			case 0://상
-				break;
-			case 1://우
-				break;
-			case 2://하
-				break;
-			case 3://좌
-				break;
+			//그냥 돌려보자
+			int nr = currentShark.row;
+			int nc = currentShark.col;
+			int dir = currentShark.dir;
+			for(int i=0;i<currentShark.speed;i++){
+				switch (dir) {
+				case 0:
+					if(nr==1) {
+						dir=(dir+2)%4;
+						nr+=dr[dir];
+					}else nr+=dr[dir];
+					break;
+				case 1:
+					if(nc==C) {
+						dir=(dir+2)%4;
+						nc+=dc[dir];
+					}else nc+=dc[dir];
+					break;
+				case 2:
+					if(nr==R){
+						dir=(dir+2)%4;
+						nr+=dr[dir];
+					}else nr+=dr[dir];
+					break;
+				case 3:
+					if(nc==1) {
+						dir=(dir+2)%4;
+						nc+=dc[dir];
+					}else nc+=dc[dir];
+					break;
+				}
 			}
-			
+			currentShark.row=nr;
+			currentShark.col=nc;
+			currentShark.dir=dir;
 		}
 		insertAquarium(allSharkList);//상어들 자신의 새로운 위치, 다시 수족관으로
 		setSurviveShark();//한 칸에 두마리 이상 있는 경우 잡아먹히는 처리 
@@ -111,8 +134,14 @@ public class 낚시왕 {
 		C = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		aquariumPQueue = new PriorityQueue[R+1][C+1];
+		Comparator<Shark> cp = new Comparator<Shark>() {
+			@Override
+			public int compare(Shark o1, Shark o2) {
+				return -Integer.compare(o1.size,o2.size);//크기 내림차순 
+			}
+		};
 		for(int row=1;row<=R;row++)
-			for(int col=1;col<=C;col++) aquariumPQueue[row][col] = new PriorityQueue<Shark>();
+			for(int col=1;col<=C;col++) aquariumPQueue[row][col] = new PriorityQueue<Shark>(cp);
 		for(int i=0,row,col,speed,dir,size;i<M;i++) {
 			st = new StringTokenizer(br.readLine());
 			row = Integer.parseInt(st.nextToken());
