@@ -1,0 +1,15 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 낚시왕 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int R,C,M;//row,col,상어수
+	static int sharkSize;
+	public static void main(String[] args) {
+
+	}
+}

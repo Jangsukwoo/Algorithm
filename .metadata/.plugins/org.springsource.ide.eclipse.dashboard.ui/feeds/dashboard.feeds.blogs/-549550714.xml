@@ -5,7 +5,184 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-01T04:49:33Z</updated>
+  <updated>2020-02-05T02:56:07Z</updated>
+  <entry>
+    <title>This Week in Spring - February 4th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/05/this-week-in-spring-february-4th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-02-05:3952</id>
+    <updated>2020-02-05T02:56:07Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I just finished spending a wonderful afternoon with customers and now I&amp;rsquo;m pouring through all the wonderful new content for this week. As usual, we&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The Java at Microsoft blog has a nice recap of &lt;a href="https://devblogs.microsoft.com/java/whats-new-in-azure-spring-cloud-jan-update/"&gt;what¡¯s new in Azure Spring Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/04/spring-cloud-app-broker-1-1-0-m1-released"&gt;Spring Cloud App Broker 1.1.0.M1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/04/spring-session-dragonfruit-m1-corn-sr1-and-bean-sr9-released"&gt;Spring Session Dragonfruit-M1, Corn-SR1 and Bean-SR9 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/04/spring-cloud-data-flow-2-4-0-released"&gt;Spring Cloud Data Flow 2.4.0 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/01/spring-boot-for-apache-geode-pivotal-gemfire-1-1-5-release-1-2-4-release-and-1-3-0-m1-are-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.5.RELEASE, 1.2.4.RELEASE and 1.3.0.M1 are available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/01/spring-session-for-apache-geode-pivotal-gemfire-2-1-8-release-2-2-2-release-and-2-3-0-m1-are-now-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.8.RELEASE, 2.2.2.RELEASE and 2.3.0.M1 are now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/01/spring-cloud-greenwich-service-release-5-sr5-is-available"&gt;Spring Cloud Greenwich Service Release 5 (SR5) is available.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/30/the-phoenix-project-and-the-unicorn-project-author-gene-kim"&gt;&amp;ldquo;The Phoenix Project&amp;rdquo; and &amp;ldquo;The Unicorn Project&amp;rdquo; author Gene Kim&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcloud/status/1224721224858849280"&gt;This is a very useful reminder on how we name Spring Cloud releases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1224460094206816256"&gt;Happy 5th Birthday, CloudFoundry Foundation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rseroter/status/1224450089873076224?s=12"&gt;The new JRebel 2020 report&lt;/a&gt; has some interesting findings including, but not limited to, the fact that Spring Boot (82%! Nothing else even matters or comes close, staying in the 1% range&amp;hellip;) dominates the majority of workloads, followed by DropWizard, and that PostgreSQL is the dominant database.&lt;/li&gt;
+  &lt;li&gt;Greg Turnquist does an epic job introducing the &lt;a href="https://m.youtube.com/watch?v=9l2c83LwBec&amp;feature=youtu.be"&gt;the Fundamentals of Spring Boot &lt;/a&gt; in this YouTube video&lt;/li&gt;
+  &lt;li&gt;Tom Prior has a nice post on &lt;a href="https://tompriordev.com/2020/02/02/easy-boarding-with-kotlin-and-pcf/"&gt;easy boarding with Kotlin and Cloud Foundry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this post demonstrating how to do end-to-end &lt;a href="https://twitter.com/springboot/status/1222904265888260096"&gt;testing with TestContainer and Spring Boot 2.3.0.M1&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;This is a cool post on using &lt;a href="https://www.reddit.com/r/SpringBoot/comments/evlyxf/spring_integration_manipulate_rss_feed_data_and/?utm_name=iossmf"&gt;Spring Integration to manipulate RSS feed data and write to files&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out the Spring Cloud App Broker community channel &lt;a href="https://twitter.com/springcloud/status/1222655978220507144"&gt;on Gitter.im&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud App Broker 1.1.0.M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/04/spring-cloud-app-broker-1-1-0-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2020-02-04:3951</id>
+    <updated>2020-02-04T18:25:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the release of Spring Cloud App Broker 1.1.0.M1. Thanks to the community for your feedback and contributions! This release includes the following fixes and enhancements:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade to Spring Boot 2.2.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Upgrade to Spring Cloud Open Service Broker 3.1.0.RELEASE&lt;/li&gt;
+  &lt;li&gt;Upgrade to Cloud Foundry Java Client 4.1.0.RELEASE&lt;/li&gt;
+  &lt;li&gt;Log warnings when auto-configuration enables an &lt;code&gt;ServiceInstanceStateRepository&lt;/code&gt; or &lt;code&gt;ServiceInstanceBindingStateRepository&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Document example implementation of &lt;code&gt;ServiceInstanceStateRepository&lt;/code&gt; and &lt;code&gt;ServiceInstanceBindingStateRepository&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Update reference docs to use new Spring docs style&lt;/li&gt;
+  &lt;li&gt;Exclude tests from docs and distribution zips&lt;/li&gt;
+  &lt;li&gt;Replace InMemory repository Map data structure&lt;/li&gt;
+  &lt;li&gt;Truncate app name if too long when using &lt;code&gt;ServiceInstanceGuidSuffix&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;UpdateServiceInstance&lt;/code&gt; will now create and bind new backing services, and unbind and delete old backing services&lt;/li&gt;
+  &lt;li&gt;Fix reference documentation publication&lt;/li&gt;
+  &lt;li&gt;Support custom BrokeredServices to be injected by custom configuration&lt;/li&gt;
+  &lt;li&gt;Add support to configure API polling duration to support async backing services&lt;/li&gt;
+  &lt;li&gt;Support a brokered service without a backing application&lt;/li&gt;
+  &lt;li&gt;Migrate to Reactive Spring CredHub APIs&lt;/li&gt;
+  &lt;li&gt;Allowing ServiceInstanceService as a provided Service&lt;/li&gt;
+  &lt;li&gt;Enable Blockhound&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-app-broker-cloudfoundry&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.1.0.M1&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use the Spring Milestone Repository:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;repository&amp;gt;&#xD;
+  &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+  &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+&amp;lt;/repository&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-app-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-app-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-app-broker/docs/1.1.0.M1/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-app-broker/docs/1.1.0.M1/api/"&gt;API Doc&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session Dragonfruit-M1, Corn-SR1 and Bean-SR9 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/04/spring-session-dragonfruit-m1-corn-sr1-and-bean-sr9-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Eleftheria Stein-Kousathana</name>
+    </author>
+    <id>tag:spring.io,2020-02-04:3950</id>
+    <updated>2020-02-04T16:37:18Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community I¡¯m pleased to announce the releases of Spring Session &lt;code&gt;Dragonfruit-M1&lt;/code&gt;, &lt;code&gt;Corn-SR1&lt;/code&gt; and &lt;code&gt;Bean-SR9&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="spring-session-dragonfruit-m1"&gt;&lt;a class="anchor" href="#spring-session-dragonfruit-m1"&gt;&lt;/a&gt;Spring Session &lt;code&gt;Dragonfruit-M1&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;Dragonfruit-M1&lt;/code&gt; release is based on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session core modules &lt;code&gt;2.3.0.M1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data Geode &lt;code&gt;2.3.0.M1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data MongoDB &lt;code&gt;2.3.0.M1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Additional details of these releases can be found in &lt;a href="https://github.com/spring-projects/spring-session/milestone/71?closed=1"&gt;the changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="spring-session-corn-sr1"&gt;&lt;a class="anchor" href="#spring-session-corn-sr1"&gt;&lt;/a&gt;Spring Session &lt;code&gt;Corn-SR1&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;Corn-SR1&lt;/code&gt; release is based on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session core modules &lt;code&gt;2.2.1.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data Geode &lt;code&gt;2.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data MongoDB &lt;code&gt;2.2.2.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Additional details of these releases can be found in &lt;a href="https://github.com/spring-projects/spring-session/milestone/70?closed=1"&gt;the changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="spring-session-bean-sr9"&gt;&lt;a class="anchor" href="#spring-session-bean-sr9"&gt;&lt;/a&gt;Spring Session &lt;code&gt;Bean-SR9&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;Bean-SR9&lt;/code&gt; release is based on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session core modules &lt;code&gt;2.1.10.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data Geode &lt;code&gt;2.1.8.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Session Data MongoDB &lt;code&gt;2.1.6.RELEASE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Additional details of these releases can be found in &lt;a href="https://github.com/spring-projects/spring-session/milestone/69?closed=1"&gt;the changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-session/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-session/docs/2.2.0.M2/reference/html5/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-session"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.4.0 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/04/spring-cloud-data-flow-2-4-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2020-02-04:3949</id>
+    <updated>2020-02-04T07:20:07Z</updated>
+    <content type="html">&lt;p&gt;The release 2.4.0 mainly focused on the UI updates and selected enhacements. Our post for &lt;a href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-4-0-m1-released"&gt;2.4.0.M1&lt;/a&gt; contains more info about the changes.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.1.5.RELEASE, 1.2.4.RELEASE and 1.3.0.M1 are available</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/01/spring-boot-for-apache-geode-pivotal-gemfire-1-1-5-release-1-2-4-release-and-1-3-0-m1-are-available" />
@@ -982,97 +1159,6 @@ fun someFlow() =
     <updated>2020-01-17T03:21:33Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this week&amp;rsquo;s installment Josh Long (@starbuxman) talks to Spring Cloud Services teammate Bella (Yuxin) Bai.&lt;/p&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/744740773&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.3 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/16/spring-boot-2-2-3-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-01-16:3933</id>
-    <updated>2020-01-16T21:20:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.3 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.3.RELEASE"&gt;75 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory:&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.2.3 which contains fixes for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt; and &lt;a href="https://pivotal.io/security/cve-2020-5397"&gt;CVE-2020-5397&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.1.12 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/16/spring-boot-2-1-12-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-01-16:3931</id>
-    <updated>2020-01-16T21:15:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.12 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.12.RELEASE"&gt;39 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory:&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Framework 5.1.13 which contains a fix for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 5.2.3, 5.1.13, 5.0.16, and 4.3.26 releases</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/16/spring-framework-5-2-3-5-1-13-5-0-16-and-4-3-26-releases" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rossen Stoyanchev</name>
-    </author>
-    <id>tag:spring.io,2020-01-14:3928</id>
-    <updated>2020-01-16T21:06:00Z</updated>
-    <content type="html">&lt;p&gt;After unfavorable weather on Maven central caused service disruption much of today, skies have finally cleared up, and I am pleased to announce a full round of Spring Framework releases: the &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.3.RELEASE"&gt;5.2.3 release&lt;/a&gt; on the current production branch, along with maintenance branch releases &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.13.RELEASE"&gt;5.1.13&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.0.16.RELEASE"&gt;5.0.16&lt;/a&gt;, and &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v4.3.26.RELEASE"&gt;4.3.26&lt;/a&gt; with selected backports.&lt;/p&gt;
-&lt;p&gt;Please note that the 5.0.x and 4.3.x lines have reached the end of active maintenance, with just one final wrap-up release expected on each branch before the official EOL date at the end of this year. The 5.1.x line remains active but will be updated less frequently (~ once a quarter) than the 5.2.x line (~ every six weeks) throughout 2020. For more details, please check the &lt;a href="https://spring.io/blog/2019/12/03/spring-framework-maintenance-roadmap-in-2020-including-4-3-eol"&gt;2020 Roadmap&lt;/a&gt; blog post. TL;DR: Please upgrade to 5.2+ at your earliest convenience!&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory:&lt;/h3&gt;
-&lt;p&gt;Spring Framework 5.2.3, 5.1.13, and 5.0.16 include fixes for &lt;a href="https://pivotal.io/security/cve-2020-5398"&gt;CVE-2020-5398&lt;/a&gt; while Spring Framework 5.2.3 also includes a fix for &lt;a href="https://pivotal.io/security/cve-2020-5397"&gt;CVE-2020-5397&lt;/a&gt;. The corresponding Spring Boot &lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-2-3-released"&gt;2.2.3&lt;/a&gt; and &lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-1-12-released"&gt;2.1.12&lt;/a&gt; releases are now also available.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data Neumann M1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/16/spring-data-neumann-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-01-16:3932</id>
-    <updated>2020-01-16T15:35:24Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the Spring Data team, I¡¯m happy to announce the first milestone of the &lt;a href="https://en.wikipedia.org/wiki/Klara_Dan_von_Neumann"&gt;Neumann&lt;/a&gt; release train. This release ships &lt;a href="https://jira.spring.io/issues/?filter=16731"&gt;over 260 tickets fixed&lt;/a&gt;. The Neumann release train is planned to ship major driver upgrades. This initial milestone covers all of our major version increments and ships driver upgrades to Elasticsearch 7 and the DataStax Java driver 4.3 for Apache Cassandra.&lt;/p&gt;
-&lt;p&gt;The most important new features are:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Repository support for Kotlin Coroutines.&lt;/li&gt;
-  &lt;li&gt;Upgrade to Cassandra Driver 4.&lt;/li&gt;
-  &lt;li&gt;Upgrade to Elasticsearch 7.&lt;/li&gt;
-  &lt;li&gt;Major refactoring of the Spring Data Elasticsearch Template API. Reactive client based on &lt;code&gt;WebClient&lt;/code&gt; and reactive repository support.&lt;/li&gt;
-  &lt;li&gt;Upgrade to Solr 8.4.&lt;/li&gt;
-  &lt;li&gt;Upgrade to Geode 1.10.&lt;/li&gt;
-  &lt;li&gt;Support for fully immutable types (setting properties via copy constructors).&lt;/li&gt;
-  &lt;li&gt;Spring Data R2DBC is part of the Spring Data release train.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Find a curated changelog in our &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Neumann"&gt;release train wiki&lt;/a&gt; or skim through a &lt;a href="https://jira.spring.io/issues/?filter=16731"&gt;full list of changes in JIRA&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;re working towards a second milestone in February and a third one in March. The next milestone Neumann M2 is planned to ship with driver upgrades for MongoDB and Couchbase. Finally, the GA release is planned for late April.&lt;/p&gt;
-&lt;p&gt;We¡¯re looking forward to your feedback!&lt;/p&gt;
-&lt;p&gt;To round things off, here&amp;rsquo;s the full list that takes you to the artifacts and documentation:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jdbc/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-geode/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.2 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/4.2.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data R2DBC 1.1 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-r2dbc/1.1.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-ldap/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.3 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 4.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/4.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 4.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/4.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

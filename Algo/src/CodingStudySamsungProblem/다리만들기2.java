@@ -16,6 +16,16 @@ import java.util.StringTokenizer;
  * 다리만들기 2 크루스칼로 풀어보기
  * 
  * 푸는중
+9 6
+0 0 0 0 1 0 
+0 0 0 0 0 0 
+0 1 0 0 0 1 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 1 0 0 1 1 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 1 0 0 0 0
  */
 public class 다리만들기2 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -108,10 +118,12 @@ public class 다리만들기2 {
 		for(int i=0,from,to;i<edges.size();i++){
 			from = edges.get(i).from;
 			to = edges.get(i).to;
+			if(edgeSize==(islandSize-2)) return;
 			if(parent[from]!=parent[to] && edges.get(i).cost>=2){
 				pickEdges.add(edges.get(i));
 				vertax[from] = true;
 				vertax[to] = true;
+				edgeSize++;
 //				System.out.println("묶는다 ");
 //				System.out.println(from+"의부모"+parent[from]);
 //				System.out.println(to+"의부모"+parent[to]);
