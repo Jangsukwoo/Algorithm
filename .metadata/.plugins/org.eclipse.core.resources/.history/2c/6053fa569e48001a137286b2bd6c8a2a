@@ -68,7 +68,7 @@ public class 연구소3 {
 			}
 		}
 		int time=0;
-		q.clear();//큐를 클리어 해줬어야지~!!
+		q.clear();
 		for(int i=0;i<M;i++) insertQueue(viruslist.get(pickVirus[i]),0);
 		while(!q.isEmpty()) {
 			if(completeCheck()) {
