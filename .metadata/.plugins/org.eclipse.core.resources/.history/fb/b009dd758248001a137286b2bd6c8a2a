@@ -1,0 +1,95 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 
+ */
+public class 원판돌리기 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int[][] circleBoard;
+	static int N,M,T;//반지름,적힌숫자크기,회전수
+	static int x,d,k;//x의 배수인 원판을 d방향으로 k칸 회전
+	//0은 시계방향 1은 반시계방향
+	//인접하면서 수가 같은 것은 모두 지운다.
+	//없는 경우는 원판에 적힌 수의 평균을 구한 뒤 평균보다 큰 수에서 1을 빼고 작은수에는 1을 더함
+	static StringTokenizer st;
+	static int circleBoardSum;
+	static boolean[][] adjoinPosition;
+	public static void main(String[] args) throws IOException {
+		setData();
+		rotate();
+	}
+	private static void rotate() {
+		for(int spin=0;spin<T;spin++) {//T번 회전
+			multipleXNumberRotate();//배수들 전부 돌린 뒤
+			if(adjoinCheck()){
+				//인접한 수가 있는지. 있다면 다 지운다.
+			}
+		}
+	}
+
+	private static boolean adjoinCheck() {
+		boolean adjoinFlag = false;
+		adjoinPosition = new boolean[N+1][M];
+		for(int radius=2;radius<N;radius++){//판과 판의 인접 조사
+			for(int i=0;i<M;i++){
+				if(circleBoard[radius-1][i]==circleBoard[radius][i]) {
+					adjoinFlag=true;
+					adjoinPosition[radius-1][i]=true;
+					adjoinPosition[radius][i]=true;
+				}else if(circleBoard[radius+1][i]==circleBoard[radius][i]) {
+					adjoinFlag=true;
+					adjoinPosition[radius][i] = true;
+					adjoinPosition[radius+1][i] = true;
+				}
+			}
+		}
+		
+		return adjoinFlag;
+	}
+	private static void multipleXNumberRotate() {
+		for(int radius=1;radius<=N;radius++) {
+			if(x%radius==0){//x의 배수면
+				for(int i=0;i<k;i++){//k칸 회전 
+					if(d==0) {//시계
+						clockWise(radius);
+					}else if(d==1){//반시계
+						counterClockWise(radius);
+					}
+				}
+			}
+		}
+		
+	}
+	private static void clockWise(int radius) {
+		int temp = circleBoard[radius][M-1];
+		for(int i=M-1;i>0;i--) circleBoard[radius][i] = circleBoard[radius][i-1];
+		circleBoard[radius][0]=temp;
+	}
+	private static void counterClockWise(int radius) {
+		int temp = circleBoard[radius][0];
+		for(int i=0;i<(M-1);i++) circleBoard[radius][i] = circleBoard[radius][i+1];
+		circleBoard[radius][M-1]=temp;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		T = Integer.parseInt(st.nextToken());
+		circleBoard = new int[N+1][M];
+		for(int radius=1;radius<=N;radius++){
+			st = new StringTokenizer(br.readLine());
+			for(int position =0; position<M;position++) {
+				circleBoard[radius][position] = Integer.parseInt(st.nextToken());
+			}
+		}
+		st = new StringTokenizer(br.readLine());
+		x = Integer.parseInt(st.nextToken());
+		d = Integer.parseInt(st.nextToken());
+		k = Integer.parseInt(st.nextToken());
+	}
+}

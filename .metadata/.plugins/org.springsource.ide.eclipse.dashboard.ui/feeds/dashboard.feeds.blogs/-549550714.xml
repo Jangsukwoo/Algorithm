@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-05T15:30:15Z</updated>
+  <updated>2020-02-05T19:59:48Z</updated>
+  <entry>
+    <title>Spring Security 5.2.2, 5.1.8 and 5.0.14 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/05/spring-security-5-2-2-5-1-8-and-5-0-14-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2020-02-05:3954</id>
+    <updated>2020-02-05T19:59:48Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 5.2.2 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.2.2.RELEASE"&gt;release notes&lt;/a&gt;), 5.1.8 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.1.8.RELEASE"&gt;release notes&lt;/a&gt;) and 5.0.14 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.0.14.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Security 5.3.0.RC1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/05/spring-security-5-3-0-rc1-released" />
@@ -1183,32 +1200,6 @@ fun someFlow() =
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.4.RELEASE"&gt;6 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt; and was released shortly after Spring Boot 2.2.3 to &lt;a href="https://github.com/spring-projects/spring-boot/issues/19783"&gt;work around a dependency resolution problem with Gradle 5.3 to 5.6&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Vault 2.2.1.RELEASE and 2.1.5.RELEASE available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/17/spring-vault-2-2-1-release-and-2-1-5-release-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-01-16:3930</id>
-    <updated>2020-01-17T08:42:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;d like to announce the availability of Spring Vault releases &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; and &lt;code&gt;2.1.5.RELEASE&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both releases ship with mostly bugfixes and dependency upgrades. Spring Vault &lt;code&gt;2.2.1.RELEASE&lt;/code&gt; ships also support to disable authentication and session management so it can be used with Vault Agent&amp;#8217;s cached authentication.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For a complete list of changes, see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.1.RELEASE/changelog.txt"&gt;2.2.1.RELEASE changelog&lt;/a&gt; respective &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.5.RELEASE/changelog.txt"&gt;2.1.5.RELEASE changelog&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this release, we&amp;#8217;d also like to announce that Spring Vault 2.1.x is going to end of life in November 2020. We encourage all users to upgrade to the latest release of the 2.2.x line. You can find more details about the supported versions on our &lt;a href="https://github.com/spring-projects/spring-vault/wiki/Spring-Vault-Versions"&gt;versions overview&lt;/a&gt; in the GitHub repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.1.RELEASE/reference/html/"&gt;Documentation for 2.2.1.RELEASE&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.5.RELEASE/reference/html/"&gt;Documentation for 2.1.5.RELEASE&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
