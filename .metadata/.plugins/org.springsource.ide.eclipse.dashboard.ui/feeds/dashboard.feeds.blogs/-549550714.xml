@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-05T19:59:48Z</updated>
+  <updated>2020-02-06T14:47:59Z</updated>
+  <entry>
+    <title>Spring Security 4.2.14 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/06/spring-security-4-2-14-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2020-02-06:3955</id>
+    <updated>2020-02-06T14:47:59Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 4.2.14 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/4.2.14.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes, dependency updates, and improvements with our build. Users are encouraged to update to the latest patch release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Security 5.2.2, 5.1.8 and 5.0.14 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/05/spring-security-5-2-2-5-1-8-and-5-0-14-released" />
@@ -1185,21 +1202,6 @@ fun someFlow() =
   &lt;li&gt;This is an interesting post on two of my favorite pieces of cloud infrastructure: &lt;a href="https://www.starkandwayne.com/blog/running-cloud-foundry-on-kubernetes-using-kubecf/"&gt;Running Cloud Foundry on Kubernetes using KubeCF&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://www.wavefront.com/how-to-instrument-and-monitor-your-springboot-2-application-on-kubernetes-using-wavefront/"&gt;How to Instrument and Monitor Your Spring Boot 2 Application in Kubernetes Using Wavefront - Wavefront by VMware&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.4 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/20/spring-boot-2-2-4-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-01-20:3935</id>
-    <updated>2020-01-20T20:27:23Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.4 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.4.RELEASE"&gt;6 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt; and was released shortly after Spring Boot 2.2.3 to &lt;a href="https://github.com/spring-projects/spring-boot/issues/19783"&gt;work around a dependency resolution problem with Gradle 5.3 to 5.6&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

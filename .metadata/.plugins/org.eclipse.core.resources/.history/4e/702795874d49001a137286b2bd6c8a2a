@@ -1,0 +1,64 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+/*
+ * 2차원 게임판 맵이 있음
+ * -1 : 블랙홀
+ * 0 : 빈공간
+ * 1~5 : 블록
+ * 6~10 : 웜홀
+ * 
+ * 벽이나 블록에 부딪혔을 떄 점수를 획득 함
+ * 임의의 빈공간에서 임의의 방향으로 출발시켰을 떄 
+ * 얻을 수 있는 최대의 점수.
+ * 블랙홀을 만나거나 출발위치로 돌아왔을 떄 게임은 끝난ㄴ다 
+ * 
+ * 제약사항
+ * 웜홀과 블랙홀이 존재하지 않을 수도 있음.
+ * 웜홀은 서로 묶여있고 
+ * 
+ *
+ */
+public class 핀볼게임 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int[][] pinballMap;
+	static boolean[][][] visit;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	static int N;
+	static int score;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			gameStart();
+		}
+	}
+	private static void gameStart() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				if(pinballMap[row][col]>=0 && pinballMap[row][col]<=5){
+					//빈공간이거나 블록 
+				}
+			}
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		pinballMap = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++){
+				pinballMap[row][col] = Integer.parseInt(st.nextToken());
+				//웜홀 묶기 
+			}
+		}
+	}
+}
