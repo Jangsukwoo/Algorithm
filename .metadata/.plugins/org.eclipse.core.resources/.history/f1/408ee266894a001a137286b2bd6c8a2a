@@ -24,10 +24,11 @@ import java.util.Scanner;
 public class 주사위윷놀이 {
 	static int[] dice = new int[10];
 	static int[] redline = new int[] {0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40};
-	static boolean[] rVisit,crVisit;
 	static int[] centerRedline = new int[] {25,30,35,40};//마지막 40도 처리해줘야할듯
 	static int[][] blueline;
 	static boolean[][] bluelineVisit;
+	static boolean[] rVisit,crVisit;
+	static boolean[] b1Visit,b2Visit,b3Visit;
 	static boolean[] arriveHorse;
 	static Horse[] horselist = new Horse[4];
 	static int score;
@@ -60,9 +61,9 @@ public class 주사위윷놀이 {
 		rVisit = new boolean[redline.length];
 		crVisit = new boolean[centerRedline.length];
 		arriveHorse = new boolean[4];
-		bluelineVisit[0] = new boolean[blueline[0].length];
-		bluelineVisit[1] = new boolean[blueline[1].length];
-		bluelineVisit[2] = new boolean[blueline[2].length];
+		bluelineVisit = new boolean[0][blueline[0].length];
+		bluelineVisit = new boolean[1][blueline[1].length];
+		bluelineVisit = new boolean[2][blueline[2].length];
 		score=0;
 		int horseIdx=0;
 		int[] testcase = new int[] {0,0,1,0,2,2,2,0,0,2};//말 한마리만 이동해보자
@@ -159,6 +160,10 @@ public class 주사위윷놀이 {
 				if(nextBlueIdx==(bluelineVisit[bluelineIdx].length-1)){//만약 가려는곳이 센터전환점이면
 					if(crVisit[0]==false){//아무도 방문 안되어있으면 
 						crVisit[0]=true;
+						System.out.println(bluelineVisit[bluelineIdx].length);
+						System.out.println(bluelineIdx);
+						System.out.println(nextBlueIdx);
+						System.out.println("걸림?"+blueline[bluelineIdx][nextBlueIdx]);
 						score+=blueline[bluelineIdx][nextBlueIdx];//스코어 획득
 						horselist[horseIdx].centerlineIdx = 0;
 						horselist[horseIdx].line="center";//센터라인에 올림
@@ -228,9 +233,11 @@ public class 주사위윷놀이 {
 		Scanner sc = new Scanner(System.in);
 		for(int i=0;i<10;i++) dice[i] = sc.nextInt();//주사위
 		blueline = new int[][]{{10,13,16,19,25},{20,22,24,25},{30,28,27,26,25}};
-		bluelineVisit = new boolean[3][];
-		bluelineVisit[0] = new boolean[blueline[0].length];
-		bluelineVisit[1] = new boolean[blueline[1].length];
-		bluelineVisit[2] = new boolean[blueline[2].length];
+		bluelineVisit = new boolean[0][blueline[0].length];
+		bluelineVisit = new boolean[1][blueline[1].length];
+		bluelineVisit = new boolean[2][blueline[2].length];
+		System.out.println(bluelineVisit[0].length);
+		System.out.println(bluelineVisit[1].length);
+		System.out.println(bluelineVisit[2].length);
 	}
 }
