@@ -1,0 +1,123 @@
+package CodingStudySamsungProblem;
+
+import java.util.Scanner;
+
+/*
+ * 주사위 윷놀이판이 있고
+ * 처음에 시작칸에 말 4개가 있음
+ * 말은 게임판에 적힌 화살표 방향으로 움직임
+ * 칸의 색에 따라 움직이는 방향이 정해져있고
+ * 시작과 도착칸은 말이 이미 있어도 이동할 수 있지만
+ * 다른 이동하려고하는 칸에 이미 말이 있는 경우
+ * 그 칸으로 이동할 수 없다.
+ * 도착칸을 넘어가면
+ * 그 칸에서 멈춤 
+ * 
+ * 말이 이동할 때마다 그 칸에 있는 점수가 추가된다. 
+ * 최종적으로 얻는 스코어는?
+ * 
+ * 맵을 어떻게 만들지
+ */
+public class 주사위윷놀이 {
+	static int[] dice = new int[10];
+	static int[] redline = new int[] {0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40};
+	static int[] blueline1 = new int[] {10,13,16,19};//우
+	static int[] blueline2 = new int[] {20,22,24};//상
+	static int[] blueline3 = new int[] {30,28,27,26};//좌
+	static int[] centerRedline = new int[] {25,30,35,40};//마지막 40도 처리해줘야할듯
+	static boolean[] rVisit,crVisit;
+	static boolean[] b1Visit,b2Visit,b3Visit;
+	static Horse[] horselist = new Horse[4];
+	static int score;
+	static class Horse{
+		String line;
+		int bluelineNumber;
+		int bluelineIdx;
+		int redlineIdx;
+		public Horse(String line, int bluelineNumber, int bluelineIdx, int redlineIdx) {
+			this.line = line;
+			this.bluelineNumber = bluelineNumber;
+			this.bluelineIdx = bluelineIdx;
+			this.redlineIdx = redlineIdx;
+		}
+		
+	}
+	public static void main(String[] args) {
+		setData();
+		play();
+	}
+	
+	private static void play() {
+		int horseIdx=0;
+		for(int i=0,move;i<10;i++){//주사위 하나씩
+			move = dice[i];
+			if(movePossibleCheck(move,horseIdx)){//이동 가능하면 보낸다.
+				
+			}
+			horseIdx=(horseIdx+1)%4;//다음 말 인덱스
+		}
+	}
+
+	private static boolean movePossibleCheck(int move,int horseIdx) {
+		switch (horselist[horseIdx].line) {
+		case "red":
+			int currentRedIdx = horselist[horseIdx].redlineIdx;
+			int nextRedIdx = currentRedIdx+move;
+			if(rVisit.length>nextRedIdx){//영역 안에 있고 
+				if(rVisit[nextRedIdx]==false && crVisit[crVisit.length-1]==false){//false면
+					rVisit[nextRedIdx] = true;
+					rVisit[currentRedIdx] = false;//떠남
+					if(nextRedIdx==(rVisit.length-1)){//마지막 값이면
+						crVisit[crVisit.length-1]=true;
+					}
+					score+=redline[nextRedIdx];//스코어 획득
+					if(redline[nextRedIdx]==10){
+						horselist[horseIdx].line="blue";
+						horselist[horseIdx].bluelineNumber=10;
+						
+					}else if(redline[nextRedIdx]==20){
+						horselist[horseIdx].line="blue";
+						horselist[horseIdx].bluelineNumber=20;
+						
+					}else if(redline[nextRedIdx]==30) {
+						horselist[horseIdx].line="blue";
+						horselist[horseIdx].bluelineNumber=30;
+						
+					}
+				}
+			}else {//영역 넘어가버리면
+				rVisit[currentRedIdx] = false;//얜 떠나고 끝남
+				if(currentRedIdx==(rVisit.length-1)){//마지막 값이면
+					crVisit[crVisit.length-1]=false;
+				}
+			}
+			break;
+		case "blue":
+			int curentBlueIdx = horselist[horseIdx].bluelineIdx;
+			int nextBlueIdx =0;
+			if(horselist[horseIdx].bluelineNumber==10){
+				nextBlueIdx=curentBlueIdx+move;
+				if(b1Visit.length>nextBlueIdx){//아직 라인 안이면
+					
+				}
+			}else if (horselist[horseIdx].bluelineNumber==20){
+				
+			}else if (horselist[horseIdx].bluelineNumber==30){
+				
+			}
+			break;
+		}
+		return false;
+	}
+
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		rVisit = new boolean[redline.length];
+		crVisit = new boolean[centerRedline.length];
+		b1Visit = new boolean[blueline1.length];
+		b2Visit = new boolean[blueline2.length];
+		b3Visit = new boolean[blueline3.length];
+		for(int i=0;i<10;i++) dice[i] = sc.nextInt();//주사위
+		for(int i=0;i<4;i++) horselist[i] = new Horse("red",0,0,0);
+	}
+}

@@ -5,7 +5,27 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-06T14:47:59Z</updated>
+  <updated>2020-02-07T07:26:20Z</updated>
+  <entry>
+    <title>Oleg ?elajev on ZeroTurnaround, GraalVM, the vJUG and so much more</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/07/oleg-elajev-on-zeroturnaround-graalvm-the-vjug-and-so-much-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-02-07:3956</id>
+    <updated>2020-02-07T07:26:20Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/shelajev"&gt;Oleg ?elajev (@shelajev)&lt;/a&gt; about ZeroTurnaround, GraalVM, the vJUG and so much more. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.graalvm.org/"&gt;The GraalVM project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://virtualjug.org"&gt;The Virtual JUG&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://virtualjug.slack.com/join/shared_invite/enQtNDg5ODYwOTY0ODA0LTY1YjQyNzA5MTI3YjkyY2JjMGY1Yjg4NWMxZGZlNzhkMThkMTQwYzJmMGE4YzJhZjE0NjU3NjFhM2Q2Njk0MWU"&gt;The vJUG slack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/shelajev"&gt;Oleg ?elajev on Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.jrebel.com/"&gt;JRebel&lt;/a&gt; from ZeroTurnaround&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe title="Oleg ?elajev on ZeroTurnaround, GraalVM, the vJUG and so much more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/hpica-d2b0ac?from=yiiadmin&amp;download=1&amp;version=1&amp;skin=1&amp;btn-skin=107&amp;auto=0&amp;share=1&amp;fonts=Helvetica&amp;download=1&amp;rtl=0&amp;pbad=1"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Security 4.2.14 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/06/spring-security-4-2-14-released" />
@@ -1177,31 +1197,6 @@ fun someFlow() =
 &lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Spring Tools 4.5.2 is scheduled to be released in late February 2020.&lt;/p&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - January 21st, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/21/this-week-in-spring-january-21st-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-21:3936</id>
-    <updated>2020-01-21T14:10:40Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! It&amp;rsquo;s 6 am Tuesday, January 21st, 2020, and I&amp;rsquo;m buckled in and ready to take off for Atlanta, Georgia (by way of Denver, Colorado&amp;hellip;), where I&amp;rsquo;ll be speaking at the Atlanta Java User Group tonight! I&amp;rsquo;m so looking forward to seeing everyone there. It&amp;rsquo;s my first JUG appearance in the new year, too! &lt;/p&gt;
-&lt;p&gt;So, let&amp;rsquo;s get to it!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/20/spring-boot-2-2-4-released"&gt;Spring Boot 2.2.4 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/17/spring-vault-2-2-1-release-and-2-1-5-release-available"&gt;Spring Vault 2.2.1.RELEASE and 2.1.5.RELEASE available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2020/01/17/a-bootiful-podcast-spring-cloud-services-bella-yuxin-bai"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk to Spring Cloud Services&amp;rsquo; Bella (Yuxin) Bai&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-2-3-released"&gt;Spring Boot 2.2.3 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-boot-2-1-12-released"&gt;Spring Boot 2.1.12 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-framework-5-2-3-5-1-13-5-0-16-and-4-3-26-releases"&gt;Spring Framework 5.2.3, 5.1.13, 5.0.16, and 4.3.26 releases&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/16/spring-data-neumann-m1-released"&gt;Spring Data Neumann M1 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/01/15/spring-data-moore-sr4-and-lovelace-sr15-released"&gt;Spring Data Moore SR4 and Lovelace SR15 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting post on two of my favorite pieces of cloud infrastructure: &lt;a href="https://www.starkandwayne.com/blog/running-cloud-foundry-on-kubernetes-using-kubecf/"&gt;Running Cloud Foundry on Kubernetes using KubeCF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.wavefront.com/how-to-instrument-and-monitor-your-springboot-2-application-on-kubernetes-using-wavefront/"&gt;How to Instrument and Monitor Your Spring Boot 2 Application in Kubernetes Using Wavefront - Wavefront by VMware&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

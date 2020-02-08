@@ -1,0 +1,10 @@
+package CodingStudySamsungProblem;
+/*
+ * 주사위 윷놀이판이 있고
+ * 
+ */
+public class 주사위윷놀이 {
+	public static void main(String[] args) {
+		
+	}
+}
