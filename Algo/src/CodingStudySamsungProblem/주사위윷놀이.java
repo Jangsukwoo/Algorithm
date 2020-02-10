@@ -50,8 +50,8 @@ public class 주사위윷놀이 {
 	}
 	public static void main(String[] args) {
 		setData();
-		dfs(0);
-		//play();
+		//dfs(0);
+		play();
 		System.out.println(maxScore);
 	}
 
@@ -60,18 +60,17 @@ public class 주사위윷놀이 {
 		rVisit = new boolean[redline.length];
 		crVisit = new boolean[centerRedline.length];
 		arriveHorse = new boolean[4];
+		bluelineVisit = new boolean[3][];
 		bluelineVisit[0] = new boolean[blueline[0].length];
 		bluelineVisit[1] = new boolean[blueline[1].length];
 		bluelineVisit[2] = new boolean[blueline[2].length];
 		score=0;
-		int horseIdx=0;
-		int[] testcase = new int[] {0,0,1,0,2,2,2,0,0,2};//말 한마리만 이동해보자
+		int[] testcase = new int[] {0,0,0,0,0,1,1,1,1,0};//말 한마리만 이동해보자
 		for(int i=0,move;i<10;i++){//주사위 하나씩
 			move = dice[i];
-			//moveHorse(move,testcase[i]);//이동
-			//horseIdx=(horseIdx+1)%4;
+			moveHorse(move,testcase[i]);//이동
 			if(arriveHorse[pickHorse[i]]==false) {
-				moveHorse(move,pickHorse[i]);//이동 가능하면 보낸다.	
+				//moveHorse(move,pickHorse[i]);//이동 가능하면 보낸다.	
 			}
 		}
 		maxScore = Math.max(maxScore,score);
@@ -89,11 +88,11 @@ public class 주사위윷놀이 {
 	}
 
 	private static void moveHorse (int move,int horseIdx) {
-		//		System.out.println((horseIdx+1)+"번말");
-		//		System.out.println("이동전");
-		//		System.out.println("이동값 "+move);
-		//		System.out.println(horselist[horseIdx].line+"위에있음");
-		//		System.out.println();
+				System.out.println((horseIdx+1)+"번말");
+				System.out.println("이동전");
+				System.out.println("이동값 "+move);
+				System.out.println(horselist[horseIdx].line+"위에있음");
+				System.out.println();
 		switch (horselist[horseIdx].line) {
 		case "red":
 			redlineCheck(move,horseIdx);
@@ -105,9 +104,8 @@ public class 주사위윷놀이 {
 			ceterlineCheck(move,horseIdx);
 			break;
 		}
-		//		System.out.println("이동후");
-		//		System.out.println("얻은 스코어"+currnetScore);
-		//		System.out.println(horselist[horseIdx].line+"위에있음");
+				System.out.println("이동후");
+				System.out.println(horselist[horseIdx].line+"위에있음");
 		return ;
 	}
 	private static void redlineCheck(int move, int horseIdx) {
@@ -115,26 +113,20 @@ public class 주사위윷놀이 {
 		int nextRedIdx = currentRedIdx+move;
 		if(rVisit.length>nextRedIdx){//영역 안에 있고 
 			if(rVisit[nextRedIdx]==false){//false면
-				rVisit[nextRedIdx] = true;
 				rVisit[currentRedIdx] = false;//떠남
-				if(nextRedIdx==(rVisit.length-1)){//마지막 값이면
-					crVisit[crVisit.length-1]=true;
-				}
+				rVisit[nextRedIdx] = true;
 				score+=redline[nextRedIdx];//스코어 획득
-				if(redline[nextRedIdx]==10){
+		
+				if(redline[nextRedIdx]==10 || redline[nextRedIdx]==20 || redline[nextRedIdx]==30){
 					horselist[horseIdx].line="blue";
-					horselist[horseIdx].bluelineNumber=10;
-					horselist[horseIdx].bluelineIdx=0;
-				}else if(redline[nextRedIdx]==20){
-					horselist[horseIdx].line="blue";
-					horselist[horseIdx].bluelineNumber=20;
-					horselist[horseIdx].bluelineIdx=0;
-				}else if(redline[nextRedIdx]==30) {
-					horselist[horseIdx].line="blue";
-					horselist[horseIdx].bluelineNumber=30;
+					horselist[horseIdx].bluelineNumber=redline[nextRedIdx];
 					horselist[horseIdx].bluelineIdx=0;
 				}else {
 					horselist[horseIdx].redlineIdx = nextRedIdx;
+				}
+				
+				if(nextRedIdx==(rVisit.length-1)){//마지막 값이면
+					crVisit[crVisit.length-1]=true;//센터라인의 마지막에도 true
 				}
 			}
 		}else {//영역 넘어가버리면
@@ -155,7 +147,7 @@ public class 주사위윷놀이 {
 		else if(horselist[horseIdx].bluelineNumber==30) bluelineIdx=2;
 		nextBlueIdx=curentBlueIdx+move;
 		if(bluelineVisit[bluelineIdx].length>nextBlueIdx){//아직 라인 안이고
-			if(bluelineVisit[bluelineIdx][nextBlueIdx]==false){//가려는곳이 false면 
+			if(bluelineVisit[bluelineIdx][nextBlueIdx]==false){//가려는곳이 false인데
 				if(nextBlueIdx==(bluelineVisit[bluelineIdx].length-1)){//만약 가려는곳이 센터전환점이면
 					if(crVisit[0]==false){//아무도 방문 안되어있으면 
 						crVisit[0]=true;
@@ -171,16 +163,19 @@ public class 주사위윷놀이 {
 					bluelineVisit[bluelineIdx][curentBlueIdx] = false;//떠남
 					bluelineVisit[bluelineIdx][nextBlueIdx]=true;
 				}
-			}//가려는곳이 false가 아니면 안간다.
+			}
 		}else {//라인밖이면 센터라인에 갈 수 있는지?
 			int centerIdx = curentBlueIdx+move-(bluelineVisit[bluelineIdx].length-1);
 			if(centerIdx<crVisit.length){//센터 영역 안에 들어갈 수 있으며
 				if(crVisit[centerIdx]==false){//그 자리에 갈 수 있으면
-					bluelineVisit[bluelineIdx][curentBlueIdx] = false;//떠남
+					bluelineVisit[bluelineIdx][curentBlueIdx] = false;//떠남. blueNext처리 불필요
 					crVisit[centerIdx] = true;
 					score+=centerRedline[centerIdx];//스코어 획득
 					horselist[horseIdx].centerlineIdx=centerIdx;
 					horselist[horseIdx].line="center"; //센터에 올림
+					if(centerIdx==(crVisit.length-1)){//만약 센터라인의 마지막이면
+						rVisit[rVisit.length-1]=true;//red 마지막값도 true
+					}
 				}
 			}else {//센터 영역 넘어가버리면
 				bluelineVisit[bluelineIdx][curentBlueIdx] = false;//떠남
@@ -195,7 +190,7 @@ public class 주사위윷놀이 {
 			rVisit[15]=false;//떠남처리
 		}
 	}
-	private static void ceterlineCheck(int move, int horseIdx) {
+	private static void ceterlineCheck(int move, int horseIdx){
 		int currentCenterIdx = horselist[horseIdx].centerlineIdx;
 		int nextCenterIdx = currentCenterIdx+move;
 		if(crVisit.length>nextCenterIdx){//영역 안에 있으며 
@@ -207,8 +202,11 @@ public class 주사위윷놀이 {
 						crVisit[nextCenterIdx] = true;
 						rVisit[rVisit.length-1] = true;
 						horselist[horseIdx].centerlineIdx=nextCenterIdx;
+						//System.out.println("마지막지점에도착");
+					}else {
+						//System.out.println("마지막지점에 말이있다.");
 					}
-				}else {
+				}else { //마지막 지점을 가려하게 아니면 
 					score+= centerRedline[nextCenterIdx];
 					crVisit[currentCenterIdx] = false;
 					crVisit[nextCenterIdx] = true;
@@ -228,9 +226,5 @@ public class 주사위윷놀이 {
 		Scanner sc = new Scanner(System.in);
 		for(int i=0;i<10;i++) dice[i] = sc.nextInt();//주사위
 		blueline = new int[][]{{10,13,16,19,25},{20,22,24,25},{30,28,27,26,25}};
-		bluelineVisit = new boolean[3][];
-		bluelineVisit[0] = new boolean[blueline[0].length];
-		bluelineVisit[1] = new boolean[blueline[1].length];
-		bluelineVisit[2] = new boolean[blueline[2].length];
 	}
 }

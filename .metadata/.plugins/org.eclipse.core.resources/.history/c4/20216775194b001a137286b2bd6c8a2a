@@ -1,0 +1,29 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 구역개수 N
+ * 1번~N번 구역에 인구가 주어짐
+ * 
+ * 영역을 두개로 나누고
+ * 그 나눈 두영역 인구 차이의 최소값?
+ */
+public class 게리맨더링 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N;
+	static int minDiffPeople;
+	static int[][] adjMatrix;
+	static int[] peoples;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine());
+	}
+}
