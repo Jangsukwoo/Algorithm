@@ -68,9 +68,11 @@ public class 주사위윷놀이 {
 		bluelineVisit[1] = new boolean[blueline[1].length];
 		bluelineVisit[2] = new boolean[blueline[2].length];
 		score=0;
+		//int[] testcase = new int[] {0,0,0,0,0,1,1,1,1,0};//말 한마리만 이동해보자
 		possible = true;
 		for(int i=0,move;i<10;i++){//주사위 하나씩
 			move = dice[i];
+			//moveHorse(move,testcase[i]);//이동
 			if(arriveHorse[pickHorse[i]]==false) {
 				moveHorse(move,pickHorse[i]);//이동 가능하면 보낸다.	
 			}
@@ -90,6 +92,11 @@ public class 주사위윷놀이 {
 	}
 
 	private static void moveHorse (int move,int horseIdx) {
+//				System.out.println((horseIdx+1)+"번말");
+//				System.out.println("이동전");
+//				System.out.println("이동값 "+move);
+//				System.out.println(horselist[horseIdx].line+"위에있음");
+//				System.out.println();
 		switch (horselist[horseIdx].line) {
 		case "red":
 			redlineCheck(move,horseIdx);
@@ -101,6 +108,8 @@ public class 주사위윷놀이 {
 			ceterlineCheck(move,horseIdx);
 			break;
 		}
+//				System.out.println("이동후");
+//				System.out.println(horselist[horseIdx].line+"위에있음");
 		return ;
 	}
 	private static void redlineCheck(int move, int horseIdx) {

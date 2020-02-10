@@ -20,8 +20,6 @@ import java.util.Scanner;
  * 맵을 어떻게 만들지
  * 
 5 1 1 1 1 4 5 1 1 2 //가운데 겹치게
-
-하..해결
  */
 public class 주사위윷놀이 {
 	static int[] dice = new int[10];
@@ -53,8 +51,8 @@ public class 주사위윷놀이 {
 	}
 	public static void main(String[] args) {
 		setData();
-		dfs(0);
-		//play();
+		//dfs(0);
+		play();
 		System.out.println(maxScore);
 	}
 
@@ -68,11 +66,13 @@ public class 주사위윷놀이 {
 		bluelineVisit[1] = new boolean[blueline[1].length];
 		bluelineVisit[2] = new boolean[blueline[2].length];
 		score=0;
+		int[] testcase = new int[] {0,0,0,0,0,1,1,1,1,0};//말 한마리만 이동해보자
 		possible = true;
 		for(int i=0,move;i<10;i++){//주사위 하나씩
 			move = dice[i];
+			moveHorse(move,testcase[i]);//이동
 			if(arriveHorse[pickHorse[i]]==false) {
-				moveHorse(move,pickHorse[i]);//이동 가능하면 보낸다.	
+				//moveHorse(move,pickHorse[i]);//이동 가능하면 보낸다.	
 			}
 		}
 		if(possible) maxScore = Math.max(maxScore,score);
@@ -90,6 +90,11 @@ public class 주사위윷놀이 {
 	}
 
 	private static void moveHorse (int move,int horseIdx) {
+				System.out.println((horseIdx+1)+"번말");
+				System.out.println("이동전");
+				System.out.println("이동값 "+move);
+				System.out.println(horselist[horseIdx].line+"위에있음");
+				System.out.println();
 		switch (horselist[horseIdx].line) {
 		case "red":
 			redlineCheck(move,horseIdx);
@@ -101,6 +106,8 @@ public class 주사위윷놀이 {
 			ceterlineCheck(move,horseIdx);
 			break;
 		}
+				System.out.println("이동후");
+				System.out.println(horselist[horseIdx].line+"위에있음");
 		return ;
 	}
 	private static void redlineCheck(int move, int horseIdx) {
@@ -179,9 +186,6 @@ public class 주사위윷놀이 {
 					if(centerIdx==(crVisit.length-1)){//만약 센터라인의 마지막이면
 						rVisit[rVisit.length-1]=true;//red 마지막값도 true
 					}
-				} else {
-					possible = false;
-					return;
 				}
 			}else {//센터 영역 넘어가버리면
 				bluelineVisit[bluelineIdx][curentBlueIdx] = false;//떠남
@@ -209,9 +213,8 @@ public class 주사위윷놀이 {
 						rVisit[rVisit.length-1] = true;
 						horselist[horseIdx].centerlineIdx=nextCenterIdx;
 						//System.out.println("마지막지점에도착");
-					} else {
-						possible = false;
-						return;
+					}else {
+						//System.out.println("마지막지점에 말이있다.");
 					}
 				}else { //마지막 지점을 가려하게 아니면 
 					score+= centerRedline[nextCenterIdx];
@@ -219,9 +222,6 @@ public class 주사위윷놀이 {
 					crVisit[nextCenterIdx] = true;
 					horselist[horseIdx].centerlineIdx=nextCenterIdx;
 				}
-			} else {
-				possible = false;
-				return;
 			}
 		}else {//영역 넘어가버리면
 			crVisit[currentCenterIdx] = false;//얜 떠나고 끝남
