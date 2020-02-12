@@ -1,0 +1,52 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * 각 격자에 있는 줄기세포들은 생명력 수치를 가지고 있고
+ * 각 생명력 수치는 X이다.
+ * 
+ * X시간 동안 비활성화 상태에서 X시간 후 활성화 상태가 됌 
+ * 또한, 활성화된 세포는 X시간 후 죽음
+ * 세포가 죽어도 소멸되는 것은 아니고 그 격자판 칸을 계속 차지하게된다.
+ * 세포가 활성화되면 주변에 번식을 한다.
+ * 
+ * 배양 시간이 주어졌을 때
+ * 살아있는 세포들 (활성+비활성)의 총 개수는?
+ * 배양용기의 크기는 무한하며 가장자리에 닿아서 번식할 수 없는 경우는 없다.
+ * 만약 두개 이상의 세포가 동일한 칸에 번식하려 하는 경우 생명력 수치가 가장 높은 세포가 차지함
+ */
+public class 줄기세포배양 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] cellMap;
+	static int N,M,K;
+	static int[][] visit;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			
+		}
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());//행
+		M = Integer.parseInt(st.nextToken());//열
+		K = Integer.parseInt(st.nextToken());
+		cellMap = new int[N+800][M+800];
+		for(int row=0;row<N;row++){
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<M;col++){
+				cellMap[row+300][col+300] = Integer.parseInt(st.nextToken());
+			}
+		}
+		
+	}
+}
