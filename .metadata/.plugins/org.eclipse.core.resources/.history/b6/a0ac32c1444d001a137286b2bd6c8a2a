@@ -1,0 +1,78 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * 11:30 시작
+ * 
+ * - 면
+ * 윗 : U
+ * 아래 : D
+ * 앞 : F
+ * 뒤 : B
+ * 왼 : L
+ * 오 : R
+ * 
+ * - 색
+ * w:흰
+ * y:노
+ * r:빨
+ * o:오
+ * g:초
+ * b:파
+ * 
+ * -방향
+ * +:시계
+ * -:반시계
+ */
+public class 큐빙 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N;
+	static char[][] cube = new char[12][9];//전개도
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			cubeInitailize();
+			rotate();
+		}
+	}
+	private static void cubeInitailize(){
+		for(int row=0;row<=2;row++) {
+			for(int col=3;col<=5;col++) {
+				cube[row][col]='w';
+			}
+		}//윗면,흰
+		for(int row=3;row<=5;row++) {
+			for(int col=0;col<=2;col++){
+				cube[row][col]='g';
+			}
+		}
+		for(int row=3;row<=5;row++) {
+			for(int col=3;col<=5;col++){
+				cube[row][col]='r';
+			}
+		}
+		for(int row=3;row<=5;row++) {
+			for(int col=6;col<=8;col++){
+				cube[row][col]='b';
+			}
+		}
+		for(int row=6;row<=8;row++) {
+			for(int col=3;col<=5;col++){
+				cube[row][col]='y';
+			}
+		}
+		for(int row=9;row<=11;row++) {
+			for(int col=3;col<=5;col++){
+				cube[row][col]='o';
+			}
+		}
+		
+	}
+	private static void rotate() {
+		
+	}
+}

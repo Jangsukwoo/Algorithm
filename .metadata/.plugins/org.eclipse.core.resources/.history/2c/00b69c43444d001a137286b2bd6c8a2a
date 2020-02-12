@@ -1,0 +1,41 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * 11:30 시작
+ * 
+ * - 면
+ * 윗 : U
+ * 아래 : D
+ * 앞 : F
+ * 뒤 : B
+ * 왼 : L
+ * 오 : R
+ * 
+ */
+public class 큐빙 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N;
+	static char[][] cube = new char[12][9];//전개도
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			cubeInitailize();
+			rotate();
+		}
+	}
+	private static void cubeInitailize(){
+		for(int row=0;row<=2;row++) {
+			for(int col=3;col<=5;col++) {
+				cube[row][col]='w';
+			}
+		}
+	}
+	private static void rotate() {
+		
+	}
+}
