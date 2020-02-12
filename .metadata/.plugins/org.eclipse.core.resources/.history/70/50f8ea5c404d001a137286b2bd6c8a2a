@@ -74,6 +74,8 @@ public class 줄기세포배양 {
 
 	private static void bfsSpread(){
 		int time=0;
+		for(int row=0;row<N+(2*K);row++)
+			for(int col=0;col<M+(2*K);col++) celllist[row][col] = new PriorityQueue<Cell>(cp);
 		while(!q.isEmpty()){
 			int size = q.size();
 			time++;
