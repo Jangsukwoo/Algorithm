@@ -1,0 +1,111 @@
+package CodingStudySamsung모의;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+/* 벌통사이즈 N
+ * 꿀을 채취할 수 있는 벌통의 수 M
+ * 두 명의 일꾼, 연속된 M개의 벌통 선택
+1
+4 2 13
+6 1 9 7
+9 8 5 8
+3 4 5 3
+8 2 6 7
+ */
+public class 벌꿀채취 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] hive;
+	static ArrayList<Integer> gatherHiveDPlist;
+	static int N,M,C;
+	static int n;
+	static int[] pick;
+	static int maxProfit;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			getHiveDPlist();
+			view();
+			pickHive();
+			System.out.println("#"+testcase+" "+maxProfit);
+		}
+	}
+	private static void view() {
+		for(int i=0;i<gatherHiveDPlist.size();i++) {
+			System.out.println(gatherHiveDPlist.get(i));
+		}
+	}
+	private static void pickHive(){
+		n = gatherHiveDPlist.size();
+		dfs(0,0);
+	}
+	private static void dfs(int idx, int depth) {
+		if(depth==2){
+			System.out.println(pick[0]);
+			System.out.println(pick[1]);
+			maxProfit = Math.max(maxProfit,(pick[0]+pick[1]));
+			return;
+		}
+		for(int i=idx;i<n;i++){
+			pick[depth] = i;
+			dfs(i+1,depth+1);
+		}
+	}
+	private static void getHiveDPlist() {
+		int[] honeyData = new int[M];
+		for(int row=0;row<N;row++){
+			for(int col=0;col<N;col++){
+				int end = (col+(M-1));
+				if(end<N){//채취가능한 범위면
+					honeyData = new int[M];
+					int Midx = 0;
+					int max=0;
+					for(int start=col;start<=end;start++){
+						honeyData[Midx++] = hive[row][start];
+						max+=hive[row][start];
+					}
+					getMaxHoney(honeyData,max);
+				}
+			}
+		}
+	}
+	private static void getMaxHoney(int[] honeyData, int max){		
+		Arrays.sort(honeyData);//정렬 
+		int honeyDataIdx = honeyData.length-1;
+		while(true){
+			if(max<=C){
+				int value = 0;
+				for(int i=0;i<=honeyDataIdx;i++){
+					value+=Math.pow(honeyData[i],2);
+				}//제곱수 
+				gatherHiveDPlist.add(value);
+				return;
+			}
+			max -=honeyData[honeyDataIdx--];//가장 큰값을 빼본다.
+			if(honeyDataIdx==-1) return;//맨끝에꺼 빼면 의미가 없다
+			
+		}
+	}
+	private static void setData() throws IOException{
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());//벌통사이즈
+		M = Integer.parseInt(st.nextToken());//채취용기
+		C = Integer.parseInt(st.nextToken());//최대벌꿀
+		hive = new int[N][N];
+		pick = new int[2];
+		maxProfit=0;
+		gatherHiveDPlist = new ArrayList<Integer>();
+		for(int row=0;row<N;row++){
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++){
+				hive[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

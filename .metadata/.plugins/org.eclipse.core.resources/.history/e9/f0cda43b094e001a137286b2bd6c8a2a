@@ -1,0 +1,12 @@
+package CodingStudySamsung모의;
+
+/* 벌통사이즈 N
+ * 꿀을 채취할 수 있는 벌통의 수 M
+ * 두 명의 일꾼, 연속된 M개의 벌통 선택
+ */
+public class 벌꿀채취 {
+
+	public static void main(String[] args) {
+
+	}
+}

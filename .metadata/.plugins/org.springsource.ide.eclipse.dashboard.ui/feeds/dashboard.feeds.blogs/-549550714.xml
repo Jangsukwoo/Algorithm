@@ -5,7 +5,189 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-07T07:26:20Z</updated>
+  <updated>2020-02-12T19:36:16Z</updated>
+  <entry>
+    <title>Spring Integration 5.3 Milestone 2 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/12/spring-integration-5-3-milestone-2-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2020-02-12:3959</id>
+    <updated>2020-02-12T19:36:16Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring Integration team, I¡¯m pleased to announce the &lt;a href="https://github.com/spring-projects/spring-integration/releases/tag/v5.3.0.M2"&gt;second&lt;/a&gt; milestone for Spring Integration &lt;code&gt;5.3&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This release ships several bug fixes, a bunch of new features and improvements and will be picked up by Spring Boot &lt;code&gt;2.3 M2&lt;/code&gt; in the near future.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/milestone"&gt;milestone repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.3.0.M2"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="the-most-important-new-features-are"&gt;&lt;a class="anchor" href="#the-most-important-new-features-are"&gt;&lt;/a&gt;The most important new features are:&lt;/h3&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;With the &lt;code&gt;IntegrationFlowExtension&lt;/code&gt; implementation we now can right our own Java DSL for Spring Integration.
+It allows to introduce custom or composed EIP-operators.
+The existing &lt;code&gt;IntegrationComponentSpec&lt;/code&gt; implementations can now be extended for additional (missed?) options.
+So, now any custom and reusable solutions in Java DSL can be implemented in the target project:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public class CustomIntegrationFlowDefinition
+        extends IntegrationFlowExtension&amp;lt;CustomIntegrationFlowDefinition&amp;gt; {
+
+    public CustomIntegrationFlowDefinition upperCaseAfterSplit() {
+        return split()
+                .transform("payload.toUpperCase()");
+    }
+
+    public CustomIntegrationFlowDefinition customAggregate(
+                    Consumer&amp;lt;CustomAggregatorSpec&amp;gt; aggregator) {
+        return register(new CustomAggregatorSpec(), aggregator);
+    }
+
+}
+
+public class CustomAggregatorSpec extends AggregatorSpec {
+
+    CustomAggregatorSpec() {
+        outputProcessor(group -&amp;gt;
+                group.getMessages()
+                        .stream()
+                        .map(Message::getPayload)
+                        .map(String.class::cast)
+                        .collect(Collectors.joining(", ")));
+    }
+
+}
+
+@Bean
+public IntegrationFlow customFlowDefinition() {
+    return
+            new CustomIntegrationFlowDefinition()
+                    .log()
+                    .upperCaseAfterSplit()
+                    .channel("innerChannel")
+                    .customAggregate(customAggregatorSpec -&amp;gt;
+                            customAggregatorSpec.expireGroupsUponCompletion(true))
+                    .logAndReply();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;HTTP and WebFlux outbound channel adapters now support an &lt;code&gt;UriBuilderFactory.EncodingMode&lt;/code&gt; option instead of previous`encodeUri` boolean flag.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The AMQP outbound channel adapter has a new property &lt;code&gt;multiSend&lt;/code&gt; allowing multiple messages to be sent within the scope of one RabbitTemplate invocation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The AMQP inbound channel adapter now supports a listener container with the &lt;code&gt;consumerBatchEnabled&lt;/code&gt; property set to true.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;code&gt;What&amp;#8217;s New?&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/5.3.0.M2/reference/html/whats-new.html#whats-new"&gt;Reference Manual&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The next and last &lt;code&gt;M3&lt;/code&gt; milestone is scheduled for March before entering the &lt;code&gt;RC&lt;/code&gt; phase in April.
+Expect an upgrade to the latest milestone releases: Spring Data &lt;code&gt;Neumann&lt;/code&gt;, Spring Security &lt;code&gt;5.3&lt;/code&gt; etc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We¡¯re looking forward to your feedback!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data Neumann M3 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/12/spring-data-neumann-m3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2020-02-12:3958</id>
+    <updated>2020-02-12T15:35:15Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team, I¡¯m pleased to announce the third milestone of the &lt;a href="https://en.wikipedia.org/wiki/Klara_Dan_von_Neumann"&gt;Neumann&lt;/a&gt; release train. This release ships &lt;a href="https://jira.spring.io/issues/?filter=16735"&gt;exactly 75 tickets fixed&lt;/a&gt; and will be picked up by Spring Boot 2.3 M2 in the near future.&lt;/p&gt;
+&lt;p&gt;The most important new features are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade to MongoDB driver 4 (beta).&lt;/li&gt;
+  &lt;li&gt;Joda-Time and ThreeTenBackport support is now deprecated in favor of JSR-310.&lt;/li&gt;
+  &lt;li&gt;Geo Distance sort support in Elasticsearch.&lt;/li&gt;
+  &lt;li&gt;Quoting of table and column names in Spring Data JDBC enabled by default.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find a curated changelog in our &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Neumann"&gt;release train wiki&lt;/a&gt; or skim through a &lt;a href="https://jira.spring.io/issues/?filter=16735"&gt;full list of changes in JIRA&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The next and last milestone (M4) is scheduled for March before entering the RC phase in April. Expect the driver upgrade for Couchbase to be shipped with the next milestone release.&lt;/p&gt;
+&lt;p&gt;We¡¯re looking forward to your feedback!&lt;/p&gt;
+&lt;p&gt;To round things off, here&amp;rsquo;s the full list that takes you to the artifacts and documentation:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JDBC 2.0 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jdbc/2.0.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 4.2 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/4.2.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Geode 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-geode/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 3.0 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/3.0.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 3.0 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/3.0.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data R2DBC 1.1 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-r2dbc/1.1.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-ldap/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.3 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.3.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 4.0 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/4.0.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 4.0 M3 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/4.0.0.M3"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M3/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M3/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M3/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - February 11th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/12/this-week-in-spring-february-11th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-02-12:3957</id>
+    <updated>2020-02-12T00:39:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to yet another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! It&amp;rsquo;s been a very nice week indeed. I&amp;rsquo;ve been knee-deep in finishing my book, writing more code to &lt;a href="http://BootifulPodcast.fm"&gt;support the &lt;em&gt;A Bootiful Podcast&lt;/em&gt;&lt;/a&gt; production pipeline, and meeting amazing people in the new VMWare organization, and beyond. I&amp;rsquo;ve also been working on some new &lt;a href="http://bit.ly/spring-tips-playlist"&gt;Spring Tips&lt;/a&gt; videos - &lt;a href="http://twitter.com/starbuxman"&gt;what would you like to see covered&lt;/a&gt;, my friends? &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve got a lot of good stuff this week, so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;img &#xD;
+    src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVlNDEwYWU3ZTY0ZjMucG5nJnZlcnNpb249MDAwMCZzaWc9NDM4MjIwZjQ1NjJkZmI2YjM1ZDhjNjJmMGZhMjk4ZDU%253D" &#xD;
+/&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked to &lt;a href="https://spring.io/blog/2020/02/07/oleg-elajev-on-zeroturnaround-graalvm-the-vjug-and-so-much-more"&gt;Oleg ?elajev on ZeroTurnaround, GraalVM, the vJUG and so much more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/06/spring-security-4-2-14-released"&gt;Spring Security 4.2.14 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/05/spring-security-5-2-2-5-1-8-and-5-0-14-released"&gt;Spring Security 5.2.2, 5.1.8 and 5.0.14 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/05/spring-security-5-3-0-rc1-released"&gt;Spring Security 5.3.0.RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Oh, btw, did you know that the &lt;a href="https://twitter.com/starbuxman/status/1227393150483722240"&gt;BOM and some choice starters for the Alibaba&lt;/a&gt; integrations for Spring are now available &lt;a href="http://start.Spring.io"&gt;on the Spring Initializr&lt;/a&gt;?&lt;/li&gt;
+  &lt;li&gt;I published my monthly digest &lt;a href="https://content.pivotal.io/blog/this-month-in-spring-february-2020"&gt;&lt;em&gt;This Month in Spring&lt;/em&gt;&lt;/a&gt; over on the Pivotal blog, as usual.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.qovery.com/blog/the-simplest-way-to-deploy-spring-boot-with-postgresql-on-aws"&gt;The Simplest Way to Deploy Spring Boot with PostgreSQL on AWS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/mutation-testing/"&gt;Mutation Testing: Case Studies on Spring Boot APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.marcobehler.com/guides/spring-framework"&gt;What is Spring Framework? From Dependency Injection to Web MVC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/linux_china/status/1224563047840137216?s=12"&gt;You can call an RSocket service from WebAssembly now, too&lt;/a&gt;. Did you know Spring Framework (and Spring Boot!) has fantastic RSocket support?&lt;/li&gt;
+  &lt;li&gt;People seem to have enjoyed my introduction to the Reactive Revolution in Australia in November, 2019, &lt;a href="https://twitter.com/yow_conf/status/1227004561501630464?s=12"&gt;and you might too&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;You can now use several of the Alibaba &lt;a href="http://start.Spring.io"&gt;starters on the Spring Initializer!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Oleg ?elajev on ZeroTurnaround, GraalVM, the vJUG and so much more</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/07/oleg-elajev-on-zeroturnaround-graalvm-the-vjug-and-so-much-more" />
@@ -1023,180 +1205,6 @@ Each approach has pros and cons, but hopefully the new features we&amp;#8217;re 
     <updated>2020-01-24T04:00:14Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Neo4j&amp;rsquo;s mad scientist (and the nicest robot you&amp;rsquo;ve ever met!), and one of the most brilliant and generous people around, &lt;a href="http://twitter.com/mesirii"&gt;Michael Hunger (@mesirii)&lt;/a&gt;, about all things graph, relationships and more.&lt;/p&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/748552399&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.3.0.M1 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/23/spring-boot-2-3-0-m1-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Madhura Bhave</name>
-    </author>
-    <id>tag:spring.io,2020-01-23:3940</id>
-    <updated>2020-01-23T20:58:44Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the first milestone of Spring Boot 2.3 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.M1"&gt;167 issues and pull requests&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Highlights of this first milestone include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for building Docker images using &lt;a href="https://buildpacks.io/"&gt;Cloud Native Buildpacks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Support for building layered jars for building optimized Docker images&lt;/li&gt;
-  &lt;li&gt;End-to-end traceability for Configuration Properties&lt;/li&gt;
-  &lt;li&gt;Numerous &lt;a href="https://github.com/spring-projects/spring-boot/issues?utf8=?&amp;q=label%3A%22type%3A+dependency-upgrade%22+milestone%3A2.3.0.M1"&gt;dependency upgrades&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Support for &lt;a href="https://spring.io/blog/2020/01/16/spring-data-neumann-m1-released"&gt;Spring Data Neumann M1&lt;/a&gt; which ships with major driver upgrades&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M1-Release-Notes"&gt;Spring Boot 2.3 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M1/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to get started with 2.3 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Stay tuned for a blog post describing how to use the new Docker features!&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration 5.3 Milestone 1 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/23/spring-integration-5-3-milestone-1-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2020-01-23:3939</id>
-    <updated>2020-01-23T17:13:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring Integration team I&amp;#8217;m excited to announce that with the New Year we have some news to share with you.
-First of all, it is an honor to have taken over the lead role for the Spring Integration project.
-&lt;a href="https://spring.io/team/grussell"&gt;Gary Russell&lt;/a&gt; is still in the team and he leads &lt;a href="https://spring.io/projects/spring-amqp"&gt;Spring AMQP&lt;/a&gt; and &lt;a href="https://spring.io/projects/spring-kafka"&gt;Spring for Apache Kafka&lt;/a&gt; projects.
-Secondly we have just released the first milestone for Spring Integration of version &lt;code&gt;5.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/release"&gt;milestone repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.3.0.M1"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This version is going to be a foundation for the upcoming Spring Boot &lt;code&gt;2.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;And more news below!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="whats-new-in-this-generation"&gt;&lt;a class="anchor" href="#whats-new-in-this-generation"&gt;&lt;/a&gt;What&amp;#8217;s New in this generation?&lt;/h3&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade to Gradle &lt;code&gt;6.1&lt;/code&gt;, so now we also publish Gradle modules into Maven repository.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade to the latest dependencies, including &lt;a href="https://spring.io/blog/2020/01/16/spring-data-neumann-m1-released"&gt;Spring Data Neumann&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Removal of deprecations from the previous version, so if you are going to upgrade soon consider to fix all the deprecation warnings if favor of their replacements.
-Of course, we try to keep a compatibility with previous version because Spring Cloud Hoxton is going to support both Spring Boot &lt;code&gt;2.2&lt;/code&gt; &amp;amp; &lt;code&gt;2.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Adding native support for the &lt;code&gt;ReactiveMessageHandler&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reactive Channel Adapter implementations for MongoDb.
-In fact the &lt;code&gt;ReactiveMongoDbStoringMessageHandler&lt;/code&gt; is an implementation of mentioned above &lt;code&gt;ReactiveMessageHandler&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;GatewayProxyFactoryBean&lt;/code&gt; now doesn&amp;#8217;t proxy &lt;code&gt;default&lt;/code&gt; methods in the service interface.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;We have added an &lt;code&gt;IntegrationPattern&lt;/code&gt; abstraction to indicate which enterprise integration pattern (an &lt;code&gt;IntegrationPatternType&lt;/code&gt;) and category a Spring Integration component belongs to.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See &lt;code&gt;What&amp;#8217;s New?&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/5.3.0.M1/reference/html/whats-new.html#whats-new"&gt;Reference Manual&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="in-addition"&gt;&lt;a class="anchor" href="#in-addition"&gt;&lt;/a&gt;In Addition&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We are working on a project which is going to provide a Web UI for integration graph representation including runtime metrics for messages processing on channels and endpoints.
-Here is a screenshot how it looks now:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;a class="image" href="https://raw.githubusercontent.com/artembilan/sandbox/master/images/IntegrationGraph.png"&gt;&lt;img src="https://raw.githubusercontent.com/artembilan/sandbox/master/images/IntegrationGraph.png" alt="Spring Integration Graph"&gt;&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We are planning on open-sourcing the project soon, so stay tuned!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also we made some progress in Spring Integration Kotlin DSL.
-It now looks more "Kotlinish" style!
-A preview version is available in &lt;a href="https://repo.spring.io/snapshot"&gt;snapshot repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-kotlin-dsl:0.0.3.BUILD-SNAPSHOT"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is how it looks now:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;@Bean
-fun someFlow() =
-    integrationFlow {
-        filter&amp;lt;String&amp;gt; { it === "test" }
-        wireTap {
-                    handle { println(it.payload) }
-                }
-        transform&amp;lt;String, String&amp;gt; { it.toUpperCase() }
-    }&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-kotlin-dsl"&gt;GitHub Project Page&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We have plans to merge this project into a core one after some team review and feedback from the community.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Grab them to try in your projects and share your experience!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tools 4.5.1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/22/spring-tools-4-5-1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2020-01-22:3937</id>
-    <updated>2020-01-22T08:56:05Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 4.5.1 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
-&lt;p&gt;Highlights from this release include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: live hover mechanism now reports connection failures&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: Add support for async completions in 4.15 (&lt;a href="https://github.com/spring-projects/sts4/issues/402"&gt;#402&lt;/a&gt;) - PR from @gayanper&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: Early access builds for Eclipse 4.15 available&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: auto-completion inserted extra newline for params in &lt;code&gt;@Value&lt;/code&gt; annotations&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: Boot Dashboard cannot start app when Eclipse project name contains spaces (&lt;a href="https://github.com/spring-projects/sts4/issues/403"&gt;#403&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: NPE in PropertiesJavaDefinitionHandler.adjustedHighlightRangeForKey (&lt;a href="https://github.com/spring-projects/sts4/issues/401"&gt;#401&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: builds on Eclipse 4.14 include latest m2e snapshot components to fix an issue when running JUnit 5 tests&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-01-22-451-release&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Spring Tools 4.5.2 is scheduled to be released in late February 2020.&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

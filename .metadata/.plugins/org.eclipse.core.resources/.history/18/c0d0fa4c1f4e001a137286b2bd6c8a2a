@@ -1,0 +1,27 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * N by N 격자판
+ * 0 : 흰색  -> 그 칸으로 이동
+ * 1 : 빨간색 -> 쌓여있는 말의 순서를 바꿈 
+ * 2: 파란색  -> A번 말의 이동방향을 반대로 하고 한 칸 이동
+ * 단, 이동하려는 칸이 파란색인 경우에는 이동 하지 않고 방향만 반대 
+ * 
+ * 말의 이동정보가 주어지고 임의의 말이 업고있는 말이 4이상이 되는 턴을 출력
+ * 
+ */
+public class 새로운게임2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] ground;
+	static ArrayList<Horse>[][] horseMap; 
+	int N,K;
+	public static void main(String[] args) {
+		
+	}
+}
