@@ -1,0 +1,13 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+
+import com.sun.imageio.plugins.common.InputStreamAdapter;
+
+public class 배열돌리기4 {
+	static BufferedReader br = new BufferedReader(new InputStreamAdapter(System.in));
+	
+	public static void main(String[] args) {
+		
+	}
+}

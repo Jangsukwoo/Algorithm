@@ -5,7 +5,48 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-12T19:36:16Z</updated>
+  <updated>2020-02-13T23:30:05Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Vedran Pavic on Spring Session, Croatia, and so much more</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/13/a-bootiful-podcast-vedran-pavic-on-spring-session-croatia-and-so-much-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-02-13:3962</id>
+    <updated>2020-02-13T23:30:05Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In today&amp;rsquo;s episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to community member and Spring Session teammate &lt;a href="http://twitter.com/vedran_pavic"&gt;Vedran Pavic (@vedran_pavic)&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/vpavic"&gt;Vedran on Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/vedran_pavic"&gt;Vedran on Twitter (@vedran_pavic)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe title="Vedran Pavic on Spring Session, Croatia, and so much more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/afkfu-d392e3?from=yiiadmin&amp;download=1&amp;version=1&amp;skin=1&amp;btn-skin=107&amp;auto=0&amp;share=1&amp;fonts=Helvetica&amp;download=1&amp;rtl=0&amp;pbad=1"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.3.0.M2 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/13/spring-boot-2-3-0-m2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-02-13:3961</id>
+    <updated>2020-02-13T22:28:22Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the second milestone of Spring Boot 2.3 has been released and is available from &lt;a href="https://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This release closes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.M2"&gt;120 issues and pull requests&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
+&lt;p&gt;Highlights of this milestone include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Improvement of our &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker image support&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Upgrade to MongoDB 4 (still in beta)&lt;/li&gt;
+  &lt;li&gt;Support of wildcard locations for configuration files&lt;/li&gt;
+  &lt;li&gt;Numerous dependency upgrades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M2-Release-Notes"&gt;Spring Boot 2.3 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M2/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to get started with 2.3 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration 5.3 Milestone 2 Available</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/12/spring-integration-5-3-milestone-2-available" />
@@ -1178,33 +1219,6 @@ Each approach has pros and cons, but hopefully the new features we&amp;#8217;re 
 &lt;p&gt;We¡¯ve been using Travis CI in GitHub to build commits and pull requests and we¡¯re finally migrating to GitHub actions starting with spring-cloud-dataflow and spring-cloud-deployer-local. Experience is so good that we¡¯re rolling these out to other repos as well.&lt;/p&gt;
 &lt;p&gt;Integration testing is difficult and complex and for this we¡¯ve been using our own scripting against various CF and K8s environments. In those environments, we should only really test environment-specific things so we¡¯ve started to move some of these tests into docker and docker-compose so that it would be easier for any user to run tests that are not environment-specific.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.3.1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-3-1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Janne Valkealahti</name>
-    </author>
-    <id>tag:spring.io,2020-01-27:3942</id>
-    <updated>2020-01-27T13:06:22Z</updated>
-    <content type="html">&lt;p&gt;This is a maintenance release for small bug fixes, enhancements, and dependency updates. Generally speaking, we¡¯re now on Spring Cloud Hoxton SR1. List of fixed issues can be found from &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues/3707"&gt;2.3.1 Issue List&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven-preemptive-authentication" class="anchor" name="maven-preemptive-authentication"&gt;&lt;/a&gt;Maven Preemptive Authentication&lt;/h2&gt;
-&lt;p&gt;Support for using Maven Wagon transport for HTTP has been added to the Maven Artifact Resolver infrastructure. The driver for this was a request from a user to be able to use preemptive authentication with JFrog¡¯s artifactory. Use of it is currently optional via a property but we¡¯re looking to make it default sometime in the future and possibly introduce more wagon transports which might provide interesting options to place your artifacts behind ssh, git or whatever Apache Wagon is able to provide.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Neo4j's mad scientist Michael Hunger on graphs, databases and relationships</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/24/neo4j-s-mad-scientist-michael-hunger-on-graphs-databases-and-relationships" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-01-24:3941</id>
-    <updated>2020-01-24T04:00:14Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Neo4j&amp;rsquo;s mad scientist (and the nicest robot you&amp;rsquo;ve ever met!), and one of the most brilliant and generous people around, &lt;a href="http://twitter.com/mesirii"&gt;Michael Hunger (@mesirii)&lt;/a&gt;, about all things graph, relationships and more.&lt;/p&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/748552399&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
