@@ -13,9 +13,6 @@ import java.util.StringTokenizer;
  * 돌리는건 시계방향이고
  * 회전정보가 주어질 때 
  * 회전 연산을 k회 수행 후 최종 최소값 출력
- * 
- * 순열로 가능한 모든 순서로 케이스를 뽑아낸 후 
- * 각 케이스에 대해서 최소값 갱신
  */
 
 public class 배열돌리기4 {
@@ -30,14 +27,14 @@ public class 배열돌리기4 {
 	static int min=Integer.MAX_VALUE;
 	public static void main(String[] args) throws IOException {
 		setData();
-		dfs(0); //순열로 모든 경우 뽑기
+		dfs(0);
 		System.out.println(min);
 	}
 	private static void dfs(int depth) {
-		if(depth==K){ //다뽑았으면
-			copyArray();//맵 복사하고
-			rotate();//돌려본다.
-			getMinFromA();//최소값 update
+		if(depth==K){
+			copyArray();
+			rotate();
+			getMinFromA();
 			return;
 		}
 		for(int i=0;i<K;i++){

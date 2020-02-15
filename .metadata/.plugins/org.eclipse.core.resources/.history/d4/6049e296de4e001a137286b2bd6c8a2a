@@ -35,9 +35,9 @@ public class 배열돌리기4 {
 	}
 	private static void dfs(int depth) {
 		if(depth==K){ //다뽑았으면
-			copyArray();//맵 복사하고
-			rotate();//돌려본다.
-			getMinFromA();//최소값 update
+			copyArray();
+			rotate();
+			getMinFromA();
 			return;
 		}
 		for(int i=0;i<K;i++){

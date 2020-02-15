@@ -51,13 +51,9 @@ public class 새로운게임2 {
 	
 	private static void moveHorse() {
 		turn = 1;
-		while(turn<=8){
+		while(turn<=1000){
 			for(int i=0;i<K;i++){
-				System.out.println("이동전");
-				view();
 				nextCheck(horeses[i]);
-				System.out.println("이동후");
-				view();
 				if(find) return;//4개 이상 쌓이는 순간이므로 종료시켜버림
 			}	
 			turn++;
@@ -89,21 +85,21 @@ public class 새로운게임2 {
 				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				moveNextWhiteGround(currentHorseIdx,currentR,currentC,nr,nc);//업힌 애들까지 전부 이주 
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
-				if(isEnd(nr,nc)) return;
 				break;
 			case 1:			
 				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				redlist = getMoveToRedGroundHorseList(currentHorseIdx,currentR,currentC,nr,nc);
 				moveNextRedGround(redlist,nr,nc);
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
-				if(isEnd(nr,nc)) return;
 				break;
 			case 2://파랑색이면			
 				dir = reverseDirection(dir);//역방향준뒤
 				nr = currentR+dr[dir];
 				nc = currentC+dc[dir];//방향 바꿔줌		
+				System.out.println("역방향");
 				horseMap[currentR][currentC].get(0).dir=dir;//역방향으로 바꿔준 뒤 
-				if(rangeCheck(nr, nc)){//역방향이 영역내에있으면
+				//뭔가 갈 수 있다면	
+				if(rangeCheck(nr, nc)){
 					switch (ground[nr][nc]){//흰,빨,파
 					case 0:			
 						currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
@@ -119,11 +115,11 @@ public class 새로운게임2 {
 					case 2://파랑색이면 아무것도 안함
 						break;
 					}	
-					if(isEnd(nr,nc)) return;
 				}
 				break;
 			}
-		
+			System.out.println(nr+" "+nc);
+			if(isEnd(nr,nc)) return;
 		}else {//경계값 만나서 반대로 돌렸는데 
 			dir = reverseDirection(dir);//역방향을 준뒤 재시도
 			nr = currentR+dr[dir];

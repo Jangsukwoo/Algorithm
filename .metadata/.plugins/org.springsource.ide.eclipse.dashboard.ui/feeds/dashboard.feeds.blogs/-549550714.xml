@@ -5,7 +5,41 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-02-13T23:30:05Z</updated>
+  <updated>2020-02-14T09:41:48Z</updated>
+  <entry>
+    <title>Announcing: The NEW Spring Website!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/14/announcing-the-new-spring-website" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Ben Wilcock</name>
+    </author>
+    <id>tag:spring.io,2020-02-13:3960</id>
+    <updated>2020-02-14T09:41:48Z</updated>
+    <content type="html">&lt;p&gt;Spring is constantly evolving and always innovating while being consistent where it matters: delivering a reliable framework to help you build maintainable software, faster. In the last few years, the Spring contributors have worked hard to bring the predictable Spring experience to microservices, serverless, streams, reactive, batch, data, and new languages like Kotlin. Over the coming year, you&amp;rsquo;ll see many more examples of this, including some cool new features that we&amp;rsquo;re just dying to share with you.&lt;/p&gt;
+&lt;p&gt;However, there was one area of Spring that we felt was desperately in need of some love and attention?the dusty old spring.io website. Very little changed on the site in the last few years. And that presented us with a problem: how do you take a well-used website that&amp;rsquo;s trusted by millions of developers, and make it better?&lt;/p&gt;&lt;h2&gt;&lt;a href="#we-love-a-challenge-hellip" class="anchor" name="we-love-a-challenge-hellip"&gt;&lt;/a&gt;We love a challenge&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;We started with motivation. If we changed the site, what would our motivation be for that change? What did we want folks to get out of it? What should it feel like to use? How should it evolve?&lt;/p&gt;
+&lt;p&gt;After many discussions, much passion, and some deep introspection, our team came together around three key themes:&lt;/p&gt;&lt;h2&gt;&lt;a href="#1-visitors-should-feel-welcome" class="anchor" name="1-visitors-should-feel-welcome"&gt;&lt;/a&gt;#1 Visitors should feel welcome.&lt;/h2&gt;
+&lt;p&gt;Spring is used by millions of developers every day. Some have been using Spring for over 20 years, some have been using Spring for less than 20 minutes. If Spring is to continue to grow, our window on the world needs to be as welcoming as possible, no matter what your level of experience. It should cater as equally for those just getting started on their Spring journey as it does for those who already know exactly what they need from their visit.&lt;/p&gt;
+&lt;p&gt;With the new site, we¡¯ve kept almost all of the existing content and we¡¯ve used the same URLs wherever possible. However, we¡¯ve added a bunch of new content that helps demystify the Spring ecosystem and provide more support when you¡¯re just getting started.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;New to Spring?&lt;/em&gt; Try our new &lt;a href="https://spring.io/why-spring"&gt;Why Spring&lt;/a&gt; and &lt;a href="https://spring.io/quickstart"&gt;Quickstart&lt;/a&gt; pages.&lt;br/&gt;&lt;em&gt;Seasoned Pro?&lt;/em&gt; Go straight to the &lt;a href="https://spring.io/projects"&gt;Projects&lt;/a&gt;, &lt;a href="https://spring.io/guides"&gt;Guides&lt;/a&gt;, or &lt;a href="https://spring.io/blog"&gt;Blogs&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#2-visitors-should-feel-comfortable" class="anchor" name="2-visitors-should-feel-comfortable"&gt;&lt;/a&gt;#2 Visitors should feel comfortable.&lt;/h2&gt;
+&lt;p&gt;Navigating Spring&amp;rsquo;s large and diverse ecosystem can be challenging. Spring is highly modular in nature and it has something for everything. But that doesn&amp;rsquo;t mean it&amp;rsquo;s easy to understand. Our new website needed to do more to explain what Spring is and how the various parts can be used together to build the amazing things you¡¯re working on.&lt;/p&gt;
+&lt;p&gt;In the new site, topics like building microservices, and understanding how Spring can help you build cloud applications, are covered by a series of new pages. Navigation has also evolved, with dropdown menus surfacing more of the content you need to support your learning journey.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Researching a topic?&lt;/em&gt; Try the topic pages including &lt;a href="https://spring.io/microservices"&gt;Microservices&lt;/a&gt;, &lt;a href="https://spring.io/cloud"&gt;Cloud&lt;/a&gt;, and &lt;a href="https://spring.io/serverless"&gt;Serverless&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Going for gold?&lt;/em&gt; New &lt;a href="https://spring.io/learn"&gt;Learn&lt;/a&gt; and &lt;a href="https://spring.io/training"&gt;Training &amp;amp; Certification&lt;/a&gt; pages will boost your knowledge&lt;br/&gt;&lt;em&gt;Help in production?&lt;/em&gt; Our latest &lt;a href="https://spring.io/support"&gt;Support&lt;/a&gt; offerings will keep you up-and-running!&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#3-visitors-should-feel-our-energy" class="anchor" name="3-visitors-should-feel-our-energy"&gt;&lt;/a&gt;#3 Visitors should feel our energy!&lt;/h2&gt;
+&lt;p&gt;It was crucial that our new website should pay homage to the sheer energy and vibrancy of the Spring community. Our community is bright, passionate, innovative, confident, and dynamic. Spring is a shining example of what we can achieve if we all work together for the greater good.&lt;/p&gt;
+&lt;p&gt;In the new site, we¡¯ve used a lighter and brighter design throughout. There are zesty new tonal highlights, new graphics, and even the occasional diagram. Links to events, social media, videos, and podcasts have also been added so that you can experience first hand the passion and drive of our community and it¡¯s members.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Feeling social?&lt;/em&gt; Try our new &lt;a href="https://spring.io/community"&gt;Community and Events&lt;/a&gt; page&lt;br/&gt;&lt;em&gt;Love a good talk?&lt;/em&gt; Take a look at our new &lt;a href="https://spring.io/learn"&gt;Learn&lt;/a&gt; page with videos, podcasts &amp;amp; more&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#so-here-it-is-hellip" class="anchor" name="so-here-it-is-hellip"&gt;&lt;/a&gt;So here it is&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;These three core themes have allowed us to take everything we liked about the old site, and mold it into something &lt;a href="https://spring.io"&gt;new&lt;/a&gt;. We&amp;rsquo;ve lost very little of the existing content but we¡¯ve augmented it with new pieces that should help explain what Spring is all about, why it¡¯s so awesome, and how it can support you in your daily work.&lt;/p&gt;
+&lt;p&gt;As fellow developers, we know it&amp;rsquo;s impossible to build the &lt;em&gt;perfect&lt;/em&gt; website, but we really hope that you can be proud of Spring¡¯s new showcase and that you¡¯ll be happy to use it and &lt;a href="https://ctt.ac/xOb1i"&gt;share it&lt;/a&gt; with others.&lt;/p&gt;
+&lt;p&gt;Thanks for stopping by!&lt;/p&gt;
+&lt;p&gt;The Spring Website Team.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Vedran Pavic on Spring Session, Croatia, and so much more</title>
     <link rel="alternate" href="https://spring.io/blog/2020/02/13/a-bootiful-podcast-vedran-pavic-on-spring-session-croatia-and-so-much-more" />
@@ -1192,33 +1226,6 @@ Each approach has pros and cons, but hopefully the new features we&amp;#8217;re 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.4.0 M1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/01/27/spring-cloud-data-flow-2-4-0-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Janne Valkealahti</name>
-    </author>
-    <id>tag:spring.io,2020-01-27:3943</id>
-    <updated>2020-01-27T13:06:26Z</updated>
-    <content type="html">&lt;h2&gt;&lt;a href="#ui-changes-to-stream-editor" class="anchor" name="ui-changes-to-stream-editor"&gt;&lt;/a&gt;UI Changes to Stream Editor&lt;/h2&gt;
-&lt;p&gt;Stream Editor went through a much-needed touch of love and should now be more visually appealing. Here¡¯s a simple screenshot what it looks like:&lt;br/&gt;&lt;img src="https://user-images.githubusercontent.com/50398/73159326-2e2f7180-40de-11ea-81e5-6c77898df6cd.png" alt="blog-new-stream-editor" /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven-preemptive-authentication" class="anchor" name="maven-preemptive-authentication"&gt;&lt;/a&gt;Maven Preemptive Authentication&lt;/h2&gt;
-&lt;p&gt;Support for using Maven Wagon transport for HTTP has been added to the Maven Artifact Resolver infrastructure. The driver for this was a request from a user to be able to use preemptive authentication with JFrog¡¯s artifactory. Use of it is currently optional via a property but we¡¯re looking to make it default sometime in the future and possibly introduce more wagon transports which might provide interesting options to place your artifacts behind ssh, git or whatever Apache Wagon is able to provide. If you have a particular interest or experience of it, let us know.&lt;/p&gt;&lt;h2&gt;&lt;a href="#various-bug-fixes-and-enhancements" class="anchor" name="various-bug-fixes-and-enhancements"&gt;&lt;/a&gt;Various Bug Fixes and Enhancements&lt;/h2&gt;
-&lt;p&gt;Apart from a list above more detailed lists can be found from &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/92?closed=1"&gt;Iteration 159&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/95?closed=1"&gt;Iteration 160&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Audit can now track platform info&lt;/li&gt;
-  &lt;li&gt;Better error handling for platform-specific task cron scheduling&lt;/li&gt;
-  &lt;li&gt;Using Scheduled task arguments from a previous execution&lt;/li&gt;
-  &lt;li&gt;Task scheduling via shell&lt;/li&gt;
-  &lt;li&gt;Task Java DSL improvements&lt;/li&gt;
-  &lt;li&gt;Missing docs for scaling API&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#project-build-changes" class="anchor" name="project-build-changes"&gt;&lt;/a&gt;Project Build Changes&lt;/h2&gt;
-&lt;p&gt;Starting from this version we¡¯ve changed all Data Flow family projects to have our own parent pom in spring-cloud-dataflow-build order to have easier dependency handling and not to be so tightly dependant with spring-cloud-build.&lt;/p&gt;
-&lt;p&gt;We¡¯ve been using Travis CI in GitHub to build commits and pull requests and we¡¯re finally migrating to GitHub actions starting with spring-cloud-dataflow and spring-cloud-deployer-local. Experience is so good that we¡¯re rolling these out to other repos as well.&lt;/p&gt;
-&lt;p&gt;Integration testing is difficult and complex and for this we¡¯ve been using our own scripting against various CF and K8s environments. In those environments, we should only really test environment-specific things so we¡¯ve started to move some of these tests into docker and docker-compose so that it would be easier for any user to run tests that are not environment-specific.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
