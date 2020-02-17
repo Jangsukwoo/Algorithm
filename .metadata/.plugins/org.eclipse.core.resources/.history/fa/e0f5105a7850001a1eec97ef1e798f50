@@ -1,0 +1,10 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+
+public class K번째최단경로 {
+	static BufferedReader br;
+	public static void main(String[] args) {
+
+	}
+}

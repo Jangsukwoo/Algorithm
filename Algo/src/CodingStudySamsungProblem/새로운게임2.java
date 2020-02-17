@@ -17,6 +17,9 @@ import java.util.StringTokenizer;
  * 말의 이동정보가 주어지고 임의의 말이 업고있는 말이 4이상이 되는 턴을 출력
  * 
  * 1000턴 넘게 이동해도 답을 못구하면 그냥 끝낸다.
+ * 
+ * 역방향 처리할 때 인덱스 0인 말의 방향을 바꿔줘서 계속 틀렸다...
+ * 태환씨 도움받아서 해결해버림..허무하다 반성하자
  */
 public class 새로운게임2 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -51,26 +54,13 @@ public class 새로운게임2 {
 	
 	private static void moveHorse() {
 		turn = 1;
-		while(turn<=8){
+		while(turn<=1000){
 			for(int i=0;i<K;i++){
-				System.out.println("이동전");
-				view();
 				nextCheck(horeses[i]);
-				System.out.println("이동후");
-				view();
 				if(find) return;//4개 이상 쌓이는 순간이므로 종료시켜버림
 			}	
 			turn++;
 		}
-	}
-	private static void view() {
-		for(int row=0;row<N;row++) {
-			for(int col=0;col<N;col++) {
-				System.out.print(horseMap[row][col].size());
-			}
-			System.out.println();
-		}
-		System.out.println();
 	}
 	private static void nextCheck(Horse horse) {//현재말에대해서
 		int currentR = horse.row;
@@ -80,19 +70,16 @@ public class 새로운게임2 {
 		int nr = currentR+dr[dir];
 		int nc = currentC+dc[dir];//다음칸
 		int currentHorseIdx=0;
-		
 		ArrayList<Horse> redlist;
-		
+		currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 		if(rangeCheck(nr,nc)){//경계안쪽에 있으면. 최초움직임
 			switch (ground[nr][nc]){//흰,빨,파
 			case 0://흰땅이면		
-				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				moveNextWhiteGround(currentHorseIdx,currentR,currentC,nr,nc);//업힌 애들까지 전부 이주 
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
 				if(isEnd(nr,nc)) return;
 				break;
 			case 1:			
-				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				redlist = getMoveToRedGroundHorseList(currentHorseIdx,currentR,currentC,nr,nc);
 				moveNextRedGround(redlist,nr,nc);
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
@@ -102,16 +89,14 @@ public class 새로운게임2 {
 				dir = reverseDirection(dir);//역방향준뒤
 				nr = currentR+dr[dir];
 				nc = currentC+dc[dir];//방향 바꿔줌		
-				horseMap[currentR][currentC].get(0).dir=dir;//역방향으로 바꿔준 뒤 
+				horseMap[currentR][currentC].get(currentHorseIdx).dir=dir;//역방향으로 바꿔준 뒤 
 				if(rangeCheck(nr, nc)){//역방향이 영역내에있으면
 					switch (ground[nr][nc]){//흰,빨,파
 					case 0:			
-						currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 						moveNextWhiteGround(currentHorseIdx,currentR,currentC,nr,nc);//업힌 애들까지 전부 이주 
 						removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
 						break;
 					case 1:
-						currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 						redlist = getMoveToRedGroundHorseList(currentHorseIdx,currentR,currentC,nr,nc);
 						moveNextRedGround(redlist,nr,nc);
 						removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
@@ -128,15 +113,13 @@ public class 새로운게임2 {
 			dir = reverseDirection(dir);//역방향을 준뒤 재시도
 			nr = currentR+dr[dir];
 			nc = currentC+dc[dir];			
-			horseMap[currentR][currentC].get(0).dir=dir;
+			horseMap[currentR][currentC].get(currentHorseIdx).dir=dir;
 			switch (ground[nr][nc]){//흰,빨,파
 			case 0://흰땅이면		
-				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				moveNextWhiteGround(currentHorseIdx,currentR,currentC,nr,nc);//업힌 애들까지 전부 이주 
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);
 				break;
 			case 1:			
-				currentHorseIdx = findCurrentIdx(currentNum,currentR,currentC);
 				redlist = getMoveToRedGroundHorseList(currentHorseIdx,currentR,currentC,nr,nc);
 				moveNextRedGround(redlist,nr,nc);
 				removeCurrentGroundHorse(currentR,currentC,currentHorseIdx);

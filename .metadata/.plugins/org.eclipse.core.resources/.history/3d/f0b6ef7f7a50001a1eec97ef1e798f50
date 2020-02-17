@@ -1,0 +1,17 @@
+package CodingStudy;
+
+import java.util.ArrayList;
+/*
+ * V : 6
+ * E : 9
+ */
+public class 다익스트라짜보기 {
+	static ArrayList<Edge>[] edgelist;
+	static class Edge{
+		int next;
+		int cost;
+	}
+	public static void main(String[] args) {
+		edgelist = new ArrayList[7];
+	}
+}

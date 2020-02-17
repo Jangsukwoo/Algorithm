@@ -1,7 +1,0 @@
-package SDS복습_그래프;
-
-public class 단절점_단절점 {
-	public static void main(String[] args) {
-
-	}
-}
