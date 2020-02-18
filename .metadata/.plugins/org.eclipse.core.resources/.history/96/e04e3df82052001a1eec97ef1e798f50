@@ -71,16 +71,8 @@ public class 단절점복습 {
 		int child=0;//루트에서 시작해서 어떤 정점들을 탐색한 뒤에 다시 이 루트를 거쳐서 정점들을 탐색하게 되면 child가 2가 된다.
 		//즉 이 루트를 다시 거치지않고서는 이후 정점들은 탐색할 수 없게되는 것이라
 		//child가 2라면 루트가 단절점이 되버린다.
-	
 		
-		//현재 정점에서
-		//방문 순서를 기록해 둘건데 
-		//알고 있는 가장 작은 방문순서번호를 저장할 것임
-		//일단은 현재 정점의 방문순서를 기록해놓고
-		//같은 컴포넌트 내에서 가장 작은 방문번호를 가진 
-		int minVisitNumber = visit[currentVertax];
-	
-
+		int minVisitNumber = visit[currentVertax];//현재 정점의 방문순서를 기록해두고
 		int previousMinVisitNumber=0;
 		for(int i=0;i<adjList[currentVertax].size();i++){//현재 정점에서 매달린 자식들을 확인한다.
 			int nextVerTaxNumber = adjList[currentVertax].get(i); //매달린 정점을 하나씩 확인
@@ -105,9 +97,6 @@ public class 단절점복습 {
 				
 				previousMinVisitNumber = dfs(nextVerTaxNumber,false);//루트 이후로서 방문해본다.
 				//한 컴포넌트 내에서 제일 방문 번호가 작은 값을 뱉어 냈는데 
-				//지금 정점보다 더 큰값이 나왔다면
-				//지금 정점을 거치지 않고서는 갈 수 없는 정점이라는 뜻으로 해석..중이다
-				//따라서 현재 정점은 단절점이 된다.
 				if(!isRoot && (previousMinVisitNumber>=visit[currentVertax])){
 					//지금 방문 해본것 보다 더 크다면?
 					System.out.println("루트가 아니지만 단절점"+currentVertax);
