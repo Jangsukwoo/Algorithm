@@ -12,14 +12,6 @@ import java.util.StringTokenizer;
 /*
  * 숫자 버튼이 고장나서 몇 개의 숫자 버튼과 곱하기 버튼, 게산 버튼이있음
  * 숫자 X 를 만드는 최소 버튼 수 
-
-약수들을 다 구해둔 뒤 
-X의 약수집합을 만듬
-
-X,누른카운트(계산버튼떄문에 1부터시작)
-즉 X,1 을 큐에 넣고
-나눠가면서 BFS를 수행했다.
-
 1
 1 1 1 1 1 1 1 1 1 1
 128
@@ -55,7 +47,7 @@ public class 지희의고장난계산기 {
 	static String[] divisor;
 	static ArrayList<Integer> numberlist;
 	static HashSet<Integer> numberSet;
-	static Queue<int[]> q; //값과 누른 회수 
+	static Queue<int[]> q;
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		int T = Integer.parseInt(br.readLine());
@@ -68,9 +60,10 @@ public class 지희의고장난계산기 {
 		}
 	}
 
+
 	private static void setDivideNumber() {
 		for(int i=10;i<X;i++){
-			if(X%i==0){//나눠 떨어지는 약수면서
+			if(X%i==0){//나눠 떨어지고
 				if(justPushCheck(i)){//누를 수 있는 숫자면
 					numberlist.add(i);
 					numberSet.add(i);
@@ -79,9 +72,15 @@ public class 지희의고장난계산기 {
 		}
 	}
 
+
+
+
 	private static void bfs(){
+		int pushButton=1;//마지막 계산버튼 떄문에 1부터 시작
 		while(!q.isEmpty()){//q다 비울 때 까지
 			int size = q.size();
+			boolean pushFlag = false;
+			boolean manyPushFlag = false;	
 			for(int i=0;i<size;i++) {
 				int[] currentNumberInfo = q.poll();
 				int currentNumber = currentNumberInfo[0];
@@ -91,17 +90,18 @@ public class 지희의고장난계산기 {
 						if(numberlist.get(j)!=1 && numberlist.get(j)!=0){//1과 0이 아닌 숫자에 대해서만
 							if(currentNumber%numberlist.get(j)==0){
 								int manyPush=0;
-								if(numberlist.get(j)>=10) manyPush=Integer.toString(numberlist.get(j)).length()-1;
+								if(numberlist.get(j)>=10){
+									manyPush=Integer.toString(numberlist.get(j)).length()-1;
+								}
 								int value = currentNumber/numberlist.get(j);
 								if(value!=0){
 									q.add(new int[] {value,currentPushCount+2+manyPush});//나눴을 때 0이 아니면 큐에 넣어준다.
-									//+2는 나눗셈(곱셈)과 숫자를 한번 누른거, + manyPush (약수인 99는 두번 눌러야 하니)
 								}
 							}
 						}
 					}
 				}else{//그냥 누를 수 있으면 비교
-					push = Math.min(justPush+currentPushCount,push);//그냥 누른거+ 눌러온거 
+					push = Math.min(justPush+currentPushCount,push);
 				}
 			}
 		}
