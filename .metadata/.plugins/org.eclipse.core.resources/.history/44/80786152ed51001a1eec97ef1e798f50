@@ -1,0 +1,16 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+import java.util.zip.InflaterInputStream;
+
+public class 스타트링크 {
+	static int F,S,G,U,D;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData(){
+		BufferedReader br = new BufferedReader(new InflaterInputStream(System.in));
+		StringTokenizer st;
+	}
+}

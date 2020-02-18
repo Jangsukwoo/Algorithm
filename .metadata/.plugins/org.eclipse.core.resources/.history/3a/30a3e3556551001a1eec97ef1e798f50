@@ -1,0 +1,85 @@
+package SDS복습_그래프;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * 단절점은 두개의 컴포넌트로 나뉘는데
+ * dfs 탐색할 때 생기는 dfs 스패닝 트리를 이용하면
+ * 단절점을 빠른 시간 내에 효과적으로 찾아낼 수 있다.
+ * 
+ * step 1. 먼저 dfs로 탐색하면서 탐색되는 순서대로 넘버링.
+ * step 2. 현재 탐색하는 정점 A에서 연결된 정점들 중
+ * 정점 A보다 늦게 탐색되는 정점들에 대해 
+ * 정점 A보다 먼저 탐색되는 정점으로 가는 경로가 없는 경우
+ * 정점 A는 단절점이 된다.
+ * 
+ * 구현은
+ * dfs에서 탐색되는 순서대로 discover 번호를 매겨 주면서
+ * 아직 탐색이 안된 경우 해당 정점에서 dfs를 탐색하여
+ * 나오는 정점 중 discover 번호가 가장 적은 정점에 대해
+ * 그 정점의 discover 번호만 비교하면서
+ * 가장 작은 discover 번호가 나의 discover 번호보다
+ * 크거나 같다면 그 정점은 단절점이 된다.
+ * 
+ * 한번의 dfs로 단절점을 찾아낼 수 있다.
+ */
+public class 단절점복습 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int V,E;
+	static int[] visit;
+	static int[] breakPointVertax;
+	static int visitNumber;
+	static ArrayList<Integer>[] adjList;
+	public static void main(String[] args) throws IOException {
+		setData();
+		breakPoint();//dfs로 단절점 찾기
+	}
+	private static void breakPoint() {
+		for(int vertax=1;vertax<=V;vertax++) {
+			dfs(vertax,true);
+		}
+	}
+	private static int dfs(int currentVertax, boolean isRoot){
+		visit[currentVertax]=++visitNumber;//방문 순서 넣기
+		int child=0;
+		int minVisitNumber = visit[currentVertax];
+		int previousMinVisitNumber=0;
+		for(int i=0;i<adjList[currentVertax].size();i++){//현재 정점에서 매달린 자식들을 확인한다.
+			int nextVerTaxNumber = adjList[currentVertax].get(i);
+			if(visit[nextVerTaxNumber]!=0){//방문 해본 점이라면
+				//지금 방문한 정점의 방문 순서 번호와 이전에 방문 된 방문 정점 순서 번호를 비교해서 더 작은 것을 선택
+				minVisitNumber = Math.min(minVisitNumber,visit[nextVerTaxNumber]);
+				continue;
+			}
+			//방문 안해본 점이라면
+			child++;//자식 컴포넌트 시작
+			previousMinVisitNumber = dfs(nextVerTaxNumber,false);//루트 이후로서 방문해본다.
+			
+			if(!isRoot && (previousMinVisitNumber>=visit[currentVertax])){
+				
+			}
+		}
+		if(isRoot){//루트인데
+			if(child>=2){//자식 컴포넌트가 두개 이상이라면 단절점이므로
+				breakPointVertax[currentVertax] = 1;
+			}
+		}
+		return minVisitNumber;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		V = Integer.parseInt(st.nextToken());
+		E = Integer.parseInt(st.nextToken());
+		visit = new int[V+1];
+		adjList = new ArrayList[V+1];
+		breakPointVertax = new int[V+1];
+		for(int i=1;i<=V;i++) adjList[i] = new ArrayList<Integer>();
+		
+		
+	}
+}

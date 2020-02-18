@@ -1,0 +1,44 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+public class 출근경로 {
+	static int w,h;
+	static int[][] city;
+	public static void main(String[] args) {
+		setData();
+		getPath();
+	}
+
+	private static void getPath() {
+		for(int row=0;row<h;row++){//모든 path 구하기
+			for(int col=0;col<w;col++){
+				if(!(row==0 && col==1) && !(row==1&&col==0) && !(row==0 && col==0)){
+					//처음 넣어준값 아니고 
+					if(up(row-1) && left(col-1)){//윗방 왼쪽방 있으면
+						
+					}
+				}
+			}
+		}
+	}
+
+	private static boolean left(int nc) {
+		if(nc>=0) return true;
+		return false;
+	}
+
+	private static boolean up(int nr) {
+		if(nr>=0) return true;
+		return false;
+	}
+
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		w = sc.nextInt();
+		h = sc.nextInt();
+		city = new int[h][w];
+		city[0][1] = 1;
+		city[1][0] = 1;
+	}
+}
