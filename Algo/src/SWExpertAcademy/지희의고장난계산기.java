@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -14,6 +16,10 @@ import java.util.StringTokenizer;
 1 1 1 1 1 1 1 1 1 1
 128
 
+1
+0 1 1 0 0 1 0 0 0 0
+60
+
 3
 0 1 1 0 0 1 0 0 0 0
 60
@@ -21,96 +27,118 @@ import java.util.StringTokenizer;
 128
 0 1 0 1 0 1 0 1 0 1
 128
+
+1
+0 0 0 0 0 0 0 0 0 1
+891
+
+1
+0 0 0 0 0 0 0 0 0 1
+793881
  */
 public class 지희의고장난계산기 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	static int X;
-	static int Xsize;
 	static int push;
+	static int justPush;
+	static int Xsize;
+	static int n,r;
+	static String[] divisor;
 	static ArrayList<Integer> numberlist;
-	static class Before{
-		String num;
-		boolean multiple = false;
-		int push;
-		public Before(String num, boolean multiple,int push) {
-			this.num = num;
-			this.multiple = multiple;
-			this.push = push;
-		}
-	}
+	static HashSet<Integer> numberSet;
+	static Queue<int[]> q;
+
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		int T = Integer.parseInt(br.readLine());
 		for(int testcase=1;testcase<=T;testcase++) {
-			setData();			
-			BruteForce();
+			setData();	
+			setDivideNumber();
+			bfs();
 			if(push!=Integer.MAX_VALUE) System.out.println("#"+testcase+" "+push);
 			else System.out.println("#"+testcase+" "+"-1");
 		}
 	}
-	
-	private static void BruteForce() {
-		for(Integer startNumber : numberlist) {
-			if(startNumber!=0) {
-				bfs(startNumber);				
+
+
+	private static void setDivideNumber() {
+		for(int i=10;i<X;i++){
+			if(X%i==0){//나눠 떨어지고
+				if(justPushCheck(i)){//누를 수 있는 숫자면
+					numberlist.add(i);
+					numberSet.add(i);
+				}
 			}
 		}
 	}
 
-	private static void bfs(Integer startNumber) {
-		Queue<Before> q = new LinkedList<Before>();
-		q.add(new Before(Integer.toString(startNumber),false,1));
-		while(!q.isEmpty()){
-			//System.out.println("큐돈다");
+
+
+
+	private static void bfs(){
+		int pushButton=1;//마지막 계산버튼 떄문에 1부터 시작
+		while(!q.isEmpty()){//q다 비울 때 까지
 			int size = q.size();
+			boolean pushFlag = false;
+			boolean manyPushFlag = false;	
 			for(int i=0;i<size;i++) {
-				Before currentBefore = q.poll();
-				//System.out.println("뺀숫자:"+currentBefore.num);
-				if(Integer.parseInt(currentBefore.num)==X){ //확인은 빼서 바로
-					//System.out.println("찾음");
-					push = Math.min((currentBefore.push+1),push);
-					continue;
-				}
-				if(currentBefore.num.length()>Xsize) continue;
-				if(currentBefore.multiple==false){//곱셉이 아니면
-					if(currentBefore.num.length()<Xsize){
-						for(Integer nextNumber : numberlist){
-							String nextNum = currentBefore.num+nextNumber;
-							q.add(new Before(nextNum,false,currentBefore.push+1));
-						}//가능한 숫자 다 붙임 
-						q.add(new Before(currentBefore.num,true,currentBefore.push+1));
-					}
-					else if(currentBefore.num.length()==Xsize){//사이즈는 같은데
-						if(Integer.parseInt(currentBefore.num)!=X){//값이 같지 않으면 혹시모르니 x해본다.
-							q.add(new Before(currentBefore.num,true,currentBefore.push+1));
-						}
-					}
-				}else if(currentBefore.multiple){//곱셈이고 0과 1은 곱해봐야 의미 없으니 뺴고 곱해본다.
-					for(Integer nextNumber : numberlist){
-						if(nextNumber!=1 && nextNumber!=0){
-							int cur = Integer.parseInt(currentBefore.num);
-							int nextNum = cur*nextNumber;
-							if(Integer.toString(nextNum).length()<=Xsize) {
-								q.add(new Before(Integer.toString(nextNum),false,currentBefore.push+1));									
+				int[] currentNumberInfo = q.poll();
+				int currentNumber = currentNumberInfo[0];
+				int currentPushCount = currentNumberInfo[1];
+				if(!justPushCheck(currentNumber)){//누를수 있는 숫자가 아니면 나눈다.
+					for(int j=0;j<numberlist.size();j++){
+						if(numberlist.get(j)!=1 && numberlist.get(j)!=0){//1과 0이 아닌 숫자에 대해서만
+							if(currentNumber%numberlist.get(j)==0){
+								int manyPush=0;
+								if(numberlist.get(j)>=10){
+									manyPush=Integer.toString(numberlist.get(j)).length()-1;
+								}
+								int value = currentNumber/numberlist.get(j);
+								if(value!=0){
+									q.add(new int[] {value,currentPushCount+2+manyPush});//나눴을 때 0이 아니면 큐에 넣어준다.
+								}
 							}
 						}
-					}//가능한 숫자 다 붙임 
+					}
+				}else{//그냥 누를 수 있으면 비교
+					push = Math.min(justPush+currentPushCount,push);
 				}
 			}
 		}
 	}
+
+	private static boolean justPushCheck(int currentNumber){
+		justPush=0;
+		String stringCurrentNumber = Integer.toString(currentNumber);
+		for(int i=0;i<stringCurrentNumber.length();i++) {
+			//누를 수 있는 숫자가 아니면 포기
+			if(!numberSet.contains(Character.getNumericValue(stringCurrentNumber.charAt(i)))) {
+				return false;
+			}else justPush++;//누를 수 있음 
+		}
+		return true;
+	}
+
 
 	private static void setData() throws NumberFormatException, IOException {
 		st = new StringTokenizer(br.readLine());
 		numberlist = new ArrayList<Integer>();
+		numberSet = new LinkedHashSet<Integer>();
 		for(int i=0,num;i<10;i++) {
 			num=Integer.parseInt(st.nextToken());
-			if(num!=0) numberlist.add(i);
+			if(num!=0) {
+				numberlist.add(i);
+				numberSet.add(i);
+			}
 		}
 		st = new StringTokenizer(br.readLine());
 		String target = st.nextToken();
-		Xsize = target.length();
 		X = Integer.parseInt(target);
 		push = Integer.MAX_VALUE;
+		n = numberlist.size();
+		r = Integer.toString(X).length();
+		q = new LinkedList<>();
+		q.add(new int[] {X,1});
 	}
+
 }
