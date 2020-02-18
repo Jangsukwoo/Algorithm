@@ -42,8 +42,6 @@ public class 단절점복습 {
 		setData();
 		breakPoint();//dfs로 단절점 찾기
 		getBreakPoint();
-		System.out.println("방문순서");
-		System.out.println(Arrays.toString(visit));
 		System.out.println(breakPointSize);
 		for(int i=0;i<breakPointList.size();i++) {
 			System.out.print(breakPointList.get(i)+" ");
@@ -66,7 +64,6 @@ public class 단절점복습 {
 		}
 	}
 	private static int dfs(int currentVertax, boolean isRoot){
-		System.out.println("방문순서"+currentVertax);
 		visit[currentVertax]=++visitNumber;//방문 순서 넣기
 		int child=0;//루트에서 시작해서 어떤 정점들을 탐색한 뒤에 다시 이 루트를 거쳐서 정점들을 탐색하게 되면 child가 2가 된다.
 		//즉 이 루트를 다시 거치지않고서는 이후 정점들은 탐색할 수 없게되는 것이라
@@ -99,7 +96,6 @@ public class 단절점복습 {
 				//한 컴포넌트 내에서 제일 방문 번호가 작은 값을 뱉어 냈는데 
 				if(!isRoot && (previousMinVisitNumber>=visit[currentVertax])){
 					//지금 방문 해본것 보다 더 크다면?
-					System.out.println("루트가 아니지만 단절점"+currentVertax);
 					breakPointVertax[currentVertax]=1;
 				}
 				minVisitNumber = Math.min(previousMinVisitNumber,minVisitNumber);
@@ -107,7 +103,6 @@ public class 단절점복습 {
 		}
 		if(isRoot){//루트인데
 			if(child>=2){//자식 컴포넌트가 두개 이상이라면 단절점이므로
-				System.out.println("루트로써 단절점"+currentVertax);
 				breakPointVertax[currentVertax] = 1;
 			}
 		}

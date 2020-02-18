@@ -42,8 +42,6 @@ public class 단절점복습 {
 		setData();
 		breakPoint();//dfs로 단절점 찾기
 		getBreakPoint();
-		System.out.println("방문순서");
-		System.out.println(Arrays.toString(visit));
 		System.out.println(breakPointSize);
 		for(int i=0;i<breakPointList.size();i++) {
 			System.out.print(breakPointList.get(i)+" ");
