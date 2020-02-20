@@ -1,0 +1,16 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 인터넷에서 참고한 DP 점화식.
+ * 이해가 좀 필요하다.
+ */
+public class 출근경로_dp {
+	static int[][][][] dp;
+	static int w,h;
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		
+	}
+}

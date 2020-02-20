@@ -81,13 +81,20 @@ public class 그래프_1일차_LCA2 {
 		//점화식 사용해서 parent배열 Setting
 		//parent[K][V] = parent[k-1][parent[k-1][V]] 점화식.
 		//-> LCA 빠르게 구하기. 각 정점의 부모 뿐 아니라 2^k 조상까지 저장한다.
-
+		System.out.println();
 		for(int k=1;k<=17;k++) {
 			for(int n=1;n<=N;n++) {
 				parent[k][n]=parent[k-1][parent[k-1][n]];
 			}
 		}//모든 조상 정보 세팅 끝
-
+		
+		for(int k=0;k<=17;k++) {
+			for(int n=1;n<=N;n++) {
+				System.out.print(parent[k][n]+" ");
+			}
+			System.out.println();
+		}
+		
 		//노드와 노드의 관계 
 		M = Integer.parseInt(br.readLine());
 
@@ -97,6 +104,7 @@ public class 그래프_1일차_LCA2 {
 			b = Integer.parseInt(st.nextToken()); //b라는 노드 
 
 			if (depth[a] > depth[b]) {//깊이 스왑 .a가 더 작도록 
+				//어떻게 들어오든 b가 가진 depth가 더 깊도록
 				int tmp = a;
 				a = b;
 				b = tmp;

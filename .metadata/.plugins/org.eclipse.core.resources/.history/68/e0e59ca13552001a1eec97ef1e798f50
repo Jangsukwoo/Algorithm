@@ -1,0 +1,28 @@
+package CodingStudy;
+
+import java.util.Scanner;
+
+/*
+ * 인터넷에서 참고한 DP 점화식.
+ * 이해가 좀 필요하다.
+ */
+public class 출근경로_dp {
+	static int[][][][] dp;
+	static int w,h;
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		w = sc.nextInt();
+		h = sc.nextInt();
+		for(int i=2;i<=w;i++) dp[i][1][0][0] = 1;
+		for(int i=2;i<=h;i++) dp[1][i][1][0] = 1;
+		
+		for(int i=2; i<=w; i++){
+			for(int j=2; j<=h; j++){
+				dp[i][j][0][0] = (dp[i-1][j][0][0] + dp[i-1][j][0][1]) % m;
+				dp[i][j][0][1] = dp[i-1][j][1][0];
+				dp[i][j][1][0] = (dp[i][j-1][1][0] + dp[i][j-1][1][1]) % m;
+				dp[i][j][1][1] = dp[i][j-1][0][0];
+			}
+		}
+	}
+}

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xpath.regex.REUtil"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.나무재테크.GroundTrees"/>
     <fullyQualifiedTypeName name="jdk.javadoc.internal.doclets.formats.html.markup.Head"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.SWAP"/>
     <fullyQualifiedTypeName name="SDS복습.자료구조_생태학_트라이.Trie"/>
-    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="SDS복습.자료구조_생태학_트라이.TrieNode"/>
     <fullyQualifiedTypeName name="java.util.TreeMap"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -21,7 +18,6 @@
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.구슬탈출2.BeadInfo"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
     <fullyQualifiedTypeName name="javax.print.attribute.standard.Fidelity"/>
-    <fullyQualifiedTypeName name="java.util.zip.InflaterInputStream"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
     <fullyQualifiedTypeName name="CodingStudySamsung모의.점심식사시간.Stair"/>
     <fullyQualifiedTypeName name="com.sun.imageio.spi.InputStreamImageInputStreamSpi"/>
@@ -30,7 +26,6 @@
     <fullyQualifiedTypeName name="codeTest.감시_주영씨.Info"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.다리만들기2.Edge"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.lir.alloc.trace.lsra.TraceLinearScanLifetimeAnalysisPhase.Analyser"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.낚시왕.Shark"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.연구소3.Virus"/>
@@ -39,25 +34,30 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="SWExpertAcademy.지희의고장난계산기.Before"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.주사위윷놀이.Horse"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.resources.legacy"/>
     <fullyQualifiedTypeName name="CodingStudySamsung모의.무선충전.BC"/>
     <fullyQualifiedTypeName name="CodingStudySamsung모의.줄기세포배양.Cell"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-    <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="CodingStudySamsung모의.벌꿀채취.Comb"/>
     <fullyQualifiedTypeName name="CodingStudySamsungProblem.새로운게임2.Horse"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="com.sun.imageio.plugins.common.InputStreamAdapter"/>
+    <fullyQualifiedTypeName name="CodingStudy.다익스트라짜보기.Edge"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.util.zip.InflaterInputStream"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
