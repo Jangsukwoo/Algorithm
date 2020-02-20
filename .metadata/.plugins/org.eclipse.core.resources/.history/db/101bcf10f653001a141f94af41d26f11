@@ -1,0 +1,32 @@
+package SDS복습_그래프;
+/*
+ * LCA 안보고 구현하기
+ * 2^k에서 k를 결정하는 것은
+ * 정점의 최대 개수를 넘어서는 k값
+ * 
+ * 트리가 주어지고 
+ * 어떤 두 정점에 대한 공통 조상 찾기
+ * 
+ * 안보고 구현하되 최대한 깔끔하게 짜보자.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class LCA_LCA복습 {
+	//필요한 데이터
+	static ArrayList<Integer>[] adjList;
+	static int[][] sparesTable;
+	static int[] depth;
+	
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+	}
+}
