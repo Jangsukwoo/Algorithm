@@ -69,6 +69,7 @@ public class LCA_LCA복습 {
 				//같아진 후부턴느 어차피 이 조건에 걸려서 스킵된다.
 			}
 		}
+		System.out.println(a+" "+b);
 		//같은 깊이에 위치 시킨 후 부모를 조사
 		for(int k=17;k>=0;k--) {
 			if(sparesTable[k][a]!=sparesTable[k][b]){//만약 두 부모가 같지 않으면
@@ -78,13 +79,10 @@ public class LCA_LCA복습 {
 		}
 		//부모가 같아졌을 시점에 이 for문은 끝나게되어있음 
 		
-		int lca=b;
+		int lca=a;
+		//int lca = a;
 		if(a!=b) lca = sparesTable[0][a];
-		//같지 않으면 두 자식이 같은 부모를 가리키고 있는 것이고
-		//같다면 찍은 두 정점중에 한 정점이 이미 더 깊은곳의 부모인 것이니 lca는 a라고 한다.
-		//처음에 b가 더 깊은 곳으로 일관성있게 바꿔줬으므로 
-		//아래에서 치고 올라온 데이터는 b이기 때문에 당연히 a가 더 높고 부모이자 조상이다.
-		//그러나 어차피 a==b이므로 lca= a를 해주든 lca=b라고 해주든 상관은없다.
+
 		return lca;
 	}
 
