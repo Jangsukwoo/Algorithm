@@ -1,0 +1,8 @@
+package CodingStudy;
+
+public class 미세먼지또안녕 {
+	static int R,C,T;
+	public static void main(String[] args) {
+
+	}
+}

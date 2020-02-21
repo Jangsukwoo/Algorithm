@@ -1,0 +1,12 @@
+package CodingStudy;
+
+public class 미세먼지또안녕 {
+	static int R,C,T;
+	static int ramainDust;
+	static int[][] room;
+	static int cleanerR1,cleanerC1;
+	
+	public static void main(String[] args) {
+
+	}
+}

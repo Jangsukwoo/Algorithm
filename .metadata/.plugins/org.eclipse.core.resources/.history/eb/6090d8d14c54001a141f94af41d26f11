@@ -1,0 +1,15 @@
+package CodingStudySamsungProblem;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class 아기상어 {
+	static int N;
+	static int[][] space;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)));
+	}
+}
