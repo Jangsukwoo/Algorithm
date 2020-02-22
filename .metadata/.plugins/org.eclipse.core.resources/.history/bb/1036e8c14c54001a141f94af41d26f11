@@ -1,9 +1,0 @@
-package CodingStudySamsungProblem;
-
-public class 아기상어 {
-	static int N;
-	static int[][] space;
-	public static void main(String[] args) {
-		
-	}
-}
