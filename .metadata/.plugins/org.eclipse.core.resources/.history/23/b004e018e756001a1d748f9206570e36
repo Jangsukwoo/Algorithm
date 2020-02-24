@@ -64,30 +64,30 @@ public class 과외맨 {
 
 	private static void output() {
 		ArrayList<Integer> answerPath = new ArrayList<Integer>();
-		int arrivePathNumber = getArriveTileNumber();
-		int pathNumber=arrivePathNumber;
-		while(pathNumber!=0){
-			answerPath.add(pathNumber);
-			pathNumber = tiles[pathNumber].beforTileNumber;
-		}
-		System.out.println(answerPath.size());
-		for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
-	}
-
-
-	private static int getArriveTileNumber() {
-		int last=0;
+		int pathNumber = 0;
 		if(tiles[lastTileNumber].beforTileNumber!=0) {//마지막까지 도달한 경우에는 그 경로를 출력
-			return lastTileNumber;
+			pathNumber = lastTileNumber;
+			while(pathNumber!=0){
+				answerPath.add(pathNumber);
+				pathNumber = tiles[pathNumber].beforTileNumber;
+			}
+			System.out.println(answerPath.size());
+			for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
 		}else {//마지막 타일로 못가는 경우는 도달한 최대 타일의 번호까지의 답을 출력한다.
 			for(int i = lastTileNumber;i>=1;i--){
 				if(tiles[i].beforTileNumber!=0) {
-					last= i;
+					pathNumber = i;
 					break;
 				}
 			}
+			while(pathNumber!=0){
+				answerPath.add(pathNumber);
+				pathNumber = tiles[pathNumber].beforTileNumber;
+			}
+			System.out.println(answerPath.size());
+			for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
 		}
-		return last;
+
 	}
 
 	private static void bfs() {
@@ -103,6 +103,7 @@ public class 과외맨 {
 			}
 		}
 	}
+
 	private static void adjCheck(int cr, int cc) {//좌표 던져주면 인접한 숫자 조사해서 큐에 넣어준다.
 		for(int dir=0;dir<4;dir++){
 			int nr = cr+dr[dir];
@@ -110,11 +111,12 @@ public class 과외맨 {
 			if(rangeCheck(nr,nc)) {//영역 만족하면
 				if(tileMap[nr][nc]==tileMap[cr][cc] && tileVisit[tileNumberMap[nr][nc]]==false){//검사 안해본 타일만
 					insertQueue(tileNumberMap[nr][nc]);
-					tiles[tileNumberMap[nr][nc]].beforTileNumber=tileNumberMap[cr][cc];//직전 타일번호 넣어주기
+					tiles[tileNumberMap[nr][nc]].beforTileNumber=tileNumberMap[cr][cc];
 				}
 			}
 		}
 	}
+
 	private static void insertQueue(int tileNum) {
 		q.add(tileNum);
 		tileVisit[tileNum] = true;
@@ -123,6 +125,15 @@ public class 과외맨 {
 	private static boolean rangeCheck(int adjRow, int adjCol) {
 		if(adjRow>=1 && adjRow<=N && adjCol>=1 && adjCol<=(2*N)) return true;
 		return false;
+	}
+	private static void view() {
+		for(int row=1;row<=N;row++) {
+			for(int col=1;col<=end;col++) {
+				System.out.print(tileNumberMap[row][col]);
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 
 	private static void setData() throws NumberFormatException, IOException {

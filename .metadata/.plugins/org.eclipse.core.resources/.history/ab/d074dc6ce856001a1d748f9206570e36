@@ -65,15 +65,30 @@ public class 과외맨 {
 	private static void output() {
 		ArrayList<Integer> answerPath = new ArrayList<Integer>();
 		int arrivePathNumber = getArriveTileNumber();
-		int pathNumber=arrivePathNumber;
-		while(pathNumber!=0){
-			answerPath.add(pathNumber);
-			pathNumber = tiles[pathNumber].beforTileNumber;
+		if(tiles[lastTileNumber].beforTileNumber!=0) {//마지막까지 도달한 경우에는 그 경로를 출력
+			pathNumber = lastTileNumber;
+			while(pathNumber!=0){
+				answerPath.add(pathNumber);
+				pathNumber = tiles[pathNumber].beforTileNumber;
+			}
+			System.out.println(answerPath.size());
+			for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
+		}else {//마지막 타일로 못가는 경우는 도달한 최대 타일의 번호까지의 답을 출력한다.
+			for(int i = lastTileNumber;i>=1;i--){
+				if(tiles[i].beforTileNumber!=0) {
+					pathNumber = i;
+					break;
+				}
+			}
+			while(pathNumber!=0){
+				answerPath.add(pathNumber);
+				pathNumber = tiles[pathNumber].beforTileNumber;
+			}
+			System.out.println(answerPath.size());
+			for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
 		}
-		System.out.println(answerPath.size());
-		for(int i=answerPath.size()-1;i>=0;i--) System.out.print(answerPath.get(i)+" ");
-	}
 
+	}
 
 	private static int getArriveTileNumber() {
 		int last=0;
@@ -124,7 +139,7 @@ public class 과외맨 {
 		if(adjRow>=1 && adjRow<=N && adjCol>=1 && adjCol<=(2*N)) return true;
 		return false;
 	}
-
+	
 	private static void setData() throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
