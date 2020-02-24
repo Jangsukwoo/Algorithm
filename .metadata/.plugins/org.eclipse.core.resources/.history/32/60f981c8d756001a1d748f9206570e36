@@ -1,0 +1,71 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * N개의 줄에 타일이 놓여있고
+ * 각 조각은 정사각형이며 
+ * 1~6숫자가 쓰여있음
+ * 홀수 줄에는 N개의 타일
+ * 짝수 줄에는 N-1개의 타일
+ * 
+ * 출력
+ * 첫째줄에 가장 짧은 경로의 길이(타일의개수)
+ * 둘쨰줄에 경로 상의 타일의 번호를 공백으로 구분해서 출력
+ * 짧은 경로가 여러가지면 아무거나 출력 
+ * 
+ * 각 타일은 넘버링해야함
+ * 
+ */
+public class 과외맨 {
+	static int N;
+	static int[][] tileMap;
+	static int[] dr = {0,1,0};
+	static int[] dc = {1,0,-1};
+	static int end;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		bfs();
+	}
+
+	private static void bfs() {
+		
+	}
+
+	private static void view() {
+		for(int row=1;row<=N;row++) {
+			for(int col=1;col<=end;col++) {
+				System.out.print(tileMap[row][col]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+
+	private static void setData() throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		N = Integer.parseInt(br.readLine());
+		tileMap = new int[N+1][N*2+1];//1부터 시작할거임
+		end = N*2;
+		int tileCnt = (N*N)-(N/2);
+		int lineIdx=1;
+		int tileIdx=1;
+		for(int i=0,A,B;i<tileCnt;i++){
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			A = Integer.parseInt(st.nextToken());
+			B = Integer.parseInt(st.nextToken());
+			tileMap[lineIdx][tileIdx++]=A;
+			tileMap[lineIdx][tileIdx++]=B;
+			if(lineIdx%2==1 && tileIdx==(end+1)){//홀수 라인이면서 tileIdx==N이면 다음라인으로
+				tileIdx=2;//짝수라인은 2부터 시작
+				lineIdx++;//짝수라인으로 
+			}else if(lineIdx%2==0 && tileIdx==end){
+				//짝수라인이면서 tileIdx==N-1이면 홀수라인으로
+				tileIdx=1;//홀수라인은 1부터 시작
+				lineIdx++;//홀수라인으로
+			}
+		}
+	}
+}

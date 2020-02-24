@@ -1,0 +1,13 @@
+package CodingStudy;
+/*
+ * N 최대 10억
+ * N을 입력받으면
+ * 1부터 N페이지 까지 보면서
+ * 0~9 숫자가 각각 몇번 나오는지 출력
+ */
+public class 책페이지 {
+	static int N;
+	public static void main(String[] args) {
+		
+	}
+}
