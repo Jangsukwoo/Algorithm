@@ -1,8 +1,0 @@
-package CodingStudy;
-
-public class 스타트링크 {
-	static int F,S,G,U,D;
-	public static void main(String[] args) {
-		
-	}
-}

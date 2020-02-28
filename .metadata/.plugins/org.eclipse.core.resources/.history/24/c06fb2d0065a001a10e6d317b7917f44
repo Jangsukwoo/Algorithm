@@ -1,4 +1,4 @@
-package CodingStudySamsungProblem;
+package CodingStudyHW;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,9 +24,9 @@ import java.util.StringTokenizer;
  * 일부인 것의 개수
  * 
  * 드래곤 커브의 정보를 받아 맵에 표시 후 갯수 카운팅
- * 
- * 
- * ->codingStudyHW 패키지에서 품
+ *
+ * 드래곤 커브 방향 정보를 미리 다 만들어 둔 다음
+ * 각각의 시작위치에서 그려주는 방법을 쓰면 되겠다
  */
 public class 드래곤커브 {
 	
@@ -34,22 +34,38 @@ public class 드래곤커브 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	static int[][] dragonCurveMap = new int[100][100];
+	static DragonCurve[] dragonCurves;
+	static int[][] dragonCurveDirection;
 	static int[] dr = {0,-1,0,1};
-	static int[] dc = {1,0,-1,-1};//우,상,좌,하
+	static int[] dc = {1,0,-1,-1};//우,상,좌,하 반시계방향 
+	static class DragonCurve{
+		int row;
+		int col;
+		public DragonCurve(int row, int col) {
+			this.row = row;
+			this.col = col;
+		}
+		
+	}
 	public static void main(String[] args) throws IOException {
 		setData();
 	}
 	private static void setData() throws IOException {
 		st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
-		for(int i=0,x,y,d,g;i<N;i++) {
+		dragonCurves = new DragonCurve[N+1];
+		dragonCurveDirection = new int[N+1][1024];
+		for(int i=1,x,y,d,g;i<=N;i++) {//드래곤 커브의 개수 
 			st = new StringTokenizer(br.readLine());
+			//드래곤 커브 시작점 x,y
 			x = Integer.parseInt(st.nextToken());
 			y = Integer.parseInt(st.nextToken());
+			dragonCurves[i] = new DragonCurve(y,x);
+			//드래곤 커브 시작방향
 			d = Integer.parseInt(st.nextToken());
+			//드래곤 커브 세대 수
 			g = Integer.parseInt(st.nextToken());
-			//방향의 역순?
-			
+			dragonCurveDirection[i][0] = d;
 		}
 	}
 }
