@@ -25,7 +25,6 @@ import java.util.Scanner;
  * channel boolean 배열을 백만1까지 제한을 두고 제출했더니 바로 맞아버렸다 ㅎ0ㅎ
  * (어차피 가고싶은 채널은 50만이고 +,- 버튼으로 50만 이상을 누를 일은 없기때문에)
  *  
- *  22:40 끝
  */
 public class 리모컨 {
 	static int N;
