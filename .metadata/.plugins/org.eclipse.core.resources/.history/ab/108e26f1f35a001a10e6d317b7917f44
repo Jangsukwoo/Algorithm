@@ -1,0 +1,42 @@
+package CodingStudyHW;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+/*
+ * 21:48 시작
+ * 수빈이의 처음 채널은 100번이고
+ * 이동하려는 채널은 N이다.
+ * 리모컨의 버튼은 0~9가 있고 +와 - 버튼이 있음.
+ * 채널 0에서 -를 누른경우는 변하지 않고
+ * 채널은 무한대만큼 있음
+ */
+public class 리모컨 {
+	static int N;
+	static boolean[] buttons = new boolean[10];
+	static HashSet<Integer> possibleButtons = new LinkedHashSet<Integer>();
+	public static void main(String[] args) {
+		setData();
+		bfs();
+	}
+	private static void bfs() {
+		Queue<int[]> q = new LinkedList<int[]>();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		Arrays.fill(buttons,true);
+		int breakButtonSize = sc.nextInt();
+		for(int i=0;i<breakButtonSize;i++){
+			int button = sc.nextInt();
+			buttons[button] = false;
+		}
+		for(int i=0;i<10;i++) {
+			if(buttons[i]) possibleButtons.add(i);
+		}
+	}
+}

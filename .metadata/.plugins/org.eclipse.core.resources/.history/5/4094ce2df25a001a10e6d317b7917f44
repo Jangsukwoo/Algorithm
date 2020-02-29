@@ -1,0 +1,17 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+/*
+ * 21:48 시작
+ * 
+ */
+public class 리모컨 {
+	static int N;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+	}
+}
