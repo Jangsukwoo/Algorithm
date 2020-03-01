@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
  * 맵을 90도씩 돌려서 처리한다 
  * 
  * 맵을 복사하는 부분에서 
- * 로테이션 처리 수정하니 통과됐다~
+ * 로테이션 처리 수정하니 통과됐다~~
  */
 public class 이공사팔Easy {
 	static int[][] board;
