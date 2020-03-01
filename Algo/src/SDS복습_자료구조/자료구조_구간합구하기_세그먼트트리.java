@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 /*
  * 세그먼트트리 코드 안보고 쌩으로 만들어보기
  * 
- * setSegmentTree, updateSegmentTree, getSumFromSegmentTree 메소드 세개 구현해보기
+ * setSegmentTree,updateSegmentTree, getSumFromSegmentTree 메소드 세개 구현해보기
  */
 public class 자료구조_구간합구하기_세그먼트트리 {
 	static int N,M,K;
@@ -45,7 +45,7 @@ public class 자료구조_구간합구하기_세그먼트트리 {
 			}
 		}
 	}
-	private static long getSumFromSegmentTree(int node, int start, int end, int left, int right) {
+	private static long getSumFromSegmentTree(int node, int start, int end, int left, int right) { // 범위 중요
 		if(end<left || right<start) return 0;//아예 범위가 말이 안되는경우 
 		if(left<=start && end<=right) return segmentTree[node];//영역이 걸쳐있는 경우. 즉,4~9의 구간의 합이면, 5~6의 합은 당연히 속해있다.
 		int mid = (start+end)/2;

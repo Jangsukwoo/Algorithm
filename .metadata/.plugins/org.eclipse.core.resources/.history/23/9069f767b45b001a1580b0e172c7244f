@@ -1,0 +1,81 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+/*
+ * 세그먼트트리 복습
+ * 1. 세그먼트트리만들기 : setSegmentTree
+ * 2. 세그먼트트리 구간 합 구하기 : getSumFromSegmentTree
+ * 3. 특정 값 변경시 세그먼트트리의 해당되는 값에 흡수시키고 나머지 노드들에 영향 주기 : updateSegmentTree
+ * 
+ * 문제에서 처음에 주어지는 모든 숫자들은 0 
+ * 
+ * 이니까 세그먼트트리 따로 안만들어줘도 될듯하다.
+ * 
+ * 명령 번호 0 이면 Sum (getSumFromSegmentTree)
+ * 명령 번호 1 이면 Modify(updateSegmentTree)
+ * 
+ * Sum(i,j)는 a[i] ~a[j]까지의 구간 합
+ * Modify(i,k)는 a[i] = k
+ * 
+ */
+public class 수들의합 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static int N,M;//데이터 수 , 명령 수
+	static int[] numbers;
+	static int[] segementTree;
+	public static void main(String[] args) throws IOException {
+		setData();
+		excute();
+	}
+	private static void excute() throws IOException {
+		for(int excute=0,functionNumber;excute<M;excute++){
+			st = new StringTokenizer(br.readLine());
+			functionNumber = Integer.parseInt(st.nextToken());
+			switch (functionNumber) {
+			case 0://FuntionNumber 0 이면 Sum (left~right)
+				int left = Integer.parseInt(st.nextToken());
+				int right = Integer.parseInt(st.nextToken());
+				int result = sum(1,0,(N-1),left,right);//노드번호 : 1, data 시작인덱스, data 끝인덱스, left,right 구간
+				break;
+			case 1://FuntionNumber 1 이면 Modify
+				int idx = Integer.parseInt(st.nextToken())-1;
+				int target = Integer.parseInt(st.nextToken());
+				int diff = (target - numbers[idx]);
+				modify(1,0,(N-1),idx,diff);
+				break;
+			}
+		}
+	}
+
+	private static int sum(int node, int start, int end, int left, int right){
+		//조건 두개
+		if(right<start || left>end) return 0;//아예 말이 안되는경우
+		if(left<=start && end<=right) return segementTree[node];//left와 right가 start,end 인덱스를 포함하고 있는, 감싸고있는 경우(구간)
+		int mid = (start+end)/2;
+		return right;
+	}
+	private static void modify(int node, int start, int end, int idx, int diff){
+		if(!(start<= idx && idx<=end)) return ;
+		segementTree[node] +=diff;
+		if(!(start!=end)){//끝까지 안봤으면
+			int mid = (start+end)/2;
+			modify(node*2, start, mid, idx, diff);
+			modify((node*2)+1, mid+1, end, idx, diff);
+		}
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		numbers = new int[N];
+		segementTree = new int[N*4+1];//세그먼트 트리 배열 
+	}
+}
