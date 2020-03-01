@@ -19,8 +19,8 @@ import java.util.StringTokenizer;
  * 한가지 방향만 구현해서
  * 맵을 90도씩 돌려서 처리한다 
  * 
- * 맵을 복사하는 부분에서 
- * 로테이션 처리 수정하니 통과됐다~~
+ * 
+ * 왜안돼???! 맞는데왜틀려~~
  */
 public class 이공사팔Easy {
 	static int[][] board;
@@ -41,9 +41,9 @@ public class 이공사팔Easy {
 		}
 		int[][] copyBoard = copy(board);//맵 복사 
 		for(int dir=0;dir<4;dir++){
-			int[][] upBoard = up(copyBoard); //이동 
-			dfs(upBoard,depth+1);
-			copyBoard = rotate(copyBoard);//복사된 맵의 4가지 버전 
+			copyBoard = up(copyBoard); //이동 
+			dfs(copyBoard,depth+1);
+			copyBoard = rotate(board);//복사된 맵의 4가지 버전 
 		}
 	}
 	private static void view(int[][] board) {
@@ -89,7 +89,7 @@ public class 이공사팔Easy {
 	}
 	private static int[][] up(int[][] copyBoard){
 		int[][] temp = new int[N][N];
-		int[][] upBoard = new int[N][N];
+		int[][] copyMap = new int[N][N];
 		for(int col=0;col<N;col++) {
 			int flag = 0;
 			int target = -1;
@@ -107,8 +107,8 @@ public class 이공사팔Easy {
 			}
 		} //위로 다 올림
 		for(int row=0;row<N;row++)
-			for(int col=0;col<N;col++) upBoard[row][col] = temp[row][col];
+			for(int col=0;col<N;col++) copyMap[row][col] = temp[row][col];
 
-		return upBoard;
+		return copyMap;
 	}
 }
