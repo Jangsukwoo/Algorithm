@@ -1,0 +1,117 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+
+/*
+ * 15:40~
+ * 백준 DSLR 
+ * 레지스터 계산기가 하나 있음
+ * 0이상의 네자리 십진수를 저장하는데 다음 4가지 명령어가 있음
+ * 
+ * D : n을 두배로 바꾼다.
+ * 결과 값이 9999보다 크면 10000로 나눈 나머지를 취함. 결과값을 레지스터에 저장
+ * 
+ * S : n에서 1을 뺀 결괄르 저장. n이 0이라면 9999를 저장
+ * 
+ * L : n의 각 자리수를 왼쪽으로 회전시켜 그 결과를 저장 
+ * d1 d2 d3 d4 -> d2 d3 d4 d1
+ * 
+ * R : n의 각 자리수를 오른쪽으로 회전시켜 그 결과를 저장
+ * 
+ * 주어진 서로 다른 두 정수 A,B에 대하여
+ * A를 B로 바꾸는 최소한의 명령어를 생성하는 프로그램
+ * 
+ */
+public class DSLR {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	static boolean[] visit;
+	static int mod = 10000;
+	static Queue<DSLRdata> q = new LinkedList<DSLRdata>();
+	static String A,B;
+	static class DSLRdata{
+		int numInt;
+		String numString;
+		String command;
+		public DSLRdata(int numInt, String numString, String command) {
+			this.numInt = numInt;
+			this.numString = numString;
+			this.command = command;
+		}
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			setData();
+			bfs();
+		}
+	}
+	private static void bfs() throws IOException{
+		visit = new boolean[10000];
+		q.clear();
+		DSLRdata root = new DSLRdata(Integer.parseInt(A),A,"");
+		insertQueue(root,"");
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				DSLRdata currentDSLR = q.poll();
+				if(sameCheck(currentDSLR)) return; //변환했으면 끝내버림
+				D(currentDSLR);
+				S(currentDSLR);
+				L(currentDSLR);
+				R(currentDSLR);
+			}
+		}
+	}
+
+	private static void D(DSLRdata currentDSLR) {//2n mod 10000
+		int nextNumber = (currentDSLR.numInt*2)%mod;
+		if(visit[nextNumber]==false) { 
+			currentDSLR.numInt = nextNumber;
+			currentDSLR.numString = Integer.toString(nextNumber);//새로운 값으로 바꿔주고
+			insertQueue(currentDSLR,"D");
+		}
+	}
+	private static void S(DSLRdata currentDSLR) {//n-1 (0~9999)
+		int nextNumber = currentDSLR.numInt-1;
+		if(nextNumber==-1) nextNumber = 9999; //-1이면 9999
+		if(visit[nextNumber]==false) { 
+			currentDSLR.numInt = nextNumber;
+			currentDSLR.numString = Integer.toString(nextNumber);//새로운 값으로 바꿔주고
+			insertQueue(currentDSLR,"S");
+		}
+	}
+	private static void L(DSLRdata currentDSLR) {//d2 d3 d4 d1
+		char[] temp = new char[4];
+	}
+	private static void R(DSLRdata currentDSLR) {//d4 d1 d2 d3
+		
+	}
+
+	private static boolean sameCheck(DSLRdata currentDSLR) throws IOException {
+		if(currentDSLR.numString.equals(B)){ //같으면 
+			bw.write(currentDSLR.command+"\n");
+			return true;
+		}
+		return false;
+	}
+	private static void insertQueue(DSLRdata data,String command) {//스트링받아서 큐에 숫자로넣어줌
+		q.add(new DSLRdata(data.numInt,data.numString,data.command+command));
+		visit[data.numInt] = true;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		A = st.nextToken();
+		B = st.nextToken();//A->B로 만들기
+		
+	}
+}
