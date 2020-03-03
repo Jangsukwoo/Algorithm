@@ -34,8 +34,6 @@ import java.util.StringTokenizer;
 
 1
 1234 3412
-
-~16:50 끝 
  */
 public class DSLR {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
