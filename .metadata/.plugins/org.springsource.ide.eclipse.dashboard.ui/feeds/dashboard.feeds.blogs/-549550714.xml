@@ -5,7 +5,111 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-02T16:00:00Z</updated>
+  <updated>2020-03-04T03:19:49Z</updated>
+  <entry>
+    <title>Spring Tips: Kotlin and Spring Security</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/04/spring-tips-kotlin-and-spring-security" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-04:3982</id>
+    <updated>2020-03-04T03:19:49Z</updated>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V1ce8RdTdo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;Spring Tips&lt;/em&gt;. In this episode we&amp;rsquo;re going to look at the new Kotlin DSL for Spring Security. I love Kotlin. I introduced Kotlin in several other Spring Tips videos: &lt;a href="https://spring.io/blog/2016/10/19/spring-tips-the-kotlin-programming-language"&gt;The Kotlin Programming Language&lt;/a&gt;, &lt;a href="https://spring.io/blog/2017/11/08/spring-tips-bootiful-kotlin-redux"&gt;Bootiful Kotlin Redux&lt;/a&gt;, and &lt;a href="https://spring.io/blog/2019/06/12/spring-tips-spring-s-support-for-kotlin-coroutines"&gt;Spring&amp;rsquo;s Support for Coroutines&lt;/a&gt;. Some of those videos are &lt;em&gt;very&lt;/em&gt; old! There are already a number of different projects in the Spring diaspora that are shipping Kotlin DSLs. They include, among others, Spring Framework, Spring Webflux, Spring Data, Spring Cloud Contract and Spring Cloud Gateway. And now, Spring Security! &lt;/p&gt;
+&lt;p&gt;Spring Security is an amazing project - it solves some of the hardest problems in the industry and helps people secure their applications. And, as if that weren&amp;rsquo;t enough, it&amp;rsquo;s displayed a steadfast determination to make security &lt;em&gt;easy&lt;/em&gt;. If you ever used Spring Security in its earliest incarnations, you&amp;rsquo;d know that it required &lt;em&gt;loads&lt;/em&gt; of XML - pages! - to get anything done. That improved to the point where in Spring Security 3 you could lock down an applicatino with common sense defaults with one or two stanzas of XML. Then, in Spring Security 4 they introduced a Java DSL that gave people the power of their compilers to help them validate things. Gradually, over time, Spring Security also introduced common sense defaults. Nowadays, you can register a &lt;code&gt;UserDetailsService&lt;/code&gt; and Spring Security will lock down all HTTP endpoints in a Servlet-based HTTP application and require authentication. Couldn&amp;rsquo;t be easier! Or could it? In Spring Security 5.2, they introduced some much-appreciated refinements to Spring Security. Now, in addition to using the fluid Java config DSL of yore, there&amp;rsquo;s also a new approach where you can provide a lambda and be given a context object that you can then use. No longer do you need to indent your Spring Security APIs for their intent to be understood! And now, in this installment, we&amp;rsquo;re going to take things to the next level with a very quick look at the brand new Spring Security Kotlin DSL. &lt;/p&gt;
+&lt;p&gt;Remember, Spring Security addresses two orthagonal concerns: authentication and authorization. Authentication answers the question: &amp;ldquo;&lt;em&gt;who&lt;/em&gt; is making the request?&amp;rdquo; Is it Josh, or Jane? Authorization answers the question &amp;ldquo;what permissions does the requester have once inside the system?&amp;rdquo; Authentication is all about plugging in identity providers. There are a million ways to do that (Active Directory, in-memory usernames and passwords, LDAP, SAML, etc.) It&amp;rsquo;s more about plugging in implementations. We&amp;rsquo;re just going to use an in-memory username and password authentication manager since we need it and that&amp;rsquo;s not where the DSL really shines. &lt;/p&gt;
+&lt;p&gt;DSLs are most useful not when swapping out implementations of a given type, but when describing rules or customizing behavior. So, we&amp;rsquo;ll use the Spring Security DSL to customize the authorization behavior. &lt;/p&gt;
+&lt;p&gt;The following is a Spring Boot-based application that uses Spring Security. I generated a new project from the &lt;a href="http://start.Spring.io"&gt;Spring Initializr&lt;/a&gt; that uses Kotlin, and uses Spring Security and Spring Boot 2.3.M2 or later. It uses the functional bean registration DSL to programatically register beans. We talked about programatic bean registration &lt;a href="https://spring.io/blog/2017/03/01/spring-tips-programmatic-bean-registration-in-spring-framework-5"&gt;in a &lt;em&gt;Spring Tips&lt;/em&gt; video from waaaaay back in 2017&lt;/a&gt;. Granted, that video demonstrated its use in Java, but the application is basically the same in Kotlin: you register a bean by wrapping it a call to the &lt;code&gt;bean&lt;/code&gt; function. &lt;/p&gt;
+&lt;p&gt;The first bean is the &lt;code&gt;InMemoryUserDetailsManager&lt;/code&gt;. The second bean is a functional HTTP endpoint, &lt;code&gt;/greetings&lt;/code&gt;. When an HTTP request comes in, we extract the authenticated principal from the current request, extract the name and then build a &lt;code&gt;ServerResponse&lt;/code&gt; whose body will be represented by a &lt;code&gt;Map&amp;lt;String,String&amp;gt;&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;The interesting bit is the class &lt;code&gt;KotlinSecurityConfiguration&lt;/code&gt;. It extends &lt;code&gt;WebSecurityConfigurerAdapter&lt;/code&gt;. There are a few methods we might override there, but I chose to override the &lt;code&gt;configure&lt;/code&gt; method to specify two things: that I wanted to opt-in to HTTP BASIC authentication, and to specify what routes require authentication and which are wide-open. The configuration below stipultes that all requests to &lt;code&gt;/greetings/**&lt;/code&gt; (the &lt;code&gt;/greetings/&lt;/code&gt; endpoint, and anything below it, like &lt;code&gt;/greetings/foo&lt;/code&gt;) must be authenticated. The second rule says that everything else is wide-open. It&amp;rsquo;s very important that the more specific rule - &lt;code&gt;/greetings/**&lt;/code&gt; - come before the more wide-open rule. The rules are evaluated in order, from top to bottom. If we&amp;rsquo;d put the second rule first, then it would match for every request and we&amp;rsquo;d never need to evaluate the rule for &lt;code&gt;/greetings&lt;/code&gt; - it would be left effectively wide-open! &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;package com.example.kotlinsecurity&#xD;
+&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication&#xD;
+import org.springframework.boot.runApplication&#xD;
+import org.springframework.context.annotation.Bean&#xD;
+import org.springframework.context.support.beans&#xD;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity&#xD;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity&#xD;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter&#xD;
+import org.springframework.security.config.web.servlet.invoke&#xD;
+import org.springframework.security.core.userdetails.User&#xD;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager&#xD;
+import org.springframework.web.servlet.function.ServerResponse&#xD;
+import org.springframework.web.servlet.function.router&#xD;
+&#xD;
+@SpringBootApplication&#xD;
+class KotlinSecurityApplication&#xD;
+&#xD;
+@EnableWebSecurity&#xD;
+class KotlinSecurityConfiguration : WebSecurityConfigurerAdapter() {&#xD;
+&#xD;
+	override fun configure(http: HttpSecurity?) {&#xD;
+		http {&#xD;
+			httpBasic {}&#xD;
+			authorizeRequests {&#xD;
+				authorize(&amp;quot;/greetings/**&amp;quot;, hasAuthority(&amp;quot;ROLE_ADMIN&amp;quot;))&#xD;
+				authorize(&amp;quot;/**&amp;quot;, permitAll)&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+fun main(args: Array&amp;lt;String&amp;gt;) {&#xD;
+	runApplication&amp;lt;KotlinSecurityApplication&amp;gt;(*args) {&#xD;
+		addInitializers(beans {&#xD;
+			bean {&#xD;
+&#xD;
+				fun user(user: String, pw: String, vararg roles: String) =&#xD;
+                    User.withDefaultPasswordEncoder().username(user).password(pw).roles(*roles).build()&#xD;
+&#xD;
+				InMemoryUserDetailsManager(user(&amp;quot;jlong&amp;quot;, &amp;quot;pw&amp;quot;, &amp;quot;USER&amp;quot;), user(&amp;quot;rwinch&amp;quot;, &amp;quot;pw1&amp;quot;, &amp;quot;USER&amp;quot;, &amp;quot;ADMIN&amp;quot;))&#xD;
+			}&#xD;
+			bean {&#xD;
+				router {&#xD;
+					GET(&amp;quot;/greetings&amp;quot;) { request -&amp;gt;&#xD;
+						request.principal().map { it.name }.map { ServerResponse.ok().body(mapOf(&amp;quot;greeting&amp;quot; to &amp;quot;Hello, $it&amp;quot;)) }.orElseGet { ServerResponse.badRequest().build() }&#xD;
+					}&#xD;
+				}&#xD;
+			}&#xD;
+		})&#xD;
+	}&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this installment, we introduced Spring Security&amp;rsquo;s new Kotlin DSL. There&amp;rsquo;s more text than there is code because, and this is profound, Spring Security does a &lt;em&gt;lot&lt;/em&gt; of stuff for you, so that the surface area of the API is literally the bare minimum in customizations you want to do beyond the already sensible defaults. I hope you learned something new, and will give the Spring Security DSL a shot. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - March 3rd, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/03/this-week-in-spring-march-3rd-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-03:3981</id>
+    <updated>2020-03-03T21:42:53Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, I&amp;rsquo;m home, in San Francisco, California, in the US, where the fears around Coronavirus have heated up and made things problematic for those of us who travel. It looks like, at least for the immediate future, I&amp;rsquo;ll be - basically - grounded. Stay safe out there, my friends. &lt;/p&gt;
+&lt;p&gt;The good news is that this will let me get to a ton more other things &lt;a href="http://spring.io/blogs"&gt;like the blogs&lt;/a&gt;, &lt;a href="http://twitter.com/BootifulPodcast"&gt;A Bootiful Podcast&lt;/a&gt; and &lt;a href="http://twitter.com/SpringTipsLive"&gt;Spring Tips&lt;/a&gt; and of course my &lt;a href="http://ReactiveSpring.io"&gt;Reactive Spring book&lt;/a&gt;. And of course, we&amp;rsquo;ve got a ton of things to get to today in today&amp;rsquo;s installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;Getting Started With RSocket: Spring Boot Server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/28/a-bootiful-podcast-spring-cloud-contract-lead-marcin-grzejszczak-on-spring-cloud-contract-spring-cloud-sleuth-continuous-integration-and-more"&gt;A Bootiful Podcast: Spring Cloud Contract lead Marcin Grzejszczak on Spring Cloud Contract, Spring Cloud Sleuth, Continuous Integration and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/27/spring-boot-2-2-5-released"&gt;Spring Boot 2.2.5 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/27/spring-boot-2-1-13-released"&gt;Spring Boot 2.1.13 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/27/cve-reports-published-for-reactor-netty"&gt;CVE Reports Published for Reactor Netty&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/26/spring-data-moore-sr5-and-lovelace-sr16-released"&gt;Spring Data Moore SR5 and Lovelace SR16 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://m.youtube.com/watch?v=70gWx2APczA"&gt;Another fine installment from Greg Turnquist, this one on Messaging with Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is an interesting post on &lt;a href="https://dev.to/onlinepajak/database-schema-changes-with-hibernate-and-spring-boot-3f5k"&gt;database schema changes with Hibernate and Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcloud/status/1233469658910674946"&gt;Don&amp;rsquo;t miss the opportunity to meet Spring Cloud Gateway lead Spencer Gibb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Congrats to the Confluent team &lt;a href="https://twitter.com/gAmUssA/status/1233183125150355456?s=20"&gt;on their new developer portal&lt;/a&gt; chock full of good stuff!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/27/cve-reports-published-for-reactor-netty"&gt;There are new Spring Boot releases, including CVE fixes for Netty&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1233045258809888768"&gt;I love the Cloud Foundry on Kubernetes opportunity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/david_syer/status/1232675337814921217?s=12"&gt;The good Dr. Dave Syer demonstrating how to start a Spring Boot application, like the Petclinic, used a pre-cached JVM tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://bddy.me/2SZLsmS"&gt;The Cloud Foundry community is looking for a handful of volunteers to help reconstitute a multi-member vulnerability management team for CFF projects. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-boot/issues/19988"&gt;There&amp;rsquo;s now out-of-the-box support for R2DBC in Spring Boot&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://start.Spring.io"&gt;have you seen the new Spring website?&lt;/a&gt; - it&amp;rsquo;s perty!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Getting Started With RSocket: Spring Boot Server</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server" />
@@ -1144,140 +1248,6 @@ class GreetingResponse {&#xD;
   &lt;li&gt;&lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe title="Vedran Pavic on Spring Session, Croatia, and so much more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/afkfu-d392e3?from=yiiadmin&amp;download=1&amp;version=1&amp;skin=1&amp;btn-skin=107&amp;auto=0&amp;share=1&amp;fonts=Helvetica&amp;download=1&amp;rtl=0&amp;pbad=1"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.3.0.M2 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/13/spring-boot-2-3-0-m2-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-02-13:3961</id>
-    <updated>2020-02-13T22:28:22Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the second milestone of Spring Boot 2.3 has been released and is available from &lt;a href="https://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This release closes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.M2"&gt;120 issues and pull requests&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;Highlights of this milestone include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Improvement of our &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker image support&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Upgrade to MongoDB 4 (still in beta)&lt;/li&gt;
-  &lt;li&gt;Support of wildcard locations for configuration files&lt;/li&gt;
-  &lt;li&gt;Numerous dependency upgrades&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M2-Release-Notes"&gt;Spring Boot 2.3 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M2/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to get started with 2.3 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration 5.3 Milestone 2 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/12/spring-integration-5-3-milestone-2-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2020-02-12:3959</id>
-    <updated>2020-02-12T19:36:16Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring Integration team, I¡¯m pleased to announce the &lt;a href="https://github.com/spring-projects/spring-integration/releases/tag/v5.3.0.M2"&gt;second&lt;/a&gt; milestone for Spring Integration &lt;code&gt;5.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release ships several bug fixes, a bunch of new features and improvements and will be picked up by Spring Boot &lt;code&gt;2.3 M2&lt;/code&gt; in the near future.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/milestone"&gt;milestone repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.3.0.M2"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="the-most-important-new-features-are"&gt;&lt;a class="anchor" href="#the-most-important-new-features-are"&gt;&lt;/a&gt;The most important new features are:&lt;/h3&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;With the &lt;code&gt;IntegrationFlowExtension&lt;/code&gt; implementation we now can right our own Java DSL for Spring Integration.
-It allows to introduce custom or composed EIP-operators.
-The existing &lt;code&gt;IntegrationComponentSpec&lt;/code&gt; implementations can now be extended for additional (missed?) options.
-So, now any custom and reusable solutions in Java DSL can be implemented in the target project:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public class CustomIntegrationFlowDefinition
-        extends IntegrationFlowExtension&amp;lt;CustomIntegrationFlowDefinition&amp;gt; {
-
-    public CustomIntegrationFlowDefinition upperCaseAfterSplit() {
-        return split()
-                .transform("payload.toUpperCase()");
-    }
-
-    public CustomIntegrationFlowDefinition customAggregate(
-                    Consumer&amp;lt;CustomAggregatorSpec&amp;gt; aggregator) {
-        return register(new CustomAggregatorSpec(), aggregator);
-    }
-
-}
-
-public class CustomAggregatorSpec extends AggregatorSpec {
-
-    CustomAggregatorSpec() {
-        outputProcessor(group -&amp;gt;
-                group.getMessages()
-                        .stream()
-                        .map(Message::getPayload)
-                        .map(String.class::cast)
-                        .collect(Collectors.joining(", ")));
-    }
-
-}
-
-@Bean
-public IntegrationFlow customFlowDefinition() {
-    return
-            new CustomIntegrationFlowDefinition()
-                    .log()
-                    .upperCaseAfterSplit()
-                    .channel("innerChannel")
-                    .customAggregate(customAggregatorSpec -&amp;gt;
-                            customAggregatorSpec.expireGroupsUponCompletion(true))
-                    .logAndReply();
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;HTTP and WebFlux outbound channel adapters now support an &lt;code&gt;UriBuilderFactory.EncodingMode&lt;/code&gt; option instead of previous`encodeUri` boolean flag.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The AMQP outbound channel adapter has a new property &lt;code&gt;multiSend&lt;/code&gt; allowing multiple messages to be sent within the scope of one RabbitTemplate invocation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The AMQP inbound channel adapter now supports a listener container with the &lt;code&gt;consumerBatchEnabled&lt;/code&gt; property set to true.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See &lt;code&gt;What&amp;#8217;s New?&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/5.3.0.M2/reference/html/whats-new.html#whats-new"&gt;Reference Manual&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The next and last &lt;code&gt;M3&lt;/code&gt; milestone is scheduled for March before entering the &lt;code&gt;RC&lt;/code&gt; phase in April.
-Expect an upgrade to the latest milestone releases: Spring Data &lt;code&gt;Neumann&lt;/code&gt;, Spring Security &lt;code&gt;5.3&lt;/code&gt; etc.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We¡¯re looking forward to your feedback!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

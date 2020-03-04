@@ -1,0 +1,12 @@
+package CodingStudyHW;
+/*
+ * 18:25 ~
+ * 
+ */
+public class 다리만들기 {
+	static int N;
+	static int[][] map;
+	public static void main(String[] args) {
+		
+	}
+}
