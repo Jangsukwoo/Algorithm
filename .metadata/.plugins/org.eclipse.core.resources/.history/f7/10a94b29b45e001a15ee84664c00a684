@@ -7,7 +7,6 @@ import java.util.Scanner;
  * 14:51~
  * 스도쿠 빈칸채우기
  * 가로, 세로 , 박스권 검사
- * 16:20
  */
 public class 스도쿠 {
 	static int[][] sudoku = new int[9][9];
