@@ -1,0 +1,35 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+/*
+ * 14:51~
+ * 스도쿠 빈칸채우기
+ * 가로, 세로 , 박스권 검사
+ */
+public class 스도쿠 {
+	static int[][] sudoku = new int[9][9];
+	static int[][] areaNumber = new int[9][9];
+	static int zeroCount;
+	static class ZeroPosition{
+		int row;
+		int col;
+		public ZeroPosition(int row, int col) {
+			super();
+			this.row = row;
+			this.col = col;
+		}
+		
+	}
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData(){
+		Scanner sc = new Scanner(System.in);
+		for(int row=0;row<0;row++) {
+			for(int col=0;col<9;col++) {
+				sudoku[row][col] = sc.nextInt();
+				if(sudoku[row][col]==0) zeroCount++;
+			}
+		}
+	}
+}

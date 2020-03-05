@@ -1,0 +1,21 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+/*
+ * 14:51~
+ * 스도쿠 빈칸채우기
+ */
+public class 스도쿠 {
+	static int[][] sudoku = new int[9][9];
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		for(int row=0;row<0;row++) {
+			for(int col=0;col<9;col++) {
+				sudoku[row][col] = sc.nextInt();
+			}
+		}
+	}
+}

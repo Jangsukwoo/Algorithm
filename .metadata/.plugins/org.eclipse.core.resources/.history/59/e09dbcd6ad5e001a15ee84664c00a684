@@ -1,0 +1,59 @@
+package CodingStudyHW;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+/*
+ * 14:51~
+ * 스도쿠 빈칸채우기
+ * 가로, 세로 , 박스권 검사
+ */
+public class 스도쿠 {
+	static int[][] sudoku = new int[9][9];
+	static int[][] areaNumber = new int[9][9];
+	static ArrayList<ZeroPosition> zeroList =  new ArrayList<ZeroPosition>();
+	static int zeroCount;
+	static class ZeroPosition{
+		int row;
+		int col;
+		public ZeroPosition(int row, int col) {
+			this.row = row;
+			this.col = col;
+		}
+		
+	}
+	public static void main(String[] args) {
+		setData();
+		setAreaNumberMap();
+	}
+	private static void setAreaNumberMap() {
+		boolean nextRow = false;
+		int startRow=0;
+		int startCol=0;
+		for(int number=1;number<=9;number++) {
+			int check = number%3;
+			if(nextRow) {
+				nextRow=false;
+				startRow+=3;
+				startCol=0;
+			}
+			if(check==0) nextRow=true;
+			for(int row=startRow;row<(startRow+3);row++){
+				for(int col=startCol;col<(startCol+3);col++){
+					
+				}
+			}
+		}
+	}
+	private static void setData(){
+		Scanner sc = new Scanner(System.in);
+		for(int row=0;row<0;row++) {
+			for(int col=0;col<9;col++) {
+				sudoku[row][col] = sc.nextInt();
+				if(sudoku[row][col]==0){
+					zeroCount++;
+					zeroList.add(new ZeroPosition(row, col));
+				}
+			}
+		}
+	}
+}
