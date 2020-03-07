@@ -1,0 +1,22 @@
+package CodingStudyHW;
+
+import java.util.ArrayList;
+
+/*
+ * 컴퓨터 대수 N (1<=N<=1000)
+ * 
+ * 컴퓨터는 직접 연결되어있거나 거쳐서 연결되어있는 경우가 있는데
+ * 컴퓨터와 컴퓨터를 연결하는 회선의 성능은 각각 차이가 있다.
+ * 
+ */
+public class 네트워크복구 {
+	static int N,M;
+	static ArrayList<int[]>[] adjList;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -5,13 +5,254 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-04T22:20:26Z</updated>
+  <updated>2020-03-06T04:41:20Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Spring I/O organizer and Spring trainer extraordinairre Sergi Almar</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/06/a-bootiful-podcast-spring-i-o-organizer-and-spring-trainer-extraordinairre-sergi-almar" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-06:3987</id>
+    <updated>2020-03-06T04:41:20Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks with &lt;a href="https://twitter.com/SergiAlmar"&gt;Sergi Almar (@sergiAlmar) &lt;/a&gt; about organizing one of the best JVM community shows in the business, Barcelona&amp;rsquo;s &lt;a href="https://springio.net/"&gt;Spring I/O&lt;/a&gt;, being a trainer, and so much more. &lt;/p&gt;
+&lt;iframe title="Spring I/O organizer and Spring trainer extraordinairre Sergi Almar " src="https://www.podbean.com/media/player/jvbuh-d5918d?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Hoxton Service Release 3 (SR3) is available.</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/05/spring-cloud-hoxton-service-release-3-sr3-is-available" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Olga Maciaszek-Sharma</name>
+    </author>
+    <id>tag:spring.io,2020-03-05:3986</id>
+    <updated>2020-03-05T17:47:36Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Service Release 3 (SR3) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Hoxton.SR3/"&gt;Maven Central&lt;/a&gt;. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h2&gt;
+&lt;p&gt;Spring Cloud Config contains fixes for &lt;a href="https://pivotal.io/security/cve-2020-5405"&gt;CVE-2020-5405&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
+&lt;p&gt;This milestone was primarily a bugfix release.&lt;/p&gt;
+&lt;p&gt;Please see the Hoxton.SR3 &lt;a href="https://github.com/orgs/spring-cloud/projects/36"&gt;Github Project&lt;/a&gt; for all issues closed.&lt;/p&gt;
+&lt;p&gt;This milestone release is built with Spring Boot 2.2.5.RELEASE.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
+&lt;p&gt;Possibility to override &lt;code&gt;ConfigTokenProvider&lt;/code&gt; was added. Performance issues with &lt;code&gt;KeyStoreTestEncryptorLocator&lt;/code&gt; were fixed.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
+&lt;p&gt;Support added for Spring Cloud LoadBalancer in StubRunner. &lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuitbreaker" class="anchor" name="spring-cloud-circuitbreaker"&gt;&lt;/a&gt;Spring Cloud CircuitBreaker&lt;/h3&gt;
+&lt;p&gt;Support added for creating and customizing circuit breakers in advance.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;p&gt;Support was added for instance health checks in Spring Cloud LoadBalancer. LoadBalancer request context was exposed via the API.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud OpenFeign&lt;/h3&gt;
+&lt;p&gt;OpenFeign was upgraded to 10.7.4. Support was added for &lt;code&gt;@MatrixVariable&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
+&lt;p&gt;Support was added for &lt;code&gt;FeignBlockingLoadBalancerClient&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;p&gt;Support was added for rate limits below 1 req/s. Enhancements to &lt;code&gt;RetryFilter&lt;/code&gt; were added. &lt;code&gt;ServiceInstance&lt;/code&gt; metadata was added to &lt;code&gt;RouteDefinition&lt;/code&gt; metadata. Header configuration list was provided for spring-cloud-gateway-mvc.&lt;/p&gt;
+&lt;p&gt;The following modules were updated as part of Hoxton.SR3:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+      &lt;th&gt;Issues&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/75?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
+      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/37?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
+      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
+      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
+      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
+      &lt;td&gt;1.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/62?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter &lt;/td&gt;
+      &lt;td&gt;Hoxton.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Dependencies &lt;/td&gt;
+      &lt;td&gt;Hoxton.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Starter Parent &lt;/td&gt;
+      &lt;td&gt;Hoxton.SR3 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/73?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/71?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/22?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
+      &lt;td&gt;2.2.0.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
+      &lt;td&gt;1.1.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/18?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
+      &lt;td&gt;2.2.1.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
+      &lt;td&gt;1.0.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/milestone/4?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
+      &lt;td&gt;Horsham.SR3 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-stream/milestone/71?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/35?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/86?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
+      &lt;td&gt;3.0.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
+      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&lt;br/&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;Hoxton.SR3&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    ...&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
+dependencies {&#xD;
+classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE&amp;quot;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
+&#xD;
+dependencyManagement {&#xD;
+imports {&#xD;
+mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR3&amp;#39;&#xD;
+}&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Security 5.3 goes GA</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/05/spring-security-5-3-goes-ga" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Josh Cummings</name>
+    </author>
+    <id>tag:spring.io,2020-03-04:3985</id>
+    <updated>2020-03-05T17:12:57Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, it is my pleasure to announce the general availability of Spring Security 5.3. This release is the result of the work that went into &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.M1"&gt;5.3.0.M1&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.RC1"&gt;5.3.0.RC1&lt;/a&gt;, and &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.0.RELEASE"&gt;5.3.0.RELEASE&lt;/a&gt;. In combination they close 200+ tickets.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can find the highlights of 5.3 in the &lt;a href="https://docs.spring.io/spring-security/site/docs/5.3.0.RELEASE/reference/html5/#new"&gt;What&amp;#8217;s new&lt;/a&gt; section of the Spring Security reference.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, we look forward to hearing your &lt;a href="https://github.com/spring-projects/spring-security/issues"&gt;feedback&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="https://docs.spring.io/spring-security/site/docs/5.3.0.RELEASE/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
+| &lt;a href="https://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session Dragonfruit-RC1, Corn-SR2 and Bean-SR10 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/04/spring-session-dragonfruit-rc1-corn-sr2-and-bean-sr10-released" />
     <category term="releases" label="Releases" />
     <author>
-      <name>Eleftheria Stein</name>
+      <name>Eleftheria Stein-Kousathana</name>
     </author>
     <id>tag:spring.io,2020-03-04:3984</id>
     <updated>2020-03-04T22:20:26Z</updated>
@@ -176,7 +417,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {&#xD;
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2020-03-03:3981</id>
-    <updated>2020-03-03T21:42:53Z</updated>
+    <updated>2020-03-03T21:42:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, I&amp;rsquo;m home, in San Francisco, California, in the US, where the fears around Coronavirus have heated up and made things problematic for those of us who travel. It looks like, at least for the immediate future, I&amp;rsquo;ll be - basically - grounded. Stay safe out there, my friends. &lt;/p&gt;
 &lt;p&gt;The good news is that this will let me get to a ton more other things &lt;a href="http://spring.io/blogs"&gt;like the blogs&lt;/a&gt;, &lt;a href="http://twitter.com/BootifulPodcast"&gt;A Bootiful Podcast&lt;/a&gt; and &lt;a href="http://twitter.com/SpringTipsLive"&gt;Spring Tips&lt;/a&gt; and of course my &lt;a href="http://ReactiveSpring.io"&gt;Reactive Spring book&lt;/a&gt;. And of course, we&amp;rsquo;ve got a ton of things to get to today in today&amp;rsquo;s installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, so let&amp;rsquo;s get to it! &lt;/p&gt;
 &lt;ul&gt;
@@ -195,7 +436,7 @@ fun main(args: Array&amp;lt;String&amp;gt;) {&#xD;
   &lt;li&gt;&lt;a href="https://twitter.com/david_syer/status/1232675337814921217?s=12"&gt;The good Dr. Dave Syer demonstrating how to start a Spring Boot application, like the Petclinic, used a pre-cached JVM tool&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://bddy.me/2SZLsmS"&gt;The Cloud Foundry community is looking for a handful of volunteers to help reconstitute a multi-member vulnerability management team for CFF projects. &lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-boot/issues/19988"&gt;There&amp;rsquo;s now out-of-the-box support for R2DBC in Spring Boot&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://start.Spring.io"&gt;have you seen the new Spring website?&lt;/a&gt; - it&amp;rsquo;s perty!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://spring.io"&gt;have you seen the new Spring website?&lt;/a&gt; - it&amp;rsquo;s perty!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
@@ -1236,89 +1477,6 @@ class GreetingResponse {&#xD;
 &lt;p&gt;We will send metadata to the service. We have two choices. If the connection to the RSocket connection is shared, then we&amp;rsquo;d want to send the metadata for each request. This is what we&amp;rsquo;ve done in this example, as it&amp;rsquo;s the more likely scenario. On the other hand, if you need to only authenticate once, then you can send the metadata in the establishment of the connection in &lt;code&gt;rSocketRequester&lt;/code&gt; bean. &lt;/p&gt;
 &lt;p&gt;We use the &lt;code&gt;RSocketRequester&lt;/code&gt; client in the event listener where we make a call to the &lt;code&gt;greetings&lt;/code&gt; route on the service. It&amp;rsquo;s basically the same as it&amp;rsquo;s always been, with the slight difference that we&amp;rsquo;re encoding metadata in the request for authentication. &lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ve only begun to scratch the service surface in this blog - watch the video for more details! :D &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing Spring Cloud Stream Horsham.SR2 (3.0.2.RELEASE) and Spring Cloud Hoxton.SR2</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/19/announcing-spring-cloud-stream-horsham-sr2-3-0-2-release-and-spring-cloud-hoxton-sr2" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2020-02-19:3964</id>
-    <updated>2020-02-19T09:39:51Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the release of the Spring Cloud Stream Horsham.SR2 (3.0.2.RELEASE) release train which is available as part of Spring Cloud Hoxton.SR2 (just released) and builds on Spring Boot 2.2.4 and Spring Cloud Function 3.0.2.RELEASE which was also just released.&lt;/p&gt;
-&lt;p&gt;Spring Cloud Stream Horsham.SR2 modules are available for use in the &lt;a href="https://repo.maven.apache.org/maven2/org/springframework/cloud/"&gt;Maven Central&lt;/a&gt; repository. &lt;/p&gt;
-&lt;p&gt;This release contains several fixes and enhancements primarily driven by user&amp;rsquo;s feedback, so thank you.&lt;br/&gt;For more details please follow these links:&lt;br/&gt;- &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/issues?q=is%3Aclosed+milestone%3AHorsham.SR2"&gt;Spring Cloud Stream Core&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit/issues?q=is%3Aclosed+milestone%3AHorsham.SR2"&gt;Spring Cloud Stream Core Rabbit Binder&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/issues?q=is%3Aclosed+milestone%3AHorsham.SR2"&gt;Spring Cloud Stream Core Kafka Binder&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/spring-cloud/spring-cloud-function/issues?q=is%3Aclosed+milestone%3A3.0.2.RELEASE"&gt;Spring Cloud Function&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;As mentioned, Spring Cloud Hoxton.SR2 was also released, but it only contains updates to Spring Cloud Stream and Spring Cloud Function.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/"&gt;GitHub&lt;/a&gt; and or &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - February 18th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/18/this-week-in-spring-february-18th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-02-18:3963</id>
-    <updated>2020-02-18T20:52:17Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m off to sunny Atlanta, Georgia, for the epic Devnexus show there. If you&amp;rsquo;re there, don&amp;rsquo;t hesitate to reach out and say hi! I&amp;rsquo;m also busy recording new episodes of a &lt;a href="http://BootifulPodcast.fm"&gt;&lt;em&gt;Bootiful Podcast&lt;/em&gt;&lt;/a&gt; and new &lt;a href="http://bit.ly/spring-tips-playlist"&gt;Spring Tips videos&lt;/a&gt; videos. We have some &lt;em&gt;amazing&lt;/em&gt; guests on the show coming up and we have some really fascinating topics to introduce in our Spring Tips videos, too! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/14/announcing-the-new-spring-website"&gt;Announcing: The NEW Spring Website!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked to &lt;a href="https://spring.io/blog/2020/02/13/a-bootiful-podcast-vedran-pavic-on-spring-session-croatia-and-so-much-more"&gt;Vedran Pavic on Spring Session, Croatia, and so much more&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/13/spring-boot-2-3-0-m2-available-now"&gt;Spring Boot 2.3.0.M2 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/intersect/spring-cloud-in-15-minutes#.XkRWaXhrS10.twitter"&gt;Spring Boot and Spring Cloud in 15 minutes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/12/spring-integration-5-3-milestone-2-available"&gt;Spring Integration 5.3 Milestone 2 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/02/12/spring-data-neumann-m3-released"&gt;Spring Data Neumann M3 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1229815095456391169"&gt;Happy birthday to the Cloud Foundry foundation&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;InfoQ hhas a really nice look at various, recent &lt;a href="https://www.infoq.com/news/2020/02/developer-surveys/"&gt;feveloper surveys&lt;/a&gt; and their results. One conclusion&amp;rsquo;s inescapable: Spring Boot is a tour de force! Thank you communuty for being so amazing.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1229434232528941057"&gt;Want to learn about the latest and greatest in Spring&lt;/a&gt;? Join the SpringOne Tour this year!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://se.ewi.tudelft.nl/desosa2019/chapters/spring-boot/"&gt;Spring Boot - production-grade Spring-based Applications that you can ¡°just run¡±&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/arungupta/status/1228413285998837760?s=12"&gt;Arun Gupta is a fellow Java champion &lt;/a&gt; and he has some nice things to say about the Spring team and - frankly - it warmed my heart and I just wanted to share. Thanks Arun - the feeling is mutual, buddy!&lt;/li&gt;
-  &lt;li&gt;Learn about &lt;a href="https://www.infoq.com/presentations/collaborative-contract-driven-development/"&gt;collaborative contract-driven development&lt;/a&gt; in this talk on - among other things - Spring Cloud Contract&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://bsideup.github.io/posts/daily_reactive/thread_locals/"&gt;Daily Reactive: Let&amp;rsquo;s talk about ThreadLocals. ¡¤ A guy with &amp;lsquo;Ego&amp;rsquo; in his name&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The Java Hungry has a nice post on the &lt;a href="https://javahungry.blogspot.com/2020/01/spring-boot-interview-questions.html"&gt;top 40 Most Frequently Asked Spring Boot Interview Questions and Answers &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The &lt;a href="https://www.rabbitmq.com/blog/2020/02/12/this-month-in-rabbitmq-january-2020-recap/"&gt;RabbitMQ blog has published the epic &amp;ldquo;This Month in RabbitMQ,&amp;rdquo; January 2020 Recap&lt;/a&gt; - always worth a read!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/scotiabank-chassis-appfactory/"&gt;Chassis and AppFactory: Accelerate Development of Cloud-Native Microservices for Enterprises&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/webinars/feb-20-introduction-to-reactive-spring-part-one-webinar"&gt;Hi Spring fans! I&amp;rsquo;m doing a webinar - the first part of three - on Reactive Spring the 20th of February&lt;/a&gt; - join me!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing: The NEW Spring Website!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/14/announcing-the-new-spring-website" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-02-13:3960</id>
-    <updated>2020-02-14T09:41:00Z</updated>
-    <content type="html">&lt;p&gt;Spring is constantly evolving and always innovating while being consistent where it matters: delivering a reliable framework to help you build maintainable software, faster. In the last few years, the Spring contributors have worked hard to bring the predictable Spring experience to microservices, serverless, streams, reactive, batch, data, and new languages like Kotlin. Over the coming year, you&amp;rsquo;ll see many more examples of this, including some cool new features that we&amp;rsquo;re just dying to share with you.&lt;/p&gt;
-&lt;p&gt;However, there was one area of Spring that we felt was desperately in need of some love and attention?the dusty old spring.io website. Very little changed on the site in the last few years. And that presented us with a problem: how do you take a well-used website that&amp;rsquo;s trusted by millions of developers, and make it better?&lt;/p&gt;&lt;h2&gt;&lt;a href="#we-love-a-challenge-hellip" class="anchor" name="we-love-a-challenge-hellip"&gt;&lt;/a&gt;We love a challenge&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;We started with motivation. If we changed the site, what would our motivation be for that change? What did we want folks to get out of it? What should it feel like to use? How should it evolve?&lt;/p&gt;
-&lt;p&gt;After many discussions, much passion, and some deep introspection, our team came together around three key themes:&lt;/p&gt;&lt;h2&gt;&lt;a href="#1-visitors-should-feel-welcome" class="anchor" name="1-visitors-should-feel-welcome"&gt;&lt;/a&gt;#1 Visitors should feel welcome.&lt;/h2&gt;
-&lt;p&gt;Spring is used by millions of developers every day. Some have been using Spring for over 20 years, some have been using Spring for less than 20 minutes. If Spring is to continue to grow, our window on the world needs to be as welcoming as possible, no matter what your level of experience. It should cater as equally for those just getting started on their Spring journey as it does for those who already know exactly what they need from their visit.&lt;/p&gt;
-&lt;p&gt;With the new site, we¡¯ve kept almost all of the existing content and we¡¯ve used the same URLs wherever possible. However, we¡¯ve added a bunch of new content that helps demystify the Spring ecosystem and provide more support when you¡¯re just getting started.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;New to Spring?&lt;/em&gt; Try our new &lt;a href="https://spring.io/why-spring"&gt;Why Spring&lt;/a&gt; and &lt;a href="https://spring.io/quickstart"&gt;Quickstart&lt;/a&gt; pages.&lt;br/&gt;&lt;em&gt;Seasoned Pro?&lt;/em&gt; Go straight to the &lt;a href="https://spring.io/projects"&gt;Projects&lt;/a&gt;, &lt;a href="https://spring.io/guides"&gt;Guides&lt;/a&gt;, or &lt;a href="https://spring.io/blog"&gt;Blogs&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#2-visitors-should-feel-comfortable" class="anchor" name="2-visitors-should-feel-comfortable"&gt;&lt;/a&gt;#2 Visitors should feel comfortable.&lt;/h2&gt;
-&lt;p&gt;Navigating Spring&amp;rsquo;s large and diverse ecosystem can be challenging. Spring is highly modular in nature and it has something for everything. But that doesn&amp;rsquo;t mean it&amp;rsquo;s easy to understand. Our new website needed to do more to explain what Spring is and how the various parts can be used together to build the amazing things you¡¯re working on.&lt;/p&gt;
-&lt;p&gt;In the new site, topics like building microservices, and understanding how Spring can help you build cloud applications, are covered by a series of new pages. Navigation has also evolved, with dropdown menus surfacing more of the content you need to support your learning journey.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Researching a topic?&lt;/em&gt; Try the topic pages including &lt;a href="https://spring.io/microservices"&gt;Microservices&lt;/a&gt;, &lt;a href="https://spring.io/cloud"&gt;Cloud&lt;/a&gt;, and &lt;a href="https://spring.io/serverless"&gt;Serverless&lt;/a&gt;&lt;br/&gt;&lt;em&gt;Going for gold?&lt;/em&gt; New &lt;a href="https://spring.io/learn"&gt;Learn&lt;/a&gt; and &lt;a href="https://spring.io/training"&gt;Training &amp;amp; Certification&lt;/a&gt; pages will boost your knowledge&lt;br/&gt;&lt;em&gt;Help in production?&lt;/em&gt; Our latest &lt;a href="https://spring.io/support"&gt;Support&lt;/a&gt; offerings will keep you up-and-running!&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#3-visitors-should-feel-our-energy" class="anchor" name="3-visitors-should-feel-our-energy"&gt;&lt;/a&gt;#3 Visitors should feel our energy!&lt;/h2&gt;
-&lt;p&gt;It was crucial that our new website should pay homage to the sheer energy and vibrancy of the Spring community. Our community is bright, passionate, innovative, confident, and dynamic. Spring is a shining example of what we can achieve if we all work together for the greater good.&lt;/p&gt;
-&lt;p&gt;In the new site, we¡¯ve used a lighter and brighter design throughout. There are zesty new tonal highlights, new graphics, and even the occasional diagram. Links to events, social media, videos, and podcasts have also been added so that you can experience first hand the passion and drive of our community and its members.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Feeling social?&lt;/em&gt; Try our new &lt;a href="https://spring.io/community"&gt;Community and Events&lt;/a&gt; page&lt;br/&gt;&lt;em&gt;Love a good talk?&lt;/em&gt; Take a look at our new &lt;a href="https://spring.io/learn"&gt;Learn&lt;/a&gt; page with videos, podcasts &amp;amp; more&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#so-here-it-is-hellip" class="anchor" name="so-here-it-is-hellip"&gt;&lt;/a&gt;So here it is&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;These three core themes have allowed us to take everything we liked about the old site, and mold it into something &lt;a href="https://spring.io"&gt;new&lt;/a&gt;. We&amp;rsquo;ve lost very little content and we¡¯ve augmented what we had with new pieces that explain what Spring is all about, why it¡¯s so awesome, and how it can support you in your daily work.&lt;/p&gt;
-&lt;p&gt;As fellow developers, we know it&amp;rsquo;s impossible to build the &lt;em&gt;perfect&lt;/em&gt; website, but we really hope that you can be proud of Spring¡¯s new showcase and that you¡¯ll be happy to use it and &lt;a href="https://ctt.ac/xOb1i"&gt;share it&lt;/a&gt; with others.&lt;/p&gt;
-&lt;p&gt;Thanks for stopping by!&lt;/p&gt;
-&lt;p&gt;The Spring Website Team.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
