@@ -1,8 +1,0 @@
-package CodingStudyHW;
-
-public class 스도쿠 {
-	static int[][] sudoku;
-	public static void main(String[] args) {
-
-	}
-}

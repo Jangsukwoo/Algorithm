@@ -1,0 +1,43 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * 한가지 색깔의 볼만 이동시킬 수 있는데
+ * 다른색깔의 볼은 와장창 건너뛸수있다.
+ * 
+ */
+public class 볼모으기 {
+	static int N;
+	static char[] balls;
+	static ArrayList<Integer> list = new ArrayList<Integer>();
+	public static void main(String[] args) {
+		setData();
+		System.out.println(list.toString());
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		sc.nextLine();
+		balls = new char[N];
+		balls = sc.nextLine().toCharArray();
+		System.out.println(balls.length);
+		char currentBall = balls[0];
+		if(currentBall=='B') list.add(0);
+		if(currentBall=='R') list.add(1);
+		for(int i=0;i<N;i++){
+			if(balls[i]==currentBall) continue;
+			else{
+				if(balls[i]=='B') {
+					list.add(0);
+					currentBall = 'B';
+				}
+				else if(balls[i]=='R') {
+					list.add(1);
+					currentBall = 'R';
+				}
+			}
+		}
+	}
+}
