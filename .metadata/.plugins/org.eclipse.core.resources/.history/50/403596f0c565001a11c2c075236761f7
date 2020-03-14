@@ -1,0 +1,8 @@
+package CodingStudyHW;
+
+public class 숫자정사각형 {
+	static int N,M;//행,열
+	public static void main(String[] args) {
+		
+	}
+}

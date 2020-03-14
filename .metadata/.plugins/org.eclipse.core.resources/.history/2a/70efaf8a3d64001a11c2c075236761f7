@@ -1,0 +1,7 @@
+package BAEKJOON;
+
+public class 함께블록쌓기 {
+	public static void main(String[] args) {
+		
+	}
+}

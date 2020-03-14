@@ -1,0 +1,16 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+public class 물통 {
+	static int A,B,C;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+	}
+}

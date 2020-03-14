@@ -1,0 +1,12 @@
+package CodingStudyHW;
+
+public class 물통 {
+	static int A,B,C;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

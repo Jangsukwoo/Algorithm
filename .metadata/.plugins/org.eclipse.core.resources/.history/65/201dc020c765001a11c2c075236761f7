@@ -1,0 +1,41 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 숫자정사각형 {
+	static int N,M;//행,열
+	static int maxLength;
+	static char[][] rectangle;
+	public static void main(String[] args) throws IOException {
+		setData();
+		getMaxsquare();
+	}
+	private static void getMaxsquare() {
+		for(int row=0;row<N;row++){
+			for(int col=0;col<M;col++){
+				int length=1;
+				while(checkSquare(row,col,length)) length++;
+			}
+		}
+	}
+	private static void view() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				System.out.print(rectangle[row][col]);
+			}
+			System.out.println();
+		}
+	}
+	private static void setData() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		rectangle = new char[N][M];
+		for(int row=0;row<N;row++) rectangle[row] = br.readLine().toCharArray();
+		
+	}
+}

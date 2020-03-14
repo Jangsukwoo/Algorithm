@@ -26,6 +26,9 @@ public class 함께블록쌓기_dfs_시간초과 {
 		dfs(1,0);
 		System.out.println(possibleCase);
 	}
+	
+	
+	
 	private static void dfs(int studentNo, int sum){
 		//모든 학생을 끝까지 검사하는데
 		//블록 사용을 안하는 경우와 사용하는 경우로 나누기.
@@ -44,6 +47,9 @@ public class 함께블록쌓기_dfs_시간초과 {
 			dfs(studentNo+1,trySum);
 		}
 	}
+	
+	
+	
 	private static void setData() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());

@@ -1,0 +1,17 @@
+package CodingStudyHW;
+/*
+ * 계속 500이상의 중량을 유지하고 싶다.
+ * 운동 기간동안 항상 중량이 500 이상이 되도록 하는 경우의 수를 출력
+ * -> 순열
+ */
+public class 근손실 {
+	static int N,K;
+	static int[] exerciseKit;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

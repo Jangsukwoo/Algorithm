@@ -14,6 +14,9 @@ import java.util.StringTokenizer;
  * H는 목표 높이
  * 
  * dfs로하니 터짐 
+ * ->dp로 도전해보기
+ * 
+ * 
  * 
  */
 public class 함께블록쌓기_dp_도전 {
@@ -21,6 +24,7 @@ public class 함께블록쌓기_dp_도전 {
 	static int possibleCase;
 	static int mod = 10007;
 	static ArrayList<Integer>[] blocklistOfStudent;//인덱스 : 학생번호, 노드 : 블록들
+	static int[][] dp;
 	public static void main(String[] args) throws IOException {
 		setData();
 		System.out.println(possibleCase);
