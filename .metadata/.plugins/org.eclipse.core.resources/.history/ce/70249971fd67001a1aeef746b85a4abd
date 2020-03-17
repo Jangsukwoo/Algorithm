@@ -15,20 +15,17 @@ import java.util.PriorityQueue;
  */
 public class 라면공장 {
 	public static void main(String[] args) {
-		System.out.println(solution(4,new int[] {4,10,15},new int[] {20,5,10},30));
+		System.out.println(solution(4,new int[] {4,10,5},new int[] {20,5,10},30));
 		
 	}
 	static public int solution(int stock, int[] dates, int[] supplies, int k) {
 		int answer = 0;
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>() {
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return -Integer.compare(o1,o2); //내림차순
-			}
 		});
 		int idx=0;
 		int N = dates.length;
 		for(int day=1;day<k;day++){//k일까지 버틴다.
+			System.out.println(day);
 			if(idx<N && dates[idx]==day){//공급 받을 수 있는 날이 되었으면 일단 pq에 넣음
 				pq.add(supplies[idx]);
 				idx++;

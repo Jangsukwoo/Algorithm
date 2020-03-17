@@ -23,7 +23,7 @@ public class 라면공장 {
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				return -Integer.compare(o1,o2); //내림차순
+				return -Integer.compare(o1,o2);
 			}
 		});
 		int idx=0;
