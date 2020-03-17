@@ -5,7 +5,116 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-13T00:00:45Z</updated>
+  <updated>2020-03-16T16:00:00Z</updated>
+  <entry>
+    <title>Getting Started With RSocket: Spring Boot Fire-And-Forget</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ben Wilcock</name>
+    </author>
+    <id>tag:spring.io,2020-03-04:3983</id>
+    <updated>2020-03-16T16:00:00Z</updated>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Time: about 15 minutes.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Some developers reading this post will have been using HTTP for many years by now. Most of them will also know that if you want to use HTTP with other messaging models ? like fire-and-forget, for example ? you must sometimes use clever workarounds &lt;a href="https://stackoverflow.com/questions/38277471/fire-and-forget-for-http-in-java"&gt;like this one&lt;/a&gt; posted on Stackoverflow. That&amp;rsquo;s because HTTP is a request-response protocol. It requires a request to be sent and a response to be received. It has no concept of a one-way message without any form of response.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://rsocket.io"&gt;RSocket&lt;/a&gt; takes a different approach. RSocket defines a new protocol layer on top of transports like TCP and WebSockets. This new protocol offers greater choice to developers, with built-in support for four distinct interaction models:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;request/response&lt;/li&gt;
+  &lt;li&gt;fire-and-forget&lt;/li&gt;
+  &lt;li&gt;request/stream&lt;/li&gt;
+  &lt;li&gt;channel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the previous posts, you already learned how to do request-response with RSocket. In this post, you&amp;rsquo;re going to learn how to add fire-and-forget messaging to your code. Let&amp;rsquo;s dive right in!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;If you didn&amp;rsquo;t read the previous posts on &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;server-side&lt;/a&gt; and &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;client-side&lt;/a&gt; request-response messaging with RSocket, now&amp;rsquo;s your chance! The code sample is &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-1-add-the-server-side-fire-and-forget-method" class="anchor" name="step-1-add-the-server-side-fire-and-forget-method"&gt;&lt;/a&gt;Step 1: Add The Server-Side Fire-And-Forget Method&lt;/h4&gt;
+&lt;p&gt;You&amp;rsquo;ll remember the &lt;code&gt;RSocketController&lt;/code&gt; from the &lt;code&gt;rsocket-server&lt;/code&gt; project that you worked on earlier:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
+@Controller&#xD;
+public class RSocketController {&#xD;
+// code goes here&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; is the server-side class that dealt with request-response messaging. Its &lt;code&gt;.requestResponse()&lt;/code&gt; method accepted a &lt;code&gt;Message&lt;/code&gt; object as a parameter and returned a &lt;code&gt;Message&lt;/code&gt; object as a response. It&amp;rsquo;s this one-object-in, one-object-out method signature that makes the method a request-response method.&lt;/p&gt;
+&lt;p&gt;To add a fire-and-forget capability to the server, you must add a method with a different signature. The &lt;code&gt;.fireAndForget()&lt;/code&gt; method should accept a single &lt;code&gt;Message&lt;/code&gt; parameter, but this time, return a &lt;code&gt;void&lt;/code&gt; like this&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @MessageMapping(&amp;quot;fire-and-forget&amp;quot;)&#xD;
+    public void fireAndForget(Message request) {&#xD;
+        log.info(&amp;quot;Received fire-and-forget request: {}&amp;quot;, request);&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You must still use the &lt;code&gt;@MessageMapping&lt;/code&gt; annotation on your method, but this time you must give the &lt;em&gt;route&lt;/em&gt; mapping a different name. In the code above, I&amp;rsquo;ve used the name &amp;ldquo;fire-and-forget.&amp;rdquo;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;In the Spring RSocket documentation, the method signature rules are in the &lt;a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#rsocket-annot-messagemapping"&gt;message mapping&lt;/a&gt; section.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-2-add-the-client-side-fire-and-forget-method" class="anchor" name="step-2-add-the-client-side-fire-and-forget-method"&gt;&lt;/a&gt;Step 2: Add The Client-Side Fire-And-Forget Method&lt;/h4&gt;
+&lt;p&gt;You built your &lt;code&gt;RSocketShellClient&lt;/code&gt; in the &lt;code&gt;rsocket-client&lt;/code&gt; project when you followed the previous post:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
+@ShellComponent&#xD;
+public class RSocketShellClient {&#xD;
+// code goes here&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;RSocketShellClient used the &lt;code&gt;.requestResponse()&lt;/code&gt; method to send a single request to the RSocket server using the &lt;code&gt;RSocketRequester&lt;/code&gt; created in the class constructor.&lt;/p&gt;
+&lt;p&gt;To add the fire-and-forget capability to your client, add a new &lt;code&gt;.fireAndForget()&lt;/code&gt; method to the &lt;code&gt;RSocketShellClient&lt;/code&gt; like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Send one request. No response will be returned.&amp;quot;)&#xD;
+    public void fireAndForget() throws InterruptedException {&#xD;
+        log.info(&amp;quot;\nFire-And-Forget. Sending one request. Expect no response (check server log)...&amp;quot;);&#xD;
+        this.rsocketRequester&#xD;
+                .route(&amp;quot;fire-and-forget&amp;quot;)&#xD;
+                .data(new Message(CLIENT, FIRE_AND_FORGET))&#xD;
+                .send()&#xD;
+                .block();&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&amp;rsquo;s examine the code in this method in more detail:&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;.route()&lt;/code&gt; on the &lt;code&gt;rsocketRequester&lt;/code&gt; is set to &lt;code&gt;&amp;quot;fire-and-forget&amp;quot;&lt;/code&gt;. This route name matches the &lt;code&gt;@MessageMapping&lt;/code&gt; annotation on the fire-and-forget method in the &lt;code&gt;RSocketController.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A new &lt;code&gt;Message&lt;/code&gt; instance provides the data for the &lt;code&gt;.data()&lt;/code&gt; method. The message instance has its origin set to &lt;code&gt;CLIENT&lt;/code&gt; and &lt;code&gt;FIRE_AND_FORGET&lt;/code&gt; set as its interaction mode.&lt;/p&gt;
+&lt;p&gt;Notice that there is no &lt;code&gt;.retrieveMono()&lt;/code&gt; call. Instead, the fire-and-forget specific &lt;code&gt;.send()&lt;/code&gt; method sends the message to the server, while &lt;code&gt;.block()&lt;/code&gt; subscribes and waits for completion. Remember, nothing happens in reactive code without a subscription.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s all the coding done. Now, it&amp;rsquo;s time to test it&amp;rsquo;s working.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-3-build-and-run-the-rsocket-server" class="anchor" name="step-3-build-and-run-the-rsocket-server"&gt;&lt;/a&gt;Step 3: Build And Run The RSocket Server&lt;/h4&gt;
+&lt;p&gt;Open a terminal window and move to the &lt;code&gt;rsocket-server&lt;/code&gt; directory. Start running the server using the Maven wrapper like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
+./mvnw clean package spring-boot:run -DskipTests=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The server starts on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-4-build-and-run-the-rsocket-client" class="anchor" name="step-4-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Client&lt;/h4&gt;
+&lt;p&gt;Open a &lt;em&gt;second&lt;/em&gt; terminal window and move to the &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the client application as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
+./mvnw clean package spring-boot:run -DskipTests=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When the client runs, Spring Shell presents you with a new prompt: &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can send your fire-and-forget message to the server by typing &lt;code&gt;fire-and-forget&lt;/code&gt; at the prompt. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint none"&gt;shell:&amp;gt;fire-and-forget&#xD;
+2020-02-03 14:54:14.028 INFO 2929 --- [ main] io.pivotal.rsocketclient.RSocketClient :&#xD;
+Fire-And-Forget. Sending one request. Expect no response (check server)...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The client prints no response, but if you switch to the server&amp;rsquo;s terminal window, you&amp;rsquo;ll notice the receipt of the fire-and-forget message is logged successfully to the console:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint none"&gt;2020-02-03 14:54:14.129 INFO 2061 --- [or-http-epoll-2] io.pivotal.rsocketserver.RSocketServer : Received fire-and-forget request: Message(origin=Client, interaction=Fire-And-Forget, index=0, created=1580741654)
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a href="#step-5-tidy-up" class="anchor" name="step-5-tidy-up"&gt;&lt;/a&gt;Step 5: Tidy Up&lt;/h4&gt;
+&lt;p&gt;You can stop the &lt;code&gt;rsocket-client&lt;/code&gt; by typing exit at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt like this. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; process by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window.&lt;/p&gt;&lt;h4&gt;&lt;a href="#how-it-works" class="anchor" name="how-it-works"&gt;&lt;/a&gt;How It Works&lt;/h4&gt;
+&lt;p&gt;The client&amp;rsquo;s &lt;code&gt;.fireAndForget()&lt;/code&gt; method uses the &lt;code&gt;RSocketRequester&lt;/code&gt; to send a single &lt;code&gt;Message&lt;/code&gt; to the server when the &lt;code&gt;block()&lt;/code&gt; method is called. The block method is effectively an instruction to &amp;lsquo;subscribe and wait.&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; on the server examines the message metadata for the &lt;code&gt;route&lt;/code&gt; and correctly passes the message to the &lt;code&gt;.fireAndForget(Message request)&lt;/code&gt; method for processing. Once the client sends the request, it is free to get on with other things. When the server receives the request, it too can get on with other work. It does not need to send a response to the client.&lt;/p&gt;&lt;h4&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h4&gt;
+&lt;p&gt;In this post, you learned how to quickly build a fire and forget capability with Spring Boot and RSocket. For more on Spring&amp;rsquo;s RSocket integration and message mapping, take a look at the &lt;a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#rsocket-annot-messagemapping"&gt;Spring RSocket documentation&lt;/a&gt;. In the next post, we&amp;rsquo;ll cover request-stream messaging. See you there!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Register Now for Spring Live, an interactive, virtual, 24-hour long conference for you, Spring fans!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/16/register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-11:3994</id>
+    <updated>2020-03-16T14:03:00Z</updated>
+    <content type="html">&lt;img src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVlNjkxY2I2M2VkYTUuZ2lmJnZlcnNpb249MDAwMCZzaWc9ZWI0OGVkOGFiMjdmMzIxYjA4NDc4YmVhYjk2ZWYyNTM%253D"/&gt;
+&lt;p&gt;Hi, Spring fans! We hope you&amp;rsquo;ll join us for an interactive, 24-hour long, virtual conference called &lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Spring Live&lt;/a&gt;. Here&amp;rsquo;s what you need to know: it&amp;rsquo;s 24-hours long, end to end, so there&amp;rsquo;s bound to be content you can watch no matter what part of the world you&amp;rsquo;re in. It&amp;rsquo;s &lt;em&gt;free&lt;/em&gt;! It&amp;rsquo;s interactive - so the speakers will be hanging around to answer questions and do Q/A. Some speakers are going to pre-record their talks proper just so they can spend the entire slot for their talk answering questions and interacting directly with you. We&amp;rsquo;ve invited experts from the wide world of Springdom from VMWare (where the Spring team lives), Okta, Confluent, Google, Microsoft, and IBM, and so many others. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re holding the event starting at 9 am PDT on March 19th (the Spring equinox!) - yes! that&amp;rsquo;s _soon! - so register now, add it to your calendar, and make sure you&amp;rsquo;re in a comfy chair, have coffee at the ready, and have your thinking caps on. &lt;/p&gt;
+&lt;p&gt;This conference is &lt;strong&gt;virtual&lt;/strong&gt;. We&amp;rsquo;re throwing this virtual conference because we want our community to be healthy, happy, and safe as the #COVID-19 pandemic rages through local communities worldwide. We&amp;rsquo;re a global community, and that&amp;rsquo;s true whether we meet in person or not. For each person who joins the event, we&amp;rsquo;ll make a donation to the Center for Disaster Philanthropy (COVID-19 Response Fund).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Register here&lt;/a&gt; and we&amp;rsquo;ll look forward to seeing you in just over a week!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: John Hawley on OSS at VMWare, Security, and more</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/13/a-bootiful-podcast-john-hawley-on-oss-at-vmware-security-and-more" />
@@ -108,22 +217,6 @@ See &lt;code&gt;org.springframework.integration.ws.dsl.Ws&lt;/code&gt; for more 
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Register Now for Spring Live, an interactive, virtual, 24-hour long conference for you, Spring fans!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/11/register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-11:3994</id>
-    <updated>2020-03-11T17:03:00Z</updated>
-    <content type="html">&lt;img src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVlNjkxY2I2M2VkYTUuZ2lmJnZlcnNpb249MDAwMCZzaWc9ZWI0OGVkOGFiMjdmMzIxYjA4NDc4YmVhYjk2ZWYyNTM%253D"/&gt;
-&lt;p&gt;Hi, Spring fans! We hope you&amp;rsquo;ll join us for an interactive, 24-hour long, virtual conference called &lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Spring Live&lt;/a&gt;. Here&amp;rsquo;s what you need to know: it&amp;rsquo;s 24-hours long, end to end, so there&amp;rsquo;s bound to be content you can watch no matter what part of the world you&amp;rsquo;re in. It&amp;rsquo;s &lt;em&gt;free&lt;/em&gt;! It&amp;rsquo;s interactive - so the speakers will be hanging around to answer questions and do Q/A. Some speakers are going to pre-record their talks proper just so they can spend the entire slot for their talk answering questions and interacting directly with you. We&amp;rsquo;ve invited experts from the wide world of Springdom from VMWare (where the Spring team lives), Okta, Confluent, Google, Microsoft, and IBM, and so many others. &lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;re holding the event starting at 9 am PDT on March 19th (the Spring equinox!) - yes! that&amp;rsquo;s _soon! - so register now, add it to your calendar, and make sure you&amp;rsquo;re in a comfy chair, have coffee at the ready, and have your thinking caps on. &lt;/p&gt;
-&lt;p&gt;This conference is &lt;strong&gt;virtual&lt;/strong&gt;. We&amp;rsquo;re throwing this virtual conference because we want our community to be healthy, happy, and safe as the #COVID-19 pandemic rages through local communities worldwide. We&amp;rsquo;re a global community, and that&amp;rsquo;s true whether we meet in person or not. For each person who joins the event, we&amp;rsquo;ll make a donation to the Center for Disaster Philanthropy (COVID-19 Response Fund).&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Register here&lt;/a&gt; and we&amp;rsquo;ll look forward to seeing you in just over a week!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -1205,22 +1298,6 @@ Data:&#xD;
   &lt;li&gt;&lt;a href="http://twitter.com/MGrzejszczak"&gt;Marcin on Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe title="Spring Cloud Contract lead Marcin Grzejszczak on Spring Cloud Contract, Spring Cloud Sleuth, Continuous Integration and more" src="https://www.podbean.com/media/player/vyuyu-d4f900?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.5 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/27/spring-boot-2-2-5-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-02-27:3977</id>
-    <updated>2020-02-27T18:02:34Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.5 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.5.RELEASE"&gt;62 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Reactor Netty 0.9.5. It contains fixes for &lt;a href="https://pivotal.io/security/cve-2020-5403"&gt;CVE-2020-5403&lt;/a&gt; and &lt;a href="https://pivotal.io/security/cve-2020-5404"&gt;CVE-2020-5404&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

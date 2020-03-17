@@ -1,0 +1,13 @@
+package CodingStudy;
+/*
+ * N행 4열 
+ */
+public class 땅따먹기 {
+	public static void main(String[] args) {
+
+	}
+    public int solution(int[][] land) {
+    	int answer;
+        return answer;
+    }
+}
