@@ -1,0 +1,20 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 정수삼각형 {
+	static int[][] triangle;
+	static int N;
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		triangle = new int[N][N];
+		
+	}
+}

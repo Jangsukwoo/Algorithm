@@ -1,0 +1,19 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+/*
+ * 자두가 떨어질 때 까지 기다림
+ * 자두는 1<=T<=1000초 동안 떨어짐
+ * 자두는 최대 1<=W<=30만큼 움직이고싶음
+ */
+public class 자두나무 {
+	static int T;
+	static int W;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+	}
+}

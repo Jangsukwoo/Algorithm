@@ -5,7 +5,355 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-16T16:00:00Z</updated>
+  <updated>2020-03-18T00:17:52Z</updated>
+  <entry>
+    <title>Spring Tips: Remote File System Integrations (FTP) with Spring Integration</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/18/spring-tips-remote-file-system-integrations-ftp-with-spring-integration" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-18:4000</id>
+    <updated>2020-03-18T00:17:52Z</updated>
+    <content type="html">&lt;h1&gt;&lt;a href="#spring-tips-ftp-integration" class="anchor" name="spring-tips-ftp-integration"&gt;&lt;/a&gt;Spring Tips: FTP Integration&lt;/h1&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/PkWiinQCPxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman) &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi, Spring fans! In this installment of Spring Tips, we look at a topic that&amp;rsquo;s near and dear to my heart: integration! And yes, you may recall that the very first installment of &lt;em&gt;Spring Tips&lt;/em&gt; looked at Spring Integration. If you haven&amp;rsquo;t already watched that one, &lt;a href="https://www.youtube.com/watch?v=MTKlk8_9aAw&amp;list=PLgGXSWYM2FpPw8rV0tZoMiJYSCiLhPnOc&amp;index=69"&gt;you should&lt;/a&gt;. So, while we&amp;rsquo;re not going to revisit Spring Integration fundamentals, we&amp;rsquo;re going to take a deep dive into one area fo support in Spring Integration: FTP. FTP is all about file synchronization. Broadly, in the world of Enterprise Application Integration (EAI), we have four types of integration: file synchronization, RPC, database synchronization, and messaging. &lt;/p&gt;
+&lt;p&gt;File synchronization is definitely not what most people think of when they think of cloud-native applications, but you&amp;rsquo;d be surprised just how much of the world of finance is run by file synchronization (FTP, SFTP, AS2, FTPS, NFS, SMB, etc.) integrations. Sure, most of them use the more secure variants, but the point is still valid. In this video, we look at how to use Spring Integration&amp;rsquo;s FTP support, and once you understand that, it&amp;rsquo;s easy enough to apply it to other variants. &lt;/p&gt;
+&lt;p&gt;Please indulge me in a bit of chest-thumping here: I thought that I knew everything I&amp;rsquo;d needed to know about Spring Integration&amp;rsquo;s FTP support since I had a major role in polishing off Iwein Fuld&amp;rsquo;s original prototype code more than a decade ago, and since I contributed the original FTPS and SFTP adapters. In the intervening decade, surprising nobody, the Spring Integration team has added a &lt;em&gt;ton&lt;/em&gt; of new capabilities and fixed all the bugs in my original code! I love what&amp;rsquo;s been introduced. &lt;/p&gt;
+&lt;p&gt;So, first things first: we need to set up an FTP server. Most of Spring Integration&amp;rsquo;s support works as a client to an already installed FTP server. So, it doesn&amp;rsquo;t matter what FTP server you use. However, I&amp;rsquo;d recommend you use the &lt;a href="https://mina.apache.org/ftpserver-project/"&gt;Apache FTPServer project&lt;/a&gt;. It&amp;rsquo;s a project that&amp;rsquo;s a sub-project of the Apache Mina project, which is, just so you know, the precursor to the Netty project. The Apache FTP Server is a super scalable, lightweight, all-Java implementation of the FTP protocol. And, you can easily embed it inside a Spring application. I&amp;rsquo;ve done so in the &lt;a href="http://github.com/spring-tips/ftp-integration"&gt;Github repository for this video&lt;/a&gt;. I defined a custom &lt;code&gt;UserManager&lt;/code&gt; class to manage FTP user accounts. The custom &lt;code&gt;UserManager&lt;/code&gt; that talks to a local PostgreSQL database with a simple table &lt;code&gt;ftp_user&lt;/code&gt;, whose schema is defined as a table with the following columns:&lt;/p&gt;
+&lt;p&gt;&lt;IMG src = "https://raw.githubusercontent.com/spring-tips/ftp-integration/master/images/schema.png" /&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve got two users in there, &lt;code&gt;jlong&lt;/code&gt; and &lt;code&gt;grussell&lt;/code&gt;, both of which have a password of &lt;code&gt;pw&lt;/code&gt;. I&amp;rsquo;ve set &lt;code&gt;enabled&lt;/code&gt; and &lt;code&gt;admin&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; for both records. We use these two accounts later, so make sure you insert them into the table, like this. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint sql"&gt;insert into ftp_user(username, password, enabled, admin) values (&amp;#39;jlong&amp;#39;, &amp;#39;pw&amp;#39;, true, true);&#xD;
+insert into ftp_user(username, password, enabled, admin) values (&amp;#39;grussell&amp;#39;, &amp;#39;pw&amp;#39;, true, true);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&amp;rsquo;m not going to reprint the code for the FTP server here in its entirety. If you want to peruse it, I&amp;rsquo;d recommend you look at the &lt;a href="https://github.com/spring-tips/ftp-integration/blob/master/mina-ftp-server/src/main/java/ftp/FtpServerConfiguration.java"&gt;&lt;code&gt;FtpServerConfiguration&lt;/code&gt; &lt;/a&gt; and &lt;a href="https://github.com/spring-tips/ftp-integration/blob/master/mina-ftp-server/src/main/java/ftp/FtpUserManager.java"&gt;&lt;code&gt;FtpUserManager&lt;/code&gt;&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;In most cases, we don&amp;rsquo;t have any ability to change the FTP server. If we want to be notified of any changes in a remote file system, our client needs to connect, scan the directory, and compare it with an earlier, known state. Basically, the client computes the delta and publishes an event. But wouldn&amp;rsquo;t it be nice if the FTP server could broadcast an event when something happens? That way, there can be no doubt about what happened. And there&amp;rsquo;s no doubt that we observed every change. If we were using any other FTP server, this would be more of a wish than a possibility. But as we&amp;rsquo;re using the Apache FTP Server, Spring Integration offers us some interesting possibilities. We can install an &lt;code&gt;FTPlet&lt;/code&gt;, kind of like a filter, that will broadcast any important events on the FTP server as &lt;code&gt;ApplicationContext&lt;/code&gt; events. Then, we can use Spring Integration to publish interesting events as messages that we can process in Spring Integration. This capability is a new feature in Spring Integration. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package ftp;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.context.annotation.Configuration;&#xD;
+import org.springframework.integration.dsl.IntegrationFlow;&#xD;
+import org.springframework.integration.dsl.IntegrationFlows;&#xD;
+import org.springframework.integration.dsl.MessageChannels;&#xD;
+import org.springframework.integration.event.inbound.ApplicationEventListeningMessageProducer;&#xD;
+import org.springframework.integration.ftp.server.ApacheMinaFtpEvent;&#xD;
+import org.springframework.integration.ftp.server.ApacheMinaFtplet;&#xD;
+import org.springframework.integration.handler.GenericHandler;&#xD;
+import org.springframework.messaging.MessageChannel;&#xD;
+&#xD;
+@Log4j2&#xD;
+@Configuration&#xD;
+class IntegrationConfiguration {&#xD;
+&#xD;
+	@Bean&#xD;
+	ApacheMinaFtplet apacheMinaFtplet() {&#xD;
+		return new ApacheMinaFtplet();&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	MessageChannel eventsChannel() {&#xD;
+		return MessageChannels.direct().get();&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	IntegrationFlow integrationFlow() {&#xD;
+		return IntegrationFlows.from(this.eventsChannel())&#xD;
+			.handle((GenericHandler&amp;lt;ApacheMinaFtpEvent&amp;gt;) (apacheMinaFtpEvent, messageHeaders) -&amp;gt; {&#xD;
+                log.info(&amp;quot;new event: &amp;quot; + apacheMinaFtpEvent.getClass().getName() + &#xD;
+                     &amp;#39;:&amp;#39; + apacheMinaFtpEvent.getSession());&#xD;
+				return null;&#xD;
+			})&#xD;
+			.get();&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	ApplicationEventListeningMessageProducer applicationEventListeningMessageProducer() {&#xD;
+		var producer = new ApplicationEventListeningMessageProducer();&#xD;
+		producer.setEventTypes(ApacheMinaFtpEvent.class);&#xD;
+		producer.setOutputChannel(eventsChannel());&#xD;
+		return producer;&#xD;
+	}&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This example sets up a Spring Integration messaging flow that listens for the relevant events and logs them out. Obviously, we&amp;rsquo;re doing too much with this new information, but the thing to keep in mind is that&amp;hellip; &lt;em&gt;we TOTALLY could&lt;/em&gt;! There are so many opportunities here. We could publish the events over Apache Kafka, RabbitMQ, or JMS for some other node to respond to. We could send an email inviting someone to participate in some workflow. The sky&amp;rsquo;s the limit! &lt;/p&gt;
+&lt;p&gt;Now, we&amp;rsquo;ve got a working server up and running on port &lt;code&gt;7777&lt;/code&gt;, we can connect using a client. I use &lt;a href="https://filezilla-project.org/"&gt;Filezilla&lt;/a&gt;. Whatever client you use, try logging into the running FTP server on host &lt;code&gt;localhost&lt;/code&gt;, port &lt;code&gt;7777&lt;/code&gt;, user &lt;code&gt;jlong&lt;/code&gt;, and password &lt;code&gt;pw&lt;/code&gt;. Upload a file, rename it, etc., and then check the console of your application and you&amp;rsquo;ll see the activity reflected in events.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-ftp-client" class="anchor" name="the-ftp-client"&gt;&lt;/a&gt;The FTP Client&lt;/h2&gt;
+&lt;p&gt;We&amp;rsquo;ve got a working server. Let&amp;rsquo;s look at how Spring Integration can act as a client to your services. We&amp;rsquo;ll work with the simplest abstraction and work our way up to more sophisticated capabilities. Create a new project on the &lt;a href="http://start.Spring.io"&gt;Spring Initializr&lt;/a&gt;, add &lt;code&gt;Lombok&lt;/code&gt;, &lt;code&gt;Spring Integration&lt;/code&gt;, and choose the latest version of Java. Then click &lt;code&gt;Generate&lt;/code&gt; and open the project in your IDE. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to use the two accounts we defined earlier. Let&amp;rsquo;s configure them in the &lt;code&gt;application.properties&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;##&#xD;
+## Josh&#xD;
+ftp1.username=jlong&#xD;
+ftp1.password=pw&#xD;
+ftp1.port=7777&#xD;
+ftp1.host=localhost&#xD;
+## &#xD;
+## Gary&#xD;
+ftp2.username=grussell&#xD;
+ftp2.password=pw&#xD;
+ftp2.port=7777&#xD;
+ftp2.host=localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#the-code-ftpremotefiletemplate-code" class="anchor" name="the-code-ftpremotefiletemplate-code"&gt;&lt;/a&gt;The &lt;code&gt;FtpRemoteFileTemplate&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The simplest way we can interact with an FTP server is to use the &lt;em&gt;very&lt;/em&gt; handy &lt;code&gt;FtpRemoteFileTemplate&lt;/code&gt; that ships as part of Spring Integration. Here&amp;rsquo;s an example. This first example defines a &lt;code&gt;DefaultFtpSessionFactory&lt;/code&gt; that establishes a connection to one of the FTP accounts. Then we define a &lt;code&gt;FtpRemoteFileTemplate&lt;/code&gt; using that &lt;code&gt;DefaultFtpSessionFactory&lt;/code&gt;. Then, we define an initializer that uses that &lt;code&gt;FtpRemoteFileTemplate&lt;/code&gt; to read a file on the remote file system, &lt;code&gt;hello.txt&lt;/code&gt;, to a local file, &lt;code&gt;$HOME/Desktop/hello-local.txt&lt;/code&gt;. It couldn&amp;rsquo;t be simpler! &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.integration;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.InitializingBean;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.context.annotation.Configuration;&#xD;
+import org.springframework.context.annotation.Profile;&#xD;
+import org.springframework.integration.ftp.session.DefaultFtpSessionFactory;&#xD;
+import org.springframework.integration.ftp.session.FtpRemoteFileTemplate;&#xD;
+&#xD;
+import java.io.File;&#xD;
+import java.io.FileOutputStream;&#xD;
+&#xD;
+@Log4j2&#xD;
+@Configuration&#xD;
+class FtpTemplateConfiguration {&#xD;
+&#xD;
+	@Bean&#xD;
+	InitializingBean initializingBean(FtpRemoteFileTemplate template) {&#xD;
+		return () -&amp;gt; template&#xD;
+			.execute(session -&amp;gt; {&#xD;
+				var file = new File(new File(System.getProperty(&amp;quot;user.home&amp;quot;), &amp;quot;Desktop&amp;quot;), &amp;quot;hello-local.txt&amp;quot;);&#xD;
+				try (var fout = new FileOutputStream(file)) {&#xD;
+					session.read(&amp;quot;hello.txt&amp;quot;, fout);&#xD;
+				}&#xD;
+				log.info(&amp;quot;read &amp;quot; + file.getAbsolutePath());&#xD;
+				return null;&#xD;
+			});&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	DefaultFtpSessionFactory defaultFtpSessionFactory(&#xD;
+		@Value(&amp;quot;${ftp1.username}&amp;quot;) String username,&#xD;
+		@Value(&amp;quot;${ftp1.password}&amp;quot;) String pw,&#xD;
+		@Value(&amp;quot;${ftp1.host}&amp;quot;) String host,&#xD;
+		@Value(&amp;quot;${ftp1.port}&amp;quot;) int port) {&#xD;
+		DefaultFtpSessionFactory defaultFtpSessionFactory = new DefaultFtpSessionFactory();&#xD;
+		defaultFtpSessionFactory.setPassword(pw);&#xD;
+		defaultFtpSessionFactory.setUsername(username);&#xD;
+		defaultFtpSessionFactory.setHost(host);&#xD;
+		defaultFtpSessionFactory.setPort(port);&#xD;
+		return defaultFtpSessionFactory;&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	FtpRemoteFileTemplate ftpRemoteFileTemplate(DefaultFtpSessionFactory dsf) {&#xD;
+		return new FtpRemoteFileTemplate(dsf);&#xD;
+	}&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#the-ftp-inbound-adapter" class="anchor" name="the-ftp-inbound-adapter"&gt;&lt;/a&gt;The FTP Inbound Adapter&lt;/h2&gt;
+&lt;p&gt;The next example looks at how to use an FTP inbound adapter to receive a new &lt;code&gt;Message&amp;lt;File&amp;gt;&lt;/code&gt; whenever there&amp;rsquo;s a new file on the remote file system. An inbound or outbound adapter is a unidirectional messaging component. An inbound adapter translates events from a remote system into new messages that are delivered into a Spring Integration flow. An outbound adapter translates a Spring Integration &lt;code&gt;Message&amp;lt;T&amp;gt;&lt;/code&gt; into an event in a remote system. In this case, the FTP inbound adapter will publish a &lt;code&gt;Message&amp;lt;T&amp;gt;&lt;/code&gt; into the Spring Integration code whenever a new file appears on the remote file system.&lt;/p&gt;
+&lt;p&gt;As before, we configure a &lt;code&gt;DefaultFtpSessionFactory&lt;/code&gt;. Then, we configure an FTP inbound adapter that automatically synchronizes the remote file system whenever any file that matches the mask &lt;code&gt;.txt&lt;/code&gt; arrives on the server. The inbound adapter takes the remote file, moves it to the local directory, and then publishes a &lt;code&gt;Message&amp;lt;File&amp;gt;&lt;/code&gt; that we can do anything we&amp;rsquo;d like with. Here, I simply log the message. Try it out! Upload a file, &lt;code&gt;foo.txt&lt;/code&gt;, to the FTP server and watch as - no more than a second later - it&amp;rsquo;s downloaded and stored in the local file system under &lt;code&gt;$HOME/Desktop/local&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;&lt;br/&gt;package com.example.integration;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.context.annotation.Configuration;&#xD;
+import org.springframework.context.annotation.Profile;&#xD;
+import org.springframework.integration.dsl.IntegrationFlow;&#xD;
+import org.springframework.integration.dsl.IntegrationFlows;&#xD;
+import org.springframework.integration.ftp.dsl.Ftp;&#xD;
+import org.springframework.integration.ftp.session.DefaultFtpSessionFactory;&#xD;
+&#xD;
+import java.io.File;&#xD;
+import java.util.concurrent.TimeUnit;&#xD;
+&#xD;
+@Log4j2&#xD;
+@Configuration&#xD;
+class InboundConfiguration {&#xD;
+&#xD;
+	@Bean&#xD;
+	DefaultFtpSessionFactory defaultFtpSessionFactory(&#xD;
+		@Value(&amp;quot;${ftp1.username}&amp;quot;) String username,&#xD;
+		@Value(&amp;quot;${ftp1.password}&amp;quot;) String pw,&#xD;
+		@Value(&amp;quot;${ftp1.host}&amp;quot;) String host,&#xD;
+		@Value(&amp;quot;${ftp1.port}&amp;quot;) int port) {&#xD;
+		DefaultFtpSessionFactory defaultFtpSessionFactory = new DefaultFtpSessionFactory();&#xD;
+		defaultFtpSessionFactory.setPassword(pw);&#xD;
+		defaultFtpSessionFactory.setUsername(username);&#xD;
+		defaultFtpSessionFactory.setHost(host);&#xD;
+		defaultFtpSessionFactory.setPort(port);&#xD;
+		return defaultFtpSessionFactory;&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	IntegrationFlow inbound(DefaultFtpSessionFactory ftpSf) {&#xD;
+		var localDirectory = new File(new File(System.getProperty(&amp;quot;user.home&amp;quot;), &amp;quot;Desktop&amp;quot;), &amp;quot;local&amp;quot;);&#xD;
+		var spec = Ftp&#xD;
+			.inboundAdapter(ftpSf)&#xD;
+			.autoCreateLocalDirectory(true)&#xD;
+			.patternFilter(&amp;quot;*.txt&amp;quot;)&#xD;
+			.localDirectory(localDirectory);&#xD;
+		return IntegrationFlows&#xD;
+			.from(spec, pc -&amp;gt; pc.poller(pm -&amp;gt; pm.fixedRate(1000, TimeUnit.MILLISECONDS)))&#xD;
+			.handle((file, messageHeaders) -&amp;gt; {&#xD;
+				log.info(&amp;quot;new file: &amp;quot; + file + &amp;quot;.&amp;quot;);&#xD;
+				messageHeaders.forEach((k, v) -&amp;gt; log.info(k + &amp;#39;:&amp;#39; + v));&#xD;
+				return null;&#xD;
+			})&#xD;
+			.get();&#xD;
+	}&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#the-ftp-gateway" class="anchor" name="the-ftp-gateway"&gt;&lt;/a&gt;The FTP Gateway&lt;/h2&gt;
+&lt;p&gt;Now, for our last stop, let&amp;rsquo;s look at the Spring Integration FTP Gateway. In Spring Integration, a gateway is a component that sends data out (to a remote service) and then takes the response and brings it back into the Spring Integration flow. Or, alternatively, a gateway could take an incoming request from a remote system, bring it into the Spring Integration flow, and then send a response back out again. Either way, a gateway is a bidirectional messaging component. In this case, the FTP gateway takes Spring Integration &lt;code&gt;Message&amp;lt;T&amp;gt;&lt;/code&gt;s, sends them to an FTP server and uploads them, and once they&amp;rsquo;re uploaded, send the response (the acknowledgment, if nothing else) back into the Spring Integration code.&lt;/p&gt;
+&lt;p&gt;That would be useful in of itself if that&amp;rsquo;s all we did. But, for this last example, I want to conditionally upload a file to one of two FTP server accounts based on some criteria. You can imagine the scenario. An HTTP request comes, it&amp;rsquo;s turned into a &lt;code&gt;Message&amp;lt;T&amp;gt;&lt;/code&gt; that enters the Spring Integration flow, and it heads to the gateway. The only question is: to which account should the data be uploaded? Jane would probably not appreciate it if a file intended for John was uploaded to her account. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to use a &lt;code&gt;DelegatingSessionFactory&amp;lt;FTPFile&amp;gt;&lt;/code&gt;. The &lt;code&gt;DelegatingSessionFactory&amp;lt;FTPFile&amp;gt;&lt;/code&gt; has two constructors. One takes a &lt;code&gt;SessionFactoryLocator&lt;/code&gt;, which you can use to make the decision at runtime which FTP account to use. The other takes a &lt;code&gt;Map&amp;lt;String, SessionFactory&amp;gt;&lt;/code&gt; which in turn results in a &lt;code&gt;SessionFactoryLocator&lt;/code&gt; that looks at some property of an incoming message (it&amp;rsquo;s up to you which) and uses that as the key for a lookup in the map. &lt;/p&gt;
+&lt;p&gt;We need some way to kick off the pipeline, so I created a simple HTTP endpoint that accepts an HTTP &lt;code&gt;POST&lt;/code&gt; message and uses a path variable to establish a key that then gets sent into the integration flow. The integration flow has three steps. The first stage looks at the incoming message and configures the thread-local key for the &lt;code&gt;DelegatingSessionFactory&lt;/code&gt;, then it forwards the message to the gateway which does the work of uploading the file to a remote file system, then it forwards the response from the upload to another component which clears the thread-local key. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.integration;&#xD;
+&#xD;
+import org.apache.commons.net.ftp.FTPFile;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.context.annotation.Configuration;&#xD;
+import org.springframework.context.annotation.Profile;&#xD;
+import org.springframework.expression.common.LiteralExpression;&#xD;
+import org.springframework.integration.dsl.IntegrationFlow;&#xD;
+import org.springframework.integration.dsl.MessageChannels;&#xD;
+import org.springframework.integration.file.remote.gateway.AbstractRemoteFileOutboundGateway;&#xD;
+import org.springframework.integration.file.remote.session.DelegatingSessionFactory;&#xD;
+import org.springframework.integration.file.support.FileExistsMode;&#xD;
+import org.springframework.integration.ftp.dsl.Ftp;&#xD;
+import org.springframework.integration.ftp.session.DefaultFtpSessionFactory;&#xD;
+import org.springframework.integration.ftp.session.FtpRemoteFileTemplate;&#xD;
+import org.springframework.integration.handler.GenericHandler;&#xD;
+import org.springframework.messaging.MessageChannel;&#xD;
+import org.springframework.messaging.support.MessageBuilder;&#xD;
+import org.springframework.web.servlet.function.RouterFunction;&#xD;
+import org.springframework.web.servlet.function.ServerResponse;&#xD;
+&#xD;
+import java.util.Map;&#xD;
+&#xD;
+import static org.springframework.web.servlet.function.RouterFunctions.route;&#xD;
+&#xD;
+@Configuration&#xD;
+@Profile(&amp;quot;gateway&amp;quot;)&#xD;
+class GatewayConfiguration {&#xD;
+&#xD;
+	@Bean&#xD;
+	MessageChannel incoming() {&#xD;
+		return MessageChannels.direct().get();&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	IntegrationFlow gateway(&#xD;
+		FtpRemoteFileTemplate template,&#xD;
+		DelegatingSessionFactory&amp;lt;FTPFile&amp;gt; dsf) {&#xD;
+		return f -&amp;gt; f&#xD;
+			.channel(incoming())&#xD;
+			.handle((GenericHandler&amp;lt;Object&amp;gt;) (key, messageHeaders) -&amp;gt; {&#xD;
+				dsf.setThreadKey(key);&#xD;
+				return key;&#xD;
+			})&#xD;
+			.handle(Ftp&#xD;
+				.outboundGateway(template, AbstractRemoteFileOutboundGateway.Command.PUT, &amp;quot;payload&amp;quot;)&#xD;
+				.fileExistsMode(FileExistsMode.IGNORE)&#xD;
+				.options(AbstractRemoteFileOutboundGateway.Option.RECURSIVE)&#xD;
+			)&#xD;
+			.handle((GenericHandler&amp;lt;Object&amp;gt;) (key, messageHeaders) -&amp;gt; {&#xD;
+				dsf.clearThreadKey();&#xD;
+				return null;&#xD;
+			});&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	DelegatingSessionFactory&amp;lt;FTPFile&amp;gt; dsf(Map&amp;lt;String, DefaultFtpSessionFactory&amp;gt; ftpSessionFactories) {&#xD;
+		return new DelegatingSessionFactory&amp;lt;&amp;gt;(ftpSessionFactories::get);&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	DefaultFtpSessionFactory gary(@Value(&amp;quot;${ftp2.username}&amp;quot;) String username, @Value(&amp;quot;${ftp2.password}&amp;quot;) String pw, @Value(&amp;quot;${ftp2.host}&amp;quot;) String host, @Value(&amp;quot;${ftp2.port}&amp;quot;) int port) {&#xD;
+		return this.createSessionFactory(username, pw, host, port);&#xD;
+	}&#xD;
+&#xD;
+	@Bean&#xD;
+	DefaultFtpSessionFactory josh(@Value(&amp;quot;${ftp1.username}&amp;quot;) String username, @Value(&amp;quot;${ftp1.password}&amp;quot;) String pw, @Value(&amp;quot;${ftp1.host}&amp;quot;) String host, @Value(&amp;quot;${ftp1.port}&amp;quot;) int port) {&#xD;
+		return this.createSessionFactory(username, pw, host, port);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+	FtpRemoteFileTemplate ftpRemoteFileTemplate(DelegatingSessionFactory&amp;lt;FTPFile&amp;gt; dsf) {&#xD;
+		var ftpRemoteFileTemplate = new FtpRemoteFileTemplate(dsf);&#xD;
+		ftpRemoteFileTemplate.setRemoteDirectoryExpression(new LiteralExpression(&amp;quot;&amp;quot;));&#xD;
+		return ftpRemoteFileTemplate;&#xD;
+	}&#xD;
+    &#xD;
+&#xD;
+	private DefaultFtpSessionFactory createSessionFactory(String username, String pw, String host, int port) {&#xD;
+		var defaultFtpSessionFactory = new DefaultFtpSessionFactory();&#xD;
+		defaultFtpSessionFactory.setPassword(pw);&#xD;
+		defaultFtpSessionFactory.setUsername(username);&#xD;
+		defaultFtpSessionFactory.setHost(host);&#xD;
+		defaultFtpSessionFactory.setPort(port);&#xD;
+		return defaultFtpSessionFactory;&#xD;
+    }&#xD;
+&#xD;
+	@Bean&#xD;
+	RouterFunction&amp;lt;ServerResponse&amp;gt; routes() {&#xD;
+		var in = this.incoming();&#xD;
+		return route()&#xD;
+			.POST(&amp;quot;/put/{sfn}&amp;quot;, request -&amp;gt; {&#xD;
+				var name = request.pathVariable(&amp;quot;sfn&amp;quot;);&#xD;
+				var msg = MessageBuilder.withPayload(name).build();&#xD;
+				var sent = in.send(msg);&#xD;
+				return ServerResponse.ok().body(sent);&#xD;
+			})&#xD;
+			.build();&#xD;
+	}&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can try this flow out yourself by running &lt;code&gt;curl -XPOST http://localhost:8080/put/one&lt;/code&gt;. That will upload a file to the FTP account whose bean name is &lt;code&gt;one&lt;/code&gt;. Try &lt;code&gt;curl -XPOST http://localhost:8080/put/two&lt;/code&gt; to upload a file to the FTP account whose bean name is &lt;code&gt;two&lt;/code&gt;. &lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this Spring Tips installment, we&amp;rsquo;ve looked at how to handle all sorts of FTP integration scenarios. You can use what you&amp;rsquo;ve learned here to work with the other support in the framework for remote file systems. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - March 17th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/17/this-week-in-spring-march-17th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-17:3999</id>
+    <updated>2020-03-17T23:55:19Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to yet another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;re already midway through March 2020, and I can&amp;rsquo;t believe how crazy things have gotten! You&amp;rsquo;re no doubt experiencing something equally as odd too. The pandemic has truly changed this world in a way nothing else has in recent memory. It&amp;rsquo;s crazy to think about the course this virus has taken and the journey we&amp;rsquo;ve all taken along with it. &lt;/p&gt;
+&lt;p&gt;I live in San Francisco, and we&amp;rsquo;re currently under lockdown. It&amp;rsquo;s technically a crime now to leave your home for anything but essential needs like food, medicine, or walking the dog. That&amp;rsquo;s OK. That just leaves more time for us to learn and socialize, albeit online and from the confines of our own homes. We&amp;rsquo;re very lucky, you know? How wild. Most of us who work on software should be able to work from home. There are some glaring exceptions, of course, as detailed &lt;a href="https://twitter.com/dhh/status/1239286206803742721"&gt;in this &lt;em&gt;epic&lt;/em&gt; megathread&lt;/a&gt;, but basically, software can be done online. It requires some of us to revise our workflows, but it can be done. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re privileged. It&amp;rsquo;s important to not forget that good fortune, that good luck, especially now, when the pandemic is hitting so many people in our communities who aren&amp;rsquo;t so privileged. Consider giving to your local shelters. Even if the COVID19 virus doesn&amp;rsquo;t get someone, the changes to the economy in response to the COVID19 virus might. &lt;/p&gt;
+&lt;p&gt;For those of us who are otherwise healthy and happy, but perhaps craving some knowledge, I hope you&amp;rsquo;ve already registered for the free, epic, online-only, virtual, interactive, 24+ hour-long #SpringLive event starting this Thursday. If you&amp;rsquo;re in the Americas, EMEA or APJ, you&amp;rsquo;ll be sure to find content streaming at a time when you can watch it. &lt;/p&gt;
+&lt;p&gt;And in the meantime, there is a &lt;em&gt;TON&lt;/em&gt; of new stuff to get to, so&amp;hellip; let&amp;rsquo;s! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/java/status/1240009714328461312"&gt;It&amp;rsquo;s here, it&amp;rsquo;s finally here! Java 14! Finally, some good news!&lt;/a&gt;. I love this release.&lt;/li&gt;
+  &lt;li&gt;I even detailed some of its amazing new syntaxes and features in a dedicated &lt;a href="https://spring.io/blog/2020/03/11/spring-tips-java-14-or-can-your-java-do-this"&gt;&lt;em&gt;Spring Tips&lt;/em&gt; video called &amp;ldquo;Spring Tips: Java 14 (or: Can Your Java Do This?)&amp;rdquo;&lt;/a&gt; that looks at some ways to use Java 14 and Spring together.&lt;/li&gt;
+  &lt;li&gt;You can use Java 14 with &lt;a href="https://spring.io/blog/2020/03/12/spring-boot-2-3-0-m3-available-now"&gt;Spring Boot 2.3.0.M3, which is available now&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The only thing is, I didn&amp;rsquo;t have a great way to show using Java 14 records with Spring Data. I wish I had this &lt;a href="https://github.com/odrotbohm/spring-record-support"&gt;experimental support: odrotbohm/spring-record-support: A Spring extension to make JDK 14&amp;rsquo;s records work OOTB with Spring libraries&lt;/a&gt;. This is currently being developed by Spring team legend Oliver Drotbohm. Enjoy!&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2020/03/13/a-bootiful-podcast-john-hawley-on-oss-at-vmware-security-and-more"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interview John Hawley on OSS at VMWare, Security, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;By the way, I hope you&amp;rsquo;ve all registered for the upcoming &lt;a href="https://spring.io/blog/2020/03/16/register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans"&gt;&lt;em&gt;Spring Live&lt;/em&gt; that&amp;rsquo;ll take place on both Thursday and Friday this week. It&amp;rsquo;s a virtual, 24-hour long, interactive conference for you, Spring fans!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn about how to fire-and-forget communication between &lt;a href="https://twitter.com/springcentral/status/1239961192266747904"&gt; microservices in this epic post by Ben Wilcock&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/11/spring-integration-5-3-milestone-3-available"&gt;Spring Integration 5.3 Milestone 3 Available&lt;/a&gt;&lt;br/&gt;register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans)&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/11/spring-data-neumann-m4-released"&gt;Spring Data Neumann M4 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/11/spring-cloud-data-flow-2-4-2-ga-released"&gt;Spring Cloud Data Flow 2.4.2 GA Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/confluentinc/status/1239961908721188864"&gt;There are some nice tips on how to &lt;/a&gt; improve replication flows in your Apache Kafka deployments&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://sdtimes.com/java/whats-coming-in-the-java-14-release/"&gt;SDtimes has a nice roundup of some of the new features in Java 14&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/channel/UC4VZwhJ4T42SVHy9QbZ5rKw"&gt;Daily Code Buffer - YouTube&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1239867585937772546"&gt;Want to use Spring Data with Java 14&amp;rsquo;s experimental record support? Try out this new (experimental) support&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMwareTanzu/status/1239753197302013952"&gt;Are you registered and ready for the upcoming Spring Live event?&lt;/a&gt; It&amp;rsquo;s happening on March 19th, the Spring equinox, it&amp;rsquo;s a free, 24+ hour-long, interactive community-driven event, and we have a ton of exciting stuff on the agenda! Do &lt;em&gt;NOT&lt;/em&gt; miss this!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1237286504751198208"&gt;Spring Data CosmosDB 2.2.2 is now available&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.businessleader.co.uk/how-to-manage-virtual-teams-best-practices-for-remote-working-during-the-coronavirus-outbreak/80888/"&gt;This isn&amp;rsquo;t Spring-specific, &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s a nice look at how to do remote work and leadership during the coronavirus pandemic&lt;/a&gt; - useful!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMwareTanzu/status/1239605140010737666"&gt;Did you know that for every #SpringLive attendee, VMware Tanzu will make a donation to the @funds4disaster (COVID-19 Response Fund)? Register today and join us this Thursday:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really liked this video on how to build a &lt;a href="https://www.youtube.com/watch?v=8hjng9gzgnq"&gt;Coronavirus tracker with Spring Boot - great watch and great information&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A great talk over on InfoQ on going from 0-100 &lt;a href="https://www.infoq.com/presentations/spring-data-jpa/"&gt; in 60 Minutes with Spring Data JPA &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/spring-tools-4-boot-theia/"&gt;Spring Tools 4: Bootiful Spring Tooling for Desktop and Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://vladmihalcea.com/multiline-string-java-text-blocks/"&gt;Multiline String literals with Java Text Blocks - Vlad Mihalcea&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://reflectoring.io/spring-security-password-handling/"&gt;Handling Passwords with Spring Boot and Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2020/03/10/this-month-in-rabbitmq-february-2020-recap/"&gt;RabbitMQ ? Blog Archive ? This Month in RabbitMQ, February 2020 Recap - Messaging that just works&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.wimdeblauwe.com/blog/2020/03/10/laravel-intermediate-task-list-port-to-spring/"&gt;Port of the Laravel Intermediate Task List tutorial to Spring Boot with Thymeleaf - Wim Deblauwe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Getting Started With RSocket: Spring Boot Fire-And-Forget</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget" />
@@ -74,7 +422,10 @@ public class RSocketShellClient {&#xD;
 &lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
 ./mvnw clean package spring-boot:run -DskipTests=true
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The server starts on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-4-build-and-run-the-rsocket-client" class="anchor" name="step-4-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Client&lt;/h4&gt;
+&lt;p&gt;The server starts on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;For details on how to run a Linux terminal on Windows 10, see &lt;a href="https://ubuntu.com/wsl"&gt;this quick guide from Ubuntu&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-4-build-and-run-the-rsocket-client" class="anchor" name="step-4-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Client&lt;/h4&gt;
 &lt;p&gt;Open a &lt;em&gt;second&lt;/em&gt; terminal window and move to the &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the client application as follows:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
 ./mvnw clean package spring-boot:run -DskipTests=true
@@ -1126,178 +1477,6 @@ fun main(args: Array&amp;lt;String&amp;gt;) {&#xD;
   &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-boot/issues/19988"&gt;There&amp;rsquo;s now out-of-the-box support for R2DBC in Spring Boot&lt;/a&gt;!&lt;/li&gt;
   &lt;li&gt;&lt;a href="http://spring.io"&gt;have you seen the new Spring website?&lt;/a&gt; - it&amp;rsquo;s perty!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Spring Boot Server</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-02-27:3975</id>
-    <updated>2020-03-02T16:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Time: approximately 15 mins.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In the diverse world of microservices, HTTP is the undisputed leader in agent-to-agent communications. It¡¯s mature, well established, and everywhere. But in some cases, HTTP request-response can be cumbersome. What if you need communication patterns beyond traditional request-response, such as fire-and-forget or streaming? And what if you want to send messages in either direction? &lt;/p&gt;
-&lt;p&gt;With HTTP, there are ways to achieve this but it¡¯s not what the protocol was built for. Many of the solutions come with additional tradeoffs or shortcomings. Plus, here¡¯s no rulebook that says ¡°thou shalt always use HTTP¡±, messaging protocols like AMQP proved that already. So, it¡¯s good to know what your options are, and healthy to add a few new technologies to your list every once in a while. This post is about one such alternative?RSocket.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://rsocket.io/"&gt;RSocket&lt;/a&gt; is a new messaging protocol that&amp;rsquo;s designed to solve some common microservice communication challenges. With RSocket you get a flexible protocol that works over TCP or WebSockets. This means you can do binary messages without conversion. You get modern controls like multiplexing, back-pressure, resumption, and routing, and you get multiple messaging modes including fire-and-forget, request-response, and streaming. RSocket is fully &lt;a href="https://projectreactor.io/"&gt;reactive&lt;/a&gt; too, so it&amp;rsquo;s ideal for your high-throughput microservice applications. Early adopters include Netflix, Pivotal, Alibaba, and Facebook?all of them experts in delivering scalable Internet-based services.&lt;/p&gt;
-&lt;p&gt;In this post?which is the first in a series?you&amp;rsquo;ll learn how to get started with RSocket. You¡¯ll become familiar with how it works, and experience some of its power. By the end of the series, you¡¯ll have added RSocket to your skillset so that next time you¡¯re figuring out your options, you¡¯ll have one more protocol to choose from.&lt;/p&gt;&lt;h1&gt;&lt;a href="#let-s-get-started-hellip" class="anchor" name="let-s-get-started-hellip"&gt;&lt;/a&gt;Let¡¯s Get Started&amp;hellip;&lt;/h1&gt;
-&lt;p&gt;As request-response is familiar ground for most web developers, we¡¯ll begin our journey into RSocket with this pattern. The semantics of request-response are fairly straightforward, you send one request, you get one response. HTTP is built on this basic interaction and it¡¯s incredibly common. &lt;/p&gt;
-&lt;p&gt;In this tutorial, you¡¯ll discover how to do request-response with RSocket using Spring Boot as your server and a terminal application as your client.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Request-response is just one of the four interaction models supported by Spring and RSocket. We¡¯ll cover the others in future posts.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;When you follow the steps below, you&amp;rsquo;ll notice that the amount of code required to build an RSocket server with Spring Boot is very small. The code has been provided for you &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;here&lt;/a&gt; but you prefer you could also write the code from scratch yourself in a few minutes.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-1-setup-your-environment" class="anchor" name="step-1-setup-your-environment"&gt;&lt;/a&gt;Step 1: Setup Your Environment&lt;/h1&gt;
-&lt;p&gt;First, check you have the following prerequisites installed:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;A &lt;a href="https://adoptopenjdk.net/"&gt;Java SDK&lt;/a&gt; of version 8 or above (to check, use java -version at the terminal)&lt;/li&gt;
-  &lt;li&gt;A working &lt;a href="https://spring.io/tools"&gt;Java IDE&lt;/a&gt; (I¡¯m using IntelliJ IDEA)&lt;/li&gt;
-  &lt;li&gt;A folder containing the cloned or extracted &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;demo code sample&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Linux Bash/ZSH shell (if you&amp;rsquo;re a Windows user, check the note below)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If you¡¯re a Windows user, switch to Microsoft&amp;rsquo;s &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/faq"&gt;Windows Subsystem for Linux&lt;/a&gt;. Microsoft&amp;rsquo;s instructions on how to do this are &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Now, Make the downloaded project folder your current directory in the terminal:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd spring-rsocket-demo
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, download the excellent &lt;a href="https://github.com/making/rsc"&gt;RSocket Client CLI&lt;/a&gt; by &lt;a href="https://github.com/making"&gt;Toshiaki Maki&lt;/a&gt; into the &lt;code&gt;rsocket-server&lt;/code&gt; folder of your cloned or extracted code. There is an official RSocket CLI &lt;a href="https://github.com/rsocket/rsocket-cli"&gt;elsewhere&lt;/a&gt;, but Toshiaki¡¯s is a little easier to use. In the terminal, download the JAR file as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
-wget -O rsc.jar https://github.com/making/rsc/releases/download/0.4.2/rsc-0.4.2.jar
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You will use this client later to talk to the RSocket server, but for now, test it¡¯s working by calling the help command like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;java -jar rsc.jar --help
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You should see some output like that below (which I&amp;rsquo;ve truncated), explaining the command&amp;rsquo;s usage and options. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint none"&gt;usage: rsc Uri [Options]&#xD;
-&#xD;
-Non-option arguments:&#xD;
-[String: Uri]&#xD;
-&#xD;
-Option                              Description&#xD;
-------                              -----------&#xD;
---channel                           Shortcut of --im REQUEST_CHANNEL&#xD;
--d, --data [String]                 Data. Use &amp;#39;-&amp;#39; to read data from&#xD;
-&#xD;
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Leave this terminal window open, you&amp;rsquo;ll need it later.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-2-examine-the-server-code" class="anchor" name="step-2-examine-the-server-code"&gt;&lt;/a&gt;Step 2: Examine the Server Code&lt;/h1&gt;
-&lt;p&gt;Open the rsocket-server project in your IDE and examine the code. As you can see, there is very little code required to stand up an RSocket server in Spring Boot. Here are some highlights:&lt;/p&gt;&lt;h4&gt;&lt;a href="#the-project-file" class="anchor" name="the-project-file"&gt;&lt;/a&gt;The Project File&lt;/h4&gt;
-&lt;p&gt;In the project&amp;rsquo;s &lt;code&gt;pom.xml&lt;/code&gt; file, you can see the &lt;code&gt;&amp;lt;dependencies&amp;gt;&lt;/code&gt; required by the Spring Boot RSocket server. Spring Boot version &lt;code&gt;2.2.5.RELEASE&lt;/code&gt; is used because, at the time of writing, this version has the most production-ready RSocket features. The project also depends on &lt;code&gt;lombok&lt;/code&gt; and the &lt;code&gt;spring-boot-starter-rsocket&lt;/code&gt; library. Lombok adds constructors, getters, setters, and equals to Java data classes and also eases access to things like logs. The Spring Boot Starter for RSocket integrates RSocket with Spring Boot and automatically configures some RSocket infrastructure for you at runtime.&lt;/p&gt;&lt;h4&gt;&lt;a href="#the-application-properties" class="anchor" name="the-application-properties"&gt;&lt;/a&gt;The Application Properties&lt;/h4&gt;
-&lt;p&gt;In the &lt;code&gt;application.properties&lt;/code&gt; file, the TCP port for the RSocket server is set to &lt;code&gt;7000&lt;/code&gt;, and Spring Boot&amp;rsquo;s lazy initialization feature is switched on.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;spring.rsocket.server.port=7000&#xD;
-spring.main.lazy-initialization=true
-&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a href="#the-message-class" class="anchor" name="the-message-class"&gt;&lt;/a&gt;The Message Class&lt;/h4&gt;
-&lt;p&gt;The first class to take a look at in more detail is called &lt;code&gt;Message.java&lt;/code&gt;. This Lombok &lt;code&gt;@Data&lt;/code&gt; class is used to model the request and response messages between the client and the server (or the ¡®requester¡¯ and ¡®responder¡¯ if you prefer). The class looks like this¡¦&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Data&#xD;
-@AllArgsConstructor&#xD;
-@NoArgsConstructor&#xD;
-public class Message {&#xD;
-    private String origin;&#xD;
-    private String interaction;&#xD;
-    private long index;&#xD;
-    private long created = Instant.now().getEpochSecond();&#xD;
-&#xD;
-    public Message(String origin, String interaction) {&#xD;
-        this.origin = origin;&#xD;
-        this.interaction = interaction;&#xD;
-        this.index = 0;&#xD;
-    }&#xD;
-&#xD;
-    public Message(String origin, String interaction, long index) {&#xD;
-        this.origin = origin;&#xD;
-        this.interaction = interaction;&#xD;
-        this.index = index;&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Using this class, you can say where a message came from (its &lt;code&gt;origin&lt;/code&gt;), which messaging style it was intended to use (the &lt;code&gt;interaction&lt;/code&gt;), and which sequence number a message has in a sequence of messages (its &lt;code&gt;index&lt;/code&gt;). Lombok simplifies the code by providing constructors, getters, setters, toString, and hashcode implementations.&lt;/p&gt;&lt;h4&gt;&lt;a href="#the-controller-class" class="anchor" name="the-controller-class"&gt;&lt;/a&gt;The Controller Class&lt;/h4&gt;
-&lt;p&gt;The RSocket server controller code can be found in the &lt;code&gt;RSocketController.java&lt;/code&gt; file. This class is annotated as a Spring &lt;code&gt;@Controller&lt;/code&gt; which essentially means that it declares service endpoints?in this case, RSocket endpoints. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Controller&#xD;
-public class RSocketController {&#xD;
-&#xD;
-    @MessageMapping(&amp;quot;request-response&amp;quot;)&#xD;
-    Message requestResponse(Message request) {&#xD;
-            log.info(&amp;quot;Received request-response request: {}&amp;quot;, request);&#xD;
-            // create a single Message and return it&#xD;
-            return new Message(SERVER, RESPONSE);&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Inside the class, there is a method called &lt;code&gt;requestResponse()&lt;/code&gt; which accepts a single &lt;code&gt;Message&lt;/code&gt; object (the request) and returns a single &lt;code&gt;Message&lt;/code&gt; object (the response). &lt;/p&gt;
-&lt;p&gt;You&amp;rsquo;ll notice that this &lt;code&gt;requestResponse()&lt;/code&gt; method is decorated with the &lt;code&gt;@MessageMapping(&amp;quot;request-response&amp;quot;)&lt;/code&gt; annotation. This annotation declares that any messages with metadata containing the RSocket route of &lt;code&gt;request-response&lt;/code&gt; should be handled by this method. You will use this route later when you send a request message from your client. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Did you notice how this is slightly different from Spring¡¯s REST controllers? With REST controllers, URL path mappings like &lt;code&gt;/hello&lt;/code&gt; are used to associate HTTP calls with their handler methods.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;That&amp;rsquo;s it for code. Let&amp;rsquo;s try it.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-3-start-the-spring-boot-rsocket-server" class="anchor" name="step-3-start-the-spring-boot-rsocket-server"&gt;&lt;/a&gt;Step 3: Start The Spring Boot RSocket Server&lt;/h1&gt;
-&lt;p&gt;Leaving your existing terminal window open, in a second terminal window, make the &lt;code&gt;rsocket-server&lt;/code&gt; folder your current directory. Then build and run the RSocket server using the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Alternatively, you can use the &amp;ldquo;Build&amp;rdquo; and &amp;ldquo;Run&amp;rdquo; commands in your Java IDE if you prefer.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h1&gt;&lt;a href="#step-4-send-a-command-to-the-server-with-the-rsocket-cli" class="anchor" name="step-4-send-a-command-to-the-server-with-the-rsocket-cli"&gt;&lt;/a&gt;Step 4: Send A Command To The Server With The RSocket CLI&lt;/h1&gt;
-&lt;p&gt;Next, you¡¯ll send a message to the running server using the RSocket client &lt;code&gt;rsc.jar&lt;/code&gt; that you downloaded and tested in Step 1. Go back to the original terminal window where you had the &lt;code&gt;--help&lt;/code&gt; text and issue the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;java -jar rsc.jar --debug --request --data &amp;quot;{\&amp;quot;origin\&amp;quot;:\&amp;quot;Client\&amp;quot;,\&amp;quot;interaction\&amp;quot;:\&amp;quot;Request\&amp;quot;}&amp;quot; --route request-response tcp://localhost:7000
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You¡¯ll notice that the command has an RSocket message route declared (which is achieved by adding the &lt;code&gt;--route&lt;/code&gt; option and specifying a name for the route). In this case, the route is &lt;code&gt;request-response&lt;/code&gt; which matches the &lt;code&gt;@MessageMapping&lt;/code&gt; declared in the request-response handler method in the &lt;code&gt;RSocketController.java&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;When the command runs, you will see some debug information in the terminal window explaining what happened during the request-response interaction. It looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint none"&gt;2020-02-27 11:20:21.806 DEBUG --- [actor-tcp-nio-1] i.r.FrameLogger : sending -&amp;gt;&#xD;
-Frame =&amp;gt; Stream ID: 1 Type: REQUEST_RESPONSE Flags: 0b100000000 Length: 69&#xD;
-Metadata:&#xD;
-         +-------------------------------------------------+&#xD;
-         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-|00000000| 10 72 65 71 75 65 73 74 2d 72 65 73 70 6f 6e 73 |.request-respons|&#xD;
-|00000010| 65                                              |e               |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-Data:&#xD;
-         +-------------------------------------------------+&#xD;
-         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-|00000000| 7b 22 6f 72 69 67 69 6e 22 3a 22 43 6c 69 65 6e |{&amp;quot;origin&amp;quot;:&amp;quot;Clien|&#xD;
-|00000010| 74 22 2c 22 69 6e 74 65 72 61 63 74 69 6f 6e 22 |t&amp;quot;,&amp;quot;interaction&amp;quot;|&#xD;
-|00000020| 3a 22 52 65 71 75 65 73 74 22 7d                |:&amp;quot;Request&amp;quot;}     |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-2020-02-27 11:20:21.927 DEBUG --- [actor-tcp-nio-1] i.r.FrameLogger : receiving -&amp;gt;&#xD;
-Frame =&amp;gt; Stream ID: 1 Type: NEXT_COMPLETE Flags: 0b1100000 Length: 81&#xD;
-Data:&#xD;
-         +-------------------------------------------------+&#xD;
-         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-|00000000| 7b 22 6f 72 69 67 69 6e 22 3a 22 53 65 72 76 65 |{&amp;quot;origin&amp;quot;:&amp;quot;Serve|&#xD;
-|00000010| 72 22 2c 22 69 6e 74 65 72 61 63 74 69 6f 6e 22 |r&amp;quot;,&amp;quot;interaction&amp;quot;|&#xD;
-|00000020| 3a 22 52 65 73 70 6f 6e 73 65 22 2c 22 69 6e 64 |:&amp;quot;Response&amp;quot;,&amp;quot;ind|&#xD;
-|00000030| 65 78 22 3a 30 2c 22 63 72 65 61 74 65 64 22 3a |ex&amp;quot;:0,&amp;quot;created&amp;quot;:|&#xD;
-|00000040| 31 35 38 32 38 30 32 34 32 31 7d                |1582802421}     |&#xD;
-+--------+-------------------------------------------------+----------------+&#xD;
-{&amp;quot;origin&amp;quot;:&amp;quot;Server&amp;quot;,&amp;quot;interaction&amp;quot;:&amp;quot;Response&amp;quot;,&amp;quot;index&amp;quot;:0,&amp;quot;created&amp;quot;:1582802421}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The debug output you see is split into three &amp;lsquo;message frames&amp;rsquo;. The first message frame is labeled &lt;code&gt;Metadata&lt;/code&gt;. In this case, it shows the routing metadata (&lt;code&gt;request-response&lt;/code&gt;) being sent to the server. The second frame shows the &lt;code&gt;Data&lt;/code&gt; message that the client is sending to the server (a JSON string). The third frame shows the server&amp;rsquo;s response message back to the client (also a JSON string).&lt;/p&gt;
-&lt;p&gt;On the very last line, you can see the JSON formatted response from the server printed in isolation, confirming that our command message was successfully received and acknowledged by the server:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;{&amp;quot;origin&amp;quot;:&amp;quot;Server&amp;quot;,&amp;quot;interaction&amp;quot;:&amp;quot;Response&amp;quot;,&amp;quot;index&amp;quot;:0,&amp;quot;created&amp;quot;:1582802421}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Congratulations! You&amp;rsquo;re done. You just sent a request-response message using RSocket. You can now stop the RSocket server by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in the terminal window or by closing it. If you used your IDE to run the RSocket server, you can stop the process in your IDE in the usual way.&lt;/p&gt;&lt;h1&gt;&lt;a href="#how-it-works" class="anchor" name="how-it-works"&gt;&lt;/a&gt;How It Works&lt;/h1&gt;
-&lt;p&gt;The RSocket &lt;code&gt;rsc&lt;/code&gt; client that you downloaded sends a request message to the &lt;code&gt;RSocketController&lt;/code&gt; using the RSocket messaging protocol. The message is sent over TCP to the address &lt;code&gt;tcp://localhost:7000&lt;/code&gt; where the server is waiting. &lt;/p&gt;
-&lt;p&gt;A message routing instruction is sent in the first message frame. This routing instruction is set using the &lt;code&gt;--route&lt;/code&gt; option of the CLI client and is set to &lt;code&gt;request-response&lt;/code&gt;. Spring uses this routing information to select the correct &lt;code&gt;@MessageMapping&lt;/code&gt; endpoint to call, in this case, the &lt;code&gt;requestResponse(Message request)&lt;/code&gt; method. The method then responds with a message of its own. The CLI client prints the whole interaction in the terminal window as a series of message frames.&lt;/p&gt;&lt;h1&gt;&lt;a href="#wrapping-up" class="anchor" name="wrapping-up"&gt;&lt;/a&gt;Wrapping Up&lt;/h1&gt;
-&lt;p&gt;If you followed along, you saw just how easy it is to code a simple RSocket server using Spring Boot. You examined the Java code required and then started the Spring Boot server locally. You then sent a message to the RSocket server and observed the response. You also learned how it&amp;rsquo;s possible to route your RSocket messages in Spring using the RSocket message routing feature. In the next post, you¡¯ll learn &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;how to start building your own RSocket client using Spring Boot&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring Cloud Contract lead Marcin Grzejszczak on Spring Cloud Contract, Spring Cloud Sleuth, Continuous Integration and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/28/a-bootiful-podcast-spring-cloud-contract-lead-marcin-grzejszczak-on-spring-cloud-contract-spring-cloud-sleuth-continuous-integration-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-02-28:3978</id>
-    <updated>2020-02-28T04:48:29Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of A Bootiful Podcast! In today&amp;rsquo;s installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring Cloud team member lead &lt;a href="http://twitter.com/MGrzejszczak"&gt;Marcin Grzejszczak&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/projects/spring-cloud-contract"&gt;Spring Cloud Contract&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/projects/spring-cloud-sleuth"&gt;Spring Cloud Sleuth&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/MGrzejszczak"&gt;Marcin on Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe title="Spring Cloud Contract lead Marcin Grzejszczak on Spring Cloud Contract, Spring Cloud Sleuth, Continuous Integration and more" src="https://www.podbean.com/media/player/vyuyu-d4f900?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

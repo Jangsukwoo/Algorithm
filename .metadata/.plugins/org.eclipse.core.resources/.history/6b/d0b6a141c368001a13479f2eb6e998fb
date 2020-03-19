@@ -1,0 +1,51 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 정수삼각형 {
+	static int[][] triangle;
+	static int[][] memo;
+	static int max;
+	static int N;
+	public static void main(String[] args) throws IOException {
+		setData();
+		memoization();
+	}
+
+	private static void memoization() {
+		for(int row=1;row<N;row++) {
+			for(int col=0;col<=row;col++) {
+				if(col==0) memo[row][col]=triangle[row][col]+memo[row-1][col];
+				else if(col>0&&col<row) {
+					temp1 =table[row-1][col-1]+tree[row][col];
+					temp2 =table[row-1][col]+tree[row][col];
+					if(temp1>=temp2) table[row][col] = temp1;
+					else table[row][col]=temp2;
+					temp1=0;
+					temp2=0;
+				}
+				else if(col==row) table[row][col] =table[row-1][col-1]+tree[row][col];
+			}
+		}	
+		for(int col=0;col<N;col++) if(table[N-1][col]>max) max = table[N-1][col];
+		System.out.print(max);
+	}
+
+	private static void setData() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		triangle = new int[N][N];
+		memo = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<=row;col++) {
+				triangle[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+		memo[0][0] = triangle[0][0];
+		
+	}
+}

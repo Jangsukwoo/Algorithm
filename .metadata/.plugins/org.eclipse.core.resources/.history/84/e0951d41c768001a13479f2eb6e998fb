@@ -1,0 +1,15 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+public class 피보나치함수 {
+	static int T;
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		T = sc.nextInt();
+	}
+}
