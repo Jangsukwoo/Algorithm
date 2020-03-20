@@ -5,7 +5,23 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-18T00:17:52Z</updated>
+  <updated>2020-03-19T11:00:00Z</updated>
+  <entry>
+    <title>Register Now for Spring Live, an interactive, virtual, 24-hour long conference for you, Spring fans!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/19/register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-11:3994</id>
+    <updated>2020-03-19T11:00:00Z</updated>
+    <content type="html">&lt;img src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVlNjkxY2I2M2VkYTUuZ2lmJnZlcnNpb249MDAwMCZzaWc9ZWI0OGVkOGFiMjdmMzIxYjA4NDc4YmVhYjk2ZWYyNTM%253D"/&gt;
+&lt;p&gt;Hi, Spring fans! We hope you&amp;rsquo;ll join us for an interactive, 24-hour long, virtual conference called &lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Spring Live&lt;/a&gt;. Here&amp;rsquo;s what you need to know: it&amp;rsquo;s 24-hours long, end to end, so there&amp;rsquo;s bound to be content you can watch no matter what part of the world you&amp;rsquo;re in. It&amp;rsquo;s &lt;em&gt;free&lt;/em&gt;! It&amp;rsquo;s interactive - so the speakers will be hanging around to answer questions and do Q/A. Some speakers are going to pre-record their talks proper just so they can spend the entire slot for their talk answering questions and interacting directly with you. We&amp;rsquo;ve invited experts from the wide world of Springdom from VMWare (where the Spring team lives), Okta, Confluent, Google, Microsoft, and IBM, and so many others. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re holding the event starting at 9 am PDT on March 19th (the Spring equinox!) - yes! that&amp;rsquo;s _soon! - so register now, add it to your calendar, and make sure you&amp;rsquo;re in a comfy chair, have coffee at the ready, and have your thinking caps on. &lt;/p&gt;
+&lt;p&gt;This conference is &lt;strong&gt;virtual&lt;/strong&gt;. We&amp;rsquo;re throwing this virtual conference because we want our community to be healthy, happy, and safe as the #COVID-19 pandemic rages through local communities worldwide. We&amp;rsquo;re a global community, and that&amp;rsquo;s true whether we meet in person or not. For each person who joins the event, we&amp;rsquo;ll make a donation to the Center for Disaster Philanthropy (COVID-19 Response Fund).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Register here&lt;/a&gt; and we&amp;rsquo;ll look forward to seeing you in just over a week!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Remote File System Integrations (FTP) with Spring Integration</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/18/spring-tips-remote-file-system-integrations-ftp-with-spring-integration" />
@@ -448,22 +464,6 @@ Fire-And-Forget. Sending one request. Expect no response (check server)...
 &lt;p&gt;The client&amp;rsquo;s &lt;code&gt;.fireAndForget()&lt;/code&gt; method uses the &lt;code&gt;RSocketRequester&lt;/code&gt; to send a single &lt;code&gt;Message&lt;/code&gt; to the server when the &lt;code&gt;block()&lt;/code&gt; method is called. The block method is effectively an instruction to &amp;lsquo;subscribe and wait.&amp;rsquo;&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; on the server examines the message metadata for the &lt;code&gt;route&lt;/code&gt; and correctly passes the message to the &lt;code&gt;.fireAndForget(Message request)&lt;/code&gt; method for processing. Once the client sends the request, it is free to get on with other things. When the server receives the request, it too can get on with other work. It does not need to send a response to the client.&lt;/p&gt;&lt;h4&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h4&gt;
 &lt;p&gt;In this post, you learned how to quickly build a fire and forget capability with Spring Boot and RSocket. For more on Spring&amp;rsquo;s RSocket integration and message mapping, take a look at the &lt;a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#rsocket-annot-messagemapping"&gt;Spring RSocket documentation&lt;/a&gt;. In the next post, we&amp;rsquo;ll cover request-stream messaging. See you there!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Register Now for Spring Live, an interactive, virtual, 24-hour long conference for you, Spring fans!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/16/register-now-for-spring-live-an-interactive-virtual-24-hour-long-conference-for-you-spring-fans" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-11:3994</id>
-    <updated>2020-03-16T14:03:00Z</updated>
-    <content type="html">&lt;img src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVlNjkxY2I2M2VkYTUuZ2lmJnZlcnNpb249MDAwMCZzaWc9ZWI0OGVkOGFiMjdmMzIxYjA4NDc4YmVhYjk2ZWYyNTM%253D"/&gt;
-&lt;p&gt;Hi, Spring fans! We hope you&amp;rsquo;ll join us for an interactive, 24-hour long, virtual conference called &lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Spring Live&lt;/a&gt;. Here&amp;rsquo;s what you need to know: it&amp;rsquo;s 24-hours long, end to end, so there&amp;rsquo;s bound to be content you can watch no matter what part of the world you&amp;rsquo;re in. It&amp;rsquo;s &lt;em&gt;free&lt;/em&gt;! It&amp;rsquo;s interactive - so the speakers will be hanging around to answer questions and do Q/A. Some speakers are going to pre-record their talks proper just so they can spend the entire slot for their talk answering questions and interacting directly with you. We&amp;rsquo;ve invited experts from the wide world of Springdom from VMWare (where the Spring team lives), Okta, Confluent, Google, Microsoft, and IBM, and so many others. &lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;re holding the event starting at 9 am PDT on March 19th (the Spring equinox!) - yes! that&amp;rsquo;s _soon! - so register now, add it to your calendar, and make sure you&amp;rsquo;re in a comfy chair, have coffee at the ready, and have your thinking caps on. &lt;/p&gt;
-&lt;p&gt;This conference is &lt;strong&gt;virtual&lt;/strong&gt;. We&amp;rsquo;re throwing this virtual conference because we want our community to be healthy, happy, and safe as the #COVID-19 pandemic rages through local communities worldwide. We&amp;rsquo;re a global community, and that&amp;rsquo;s true whether we meet in person or not. For each person who joins the event, we&amp;rsquo;ll make a donation to the Center for Disaster Philanthropy (COVID-19 Response Fund).&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://connect.tanzu.vmware.com/Spring_Live_Q221.html"&gt;Register here&lt;/a&gt; and we&amp;rsquo;ll look forward to seeing you in just over a week!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>

@@ -1,0 +1,11 @@
+package CodingStudy;
+/*
+ * 2차원 배열이 주어졌을 떄 
+ * i,j부터 x,y까지의 합을 구하기
+ */
+public class 이차원배열의합 {
+	static int[][] array;
+	public static void main(String[] args) {
+
+	}
+}

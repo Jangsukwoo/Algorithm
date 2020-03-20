@@ -1,0 +1,14 @@
+package CodingStudy;
+/*
+ * 말은 장애물을 뛰어넘을 수 있다.
+ * 원숭이는 k번 나이트처럼 이동하고 나머지는 인접한 방향으로 이동할 수 있다.
+ * 원숭이의 시작위치는 좌측상단이고
+ * 목표는 우측 하단까지 가는것임
+ * 최소의 방법으로 좌측상단에서 우측 하단으로 가기 출력
+ */
+public class 말이되고픈원숭이 {
+	static int W,H;
+	public static void main(String[] args) {
+
+	}
+}
