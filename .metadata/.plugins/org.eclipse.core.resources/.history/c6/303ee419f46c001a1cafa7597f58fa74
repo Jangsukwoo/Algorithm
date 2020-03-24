@@ -1,0 +1,51 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 19:39 시작
+ * 
+ * 2차원 맵이 있고 배양액을 뿌림
+ * 배양액을 뿌릴 수 있는 땅은 정해져있다.
+ * 
+ * 흰땅은 배양액을 뿌릴 수 없는 땅
+ * 황토색은 배양액을 뿌릴 수 있는 땅
+ * 하늘색칸은 호수
+ * 
+ * 빨강배양액과 초록 배양액이 동시에 도달한 땅에는 꽃이 피어남
+ * 
+ * 꽃이 핀 땅은 더이상 배양액이 접근할수 없다
+ * 
+ * 피울 수 있는 꽃의 최대 개수
+ * 
+ * 0은 호수 , 1은 배양액을 뿌릴 수 없는 땅, 2는 배양액을 뿌릴 수 있는 땅
+ */
+public class Gaaaaaaaaaarden {
+	static int N,M,G,R;
+	static int[][] garden;
+	static class CultureMedium{
+		
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());//행
+		M = Integer.parseInt(st.nextToken());//열
+		G = Integer.parseInt(st.nextToken());
+		R = Integer.parseInt(st.nextToken());
+		garden = new int[N][M];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<M;col++) {
+				garden[row][col] = Integer.parseInt(st.nextToken());
+				
+			}
+		}
+	}
+}
