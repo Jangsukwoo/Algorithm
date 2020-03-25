@@ -1,0 +1,17 @@
+package CodingStudy;
+/*
+ * N,M,K
+ * 40,40,100
+ * 
+ */
+
+public class 스티커붙이기 {
+	static int N,M,K;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

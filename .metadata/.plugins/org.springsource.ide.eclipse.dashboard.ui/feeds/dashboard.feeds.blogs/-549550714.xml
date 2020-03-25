@@ -5,7 +5,256 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-23T22:03:00Z</updated>
+  <updated>2020-03-25T07:34:46Z</updated>
+  <entry>
+    <title>Spring Tips: Spring Cloud Loadbalancer</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-25:4008</id>
+    <updated>2020-03-25T07:34:46Z</updated>
+    <content type="html">&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/FDeOoKRKgkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! Welcome to another installment of Spring Tips! In this installment, we&amp;rsquo;re going to look at a new feature in Spring Cloud, Spring Cloud Loadbalancer. Spring Cloud Loadbalancer is a generic abstraction that can do the work that we used to do with Netflix&amp;rsquo;s Ribbon project. Spring Cloud still supports Netflix Ribbon, but Netflix Ribbons days are numbered, like so much else of the Netflix microservices stack, so we&amp;rsquo;ve provided an abstraction to support an alternative. &lt;/p&gt;&lt;h2&gt;&lt;a href="#the-service-registry" class="anchor" name="the-service-registry"&gt;&lt;/a&gt;The Service Registry&lt;/h2&gt;
+&lt;p&gt;For us to use the Spring Cloud Load Balancer, we need to have a service registry up and running. A service registry makes it trivial to programmatically query for the location of a given service in a system. There are several popular implementations, including Apache Zookeeper, Netflix&amp;rsquo;s Eureka, Hashicorp Consul, and others. You can even use Kubernetes and Cloud Foundry as service registries. Spring Cloud provides an abstraction, &lt;code&gt;DiscoveryClient&lt;/code&gt;, that you can use to talk to these service registries generically. There are several patterns that a service registry enables that just arent possible with &lt;em&gt;good &amp;rsquo;ol&lt;/em&gt; DNS. One thing I love to do is client-side load-balancing. Client-side load-balancing requires the client code to decide which node receives the request. There is any number of instances of the service out there, and their suitability to handle a particular request is something each client can decide. It&amp;rsquo;s even better if it can make the decision &lt;em&gt;before&lt;/em&gt; launching a request that might otherwise be doomed to failure. It saves time, unburdens the services with tedious flow control requirements, and makes our system more dynamic since we can &lt;em&gt;query&lt;/em&gt; its topology. &lt;/p&gt;
+&lt;p&gt;You can run any service registry you like. I like to use Netflix Eureka for these sorts of things because it is simpler to setup. Lets set up a new instance. You could download and run a stock-standard image if you want, but I want to use the pre-configured instance provided as part of Spring Cloud. &lt;/p&gt;
+&lt;p&gt;Go to the Spring Initializer, choose &lt;code&gt;Eureka Server&lt;/code&gt; and &lt;code&gt;Lombok&lt;/code&gt;. I named mine &lt;code&gt;eureka-service&lt;/code&gt;. Hit &lt;code&gt;Generate&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Most of the work of using the built-in Eureka Service is in the configuration, which I&amp;rsquo;ve reprinted here. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;server.port=8761&#xD;
+eureka.client.register-with-eureka=false&#xD;
+eureka.client.fetch-registry=false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then you&amp;rsquo;ll need to customize the Java class. Add the &lt;code&gt;@EnableEurekaServer&lt;/code&gt; annotation to your class.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.eurekaservice;&#xD;
+&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;&#xD;
+&#xD;
+@SpringBootApplication&#xD;
+@EnableEurekaServer&#xD;
+public class EurekaServiceApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(EurekaServiceApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can run that now. It&amp;rsquo;ll be available on port &lt;code&gt;8761&lt;/code&gt; and other clients will connect to that port by default. &lt;/p&gt;&lt;h2&gt;&lt;a href="#a-simple-api" class="anchor" name="a-simple-api"&gt;&lt;/a&gt;A Simple API&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s now turn to the API. Our API is as trivial as these things come. We just want an endpoint to which our client can issue requests. &lt;/p&gt;
+&lt;p&gt;Go to the Spring Initializr, generate a new project with &lt;code&gt;Reactive Web&lt;/code&gt; and &lt;code&gt;Lombok&lt;/code&gt; and the &lt;code&gt;Eureka Discovery Client&lt;/code&gt;. That last bit is the critical part! You&amp;rsquo;re not going to see it used in the following Java code. It&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=Sw7I70vjN0E&amp;feature=emb_title"&gt;all autoconfiguration, which we &lt;em&gt;also&lt;/em&gt; covered way back in 2016&lt;/a&gt;, that runs at application startup. The autoconfiguration will automatically register the application with the specified registry (in this case, we&amp;rsquo;re using the &lt;code&gt;DiscoveryClient&lt;/code&gt; implementation for Netflix&amp;rsquo;s Eureka) using the &lt;code&gt;spring.application.name&lt;/code&gt; property.&lt;/p&gt;
+&lt;p&gt;Specify the following properties. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=api&#xD;
+server.port=9000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our HTTP endpoint is a &amp;ldquo;Hello, world!&amp;rdquo; handler that uses the functional reactive HTTP style that we &lt;a href="https://www.youtube.com/watch?v=JjrAmhlTjug"&gt;introduced in another Spring Tips video way, way back in 2017&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.api;&#xD;
+&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.web.reactive.function.server.HandlerFunction;&#xD;
+import org.springframework.web.reactive.function.server.RouterFunction;&#xD;
+import org.springframework.web.reactive.function.server.ServerRequest;&#xD;
+import org.springframework.web.reactive.function.server.ServerResponse;&#xD;
+import reactor.core.publisher.Mono;&#xD;
+&#xD;
+import java.util.Map;&#xD;
+&#xD;
+import static org.springframework.web.reactive.function.server.RouterFunctions.route;&#xD;
+import static org.springframework.web.reactive.function.server.ServerResponse.*;&#xD;
+&#xD;
+@SpringBootApplication&#xD;
+public class ApiApplication {&#xD;
+    &#xD;
+    @Bean&#xD;
+    RouterFunction&amp;lt;ServerResponse&amp;gt; routes() {&#xD;
+        return route()&#xD;
+            .GET(&amp;quot;/greetings&amp;quot;, r -&amp;gt; ok().bodyValue(Map.of(&amp;quot;greetings&amp;quot;, &amp;quot;Hello, world!&amp;quot;)))&#xD;
+            .build();&#xD;
+    }&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ApiApplication.class, args);&#xD;
+    }&#xD;
+} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the application, and you&amp;rsquo;ll see it reflected in the Netlfix Eureka instance. You can change the &lt;code&gt;server.port&lt;/code&gt; value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;application.properties&lt;/code&gt;. If you run multiple instances, you&amp;rsquo;ll see them reflected in the console.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-load-balancing-client" class="anchor" name="the-load-balancing-client"&gt;&lt;/a&gt;The Load-Balancing Client&lt;/h2&gt;
+&lt;p&gt;All right, now we&amp;rsquo;re ready to demonstrate laod balancing in action. We&amp;rsquo;ll need a new spring boot application. Go to the Spring Intiialzir and generate a new project using the &lt;code&gt;Eureka Discovery Client&lt;/code&gt;, &lt;code&gt;Lombok&lt;/code&gt;, &lt;code&gt;Cloud Loadbalancer&lt;/code&gt;, and &lt;code&gt;Reactive Web&lt;/code&gt;. Click &lt;code&gt;Generate&lt;/code&gt; and open the project in your favorite IDE. &lt;/p&gt;
+&lt;p&gt;Add the Caffeine Cache to the classpath. It&amp;rsquo;s not on the Spring Initializr, so I added it manually. It&amp;rsquo;s Maven coordinates are &lt;code&gt;com.github.ben-manes.caffeine&lt;/code&gt;:&lt;code&gt;caffeine&lt;/code&gt;:&lt;code&gt;${caffeine.version}&lt;/code&gt;. If this dependency is present, then the load balancer will use it to cache resolved instances.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s review what we want to happen. We want to make a call to our service, &lt;code&gt;api&lt;/code&gt;. We know that there could be more than one instance of the service in the load balancer. We &lt;em&gt;could&lt;/em&gt; put the API behind a load balancer and just call it done. But what we want to do is to use the information available to us about the state of each application to make smarter load balancing decisions. There are a lot of reasons we might use the client-side load balancer instead of DNS. First, Java DNS clients tend to cache the resolved IP information, which means that subsequent calls to the same resolved IP would end up subsequently dogpiling on top of one service. You can disable that, but you&amp;rsquo;re working against the grain of DNS, a caching-centric system. DNS only tells you &lt;em&gt;where&lt;/em&gt; something is, not &lt;em&gt;if&lt;/em&gt; it is. Put another way; you don&amp;rsquo;t know if there is going to be anything waiting for your request on the other side of that DNS based load balancer. Wouldnt you like to be able to know before making the call, sparing your client the tedious timeout period before the call fails? Additionally, some patterns like service hedging - &lt;a href="https://www.youtube.com/watch?v=SLG8gUGvdx4&amp;feature=emb_title"&gt;also the topic of another Spring Tips video&lt;/a&gt; - is only possible with a service registry.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the usual configuration properties for the &lt;code&gt;client&lt;/code&gt;. The properties specify the &lt;code&gt;spring.applicatino.name&lt;/code&gt;, nothing novel about that. The second property is important. It disables the default Netflix Ribbon-backed load balancing strategy that&amp;rsquo;s been in place since Spring Cloud debuted in 2015. We want to use the new Spring Cloud Load balancer, after all.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=client&#xD;
+spring.cloud.loadbalancer.ribbon.enabled=false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, let&amp;rsquo;s look at the use of our service registry. First thing&amp;rsquo;s first, our client needs to establish a connection to the service registry with the Eureka &lt;code&gt;DiscoveryClient&lt;/code&gt; implementation. The Spring Cloud &lt;code&gt;DiscoveryClient&lt;/code&gt; abstraction is on the classpath, so it&amp;rsquo;ll automatically start-up and register the &lt;code&gt;client&lt;/code&gt; with the service registry.&lt;/p&gt;
+&lt;p&gt;Here are the beginnings of our application, an entry point class. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.client;&#xD;
+&#xD;
+import lombok.AllArgsConstructor;&#xD;
+import lombok.Data;&#xD;
+import lombok.NoArgsConstructor;&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.cloud.client.ServiceInstance;&#xD;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;&#xD;
+import org.springframework.cloud.client.loadbalancer.reactive.ReactiveLoadBalancer;&#xD;
+import org.springframework.cloud.client.loadbalancer.reactive.ReactorLoadBalancerExchangeFilterFunction;&#xD;
+import org.springframework.cloud.client.loadbalancer.reactive.Response;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.stereotype.Component;&#xD;
+import org.springframework.web.reactive.function.client.WebClient;&#xD;
+import reactor.core.publisher.Flux;&#xD;
+&#xD;
+import static com.example.client.ClientApplication.call;&#xD;
+&#xD;
+@SpringBootApplication&#xD;
+public class ClientApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ClientApplication.class, args);&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&amp;rsquo;ll add to this a DTO class to convey the JSON structure returned from the service to the clients. This class uses some of Lombok&amp;rsquo;s convenient annoations.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Data&#xD;
+@AllArgsConstructor&#xD;
+@NoArgsConstructor&#xD;
+class Greeting {&#xD;
+    private String greetings;&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let&amp;rsquo;s look at three different approaches to load balancing, each progressively more sophisticated.&lt;/p&gt;&lt;h3&gt;&lt;a href="#using-the-loadbalancer-abstraction-directly" class="anchor" name="using-the-loadbalancer-abstraction-directly"&gt;&lt;/a&gt;Using the Loadbalancer Abstraction Directly&lt;/h3&gt;
+&lt;p&gt;This first approach is the simplest, albeit most verbose, of the three. In this approach, we&amp;rsquo;ll work with the load balancing abstraction directly. The component injects a pointer to the &lt;code&gt;ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt;&lt;/code&gt;, which we can then use to vend a &lt;code&gt;ReactiveLoadBalancer&amp;lt;ServiceInstance&amp;gt;&lt;/code&gt;. This &lt;code&gt;ReactiveLoadBalancer&lt;/code&gt; is the interface with which we load-balance calls to the &lt;code&gt;api&lt;/code&gt; service by invoking &lt;code&gt;api.choose()&lt;/code&gt;. I then use that &lt;code&gt;ServiceInstance&lt;/code&gt; to build up a URL to the particular host and port of that specific &lt;code&gt;ServiceInstance&lt;/code&gt; and then make an HTTP request with &lt;code&gt;WebClient&lt;/code&gt;, our reactive HTTP client.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Log4j2&#xD;
+@Component&#xD;
+class ReactiveLoadBalancerFactoryRunner {&#xD;
+&#xD;
+  ReactiveLoadBalancerFactoryRunner(ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt; serviceInstanceFactory) {&#xD;
+        var http = WebClient.builder().build();&#xD;
+        ReactiveLoadBalancer&amp;lt;ServiceInstance&amp;gt; api = serviceInstanceFactory.getInstance(&amp;quot;api&amp;quot;);&#xD;
+        Flux&amp;lt;Response&amp;lt;ServiceInstance&amp;gt;&amp;gt; chosen = Flux.from(api.choose());&#xD;
+        chosen&#xD;
+            .map(responseServiceInstance -&amp;gt; {&#xD;
+                ServiceInstance server = responseServiceInstance.getServer();&#xD;
+                var url = &amp;quot;http://&amp;quot; + server.getHost() + &amp;#39;:&amp;#39; + server.getPort() + &amp;quot;/greetings&amp;quot;;&#xD;
+                log.info(url);&#xD;
+                return url;&#xD;
+            })&#xD;
+            .flatMap(url -&amp;gt; call(http, url))&#xD;
+            .subscribe(greeting -&amp;gt; log.info(&amp;quot;manual: &amp;quot; + greeting.toString()));&#xD;
+&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The actual work of making the HTTP request is done by a static method, &lt;code&gt;call&lt;/code&gt;, that I have stashed in the application class. It expects a valid &lt;code&gt;WebClient&lt;/code&gt; reference and an HTTP URL.&lt;/p&gt;
+&lt;p&gt;```java&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;static Flux&amp;lt;Greeting&amp;gt; call(WebClient http, String url) {
+    return http.get().uri(url).retrieve().bodyToFlux(Greeting.class);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;This approach works, but it&amp;rsquo;s a &lt;em&gt;lot&lt;/em&gt; of code to make one HTTP call. &lt;/p&gt;&lt;h3&gt;&lt;a href="#using-the-code-reactorloadbalancerexchangefilterfunction-code" class="anchor" name="using-the-code-reactorloadbalancerexchangefilterfunction-code"&gt;&lt;/a&gt;Using the &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;This next approach hides a lot of that boilerplate load-balancing logic in a &lt;code&gt;WebClient&lt;/code&gt; filter, of the type &lt;code&gt;ExchangeFilterFunction&lt;/code&gt;, called &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt;. We plug in that filter before making the request, and a &lt;em&gt;lot&lt;/em&gt; of the previous code disappears. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Component&#xD;
+@Log4j2&#xD;
+class WebClientRunner {&#xD;
+&#xD;
+    WebClientRunner(ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt; serviceInstanceFactory) {&#xD;
+&#xD;
+        var filter = new ReactorLoadBalancerExchangeFilterFunction(serviceInstanceFactory);&#xD;
+&#xD;
+        var http = WebClient.builder()&#xD;
+            .filter(filter)&#xD;
+            .build();&#xD;
+&#xD;
+        call(http, &amp;quot;http://api/greetings&amp;quot;).subscribe(greeting -&amp;gt; log.info(&amp;quot;filter: &amp;quot; + greeting.toString()));&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ahhhhhh. Much better! But we can do better.&lt;/p&gt;&lt;h3&gt;&lt;a href="#the-code-loadbalanced-code-annotation" class="anchor" name="the-code-loadbalanced-code-annotation"&gt;&lt;/a&gt;The &lt;code&gt;@LoadBalanced&lt;/code&gt; Annotation&lt;/h3&gt;
+&lt;p&gt;In this final example, we&amp;rsquo;ll have Spring Cloud configure the &lt;code&gt;WebClient&lt;/code&gt; instance for us. This approach is excellent if &lt;em&gt;all&lt;/em&gt; requests that pass through that shared &lt;code&gt;WebClient&lt;/code&gt; instance require load balancing. Just define a provider method for the &lt;code&gt;WebClient.Builder&lt;/code&gt; and annotate it with &lt;code&gt;@LoadBalanced&lt;/code&gt;. You can then use that &lt;code&gt;WebClient.Builder&lt;/code&gt; to define a &lt;code&gt;WebClient&lt;/code&gt; that&amp;rsquo;ll load balance automatically for us.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;&lt;br/&gt;    @Bean&#xD;
+    @LoadBalanced&#xD;
+    WebClient.Builder builder() {&#xD;
+        return WebClient.builder();&#xD;
+    }&#xD;
+    &#xD;
+    @Bean&#xD;
+    WebClient webClient(WebClient.Builder builder) {&#xD;
+        return builder.build();&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that done, our code shrinks to virtually nothing. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Log4j2&#xD;
+@Component&#xD;
+class ConfiguredWebClientRunner {&#xD;
+&#xD;
+    ConfiguredWebClientRunner(WebClient http) {&#xD;
+        call(http, &amp;quot;http://api/greetings&amp;quot;).subscribe(greeting -&amp;gt; log.info(&amp;quot;configured: &amp;quot; + greeting.toString()));&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, &lt;em&gt;that&lt;/em&gt; is convenient. &lt;/p&gt;
+&lt;p&gt;The load balancer uses round-robin load balancing, where it randomly distributes the load across any of a number co configured instances, using the &lt;code&gt;org.springframework.cloud.loadbalancer.core.RoundRobinLoadBalancer&lt;/code&gt; strategy. The nice thing about this is that this is pluggable. You can plugin in other heuristics if you wanted as well. &lt;/p&gt;&lt;h3&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h3&gt;
+&lt;p&gt;In this Spring Tip installment, we&amp;rsquo;ve only begun to scratch the surface of the load balancing abstraction, but we have already achieved immense flexibility and conciseness. If you&amp;rsquo;re further interested in customizing the load balancer, you might look into the &lt;code&gt;@LoadBalancedClient&lt;/code&gt; annotation. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - March 24th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/24/this-week-in-spring-march-24th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-24:4007</id>
+    <updated>2020-03-24T23:51:26Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! It&amp;rsquo;s a beautiful Tuesday for any number of reasons. I presented in the &lt;a href="https://www.devdotnext.com/digital"&gt;DevDotNext digital edition show just a few hours ago&lt;/a&gt; - that was a &lt;em&gt;lot&lt;/em&gt; of fun and I highly recommend you consider attending the next editions (online or - assuming we get past this pandemic - online). &lt;/p&gt;
+&lt;p&gt;Today is &lt;em&gt;also&lt;/em&gt; the 16th birthday of Spring Framework 1.0 - released this day in 2004! What a journey! And of course, the person who announced that that version, the amazing &lt;a href="http://twitter.com/trisberg"&gt;Thomas Risberg (@trisberg)&lt;/a&gt;, is one of many people who were there then and are still here on the Spring team now. Spring&amp;rsquo;s come a long way since then! &lt;a href="https://spring.io/blog/2004/03/24/spring-framework-1-0-final-released"&gt;Check out the blog itself&lt;/a&gt;. If you want to see the original blog in all of its early-2000s glory, it&amp;rsquo;s here on the &lt;a href="https://web.archive.org/web/20040330131500/http://www.springframework.org/"&gt;Internet Wayback machine&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I mentioned the birthday on &lt;a href="https://twitter.com/starbuxman/status/1242353917691719680"&gt;Twitter&lt;/a&gt; and got some nice replies about people&amp;rsquo;s use of the Framework in the replies. I love this sort of stuff. :-) &lt;/p&gt;
+&lt;p&gt;Anyway, let&amp;rsquo;s get to this week&amp;rsquo;s roundup. There is a &lt;em&gt;ton&lt;/em&gt; of stuff to get to! I&amp;rsquo;ve been doing this roundup every week since January 2011, and there&amp;rsquo;s &lt;em&gt;always&lt;/em&gt; something interesting to review. As there had been for the six years before that since the 1.0 release. What a wonderful problem to have :)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/24/spring-framework-5-2-5-available-now"&gt;Spring Framework 5.2.5 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/23/spring-boot-for-apache-geode-pivotal-gemfire-1-3-0-m3-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.3.0.M3 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/23/getting-started-with-rsocket-spring-boot-request-stream"&gt;Getting Started With RSocket: Spring Boot Request-Stream&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/20/spring-cloud-data-flow-2-5-0-m1-released"&gt;Spring Cloud Data Flow 2.5.0.M1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/20/spring-tools-4-6-0-released"&gt;Spring Tools 4.6.0 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;How cool is this? There&amp;rsquo;s a new Secrets Manager integration in Spring Cloud Google Cloud Platform - &lt;a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gcp/1.2.2.RELEASE/reference/html/#secret-manager"&gt;check it out&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/java/status/1242555278643482624"&gt;Take a look at the new NetBeans features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out &lt;a href="https://twitter.com/confluentinc/status/1242542977433718784"&gt;Confluent&amp;rsquo;s ksqlDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn how to do fully remote and &lt;a href="https://twitter.com/VMwareTanzu/status/1242498168400601088"&gt;distributed software with this expertise from Pivotal Labs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/confluentinc/status/1242497264981094401"&gt;I love this post on the lessons Confluent itself learned when building Confluent Cloud&lt;/a&gt; - worth a read!&lt;/li&gt;
+  &lt;li&gt;I love this - two of my favorite data-centric engineers - &lt;a href="https://www.youtube.com/watch?v=H4sN34-nxEE&amp;feature=emb_title"&gt;Thorben Janssen talks to Spring Data lead Mark Paluch &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/cloudfoundry/status/1242474089408679938"&gt;You should try out KubeCF - a Cloud Foundry distribution for Kubernetes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Last week&amp;rsquo;s &amp;lsquo;Spring Live&amp;rsquo; was an amazing show and we are so grateful for everyone who turned up! &lt;a href="https://twitter.com/rseroter/status/1242218927532290048?s=12"&gt;As promised, we donated $20,000 to charity as a result&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A great blog by Matt Raible over on the Okta Developer about &lt;a href="https://developer.okta.com/blog/2020/03/23/microservice-security-patterns"&gt;Security Patterns for Microservice Architectures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/eddumelendez/status/1241448301431525376?s=12"&gt;Community legend Edd? Mel?ndez has a great list of projects that are ideal for novice contributions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I like this post: &lt;a href="https://www.marcobehler.com/guides/spring-boot"&gt;&lt;em&gt;What is Spring Boot Autoconfigurations&lt;/em&gt;&lt;/a&gt;?&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.ik.am/entries/515"&gt;Tanzu&amp;rsquo;s very own Toshiaki Maki has a great post on using Azure Files with Cloud Foundry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/ritam/status/1241052489446649862?s=12"&gt;I love Redmonk&amp;rsquo;s James Governors perspective on VMWare Tanzu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love the new features in &lt;a href="https://devblogs.microsoft.com/java/java-on-visual-studio-code-update-march-2020/"&gt;the Microsoft Visual Studio Code for Java editor plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 5.2.5 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/24/spring-framework-5-2-5-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-03-24:4006</id>
+    <updated>2020-03-24T12:22:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework 5.2.5 is available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework 5.2.5 includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.5.RELEASE"&gt;over 50 fixes and improvements&lt;/a&gt;. This release adds support for the recently released Java 14.&lt;/p&gt;
+&lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with Spring Boot &lt;code&gt;2.2.6&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.5.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.3.0.M3 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/23/spring-boot-for-apache-geode-pivotal-gemfire-1-3-0-m3-released" />
@@ -1127,166 +1376,6 @@ class Runner {&#xD;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session for Apache Geode &amp; Pivotal GemFire 2.1.9.RELEASE, 2.2.3.RELEASE and 2.3.0.RC1 available!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/09/spring-session-for-apache-geode-pivotal-gemfire-2-1-9-release-2-2-3-release-and-2-3-0-rc1-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2020-03-09:3988</id>
-    <updated>2020-03-09T19:15:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring, Apache Geode and Pivotal GemFire communities, it is my pleasure to announce the release of &lt;em&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SSDG) &lt;code&gt;2.1.9.RELEASE&lt;/code&gt;, &lt;code&gt;2.2.3.RELEASE&lt;/code&gt; and &lt;code&gt;2.3.0.RC1&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG &lt;a href="https://search.maven.org/artifact/org.springframework.session/spring-session-data-geode/2.1.9.RELEASE/jar"&gt;&lt;code&gt;2.1.9.RELEASE&lt;/code&gt;&lt;/a&gt; and &lt;a href="https://search.maven.org/artifact/org.springframework.session/spring-session-data-geode/2.2.3.RELEASE/jar"&gt;&lt;code&gt;2.2.3.RELEASE&lt;/code&gt;&lt;/a&gt; are available from &lt;em&gt;Maven Central&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG &lt;code&gt;2.3.0.RC1&lt;/code&gt; is available from the Spring &lt;a href="https://repo.spring.io/milestone/org/springframework/session/spring-session-data-geode/2.3.0.RC1/"&gt;Milestone&lt;/a&gt; Repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG &lt;code&gt;2.1.9.RELEASE&lt;/code&gt; builds on Spring Framework 5.1.14.RELEASE, Spring Data Lovelace-SR16, Spring Session Bean-SR9, Apache Geode 1.6.0 and Pivotal GemFire 9.5.4.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG &lt;code&gt;2.2.3.RELEASE&lt;/code&gt; builds on Spring Framework 5.2.4.RELEASE, Spring Data Moore-SR5, Spring Session Corn-SR1, Apache Geode
-1.9.2 and Pivotal GemFire 9.8.6.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG &lt;code&gt;2.3.0.RC1&lt;/code&gt; builds on Spring Framework 5.2.4.RELEASE, Spring Data Neumann-M3, Spring Session Dragonfruit-M2, Apache Geode 1.11.0 and Pivotal GemFire 9.9.1.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-session-data-geode/blob/2.3.0.RC1/spring-session-data-geode/src/main/resources/changelog.txt#L7-L25"&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, feedback is welcomed and appreciated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Spring Boot Client</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-02-28:3979</id>
-    <updated>2020-03-09T16:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Time: approximately 15 mins.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In the &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;previous article&lt;/a&gt;, you saw how Spring Boot simplifies the task of writing RSocket servers. But what about RSocket clients? In this article, you¡¯ll learn how to write your own RSocket client and then use this new client to send request-response messages to your RSocket-server. Let¡¯s get started!&lt;/p&gt;
-&lt;p&gt;This tutorial uses the Linux shell. For details on how to run a Linux shell on Windows, see &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"&gt;this Microsoft tutorial&lt;/a&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-1-create-a-new-spring-boot-project-for-your-client" class="anchor" name="step-1-create-a-new-spring-boot-project-for-your-client"&gt;&lt;/a&gt;Step 1: Create A New Spring Boot Project For Your Client&lt;/h1&gt;
-&lt;p&gt;It¡¯s fun to write your own code, so for your RSocket client let¡¯s start from scratch. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If this is too much hassle for you, or you don¡¯t have the time right now, then you can find the code in the rsocket-client folder of the &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;demo code repository&lt;/a&gt;. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Open your browser and navigate to start.spring.io then use the following settings to create a new Spring Boot project:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Project: &lt;code&gt;Maven&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Language: &lt;code&gt;Java&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Boot: &lt;code&gt;2.2.5&lt;/code&gt; (or whichever is the latest GA version)&lt;/li&gt;
-  &lt;li&gt;Group: &lt;code&gt;io.pivotal&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Artifact: &lt;code&gt;rsocket-client&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Dependencies: &lt;code&gt;RSocket&lt;/code&gt;, &lt;code&gt;Lombok&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Click the green &lt;strong&gt;¡°Generate¡±&lt;/strong&gt; button. Download the ZIP file and extract the project into a folder, then open the extracted project in your favorite Java IDE.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-2-add-spring-shell-to-the-project" class="anchor" name="step-2-add-spring-shell-to-the-project"&gt;&lt;/a&gt;Step 2: Add Spring Shell To The Project&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/spring-shell/docs/2.0.0.RELEASE/reference/htmlsingle/"&gt;Spring Shell&lt;/a&gt; helps you write simple terminal programs using Spring Boot. At the time of writing, the Spring Initializr doesn¡¯t offer a Spring Shell option, but you can still use it by adding the dependency to your project manually. &lt;/p&gt;
-&lt;p&gt;Open the Maven &lt;code&gt;pom.xml&lt;/code&gt; file in your IDE, and add the following xml into the &lt;code&gt;&amp;lt;dependencies&amp;gt;&lt;/code&gt; section:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependency&amp;gt;&#xD;
-    &amp;lt;groupId&amp;gt;org.springframework.shell&amp;lt;/groupId&amp;gt;&#xD;
-    &amp;lt;artifactId&amp;gt;spring-shell-starter&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;version&amp;gt;2.0.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will enable Spring Shell in your new RSocket client project.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-3-write-the-code" class="anchor" name="step-3-write-the-code"&gt;&lt;/a&gt;Step 3: Write The Code&lt;/h1&gt;
-&lt;p&gt;There are a few short coding tasks required to add Spring Shell and RSocket support to your new RSocket client application. They are as follows:&lt;/p&gt;&lt;h4&gt;&lt;a href="#delete-the-test" class="anchor" name="delete-the-test"&gt;&lt;/a&gt;Delete The Test&lt;/h4&gt;
-&lt;p&gt;You can delete the auto-generated &lt;code&gt;RsocketclientApplicationTests&lt;/code&gt; test class. If you don¡¯t, odd things might happen when you run the Spring ¡®integration¡¯ test. For details, see the notes section &lt;a href="https://docs.spring.io/spring-shell/docs/2.0.0.RELEASE/reference/htmlsingle/#_adding_a_dependency_on_spring_shell"&gt;here in the Spring Shell Docs&lt;/a&gt;. &lt;/p&gt;&lt;h4&gt;&lt;a href="#copy-the-message-class-from-the-server-code" class="anchor" name="copy-the-message-class-from-the-server-code"&gt;&lt;/a&gt;Copy The Message Class From The Server Code&lt;/h4&gt;
-&lt;p&gt;Copy over the &lt;code&gt;Message.java&lt;/code&gt; data class from the &lt;code&gt;io.pivotal.rsocketserver.data&lt;/code&gt; package. This package is in the &lt;code&gt;rsocket-server&lt;/code&gt; project folder you worked on in the &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;previous article&lt;/a&gt;. You need this class in order to exchange messages with the server.&lt;/p&gt;&lt;h4&gt;&lt;a href="#create-the-rsocketshellclient-class" class="anchor" name="create-the-rsocketshellclient-class"&gt;&lt;/a&gt;Create The RSocketShellClient Class&lt;/h4&gt;
-&lt;p&gt;In the &lt;code&gt;io.pivotal.rsocketclient&lt;/code&gt; package, create a new class called &lt;code&gt;RSocketShellClient&lt;/code&gt; and annotate this class with the &lt;code&gt;@Slf4j&lt;/code&gt; and &lt;code&gt;@ShellComponent&lt;/code&gt; annotations. The first annotation tells Lombok to add logging features to this class and the second tells Spring that you are building a Shell-based component.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
-@ShellComponent&#xD;
-public class RSocketShellClient {&#xD;
- // Your code will go here...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a href="#set-up-your-rsocketrequester" class="anchor" name="set-up-your-rsocketrequester"&gt;&lt;/a&gt;Set Up Your RSocketRequester&lt;/h4&gt;
-&lt;p&gt;The RSocket client needs to know where it can find and communicate with the RSocket server. Spring RSocket support is autoconfigured by Spring Boot, you just have to build a customized &lt;code&gt;RSocketRequester&lt;/code&gt;. You can do this by adding a class constructor and using the &lt;code&gt;RSocketRequester.Builder&lt;/code&gt; as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;// Add a global class variable for the RSocketRequester&#xD;
-private final RSocketRequester rsocketRequester;&#xD;
-&#xD;
-// Use an Autowired constructor to customize the RSocketRequester and store a reference to it in the global variable&#xD;
-@Autowired&#xD;
-public RSocketShellClient(RSocketRequester.Builder rsocketRequesterBuilder) {&#xD;
-    this.rsocketRequester = rsocketRequesterBuilder&#xD;
-            .connectTcp(&amp;quot;localhost&amp;quot;, 7000).block();&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The requester¡¯s &lt;code&gt;connectTcp()&lt;/code&gt; method needs to know the IP address and port of your RSocket server, and you need to tell the requester to &lt;code&gt;block()&lt;/code&gt; until a connection is established. After that, you¡¯re ready to communicate with the RSocket server over TCP.&lt;/p&gt;&lt;h4&gt;&lt;a href="#add-a-request-response-shell-method" class="anchor" name="add-a-request-response-shell-method"&gt;&lt;/a&gt;Add A Request-Response Shell Method.&lt;/h4&gt;
-&lt;p&gt;Adding shell capabilities in Spring Shell components is fairly straightforward. First of all, add a public &lt;code&gt;requestResponse()&lt;/code&gt; method returning &lt;code&gt;void&lt;/code&gt; to the &lt;code&gt;RSocketShellClient&lt;/code&gt;, and use the &lt;code&gt;@ShellMethod&lt;/code&gt; annotation over the method signature to activate Spring Shell and declare the help text that users will see if they type &lt;code&gt;help&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Inside the method, use the global reference to the &lt;code&gt;RSocketRequester&lt;/code&gt; and set the &lt;code&gt;route()&lt;/code&gt; to &lt;code&gt;&amp;quot;request-response&amp;quot;&lt;/code&gt;, the &lt;code&gt;data()&lt;/code&gt; to be a new &lt;code&gt;Message&lt;/code&gt; instance, and tell the requester to &lt;code&gt;retrieveMono()&lt;/code&gt; of type &lt;code&gt;Message&lt;/code&gt;. Finally, add a simple logging function to the &lt;code&gt;subscribe()&lt;/code&gt; method. The code for this is as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Send one request. One response will be printed.&amp;quot;)&#xD;
-    public void requestResponse() throws InterruptedException {&#xD;
-        log.info(&amp;quot;\nSending one request. Waiting for one response...&amp;quot;);&#xD;
-        Message message = this.rsocketRequester&#xD;
-                .route(&amp;quot;request-response&amp;quot;)&#xD;
-                .data(new Message(CLIENT, REQUEST))&#xD;
-                .retrieveMono(Message.class)&#xD;
-                .block();&#xD;
-        log.info(&amp;quot;\nResponse was: {}&amp;quot;, message);&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;RSocket is designed to deal with long-running, asynchronous streams of data. This is most effectively done using the functional programming style that you¡¯re already familiar with from the &lt;a href="https://www.oracle.com/technical-resources/articles/java/ma14-java-se-8-streams.html"&gt;Java 8 Stream API&lt;/a&gt;. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The code above states what you&amp;rsquo;d like to happen when (and only when) there is messaging work to be done. In this case, you&amp;rsquo;ve committed to sending one request message, routed to the server&amp;rsquo;s &lt;code&gt;&amp;quot;request-response&amp;quot;&lt;/code&gt; handler method, and you expect one response message in return. This process is triggered by the call to the &lt;code&gt;block()&lt;/code&gt; method. Without it, nothing will happen. &lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s it for coding. Let&amp;rsquo;s run it!&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-4-build-and-run-the-rsocket-server" class="anchor" name="step-4-build-and-run-the-rsocket-server"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Server&lt;/h1&gt;
-&lt;p&gt;As our server, you&amp;rsquo;re going to use the code from the &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;previous article&lt;/a&gt;. Open a terminal window and move to the &lt;code&gt;rsocket-server&lt;/code&gt; directory and then run the server code using the Maven wrapper like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The server will start up on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt; and wait for your client to connect.&lt;/p&gt;&lt;h1&gt;&lt;a href="#step-5-build-and-run-the-rsocket-client" class="anchor" name="step-5-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 5: Build And Run The RSocket Client&lt;/h1&gt;
-&lt;p&gt;To run your RSocket client, open a second terminal window and move to your &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the client as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When the client finishes starting up, you will be presented with a new command line prompt like this: &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;shell:&amp;gt;&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;You can use this prompt to issue commands to your Spring application similar to issuing commands via a regular terminal app. &lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s send a request message to the server and watch for a response. Do this by typing &lt;code&gt;request-response&lt;/code&gt; at the prompt. You will then see the request and response messages being sent and received like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint none"&gt;shell:&amp;gt;request-response&#xD;
-Sending one request. Waiting for one response...&#xD;
-Response was: Message(origin=Server, interaction=Response, index=0, created=1582558295)&#xD;
-shell:&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;I¡¯ve omitted much of the log detail here for brevity. Your output will be more verbose than shown, but the outcome will be the same. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You can now stop your &lt;code&gt;rsocket-client&lt;/code&gt; by typing &lt;code&gt;exit&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt. You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window, or by closing it.&lt;/p&gt;&lt;h1&gt;&lt;a href="#how-it-all-works" class="anchor" name="how-it-all-works"&gt;&lt;/a&gt;How It All Works&lt;/h1&gt;
-&lt;p&gt;Spring Shell allows you to build and run terminal-like programs using Spring Boot. In the constructor of your shell component, you configured an &lt;code&gt;RSocketRequester&lt;/code&gt; to communicate with your server using TCP on localhost port 7000.&lt;/p&gt;
-&lt;p&gt;You then created a &lt;code&gt;requestResponse()&lt;/code&gt; method in your shell component and annotated it so that when you typed &lt;code&gt;request-response&lt;/code&gt; at the shell prompt, Spring Shell invoked this method. &lt;/p&gt;
-&lt;p&gt;When the &lt;code&gt;requestResponse()&lt;/code&gt; method was called, the client sent some metadata describing the &lt;code&gt;route&lt;/code&gt; to use, and then it sent the request as a &lt;code&gt;Message&lt;/code&gt; object. The server¡¯s response message was printed on the screen using a simple logging statement.&lt;/p&gt;&lt;h1&gt;&lt;a href="#that-s-it-you-rsquo-re-done" class="anchor" name="that-s-it-you-rsquo-re-done"&gt;&lt;/a&gt;That¡¯s It, You&amp;rsquo;re Done!&lt;/h1&gt;
-&lt;p&gt;In this article, you learned how to write a simple RSocket client using Spring Shell. This new client communicates with your RSocketServer over TCP. In the next article, we¡¯ll cover fire-and-forget messages with RSocket and Spring Boot by adding extra functionality to both your client and your server projects.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring I/O organizer and Spring trainer extraordinairre Sergi Almar</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/06/a-bootiful-podcast-spring-i-o-organizer-and-spring-trainer-extraordinairre-sergi-almar" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-06:3987</id>
-    <updated>2020-03-06T04:41:20Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks with &lt;a href="https://twitter.com/SergiAlmar"&gt;Sergi Almar (@sergiAlmar) &lt;/a&gt; about organizing one of the best JVM community shows in the business, Barcelona&amp;rsquo;s &lt;a href="https://springio.net/"&gt;Spring I/O&lt;/a&gt;, being a trainer, and so much more. &lt;/p&gt;
-&lt;iframe title="Spring I/O organizer and Spring trainer extraordinairre Sergi Almar " src="https://www.podbean.com/media/player/jvbuh-d5918d?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

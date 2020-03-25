@@ -1,0 +1,47 @@
+package CodingStudy;
+/*
+ * N,M,K
+ * 40,40,100
+ * N,M : 노트북 세로, 가로
+ * K : 스티커 개수
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 스티커붙이기 {
+	static int N,M,K;
+	static int[][] notebook;
+	static Sticker[] stickers;
+	static class Sticker{
+		int rowSize;
+		int colSize;
+		int[][] degree0;
+		int[][] degree90;
+		int[][] degree180;
+		int[][] degree270;
+		public Sticker(int rowSize, int colSize) {
+			this.rowSize = rowSize;
+			this.colSize = colSize;
+		}
+		public void initialize() {
+			
+		}
+		public void make4KindsVersion() {
+			
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		notebook = new int[N][M];
+	}
+}
