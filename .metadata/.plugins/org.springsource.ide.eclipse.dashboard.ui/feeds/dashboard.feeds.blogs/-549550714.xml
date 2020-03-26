@@ -5,7 +5,202 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-25T10:57:00Z</updated>
+  <updated>2020-03-25T15:30:00Z</updated>
+  <entry>
+    <title>Liveness and Readiness Probes with Spring Boot</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Brian Clozel</name>
+    </author>
+    <id>tag:spring.io,2020-03-19:4001</id>
+    <updated>2020-03-25T15:30:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness Probes support.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With our 2.2.0 release, Spring Boot shipped with &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#health-groups"&gt;the Health Groups support&lt;/a&gt;, allowing developers to select a subset of health indicators and group them under a single, correlated, health status.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Even with this new feature, we¡¯ve found that we could provide more to the Spring community, with more opinions and guidance when it comes to Kubernetes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="liveness-and-readiness-in-kubernetes"&gt;&lt;a class="anchor" href="#liveness-and-readiness-in-kubernetes"&gt;&lt;/a&gt;Liveness and Readiness in Kubernetes&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In Kubernetes, the &lt;a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/"&gt;Liveness and Readiness Kubernetes concepts&lt;/a&gt; represent facets of the application state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Liveness state of an application tells whether the internal state is valid. If Liveness is broken, this means that the application itself is in a failed state and cannot recover from it. In this case, the best course of action is to restart the application instance. For example, an application relying on a local cache should fail its Liveness state if the local cache is corrupted and cannot be repaired.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Readiness state tells whether the application is ready to accept client requests. If the Readiness state is unready, Kubernetes should not route traffic to this instance. If an application is too busy processing a task queue, then it could declare itself as busy until its load is manageable again.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;a class="anchor" href="#promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;/a&gt;Promoting Liveness and Readiness as core Spring Boot concepts&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These Liveness and Readiness concepts are not only applicable to Kubernetes and they are generally useful, regardless of the deployment platform. We¡¯re introducing &lt;code&gt;LivenessState&lt;/code&gt; and &lt;code&gt;ReadinessState&lt;/code&gt;, which are immutable representations of those concepts. You can get them at any time from the &lt;code&gt;ApplicationAvailabilityProvider&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;// Available as a component in the application context
+ApplicationAvailabilityProvider availabilityProvider;
+
+LivenessState livenessState = availabilityProvider.getLivenessState();
+ReadinessState readinessState = availabilityProvider.getReadinessState()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;A polling-only model where you need to exercise checks to know the state of the application is incomplete&lt;/strong&gt;. Only the application knows about its lifecycle (startup, shutdown) or can provide context about runtime errors (ending in a broken state while processing tasks). The Spring Boot application context is natively publishing those events during the lifecycle of the application; your application code should also be able to contribute to this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is why we chose to use the Spring Application Event model to change the availability state and listen for updates:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;/**
+ * Component that checks that the local cache is in a valid state.
+ */
+@Component
+public class LocalCacheVerifier {
+
+    private final ApplicationEventPublisher eventPublisher;
+
+    public LocalCacheVerifier(ApplicationEventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
+    }
+
+    public void checkLocalCache() {
+        try {
+            //...
+        }
+        catch (CacheCompletelyBroken ex) {
+            this.eventPublisher.publishEvent(LivenessStateChangedEvent.broken(ex));
+        }
+    }
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Components can also listen for those events with &lt;code&gt;@EventListener&lt;/code&gt; (or by implementing &lt;code&gt;ApplicationListener&lt;/code&gt;).
+Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-application-availability-state"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This support ships with the &lt;code&gt;spring-boot&lt;/code&gt; module directly and is activated for all Spring Boot applications; this makes it available for all types of applications (web, batch, etc) and allows you to implement Probes that aren¡¯t necessarily tied to HTTP.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;a class="anchor" href="#exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;/a&gt;Exposing Kubernetes Probes with Spring Boot Actuator&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Actuator will gather the "Liveness" and "Readiness" information from the &lt;code&gt;ApplicationAvailabilityProvider&lt;/code&gt; and use that information in dedicated Health Indicators: &lt;code&gt;LivenessProbeHealthIndicator&lt;/code&gt; and &lt;code&gt;ReadinessProbeHealthIndicator&lt;/code&gt;. These indicators will be shown on the global health endpoint (&lt;code&gt;"/actuator/health"&lt;/code&gt;). They will also be exposed as separate HTTP Probes using Health Groups: &lt;code&gt;"/actuator/health/liveness"&lt;/code&gt; and &lt;code&gt;"/actuator/health/readiness"&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;An application running on Kubernetes will show the following health report:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health
+// HTTP/1.1 200 OK
+
+{
+  "status": "UP",
+  "components": {
+    "diskSpace": {
+      "status": "UP",
+      "details": { //...
+      }
+    },
+    "livenessProbe": {
+      "status": "UP"
+    },
+    "ping": {
+      "status": "UP"
+    },
+    "readinessProbe": {
+      "status": "UP"
+    }
+  },
+  "groups": [
+    "liveness",
+    "readiness"
+  ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Kubernetes will get the following when calling the Liveness group:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health/liveness
+// HTTP/1.1 200 OK
+
+{
+  "status": "UP",
+  "components": {
+    "livenessProbe": {
+      "status": "UP"
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;An application marked as unready will report the following for the Readiness group:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health/readiness
+// HTTP/1.1 503 SERVICE UNAVAILABLE
+
+{
+  "status": "OUT_OF_SERVICE",
+  "components": {
+    "readinessProbe": {
+      "status": "OUT_OF_SERVICE"
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;HTTP Probes are only configured for applications running on Kubernetes. You can give it a try locally by manually enabling the probes with the &lt;code&gt;management.health.probes.enabled=true&lt;/code&gt; configuration property. Because Probes are Health Groups, you¡¯ll get many additional features such as configuring HTTP status mappers, security, details visibility¡¦&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can of course configure additional Health Indicators to be part of the Probes, checking for the state of external systems: a database, a Web API, a shared cache. Given an existing &lt;code&gt;CacheCheckHealthIndicator&lt;/code&gt;, you can augment the liveness Probe with:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;management.endpoint.health.group.liveness.include=livenessProbe,cacheCheck&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="available-in-spring-boot-2-3-0-m4"&gt;&lt;a class="anchor" href="#available-in-spring-boot-2-3-0-m4"&gt;&lt;/a&gt;Available in Spring Boot 2.3.0.M4&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This new feature will be available with &lt;a href="https://github.com/spring-projects/spring-boot/milestone/166"&gt;our upcoming 2.3 milestone&lt;/a&gt;;  and we can¡¯t wait to hear from you!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Moore SR6 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/25/spring-data-moore-sr6-available-now" />
@@ -1341,38 +1536,6 @@ class Runner {&#xD;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Run that and you&amp;rsquo;ll see that the object has been written to the database and - best of all - you got a spiffy new &lt;code&gt;toString()&lt;/code&gt; result when printing the resulting &lt;code&gt;Person&lt;/code&gt; object! &lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ve only begun to scratch the surface of all the new features in Java 14! There are a ton of new features in the language that we&amp;rsquo;ve begun to introduce in this video and considerably more features for security and performance in the runtime itself. I can not more heartily recommend that you find a way off of your older versions of the JDK (looking at you, Java 8 users!) and move to the newest ones. &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - March 10th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/10/this-week-in-spring-march-10th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-10:3990</id>
-    <updated>2020-03-10T20:17:12Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another rip-roaring installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! My family and I are basically self-quarantined for the meanwhile, trying to avoid the terrifying COVID-19 pandemic that&amp;rsquo;s ravaging communities around the world. This pandemic is bad because it&amp;rsquo;s leaving countless thousands of sick or dead. It also means that it&amp;rsquo;s harder for me to get on planes to meet people. &lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m disappointed I won&amp;rsquo;t be able to - and haven&amp;rsquo;t been able to - make these shows. But, there&amp;rsquo;s always something to be learned and this week is no different. It was a busy week in Spring indeed! Let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/09/spring-boot-for-apache-geode-pivotal-gemfire-1-1-6-release-1-2-5-release-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.6.RELEASE &amp;amp; 1.2.5.RELEASE available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/09/spring-session-for-apache-geode-pivotal-gemfire-2-1-9-release-2-2-3-release-and-2-3-0-rc1-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.1.9.RELEASE, 2.2.3.RELEASE and 2.3.0.RC1 available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;Getting Started With RSocket: Spring Boot Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/06/a-bootiful-podcast-spring-i-o-organizer-and-spring-trainer-extraordinairre-sergi-almar"&gt;A Bootiful Podcast: Spring I/O organizer and Spring trainer extraordinaire Sergi Almar&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/05/spring-cloud-hoxton-service-release-3-sr3-is-available"&gt;Spring Cloud Hoxton Service Release 3 (SR3) is available.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/05/spring-security-5-3-goes-ga"&gt;Spring Security 5.3 goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/04/spring-session-dragonfruit-rc1-corn-sr2-and-bean-sr10-released"&gt;Spring Session Dragonfruit-RC1, Corn-SR2 and Bean-SR10 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In this week&amp;rsquo;s installment of &lt;em&gt;Spring Tips&lt;/em&gt;, &lt;a href="https://spring.io/blog/2020/03/04/spring-tips-kotlin-and-spring-security"&gt;I look at Kotlin and Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.codementor.io/@sravancynixit/retrieve-user-information-in-spring-security-14arwu8ub0"&gt;Retrieve User Information in Spring Security | Codementor&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Have you seen &lt;a href="https://spring.io/guides/gs/cloud-circuit-breaker/"&gt;the new Spring Cloud Circuitbreaker guide&lt;/a&gt;?&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://link.medium.com/yrjybshke4"&gt;Why is spring Mac the best framework for building HTTP APIs?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Tony Vetter has published an excellent guide on using &lt;a href="https://tanzu.vmware.com/content/blog/microservices-essentials-getting-started-with-spring-cloud-gateway"&gt;the Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Good news! &lt;a href="https://github.com/mariadb-corporation/mariadb-connector-r2dbc"&gt;There&amp;rsquo;s now a MariaDB R2DBC driver&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/testcontainers/status/1235663760163065856?s=12"&gt;New version of test containers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out this great listing of some of the premiere &lt;a href="https://twitter.com/springcentral/status/1235560925270327296"&gt;integrations for Spring users in Microsft Azure&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.wimdeblauwe.com/blog/2020/03/03/uuid-based-value-objects-with-spring-boot-rest-api/"&gt;UUID based Value Objects with Spring Boot REST API - Wim Deblauwe&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.wimdeblauwe.com/blog/2020/02/17/using-tailwind-css-with-spring-boot-and-thymeleaf/"&gt;Using Tailwind CSS with Spring Boot and Thymeleaf - Wim Deblauwe&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
