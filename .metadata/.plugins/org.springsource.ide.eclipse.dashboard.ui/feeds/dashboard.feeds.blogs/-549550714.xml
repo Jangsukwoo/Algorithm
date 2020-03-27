@@ -5,7 +5,26 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-03-26T13:03:00Z</updated>
+  <updated>2020-03-27T02:32:27Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/03/27/a-bootiful-podcast-apache-groovy-testcontainers-and-reactor-committer-sergei-egorov" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-03-27:4014</id>
+    <updated>2020-03-27T02:32:27Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to fellow Java Champion, Oracle Groundbreaker, and Apache Groovy, Testcontainers, and Reactor committer &lt;a href="http://twitter.com/bsideup"&gt;Sergei Egorov (@bsideup)&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.testcontainers.org/"&gt;TestContainers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.groovy-lang.org/"&gt;Apache Groovy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://projectreactor.io/"&gt;project Reactor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/bsideup"&gt;Sergei on Twitter (@bsideup)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe title="Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov" src="https://www.podbean.com/media/player/fx22a-d75897?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.2.6 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2020/03/26/spring-boot-2-2-6-available-now" />
@@ -1322,23 +1341,6 @@ See &lt;code&gt;org.springframework.integration.ws.dsl.Ws&lt;/code&gt; for more 
   &lt;li&gt;Spring Data Elasticsearch 4.0 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/4.0.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data Couchbase 4.0 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/4.0.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.4.2 GA Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/11/spring-cloud-data-flow-2-4-2-ga-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ilayaperumal Gopinathan</name>
-    </author>
-    <id>tag:spring.io,2020-03-11:3992</id>
-    <updated>2020-03-11T08:24:00Z</updated>
-    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the &lt;strong&gt;GA&lt;/strong&gt; release of &lt;strong&gt;2.4.2&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;In this release, along with some bug fixes, we primarily focused on the server/client-side performance improvements on the stream management.&lt;/p&gt;
-&lt;p&gt;The REST layer in Spring Cloud Data Flow server is refactored to accommodate better &lt;code&gt;pagination&lt;/code&gt; and &lt;code&gt;performance&lt;/code&gt; when retrieving the runtime application statuses of streams. In addition to that, the SCDF dashboard pages are re-worked based on these changes. The &lt;code&gt;Runtime Applications&lt;/code&gt; page in the Dashboard has a new layout where the runtime applications are grouped by their streams. The &lt;code&gt;Streams&lt;/code&gt; page is also refactored to efficiently retrieve the stream status, application metrics, etc., &lt;/p&gt;
-&lt;p&gt;Reactive interface methods are added into Spring Cloud Deployer. The Cloud Foundry Deployer¡¯s status methods implement these reactive methods for better performance. Along with Spring Cloud Deployer, Spring Cloud Skipper is updated to use these reactive implementations. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;br/&gt;Please note that Spring Cloud Data Flow 2.4.2 GA is compatible only with the Spring Cloud Skipper 2.3.2.RELEASE and above. When upgrading Spring Cloud Data Flow 2.4.2.RELEASE, Spring Cloud Skipper also needs to be updated to 2.3.2.RELEASE and above.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
