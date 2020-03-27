@@ -1,0 +1,16 @@
+package CodingStudy;
+
+/*
+ * 세로선 개수 N, 가로선 개수 H
+ * M개의 줄에는 가로선의 정보
+ * i번 세로선의 결과가 i가 나오도록
+ */
+public class 사다리조작 {
+	static int N,H,M;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		
+	}
+}

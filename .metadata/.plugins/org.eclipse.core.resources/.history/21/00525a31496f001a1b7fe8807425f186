@@ -1,0 +1,8 @@
+package CodingTest;
+
+public class MaxNumber {
+	static int N,K;
+	public static void main(String[] args) {
+
+	}
+}

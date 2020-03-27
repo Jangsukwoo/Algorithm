@@ -1,0 +1,12 @@
+package CodingTest;
+
+public class childOfTree {
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

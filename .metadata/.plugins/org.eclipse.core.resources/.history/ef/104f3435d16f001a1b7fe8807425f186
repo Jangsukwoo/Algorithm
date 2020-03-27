@@ -1,0 +1,23 @@
+package CodingStudy;
+
+import java.util.Scanner;
+/*
+ * Palindrome
+ */
+public class 팰린드롬만들기 {
+	static String name;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		name = sc.nextLine();
+		makePalindrome();
+	}
+	private static void makePalindrome(){
+		int lastIndex = name.length()-1;
+		for(int startIndex=0;startIndex<(name.length()/2);startIndex++){
+			if(name.charAt(startIndex)==name.charAt(lastIndex)) continue;
+			else {
+				
+			}
+		}
+	}
+}

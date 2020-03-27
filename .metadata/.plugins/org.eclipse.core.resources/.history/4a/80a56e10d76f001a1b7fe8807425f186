@@ -1,0 +1,11 @@
+package CodingStudy;
+
+/*
+ * 세로선 개수 N, 가로선 개수 H
+ * M개의 줄에는 
+ */
+public class 사다리조작 {
+	public static void main(String[] args) {
+
+	}
+}

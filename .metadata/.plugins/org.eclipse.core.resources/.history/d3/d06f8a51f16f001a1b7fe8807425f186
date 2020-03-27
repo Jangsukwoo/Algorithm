@@ -1,0 +1,33 @@
+package CodingStudy;
+
+import java.util.Arrays;
+import java.util.Scanner;
+/*
+ * Palindrome
+ * 
+ * 투포인터로 했다가 실패 후 
+ * 인터넷 참고해서 알파벳 개수에 따라 팰린드롬을 만들 수 있는 가를 판단 후 
+ * 만들어주는 방식으로 풀어본다.
+ */
+public class 팰린드롬만들기 {
+	static char[] name;
+	static boolean possible;
+	static int[] alphabet;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String read = sc.nextLine();
+		name = read.toCharArray();
+		possible = true;
+		makePalindrome();
+	}
+	private static void makePalindrome(){
+		for(int i=0;i<name.length;i++) {
+			int ascii = name[i]-'A';
+			alphabet[ascii]+=1;
+		}//출현 알파벳 카운팅
+		int oddCnt = 0;//알파벳이 홀수개인 개수
+		int evenCnt = 0;
+		for(int i=0;i<alphabet.length;i++){
+		}
+	}
+}
