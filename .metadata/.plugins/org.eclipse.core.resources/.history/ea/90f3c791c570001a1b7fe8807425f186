@@ -1,0 +1,10 @@
+package CodingTest;
+
+public class makeEmailAddress {
+	public static void main(String[] args) {
+
+	}
+    public String solution(String S, String C) {
+        // write your code in Java SE 8
+    }
+}

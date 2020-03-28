@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class maxPair {
+	public static void main(String[] args) {
+
+	}
+}

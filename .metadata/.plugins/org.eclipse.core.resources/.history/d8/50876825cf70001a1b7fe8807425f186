@@ -1,0 +1,23 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class numberCount {
+	public static void main(String[] args) {
+		int answer = solution(new int[] {7,1,2,8,2});
+	}
+    public static int solution(int[] A){
+    	List<Integer> tempList = new ArrayList<Integer>();
+    	for(int i=0;i<A.length;i++) tempList.add(A[i]);
+    	Collections.sort(tempList);//Collections.sort는 mergeSort로 시간복잡도 NlogN
+    	for(int i=0;i<A.length;i++) A[i] = tempList.get(i);
+    	
+    	//정렬 끝
+    	int max = 0;
+    	int cnt=1;
+    	
+    	return 0;
+    }
+}

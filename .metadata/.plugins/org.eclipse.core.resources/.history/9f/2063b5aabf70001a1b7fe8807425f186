@@ -1,0 +1,15 @@
+package CodingTest;
+
+/*
+ * 인접한 두 나무의 크기는 같을 수 없다
+ * 
+ */
+public class gardenTree {
+	public static void main(String[] args) {
+		solution(new int[] {3,4,5,3,7});
+	}
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+    	return 0;
+    }
+}

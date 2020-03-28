@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class numberCount {
+	public static void main(String[] args) {
+
+	}
+}

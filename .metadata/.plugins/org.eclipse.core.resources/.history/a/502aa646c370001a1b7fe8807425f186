@@ -1,0 +1,60 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+/*
+ * 인접한 두 나무의 크기는 같을 수 없다.
+ * 나무를 자르는 방법의수 
+ * 나무는 최대 한개 까지 자를 수 있다.
+ * 
+ * 4<=N<=200
+ * A는 int 범위 1<=A[K]<=1000
+ * 
+ * 이미 지그재그면 자를필요 없으니 0
+ * 지그재그를 못만들면 -1
+ * 지그재그를 만드는 방법의 수 return
+ */
+public class gardenTree {
+	public static void main(String[] args) {
+		solution(new int[] {3,4,5,3,7});
+	}
+    public static int solution(int[] tree) {
+    	int zigzag=0;
+    	
+    	if(originalTreeZigzagCheck(tree)) return 0;
+    	for(int i=0;i<tree.length;i++){//0번째부터 하나씩 짤라보기
+    		
+    	}
+    	
+    	return 0;
+    }
+	private static boolean originalTreeZigzagCheck(int[] tree){
+		boolean positive = false;
+		if((tree[0]-tree[1])>0) positive = true;
+		else if((tree[0]-tree[1])<0) positive = false;
+		else if((tree[0]-tree[1])==0) return false;//높이가 같으면 지그재그가 아님
+		if(positive){//양수로 시작하면
+			for(int i=0;i<(tree.length-1);i++){
+				if(i%2==0){//짝수일떄는 양수여야함
+					if(tree[i]-tree[i+1]>0) continue;
+					else return false;//아닌경우는 지그재그가 아님
+				}else if(i%2==1){//홀수일땐 음수여야함
+					if(tree[i]-tree[i+1]<0) continue;
+					else return false;//아닌경우는 지그재그가 아님
+				}
+			}	
+		}else {//음수로 시작하면
+			for(int i=0;i<(tree.length-1);i++){
+				if(i%2==0){//짝수일떄는 음수여야함
+					if(tree[i]-tree[i+1]<0) continue;
+					else return false;//아닌경우는 지그재그가 아님
+				}else if(i%2==1){//홀수일땐 양수여야함
+					if(tree[i]-tree[i+1]>0) continue;
+					else return false;//아닌경우는 지그재그가 아님
+				}
+			}		
+		}
+		return true;
+	}
+
+}

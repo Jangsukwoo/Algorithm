@@ -1,0 +1,7 @@
+package CodingTest;
+
+public class makeEmailAddress {
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,40 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class maxPair {
+	static ArrayList<Integer> temp;
+	public static void main(String[] args) {
+		int answer = solution(new int[]{51,71,17,42});
+		System.out.println(answer);
+	}
+    public static int solution(int[] A){
+    	ArrayList<Integer>[] sumList;
+    	ArrayList<Integer> ans = new ArrayList<Integer>();
+    	sumList = new ArrayList[82];
+    	for(int i=0;i<82;i++) sumList[i] = new ArrayList<Integer>();
+    	for(int i=0;i<A.length;i++) {
+    		String stringNumber = Integer.toString(A[i]);
+    		int sum=0;
+    		for(int j=0;j<stringNumber.length();j++) {
+    			sum+=Character.getNumericValue((stringNumber.charAt(j)));
+    		}
+    		sumList[sum].add(A[i]);
+    	}
+    	for(int i=0;i<82;i++){
+    		if(sumList[i].size()!=0){
+    			if(sumList[i].size()==2){
+    				int sum = 0;
+    				for(int j=0;j<sumList[i].size();j++){
+    					sum+=sumList[i].get(j);
+    				}
+    				ans.add(sum);
+    			}
+    			else if(sumList[i].size()>2){
+    				 temp = new ArrayList<Integer>();
+    			}
+    		}
+    	}
+    	return 0;
+    }
+}

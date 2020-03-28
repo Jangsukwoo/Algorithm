@@ -1,0 +1,15 @@
+package CodingTest;
+
+/*
+ * 인접한 두 나무의 크기는 같을 수 없다.
+ * 나무를 자르는 방법의수 
+ * 
+ */
+public class gardenTree {
+	public static void main(String[] args) {
+		solution(new int[] {3,4,5,3,7});
+	}
+    public static int solution(int[] A) {
+    	return 0;
+    }
+}

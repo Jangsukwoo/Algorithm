@@ -1,0 +1,54 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import CodingTest.maxPair.PairInfo;
+
+public class maxPair {
+	static class PairInfo{
+		int value;
+		int idx;
+		public PairInfo(int value, int idx) {
+			this.value = value;
+			this.idx = idx;
+		}
+		
+	}
+	public static void main(String[] args) {
+		int answer = solution(new int[]{51,71,17,42});
+		System.out.println(answer);
+	}
+    public static int solution(int[] A){
+    	PairInfo[] pairinfos = new PairInfo[A.length];
+    	int max=0;
+    	for(int i=0;i<A.length;i++) {
+    		String stringNumber = Integer.toString(A[i]);
+    		int sum=0;
+    		for(int j=0;j<stringNumber.length();j++) {
+    			sum+=Character.getNumericValue((stringNumber.charAt(j)));
+    		}
+    		pairinfos[i] = new PairInfo(sum,i);
+    	}
+    	List<PairInfo> tempList = new ArrayList<PairInfo>();
+    	for(int i=0;i<A.length;i++) tempList.add(pairinfos[i]);
+    	Collections.sort(tempList, new Comparator<PairInfo>() {
+			@Override
+			public int compare(PairInfo o1, PairInfo o2) {
+				return -Integer.compare(o1.value,o2.value);
+			}
+		});//Collections.sort는 mergeSort로 시간복잡도 NlogN //내림차순 정렬
+    	for(PairInfo a : pairinfos) {
+    		System.out.println();
+    	}
+    	for(int i=0;i<(A.length-1);i++) {
+    		if(pairinfos[i].value==pairinfos[i+1].value) {
+    			max = Math.max(max,A[pairinfos[i].idx]+A[pairinfos[i+1].idx]);
+    		}else break;
+    	}
+    	if(max==0) return -1;
+    	else return max;
+    }
+}

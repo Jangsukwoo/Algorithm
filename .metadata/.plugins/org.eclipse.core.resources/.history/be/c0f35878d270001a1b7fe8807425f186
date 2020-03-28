@@ -1,0 +1,19 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class maxPair {
+	public static void main(String[] args) {
+		int answer = solution(new int[]{51,71,17,42});
+	}
+    public static int solution(int[] A) {
+    	List<Integer> tempList = new ArrayList<Integer>();
+    	for(int i=0;i<A.length;i++) tempList.add(A[i]);
+    	Collections.sort(tempList);//Collections.sort는 mergeSort로 시간복잡도 NlogN
+    	for(int i=0;i<A.length;i++) A[i] = tempList.get(i);
+    	
+    	return 0;
+    }
+}

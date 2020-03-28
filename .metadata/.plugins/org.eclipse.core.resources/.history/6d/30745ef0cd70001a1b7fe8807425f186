@@ -1,0 +1,10 @@
+package CodingTest;
+
+public class numberCount {
+	public static void main(String[] args) {
+		int answer = solution(new int[] {7,1,2,8,2});
+	}
+    public static int solution(int[] A) {
+    	return 0;
+    }
+}
