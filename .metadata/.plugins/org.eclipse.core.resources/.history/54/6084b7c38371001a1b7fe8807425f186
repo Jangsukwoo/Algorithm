@@ -48,11 +48,7 @@ public class maxPair {
     }
 	private static void dfs(int idx, int depth) {
 		if(depth==2) {
-			
 			return;
-		}
-		for(int i=idx;i<temp.size();i++) {
-			
 		}
 	}
 }

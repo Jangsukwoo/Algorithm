@@ -1,0 +1,12 @@
+package CodingStudyHW;
+/*
+ * 19:36
+ * 
+ * 
+ */
+public class 알파벳 {
+	static char[][] alphabet;
+	public static void main(String[] args) {
+
+	}
+}

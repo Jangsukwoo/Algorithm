@@ -1,0 +1,32 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+
+/*
+ * 19:36
+ * 말이 최대한 몇칸 지나갈 수 있는지?
+ * 
+ */
+public class 알파벳 {
+	static int R,C;
+	static char[][] alphabet;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	public static void main(String[] args) {
+		setData();
+		dfs(0,0);
+	}
+	private static void dfs(int row, int col) {
+		
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		alphabet = new char[R][C];
+		sc.nextLine();
+		for(int row=0;row<R;row++) alphabet[row] = sc.nextLine().toCharArray();
+		
+	}
+}

@@ -1,0 +1,27 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+
+/*
+ * 19:36
+ * 
+ * 
+ */
+public class 알파벳 {
+	static int R,C;
+	static char[][] alphabet;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		R = sc.nextInt();
+		C = sc.nextInt();
+		alphabet = new char[R][C];
+		sc.nextLine();
+		for(int row=0;row<R;row++){
+			
+		}
+	}
+}
