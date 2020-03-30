@@ -11,6 +11,7 @@ import java.util.Scanner;
  * 
  * 20:03 끝
  * 
+ * 이게 왜 골드 3이지
  */
 public class 알파벳 {
 	static int R,C;
