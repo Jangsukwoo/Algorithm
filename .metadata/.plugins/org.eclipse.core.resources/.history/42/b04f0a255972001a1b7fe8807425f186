@@ -1,0 +1,42 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.util.Scanner;
+
+/*
+ * Kruscal 복습
+ *	
+ * Kruscal -> MST 만들기
+ * MST? -> 최소 신장 트리
+ * 이를 위해 Union - Find 개념을 쓴다.
+ * 자료구조는 간선리스트를 이용 
+ * 
+ * Step 1. 비용을 기준으로 가장 최소의 값부터 조회할 수 있도록 정렬
+ * Step 2. Union-Find로 묶어준다. -> 부모가 같지 않은 경우에 묶어줌.
+ * 
+ */
+public class 별자리만들기 {
+	static class Star{
+		int number;
+		int x;
+		int y;
+		public Star(int number, int x, int y) {
+			this.number = number;
+			this.x = x;
+			this.y = y;
+		}
+	}
+	static Star[] stars;
+	static int n;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		stars = new Star[n+1];
+		for(int no=1;no<=n;no++){
+			
+		}
+	}
+}

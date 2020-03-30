@@ -1,0 +1,81 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/*
+ * Kruscal 복습
+ *	
+ * Kruscal -> MST 만들기
+ * MST? -> 최소 신장 트리
+ * 이를 위해 Union - Find 개념을 쓴다.
+ * 자료구조는 간선리스트를 이용 
+ * 
+ * Step 1. 비용을 기준으로 가장 최소의 값부터 조회할 수 있도록 정렬
+ * Step 2. Union-Find로 묶어준다. -> 부모가 같지 않은 경우에 묶어줌.
+ * 
+ */
+public class 별자리만들기 {
+	static class Star{ //별 노드
+		int number;
+		double x;
+		double y;
+		public Star(int number, double x, double y) {
+			this.number = number;
+			this.x = x;
+			this.y = y;
+		}
+	}
+	static class EdgeBetweenStar{ //별과 별 사이의 간선정보 
+		int from;
+		int to;
+		double dist;
+		public EdgeBetweenStar(int from, int to, double dist) {
+			this.from = from;
+			this.to = to;
+			this.dist = dist;
+		}
+	}
+	static Star[] stars;
+	static int n;
+	static List<EdgeBetweenStar> edges;
+	
+	
+	public static void main(String[] args) {
+		//전처리
+		setData();
+		//엣지리스트 집합 만들기
+		makeEdgeList();
+	}
+	
+	
+	private static void makeEdgeList() {
+		boolean[][] fromTovisit = new boolean[n+1][n+1];
+		for(int from=1;from<=n;from++){//n^2 (n<=100) 
+			for(int to=1;to<=n;to++) {
+				if(from!=to && fromTovisit[from][to]==false){//자기 외의 다른 별들에 대한 거리 계산하며 edges 리스트에 추가 
+					double fromX = stars[from].x;
+					double fromY = stars[from].y;
+					double toX = stars[to].x;
+					double toY = stars[to].y;
+					
+				}
+			}
+		}
+	}
+	
+	
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		stars = new Star[n+1];
+		for(int no=1;no<=n;no++){
+			double x = sc.nextDouble();
+			double y = sc.nextDouble();
+			stars[no] = new Star(no, x, y);
+		}
+		edges = new ArrayList<EdgeBetweenStar>();
+	}
+}

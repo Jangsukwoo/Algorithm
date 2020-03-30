@@ -1,0 +1,10 @@
+package CodingStudyHW;
+/*
+ * Kruscal 복습
+ *	
+ * Kruscal -> MST 만들기
+ * MST? -> 최소 신장 트리
+ */
+public class 별자리만들기 {
+
+}
