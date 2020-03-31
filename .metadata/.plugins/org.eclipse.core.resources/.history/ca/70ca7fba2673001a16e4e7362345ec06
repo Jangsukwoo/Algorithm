@@ -1,7 +1,5 @@
 package CodingTest;
-/*
- * line
- */
+
 import java.util.Scanner;
 
 public class MessageQueue {

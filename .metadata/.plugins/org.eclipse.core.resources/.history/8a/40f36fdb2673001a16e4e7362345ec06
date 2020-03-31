@@ -1,7 +1,5 @@
 package CodingTest;
-/*
- * hyundai
- */
+
 public class Taxi {
 	static int n = 10;
 	static int[] P = {9,9,9,9,9,9,9,9,9,1};

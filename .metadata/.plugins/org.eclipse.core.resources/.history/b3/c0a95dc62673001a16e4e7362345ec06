@@ -1,7 +1,5 @@
 package CodingTest;
-/*
- * nhn
- */
+
 import java.util.HashMap;
 import java.util.Scanner;
 

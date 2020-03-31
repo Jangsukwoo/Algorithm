@@ -1,7 +1,5 @@
 package CodingTest;
-/*
- * hyndai
- */
+
 import java.util.PriorityQueue;
 
 class RentCar implements Comparable<RentCar>{
