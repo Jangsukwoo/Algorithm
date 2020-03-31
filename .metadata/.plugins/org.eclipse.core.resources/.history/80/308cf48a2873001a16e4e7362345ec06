@@ -109,8 +109,6 @@ public class 별자리만들기 {
 					yDist = Math.pow(yDist,2);
 					double dist = Math.sqrt(xDist+yDist);
 					edges.add(new EdgeBetweenStar(from, to, dist));
-					fromTovisit[from][to] = true;
-					fromTovisit[to][from] = true;
 				}
 			}
 		}
