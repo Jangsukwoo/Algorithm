@@ -35,27 +35,23 @@ import java.util.Scanner;
  * 
  */
 public class 일이삼더하기 {
-	static int[] memo = new int[12]; //1. 디피 배열 
+	static int[] memo = new int[12]; //1. 디피 배열 초기화 
 	public static void main(String[] args) {
 		memoization();
 		setData();
 	}
 	private static void memoization() {
-		//2. 초항 정의
+		//2. 초항 
 		memo[1] = 1;
 		memo[2] = 2;
 		memo[3] = 4;
-		
-		//3. memo[n] = memo[n-3]+memo[n-2]+memo[n-1] 
-		for(int n=4;n<=11;n++) memo[n] = memo[n-3]+memo[n-2]+memo[n-1];
 
 	}
 	private static void setData() {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		for(int testcase=1,n;testcase<=T;testcase++) {
-			n = sc.nextInt();
-			System.out.println(memo[n]);
+		for(int testcase=1;testcase<=T;testcase++) {
+			
 		}
 	}
 }

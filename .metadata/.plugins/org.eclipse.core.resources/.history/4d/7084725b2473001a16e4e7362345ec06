@@ -34,8 +34,9 @@ import java.util.Scanner;
  *
  * 
  */
-public class 일이삼더하기 {
-	static int[] memo = new int[12]; //1. 디피 배열 
+public class 일이삼더하기3 {
+	static long[] memo = new long[12]; //1. 디피 배열 
+	static long mod = 1000000009;
 	public static void main(String[] args) {
 		memoization();
 		setData();

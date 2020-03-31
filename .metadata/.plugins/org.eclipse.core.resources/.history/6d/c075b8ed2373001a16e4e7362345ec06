@@ -55,7 +55,7 @@ public class 일이삼더하기 {
 		int T = sc.nextInt();
 		for(int testcase=1,n;testcase<=T;testcase++) {
 			n = sc.nextInt();
-			System.out.println(memo[n]);
+			
 		}
 	}
 }

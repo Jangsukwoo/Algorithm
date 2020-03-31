@@ -1,7 +1,0 @@
-package CodingTest;
-
-public class childOfTree {
-	public static void main(String[] args) {
-
-	}
-}
