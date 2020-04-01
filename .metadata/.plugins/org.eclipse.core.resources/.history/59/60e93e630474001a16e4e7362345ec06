@@ -1,0 +1,8 @@
+package CodingStudy;
+/*
+ *  집 2<=N<=100000
+ *  길 1<=M<=1000000
+ */
+public class 도시분할계획 {
+
+}

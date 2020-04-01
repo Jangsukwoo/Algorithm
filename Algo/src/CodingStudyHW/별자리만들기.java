@@ -98,7 +98,10 @@ public class 별자리만들기 {
 		boolean[][] fromTovisit = new boolean[n+1][n+1];
 		for(int from=1;from<=n;from++){//n^2 (n<=100) 
 			for(int to=1;to<=n;to++) {
+				
+			
 				if(from!=to && fromTovisit[from][to]==false){//자기 외의 다른 별들에 대한 거리 계산하며 edges 리스트에 추가 
+				
 					double fromX = stars[from].x;
 					double fromY = stars[from].y;
 					double toX = stars[to].x;

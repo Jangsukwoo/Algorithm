@@ -1,0 +1,38 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * 부모 자식의 관계가 주어졌을 때 주어진 두 사람의 촌수를 계산
+ * 사람들은 1~100
+ * 전체 사람수 n
+ * 부모 자식의 관계 m개 
+ */
+public class 촌수계산 {
+	static int n;
+	static int personA,personB;
+	static int m;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static ArrayList<Integer>[] adjList;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		personA = Integer.parseInt(st.nextToken());
+		personB = Integer.parseInt(st.nextToken());
+		if(personA>personB) {
+			int tmp = personA;
+			personA = personB;
+			personB = tmp;
+		}//personA가 무조건 작게 
+		
+	}
+}

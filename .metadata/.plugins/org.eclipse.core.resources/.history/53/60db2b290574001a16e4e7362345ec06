@@ -1,0 +1,39 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ *  모든 집을 방문 할 수 있는 최소의 길을 깐다.
+ *  Mst 만들기
+ *  
+ *  집 2<=N<=100000
+ *  길 1<=M<=1000000
+ *  
+ */
+public class 도시분할계획 {
+	static int N;
+	static int M;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int min;
+	static StringTokenizer st;
+	static class Edge{
+		int from;
+		int to;
+		int cost;
+		public Edge(int from, int to, int cost) {
+			this.from = from;
+			this.to = to;
+			this.cost = cost;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		
+	}
+}
