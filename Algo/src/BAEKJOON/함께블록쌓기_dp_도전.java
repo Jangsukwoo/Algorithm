@@ -54,6 +54,7 @@ public class 함께블록쌓기_dp_도전 {
 			}
 		}
 	}
+	
 	private static void setData() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());

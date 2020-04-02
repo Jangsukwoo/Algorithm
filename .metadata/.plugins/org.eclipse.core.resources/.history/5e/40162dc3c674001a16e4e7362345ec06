@@ -1,0 +1,8 @@
+package BAEKJOON;
+
+public class 팀배분 {
+	static int n;
+	public static void main(String[] args) {
+		
+	}
+}
