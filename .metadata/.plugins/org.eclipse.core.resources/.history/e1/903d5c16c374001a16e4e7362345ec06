@@ -41,9 +41,13 @@ public class 함께블록쌓기_dp_도전 {
 
 		//3. dp[i][height] = dp[i-1][height]+blocklistOfStudent[i] has BlockHeight (단,<=H,높이를 만족할 때)
 		for(int i=2;i<=N;i++){
+
 			for(int j=0;j<=H;j++) {
+
 				if(dp[i-1][j]>=1){//만들어진 높이가 있는 경우
+
 					for(int k=0;k<blocklistOfStudent[i].size();k++){
+
 						int height = j+blocklistOfStudent[i].get(k); //블록을 쌓아보고
 						if(height<=H){ //만들기 가능하면
 							dp[i][height]+=dp[i-1][j]; //이전에 만들어온 경우의수 누적

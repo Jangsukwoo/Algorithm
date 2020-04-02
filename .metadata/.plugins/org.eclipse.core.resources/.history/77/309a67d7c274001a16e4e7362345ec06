@@ -32,22 +32,17 @@ public class 함께블록쌓기_dp_도전 {
 		System.out.println(dp[N][H]);
 	}
 	private static void memoization() {
-
-		//1.memo 배열
-		dp = new int[N+1][H+1]; 		
-
-		//2. 초기화 	
-		for(Integer height : blocklistOfStudent[1]) dp[1][height] = 1;
-
-		//3. dp[i][height] = dp[i-1][height]+blocklistOfStudent[i] has BlockHeight (단,<=H,높이를 만족할 때)
+		dp = new int[N+1][H+1]; //1.memo 초기화
+		for(Integer height : blocklistOfStudent[1]) dp[1][height] = 1;//초기화 	
 		for(int i=2;i<=N;i++){
 			for(int j=0;j<=H;j++) {
 				if(dp[i-1][j]>=1){//만들어진 높이가 있는 경우
 					for(int k=0;k<blocklistOfStudent[i].size();k++){
 						int height = j+blocklistOfStudent[i].get(k); //블록을 쌓아보고
-						if(height<=H){ //만들기 가능하면
-							dp[i][height]+=dp[i-1][j]; //이전에 만들어온 경우의수 누적
-							dp[i][height]%=mod; // % 10007
+							if(height<=H){ //만들기 가능하면
+								dp[i][height]+=dp[i-1][j]; //이전에 만들어온 경우의수 누적
+								dp[i][height]%=mod; // % 10007
+							}
 						}
 					}
 				}
@@ -62,7 +57,7 @@ public class 함께블록쌓기_dp_도전 {
 		H = Integer.parseInt(st.nextToken());
 		blocklistOfStudent = new ArrayList[N+1];
 		for(int i=1;i<=N;i++) blocklistOfStudent[i] = new ArrayList<Integer>();
-
+		
 		for(int i=1;i<=N;i++){
 			st = new StringTokenizer(br.readLine());
 			int tokenSize = st.countTokens();
