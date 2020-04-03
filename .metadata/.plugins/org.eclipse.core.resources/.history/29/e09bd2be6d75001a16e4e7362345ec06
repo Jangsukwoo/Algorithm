@@ -16,8 +16,6 @@ import java.util.StringTokenizer;
  * 즉, 모든 정점에 대해 검증을 해야하는데
  * 검증하지 못한 정점이 있어서 이분그래프로서 정당함이 판명나지 않았는데도
  * 답을 도출했던게 문제였다. 끝! ㅎ0ㅎ
- * 
- * bfs로는 한번의 와일문이 돌 때가 lever, depth가 될테니 그때마다 색깔을 스위칭 시키면서 찍어보면 된다. 진짜 끝!
  */
 public class 이분그래프_실패 {
 	static int K;
