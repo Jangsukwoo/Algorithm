@@ -32,6 +32,7 @@ public class 알약 {
 			recursive(drug,0);
 			answer[drug] = memo[drug][0];
 		}
+		System.out.println(Arrays.toString(answer));
 	}
 	private static long recursive(int w, int h) {
 		if(memo[w][h]!=0) return memo[w][h];

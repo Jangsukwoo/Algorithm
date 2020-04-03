@@ -37,7 +37,7 @@ public class 알약 {
 		if(memo[w][h]!=0) return memo[w][h];
 		if(w==0) return 1;
 		else{//먹을 알약이 있는 경우
-			memo[w][h] = recursive(w-1,h+1);//한조각--, 반조각++
+			memo[w][h] += recursive(w-1,h+1);//한조각--, 반조각++
 			if(h>0) memo[w][h]+=recursive(w, h-1); //반조각 --, 한조각 그대로
 			return memo[w][h];
 		}
