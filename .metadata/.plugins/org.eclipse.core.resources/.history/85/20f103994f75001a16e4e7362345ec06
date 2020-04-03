@@ -1,0 +1,13 @@
+package CodingStudy;
+/*
+ * 약이 N개 담긴 병
+ * 한 조각을 꺼낸 날은 W
+ * 반 조각을 꺼낸 날은 H
+ * 2N일이 지나면 길이가 2N인 문자열이 만들어짐
+ * 이때 길이 2N의 문자열은 서로 다르다 
+ */
+public class 알약 {
+	public static void main(String[] args) {
+
+	}
+}
