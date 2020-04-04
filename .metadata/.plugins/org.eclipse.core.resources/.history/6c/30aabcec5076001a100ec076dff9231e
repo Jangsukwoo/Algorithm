@@ -1,0 +1,14 @@
+package 프로그래머스;
+
+public class 블록이동하기 {
+	static class Robot{
+		int leftR,leftC,rightR,rightC
+	}
+	public static void main(String[] args) {
+		
+	}
+    public int solution(int[][] board) {
+        int answer = 0;
+        return answer;
+    }
+}
