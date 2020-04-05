@@ -1,0 +1,21 @@
+package CodingTest;
+/*
+ * 2020 상 라인
+ */
+public class RoadFix {
+	public static void main(String[] args) {
+		System.out.println(solution("111011110011111011111100011111",3));
+	}
+    public static int solution(String road, int n) {
+        int answer = -1;
+        int startIdx = 0;
+        int endIdx = 0;
+        int length=0;
+        while(true){
+        	if(road.charAt(endIdx)=='1'){
+        		
+        	}
+        }
+        return answer;
+    }
+}
