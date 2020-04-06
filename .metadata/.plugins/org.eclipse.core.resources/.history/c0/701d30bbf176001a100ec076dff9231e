@@ -7,7 +7,7 @@ import java.util.Stack;
  */
 public class Parentheses {
 	public static void main(String[] args) {
-		System.out.println(solution("<><"));
+		System.out.println(solution("Hello, world!{"));
 	}
     public static int solution(String inputString) {
         int answer = 0;

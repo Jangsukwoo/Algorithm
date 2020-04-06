@@ -1,8 +1,0 @@
-package CodingStudy;
-
-public class 체스 {
-	static int n,m;
-	public static void main(String[] args) {
-
-	}
-}

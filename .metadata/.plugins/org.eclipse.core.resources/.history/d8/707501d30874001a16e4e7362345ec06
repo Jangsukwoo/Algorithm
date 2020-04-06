@@ -1,7 +1,0 @@
-package CodingStudyHW;
-/*
- * 부모 자식의 관계가 주어졌을 때 주어진 두 사람의 촌수를 계산
- */
-public class 촌수계산 {
-
-}

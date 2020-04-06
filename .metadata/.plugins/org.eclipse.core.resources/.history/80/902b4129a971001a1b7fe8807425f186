@@ -1,7 +1,0 @@
-package CodingStudyHW;
-
-public class 알파벳 {
-	public static void main(String[] args) {
-
-	}
-}

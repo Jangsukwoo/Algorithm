@@ -1,7 +1,0 @@
-package CodingTest;
-
-public class ConyBank {
-	public static void main(String[] args) {
-
-	}
-}
