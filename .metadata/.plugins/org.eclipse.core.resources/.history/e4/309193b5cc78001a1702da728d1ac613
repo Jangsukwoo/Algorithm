@@ -1,0 +1,39 @@
+package codeup;
+
+import java.util.Scanner;
+
+public class 성실한개미 {
+	static int[] dr = {0,1};
+	static int[] dc = {1,0};//0: 우 , 1: 하
+	static int[][] maze = new int[11][11];//10 by 10
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		for(int row=1;row<=10;row++) {
+			for(int col=1;col<=10;col++) {
+				maze[row][col] = sc.nextInt();
+			}
+		}
+		
+		antMove();
+	}
+	private static void antMove() {
+		int currentRow = 2;
+		int currentCol = 2;
+		int nextRow = currentRow;
+		int nextCol = currentCol;
+		while(true){//언제 끝날지 모르니 이동 시작
+			//먹이를 찾거나 이동경로가 없을때 멈춘다.
+			if(rangeCheck(nextRow+dr[0],nextCol+dc[0])){//갈수 있는 경로면 간다.
+				
+			}else if(rangeCheck(nextRow+dr[0],nextCol+dc[0]))
+		}
+	}
+	private static boolean rangeCheck(int nr, int nc){
+		if(nr>=1 && nr<=10 && nc>=1 && nc<=10){//10 by 10 영역 내에 있으면서
+			if(maze[nr][nc]==0 || maze[nr][nc]==2){//0인경우면 간다.
+				return true;
+			}
+		}
+		return false;
+	}
+}
