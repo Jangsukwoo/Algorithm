@@ -1,0 +1,80 @@
+package CodingStudyHW;
+
+import java.util.Scanner;
+
+/*
+ * 11:54 시작
+ * 돌 그룹 A,B,C가 있음
+ * 크기가 같지 않은 두 그룹 고르고
+ * 작은쪽을 X, 큰쪽을 Y라 함
+ * X엔 X+X
+ * Y엔 Y-X
+ * 
+ * 돌을 같은 개수로 만들 수 있으면 1 아니면 0 
+ */
+public class 돌그룹 {
+	static boolean[][][] stoneGroup;
+	static int A,B,C;
+	static int result;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+		stoneGroup = new boolean[501][501][501];
+		int Y=0;
+		int X=0;
+		while(true){
+			if(A==B && A==C) {
+				System.out.println("1");
+				break;
+			}else {
+				if(stoneGroup[A][B][C]==false){
+					Y = Math.max(A,B);
+					Y = Math.max(Y,C);
+					X = Math.min(A,B);
+					X = Math.min(X,C);
+					if(Y==C) {
+						if(X==A) {
+							A+=X;
+							C-=X;
+							stoneGroup[A][B][C] = true;
+						}
+						else if(X==B) {
+							B+=X;
+							C-=X;
+							stoneGroup[A][B][C] = true;
+						}
+					}
+					else if(Y==B) {
+						if(X==C) {
+							C+=X;
+							B-=X;
+							stoneGroup[A][B][C] = true;
+						}
+						else if(X==A) {
+							A+=X;
+							B-=X;
+							stoneGroup[A][B][C] = true;
+						}
+					}
+					else if(Y==A) {
+						if(X==B) {
+							B+=X;
+							A-=X;
+							stoneGroup[A][B][C] = true;
+						}
+						else if(X==C) {
+							C+=X;
+							A-=X;
+							stoneGroup[A][B][C] = true;
+						}
+					}
+				}else {
+					System.out.println("0");
+					break;
+				}
+			}
+		}
+	}
+}

@@ -560,7 +560,7 @@ class ExampleIntegrationTests {&#xD;
     <id>tag:spring.io,2020-03-19:4001</id>
     <updated>2020-03-25T15:30:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness Probes support.&lt;/p&gt;
+&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness Probes support.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;With our 2.2.0 release, Spring Boot shipped with &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#health-groups"&gt;the Health Groups support&lt;/a&gt;, allowing developers to select a subset of health indicators and group them under a single, correlated, health status.&lt;/p&gt;
@@ -631,7 +631,7 @@ public class LocalCacheVerifier {
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Components can also listen for those events with &lt;code&gt;@EventListener&lt;/code&gt; (or by implementing &lt;code&gt;ApplicationListener&lt;/code&gt;).
-Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-application-availability-state"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
+Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/spring-boot-features.html#boot-features-application-availability-state"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This support ships with the &lt;code&gt;spring-boot&lt;/code&gt; module directly and is activated for all Spring Boot applications; this makes it available for all types of applications (web, batch, etc) and allows you to implement Probes that aren¡¯t necessarily tied to HTTP.&lt;/p&gt;
@@ -642,7 +642,7 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/ref
 &lt;h2 id="exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;a class="anchor" href="#exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;/a&gt;Exposing Kubernetes Probes with Spring Boot Actuator&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Actuator will gather the "Liveness" and "Readiness" information from the &lt;code&gt;ApplicationAvailabilityProvider&lt;/code&gt; and use that information in dedicated Health Indicators: &lt;code&gt;LivenessProbeHealthIndicator&lt;/code&gt; and &lt;code&gt;ReadinessProbeHealthIndicator&lt;/code&gt;. These indicators will be shown on the global health endpoint (&lt;code&gt;"/actuator/health"&lt;/code&gt;). They will also be exposed as separate HTTP Probes using Health Groups: &lt;code&gt;"/actuator/health/liveness"&lt;/code&gt; and &lt;code&gt;"/actuator/health/readiness"&lt;/code&gt;.&lt;/p&gt;
@@ -728,7 +728,7 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/ref
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -736,7 +736,7 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/ref
 &lt;h2 id="available-in-spring-boot-2-3-0-m4"&gt;&lt;a class="anchor" href="#available-in-spring-boot-2-3-0-m4"&gt;&lt;/a&gt;Available in Spring Boot 2.3.0.M4&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.x-SNAPSHOT/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This new feature will be available with &lt;a href="https://github.com/spring-projects/spring-boot/milestone/166"&gt;our upcoming 2.3 milestone&lt;/a&gt;;  and we can¡¯t wait to hear from you!&lt;/p&gt;
