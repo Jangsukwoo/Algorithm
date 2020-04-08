@@ -1,0 +1,28 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 15:22~ 
+ * Dijkstra Algorithm
+ * pq를 활용해서 시작점부터 하나씩 확인하면서 구한다.
+ * 모든 거리는 처음에 INF이고
+ * 
+ */
+public class 최소비용구하기 {
+	static int N; //1<=N<=1000
+	static int M;
+	static int startNode;
+	static int endNode;
+	static int minDist;
+	static int[] dist;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -5,7 +5,170 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-06T00:08:00Z</updated>
+  <updated>2020-04-07T18:04:12Z</updated>
+  <entry>
+    <title>Spring Tips: The Spring Integration Kotlin DSL</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/07/spring-tips-the-spring-integration-kotlin-dsl" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-07:4026</id>
+    <updated>2020-04-07T18:04:12Z</updated>
+    <content type="html">&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1llAwgOKjTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this installment, we&amp;rsquo;re going to take a look at the new Kotlin DSL for Spring Integration. I&amp;rsquo;ve covered both Spring Integration and Kotlin in other videos before. I am &lt;em&gt;pretty&lt;/em&gt; sure I&amp;rsquo;ve also used Spring Integration from within a Kotlin-based Spring application, but this is the first time I&amp;rsquo;ve been able to cover a Kotlin DSL specifically for Spring Integration. &lt;/p&gt;
+&lt;p&gt;Spring Integration has been around for a long time - 13 years at least - and it serves a timeless use case: the integration of disparate systems and services. It&amp;rsquo;s patterned after the seminal tome by Gregor Hohpe and Bobby Woolf, &lt;a href="https://www.amazon.com/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683"&gt;&lt;em&gt;Enterprise Integration Patterns&lt;/em&gt;&lt;/a&gt;. It&amp;rsquo;s a fantastic tome, and I couldn&amp;rsquo;t more enthusiastically recommend it as it serves, after a fashion, as the documentation required for understanding Spring Integration. Spring Integration codifies the patterns from the book; API elements are named for the relevant patterns in the book. &lt;/p&gt;
+&lt;p&gt;Integration is necessarily high-level work. It&amp;rsquo;s about different plumbing systems in terms of their inputs and outputs. You don&amp;rsquo;t want to spend too long at the lowest level working at the level of object graphs to make this work. It&amp;rsquo;s much easier to decouple these systems and services in terms of the inputs and outputs they support. Spring Integration gives you a way to do this.&lt;/p&gt;
+&lt;p&gt;Over the years, the DSL for Spring Integration has changed. We started the project with XML based DSL, later introduced a Java configuration component model, and later still introduced the Java DSL. There was even a brief flirtation with a Scala DSL. And now we have the Kotlin DSL. The Kotlin DSL builds upon the foundations laid down years ago in the Spring Integration Java DSL. It extends the DSL to make it more Kotlin-native. &lt;/p&gt;
+&lt;p&gt;In this application, we&amp;rsquo;re going to build an app to monitor a file system. I show thee examples because they don&amp;rsquo;t require you the audience to install anything on or local machines except a file system which, presumably, you already have. Spring Integration provides a rich toolbox of integrations. You can talk to file systems (remote and local), databases, message queues, and a myriad of other protocols and integrations. &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s build a new application. Go to the &lt;a href="http://start.spring.io"&gt;Spring Initializr&lt;/a&gt; and make sure to choose &lt;code&gt;Kotlin&lt;/code&gt; for the choice of language. Also, make sure to use Spring Boot 2.3.x or later. &lt;/p&gt;
+&lt;p&gt;Then in the dependency combo box, choose &lt;code&gt;Spring Integration&lt;/code&gt;. We&amp;rsquo;ll also need to add a Spring Integration-specific dependency. While this dependency isn&amp;rsquo;t discoverable on the Spring Initializr, it &lt;em&gt;is&lt;/em&gt; managed by Spring Boot so we can easily add it to our build manually. &lt;/p&gt;
+&lt;p&gt;Click &lt;code&gt;Generate&lt;/code&gt; and then open the project up in your favorite IDE. &lt;/p&gt;
+&lt;p&gt;Go to the &lt;code&gt;pom.xml&lt;/code&gt; file and add the following dependency:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.integration&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-integration-file&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;${spring-integration.version}&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let&amp;rsquo;s turn to the application itself. The implementation will be fairly straightforward. Let&amp;rsquo;s look at the pseudocode.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;When a file arrives in the &lt;code&gt;input&lt;/code&gt; directory (&lt;code&gt;$HOME/Desktop/in&lt;/code&gt;), a Spring Integration inbound adapter will notice its arrival and then forward it to a&amp;hellip;&lt;/li&gt;
+  &lt;li&gt;&amp;hellip;filter which will determine if the entry is a file (as opposed to a directory) and then send it to &amp;hellip;.&lt;/li&gt;
+  &lt;li&gt;&amp;hellip;router which will determine, given the extension of the file, whether to send it to a handler for &lt;code&gt;.csv&lt;/code&gt; files, &lt;code&gt;.xml&lt;/code&gt; files, or everything else.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;.csv&lt;/code&gt; and &lt;code&gt;.txt&lt;/code&gt; handlers will end up moving the files to appropriate directories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&amp;rsquo;re not going to specify a handler for the eventuality that the file is of some other type, but the possibilities are endless here. You could forward the errant file to a handler that sends an email, or writes something toa database, or publishes a message to an Apache Kafka broker, etc. The sky&amp;rsquo;s the limit here! &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll have &lt;em&gt;three&lt;/em&gt; flows. now I know that you just read those pseudocode bullets and probably emerged thinking that there would only be one flow, but I&amp;rsquo;ve decoupled the handler for &lt;code&gt;.csv&lt;/code&gt; files from the handler for &lt;code&gt;.txt&lt;/code&gt; files. The decoupling is useful because it means that other flows may originate files that then are routed to the &lt;code&gt;csv&lt;/code&gt; or &lt;code&gt;txt&lt;/code&gt; flows as downstream handlers. Decoupling supports a good clean architecture. It allows me to repurpose my flows by keeping them small and singly focused. It&amp;rsquo;s the same advice as applies to write functions. &lt;/p&gt;
+&lt;p&gt;We decouple flows through he judicious use of &lt;code&gt;MessageChannels&lt;/code&gt;. Channels are like name conduits - pipes - through which messages flow. &lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s our basic Spring Boot application, with just the imports, our &lt;code&gt;main()&lt;/code&gt; function, and not much else.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;package com.example.kotlinspringintegration&#xD;
+&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication&#xD;
+import org.springframework.boot.runApplication&#xD;
+import org.springframework.context.annotation.Bean&#xD;
+import org.springframework.context.annotation.Configuration&#xD;
+import org.springframework.integration.dsl.MessageChannels&#xD;
+import org.springframework.integration.dsl.integrationFlow&#xD;
+import org.springframework.integration.file.dsl.Files&#xD;
+import java.io.File&#xD;
+&#xD;
+@SpringBootApplication&#xD;
+class KotlinSpringIntegrationApplication&#xD;
+&#xD;
+fun main(args: Array&amp;lt;String&amp;gt;) {&#xD;
+    runApplication&amp;lt;KotlinSpringIntegrationApplication&amp;gt;(*args)&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From here, let&amp;rsquo;s define the message channels.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;@Configuration&#xD;
+class ChannelsConfiguration {&#xD;
+&#xD;
+    @Bean&#xD;
+    fun txt() = MessageChannels.direct().get()&#xD;
+&#xD;
+    @Bean&#xD;
+    fun csv() = MessageChannels.direct().get()&#xD;
+&#xD;
+    @Bean&#xD;
+    fun errors() = MessageChannels.direct().get()&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can inject the configuration class and then invoke the methods to dereference the individual channel. &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the main integration flow. The Spring Integration Java DSL has always been convenient, but it&amp;rsquo;s even more accessible from the Kotli language. In this configuration class, I define an &lt;code&gt;IntegrationFlow&lt;/code&gt; using the Kotlin &lt;code&gt;integrationFlow&lt;/code&gt; factory function. It in turn takes a lambda that acts as the context off of which I hang the various steps int the integration flow. I construct the &lt;code&gt;IntegrationFlow&lt;/code&gt; by pointing it to where new messages that initiate the flow will arrive. In this case, the messages arrive after consuming the messages from an inbound file adapter that monitors a directory (&lt;code&gt;$HOME/Desktop/in&lt;/code&gt;) every 500 milliseconds. The configured poller determines the schedule on which new messages are polled. Here too, the Spring Integration Kotlin DSL makes things easier. This is much cleaner (to my eyes at least) than the original Java configuration DSL. &lt;/p&gt;
+&lt;p&gt;As soon as the files arrive, they&amp;rsquo;re wrapped in a &lt;code&gt;Message&amp;lt;File&amp;gt;&lt;/code&gt; and forwarded to the &lt;code&gt;filter&amp;lt;File&amp;gt;&lt;/code&gt; extension function. note that here I don&amp;rsquo;t need to specify &lt;code&gt;File.class&lt;/code&gt; - Kotlin has pseudo reified generics - the type of the argument is captured in the generic invocation of the function itself. No need fr a type token. The &lt;code&gt;filter&lt;/code&gt; function expects a lambda that inspects the current message (available through the implicit parameter &lt;code&gt;it&lt;/code&gt;) and confirms its a file (and not a directory or something else). If it is, the flow continues to a router.&lt;/p&gt;
+&lt;p&gt;The router then inspects the message and determines which outbound &lt;code&gt;MessageChannel&lt;/code&gt; the resulting message should be forwarded. This router uses Kotlin&amp;rsquo;s nifty &lt;code&gt;when&lt;/code&gt; expression - kind of like a supercharged &lt;code&gt;switch&lt;/code&gt; statement in Java. (NB: there is a switch expression in Java that is very promising, but then how many of you are using that right now?). The &lt;code&gt;when&lt;/code&gt; expression produces a value. In Kotlin, the last expression of the function is the return value (you rarely need to specify &lt;code&gt;return&lt;/code&gt;). In this case, the last expression of the function is the result of the &lt;code&gt;when&lt;/code&gt; expression: a &lt;code&gt;MessageChannel&lt;/code&gt;. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin "&gt;@Configuration&#xD;
+class FileConfiguration(private val channels: ChannelsConfiguration) {&#xD;
+&#xD;
+    private val input = File(&amp;quot;${System.getenv(&amp;quot;HOME&amp;quot;)}/Desktop/in&amp;quot;)&#xD;
+    private val output = File(&amp;quot;${System.getenv(&amp;quot;HOME&amp;quot;)}/Desktop/out&amp;quot;)&#xD;
+    private val csv = File(output, &amp;quot;csv&amp;quot;)&#xD;
+    private val txt = File(output, &amp;quot;txt&amp;quot;)&#xD;
+&#xD;
+    @Bean&#xD;
+    fun filesFlow() = integrationFlow(&#xD;
+            Files.inboundAdapter(this.input).autoCreateDirectory(true),&#xD;
+            { poller { it.fixedDelay(500).maxMessagesPerPoll(1) } }&#xD;
+    ) {&#xD;
+&#xD;
+        filter&amp;lt;File&amp;gt; { it.isFile }&#xD;
+        route&amp;lt;File&amp;gt; {&#xD;
+            when (it.extension.toLowerCase()) {&#xD;
+                &amp;quot;csv&amp;quot; -&amp;gt; channels.csv()&#xD;
+                &amp;quot;txt&amp;quot; -&amp;gt; channels.txt()&#xD;
+                else -&amp;gt; channels.errors()&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At this point, this flow finishes. There&amp;rsquo;s nowhere to go for a message. We&amp;rsquo;ve run out of track for our train! We need to lay down two more flows. One is supporting files that end in &lt;code&gt;csv&lt;/code&gt; and another supporting file ending in &lt;code&gt;txt&lt;/code&gt;. Let&amp;rsquo;s look at that.&lt;/p&gt;
+&lt;p&gt;In the same configuration class, add two more integration flow bean definitions. &lt;/p&gt;
+&lt;p&gt;```kotlin&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean
+fun csvFlow() = integrationFlow(channels.csv()) {
+    handle(Files.outboundAdapter(csv).autoCreateDirectory(true))
+}
+
+@Bean
+fun txtFlow() = integrationFlow(channels.txt()) {
+    handle(Files.outboundAdapter(txt).autoCreateDirectory(true))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;````&lt;/p&gt;
+&lt;p&gt;This last example should look reasonably similar to what you&amp;rsquo;ve seen thus far except that the thing that starts the flow is not an inbound adapter, its any message that comes off of a message channel. The first flow, &lt;code&gt;csvFlow&lt;/code&gt;, kicks off when messages arrive from the &lt;code&gt;csv&lt;/code&gt; message channel. The same is true fo the second flow, &lt;code&gt;txtFlow&lt;/code&gt;. Both flows terminate rather abruptly, only doing one thing. They forward the message to an outbound adapter that, in turn, writes the file to some other directory. The outbound adapter is the mirror image of the inbound adapter; it takes a message from the Spring Integration flow and sends it to some sink in the real world (a file system). The inbound adapter takes values from the real world and turns them into Spring Integration messages. &lt;/p&gt;
+&lt;p&gt;At this point, we&amp;rsquo;ve got a working processing flow. I have sort of hand-waived away the question of what happens tot he message if it isn&amp;rsquo;t a &lt;code&gt;txt&lt;/code&gt; or a &lt;code&gt;csv&lt;/code&gt; file and ends up in the &lt;code&gt;errors&lt;/code&gt; channel? As I alluded earlier, the sky&amp;rsquo;s the limit here.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - April 7th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/07/this-week-in-spring-april-7th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-07:4025</id>
+    <updated>2020-04-07T08:50:18Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you doing? I&amp;rsquo;m doing all right, all things considered! I miss you all. &lt;/p&gt;
+&lt;p&gt;OK, so, first things first: we&amp;rsquo;re kicking off #TanzuTuesday today. Join us &lt;strong&gt;TODAY&lt;/strong&gt; at 1pm PST/PDT and I&amp;rsquo;ll introduce you to the wide world of &lt;a href="https://twitter.com/VMwareTanzu/status/1247268752112209923"&gt;Reactive Spring&lt;/a&gt;! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2020/04/03/a-bootiful-podcast-kubernetes-co-creator-joe-beda"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked to Kubernetes co-creator &lt;em&gt;Joe Beda&lt;/em&gt;&lt;/a&gt; - yes, &lt;em&gt;that&lt;/em&gt; &lt;a href="http://twitter.com/jbeda"&gt;Joe Beda&lt;/a&gt;! Do &lt;em&gt;not&lt;/em&gt; miss this!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued"&gt;Spring Data for Apache Solr Discontinued&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/06/getting-started-with-rsocket-spring-boot-channels"&gt;Getting Started With RSocket: Spring Boot Channels&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now"&gt;Spring Boot 2.3.0.M4 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/02/spring-security-5-3-1-5-2-3-5-1-9-5-0-15-4-2-15-released"&gt;Spring Security 5.3.1, 5.2.3, 5.1.9, 5.0.15, 4.2.15 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2020/04/01/spring-tips-manipulating-the-platform-with-the-spring-cloud-cloud-foundry-java-client-autoconfiguration"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at manipulating the Cloud Foundry PaaS with the Spring Cloud Cloud Foundry Java Client Autoconfiguration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Anyone interested in Spring Cloud Config with Microprofile? &lt;a href="https://github.com/spring-cloud/spring-cloud-config/issues/1591"&gt;Vote on this issue&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out this blog on &lt;a href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued"&gt;the future of Spring Data for Solr&lt;/a&gt;: it&amp;rsquo;s looking for maintenance by the community&lt;/li&gt;
+  &lt;li&gt;KSQL (which you can use with Apache Kafka) is now out of preview and ready for production! Learn about why they built it, the new web interface, and &lt;a href="https://t.co/Khy8LLMi9C"&gt;how Confluent Cloud KSQL synergistically integrates with other components of Confluent Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.marcobehler.com/guides/spring-security"&gt;Spring Security: Authentication and Authorization In-Depth&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Srinivas Vasu has a nice post on how to use JHipster &lt;a href="https://medium.com/@srinivasan.surprise/kloud-native-jhipster-ba09b2ffbf63"&gt;(which is powered by Spring Boot with KNative (powered by Kubernetes)) &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Have you seen &lt;a href="https://kube.academy/"&gt;the VMWare KubeAcademy&lt;/a&gt;-one of the easiest ways to learn Kubernetes.&lt;/li&gt;
+  &lt;li&gt;This doesn&amp;rsquo;t have to do with Spring, &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s been top of mind for me of late as I&amp;rsquo;ve been moving (personal) code to Github Actions: &lt;a href="https://blogs.vmware.com/opensource/2020/04/02/ci-tests-tools/"&gt;comparing GitHub Actions and CircleCI for Testing Pull Request Changes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn how to use the open-source Greenplum &lt;a href="https://t.co/II11pUR6jj"&gt;Database modernizes data warehouses&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data for Apache Solr Discontinued</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Christoph Strobl</name>
+    </author>
+    <id>tag:spring.io,2020-03-26:4012</id>
+    <updated>2020-04-07T07:10:20Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Data Community,&lt;/p&gt;
+&lt;p&gt;We want to share news with you about the Spring Data for Apache Solr module.&lt;br/&gt;After its initial rise as one for the first community-led Spring Data projects and its later inception as one of the core modules, community interest, feature requests, and bug reports have declined.&lt;/p&gt;
+&lt;p&gt;In our effort to balance time (based on popularity and usage data of the projects we have) the module has seen only occasional updates and fixes for the past few years. This is why we are seeking volunteers who are willing to help maintain the module, putting Spring Data for Apache Solr back into community mode.&lt;/p&gt;
+&lt;p&gt;The module will remain a part of the Spring Data release trains Neumann and Ockham. We will continue shipping required updates and fixes for the next twelve (plus) months.&lt;/p&gt;
+&lt;p&gt;In case we&amp;rsquo;re not able to find a new maintainer by next year, we will move the project into the attic.&lt;br/&gt;At this point, thanks to everyone who contributed to Spring Data for Apache Solr in the past and, in case you&amp;rsquo;re willing to take the lead, don&amp;rsquo;t hesitate to contact us via the usual channels.&lt;/p&gt;
+&lt;p&gt;Thank you!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Getting Started With RSocket: Spring Boot Channels</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/06/getting-started-with-rsocket-spring-boot-channels" />
@@ -1023,194 +1186,6 @@ class ConfiguredWebClientRunner {&#xD;
 &lt;p&gt;Spring Framework 5.2.5 includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.5.RELEASE"&gt;over 50 fixes and improvements&lt;/a&gt;. This release adds support for the recently released Java 14.&lt;/p&gt;
 &lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with Spring Boot &lt;code&gt;2.2.6&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.5.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.3.0.M3 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/23/spring-boot-for-apache-geode-pivotal-gemfire-1-3-0-m3-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2020-03-23:4005</id>
-    <updated>2020-03-23T22:03:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the Spring, Apache Geode &amp;amp; Pivotal GemFire communities, it is my pleasure to announce the release of &lt;em&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire&lt;/em&gt; (SBDG) &lt;code&gt;1.3.0.M3&lt;/code&gt;.  This release builds on Spring Boot &lt;code&gt;2.3.0.M3&lt;/code&gt; and is available in the Spring &lt;a href="https://repo.spring.io/milestone/org/springframework/geode/spring-geode-starter/1.3.0.M3/"&gt;Milestone&lt;/a&gt; Repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can also create a &lt;strong&gt;new&lt;/strong&gt; &lt;a href="https://start.spring.io/#!platformVersion=2.3.0.M3&amp;amp;dependencies=geode"&gt;&lt;em&gt;Spring for Apache Geode&lt;/em&gt; project&lt;/a&gt; with the &lt;code&gt;1.3.0.M3&lt;/code&gt; bits using &lt;em&gt;Spring Initializer&lt;/em&gt; at &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;What&amp;#8217;s New&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SBDG &lt;code&gt;1.3.0.M3&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.3.0.M3&lt;/code&gt;, which pulls in Spring Framework &lt;code&gt;5.2.4.RELEASE&lt;/code&gt;, Spring Data &lt;code&gt;Neumann-M4&lt;/code&gt;, Spring Session &lt;code&gt;Dragonfruit-M2&lt;/code&gt; with Spring Session for Apache Geode &amp;amp; Pivotal GemFire (SSDG) &lt;code&gt;2.3.0.RC1&lt;/code&gt; specifically, and Spring Test for Apache Geode &amp;amp; Pivotal GemFire (STDG) &lt;code&gt;0.0.13.RELEASE&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition, the following changes were made:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;New reference documentation &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.3.x/reference/html5/"&gt;Look-and-Feel&lt;/a&gt;.  Special thanks to &lt;a href="https://spring.io/team/rwinch"&gt;Rob Winch&lt;/a&gt; for helping out with this one!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Adds ability to run SBDG Samples (for now, just the &lt;em&gt;Getting Started&lt;/em&gt; Example) independently &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.3.x/reference/html5/guides/getting-started.html#spring-geode-samples-getting-started-run-app-locally"&gt;using Maven&lt;/a&gt; as well as Gradle.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Fixes &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/77"&gt;bug&lt;/a&gt; in auto-configuration when TLS is enabled in a cloud managed environment (e.g. PCP.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/1.3.0.M3/spring-geode/src/main/resources/changelog.txt#L7-L26"&gt;changelog&lt;/a&gt; for full details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Before SBDG &lt;code&gt;1.3&lt;/code&gt; development comes to a close (i.e. GA), we are planning to add support for the following:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;OAuth authentication of a Spring Boot, Apache Geode client app in a managed cloud environment (e.g. PCF or K8S); See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/74"&gt;Issue #74&lt;/a&gt; fo further details and progress.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Data loading into pre-existing cache &lt;code&gt;Regions&lt;/code&gt; similar to Spring Boot&amp;#8217;s support for &lt;code&gt;schema.sql&lt;/code&gt; and &lt;code&gt;data.sql&lt;/code&gt; resource files; See &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues/67"&gt;Issue #67&lt;/a&gt; for further details and progress.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, any feedback is welcomed and appreciated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stackoverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Spring Boot Request-Stream</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/23/getting-started-with-rsocket-spring-boot-request-stream" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-03-12:3996</id>
-    <updated>2020-03-23T16:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Time: about 15 minutes.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Previously in this series, you experimented with &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;request&lt;/a&gt;-&lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;response&lt;/a&gt; and &lt;a href="https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget"&gt;fire-and-forget&lt;/a&gt; messaging in Spring Boot with RSocket. This time you&amp;rsquo;ll try another of RSocket&amp;rsquo;s fresh new messaging models ? request-stream.&lt;/p&gt;
-&lt;p&gt;In this exercise, you&amp;rsquo;ll learn how to stream data using the conventional &lt;em&gt;&amp;lsquo;client-requests-a-server-stream&amp;rsquo;&lt;/em&gt; approach. &lt;/p&gt;
-&lt;p&gt;One thing that I haven&amp;rsquo;t mentioned until now is that RSocket lets you use its messaging models in either direction. Therefore, if you wanted to use the less common &lt;em&gt;&amp;lsquo;server-requests-a-client-stream&amp;rsquo;&lt;/em&gt; model, that&amp;rsquo;s no problem for RSocket. Plus, there are lots of non-java &lt;a href="https://rsocket.io/docs/Implementations"&gt;RSocket implementations&lt;/a&gt; to choose from, including Go, Javascript, and .Net?ideal if your architecture includes platforms where Java isn&amp;rsquo;t perhaps the best fit.&lt;/p&gt;
-&lt;p&gt;With that cleared up, follow the steps below to add the streaming data capability to your existing RSocket client and server code from previous posts.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If you didn&amp;rsquo;t read the previous posts on &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;server-side&lt;/a&gt;, &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;client-side&lt;/a&gt; request-response messaging, or &lt;a href="..."&gt;fire-and-forget&lt;/a&gt; now&amp;rsquo;s your chance! The code sample is &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-1-add-the-server-side-stream-method" class="anchor" name="step-1-add-the-server-side-stream-method"&gt;&lt;/a&gt;Step 1: Add The Server-Side Stream Method&lt;/h4&gt;
-&lt;p&gt;Working once more in your server-side &lt;code&gt;RSocketController&lt;/code&gt; class, add a new method called &lt;code&gt;.stream()&lt;/code&gt; with the signature ? &amp;lsquo;accept-an-object, return-a-flux&amp;rsquo; ? which RSocket expects for this messaging model. Annotate this new method with the &lt;code&gt;@MessageMapping&lt;/code&gt; annotation, specifying a suitable mapping name ? such as &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt;. The sample code for the method is below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @MessageMapping(&amp;quot;stream&amp;quot;)&#xD;
-    Flux&amp;lt;Message&amp;gt; stream(Message request) {&#xD;
-        log.info(&amp;quot;Received stream request: {}&amp;quot;, request);&#xD;
-        return Flux&#xD;
-                .interval(Duration.ofSeconds(1))&#xD;
-                .map(index -&amp;gt; new Message(SERVER, STREAM, index))&#xD;
-                .log();&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; is in the &lt;code&gt;rsocket-server&lt;/code&gt; folder in the &lt;code&gt;io.pivotal.rsocketserver&lt;/code&gt; package.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The &lt;code&gt;.stream()&lt;/code&gt; method&amp;rsquo;s sole parameter, &lt;code&gt;Message&lt;/code&gt;, comes from the &lt;code&gt;io.pivotal.rsocketserver.data&lt;/code&gt; package discussed previously. This message forms the basis of the client&amp;rsquo;s request for a data stream. The code above logs the client&amp;rsquo;s request to the console as soon as it&amp;rsquo;s received.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Flux&lt;/code&gt; object returned by the method is part of &lt;a href="https://projectreactor.io/"&gt;Project Reactor&lt;/a&gt; and is also used in the &lt;a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web-reactive.html#webflux-why-reactive"&gt;reactive support&lt;/a&gt; of the Spring Framework.&lt;/p&gt;
-&lt;p&gt;RSocket uses &lt;code&gt;Flux&lt;/code&gt; because it dramatically simplifies the handling of reactive data streams. Flux is a &amp;ldquo;Publisher&amp;rdquo; of data. It describes streams of 0 to N elements and offers a great many operators for processing streaming data ? similar to &lt;a href="https://www.oracle.com/technical-resources/articles/java/ma14-java-se-8-streams.html"&gt;Java 8&amp;rsquo;s streaming APIs&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In the code above, a new &lt;code&gt;Long&lt;/code&gt; element gets added to the Flux every second ? set via the &lt;code&gt;.interval()&lt;/code&gt; call ? essentially providing a constant stream of data. The &lt;code&gt;.map()&lt;/code&gt; function creates a new message object using the &lt;code&gt;Long&lt;/code&gt; as the index value, and on the last line, the call to the &lt;code&gt;.log()&lt;/code&gt; method prints all elements flowing through the Flux to the console, including errors etc.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-2-add-the-client-side-stream-method" class="anchor" name="step-2-add-the-client-side-stream-method"&gt;&lt;/a&gt;Step 2: Add The Client-Side Stream Method&lt;/h4&gt;
-&lt;p&gt;In the client-side project&amp;rsquo;s &lt;code&gt;RSocketShellClient&lt;/code&gt; class, first, add a global reference to a &lt;code&gt;Disposable&lt;/code&gt; object like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;private static Disposable disposable;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The &lt;code&gt;RSocketShellClient&lt;/code&gt; is in the &lt;code&gt;io.pivotal.rsocketclient&lt;/code&gt; package in the &lt;code&gt;rsocket-client&lt;/code&gt; folder.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This &lt;code&gt;Disposable&lt;/code&gt; object allows you to control the data stream once it starts.&lt;/p&gt;
-&lt;p&gt;Next, add a &lt;code&gt;.stream()&lt;/code&gt; method to your &lt;code&gt;RSocketShellClient&lt;/code&gt;. Annotate this method with the &lt;code&gt;@ShellMethod&lt;/code&gt; annotation. The sample code for this is below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Send one request. Many responses (stream) will be printed.&amp;quot;)&#xD;
-    public void stream() {&#xD;
-        log.info(&amp;quot;\nRequest-Stream. Sending one request. Waiting for unlimited responses (Stop process to quit)...&amp;quot;);&#xD;
-        this.disposable = this.rsocketRequester&#xD;
-                .route(&amp;quot;stream&amp;quot;)&#xD;
-                .data(new Message(CLIENT, STREAM))&#xD;
-                .retrieveFlux(Message.class)&#xD;
-                .subscribe(er -&amp;gt; log.info(&amp;quot;Response received: {}&amp;quot;, er));&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the code above, the &lt;code&gt;rsocketRequester&lt;/code&gt; is told to route requests to the server&amp;rsquo;s &lt;code&gt;.stream()&lt;/code&gt; method by specifying &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt; as the &lt;code&gt;.route()&lt;/code&gt;. A new message object provides the &lt;code&gt;.data()&lt;/code&gt; for your request. Because you want the server to return a stream, you used the &lt;code&gt;.requestFlux()&lt;/code&gt; method on the &lt;code&gt;rsocketRequester&lt;/code&gt;, specifying that the &lt;code&gt;Flux&lt;/code&gt; returned contains elements of type &lt;code&gt;Message&lt;/code&gt;. Finally, you set a log function to act as your subscriber to the stream in the &lt;code&gt;.subscribe()&lt;/code&gt; method. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Notice how the &lt;code&gt;Disposable&lt;/code&gt; produced by the &lt;code&gt;rsocketRequester&lt;/code&gt; is being kept. You&amp;rsquo;ll need it to stop the stream.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-3-add-the-client-side-stop-stream-method" class="anchor" name="step-3-add-the-client-side-stop-stream-method"&gt;&lt;/a&gt;Step 3: Add The Client Side Stop Stream Method&lt;/h4&gt;
-&lt;p&gt;By keeping a reference to the stream, you can dispose of it when you want the streaming to stop. To add your stream canceling feature to your &lt;code&gt;RSocketShellClient&lt;/code&gt;, add a new method called &lt;code&gt;.s()&lt;/code&gt; and annotate it with &lt;code&gt;@ShellMethod&lt;/code&gt; as follows: &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Stop streaming messages from the server.&amp;quot;)&#xD;
-    public void s(){&#xD;
-        if(null != disposable){&#xD;
-            disposable.dispose();&#xD;
-        }&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Inside the method, calling &lt;code&gt;disposable.dispose()&lt;/code&gt; cancels the stream. With this method in place, to stop the stream, type &lt;code&gt;s&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt and then tap &lt;code&gt;Enter&lt;/code&gt;. The stream will then stop. Your coding tasks are now complete. Next, test the client and server are working together.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-4-build-and-run-the-rsocket-server" class="anchor" name="step-4-build-and-run-the-rsocket-server"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Server&lt;/h4&gt;
-&lt;p&gt;Open a terminal window and move to the &lt;code&gt;rsocket-server&lt;/code&gt; directory. Run the server using Maven and Spring Boot plugin as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The server starts up on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-5-build-and-run-the-rsocket-client" class="anchor" name="step-5-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 5: Build And Run The RSocket Client&lt;/h4&gt;
-&lt;p&gt;Open a &lt;em&gt;second&lt;/em&gt; terminal window and move to the &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the RSocket client application as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once booted, Spring Shell presents you with a new prompt:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You request a stream from the server by typing &lt;code&gt;stream&lt;/code&gt; at the prompt. The client sends one &lt;code&gt;Message&lt;/code&gt; as its request for a stream. Each &lt;code&gt;Message&lt;/code&gt; in the steam gets printed both as the server sends it, and as the client receives it. The console log on the client looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint none"&gt;shell:&amp;gt;stream&#xD;
-Request-Stream. Sending one request. Waiting for responses (Type &amp;#39;s&amp;#39; to stop)...&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=0, created=1583923683) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=1, created=1583923684) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=2, created=1583923685) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=3, created=1583923686) (Type &amp;#39;s&amp;#39; to stop.)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To stop the stream, type &lt;code&gt;s&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt and then tap &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-5-tidy-up" class="anchor" name="step-5-tidy-up"&gt;&lt;/a&gt;Step 5: Tidy Up&lt;/h4&gt;
-&lt;p&gt;You can stop the &lt;code&gt;rsocket-client&lt;/code&gt; by typing &lt;code&gt;exit&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt like this.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;exit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; process by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window.&lt;/p&gt;&lt;h4&gt;&lt;a href="#how-it-works" class="anchor" name="how-it-works"&gt;&lt;/a&gt;How It Works&lt;/h4&gt;
-&lt;p&gt;The &lt;code&gt;.stream()&lt;/code&gt; method in the &lt;code&gt;RSocketShellClient&lt;/code&gt; uses the &lt;code&gt;RSocketRequester&lt;/code&gt; to send a single request message to the server. This request initiates a stream of data from the server to the client. The client then logs every message it receives to the console.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; on the server-side examines the request message&amp;rsquo;s metadata for the &lt;code&gt;route&lt;/code&gt;. The route was set to &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt; for this message, so the server passes the message to the corresponding &lt;code&gt;.stream(Message request)&lt;/code&gt; method. The server then proceeds to send a stream of messages to the client every second until the client asks it to stop.&lt;/p&gt;
-&lt;p&gt;The client can stop the stream at any time. In the &lt;code&gt;.s()&lt;/code&gt; method, this is done by calling &lt;code&gt;.dispose()&lt;/code&gt; on the &lt;code&gt;Disposable&lt;/code&gt; returned by the original stream subscription.&lt;/p&gt;&lt;h4&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h4&gt;
-&lt;p&gt;In this post, you learned how to build a request-stream capability with RSocket in Spring Boot. In the next post, we&amp;rsquo;ll add channel messaging. See you next time!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.5.0.M1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/20/spring-cloud-data-flow-2-5-0-m1-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ilayaperumal Gopinathan</name>
-    </author>
-    <id>tag:spring.io,2020-03-20:4004</id>
-    <updated>2020-03-20T17:39:56Z</updated>
-    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the first milestone release of 2.5.0.M1.&lt;/p&gt;
-&lt;p&gt;The first milestone release of 2.5.0 consists of performance improvements addressed at application status retrieval for streams in Cloud Foundry. This also involves revamping the runtime application view page along with better pagination for streams at the SCDF dashboard. You can see more information on these improvements on the recently released SCDF &lt;a href="https://spring.io/blog/2020/03/11/spring-cloud-data-flow-2-4-2-ga-released"&gt;2.4.2 GA&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This milestone release also consists of some important bug fixes mentioned in &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.5.0.M1"&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Please note that Spring Cloud Data Flow 2.5.x is compatible only with the Spring Cloud Skipper 2.3.2.RELEASE and above. When upgrading Spring Cloud Data Flow 2.5.0.M1, Spring Cloud Skipper also needs to be updated to 2.3.2.RELEASE and above. The current milestone on Spring Cloud Skipper release is 2.4.0.M1.&lt;/p&gt;
-&lt;p&gt;What¡¯s coming next:&lt;/p&gt;
-&lt;p&gt;We are working on a feature to support application &lt;code&gt;metadata&lt;/code&gt; as part of the &lt;code&gt;Docker&lt;/code&gt; images. Currently, we support application whitelisting only via maven artifact. With this new feature, one can configure the application metadata when creating the docker image. &lt;/p&gt;
-&lt;p&gt;Support for &lt;code&gt;Azure AD&lt;/code&gt; as an identity provider is in the works.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="CodingStudySamsungProblem.새로운게임2.Horse"/>
     <fullyQualifiedTypeName name="com.sun.imageio.plugins.common.InputStreamAdapter"/>
     <fullyQualifiedTypeName name="CodingStudy.다익스트라짜보기.Edge"/>
     <fullyQualifiedTypeName name="java.lang.Package"/>
@@ -30,29 +29,23 @@
     <fullyQualifiedTypeName name="CodingStudy.말이되고픈원숭이.Monkey"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
-    <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="CodingStudy.Gaaaaaaaaaarden.CultureMedium"/>
     <fullyQualifiedTypeName name="CodingStudy.스티커붙이기.Sticker"/>
     <fullyQualifiedTypeName name="자료구조연습.개구리공주"/>
     <fullyQualifiedTypeName name="java.awt.Point"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.lir.alloc.trace.lsra.TraceLinearScanLifetimeAnalysisPhase.Analyser"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="CodingTest.maxPair.pairInfo"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="CodingTest.maxPair.PairInfo"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.ALOAD"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="CodingStudyHW.별자리만들기.Star"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -60,4 +53,11 @@
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="CodingStudyHW.별자리만들기.EdgeBetweenStar"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.virtual_parse_stack"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

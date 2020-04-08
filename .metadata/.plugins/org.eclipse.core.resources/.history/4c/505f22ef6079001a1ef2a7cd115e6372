@@ -1,0 +1,11 @@
+package CodingStudyHW;
+/*
+ * Dijkstra Algorithm
+ * 
+ */
+public class 최소비용구하기 {
+	static int N; //1<=N<=1000
+	public static void main(String[] args) {
+
+	}
+}
