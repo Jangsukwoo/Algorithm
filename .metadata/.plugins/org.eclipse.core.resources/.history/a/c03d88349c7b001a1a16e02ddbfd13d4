@@ -1,0 +1,26 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class K번째수 {
+	static ArrayList<Integer> numberlist = new ArrayList<Integer>();
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st
+	public static void main(String[] args) {
+		
+		int N,K;
+		N = sc.nextInt();
+		K = sc.nextInt();
+		for(int i=0;i<N;i++) {
+			int number = sc.nextInt();
+			numberlist.add(number);
+		}
+		Collections.sort(numberlist);
+		System.out.println(numberlist.get(K-1));
+	}
+}

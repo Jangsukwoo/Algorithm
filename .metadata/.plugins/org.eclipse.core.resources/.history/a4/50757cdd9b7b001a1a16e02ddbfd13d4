@@ -1,0 +1,10 @@
+package BAEKJOON;
+
+import java.util.ArrayList;
+
+public class K번째수 {
+	static ArrayList<Integer> numberlist = new ArrayList<Integer>();
+	public static void main(String[] args) {
+
+	}
+}
