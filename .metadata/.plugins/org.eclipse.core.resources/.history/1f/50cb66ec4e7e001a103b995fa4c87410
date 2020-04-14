@@ -1,0 +1,60 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class 알고스팟 {
+	static int C,R;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static char[][] maze;
+	static int[] dr = {0,1};
+	static int[] dc = {1,0};
+	static int min = Integer.MAX_VALUE;
+	public static void main(String[] args) throws IOException {
+		setData();
+		bfs();
+	}
+
+	private static void bfs() {
+		Queue<int[]> q = new LinkedList<int[]>();
+		q.add(new int[] {0,0,0});
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				int[] currentInfo = q.poll();
+				int cr = currentInfo[0];
+				int cc = currentInfo[1];
+				int use = currentInfo[2];
+				if(cr==(R-1) && cc==(C-1)) {
+					min = Math.min(min,use);
+				}
+				for(int dir=0;dir<2;dir++){
+					int nr = cr+dr[dir];
+					int nc = cc+dc[dir];
+					if(rangeCheck(nr,nc)) {
+						
+					}
+				}
+			}
+		}
+	}
+
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr<R && nc<C) return true;
+		return false;
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		C = Integer.parseInt(st.nextToken());
+		R = Integer.parseInt(st.nextToken());
+		maze = new char[R][C];
+		for(int i=0;i<R;i++) maze[R] = br.readLine().toCharArray();
+	}
+}

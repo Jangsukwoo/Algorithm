@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CodingStudy.징검다리달리기2&apos; to &apos;알고스팟&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;CodingStudy.징검다리달리기2&apos;&#x0D;&#x0A;- Renamed element: &apos;CodingStudy.알고스팟&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;징검다리달리기2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;CodingStudy{징검다리달리기2.java[징검다리달리기2" matchStrategy="1" name="알고스팟" qualified="false" references="true" similarDeclarations="false" stamp="1586868222579" textual="false" version="1.0"/>
+</session>
