@@ -1,0 +1,19 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+/*
+ * 11:22 시작
+ */
+public class 통나무옮기기 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static boolean[][][] visitR;
+	static boolean[][][] visitC;
+	static class Log{
+		
+	}
+	public static void main(String[] args) {
+
+	}
+}
