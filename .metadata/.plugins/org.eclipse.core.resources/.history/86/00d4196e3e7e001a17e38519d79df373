@@ -96,7 +96,7 @@ public class 소수경로 {
 		q.add(original);
 		visit[original] = true;
 	}
-	private static void makePrimeSet() { //에라토스테네스의 체 
+	private static void makePrimeSet() {
 		boolean[] visit = new boolean[10000];
 		for(int i=2;i<=9999;i++) {
 			if(i>2 && i%2==0) continue; //짝수는 어차피 소수가 아니다.
