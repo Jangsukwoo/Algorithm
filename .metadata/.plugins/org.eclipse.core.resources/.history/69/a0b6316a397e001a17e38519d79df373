@@ -1,0 +1,12 @@
+package CodingStudy;
+/*
+ * 19:00 시작
+ * 비밀번호는 4자리 소수이고
+ * 1000 이상 10000미만의 소수들임
+ * 두 소수 사이의 변환에 필요한 최소 회수 
+ */
+public class 소수경로 {
+	public static void main(String[] args) {
+
+	}
+}
