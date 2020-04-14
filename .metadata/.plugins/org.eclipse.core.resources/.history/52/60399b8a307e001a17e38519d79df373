@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 나이순정렬 {
-	public static void main(String[] args) {
-
-	}
-}
