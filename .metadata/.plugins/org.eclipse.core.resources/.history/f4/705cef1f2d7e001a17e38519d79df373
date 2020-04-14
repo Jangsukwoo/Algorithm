@@ -1,0 +1,13 @@
+package BAEKJOON;
+/*
+ * N 받고 (<=100)
+ * 문자열에서 숫자 골라서 
+ * 숫자를 오름차순으로 출력
+ */
+public class 수학숙제 {
+	static int N;
+	
+	public static void main(String[] args) {
+		
+	}
+}

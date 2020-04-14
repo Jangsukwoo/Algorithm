@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 public class K번째수 {
 	static ArrayList<Integer> numberlist = new ArrayList<Integer>();
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
 	public static void main(String[] args) throws IOException {
 		String read = br.readLine();
 		int N,K;

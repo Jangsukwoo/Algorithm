@@ -1,0 +1,36 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+/*
+ * N 받고 (<=100)
+ * 문자열에서 숫자 골라서 
+ * 숫자를 비내림차순
+ */
+public class 수학숙제 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static ArrayList<BigInteger> numberlist = new ArrayList<BigInteger>();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		//입력
+		setData();
+		//로직
+		//출력
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		for(int i=0;i<N;i++){
+			String readline = br.readLine();
+			String tempNumber;
+		}
+	}
+
+}
