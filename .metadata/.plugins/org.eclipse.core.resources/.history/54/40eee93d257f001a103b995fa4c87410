@@ -1,0 +1,12 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class 국영수 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int N;
+	public static void main(String[] args) {
+		
+	}
+}

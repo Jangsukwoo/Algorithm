@@ -5,7 +5,86 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-15T00:20:26Z</updated>
+  <updated>2020-04-15T12:09:05Z</updated>
+  <entry>
+    <title>Announcing the Spring Authorization Server</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2020-03-25:4010</id>
+    <updated>2020-04-15T12:09:05Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I am pleased to announce the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;Spring Authorization Server&lt;/a&gt; project. It is a community-driven project led by the Spring Security team and is focused on delivering &lt;a href="https://tools.ietf.org/html/rfc6749#section-1.1"&gt;Authorization Server&lt;/a&gt; support to the Spring community.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="a-foundation-for-success"&gt;&lt;a class="anchor" href="#a-foundation-for-success"&gt;&lt;/a&gt;A Foundation for Success&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The story of how we got here is long, but the key takeaway is short and sweet: Spring would not be what it is without our amazing community.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Almost a decade ago, we brought in a community-driven, open-source project, &lt;a href="https://github.com/spring-projects/spring-security-oauth/"&gt;Spring Security OAuth&lt;/a&gt;, and made it part of the Spring portfolio of projects. Since its inception, it has evolved into a mature project that supports a large portion of the OAuth specification, including resource servers, clients, login, and the authorization server. It is no wonder that it has become the basis for &lt;a href="https://github.com/cloudfoundry/uaa"&gt;UAA&lt;/a&gt;, which, among other things, acts as the identity management service for all &lt;a href="https://www.cloudfoundry.org/"&gt;Cloud Foundry&lt;/a&gt; installations. The Spring Security OAuth project has become a model project and is a testament to what our wonderful community can accomplish.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="building-on-community-success"&gt;&lt;a class="anchor" href="#building-on-community-success"&gt;&lt;/a&gt;Building on Community Success&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since the project¡¯s inception, the OAuth world has evolved significantly. For that reason, we decided to build on our success as a community and
+&lt;a href="https://spring.io/blog/2018/01/30/next-generation-oauth-2-0-support-with-spring-security"&gt;rewrite Spring Security OAuth&lt;/a&gt; to better align Spring¡¯s OAuth story, simplify the code base, and make Spring¡¯s OAuth support more nimble.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First, the original OAuth support was done very early on and could not have anticipated all the different ways in which it would need to be used. This drove many Spring projects to provide their own OAuth support. By performing a rewrite, we were able to address the needs of the entire Spring portfolio and provide a single cohesive OAuth library.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Second, when the OAuth project was originally written, it included support for both OAuth 1.0 and OAuth 2.0. Since then, OAuth 2.0 has officially made &lt;a href="https://tools.ietf.org/html/rfc6749"&gt;OAuth 1.0 obsolete&lt;/a&gt;. For that reason, the new support was able to focus solely on OAuth 2.0, which has simplified the code significantly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Third, the original project provided all of its own library support. Now, with many libraries to choose from, we were able to fold it into Spring Security proper by providing an abstraction around an existing library named Nimbus. By building on top of Nimbus, we were able to move more quickly and add more features, such as better support for JWT claims, OIDC, reactive programming, and so much more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It¡¯s impressive how the community has continued to build on its past success.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="learning-from-our-community"&gt;&lt;a class="anchor" href="#learning-from-our-community"&gt;&lt;/a&gt;Learning from Our Community&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Obviously, rewriting Spring Security¡¯s OAuth support is a monumental effort. To begin, the team decided to split up the work into the client, the resource server, and the authorization server. As we progressed with the client and the resource server, we became more and more convinced that we shouldn¡¯t provide authorization server support.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since the Spring Security OAuth project was created, the number of authorization server choices has grown significantly. Additionally, we did not feel like creating an authorization server was a common scenario. Nor did we feel like it was appropriate to provide authorization support within a framework with no library support. After careful consideration, the Spring Security team decided that we would &lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update"&gt;not formally support creating authorization servers&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since our blog post, the community has spoken and we listened. From feedback on the blog, chatter in Gitter, and comments in GitHub, we were flooded with a consistent message: The Spring ecosystem needs support for an authorization server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="the-plan-going-forward"&gt;&lt;a class="anchor" href="#the-plan-going-forward"&gt;&lt;/a&gt;The Plan Going Forward&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Until this moment, &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;Spring Authorization Server&lt;/a&gt; was just an idea. Now, we would like to formally introduce Spring Authorization Server as a community-driven project led by the Spring Security team.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The project will start in Spring&amp;#8217;s experimental projects as an independent project so that it can evolve more rapidly. With your help, this project will grow in the same way that the original Spring Security OAuth project did.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="getting-involved"&gt;&lt;a class="anchor" href="#getting-involved"&gt;&lt;/a&gt;Getting Involved&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We would love to have you join us on this journey. If you would like to get involved, please read through the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/blob/master/CONTRIBUTING.adoc"&gt;CONTRIBUTING&lt;/a&gt; documentation. We cannot wait to hear from you, and, as always, thank you for being a part of the Spring community!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - April 14th, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/15/this-week-in-spring-april-14th-2020" />
@@ -822,10 +901,13 @@ class ExampleIntegrationTests {&#xD;
     <id>tag:spring.io,2020-03-19:4001</id>
     <updated>2020-03-25T15:30:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness Probes support.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; this blog post has been updated for changes released in Spring Boot 2.3.0.RC1&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;With our 2.2.0 release, Spring Boot shipped with &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#health-groups"&gt;the Health Groups support&lt;/a&gt;, allowing developers to select a subset of health indicators and group them under a single, correlated, health status.&lt;/p&gt;
+&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness probes support.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With our 2.2.0 release, Spring Boot shipped with &lt;a href="https://docs.spring.io/spring-boot/docs/2.2.x/reference/html/production-ready-features.html#health-groups"&gt;the Health Groups support&lt;/a&gt;, allowing developers to select a subset of health indicators and group them under a single, correlated, health status.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Even with this new feature, we¡¯ve found that we could provide more to the Spring community, with more opinions and guidance when it comes to Kubernetes.&lt;/p&gt;
@@ -848,12 +930,12 @@ class ExampleIntegrationTests {&#xD;
 &lt;h2 id="promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;a class="anchor" href="#promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;/a&gt;Promoting Liveness and Readiness as core Spring Boot concepts&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;These Liveness and Readiness concepts are not only applicable to Kubernetes and they are generally useful, regardless of the deployment platform. We¡¯re introducing &lt;code&gt;LivenessState&lt;/code&gt; and &lt;code&gt;ReadinessState&lt;/code&gt;, which are immutable representations of those concepts. You can get them at any time from the &lt;code&gt;ApplicationAvailabilityProvider&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;These Liveness and Readiness concepts are not only applicable to Kubernetes and they are generally useful, regardless of the deployment platform. We¡¯re introducing &lt;code&gt;LivenessState&lt;/code&gt; and &lt;code&gt;ReadinessState&lt;/code&gt;, which are immutable representations of those concepts. You can get them at any time from the &lt;code&gt;ApplicationAvailability&lt;/code&gt;:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
 &lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;// Available as a component in the application context
-ApplicationAvailabilityProvider availabilityProvider;
+ApplicationAvailability availability;
 
 LivenessState livenessState = availabilityProvider.getLivenessState();
 ReadinessState readinessState = availabilityProvider.getReadinessState()&lt;/code&gt;&lt;/pre&gt;
@@ -884,7 +966,7 @@ public class LocalCacheVerifier {
             //...
         }
         catch (CacheCompletelyBroken ex) {
-            this.eventPublisher.publishEvent(LivenessStateChangedEvent.broken(ex));
+            AvailabilityChangeEvent.publish(this.eventPublisher, LivenessState.BROKEN);
         }
     }
 
@@ -893,7 +975,7 @@ public class LocalCacheVerifier {
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Components can also listen for those events with &lt;code&gt;@EventListener&lt;/code&gt; (or by implementing &lt;code&gt;ApplicationListener&lt;/code&gt;).
-Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/spring-boot-features.html#boot-features-application-availability-state"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
+Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-application-availability-managing"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This support ships with the &lt;code&gt;spring-boot&lt;/code&gt; module directly and is activated for all Spring Boot applications; this makes it available for all types of applications (web, batch, etc) and allows you to implement Probes that aren¡¯t necessarily tied to HTTP.&lt;/p&gt;
@@ -904,10 +986,10 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference
 &lt;h2 id="exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;a class="anchor" href="#exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;/a&gt;Exposing Kubernetes Probes with Spring Boot Actuator&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Actuator will gather the "Liveness" and "Readiness" information from the &lt;code&gt;ApplicationAvailabilityProvider&lt;/code&gt; and use that information in dedicated Health Indicators: &lt;code&gt;LivenessProbeHealthIndicator&lt;/code&gt; and &lt;code&gt;ReadinessProbeHealthIndicator&lt;/code&gt;. These indicators will be shown on the global health endpoint (&lt;code&gt;"/actuator/health"&lt;/code&gt;). They will also be exposed as separate HTTP Probes using Health Groups: &lt;code&gt;"/actuator/health/liveness"&lt;/code&gt; and &lt;code&gt;"/actuator/health/readiness"&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Actuator will gather the "Liveness" and "Readiness" information from the &lt;code&gt;ApplicationAvailability&lt;/code&gt; and use that information in dedicated Health Indicators: &lt;code&gt;LivenessStateHealthIndicator&lt;/code&gt; and &lt;code&gt;ReadinessStateHealthIndicator&lt;/code&gt;. These indicators will be shown on the global health endpoint (&lt;code&gt;"/actuator/health"&lt;/code&gt;). They will also be exposed as separate HTTP Probes using Health Groups: &lt;code&gt;"/actuator/health/liveness"&lt;/code&gt; and &lt;code&gt;"/actuator/health/readiness"&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;An application running on Kubernetes will show the following health report:&lt;/p&gt;
@@ -990,52 +1072,21 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="sect1"&gt;
-&lt;h2 id="available-in-spring-boot-2-3-0-m4"&gt;&lt;a class="anchor" href="#available-in-spring-boot-2-3-0-m4"&gt;&lt;/a&gt;Available in Spring Boot 2.3.0.M4&lt;/h2&gt;
+&lt;h2 id="available-in-spring-boot-2-3-0-rc1"&gt;&lt;a class="anchor" href="#available-in-spring-boot-2-3-0-rc1"&gt;&lt;/a&gt;Available in Spring Boot 2.3.0.RC1&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;This new feature will be available with &lt;a href="https://github.com/spring-projects/spring-boot/milestone/166"&gt;our upcoming 2.3 milestone&lt;/a&gt;;  and we can¡¯t wait to hear from you!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data Moore SR6 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/25/spring-data-moore-sr6-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-03-25:4009</id>
-    <updated>2020-03-25T10:57:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I&amp;rsquo;m pleased to announce the availability of the Spring Data &lt;code&gt;Moore SR6&lt;/code&gt; service release. This release ships with dependency upgrades and bug fixes in preparation for the upcoming Spring Boot &lt;code&gt;2.2.6.RELEASE&lt;/code&gt; release.&lt;/p&gt;
-&lt;p&gt;This release ships with &lt;a href="https://jira.spring.io/issues/?filter=16741"&gt;46 tickets fixed&lt;/a&gt; and is a recommended upgrade. Finally, here are links to the reference documentation, changelogs, and artifacts of the individual project releases:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 1.1.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.1.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.1.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.1.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Gemfire 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 3.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 3.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
