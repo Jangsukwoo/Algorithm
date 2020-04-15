@@ -5,7 +5,45 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-10T02:31:39Z</updated>
+  <updated>2020-04-15T00:20:26Z</updated>
+  <entry>
+    <title>This Week in Spring - April 14th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/15/this-week-in-spring-april-14th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-15:4029</id>
+    <updated>2020-04-15T00:20:26Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! It&amp;rsquo;s been a crazy week so let&amp;rsquo;s delay not even one second longer! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2020/04/10/a-bootiful-podcast-microsoft-s-kushagra-thapar-on-spring-data-cosmosdb"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked with Microsoft¡¯s Kushagra Thapar on Spring Data Cosmosdb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Have you seen the new &lt;a href="https://spring.io/blog/2020/04/09/spring-graal-native-0-6-0-released"&gt;Spring Graal Native 0.6.0 &lt;/a&gt; support?&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2020/04/07/spring-tips-the-spring-integration-kotlin-dsl"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I looked at the Spring Integration Kotlin DSL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Want help on effectively pair programming remotely? &lt;a href="https://twitter.com/VMwareTanzu/status/1250168241147858947"&gt;Our experts are here to help&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/RabbitMQ/status/1250099189297688581"&gt;This Month in RabbitMQ went out&lt;/a&gt; - don&amp;rsquo;t miss these roundups!&lt;/li&gt;
+  &lt;li&gt;A nice post looking at &lt;a href="https://twitter.com/cloudfoundry/status/1250095834852544513"&gt;when to Use Eirini, Quarks or KubeCF for Cloud Foundry and Kubernetes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/04/14/apache-geode-a-quick-history/"&gt;Apache Geode: A Quick History&lt;/a&gt;. Apache Geode, the open source project that underpins the Gemfire in-memory data-grid, has had a long and storied road to where it is now. You can use it easily with Spring Boot and the Spring Data for Apache Geode project - I did a Spring Tips video on the &lt;a href="https://spring.io/blog/2019/02/13/spring-tips-apache-geode"&gt;topic a little while ago&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;SpringLive, our free virtual event, featured speakers from VMware, Microsoft, Confluent, Okta, Google, and more now has sessions that you can &lt;a href="https://t.co/mMPBgs3uVR"&gt; watch online &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;We have exciting updates for application-level abstractions, build processes, and container-level abstraction. &lt;a href="https://t.co/TUf7KnwlSI"&gt;See what they are here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Curious about Spring Boot? What about Kubernetes? This Thursday (two days from now!), Spring Cloud team member Ryan Baxter will &lt;a href="https://twitter.com/springcloud/status/1249795822755119104"&gt;cover the basics on both&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;From &lt;a href="https://t.co/WtoHn4Nn46"&gt;&lt;em&gt;Forbes&lt;/em&gt;&lt;/a&gt; magazine: top developers agree: Java 14 makes code super-expressive. I did a Spring Tips on some of the features &lt;a href="https://spring.io/blog/2020/03/11/spring-tips-java-14-or-can-your-java-do-this"&gt;of Java 14 and their use with Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I hope you&amp;rsquo;ll join me and tons of other JVM ecosystem folks tomorrow for &lt;em&gt;AllTheTalks&lt;/em&gt;, &lt;a href="http://allthetalks.org"&gt;an online conference for you to watch while you wait for the plague to pass&lt;/a&gt;. The show is &lt;em&gt;tomorrow&lt;/em&gt;, Wednesday the 15th, 2020.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://mp.weixin.qq.com/s/lmhFt9MhtNSps1HUNmuV5w"&gt;I liked this Chinese-language article introducing RabbitMQ &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Discover how RabbitMQ encourages opensource contribution by &lt;a href="https://twitter.com/RabbitMQ/status/1249087004257792012"&gt;prioritizing a considerate contribution process&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Steeltoe team has now released &lt;a href="https://github.com/SteeltoeOSS/steeltoe/releases/tag/3.0.0-m2"&gt; Steeltoe 3.0.0-m2&lt;/a&gt;! Think of Steeltoe as being a very useful, albeit less fully featured, Spring Cloud for .NET developers. It lets .NET developers interoperate with various SPring Cloud infrastructure]()&lt;/li&gt;
+  &lt;li&gt;The DZone Security zine has a nice post on using &lt;a href="https://dzone.com/articles/angular-7-spring-boot-jwt-authentication-example"&gt;Angular 7, Spring Boot and JWT-centric authentication &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Targeted to JDK 15: JEP 378: &lt;a href="https://openjdk.java.net/jeps/378"&gt;Text Blocks (Standard)&lt;/a&gt; will now officially land in Java 15.&lt;/li&gt;
+  &lt;li&gt;Oracle&amp;rsquo;s David Delabassee has a fantatic, albeit not strictly speaking related to Spring, article on &lt;a href="https://delabassee.com/OpenCVJava/"&gt;how to get the Mac and Linux builds of the OpenCV Java bindings to work &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=bpbhpsnd0dw&amp;feature=share"&gt;Tanzu Application Catalog overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Do you want to learn how to tie your cloud infrastructure capabilities to your containerized applications? The new &lt;em&gt;Integrating with Cloud Providers&lt;/em&gt; course on #KubeAcademy will teach you how. &lt;a href="https://t.co/IPjK1t6pHw"&gt;Learn more about the course here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Here&amp;rsquo;s another @springcloud issue that newcomers or firsttime contributors might find easy to fix &lt;a href="https://t.co/pxAzT6qFkK"&gt;https://t.co/pxAzT6qFkK&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Also targeted for Java 15: &lt;a href="https://openjdk.java.net/jeps/377"&gt;JEP 377&lt;/a&gt; (ZGC), which is a scalable low-latency garbage collector&lt;/li&gt;
+  &lt;li&gt;The opensource team at VMWare interviewed me, if you&amp;rsquo;re interested. &lt;a href="https://blogs.vmware.com/opensource/2020/04/07/spring-development-josh-long-interview/"&gt;Spring Development: An Interview with Josh Long&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Want to develop Spring Boot apps and secure them with OpenID Connect &amp;amp; OAuth2? Check out &lt;a href="https://www.youtube.com/watch?v=8VJNjMD9TG8&amp;feature=youtu.be"&gt;this video&lt;/a&gt; for a nice introduction!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Microsoft¡¯s Kushagra Thapar on Spring Data Cosmosdb</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/10/a-bootiful-podcast-microsoft-s-kushagra-thapar-on-spring-data-cosmosdb" />
@@ -998,204 +1036,6 @@ Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.M4/reference
   &lt;li&gt;Spring Data Elasticsearch 3.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data Couchbase 3.2.6 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.2.6.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.6.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Cloud Loadbalancer</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-25:4008</id>
-    <updated>2020-03-25T07:34:46Z</updated>
-    <content type="html">&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt;&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/FDeOoKRKgkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! Welcome to another installment of Spring Tips! In this installment, we&amp;rsquo;re going to look at a new feature in Spring Cloud, Spring Cloud Loadbalancer. Spring Cloud Loadbalancer is a generic abstraction that can do the work that we used to do with Netflix&amp;rsquo;s Ribbon project. Spring Cloud still supports Netflix Ribbon, but Netflix Ribbons days are numbered, like so much else of the Netflix microservices stack, so we&amp;rsquo;ve provided an abstraction to support an alternative. &lt;/p&gt;&lt;h2&gt;&lt;a href="#the-service-registry" class="anchor" name="the-service-registry"&gt;&lt;/a&gt;The Service Registry&lt;/h2&gt;
-&lt;p&gt;For us to use the Spring Cloud Load Balancer, we need to have a service registry up and running. A service registry makes it trivial to programmatically query for the location of a given service in a system. There are several popular implementations, including Apache Zookeeper, Netflix&amp;rsquo;s Eureka, Hashicorp Consul, and others. You can even use Kubernetes and Cloud Foundry as service registries. Spring Cloud provides an abstraction, &lt;code&gt;DiscoveryClient&lt;/code&gt;, that you can use to talk to these service registries generically. There are several patterns that a service registry enables that just arent possible with &lt;em&gt;good &amp;rsquo;ol&lt;/em&gt; DNS. One thing I love to do is client-side load-balancing. Client-side load-balancing requires the client code to decide which node receives the request. There is any number of instances of the service out there, and their suitability to handle a particular request is something each client can decide. It&amp;rsquo;s even better if it can make the decision &lt;em&gt;before&lt;/em&gt; launching a request that might otherwise be doomed to failure. It saves time, unburdens the services with tedious flow control requirements, and makes our system more dynamic since we can &lt;em&gt;query&lt;/em&gt; its topology. &lt;/p&gt;
-&lt;p&gt;You can run any service registry you like. I like to use Netflix Eureka for these sorts of things because it is simpler to setup. Lets set up a new instance. You could download and run a stock-standard image if you want, but I want to use the pre-configured instance provided as part of Spring Cloud. &lt;/p&gt;
-&lt;p&gt;Go to the Spring Initializer, choose &lt;code&gt;Eureka Server&lt;/code&gt; and &lt;code&gt;Lombok&lt;/code&gt;. I named mine &lt;code&gt;eureka-service&lt;/code&gt;. Hit &lt;code&gt;Generate&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Most of the work of using the built-in Eureka Service is in the configuration, which I&amp;rsquo;ve reprinted here. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;server.port=8761&#xD;
-eureka.client.register-with-eureka=false&#xD;
-eureka.client.fetch-registry=false
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then you&amp;rsquo;ll need to customize the Java class. Add the &lt;code&gt;@EnableEurekaServer&lt;/code&gt; annotation to your class.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.eurekaservice;&#xD;
-&#xD;
-import org.springframework.boot.SpringApplication;&#xD;
-import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;&#xD;
-&#xD;
-@SpringBootApplication&#xD;
-@EnableEurekaServer&#xD;
-public class EurekaServiceApplication {&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        SpringApplication.run(EurekaServiceApplication.class, args);&#xD;
-    }&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can run that now. It&amp;rsquo;ll be available on port &lt;code&gt;8761&lt;/code&gt; and other clients will connect to that port by default. &lt;/p&gt;&lt;h2&gt;&lt;a href="#a-simple-api" class="anchor" name="a-simple-api"&gt;&lt;/a&gt;A Simple API&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s now turn to the API. Our API is as trivial as these things come. We just want an endpoint to which our client can issue requests. &lt;/p&gt;
-&lt;p&gt;Go to the Spring Initializr, generate a new project with &lt;code&gt;Reactive Web&lt;/code&gt; and &lt;code&gt;Lombok&lt;/code&gt; and the &lt;code&gt;Eureka Discovery Client&lt;/code&gt;. That last bit is the critical part! You&amp;rsquo;re not going to see it used in the following Java code. It&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=Sw7I70vjN0E&amp;feature=emb_title"&gt;all autoconfiguration, which we &lt;em&gt;also&lt;/em&gt; covered way back in 2016&lt;/a&gt;, that runs at application startup. The autoconfiguration will automatically register the application with the specified registry (in this case, we&amp;rsquo;re using the &lt;code&gt;DiscoveryClient&lt;/code&gt; implementation for Netflix&amp;rsquo;s Eureka) using the &lt;code&gt;spring.application.name&lt;/code&gt; property.&lt;/p&gt;
-&lt;p&gt;Specify the following properties. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=api&#xD;
-server.port=9000
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Our HTTP endpoint is a &amp;ldquo;Hello, world!&amp;rdquo; handler that uses the functional reactive HTTP style that we &lt;a href="https://www.youtube.com/watch?v=JjrAmhlTjug"&gt;introduced in another Spring Tips video way, way back in 2017&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.api;&#xD;
-&#xD;
-import org.springframework.boot.SpringApplication;&#xD;
-import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
-import org.springframework.context.annotation.Bean;&#xD;
-import org.springframework.web.reactive.function.server.HandlerFunction;&#xD;
-import org.springframework.web.reactive.function.server.RouterFunction;&#xD;
-import org.springframework.web.reactive.function.server.ServerRequest;&#xD;
-import org.springframework.web.reactive.function.server.ServerResponse;&#xD;
-import reactor.core.publisher.Mono;&#xD;
-&#xD;
-import java.util.Map;&#xD;
-&#xD;
-import static org.springframework.web.reactive.function.server.RouterFunctions.route;&#xD;
-import static org.springframework.web.reactive.function.server.ServerResponse.*;&#xD;
-&#xD;
-@SpringBootApplication&#xD;
-public class ApiApplication {&#xD;
-    &#xD;
-    @Bean&#xD;
-    RouterFunction&amp;lt;ServerResponse&amp;gt; routes() {&#xD;
-        return route()&#xD;
-            .GET(&amp;quot;/greetings&amp;quot;, r -&amp;gt; ok().bodyValue(Map.of(&amp;quot;greetings&amp;quot;, &amp;quot;Hello, world!&amp;quot;)))&#xD;
-            .build();&#xD;
-    }&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        SpringApplication.run(ApiApplication.class, args);&#xD;
-    }&#xD;
-} 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run the application, and you&amp;rsquo;ll see it reflected in the Netlfix Eureka instance. You can change the &lt;code&gt;server.port&lt;/code&gt; value to &lt;code&gt;0&lt;/code&gt; in &lt;code&gt;application.properties&lt;/code&gt;. If you run multiple instances, you&amp;rsquo;ll see them reflected in the console.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-load-balancing-client" class="anchor" name="the-load-balancing-client"&gt;&lt;/a&gt;The Load-Balancing Client&lt;/h2&gt;
-&lt;p&gt;All right, now we&amp;rsquo;re ready to demonstrate laod balancing in action. We&amp;rsquo;ll need a new spring boot application. Go to the Spring Intiialzir and generate a new project using the &lt;code&gt;Eureka Discovery Client&lt;/code&gt;, &lt;code&gt;Lombok&lt;/code&gt;, &lt;code&gt;Cloud Loadbalancer&lt;/code&gt;, and &lt;code&gt;Reactive Web&lt;/code&gt;. Click &lt;code&gt;Generate&lt;/code&gt; and open the project in your favorite IDE. &lt;/p&gt;
-&lt;p&gt;Add the Caffeine Cache to the classpath. It&amp;rsquo;s not on the Spring Initializr, so I added it manually. It&amp;rsquo;s Maven coordinates are &lt;code&gt;com.github.ben-manes.caffeine&lt;/code&gt;:&lt;code&gt;caffeine&lt;/code&gt;:&lt;code&gt;${caffeine.version}&lt;/code&gt;. If this dependency is present, then the load balancer will use it to cache resolved instances.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s review what we want to happen. We want to make a call to our service, &lt;code&gt;api&lt;/code&gt;. We know that there could be more than one instance of the service in the load balancer. We &lt;em&gt;could&lt;/em&gt; put the API behind a load balancer and just call it done. But what we want to do is to use the information available to us about the state of each application to make smarter load balancing decisions. There are a lot of reasons we might use the client-side load balancer instead of DNS. First, Java DNS clients tend to cache the resolved IP information, which means that subsequent calls to the same resolved IP would end up subsequently dogpiling on top of one service. You can disable that, but you&amp;rsquo;re working against the grain of DNS, a caching-centric system. DNS only tells you &lt;em&gt;where&lt;/em&gt; something is, not &lt;em&gt;if&lt;/em&gt; it is. Put another way; you don&amp;rsquo;t know if there is going to be anything waiting for your request on the other side of that DNS based load balancer. Wouldnt you like to be able to know before making the call, sparing your client the tedious timeout period before the call fails? Additionally, some patterns like service hedging - &lt;a href="https://www.youtube.com/watch?v=SLG8gUGvdx4&amp;feature=emb_title"&gt;also the topic of another Spring Tips video&lt;/a&gt; - is only possible with a service registry.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s look at the usual configuration properties for the &lt;code&gt;client&lt;/code&gt;. The properties specify the &lt;code&gt;spring.applicatino.name&lt;/code&gt;, nothing novel about that. The second property is important. It disables the default Netflix Ribbon-backed load balancing strategy that&amp;rsquo;s been in place since Spring Cloud debuted in 2015. We want to use the new Spring Cloud Load balancer, after all.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=client&#xD;
-spring.cloud.loadbalancer.ribbon.enabled=false
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So, let&amp;rsquo;s look at the use of our service registry. First thing&amp;rsquo;s first, our client needs to establish a connection to the service registry with the Eureka &lt;code&gt;DiscoveryClient&lt;/code&gt; implementation. The Spring Cloud &lt;code&gt;DiscoveryClient&lt;/code&gt; abstraction is on the classpath, so it&amp;rsquo;ll automatically start-up and register the &lt;code&gt;client&lt;/code&gt; with the service registry.&lt;/p&gt;
-&lt;p&gt;Here are the beginnings of our application, an entry point class. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.client;&#xD;
-&#xD;
-import lombok.AllArgsConstructor;&#xD;
-import lombok.Data;&#xD;
-import lombok.NoArgsConstructor;&#xD;
-import lombok.extern.log4j.Log4j2;&#xD;
-import org.springframework.boot.SpringApplication;&#xD;
-import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
-import org.springframework.cloud.client.ServiceInstance;&#xD;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;&#xD;
-import org.springframework.cloud.client.loadbalancer.reactive.ReactiveLoadBalancer;&#xD;
-import org.springframework.cloud.client.loadbalancer.reactive.ReactorLoadBalancerExchangeFilterFunction;&#xD;
-import org.springframework.cloud.client.loadbalancer.reactive.Response;&#xD;
-import org.springframework.context.annotation.Bean;&#xD;
-import org.springframework.stereotype.Component;&#xD;
-import org.springframework.web.reactive.function.client.WebClient;&#xD;
-import reactor.core.publisher.Flux;&#xD;
-&#xD;
-import static com.example.client.ClientApplication.call;&#xD;
-&#xD;
-@SpringBootApplication&#xD;
-public class ClientApplication {&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        SpringApplication.run(ClientApplication.class, args);&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We&amp;rsquo;ll add to this a DTO class to convey the JSON structure returned from the service to the clients. This class uses some of Lombok&amp;rsquo;s convenient annoations.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Data&#xD;
-@AllArgsConstructor&#xD;
-@NoArgsConstructor&#xD;
-class Greeting {&#xD;
-    private String greetings;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, let&amp;rsquo;s look at three different approaches to load balancing, each progressively more sophisticated.&lt;/p&gt;&lt;h3&gt;&lt;a href="#using-the-loadbalancer-abstraction-directly" class="anchor" name="using-the-loadbalancer-abstraction-directly"&gt;&lt;/a&gt;Using the Loadbalancer Abstraction Directly&lt;/h3&gt;
-&lt;p&gt;This first approach is the simplest, albeit most verbose, of the three. In this approach, we&amp;rsquo;ll work with the load balancing abstraction directly. The component injects a pointer to the &lt;code&gt;ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt;&lt;/code&gt;, which we can then use to vend a &lt;code&gt;ReactiveLoadBalancer&amp;lt;ServiceInstance&amp;gt;&lt;/code&gt;. This &lt;code&gt;ReactiveLoadBalancer&lt;/code&gt; is the interface with which we load-balance calls to the &lt;code&gt;api&lt;/code&gt; service by invoking &lt;code&gt;api.choose()&lt;/code&gt;. I then use that &lt;code&gt;ServiceInstance&lt;/code&gt; to build up a URL to the particular host and port of that specific &lt;code&gt;ServiceInstance&lt;/code&gt; and then make an HTTP request with &lt;code&gt;WebClient&lt;/code&gt;, our reactive HTTP client.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Log4j2&#xD;
-@Component&#xD;
-class ReactiveLoadBalancerFactoryRunner {&#xD;
-&#xD;
-  ReactiveLoadBalancerFactoryRunner(ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt; serviceInstanceFactory) {&#xD;
-        var http = WebClient.builder().build();&#xD;
-        ReactiveLoadBalancer&amp;lt;ServiceInstance&amp;gt; api = serviceInstanceFactory.getInstance(&amp;quot;api&amp;quot;);&#xD;
-        Flux&amp;lt;Response&amp;lt;ServiceInstance&amp;gt;&amp;gt; chosen = Flux.from(api.choose());&#xD;
-        chosen&#xD;
-            .map(responseServiceInstance -&amp;gt; {&#xD;
-                ServiceInstance server = responseServiceInstance.getServer();&#xD;
-                var url = &amp;quot;http://&amp;quot; + server.getHost() + &amp;#39;:&amp;#39; + server.getPort() + &amp;quot;/greetings&amp;quot;;&#xD;
-                log.info(url);&#xD;
-                return url;&#xD;
-            })&#xD;
-            .flatMap(url -&amp;gt; call(http, url))&#xD;
-            .subscribe(greeting -&amp;gt; log.info(&amp;quot;manual: &amp;quot; + greeting.toString()));&#xD;
-&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The actual work of making the HTTP request is done by a static method, &lt;code&gt;call&lt;/code&gt;, that I have stashed in the application class. It expects a valid &lt;code&gt;WebClient&lt;/code&gt; reference and an HTTP URL.&lt;/p&gt;
-&lt;p&gt;```java&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;static Flux&amp;lt;Greeting&amp;gt; call(WebClient http, String url) {
-    return http.get().uri(url).retrieve().bodyToFlux(Greeting.class);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;```&lt;/p&gt;
-&lt;p&gt;This approach works, but it&amp;rsquo;s a &lt;em&gt;lot&lt;/em&gt; of code to make one HTTP call. &lt;/p&gt;&lt;h3&gt;&lt;a href="#using-the-code-reactorloadbalancerexchangefilterfunction-code" class="anchor" name="using-the-code-reactorloadbalancerexchangefilterfunction-code"&gt;&lt;/a&gt;Using the &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;This next approach hides a lot of that boilerplate load-balancing logic in a &lt;code&gt;WebClient&lt;/code&gt; filter, of the type &lt;code&gt;ExchangeFilterFunction&lt;/code&gt;, called &lt;code&gt;ReactorLoadBalancerExchangeFilterFunction&lt;/code&gt;. We plug in that filter before making the request, and a &lt;em&gt;lot&lt;/em&gt; of the previous code disappears. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Component&#xD;
-@Log4j2&#xD;
-class WebClientRunner {&#xD;
-&#xD;
-    WebClientRunner(ReactiveLoadBalancer.Factory&amp;lt;ServiceInstance&amp;gt; serviceInstanceFactory) {&#xD;
-&#xD;
-        var filter = new ReactorLoadBalancerExchangeFilterFunction(serviceInstanceFactory);&#xD;
-&#xD;
-        var http = WebClient.builder()&#xD;
-            .filter(filter)&#xD;
-            .build();&#xD;
-&#xD;
-        call(http, &amp;quot;http://api/greetings&amp;quot;).subscribe(greeting -&amp;gt; log.info(&amp;quot;filter: &amp;quot; + greeting.toString()));&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ahhhhhh. Much better! But we can do better.&lt;/p&gt;&lt;h3&gt;&lt;a href="#the-code-loadbalanced-code-annotation" class="anchor" name="the-code-loadbalanced-code-annotation"&gt;&lt;/a&gt;The &lt;code&gt;@LoadBalanced&lt;/code&gt; Annotation&lt;/h3&gt;
-&lt;p&gt;In this final example, we&amp;rsquo;ll have Spring Cloud configure the &lt;code&gt;WebClient&lt;/code&gt; instance for us. This approach is excellent if &lt;em&gt;all&lt;/em&gt; requests that pass through that shared &lt;code&gt;WebClient&lt;/code&gt; instance require load balancing. Just define a provider method for the &lt;code&gt;WebClient.Builder&lt;/code&gt; and annotate it with &lt;code&gt;@LoadBalanced&lt;/code&gt;. You can then use that &lt;code&gt;WebClient.Builder&lt;/code&gt; to define a &lt;code&gt;WebClient&lt;/code&gt; that&amp;rsquo;ll load balance automatically for us.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;&lt;br/&gt;    @Bean&#xD;
-    @LoadBalanced&#xD;
-    WebClient.Builder builder() {&#xD;
-        return WebClient.builder();&#xD;
-    }&#xD;
-    &#xD;
-    @Bean&#xD;
-    WebClient webClient(WebClient.Builder builder) {&#xD;
-        return builder.build();&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With that done, our code shrinks to virtually nothing. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Log4j2&#xD;
-@Component&#xD;
-class ConfiguredWebClientRunner {&#xD;
-&#xD;
-    ConfiguredWebClientRunner(WebClient http) {&#xD;
-        call(http, &amp;quot;http://api/greetings&amp;quot;).subscribe(greeting -&amp;gt; log.info(&amp;quot;configured: &amp;quot; + greeting.toString()));&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, &lt;em&gt;that&lt;/em&gt; is convenient. &lt;/p&gt;
-&lt;p&gt;The load balancer uses round-robin load balancing, where it randomly distributes the load across any of a number co configured instances, using the &lt;code&gt;org.springframework.cloud.loadbalancer.core.RoundRobinLoadBalancer&lt;/code&gt; strategy. The nice thing about this is that this is pluggable. You can plugin in other heuristics if you wanted as well. &lt;/p&gt;&lt;h3&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h3&gt;
-&lt;p&gt;In this Spring Tip installment, we&amp;rsquo;ve only begun to scratch the surface of the load balancing abstraction, but we have already achieved immense flexibility and conciseness. If you&amp;rsquo;re further interested in customizing the load balancer, you might look into the &lt;code&gt;@LoadBalancedClient&lt;/code&gt; annotation. &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
