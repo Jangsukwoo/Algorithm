@@ -1,0 +1,42 @@
+package 자료구조연습;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+public class 괄호_스택 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+	//static char[] ch = new char[100];
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int inputNum = Integer.parseInt(br.readLine());
+
+		Stack<Character> stack = new Stack<Character>();
+		for(int i=0; i<inputNum; i++) {
+			String inputStr = br.readLine();
+
+			for(int j=0;j<inputStr.length();j++) {
+				char ch = inputStr.charAt(j);
+
+				if(ch == '(' ){//글자를 꺼내서 보니 ( 라면
+					stack.push(ch); //그냥 넣는다.
+				} else if(ch==')') {
+					//(가 아니라 ) 면
+					if(stack.isEmpty()){//스택이 비어있는 경우는 넣으면 안되니까
+						System.out.println("NO");
+					}
+					else if(stack.peek()=='('){
+						
+					}
+				}
+
+			}
+			if(stack.isEmpty() ) {
+				System.out.println("YES");
+			}else
+				System.out.println("NO");
+		}
+	}
+
+}
