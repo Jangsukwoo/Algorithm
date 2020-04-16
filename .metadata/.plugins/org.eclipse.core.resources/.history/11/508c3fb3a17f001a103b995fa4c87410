@@ -1,0 +1,10 @@
+package CodingStudyHW;
+/*
+ * 세로,가로 범위 4만 by 4만
+ * 
+ */
+public class 수족관1 {
+	public static void main(String[] args) {
+
+	}
+}

@@ -14,7 +14,7 @@ public class 괄호_스택 {
 		for(int i=0; i<inputNum; i++) {
 			String inputStr = br.readLine();
 			boolean ok = true;
-			stack.clear();
+			stack.clear();//스택 초기화
 			for(int j=0;j<inputStr.length();j++) {
 				char ch = inputStr.charAt(j);
 				if(ch == '(' ){//글자를 꺼내서 보니 ( 라면
@@ -31,7 +31,7 @@ public class 괄호_스택 {
 					}
 				}
 			}
-			if(stack.isEmpty() && ok) { //stack이 비어있고 ok다.
+			if(stack.isEmpty() && ok) { //stack이 비어있고 ok다. 
 				System.out.println("YES");
 			}else
 				System.out.println("NO");

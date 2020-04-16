@@ -1,0 +1,54 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 세로,가로 범위 4만 by 4만
+ * 제일 높은 위치부터 물을 빼자 
+ */
+public class 수족관1 {
+	static int N;//꼭지점 개수
+	static int totalWater;
+	static int leakWater;
+	static int remainWater;
+	static boolean[] wall;
+	static boolean[] height;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static class Vertax{
+		int x;
+		int y;
+		public Vertax(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}		
+	}
+	static class Hole{
+		int leftX;
+		int leftY;
+		int rightX;
+		int rightY;
+		public Hole(int leftX, int leftY, int rightX, int rightY) {
+			super();
+			this.leftX = leftX;
+			this.leftY = leftY;
+			this.rightX = rightX;
+			this.rightY = rightY;
+		}
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		int maxWall=0;
+		int maxHeight=0;
+		int vertically=0;
+		for(int i=0,x,y;i<N;i++){ //전체 물량 구하기
+			
+		}
+	}
+}
