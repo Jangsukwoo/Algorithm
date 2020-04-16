@@ -47,7 +47,7 @@ public class 레이저빔은어디로 {
 					visit[laserR][laserC][dir]=true;
 					if(board[laserR][laserC]==1) dir= (dir+1)%4; //거울이면 방향꺾기
 					else continue;
-				}else {//방문해봤으면 사이클이니 탈출
+				}else {
 					escape=false;
 					return;
 				}

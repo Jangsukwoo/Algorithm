@@ -37,17 +37,16 @@ public class 레이저빔은어디로 {
 		else if(laserC==n+1) dir=3;
 		else if(laserR==0) dir = 2;
 		else if(laserR==n+1) dir = 0;
-		
 		while(true){
-			laserR+=dr[dir];//직진
+			laserR+=dr[dir];
 			laserC+=dc[dir];
 			if(laserR==n+1 || laserR==0 || laserC==n+1 || laserC==0) break;//도착
 			else{
-				if(visit[laserR][laserC][dir]==false){//방문안해봤으면
+				if(visit[laserR][laserC][dir]==false){
 					visit[laserR][laserC][dir]=true;
-					if(board[laserR][laserC]==1) dir= (dir+1)%4; //거울이면 방향꺾기
+					if(board[laserR][laserC]==1) dir= (dir+1)%4; //방향꺾기
 					else continue;
-				}else {//방문해봤으면 사이클이니 탈출
+				}else {
 					escape=false;
 					return;
 				}
