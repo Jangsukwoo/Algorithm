@@ -1,0 +1,31 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 보물 {
+	static int[] seriesA;
+	static int[] seriesB;
+	static int N;
+	static StringTokenizer st;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int min;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		seriesA = new int[N];
+		seriesB = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for(int j=0;j<N;j++) {
+			seriesA[j] = Integer.parseInt(st.nextToken());
+		}
+		st = new StringTokenizer(br.readLine());
+		for(int j=0;j<N;j++) {
+			seriesB[j] = Integer.parseInt(st.nextToken());
+		}
+	}
+}
