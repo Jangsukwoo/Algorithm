@@ -1,0 +1,43 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+/*
+ * 테스트 케이스 최대 200
+ * 7자리 문자 받아서 
+ * 7자리 문자 적절히 섞어서
+ * 만들 수 있는 소수의 개수 출력하기
+ */
+public class 산업스파이의편지 {
+	static int T;
+	static HashSet<Integer> primeSet = new HashSet<Integer>();
+	static int[] memo = new int[10000000];
+	static int sum;
+	static String number;
+	static int[] pick;
+	static boolean[] prime = new boolean[10000000];
+	static boolean[] visit;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		makePrimeSetByEra();
+		T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			sum=0;
+			visit = new boolean[10000000];
+			number = br.readLine();
+		}
+	}
+	private static void makePrimeSetByEra() {//소수 집합 만들기
+		for(int i=2;i<=9999999;i++){
+			if(i%2==0 && i>2) continue;//짝수는 건너뜀
+			for(int j=2;(j*i)<=9999999;j++){
+				prime[j*i] = true;
+			}
+		}
+		for(int i=2;i<=9999999;i++){
+			if(prime[i]==false) primeSet.add(i);
+		}
+	}
+}

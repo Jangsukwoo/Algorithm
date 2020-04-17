@@ -5,7 +5,291 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-15T12:09:05Z</updated>
+  <updated>2020-04-17T02:49:38Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Jetbrains Developer Advocacy head, "Talking Kotlin" podcast host, and Kotlin rockstar Hadi Hariri</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/17/a-bootiful-podcast-jetbrains-developer-advocacy-head-talking-kotlin-podcast-host-and-kotlin-rockstar-hadi-hariri" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-17:4032</id>
+    <updated>2020-04-17T02:49:38Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In today&amp;rsquo;s installment, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Jetbrains developer advocacy head and Kotlin rockstar &lt;a href="http://twitter.com/hhariri"&gt;Hadi Hariri (@hhariri)&lt;/a&gt; about all things Kotlin, ecosystem, Jetbrains, and more. &lt;/p&gt;
+&lt;iframe title="Jetbrains developer advocacy head and Kotlin rockstar Hadi Hariri" src="https://www.podbean.com/media/player/p726f-d9735e?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: The GraalVM Native Image Builder Feature</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/16/spring-tips-the-graalvm-native-image-builder-feature" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-16:4030</id>
+    <updated>2020-04-16T07:14:00Z</updated>
+    <content type="html">&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/u1XJTI1PVLw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;Spring Tips&lt;/em&gt;. In this installment, we&amp;rsquo;re going to look at the new support just released for building Spring Boot applications with GraalVM. We&amp;rsquo;ve looked at GraalVM and native images in another Spring Tips when we looked at Spring Fu.&lt;/p&gt;
+&lt;p&gt;GraalVM is several things. It&amp;rsquo;s a C1 replacement for a standard OpenJDK install. You can listen to this episode of my podcast, &lt;a href="http://bootifulpdcast.fm"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;&lt;/a&gt;, with &lt;a href="https://spring.io/blog/2019/05/24/a-bootiful-podcast-twitter-s-chris-thalinger-on-java-graal-jvms-jits-and-more"&gt;GraalVM contributor and Twitter engineer Chris Thalinger&lt;/a&gt;, for more details on this use of GraalVM. It lets you run regular Sring applications faster in certain conditions, and so it&amp;rsquo;s worth exploring for that reason alone. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re not going to talk about that in this video. Instead, we&amp;rsquo;re going to look at a particular component inside Graal VM called the native image builder and SubstrateVM. SubstrateVM lets you build native images out of your Java application. Incidentally, I &lt;em&gt;also&lt;/em&gt; did a podcast with &lt;a href="https://spring.io/blog/2020/02/07/oleg-elajev-on-zeroturnaround-graalvm-the-vjug-and-so-much-more"&gt;Oracle Labs&amp;rsquo; Oleg Shelajev&lt;/a&gt; on this and other uses of GraalVM. The native image builder is an exercise in compromise. If you give GraalVM enough information about your application&amp;rsquo;s runtime behavior - dynamically linked libraries, reflection, proxies, etc. - then it can turn your Java application into a statically linked binary, sort of like a C or Go-lang application. The process is, being honest here, sometimes&amp;hellip; &lt;em&gt;painful&lt;/em&gt;. BUT, once you do that, then the tool can generate native code for you that is &lt;em&gt;blazingly&lt;/em&gt; fast. The resulting application takes &lt;em&gt;way&lt;/em&gt; less RAM and starts up in below a second. &lt;em&gt;Waaay&lt;/em&gt; below a second. Pretty tantalizing, eh? It sure is! &lt;/p&gt;
+&lt;p&gt;Keep in mind though that there are other costs to be aware of when you run the application. GraalVMnative images are not Java applications. They don&amp;rsquo;t even run on a traditional JVM. Oracle Labs develop GraalVM, and so there&amp;rsquo;s some level of cooperation between the Java and GraalVM teams, but I would not call it Java. The resulting binary is not cross-platform. When the application runs, it won&amp;rsquo;t run on the JVM; it&amp;rsquo;ll run on another runtime called SubstrateVM. &lt;/p&gt;
+&lt;p&gt;So the tradeoffs are many, but still, I think there&amp;rsquo;s a lot of potential value in using this tool to build applications?especially those destined for production in a cloud environment where scale and efficiency are fo paramount concern. &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started. You&amp;rsquo;re going to need to install GraalVM. You could download &lt;a href="https://www.graalvm.org/"&gt;it here&lt;/a&gt;, or u could download it using &lt;a href="http://sdkman.io"&gt;SDKmanager&lt;/a&gt;. I like to use SDKManager to install my Java distributions. GraalVm tends to be a little behind the mainline version of Java. Currently, it supports java 8 and Java 11. Not, notably, Java 14 or 15 or whatever the current version of Java is when you read and watch this. &lt;/p&gt;
+&lt;p&gt;Do this to install GraalVM for Java 8: &lt;code&gt;sdk install java 20.0.0.r8-grl&lt;/code&gt;. I&amp;rsquo;d recommend Java 8, instead of Java 11, as there are some subtle bugs I can&amp;rsquo;t quite figure out yet with the Java 11 variant. &lt;/p&gt;
+&lt;p&gt;Once you&amp;rsquo;ve done that, you also need to install the native image builder component separately. Run this: &lt;code&gt;gu install native-image&lt;/code&gt;. &lt;code&gt;gu&lt;/code&gt; is a utility that you get in a GraalVM. Finally, make sure you have &lt;code&gt;JAVA_HOME&lt;/code&gt; is set up to point to GraalVM. on my machine, a Macintosh with SDKMAN, my &lt;code&gt;JAVA_HOME&lt;/code&gt; looks like this: &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;export JAVA_HOME=$HOME/.sdkman/candidates/java/current/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ok, now that you&amp;rsquo;ve got that all set up, let&amp;rsquo;s look at our application. First thing, go &lt;a href="http://start.Spring.io"&gt;to the Spring Initializr &lt;/a&gt; and generate a new project using &lt;code&gt;Lombok&lt;/code&gt;, &lt;code&gt;R2DBC&lt;/code&gt;, &lt;code&gt;PostgreSQL&lt;/code&gt;, and &lt;code&gt;Reactive Web&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ve seen this kind of code a million times, so I won&amp;rsquo;t review it beyond reprinting it here. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.reactive;&#xD;
+&#xD;
+import lombok.AllArgsConstructor;&#xD;
+import lombok.Data;&#xD;
+import lombok.NoArgsConstructor;&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.context.annotation.Configuration;&#xD;
+import org.springframework.data.annotation.Id;&#xD;
+import org.springframework.data.r2dbc.core.DatabaseClient;&#xD;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;&#xD;
+import org.springframework.web.reactive.function.server.RouterFunction;&#xD;
+import org.springframework.web.reactive.function.server.ServerResponse;&#xD;
+import org.springframework.web.reactive.handler.SimpleUrlHandlerMapping;&#xD;
+import org.springframework.web.reactive.socket.WebSocketHandler;&#xD;
+import org.springframework.web.reactive.socket.WebSocketMessage;&#xD;
+import org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter;&#xD;
+import reactor.core.publisher.Flux;&#xD;
+&#xD;
+import java.time.Duration;&#xD;
+import java.time.Instant;&#xD;
+import java.util.Collections;&#xD;
+import java.util.stream.Stream;&#xD;
+&#xD;
+import static org.springframework.web.reactive.function.server.RouterFunctions.route;&#xD;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication(proxyBeanMethods = false)&#xD;
+public class ReactiveApplication {&#xD;
+&#xD;
+    @Bean&#xD;
+    RouterFunction&amp;lt;ServerResponse&amp;gt; routes(ReservationRepository rr) {&#xD;
+        return route()&#xD;
+            .GET(&amp;quot;/reservations&amp;quot;, r -&amp;gt; ok().body(rr.findAll(), Reservation.class))&#xD;
+            .build();&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner runner(DatabaseClient databaseClient, ReservationRepository reservationRepository) {&#xD;
+        return args -&amp;gt; {&#xD;
+&#xD;
+            Flux&amp;lt;Reservation&amp;gt; names = Flux&#xD;
+                .just(&amp;quot;Andy&amp;quot;, &amp;quot;Sebastien&amp;quot;)&#xD;
+                .map(name -&amp;gt; new Reservation(null, name))&#xD;
+                .flatMap(reservationRepository::save);&#xD;
+&#xD;
+            databaseClient&#xD;
+                .execute(&amp;quot;....&amp;quot;)&#xD;
+                .fetch()&#xD;
+                .rowsUpdated()&#xD;
+                .thenMany(names)&#xD;
+                .thenMany(reservationRepository.findAll())&#xD;
+                .subscribe(log::info);&#xD;
+        };&#xD;
+    }&#xD;
+&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ReactiveApplication.class, args);&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+interface ReservationRepository extends ReactiveCrudRepository&amp;lt;Reservation, Integer&amp;gt; {&#xD;
+}&#xD;
+&#xD;
+&#xD;
+@Data&#xD;
+@AllArgsConstructor&#xD;
+@NoArgsConstructor&#xD;
+class Reservation {&#xD;
+&#xD;
+    @Id&#xD;
+    private Integer id;&#xD;
+    private String name;&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first statment that I execute in against the database using the &lt;code&gt;DatabaseClient&lt;/code&gt; is a SQL statment that creates a table. Unfortunately, the blog software we use here won&amp;rsquo;t let me reprint a SQL statement for security reasons, so I instead defer &lt;a href="https://github.com/spring-tips/spring-graal-native-image-feature/blob/master/reactive/src/main/java/com/example/reactive/ReactiveApplication.java#L52"&gt;you to the original here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The only notable thing in this application is that we&amp;rsquo;re using Spring Boot&amp;rsquo;s &lt;code&gt;proxyBeanMethods&lt;/code&gt; attribute to make sure that we avoid the use of cglib and any other non-JDK proxies in the app. GraalVM_hates_ non-JDK proxies, and even with JDK proxies, there&amp;rsquo;s work to be done to make GraalVM aware of it. This attribute is new in spring framework 5.2 and is designed, in part, to support graalvm applications. &lt;/p&gt;
+&lt;p&gt;So let&amp;rsquo;s talk about that. I alluded earlier that we need to teach GraalVM about te tricky things we might do in our application at runtime that it might not appreciate if we do it in a native image. Things like reflection, proxies, etc. There are a few ways to do this. You can handcraft some configuration and include it in your build. GraalVM will automatically add that. You can also run your program under the watch of a Java agent that will note the tricky things that your application does and - once the application&amp;rsquo;s concluded - write all that stuff down in config files, which can then be fed to the GraalVM compiler.&lt;/p&gt;
+&lt;p&gt;Another thing you can do when you run the application is run a &lt;em&gt;feature&lt;/em&gt;. A GraalVM feature is a bit like a Java agent. it can feed information into the GraalVM compiler based on whatever analysis it does. Our feature knows and understands how Spring applications work. It knows when Spring beans are proxies. It knows how classes are constructed dynamically at runtime. It knows how SPring works, and it knows what GraalVM wants, most of the time. (this is an early release, after all!)&lt;/p&gt;
+&lt;p&gt;We also need to customize the build. Heres my &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&#xD;
+&amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;&#xD;
+         xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&#xD;
+         xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;gt;&#xD;
+    &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;&#xD;
+    &amp;lt;parent&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;version&amp;gt;2.3.0.M4&amp;lt;/version&amp;gt;&#xD;
+        &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;&#xD;
+    &amp;lt;/parent&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;reactive&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;&#xD;
+&#xD;
+    &amp;lt;properties&amp;gt;&#xD;
+        &amp;lt;start-class&amp;gt;&#xD;
+            com.example.reactive.ReactiveApplication&#xD;
+        &amp;lt;/start-class&amp;gt;&#xD;
+        &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;&#xD;
+    &amp;lt;/properties&amp;gt;&#xD;
+&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.experimental&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-graal-native&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;0.6.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-context-indexer&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-boot-starter-data-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-boot-starter-webflux&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;r2dbc-h2&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-boot-starter-test&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;&#xD;
+            &amp;lt;exclusions&amp;gt;&#xD;
+                &amp;lt;exclusion&amp;gt;&#xD;
+                    &amp;lt;groupId&amp;gt;org.junit.vintage&amp;lt;/groupId&amp;gt;&#xD;
+                    &amp;lt;artifactId&amp;gt;junit-vintage-engine&amp;lt;/artifactId&amp;gt;&#xD;
+                &amp;lt;/exclusion&amp;gt;&#xD;
+            &amp;lt;/exclusions&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&#xD;
+    &amp;lt;build&amp;gt;&#xD;
+        &amp;lt;finalName&amp;gt;&#xD;
+            ${project.artifactId}&#xD;
+        &amp;lt;/finalName&amp;gt;&#xD;
+        &amp;lt;plugins&amp;gt;&#xD;
+            &amp;lt;plugin&amp;gt;&#xD;
+                &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+                &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;/plugin&amp;gt;&#xD;
+        &amp;lt;/plugins&amp;gt;&#xD;
+    &amp;lt;/build&amp;gt;&#xD;
+&#xD;
+    &amp;lt;repositories&amp;gt;&#xD;
+        &amp;lt;repository&amp;gt;&#xD;
+            &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+            &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
+            &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+        &amp;lt;/repository&amp;gt;&#xD;
+    &amp;lt;/repositories&amp;gt;&#xD;
+    &amp;lt;pluginRepositories&amp;gt;&#xD;
+        &amp;lt;pluginRepository&amp;gt;&#xD;
+            &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+            &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
+            &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+        &amp;lt;/pluginRepository&amp;gt;&#xD;
+    &amp;lt;/pluginRepositories&amp;gt;&#xD;
+&#xD;
+&#xD;
+    &amp;lt;profiles&amp;gt;&#xD;
+        &amp;lt;profile&amp;gt;&#xD;
+            &amp;lt;id&amp;gt;graal&amp;lt;/id&amp;gt;&#xD;
+            &amp;lt;build&amp;gt;&#xD;
+                &amp;lt;plugins&amp;gt;&#xD;
+                    &amp;lt;plugin&amp;gt;&#xD;
+                        &amp;lt;groupId&amp;gt;org.graalvm.nativeimage&amp;lt;/groupId&amp;gt;&#xD;
+                        &amp;lt;artifactId&amp;gt;native-image-maven-plugin&amp;lt;/artifactId&amp;gt;&#xD;
+                        &amp;lt;version&amp;gt;20.0.0&amp;lt;/version&amp;gt;&#xD;
+                        &amp;lt;configuration&amp;gt;&#xD;
+                            &amp;lt;buildArgs&amp;gt;&#xD;
+-Dspring.graal.mode=initialization-only -Dspring.graal.dump-config=/tmp/computed-reflect-config.json -Dspring.graal.verbose=true -Dspring.graal.skip-logback=true --initialize-at-run-time=org.springframework.data.r2dbc.connectionfactory.ConnectionFactoryUtils --initialize-at-build-time=io.r2dbc.spi.IsolationLevel,io.r2dbc.spi --initialize-at-build-time=io.r2dbc.spi.ConstantPool,io.r2dbc.spi.Assert,io.r2dbc.spi.ValidationDepth --initialize-at-build-time=org.springframework.data.r2dbc.connectionfactory -H:+TraceClassInitialization --no-fallback --allow-incomplete-classpath --report-unsupported-elements-at-runtime -H:+ReportExceptionStackTraces --no-server --initialize-at-build-time=org.reactivestreams.Publisher --initialize-at-build-time=com.example.reactive.ReservationRepository --initialize-at-run-time=io.netty.channel.unix.Socket --initialize-at-run-time=io.netty.channel.unix.IovArray --initialize-at-run-time=io.netty.channel.epoll.EpollEventLoop --initialize-at-run-time=io.netty.channel.unix.Errors&#xD;
+                            &amp;lt;/buildArgs&amp;gt;&#xD;
+                        &amp;lt;/configuration&amp;gt;&#xD;
+                        &amp;lt;executions&amp;gt;&#xD;
+                            &amp;lt;execution&amp;gt;&#xD;
+                                &amp;lt;goals&amp;gt;&#xD;
+                                    &amp;lt;goal&amp;gt;native-image&amp;lt;/goal&amp;gt;&#xD;
+                                &amp;lt;/goals&amp;gt;&#xD;
+                                &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;&#xD;
+                            &amp;lt;/execution&amp;gt;&#xD;
+                        &amp;lt;/executions&amp;gt;&#xD;
+                    &amp;lt;/plugin&amp;gt;&#xD;
+                    &amp;lt;plugin&amp;gt;&#xD;
+                        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+                        &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;&#xD;
+                    &amp;lt;/plugin&amp;gt;&#xD;
+                &amp;lt;/plugins&amp;gt;&#xD;
+            &amp;lt;/build&amp;gt;&#xD;
+        &amp;lt;/profile&amp;gt;&#xD;
+    &amp;lt;/profiles&amp;gt;&#xD;
+&#xD;
+&amp;lt;/project&amp;gt;&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tne notable thing here is that we&amp;rsquo;ve added the &lt;code&gt;native-image-maven-plugin&lt;/code&gt; plugin to the build. The plugin also takes some command line configurations that help it understand what it should do. That long list of command-line arguments in the &lt;code&gt;buildArgs&lt;/code&gt; elements represent the command line witches required to make this application run. (I owe a &lt;em&gt;huge&lt;/em&gt; thanks to Spring GraalVM Feature lead Andy Clement for figuring all this out!) &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.experimental&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-graal-native&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.6.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to exploit as many vehicles to contribute information to the GraalVM compiler about how the application should run. We&amp;rsquo;re going to leverage the Java agent approach. Were going to leverage the GraalVM feature approach. We&amp;rsquo;re also going to leverage command-line configuration. All this information, taken together, gives GraalVM enough information to turn out the application to a statically compiled native image successfully. The goal, in the long term, is for Spring projects and the Spring GraalVM feature fo everything to support this process.&lt;/p&gt;
+&lt;p&gt;Now that we got this all configured, let&amp;rsquo;s build the application. Here&amp;rsquo;s the basic workflow.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Compile the Java application, as normal&lt;/li&gt;
+  &lt;li&gt;run the Java application with the Java agent to collect information. We need to make sure to exercise the application at this point. Exercise every pathway possible! This is precisely the sort of use case for CI and testing, by the way! They always say that you should make your application work (which you can do by testing it) and &lt;em&gt;then&lt;/em&gt; make it fast. Now, with Graal, you can do both!&lt;/li&gt;
+  &lt;li&gt;then rebuild the application again, this time with the &lt;code&gt;graal&lt;/code&gt; profile active to compile the native image using the information gathered from the first run.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash "&gt;mvn -DskipTests=true clean package&#xD;
+export MI=src/main/resources/META-INF&#xD;
+mkdir -p $MI &#xD;
+java -agentlib:native-image-agent=config-output-dir=${MI}/native-image -jar target/reactive.jar&#xD;
+&#xD;
+## it&amp;#39;s at this point that you need to exercise the application: http://localhost:8080/reservations &#xD;
+## then hit CTRL + C to stop the running application.&#xD;
+&#xD;
+tree $MI&#xD;
+mvn -Pgraal clean package
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And if all that worked, then you should be able to see the resulting application in the &lt;code&gt;target&lt;/code&gt; directory. Run it like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash "&gt;./target/com.example.reactive.reactiveapplication 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your application should spin up, evident from the output of the application like this. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;2020-04-15 23:25:08.826  INFO 7692 --- [           main] c.example.reactive.ReactiveApplication   : Started ReactiveApplication in 0.099 seconds (JVM running for 0.103)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pretty cool, eh? The GraalVM native image builder is an excellent fit when paired with a cloud platform like CloudFoundry or Kubernetes. You can easily containerize the application and get it working on a cloud platform with a minimal footprint. Enjoy! And as always, we&amp;rsquo;d love to hear from you. Does this technology suit your use case? Questions? Comments? Feedback and sound off to &lt;a href="http://twitter.com/Springcentral"&gt;us on Twitter (@springcentral)&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Announcing the Spring Authorization Server</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server" />
@@ -874,219 +1158,6 @@ class ExampleIntegrationTests {&#xD;
   &lt;li&gt;&lt;a href="https://twitter.com/bsideup"&gt;Sergei on Twitter (@bsideup)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe title="Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov" src="https://www.podbean.com/media/player/fx22a-d75897?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.6 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/26/spring-boot-2-2-6-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-03-26:4011</id>
-    <updated>2020-03-26T13:03:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.6 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.6.RELEASE"&gt;53 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt; and adds support for the recently released Java 14. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Liveness and Readiness Probes with Spring Boot</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Brian Clozel</name>
-    </author>
-    <id>tag:spring.io,2020-03-19:4001</id>
-    <updated>2020-03-25T15:30:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; this blog post has been updated for changes released in Spring Boot 2.3.0.RC1&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Boot team is actively working on a Kubernetes theme for the next 2.3.0 release. After &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;Docker images creation&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-graceful-shutdown"&gt;Graceful Shutdown support&lt;/a&gt;, it¡¯s now time to introduce Liveness and Readiness probes support.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With our 2.2.0 release, Spring Boot shipped with &lt;a href="https://docs.spring.io/spring-boot/docs/2.2.x/reference/html/production-ready-features.html#health-groups"&gt;the Health Groups support&lt;/a&gt;, allowing developers to select a subset of health indicators and group them under a single, correlated, health status.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Even with this new feature, we¡¯ve found that we could provide more to the Spring community, with more opinions and guidance when it comes to Kubernetes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="liveness-and-readiness-in-kubernetes"&gt;&lt;a class="anchor" href="#liveness-and-readiness-in-kubernetes"&gt;&lt;/a&gt;Liveness and Readiness in Kubernetes&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In Kubernetes, the &lt;a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/"&gt;Liveness and Readiness Kubernetes concepts&lt;/a&gt; represent facets of the application state.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Liveness state of an application tells whether the internal state is valid. If Liveness is broken, this means that the application itself is in a failed state and cannot recover from it. In this case, the best course of action is to restart the application instance. For example, an application relying on a local cache should fail its Liveness state if the local cache is corrupted and cannot be repaired.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Readiness state tells whether the application is ready to accept client requests. If the Readiness state is unready, Kubernetes should not route traffic to this instance. If an application is too busy processing a task queue, then it could declare itself as busy until its load is manageable again.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;a class="anchor" href="#promoting-liveness-and-readiness-as-core-spring-boot-concepts"&gt;&lt;/a&gt;Promoting Liveness and Readiness as core Spring Boot concepts&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These Liveness and Readiness concepts are not only applicable to Kubernetes and they are generally useful, regardless of the deployment platform. We¡¯re introducing &lt;code&gt;LivenessState&lt;/code&gt; and &lt;code&gt;ReadinessState&lt;/code&gt;, which are immutable representations of those concepts. You can get them at any time from the &lt;code&gt;ApplicationAvailability&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;// Available as a component in the application context
-ApplicationAvailability availability;
-
-LivenessState livenessState = availabilityProvider.getLivenessState();
-ReadinessState readinessState = availabilityProvider.getReadinessState()&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;strong&gt;A polling-only model where you need to exercise checks to know the state of the application is incomplete&lt;/strong&gt;. Only the application knows about its lifecycle (startup, shutdown) or can provide context about runtime errors (ending in a broken state while processing tasks). The Spring Boot application context is natively publishing those events during the lifecycle of the application; your application code should also be able to contribute to this.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is why we chose to use the Spring Application Event model to change the availability state and listen for updates:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;/**
- * Component that checks that the local cache is in a valid state.
- */
-@Component
-public class LocalCacheVerifier {
-
-    private final ApplicationEventPublisher eventPublisher;
-
-    public LocalCacheVerifier(ApplicationEventPublisher eventPublisher) {
-        this.eventPublisher = eventPublisher;
-    }
-
-    public void checkLocalCache() {
-        try {
-            //...
-        }
-        catch (CacheCompletelyBroken ex) {
-            AvailabilityChangeEvent.publish(this.eventPublisher, LivenessState.BROKEN);
-        }
-    }
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Components can also listen for those events with &lt;code&gt;@EventListener&lt;/code&gt; (or by implementing &lt;code&gt;ApplicationListener&lt;/code&gt;).
-Check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/spring-boot-features.html#boot-features-application-availability-managing"&gt;the reference documentation for more information&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This support ships with the &lt;code&gt;spring-boot&lt;/code&gt; module directly and is activated for all Spring Boot applications; this makes it available for all types of applications (web, batch, etc) and allows you to implement Probes that aren¡¯t necessarily tied to HTTP.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;a class="anchor" href="#exposing-kubernetes-probes-with-spring-boot-actuator"&gt;&lt;/a&gt;Exposing Kubernetes Probes with Spring Boot Actuator&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You¡¯ll probably be interested in a very common use case: deploying a web application on Kubernetes and configuring HTTP Probes. Adding the Spring Boot Actuator dependency to your application is the only requirement! Actuator will use the Health support to configure &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes"&gt;Liveness and Readiness HTTP Probes&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Actuator will gather the "Liveness" and "Readiness" information from the &lt;code&gt;ApplicationAvailability&lt;/code&gt; and use that information in dedicated Health Indicators: &lt;code&gt;LivenessStateHealthIndicator&lt;/code&gt; and &lt;code&gt;ReadinessStateHealthIndicator&lt;/code&gt;. These indicators will be shown on the global health endpoint (&lt;code&gt;"/actuator/health"&lt;/code&gt;). They will also be exposed as separate HTTP Probes using Health Groups: &lt;code&gt;"/actuator/health/liveness"&lt;/code&gt; and &lt;code&gt;"/actuator/health/readiness"&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;An application running on Kubernetes will show the following health report:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health
-// HTTP/1.1 200 OK
-
-{
-  "status": "UP",
-  "components": {
-    "diskSpace": {
-      "status": "UP",
-      "details": { //...
-      }
-    },
-    "livenessProbe": {
-      "status": "UP"
-    },
-    "ping": {
-      "status": "UP"
-    },
-    "readinessProbe": {
-      "status": "UP"
-    }
-  },
-  "groups": [
-    "liveness",
-    "readiness"
-  ]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Kubernetes will get the following when calling the Liveness group:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health/liveness
-// HTTP/1.1 200 OK
-
-{
-  "status": "UP",
-  "components": {
-    "livenessProbe": {
-      "status": "UP"
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;An application marked as unready will report the following for the Readiness group:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;// http://localhost:8080/actuator/health/readiness
-// HTTP/1.1 503 SERVICE UNAVAILABLE
-
-{
-  "status": "OUT_OF_SERVICE",
-  "components": {
-    "readinessProbe": {
-      "status": "OUT_OF_SERVICE"
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;HTTP Probes are only configured for applications running on Kubernetes. You can give it a try locally by manually enabling the probes with the &lt;code&gt;management.health.probes.enabled=true&lt;/code&gt; configuration property. Because Probes are Health Groups, you¡¯ll get many additional features such as configuring HTTP status mappers, security, details visibility¡¦&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can of course configure additional Health Indicators to be part of the Probes, checking for the state of external systems: a database, a Web API, a shared cache. Given an existing &lt;code&gt;CacheCheckHealthIndicator&lt;/code&gt;, you can augment the liveness Probe with:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;management.endpoint.health.group.liveness.include=livenessProbe,cacheCheck&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You should carefully consider tying external state to Liveness or Readiness and this is why Spring Boot is not adding any by default. Each application and deployment is different, but &lt;strong&gt;we&amp;#8217;re committed to providing guidance and adapt defaults with the help of the community&lt;/strong&gt; - check out &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/production-ready-features.html#production-ready-kubernetes-probes-external-state"&gt;the "Checking external state with Kubernetes Probes" section in our reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="available-in-spring-boot-2-3-0-rc1"&gt;&lt;a class="anchor" href="#available-in-spring-boot-2-3-0-rc1"&gt;&lt;/a&gt;Available in Spring Boot 2.3.0.RC1&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Coupled with Graceful Shutdown, this feature will help you with the lifecycle of applications and containers in Kubernetes - we&amp;#8217;ve started providing guidance around &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.BUILD-SNAPSHOT/reference/html/deployment.html#cloud-deployment-kubernetes"&gt;Kubernetes deployment and configuration in the reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This new feature will be available with &lt;a href="https://github.com/spring-projects/spring-boot/milestone/166"&gt;our upcoming 2.3 milestone&lt;/a&gt;;  and we can¡¯t wait to hear from you!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

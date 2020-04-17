@@ -1,0 +1,10 @@
+package CodingStudy;
+/*
+ * 
+ */
+public class 문자판 {
+	static int N,M,K
+	public static void main(String[] args) {
+
+	}
+}

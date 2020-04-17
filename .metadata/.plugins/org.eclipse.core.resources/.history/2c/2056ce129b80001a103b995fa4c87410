@@ -1,0 +1,37 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+/*
+ * 테스트 케이스 최대 200
+ * 
+ */
+public class 산업스파이의편지 {
+	static int T;
+	static HashSet<Integer> primeSet = new HashSet<Integer>();
+	static int[] memo = new int[10000000];
+	static boolean[] prime = new boolean[10000000];
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		makePrimeSetByEra();
+	}
+	private static void makePrimeSetByEra() {
+		for(int i=2;i<=9999999;i++){
+			if(i%2==0 && i>2) continue;//짝수는 건너뜀
+			System.out.println(i);
+			for(int j=1;(j*i)<=9999999;j++){
+				prime[j*i] = true;
+			}
+		}
+		for(int i=2;i<=9999999;i++) {
+			System.out.println(prime[i]);
+			if(prime[i]==false) primeSet.add(i);
+		}
+		System.out.println("돎"+primeSet.size());
+		for (int i : primeSet) {
+			System.out.println(i);
+			System.out.println("?");
+		}
+	}
+}
