@@ -1,0 +1,25 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 21:45~
+ * 예쁘게 짜보자
+ */
+public class 로봇청소기 {
+	static int R,C;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) {
+		//입력
+		setData();
+		//로직
+		
+		//출력
+	}
+	private static void setData() {
+		
+	}
+}

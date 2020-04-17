@@ -1,0 +1,16 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 21:45~
+ */
+public class 로봇청소기 {
+	static int R,C;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	public static void main(String[] args) {
+
+	}
+}

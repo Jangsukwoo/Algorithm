@@ -1,0 +1,58 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 21:45~
+ *
+ * 예쁘게 짜보자
+ */
+public class 로봇청소기 {
+	static int R,C;
+	static int[][] room;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1}; //북동남서
+	static int robotR,robotC,robotDirection;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		//입력
+		setData();
+		//로직
+		simulation();
+		//출력
+	}
+	private static void simulation() {
+		room[robotR][robotC] = 2;//현위치 청소
+		while(true){
+			for(int dir=0;dir<4;dir++){
+				
+			}
+		}
+	}
+	private static int leftCheck(){
+		if(robotDirection-1<0){
+			
+		}
+		return 0;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		robotR = Integer.parseInt(st.nextToken());
+		robotC = Integer.parseInt(st.nextToken());
+		robotDirection = Integer.parseInt(st.nextToken());
+		room = new int[R][C];
+		for(int row=0;row<R;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<C;col++) {
+				room[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}
