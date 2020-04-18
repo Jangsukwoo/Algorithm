@@ -5,7 +5,239 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-17T02:49:38Z</updated>
+  <updated>2020-04-17T20:12:51Z</updated>
+  <entry>
+    <title>Spring Cloud App Broker 1.0.5 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/17/spring-cloud-app-broker-1-0-5-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2020-04-17:4033</id>
+    <updated>2020-04-17T20:12:51Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the release of Spring Cloud App Broker 1.0.5. This release includes the following fixes and improvements:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade to Spring Boot 2.1.13.RELEASE&lt;/li&gt;
+  &lt;li&gt;Allow a &lt;code&gt;ServiceInstanceService&lt;/code&gt; bean to be provided by a consuming application&lt;/li&gt;
+  &lt;li&gt;Correct an issue where the backing app environment was not being updated when the service instance was upgraded&lt;/li&gt;
+  &lt;li&gt;If specified, the &lt;code&gt;routes&lt;/code&gt; property now takes precedence over &lt;code&gt;host&lt;/code&gt;, &lt;code&gt;hosts&lt;/code&gt;, &lt;code&gt;domain&lt;/code&gt; and &lt;code&gt;domains&lt;/code&gt; properties&lt;/li&gt;
+  &lt;li&gt;Correct an issue where synchronous binding and unbinding requests were not being properly handled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;implementation(&amp;quot;org.springframework.cloud:spring-cloud-starter-app-broker-cloudfoundry:1.0.5.RELEASE&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Maven:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-app-broker-cloudfoundry&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.5.RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-app-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-app-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-app-broker/docs/1.0.5.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-app-broker/docs/1.0.5.RELEASE/api/"&gt;API Doc&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud 2020.0.0-M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/17/spring-cloud-2020-0-0-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Spencer Gibb</name>
+    </author>
+    <id>tag:spring.io,2020-04-16:4031</id>
+    <updated>2020-04-17T18:52:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Milestone 1 (M1) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud 2020.0.0&lt;/a&gt; (Code Name: &lt;code&gt;Ilford&lt;/code&gt;) Release Train is available today. The release can be found in the &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 2020 &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-2020.0.0-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-2020-release-train" class="anchor" name="notable-changes-in-the-2020-release-train"&gt;&lt;/a&gt;Notable Changes in the 2020 Release Train&lt;/h2&gt;
+&lt;p&gt;We have changed our release train versioning scheme. We now follow &lt;a href="https://calver.org/"&gt;Calendar Versioning&lt;/a&gt; or calver for short. We will follow the &lt;code&gt;YYYY.MINOR.MICRO&lt;/code&gt; &lt;a href="https://calver.org/#scheme"&gt;scheme&lt;/a&gt; where &lt;code&gt;MINOR&lt;/code&gt; is an incrementing number that starts at zero each year. The &lt;code&gt;MICRO&lt;/code&gt; segment corresponds to suffixes previously used: &lt;code&gt;.0&lt;/code&gt; is analogous to &lt;code&gt;.RELEASE&lt;/code&gt; and &lt;code&gt;.2&lt;/code&gt; is analogous to &lt;code&gt;.SR2&lt;/code&gt;. Pre-release suffixes will also change from using a &lt;code&gt;.&lt;/code&gt; to a &lt;code&gt;-&lt;/code&gt; for the separator, for example &lt;code&gt;2020.0.0-M1&lt;/code&gt; and &lt;code&gt;2020.0.0-RC2&lt;/code&gt;. We will also stop prefixing snapshots with &lt;code&gt;BUILD-&lt;/code&gt; &amp;ndash; for example &lt;code&gt;2020.0.0-SNAPSHOT&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We will continue to use London Tube Station names for code names. The current codename is &lt;code&gt;Ilford&lt;/code&gt;. These names will no longer be used in versions published to maven repositories.&lt;/p&gt;
+&lt;p&gt;Spring Cloud AWS and Spring Cloud GCP are no longer part of the release train. They will continue to be part of Hoxton as long as it is supported &amp;ndash; at least thru June of 2021. Spring Cloud GCP will continue on as a separate project in &lt;a href="https://github.com/GoogleCloudPlatform"&gt;https://github.com/GoogleCloudPlatform&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Initial milestones are based on Spring Boot 2.3.x but will shift to 2.4.x once that line has started.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;2020.0&lt;/code&gt; Release Train will be available on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt; once development has started on the next feature release of Spring Boot (2.4.0). Please see &lt;a href="#gettingstarted"&gt;Getting Started&lt;/a&gt;, below, for instructions on including this release in your project.&lt;/p&gt;
+&lt;p&gt;In all, a total of 183 issues, enhancements, bugs and pull requests were included in this release. See the &lt;a href="https://github.com/orgs/spring-cloud/projects/32"&gt;GitHub project&lt;/a&gt; for details. &lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;All of the maintence mode projects have been removed and all dependent projects were updated accordingly.&lt;/li&gt;
+  &lt;li&gt;Added zoned loadBalancer implementation support &lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/pull/3720"&gt;#3720&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Removed deprecated EurekaDiscoveryClient.EurekaServiceInstance &lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/issues/3742"&gt;#3742&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
+&lt;p&gt;Updated to support the latest version of Brave.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
+&lt;p&gt;Support was added for Consul Service Metadata rather than using tags as metadata.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;p&gt;Service Instance metadata is now added to Route metadata. Support was added for modifying request or response bodies even if the body was empty. An option to ignore route definition errors was added.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-circuitbreaker" class="anchor" name="spring-cloud-circuitbreaker"&gt;&lt;/a&gt;Spring Cloud CircuitBreaker&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgraded Resilience4J to 1.3.1&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
+&lt;p&gt;Support was added for incremental test generation in the Maven plugin. Support was added for Spring Cloud Loadbalancer in stubrunner.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Switch Ribbon-based functionalities were added to Spring Cloud LoadBalancer &lt;a href="https://github.com/spring-cloud/spring-cloud-zookeeper/pull/240"&gt;#240&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Added a property source that produces a random value that is cached &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/pull/719"&gt;#719&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Removed Spring Cloud LoadBalancer Ribbon integration &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/pull/691"&gt;#691&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Adjusted to LoadBalancer implementation changes &lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/pull/300"&gt;#300&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#included-modules" class="anchor" name="included-modules"&gt;&lt;/a&gt;Included Modules&lt;/h3&gt;
+&lt;p&gt;The following modules were updated as part of 2020.0.0-M1:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+      &lt;th&gt;Issues&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/88?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Function &lt;/td&gt;
+      &lt;td&gt;3.1.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/74?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/47?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
+      &lt;td&gt;2.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/36?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
+      &lt;td&gt;2.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/63?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-zookeeper/milestone/28?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/72?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
+      &lt;td&gt;3.0.0.M1 &lt;/td&gt;
+      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/23?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, and on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#getting-started" class="anchor" name="getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
+&lt;div id="gettingstarted"&gt;To get started with Maven with a BOM (dependency management only):&lt;/div&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;repositories&amp;gt;&#xD;
+    &amp;lt;repository&amp;gt;&#xD;
+        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
+        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
+        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+        &amp;lt;snapshots&amp;gt;&#xD;
+            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
+        &amp;lt;/snapshots&amp;gt;&#xD;
+    &amp;lt;/repository&amp;gt;&#xD;
+&amp;lt;/repositories&amp;gt;&#xD;
+&#xD;
+&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;2020.0.0-M1&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;!-- ... --&amp;gt;&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To get started with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;plugins {&#xD;
+  id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.3.0.M4&amp;#39;&#xD;
+  id &amp;#39;io.spring.dependency-management&amp;#39; version &amp;#39;1.0.9.RELEASE&amp;#39;&#xD;
+  id &amp;#39;java&amp;#39;&#xD;
+}&#xD;
+&#xD;
+repositories {&#xD;
+  mavenCentral()&#xD;
+  maven { url &amp;#39;https://repo.spring.io/milestone&amp;#39; }&#xD;
+}&#xD;
+&#xD;
+ext {&#xD;
+  set(&amp;#39;springCloudVersion&amp;#39;, &amp;quot;2020.0.0-M1&amp;quot;)&#xD;
+}&#xD;
+&#xD;
+dependencyManagement {&#xD;
+  imports {&#xD;
+    mavenBom &amp;quot;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&amp;quot;&#xD;
+  }&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+  //...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Jetbrains Developer Advocacy head, "Talking Kotlin" podcast host, and Kotlin rockstar Hadi Hariri</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/17/a-bootiful-podcast-jetbrains-developer-advocacy-head-talking-kotlin-podcast-host-and-kotlin-rockstar-hadi-hariri" />
@@ -1086,78 +1318,6 @@ class Restager {&#xD;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>@DynamicPropertySource in Spring Framework 5.2.5 and Spring Boot 2.2.6</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/27/dynamicpropertysource-in-spring-framework-5-2-5-and-spring-boot-2-2-6" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-03-26:4013</id>
-    <updated>2020-03-27T14:15:33Z</updated>
-    <content type="html">&lt;p&gt;Recently, when talking about testing Spring Boot applications at Spring IO and SpringOne Platform, I&amp;rsquo;ve mentioned &lt;a href="https://www.testcontainers.org"&gt;Testcontainers&lt;/a&gt; and &lt;a href="https://youtu.be/Wpz6b8ZEgcU?t=2077"&gt;discussed&lt;/a&gt; the boilerplate involved in configuring your tests to use the service running inside the container. I&amp;rsquo;m delighted to say that, with the &lt;a href="https://spring.io/blog/2020/03/24/spring-framework-5-2-5-available-now"&gt;recent Spring Framework 5.2.5 release&lt;/a&gt;, that boilerplate is no more.&lt;/p&gt;
-&lt;p&gt;Prior to the changes that we&amp;rsquo;ve just released, your integration test would look similar to the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootTest&#xD;
-@Testcontainers&#xD;
-@ContextConfiguration(initializers = ExampleIntegrationTests.Initializer.class)&#xD;
-class ExampleIntegrationTests {&#xD;
-&#xD;
-    @Container&#xD;
-    static Neo4jContainer&amp;lt;?&amp;gt; neo4j = new Neo4jContainer&amp;lt;&amp;gt;();&#xD;
-&#xD;
-    static class Initializer implements&#xD;
-            ApplicationContextInitializer&amp;lt;ConfigurableApplicationContext&amp;gt; {&#xD;
-&#xD;
-        @Override&#xD;
-        public void initialize(ConfigurableApplicationContext context) {&#xD;
-            TestPropertyValues.of(&amp;quot;spring.data.neo4j.uri=&amp;quot; + neo4j.getBoltUrl())&#xD;
-                    .applyTo(context.getEnvironment());&#xD;
-        }&#xD;
-&#xD;
-    }&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here we are using &lt;code&gt;@ContextConfiguration&lt;/code&gt; to specify an &lt;code&gt;ApplicationContextInitializer&lt;/code&gt;. The initializer is configuring the &lt;code&gt;spring.data.neo4j.uri&lt;/code&gt; property with the value of the Neo4j container&amp;rsquo;s bolt URL. This allows Neo4j-related beans in our application to communicate with Neo4j running inside the Testcontainers-managed Docker container.&lt;/p&gt;
-&lt;p&gt;Thanks to &lt;a href="https://github.com/spring-projects/spring-framework/issues/24540"&gt;the changes made in Spring Framework 5.2.5&lt;/a&gt;, the use of &lt;code&gt;@ContextConfiguration&lt;/code&gt; and the &lt;code&gt;ApplicationContextInitializer&lt;/code&gt; can be replaced with a static &lt;code&gt;@DynamicPropertySource&lt;/code&gt; method that serves the same purpose. If we make these changes to the integration test class shown above, it now looks like the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;@SpringBootTest&#xD;
-@Testcontainers&#xD;
-class ExampleIntegrationTests {&#xD;
-&#xD;
-    @Container&#xD;
-    static Neo4jContainer&amp;lt;?&amp;gt; neo4j = new Neo4jContainer&amp;lt;&amp;gt;();&#xD;
-&#xD;
-    @DynamicPropertySource&#xD;
-    static void neo4jProperties(DynamicPropertyRegistry registry) {&#xD;
-        registry.add(&amp;quot;spring.data.neo4j.uri&amp;quot;, neo4j::getBoltUrl);&#xD;
-    }&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We&amp;rsquo;ve reduced the amount of code by a third and the intent is hopefully much clearer as well.&lt;/p&gt;
-&lt;p&gt;While the new feature was inspired by making Testcontainers easier to use in a Spring Boot integration test, it should be useful in any Spring-based integration test where a property&amp;rsquo;s value isn&amp;rsquo;t known up front. You can learn more about &lt;code&gt;@DynamicPropertySource&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.5.RELEASE/spring-framework-reference/testing.html#testcontext-ctx-management-dynamic-property-sources"&gt;Spring Framework reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Happy integration testing!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/27/a-bootiful-podcast-apache-groovy-testcontainers-and-reactor-committer-sergei-egorov" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-03-27:4014</id>
-    <updated>2020-03-27T02:32:27Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to fellow Java Champion, Oracle Groundbreaker, and Apache Groovy, Testcontainers, and Reactor committer &lt;a href="http://twitter.com/bsideup"&gt;Sergei Egorov (@bsideup)&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.testcontainers.org/"&gt;TestContainers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.groovy-lang.org/"&gt;Apache Groovy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://projectreactor.io/"&gt;project Reactor&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/bsideup"&gt;Sergei on Twitter (@bsideup)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe title="Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov" src="https://www.podbean.com/media/player/fx22a-d75897?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

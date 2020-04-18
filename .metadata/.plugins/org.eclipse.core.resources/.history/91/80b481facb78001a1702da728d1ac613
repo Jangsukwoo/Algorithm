@@ -1,9 +1,0 @@
-package codeup;
-
-public class 성실한개미 {
-	static int[] dr = {0,1};
-	static int[] dc = {1,0};
-	public static void main(String[] args) {
-
-	}
-}
