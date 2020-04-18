@@ -1,0 +1,11 @@
+package CodingStudyHW;
+/*
+ * 접수 창구 번호와
+ * 정비 창구 번호가 존재
+ * 
+ */
+public class 차량정비소 {
+	public static void main(String[] args) {
+
+	}
+}
