@@ -101,10 +101,10 @@ public class 차량정비소 {
 		public void setgarageHistoryHistory(int number) {//정비 창구 번호 부여
 			this.garageHistory = number;
 		}
-		public void setGarageNumberTicket(int number) {//정비소 번호표 부여
+		public void setGarageNumberTicket(int number) {
 			this.garageNumberTicket=number;
 		}
-		public int[] getCareInfomation() {//접수,정비 창구 이력 return
+		public int[] getCareInfomation() {
 			int[] info = new int[] {this.receptionHistory,this.garageHistory};
 			return info;
 		}
