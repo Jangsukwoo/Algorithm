@@ -1,0 +1,20 @@
+package CodingStudyHW;
+
+/*
+ * 19:35 시작
+ * 차근차근 풀자 ㅎㅎ
+ * 보물 상자 뚜껑은 시계방향으로 돌릴 수 있다.
+ * 4개의 변을 가진 보물상자가 있는데
+ * 시계방향으로 돌린다.
+ * 돌리는건 변에 적힌 숫자의 개수만큼 돌리면 될듯
+ * 
+ * 
+ */
+public class 보물상자비밀번호 {
+	static int T;
+	static int N,K;
+	
+	public static void main(String[] args) {
+
+	}
+}
