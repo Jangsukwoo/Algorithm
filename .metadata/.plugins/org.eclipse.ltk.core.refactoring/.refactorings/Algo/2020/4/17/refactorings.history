@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CodingStudy.새로운겡미&apos; to &apos;새로운게임&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;CodingStudy.새로운겡미&apos;&#x0D;&#x0A;- Renamed element: &apos;CodingStudy.새로운게임&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;새로운겡미&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;CodingStudy{새로운겡미.java[새로운겡미" matchStrategy="1" name="새로운게임" qualified="false" references="true" similarDeclarations="false" stamp="1587278449292" textual="false" version="1.0"/>
+</session>
