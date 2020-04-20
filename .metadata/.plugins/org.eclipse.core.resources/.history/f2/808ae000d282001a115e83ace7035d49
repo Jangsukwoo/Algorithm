@@ -1,0 +1,50 @@
+package CodingStudy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 15:06
+ * 게리맨더링 그냥 풀어보기
+ * 인구가 가장 많은 선거구와 가장 적은 선거구의 인구 차이의 최소값
+ * 부등식 그대로 짜본다. 경계선을 그어준다.
+ */
+public class 게리맨더링2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] city;
+	static int[][] divideCity;
+	static int N;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		divdeAndGetMinValue();
+	}
+	private static void divdeAndGetMinValue() {
+		for(int d1=1;d1<=(N-1);d1++) {
+			for(int d2=1;d2<=(N-1);d2++){//경계선 길이 설정
+				
+				for(int x=0;x<N;x++) {
+					for(int y=0;y<N;y++) {
+						//선정된 점에서  
+						if((x+d1)<N 
+								&& (y-d1)>=0 
+								&& (y+d2)<=(N-1)
+								&& (x+d2+d1)<=(N-1))
+							
+					}
+				}
+			}
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				city[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

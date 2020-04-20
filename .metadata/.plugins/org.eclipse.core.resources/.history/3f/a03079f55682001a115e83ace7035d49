@@ -1,0 +1,43 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.StringTokenizer;
+
+public class 주몽 {
+	static int N;
+	static int target;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[] num;
+	static int[] tempNumber;
+	static HashSet<Integer> numSet;
+	static int cnt;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		logic();
+	}
+	private static void logic() {
+		for(int i=0;i<N;i++){
+			if(numSet.contains(num[i])&& numSet.contains(tempNumber[i])){
+				
+			}
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		target = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine());
+		num = new int[N];
+		tempNumber = new int[N];
+		numSet = new HashSet<Integer>();
+		for(int i=0;i<N;i++) {
+			num[i] = Integer.parseInt(st.nextToken());
+			tempNumber[i]-=target;//빼고
+			tempNumber[i] = Math.abs(tempNumber[i]);//절대값취함
+			numSet.add(num[i]);
+		}
+	}
+}

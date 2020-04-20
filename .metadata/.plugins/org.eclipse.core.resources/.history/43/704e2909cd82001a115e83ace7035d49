@@ -1,0 +1,9 @@
+package CodingStudy;
+/*
+ * 게리맨더링 그냥 풀어보기
+ */
+public class 게리맨더링2 {
+	public static void main(String[] args) {
+
+	}
+}
