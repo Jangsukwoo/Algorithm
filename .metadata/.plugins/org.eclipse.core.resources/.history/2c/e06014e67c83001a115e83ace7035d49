@@ -1,0 +1,8 @@
+package CodingStudy;
+/*
+ * 12:03
+ * 이동은 동 서 남 북 상 하로 이동 가능
+ */
+public class 상범빌딩 {
+
+}

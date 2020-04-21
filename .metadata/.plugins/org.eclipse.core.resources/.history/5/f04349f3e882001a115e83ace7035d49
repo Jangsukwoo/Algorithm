@@ -1,0 +1,21 @@
+package CodingStudy;
+/*
+ * 18:13
+ * 블록이 추가되는 경우는 없다.
+ * 이동은 아래에서 위로 올리는것만 생각하고
+ * 맵은 로테이트 시키면서 테스트하자.
+ * 
+ * 보드 크기 최대 20 by 20
+ * 최대 5번 이동시켜서 얻을 수 있는 가장 큰 블록??
+ */
+public class 이공사팔 {
+	static int N;
+	static int[][] originalGameBoard;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}
