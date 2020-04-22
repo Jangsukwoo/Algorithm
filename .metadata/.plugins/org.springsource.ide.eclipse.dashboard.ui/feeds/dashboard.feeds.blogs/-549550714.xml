@@ -5,7 +5,167 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-20T18:26:56Z</updated>
+  <updated>2020-04-22T02:07:54Z</updated>
+  <entry>
+    <title>Spring HATEOAS brings you new ways to configure clients</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/22/spring-hateoas-brings-you-new-ways-to-configure-clients" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Greg Turnquist</name>
+    </author>
+    <id>tag:spring.io,2020-03-31:4017</id>
+    <updated>2020-04-22T02:07:54Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With Spring HATEOAS&amp;#8217;s recent &lt;code&gt;1.1.0.M3&lt;/code&gt; release, we bring you a new way to configure clients!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The first step in building hypermedia-based services may be configuring your server, which Spring HATEOAS has provided for a long time through its &lt;code&gt;@EnableHypermediaSupport()&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The next major step is building a client that can parse that hypermedia output. This has always been available, but it required you to know some of the deepest innards of the Spring Framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Until today.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With the latest version of Spring HATEOAS, it has been made &lt;em&gt;much&lt;/em&gt; easier to configure &lt;code&gt;RestTemplate&lt;/code&gt;, &lt;code&gt;WebClient&lt;/code&gt;, or &lt;code&gt;WebTestClient&lt;/code&gt; instances.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="configuring-resttemplate"&gt;&lt;a class="anchor" href="#configuring-resttemplate"&gt;&lt;/a&gt;Configuring &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring HATEOAS now creates a bean called the &lt;code&gt;HypermediaRestTemplateConfigurer&lt;/code&gt;. Grab it and you can apply it to any &lt;code&gt;RestTemplate&lt;/code&gt; instance you have.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+RestTemplate restTemplate(HypermediaRestTemplateConfigurer configurer) {
+  return configurer.registerHypermediaTypes(new RestTemplate());
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This example shows that after creating a &lt;code&gt;RestTemplate&lt;/code&gt; instance, you can pipe it into that &lt;code&gt;HypermediaRestTemplateConfigurer&lt;/code&gt; via its &lt;code&gt;registerHypermediaTypes&lt;/code&gt;. In this context, it gets registered as a bean in the user&amp;#8217;s application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you&amp;#8217;re using Spring Boot (as you should!), there is an even better way.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+RestTemplateCustomizer restTemplateCustomizer(
+                                   HypermediaRestTemplateConfigurer configurer) {
+    return restTemplate -&amp;gt; {
+        configurer.registerHypermediaTypes(restTemplate);
+    };
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This bean will get picked up and applied to Spring Boot&amp;#8217;s autoconfigured &lt;code&gt;RestTemplateBuilder&lt;/code&gt;. Anytime you need a &lt;code&gt;RestTemplate&lt;/code&gt;, you simply inject &lt;code&gt;RestTemplateBuilder&lt;/code&gt;, apply any final adjustments (credentials, cache settings, etc.) and invoke &lt;code&gt;build()&lt;/code&gt;. This gives you a concrete &lt;code&gt;RestTemplate&lt;/code&gt; with hypermedia support applied.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock important"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Important&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+Spring Boot has long moved past the concept of having a single &lt;code&gt;RestTemplate&lt;/code&gt; bean registered in the application context. Instead it supports the customizer-based approach. However, Spring HATEOAS will &lt;em&gt;still&lt;/em&gt; automatically configure a &lt;code&gt;RestTemplate&lt;/code&gt; if you register it as a bean.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Either way, Spring HATEOAS makes it super simple to register hypermedia support with your &lt;code&gt;RestTemplate&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="configuring-webclient-instances"&gt;&lt;a class="anchor" href="#configuring-webclient-instances"&gt;&lt;/a&gt;Configuring &lt;code&gt;WebClient&lt;/code&gt; instances&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you&amp;#8217;re building reactive applications using Spring WebFlux, you&amp;#8217;re probably itching to use &lt;code&gt;WebClient&lt;/code&gt;, Spring&amp;#8217;s newest client that has reactive built in. To wire it for hypermedia, you&amp;#8217;ll want to get a hold of Spring HATEOAS&amp;#8217;s &lt;code&gt;HypermediaWebClientConfigurer&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+WebClient.Builder webClientBuilder(HypermediaWebClientConfigurer configurer) {
+  return configurer.registerHypermediaTypes(WebClient.builder());
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This bean will grab the &lt;code&gt;HypermediaWebClientConfigurer&lt;/code&gt; and apply it to the the &lt;code&gt;WebClient.Builder&lt;/code&gt; created via it&amp;#8217;s static helper method (&lt;code&gt;builder()&lt;/code&gt;), returning a &lt;code&gt;WebClient.Builder&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Remember how Boot has that &lt;code&gt;RestTemplateBuilder&lt;/code&gt;? &lt;code&gt;WebClient&lt;/code&gt; already has something just like that in the Spring Framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And if you want to configure things in Spring Boot, this is how you do that:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+WebClientCustomizer webClientCustomizer(HypermediaWebClientConfigurer configurer) {
+    return webClientBuilder -&amp;gt; {
+        configurer.registerHypermediaTypes(webClientBuilder);
+    };
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot autoconfigures a &lt;code&gt;WebClient.Builder&lt;/code&gt;. And it applies any &lt;code&gt;WebClientCustomizer&lt;/code&gt; beans, makingg it super easy to add hypermedia support. To use it, just inject that &lt;code&gt;WebClient.Builder&lt;/code&gt; into your app, apply any extra settings (credentials, etc.) , and hit &lt;code&gt;build()&lt;/code&gt; to get a &lt;code&gt;WebClient&lt;/code&gt; instance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This even has support for &lt;code&gt;WebTestClient&lt;/code&gt;, but this post is already long enough. Go and &lt;a href="https://docs.spring.io/spring-hateoas/docs/1.1.0.BUILD-SNAPSHOT/reference/html/#client.web-test-client"&gt;chew on the reference docs&lt;/a&gt; if you are eager to include hypermedia-based unit testing in your application as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - April 21st, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/21/this-week-in-spring-april-21st-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-21:4037</id>
+    <updated>2020-04-21T19:10:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! It&amp;rsquo;s been another fun-filled week since we last spoke. I &lt;em&gt;just&lt;/em&gt; finished presenting an online talk for the Norwegian jaavBin Java User Group association - that was a ton of fun! - and now I&amp;rsquo;m preparing tomorrow&amp;rsquo;s &lt;a href="http://twitter.com/SpringTipsLive"&gt;&amp;ldquo;Spring Tips&amp;rdquo;&lt;/a&gt; installment.&lt;/p&gt;
+&lt;p&gt;And, without further ado, let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/20/spring-boot-for-apache-geode-pivotal-gemfire-1-3-0-m4-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.3.0.M4 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/20/spring-session-for-apache-geode-pivotal-gemfire-2-3-0-rc2-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.3.0.RC2 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/17/spring-cloud-app-broker-1-0-5-released"&gt;Spring Cloud App Broker 1.0.5 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/17/spring-cloud-2020-0-0-m1-released"&gt;Spring Cloud 2020.0.0-M1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/17/a-bootiful-podcast-jetbrains-developer-advocacy-head-talking-kotlin-podcast-host-and-kotlin-rockstar-hadi-hariri"&gt;A Bootiful Podcast: Jetbrains Developer Advocacy head, &amp;ldquo;Talking Kotlin&amp;rdquo; podcast host, and Kotlin rockstar Hadi Hariri&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/16/spring-tips-the-graalvm-native-image-builder-feature"&gt;Spring Tips: The GraalVM Native Image Builder Feature&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server"&gt;Announcing the Spring Authorization Server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[It&amp;rsquo;s official! SpringOne Platform 2020 is going free, and it&amp;rsquo;s going virtual!(&lt;a href="https://twitter.com/dormaindrewitz/status/1252624331869310977?s=12"&gt;https://twitter.com/dormaindrewitz/status/1252624331869310977?s=12&lt;/a&gt;) The event is now scheduled for September 1, 2020. We&amp;rsquo;d &lt;em&gt;love&lt;/em&gt; to see you there. I&amp;rsquo;ll be there, too.&lt;/li&gt;
+  &lt;li&gt;New to VMware Tanzu: Join @cmcluck and @wattersjames on 4/23 to learn more &lt;a href="https://twitter.com/VMwareTanzu/status/1252435771090276360"&gt;about VMware&amp;rsquo;s commitment to helping you&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://starkandwayne.com/blog/deploy-cf-for-k8s-to-google-in-10-minutes/amp/?__twitter_impression=true"&gt;Deploy Cloud Foundry to Google Kubernetes in 10 minutes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Hello, my European friends, join me this Thursday for a &lt;a href="https://twitter.com/VMwareTanzu/status/1252259521642344449"&gt;2+ hour Reactive Spring workshop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=B-h2yggVk8w&amp;feature=youtu.be"&gt;TAS for Kubernetes on the Desktop &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I loved this great post by Toshiaki Maki on &lt;a href="https://blog.ik.am/entries/521"&gt;running Cloud Foundry on Kuberentes&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Good news everybody! A new release of the &lt;a href="https://twitter.com/JavaAtMicrosoft/status/1251710906376916993"&gt;Java support for Visual Studio Code&lt;/a&gt; - 0.60.0 - that includes refactoring preview, type rename on file rename, wildcard imports preferences, and so much more.&lt;/li&gt;
+  &lt;li&gt;Watch the replay of the &lt;a href="https://twitter.com/java/status/1251183672771960833"&gt;Java Flight Recorder session&lt;/a&gt; by @MikaelVidstedt at the inaugural #DevDotNextDigital conference.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://vaadin.com/learn/tutorials/modern-web-apps-with-spring-boot-and-vaadin"&gt;Building Modern Web Apps with Spring Boot and Vaadin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/content/pivotal-blog/vmware-tanzu-application-service-2-9-key-enhancements-for-transformation-at-scale&amp;utm_source=twitter&amp;utm_medium=social"&gt;VMware Tanzu Application Service 2.9: Key Enhancements for Transformation at Scale&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Security teammember Josh Cumming&amp;rsquo;s has a Pluralsight course - on securing REST APIs with Spring Security - that you could enjoy during the #FreeApril promotion.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.frankel.ch/coping-incompatible-code-graalvm-compilation/"&gt;Coping with incompatible code in Graal VM AOT compilation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/neo4j/spring-data-neo4j-rx-released-into-the-wild-f1473951f91d"&gt;Spring Data Neo4j RX released into the wild &lt;/a&gt; from the Neo4j Developer Blog.&lt;/li&gt;
+  &lt;li&gt;This isn&amp;rsquo;t related to Spring, &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s still awesome: &lt;a href="https://github.blog/2020-04-14-github-is-now-free-for-teams/"&gt;GitHub is now free for teams - The GitHub Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.3.0.M4 Available</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/20/spring-boot-for-apache-geode-pivotal-gemfire-1-3-0-m4-available" />
@@ -1148,200 +1308,6 @@ Sending setting for 5-second interval.&#xD;
 &lt;p&gt;As we &lt;a href="https://spring.io/blog/2019/12/04/spring-batch-4-0-4-4-1-3-and-4-2-1-available-now"&gt;announced earlier&lt;/a&gt;, version 4.1.4 is the last release of the 4.1 line. Please upgrade to version 4.2.2 at your earliest convenience as this is the primary active branch for the moment and which will be supported until the end of 2020.&lt;/p&gt;
 &lt;p&gt;The next feature release will be 4.3, with a GA planned for October 2020, aligned with Spring Framework 5.3 and Spring Boot 2.4. This release is expected to be the last feature branch of Spring Batch 4.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Manipulating the Platform with the Spring Cloud Cloud Foundry Java Client Autoconfiguration</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/01/spring-tips-manipulating-the-platform-with-the-spring-cloud-cloud-foundry-java-client-autoconfiguration" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-04-01:4020</id>
-    <updated>2020-04-01T05:55:00Z</updated>
-    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Hu5DzNogV0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! Welcome to another installment of Spring Tip! In this installment, we look at something near and dear to my heart (and my &lt;code&gt;@author&lt;/code&gt; tag!) - the Cloud Foundry Java client auto-configuration. &lt;/p&gt;&lt;h2&gt;&lt;a href="#what-is-cloud-foundry" class="anchor" name="what-is-cloud-foundry"&gt;&lt;/a&gt;What is Cloud Foundry?&lt;/h2&gt;
-&lt;p&gt;Cloud Foundry is an open-source PaaS. It has a lot of flexibility. I&amp;rsquo;m in love with it if I&amp;rsquo;m honest. It&amp;rsquo;s simple. I love things like it that give me flexibility without requiring too many sacrifices at the altar of the YAML deity. It&amp;rsquo;s an opinionated platform as a service. You give the platform an application, and it deploys them. You upload a spring boot app, and it figures out that the app is a standalone, self-contained, so-called &amp;ldquo;fat&amp;rdquo; &lt;code&gt;.jar&lt;/code&gt; and it downloads the required JDK, configures the necessary amount of memory and then creates a filesystem with your app, the JDK, the right configuration, and then turns it all into a container. &lt;/p&gt;
-&lt;p&gt;Well, to be quite specific, buildpacks are the thing that takes the uploaded artifact and derives for it a runtime and environment to run the application. Buildpacks then get layers on top of the platform&amp;rsquo;s various blessed versions of operating systems. The result is consistency. You get velocity through consistency. You get velocity by knowing that every app looks, &lt;em&gt;basically&lt;/em&gt;, the same. The platform runs them all with a similar configuration, with some variations allowed for things like RAM, hard disk space, etc. &lt;/p&gt;
-&lt;p&gt;The other benefit of this approach is that the platform is responsible for building the container. The entire container creation lifecycle routes through the platform. The platform can create the environment again if it needs to, such as when there are security fixes in the base platform. The platform can transparently rebuild these things to take advantage of the new platform fixes. You can do this too. &lt;/p&gt;
-&lt;p&gt;In Cloud Foundry, the act of restaging an application forces it to rebuild that environment. The platform can do this for you automatically, too. You can do rolling restages if you want. You might do this because you want to specify some new environment varaibles. Have a new message queue or database to bind to the application? Restage it. You can do it if you want to upgrade something like the JDK or whatever else is described by the buildpack. Java 14 is out? Great, let&amp;rsquo;s use that. &lt;/p&gt;
-&lt;p&gt;Cloud Foundry makes this kind fo work easy because it&amp;rsquo;s all controllable through an HTTP REST API. You can ask the platform, what kind of applications do you have that are using - say - a Python-based buildpack? Which is using Java? Then you can tell it stage only those.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-cloud-foundry-java-client" class="anchor" name="the-cloud-foundry-java-client"&gt;&lt;/a&gt;The Cloud Foundry Java client&lt;/h2&gt;
-&lt;p&gt;In an &lt;a href="https://spring.io/blog/2018/04/11/spring-tips-the-cloud-foundry-java-client"&gt;earlier video&lt;/a&gt;, we looked at the cloud foundry java client. The client lets you programmatically (and reactively) talk tot he platform and instruct it do things. In this video, were going to look at the relatively new Cloud Foundry Java client autoconfiguration that&amp;rsquo;s now part of the Spring Cloud Cloud OFundry Discovery Client implementation. We&amp;rsquo;re &lt;em&gt;not&lt;/em&gt; going to use the Discovery Client. (that&amp;rsquo;ll have to wait, perhaps, for another vide!)&lt;/p&gt;
-&lt;p&gt;The Java client is trivial to set up since there&amp;rsquo;s now a Spring Boot autoconfiguration hat does the bulk of the work of connecting to the platform. Let&amp;rsquo;s build a new project to the &lt;a href="http://start.Spring.io"&gt;Spring Initalizr&lt;/a&gt;. Choose &lt;code&gt;Cloud Foundry Discovery Client&lt;/code&gt; and &lt;code&gt;Lombok&lt;/code&gt; and &lt;code&gt;Reactive Web&lt;/code&gt;. Click &lt;code&gt;Generate&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#our-sample-applications" class="anchor" name="our-sample-applications"&gt;&lt;/a&gt;Our Sample Applications&lt;/h2&gt;
-&lt;p&gt;To demonstrate this, we&amp;rsquo;re going to deploy two sample applications, one using the JVM and the other using Python. To keep things simple, we&amp;rsquo;ll use the Spring CLI to create a simple HTTP application using Spring Boot and Groovy. Then We&amp;rsquo;ll create a Python application. &lt;/p&gt;
-&lt;p&gt;To deploy these, you will need an account on a Cloud Foundry instance. I&amp;rsquo;m using &lt;a href="http://run.pivotal.io"&gt;Pivotal Web Services&lt;/a&gt;. It&amp;rsquo;s cheap to sign up. If you already have an instance, log in to it. &lt;/p&gt;&lt;h3&gt;&lt;a href="#the-python-application" class="anchor" name="the-python-application"&gt;&lt;/a&gt;The Python Application&lt;/h3&gt;
-&lt;p&gt;Here&amp;rsquo;s the &lt;a href="https://github.com/spring-tips/cloudfoundry-java-client-autoconfiguration/tree/master/sample-apps/python"&gt;Python pplication&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;The Python application (&lt;code&gt;application.py&lt;/code&gt;) is a similarly trial HTTP application using Python&amp;rsquo;s Flask framework. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint python"&gt;#!/usr/bin/env python&#xD;
-from flask import Flask&#xD;
-import os&#xD;
-&#xD;
-app = Flask(__name__)&#xD;
-cf_port = os.getenv(&amp;quot;PORT&amp;quot;)&#xD;
-if cf_port is None:&#xD;
-    cf_port = &amp;#39;5000&amp;#39;&#xD;
-&#xD;
-@app.route(&amp;#39;/&amp;#39;)&#xD;
-def hello():&#xD;
-    return {&amp;#39;message&amp;#39;: &amp;#39;Hello, world&amp;#39;}&#xD;
-&#xD;
-if __name__ == &amp;#39;__main__&amp;#39;:&#xD;
-    app.run(host=&amp;#39;0.0.0.0&amp;#39;, port=int(cf_port), debug=True)&#xD;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="http://heroku.com"&gt;Heroku&lt;/a&gt; and &lt;a href="http://cloudfoundry.org"&gt;Cloud Foundry&lt;/a&gt; use &lt;code&gt;Procfile&lt;/code&gt; files to tell the platform that a Python application is meant to be a web application. It describes to the platform how to run the program. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint yml"&gt;web: Python application.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When the platform sees the incoming application, it&amp;rsquo;ll have to download all the artifacts to run the application. You do this with a &lt;code&gt;Pipfile&lt;/code&gt; file, which is sort of like Maven&amp;rsquo;s familiar &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint Pipfile"&gt;[[source]]&#xD;
-name = &amp;quot;pypi&amp;quot;&#xD;
-url = &amp;quot;https://pypi.org/simple&amp;quot;&#xD;
-verify_ssl = true&#xD;
-&#xD;
-[dev-packages]&#xD;
-&#xD;
-[packages]&#xD;
-flask = &amp;quot;*&amp;quot;&#xD;
-&#xD;
-[requires]&#xD;
-python_version = &amp;quot;3.7&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here&amp;rsquo;s the deployment script, &lt;code&gt;deploy.sh&lt;/code&gt;, that I used to deploy the application. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;#!/bin/bash&#xD;
-&#xD;
-APP_NAME=sample-python-app-${RANDOM}&#xD;
-cf push -p . ${APP_NAME}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a href="#the-java-application" class="anchor" name="the-java-application"&gt;&lt;/a&gt;The Java Application&lt;/h3&gt;
-&lt;p&gt;Here is the &lt;a href="https://github.com/spring-tips/cloudfoundry-java-client-autoconfiguration/tree/master/sample-apps/java"&gt;Java appication&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;The following is a working Spring Boot CLI based application - all of it it. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;@RestController &#xD;
-class GreetingsRestController {&#xD;
-&#xD;
-    @GetMapping(&amp;quot;/hello&amp;quot;)&#xD;
-    String get (){&#xD;
-        return &amp;quot;Hello, world&amp;quot;&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To deploy it, I wrote a little &lt;code&gt;deploy.sh&lt;/code&gt; with the following incantations. The script is two lines: one line to turn the &lt;code&gt;.groovy&lt;/code&gt; script into a working Spring Boot (a self-contained &amp;ldquo;fat&amp;rdquo; &lt;code&gt;.jar&lt;/code&gt; with all its dependencies bundled therein) application and another line to deploy it.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;#!/bin/bash &#xD;
-APP_NAME=hello-world-${RANDOM}&#xD;
-JAR_NAME=app.jar&#xD;
-spring jar  ${JAR_NAME} hello.groovy &#xD;
-cf push -p ${JAR_NAME} APP_NAME
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#restaging-with-the-cloud-foundry-auto-configuration" class="anchor" name="restaging-with-the-cloud-foundry-auto-configuration"&gt;&lt;/a&gt;Restaging with the Cloud Foundry Auto Configuration&lt;/h2&gt;
-&lt;p&gt;Alright, I wanted to demonstrate how cool it is to be able to just plugin some strings int he property file and then - ta-da! - you can now manipulate your platform with the excellent Cloud Foundry Java client. But there&amp;rsquo;s nothing to see! You just add the Spring boot dependency to the classpath and plugin some properties. So, I will show you the code and configuration to build a selective restage. I&amp;rsquo;ve shown you a zillion different videos on building reactive applications; I won&amp;rsquo;t review those basics. Let&amp;rsquo;s just look at some code.&lt;/p&gt;
-&lt;p&gt;First, here&amp;rsquo;s the configuration properties. I&amp;rsquo;ll leave it t you to specify the values yourselves. In the video above, I have them defined as environment variables (&lt;code&gt;export SPRING_CLOUD_CLOUNDFOUNDRY_USERNAME=...&lt;/code&gt;). &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.cloud.cloudfoundry.space=joshlong&#xD;
-spring.cloud.cloudfoundry.org=my-org&#xD;
-spring.cloud.cloudfoundry.password=wouldnt-u-like-to-know&#xD;
-spring.cloud.cloudfoundry.username=my-user-email&#xD;
-spring.cloud.cloudfoundry.url=api.run.pivotal.io
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now comes the actual Java code.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.cfac;&#xD;
-&#xD;
-import lombok.SneakyThrows;&#xD;
-import lombok.extern.java.Log;&#xD;
-import lombok.extern.log4j.Log4j2;&#xD;
-import org.cloudfoundry.client.CloudFoundryClient;&#xD;
-import org.cloudfoundry.client.v2.applications.SummaryApplicationRequest;&#xD;
-import org.cloudfoundry.operations.CloudFoundryOperations;&#xD;
-import org.cloudfoundry.operations.applications.RestageApplicationRequest;&#xD;
-import org.cloudfoundry.operations.applications.StopApplicationRequest;&#xD;
-import org.springframework.boot.SpringApplication;&#xD;
-import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
-import org.springframework.stereotype.Component;&#xD;
-import org.springframework.util.StringUtils;&#xD;
-&#xD;
-@SpringBootApplication&#xD;
-public class CfacApplication {&#xD;
-&#xD;
-    @SneakyThrows&#xD;
-    public static void main(String[] args) {&#xD;
-        SpringApplication.run(CfacApplication.class, args);&#xD;
-        System.in.read();&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-@Component&#xD;
-@Log4j2&#xD;
-class Restager {&#xD;
-&#xD;
-    private final String buildpack = &amp;quot;python&amp;quot;;&#xD;
-&#xD;
-    private boolean isValidBuildpack(String one, String two) {&#xD;
-        return (StringUtils.hasText(one) ? one : StringUtils.hasText(two) ? two : &amp;quot;&amp;quot;).contains(this.buildpack);&#xD;
-    }&#xD;
-&#xD;
-    Restager(CloudFoundryOperations ops, CloudFoundryClient client) {&#xD;
-        ops&#xD;
-            .applications()&#xD;
-            .list()&#xD;
-            .filter(as -&amp;gt; as.getRunningInstances() &amp;gt; 0)&#xD;
-            .flatMap(as -&amp;gt; client.applicationsV2().summary(SummaryApplicationRequest.builder().applicationId(as.getId()).build()))&#xD;
-            .filter(as -&amp;gt; isValidBuildpack(as.getBuildpack(), as.getDetectedBuildpack()))&#xD;
-            .doOnNext(as -&amp;gt; log.info(&amp;quot;restaging &amp;quot; + as.getName() + &amp;#39;.&amp;#39;))&#xD;
-            .flatMap(as -&amp;gt; ops.applications().restage(RestageApplicationRequest.builder().name(as.getName()).build()))&#xD;
-            .subscribe();&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The application is relatively straightforward. It uses the &lt;code&gt;CloudFoundryOperations&lt;/code&gt; to:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;load all the applications&lt;/li&gt;
-  &lt;li&gt;filter the ones that are running right now&lt;/li&gt;
-  &lt;li&gt;load a &lt;code&gt;SummaryApplicationRequest&lt;/code&gt; for the running application&lt;/li&gt;
-  &lt;li&gt;determine if the application uses the buildpack we&amp;rsquo;re looking for (the Python buildpack, in this case)&lt;/li&gt;
-  &lt;li&gt;determine their buildpack&lt;/li&gt;
-  &lt;li&gt;and then restage them.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Pretty cool, eh? The programmable platform at work! Now, there&amp;rsquo;s &lt;em&gt;zero&lt;/em&gt; overhead associated with programming the platform.&lt;/p&gt;
-&lt;p&gt;NOTE: I borrowed, and greatly simplified, the code for the restager &lt;a href="https://www.oreilly.com/library/view/cloud-foundry-livelessons/9780134836126/"&gt;from the Cloud Foundry Livelessons training video&lt;/a&gt; that &lt;a href="http://twitter.com/jmckenty"&gt;Josh McKenty&lt;/a&gt; and I did in 2017.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - March 31st, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/01/this-week-in-spring-march-31st-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-04-01:4019</id>
-    <updated>2020-04-01T01:47:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another extra-meaty installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, we&amp;rsquo;ve got a &lt;em&gt;ton&lt;/em&gt; of stuff to look at so I won&amp;rsquo;t belabor it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Tomorrow, the 1st of April, marks the 6 year anniversary of &lt;a href="https://spring.io/blog/2014/04/01/spring-boot-1-0-ga-released"&gt;Spring Boot 1.0 going GA&lt;/a&gt;! Happy birthday my old friend!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/31/spring-data-neumann-goes-rc1"&gt;Spring Data Neumann goes RC1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/27/spring-boot-for-apache-geode-pivotal-gemfire-1-2-6-release-available"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.2.6.RELEASE Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/27/dynamicpropertysource-in-spring-framework-5-2-5-and-spring-boot-2-2-6"&gt;&lt;code&gt;@DynamicPropertySource&lt;/code&gt; in Spring Framework 5.2.5 and Spring Boot 2.2.6&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s episode of &lt;a href="https://spring.io/blog/2020/03/27/a-bootiful-podcast-apache-groovy-testcontainers-and-reactor-committer-sergei-egorov"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk to Apache Groovy, Testcontainers, and Reactor committer Sergei Egorov&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/26/spring-boot-2-2-6-available-now"&gt;Spring Boot 2.2.6 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot"&gt;Liveness and Readiness Probes with Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/03/25/spring-data-moore-sr6-available-now"&gt;Spring Data Moore SR6 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at Spring Cloud Loadbalancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Microsoft&amp;rsquo;s Julien Dubois has published a nice how-to article that covers all corners of a &lt;a href="https://dev.to/azure/using-the-new-gradle-plugin-for-azure-functions-to-deploy-spring-boot-serverless-applications-4594"&gt;new Gradle plugin to deploy Spring-powered Azure Functions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Rohit Kelapure has a nice post on how to [plan ahead for a sustainable architecture](&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.brighttalk.com/webcast/14893/394593?utm_campaign=Twitter&amp;utm_source=brighttalk-sharing&amp;utm_medium=web"&gt;Do not miss the much-requested second installment to Ryan Baxter&amp;rsquo;s look at Spring on Kubernetes&lt;/a&gt; - register now!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/03/31/open-source-program-office/"&gt;Inside the VMware Open Source Program Office&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this article introducing &lt;a href="https://medium.com/better-programming/utility-classes-of-the-jdk-collections-and-arrays-cc07dbcb8586"&gt;utility classes in the JDK&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Last week&amp;rsquo;s #TGIK8s with Tanzu&amp;rsquo;s Joe Beda is definitely worth a listen. &lt;a href="https://t.co/zthVcaWDo8"&gt;It looks at Cloud Events and Argo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?WT.mc_id=twitter-social-judubois"&gt;How to use Spring Data R2DBC with Azure Database for MySQL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Good news from Spring Data lead Mark Paluch &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/pull/295"&gt;on Twitter: SpringData R2DBC now supports query derivation thanks to an amazing contribution by ¬²¬à¬Þ¬Ñ¬ß ¬¹¬Ú¬Ô¬Ó¬Ú¬ß¬è¬Ö¬Ó&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is a cool &lt;a href="https://www.infoq.com/articles/spring-boot-tutorial/"&gt;Spring Boot Tutorial on Building Microservices Deployed to Google Cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Here is how Eric Satterwhite turned &lt;a href="http://codedependant.net/2020/03/27/heard-of-rabbits-1-postgres-change-data-capture-and-rabbitmq/"&gt;PostgreSQL into a real time data hub with RabbitMQ and about 80 lines of SQL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this episode of &lt;a href="https://twitter.com/RabbitMQ/status/1243605988403482626"&gt;TGIR&lt;/a&gt; (Thank Goodness It&amp;rsquo;s RabbitMQ!) on how to contribute to RabbitMQ&lt;/li&gt;
-  &lt;li&gt;The Spring Boot team snuck a new feature, &lt;code&gt;@?DynamicPropertySource&lt;/code&gt;, into &lt;a href="https://twitter.com/springboot/status/1243551975066808320"&gt;Spring Framework 5.2.5 (and therefore Spring Boot 2.2.6)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/mgrzejszczak/status/1243476516866048001?s=12"&gt;We&amp;rsquo;ve added Mutation Testing integration to our @springcloud projects! Check this out&amp;hellip;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The new &lt;a href="https://blog.jetbrains.com/kotlin/2020/03/kotlin-1-4-m1-released/?mkt_tok=eyJpIjoiWkRNMU56RXlNVEptT0RGaiIsInQiOiJRNHczMUtXXC9MbmF5RTBMNTZVSThBUE13RElZNFpBc0djb1hWY2pMXC9uTVlOWEYwXC9KY096SGdORFZRV1wvVzlaMDFcL05DWlVUNUs4Rml2UE84aXRoRVhib3hlYlwvMU1cL1ZSMUNcL2wzcEtDVDFrbDhEWm9ESVpOXC9FVnhhU1V4Q1NjUCJ9"&gt;Kotlin 1.4-M1 release looks &lt;em&gt;awesome&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This an interesting post by Igor Manushin on making routing in Spring even faster &lt;a href="https://medium.com/@imanushin/spring-rapid-routing-fb241be612d9"&gt;in English&lt;/a&gt;. Here, I am pretty sure, is the &lt;a href="https://m.habr.com/en/post/493448/"&gt;Russian version of the same article&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Did you know that Spring Boot 2.2.6 and 2.3.x (milestones) have &lt;a href="https://twitter.com/java/status/1243284290898497537"&gt;#AllTestsGreenOnJDK14&lt;/a&gt; ? Go to the Spring Initializr and you&amp;rsquo;ll be able to try it all out right now! &lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;Also, did you see the spiffy new makeover for my second favorite place on the internet, after production, &lt;a href="http://start.Spring.io"&gt;start.Spring.io&lt;/a&gt;?&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://community.elastic.co/events/details/elastic-emea-virtual-presents-logging-with-spring-boot/"&gt;See Logging with Spring Boot at Elastic Community Events EMEA Virtual&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A very important update for all of our Spring Data MongoDB users: Annotation based index creation is now turned &lt;a href="https://github.com/spring-projects/spring-data-mongodb/pull/845"&gt;OFF by default and needs to be enabled eg. when relying on &lt;code&gt;@GeoSpatialIndexed&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/03/26/spring-open-source/"&gt;An Introduction to Spring Projects&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

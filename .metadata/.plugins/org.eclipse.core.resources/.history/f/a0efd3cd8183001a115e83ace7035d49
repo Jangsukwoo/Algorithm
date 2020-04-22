@@ -61,32 +61,7 @@ import java.util.StringTokenizer;
 0 0 0 0 0 0 0 0 0 16
 0 0 0 0 0 0 0 0 0 2
 
-
-4
-8 16 0 0
-0 0 16 8
-0 0 0 0
-0 0 0 0
 20:12
-
-4
-0 2 0 2
-0 0 0 0
-0 0 0 0
-0 0 0 0
-
-10
-16 16 8 32 32 0 0 8 8 8
-16 0 0 0 0 8 0 0 0 16
-0 0 0 0 0 0 0 0 0 2
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0
--> 128
  */
 public class 이공사팔 {
 	static int N;
@@ -108,15 +83,9 @@ public class 이공사팔 {
 			return;
 		}
 		int[][] copyBoard = copy(currentBorad);
-		//System.out.println("받은맵");
-		//view(copyBoard);
 		for(int rotate=0;rotate<4;rotate++){
 			copyBoard = rotateBoard(copyBoard);
-			//System.out.println("돌림");
-			//view(copyBoard);
 			int[][] reulstBoard = moveUp(copyBoard);
-			//System.out.println("올림");
-			//view(reulstBoard);
 			dfs(depth+1,reulstBoard);
 			
 		}
@@ -130,8 +99,8 @@ public class 이공사팔 {
 	}
 	private static int[][] moveUp(int[][] currentBorad){//위로 올린다.
 		int[][] moveBoard = copy(currentBorad);
-//		System.out.println("합치기전");
-//		view(moveBoard);
+		System.out.println("합치기전");
+		view(moveBoard);
 		for(int col=0;col<N;col++){
 			int currentNumber=0;
 			int currentRow=0;
@@ -149,8 +118,7 @@ public class 이공사팔 {
 					flag = false;
 				}else if(moveBoard[row][col]!=currentNumber&& flag){
 					currentNumber = moveBoard[row][col];
-					currentRow = row;
-					flag = true;
+					flag = false;
 				}
 			}
 			for(int row=0;row<N;row++) {//숫자 몰아주기
@@ -169,6 +137,8 @@ public class 이공사팔 {
 				}
 			}
 		}
+		System.out.println("합치고 올린 후 ");
+		view(moveBoard);
 		//		System.out.println("합침");
 		//		view(moveBoard);
 		//		for(int col=0;col<N;col++) {

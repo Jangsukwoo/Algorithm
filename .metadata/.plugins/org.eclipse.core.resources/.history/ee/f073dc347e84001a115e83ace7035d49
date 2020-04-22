@@ -46,7 +46,6 @@ public class 미로탐색 {
 					int nc = curRC[1] + dc[dir];
 					
 					if(rangeCheck(nr,nc)){
-						
 						if(visit[nr][nc]==false && map[nr][nc]=='1'){
 							if(nr==(N-1) && nc==(M-1)) return ;//도착지점이면 그냥 끝냄
 							q.add(new int[] {nr,nc});
