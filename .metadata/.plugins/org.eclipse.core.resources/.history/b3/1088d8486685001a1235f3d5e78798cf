@@ -1,0 +1,19 @@
+package BAEKJOON;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 숨바꼭질 {
+	static Scanner sc = new Scanner(System.in);
+	static int currentSubin,target;
+	static boolean[] visit = new boolean[10001];
+	static Queue<Integer> q = new LinkedList<Integer>();
+	static int answer;
+	public static void main(String[] args) {
+		currentSubin = sc.nextInt();
+		target = sc.nextInt();
+		q.add(currentSubin);
+		visit[currentSubin];
+	}
+}

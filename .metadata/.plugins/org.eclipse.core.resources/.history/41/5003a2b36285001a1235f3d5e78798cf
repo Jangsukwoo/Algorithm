@@ -1,0 +1,28 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 10:00
+ */
+public class 보물섬 {
+	static int R,C;
+	static char[][] treausureMap;
+	static BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		treausureMap = new char[R][C];
+		for(int row=0;row<5;row++){
+			
+		}
+	}
+}
