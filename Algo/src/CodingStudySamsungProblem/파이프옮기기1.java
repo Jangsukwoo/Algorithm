@@ -37,11 +37,15 @@ public class 파이프옮기기1 {
 		//최초의 파이프 좌표, 누워있는 상태
 		q.add(new int[] {0,1,0});//head의 row,col,누워있는 상태(우)
 		while(!q.isEmpty()) {
+			
 			int size = q.size();
+			
 			for(int i=0;i<size;i++) {
+				
 				int[] currentPipe = q.poll();//현재 파이프에 대해서
 				push(currentPipe);
 			}
+			
 		}
 	}
 

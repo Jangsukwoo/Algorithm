@@ -16,7 +16,8 @@ import java.util.StringTokenizer;
  * 
  * 19:01 Pause
  * 
- * 19:22~
+ * 19:22~.. 로테이션 코드는 잘 작동했는데 올리기 코드에서 문제가 많았고
+ * 숫자 곱, 숫자 몰아주기 액션 두개로 나눠서 코드 만드니까 통과됐다
 
 4
 0 0 2 0 
@@ -87,6 +88,12 @@ import java.util.StringTokenizer;
 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0
 -> 128
+
+4
+0 2 0 2
+0 0 0 0
+0 0 0 0
+0 0 0 0
  */
 public class 이공사팔 {
 	static int N;
@@ -100,27 +107,18 @@ public class 이공사팔 {
 		System.out.println(answer);
 	}
 	private static void dfs(int depth, int[][] currentBorad){
-//		System.out.println("depth"+depth);
-//		System.out.println("받은 맵");
-//		view(currentBorad);
 		if(depth==5){
 			updateAnswer(currentBorad);
 			return;
 		}
 		int[][] copyBoard = copy(currentBorad);
-		//System.out.println("받은맵");
-		//view(copyBoard);
 		for(int rotate=0;rotate<4;rotate++){
 			copyBoard = rotateBoard(copyBoard);
-			//System.out.println("돌림");
-			//view(copyBoard);
 			int[][] reulstBoard = moveUp(copyBoard);
-			//System.out.println("올림");
-			//view(reulstBoard);
 			dfs(depth+1,reulstBoard);
-			
 		}
 	}
+
 	private static void updateAnswer(int[][] currentBorad) {
 		for(int row=0;row<N;row++) {
 			for(int col=0;col<N;col++) {
@@ -130,81 +128,39 @@ public class 이공사팔 {
 	}
 	private static int[][] moveUp(int[][] currentBorad){//위로 올린다.
 		int[][] moveBoard = copy(currentBorad);
-//		System.out.println("합치기전");
-//		view(moveBoard);
+		//올리기 코드 다시!!!!!!!!!!!!!
 		for(int col=0;col<N;col++){
 			int currentNumber=0;
-			int currentRow=0;
-			boolean flag = false;
-			for(int row=(N-1);row>=0;row--){
-				if(moveBoard[row][col]==0) continue;
-				else if(moveBoard[row][col]!=0 && flag==false) {
-					currentNumber=moveBoard[row][col];
-					currentRow= row;
-					flag = true;
-				}
-				else if(moveBoard[row][col]==currentNumber && flag){
-					moveBoard[row][col] = currentNumber*2;
-					moveBoard[currentRow][col] = 0;
-					flag = false;
-				}else if(moveBoard[row][col]!=currentNumber&& flag){
+			int currentIdx=0;
+			for(int row=0;row<=(N-1);row++){ //곱계산
+				if(moveBoard[row][col]!=0 && moveBoard[row][col]!=currentNumber){
 					currentNumber = moveBoard[row][col];
-					currentRow = row;
-					flag = true;
+					currentIdx = row;
+				}else if(moveBoard[row][col]!=0 && moveBoard[row][col]==currentNumber){
+					moveBoard[row][col]=0;
+					moveBoard[currentIdx][col] = currentNumber*2;
+					currentNumber = 0;
 				}
 			}
-			for(int row=0;row<N;row++) {//숫자 몰아주기
+			for(int row=0;row<N;row++) {//숫자 몰기 
 				if(moveBoard[row][col]==0){
-					int cr = row;
-					while(true){
-						cr+=1;
-						if(cr<N) {
-							if(moveBoard[cr][col]!=0) {
-								moveBoard[row][col] = moveBoard[cr][col];
-								moveBoard[cr][col] = 0;
-								break;
-							}
-						}else break;
-					}			
+					int currentZeroIdx = row;
+					int nextIdx = currentZeroIdx+1;
+					while(nextIdx<N){
+						if(moveBoard[nextIdx][col]!=0){
+							moveBoard[currentZeroIdx][col] = moveBoard[nextIdx][col];
+							moveBoard[nextIdx][col]=0;
+							break;
+						}else nextIdx++;
+					}
 				}
 			}
 		}
-		//		System.out.println("합침");
-		//		view(moveBoard);
-		//		for(int col=0;col<N;col++) {
-		//			for(int row=0;row<N;row++) {
-		//				if(moveBoard[row][col]==0){
-		//					int cr = row;
-		//					System.out.println("cr값"+cr);
-		//					while(true){
-		//						cr+=1;
-		//						if(cr<N) {
-		//							if(moveBoard[cr][col]!=0) {
-		//								moveBoard[row][col] = moveBoard[cr][col];
-		//								moveBoard[cr][col] = 0;
-		//								break;
-		//							}
-		//						}else break;
-		//					}			
-		//				}
-		//
-		//			}
-		//		}
-		//		System.out.println("올림");
-		//		view(moveBoard);
-//		System.out.println("합치고올림");
-//		view(moveBoard);
+
+
 		return moveBoard;
 	}
-	private static void view(int[][] board) {
-		for(int row=0;row<N;row++) {
-			for(int col=0;col<N;col++) {
-				System.out.print(board[row][col]+" ");
-			}
-			System.out.println();
-		}
-		System.out.println();
-	}
+
 	private static int[][] rotateBoard(int[][] board){
 		int[][] rotateBoard = copy(board);
 		for(int row=0;row<N;row++) {

@@ -5,7 +5,468 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-22T02:07:54Z</updated>
+  <updated>2020-04-23T09:40:49Z</updated>
+  <entry>
+    <title>Spring Tips: Configuration</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/23/spring-tips-configuration" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-23:4039</id>
+    <updated>2020-04-23T09:40:49Z</updated>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/PsNNGuLi0ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;speaker: &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman) &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi, Spring fans! Welcome to another installment of Spring tips! in this installment, we&amp;rsquo;re going to look at something that&amp;rsquo;s rather foundational, and something that I wish I&amp;rsquo;d addressed earlier: configuration. And no, I don&amp;rsquo;t mean functional configuration or java configuration or anything like that, I&amp;rsquo;m talking about the string values that inform how your code executes. the stuff that you put in application.properites. &lt;em&gt;that&lt;/em&gt; configuration. &lt;/p&gt;
+&lt;p&gt;All configuration in Spring emanates from the Spring &lt;code&gt;Environment&lt;/code&gt; abstraction. The &lt;code&gt;Environment&lt;/code&gt; is sort of like a dictionary - a map with keys and values. &lt;code&gt;Environment&lt;/code&gt; is just an interface through which we can ask questions about, you know, the &lt;code&gt;Environment&lt;/code&gt;. The abstraction lives in Spring Framework and was introduced in Spring 3, more than a decade ago. up until that point, there was a focused mechanism to allow integration of configuration called property placeholder resolution. This environment mechanism and the constellation of classes around that interface more than supersede that old support. if you find a blog still using those types, may I suggest you move on to newer and greener pastures? :) &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started. Go to the Spring Initializr and generate a new project and make sure to choose &lt;code&gt;Spring Cloud Vault&lt;/code&gt;, &lt;code&gt;Lombok&lt;/code&gt;, and &lt;code&gt;Spring Cloud Config Client&lt;/code&gt;. I named my project &lt;code&gt;configuration&lt;/code&gt;. Go ahead and click &lt;code&gt;Generate&lt;/code&gt; the application. Open the project in your favorite IDE. If you want to follow along, be sure to disable the Spring Cloud Vault and Spring Clod Config Lcieny dependencies. We don&amp;rsquo;t need them right now.&lt;/p&gt;
+&lt;p&gt;The first step for most Spring Boot developers is to use application.properties. The Spring Initializr even puts an empty application.properties in the &lt;code&gt;src/main/resources/application.properties.&lt;/code&gt; folder when you generate a new project there! Super convenient. You &lt;em&gt;do&lt;/em&gt; create your projects on the Spring Initializr, don&amp;rsquo;t ya&amp;rsquo;? You could use appication.properties or applicatin.yml. I don&amp;rsquo;t particularly love &lt;code&gt;.yml&lt;/code&gt; files, but you can use it if that&amp;rsquo;s more your taste. &lt;/p&gt;
+&lt;p&gt;Spring Boot automatically loads the &lt;code&gt;application.properties&lt;/code&gt; whenever it starts up. You can dereference values from the property file in your java code through the environment. Put a property in the &lt;code&gt;application.properties&lt;/code&gt; file, like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;message-from-application-properties=Hello from application.properties
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let&amp;rsquo;s edit the code to read in that value. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.core.env.Environment;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(Environment environment) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from application.properties &amp;quot; + environment.getProperty(&amp;quot;message-from-application-properties&amp;quot;));&#xD;
+        };&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run this, and you&amp;rsquo;ll see the value form the configuration property file in the output of the log. If you want to change which file SPring Boot rads by default, you can do that too. It&amp;rsquo;s a chicken and egg problem, though - you need to specify a property that Spring Boot will use to figure out where to load all the properties. So you need to specify this outside of the application.properties file. You can use a program argument or an environment variable to fill the &lt;code&gt;spring.config.name&lt;/code&gt; property. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell "&gt;export SPRING_CONFIG_NAME=foo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Re-run the application now with that environment variable in scope, and it&amp;rsquo;ll fail because it&amp;rsquo;ll try to load &lt;code&gt;foo.properties&lt;/code&gt;, not &lt;code&gt;application.properties&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Incidentally, you could also run the application with the configuration that lives &lt;em&gt;outside&lt;/em&gt; the application, adjacent to the jar, like this. If you run the application like this, the values in the external &lt;code&gt;applicatin.properties&lt;/code&gt; will override the values inside the &lt;code&gt;.jar&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;.&#xD;
+戍式式 application.properties&#xD;
+戌式式 configuration-0.0.1-SNAPSHOT.jar&#xD;
+&#xD;
+0 directories, 2 files
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Spring Boot is aware of Spring profiles, as well. Profiles are a mechanism that lets you tag objects and property files so that they can be selectively activated or deactivated at runtime. This is great if you want to have an environment-specific configuration. You can tag a Spring bean or a configuration file as belonging to a particular profile, and Spring will automatically load it for you when that profile is activated.&lt;/p&gt;
+&lt;p&gt;Profile names are, basically, arbitrary. Some profiles are magic - that Spring honors in a particular way. The most interesting of these is &lt;code&gt;default&lt;/code&gt;, which is activated when no other profile is active. But generally, the names are up to you. I find it very useful to map my profiles to different environments: &lt;code&gt;dev&lt;/code&gt;, &lt;code&gt;qa&lt;/code&gt;, &lt;code&gt;staging&lt;/code&gt;, &lt;code&gt;prod&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say that there&amp;rsquo;s a profile called &lt;code&gt;dev&lt;/code&gt;. Spring Boot will automatically load &lt;code&gt;application-dev.properties&lt;/code&gt;. It&amp;rsquo;ll load that in addition to applicatin.properties. If there are any conflicts between values in the two files, then the more specific file - the one with the profile - wins. You could have a default value that applies absent a particular profile, and then provide specifics in the config for a profile. &lt;/p&gt;
+&lt;p&gt;You can activate a given profile in several different ways, but the easiest is just to specify it on the command line. Or you could turn it on in your IDE&amp;rsquo;s run configurations dialog box. IntelliJ and Spring Tool Suite both provide a place to specify the profile to sue when running the application. You can also set an env var, &lt;code&gt;SPRING_PROFILES_ACTIVE&lt;/code&gt;, or specify an argument on the command line &lt;code&gt;--spring.profiles.active&lt;/code&gt;. Either one accepts a comma-delimited list of profiles - you can activate more than one profile at a time. &lt;/p&gt;
+&lt;p&gt;Le&amp;rsquo;ts try that out. Create a file called &lt;code&gt;application-dev.properties&lt;/code&gt;. Put the following value in it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;message-from-application-properties=Hello from dev application.properties
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This property has the same key like the one in &lt;code&gt;application.properties&lt;/code&gt;. The java code here is identical to what we had before. Just be sure to specify the profile before you start the Spring application. You can use the environment variable, properties, etc. You can even define it programmatically when building the &lt;code&gt;SpringApplication&lt;/code&gt; in the &lt;code&gt;main()&lt;/code&gt; method. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.profiles;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.boot.builder.SpringApplicationBuilder;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.core.env.Environment;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        // this works&#xD;
+        // export SPRING_PROFILES_ACTIVE=dev  &#xD;
+        // System.setProperty(&amp;quot;spring.profiles.active&amp;quot;, &amp;quot;dev&amp;quot;); // so does this&#xD;
+        new SpringApplicationBuilder()&#xD;
+            .profiles(&amp;quot;dev&amp;quot;) // and so does this&#xD;
+            .sources(ConfigurationApplication.class)&#xD;
+            .run(args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(Environment environment) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from application.properties &amp;quot; + environment.getProperty(&amp;quot;message-from-application-properties&amp;quot;));&#xD;
+        };&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the application, and you&amp;rsquo;ll see the specialized message reflected in the output. &lt;/p&gt;
+&lt;p&gt;So far, we&amp;rsquo;ve been using the ENvironment to inject the configuration. You can also use &lt;code&gt;@Value&lt;/code&gt; annotation to inject the value as a parameter. You probably already know that. But did you know that you can also specify default values to be returned if there are no other values that match? There are a lot of reasons why you might want to do this. You could use it to provide fallback values and make it more transparent when somebody fat fingers the spelling of a property. It is also useful because you are given a value that might be useful if somebody doesn&amp;rsquo;t know that they need to activate a profile or something,.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.value;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(&#xD;
+        @Value(&amp;quot;${message-from-application-properties:OOPS!}&amp;quot;) String valueDoesExist,&#xD;
+        @Value(&amp;quot;${mesage-from-application-properties:OOPS!}&amp;quot;) String valueDoesNotExist) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from application.properties &amp;quot; + valueDoesExist);&#xD;
+            log.info(&amp;quot;missing message from application.properties &amp;quot; + valueDoesNotExist);&#xD;
+        };&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Convenient, eh? Also, note that the default String that you provide can, in turn, interpolate some other property. So you could do something like this, assuming a key like &lt;code&gt;default-error-message&lt;/code&gt; does exist somewhere in your application configuration: &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;${message-from-application-properties:${default-error-message:YIKES!}}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That will evaluate the first property if it exists, then the second and then the String &lt;code&gt;YIKES!&lt;/code&gt;, finally. &lt;/p&gt;
+&lt;p&gt;Earlier, we looked at how to specify a profile using an environment variable or program argument. This mechanism - configuring Spring Boot with environment variables or program arguments - is a general-purpose. You can use it for any arbitrary key, and Spring Boot will normalize the configuration for you. Any key that you would out in application.properties can be specified externally in this way. Let&amp;rsquo;s see some examples. Let&amp;rsquo;s suppose you want to specify the URL for a data source connection. You &lt;em&gt;could&lt;/em&gt; hardcode that value in the application.properties, but that&amp;rsquo;s not very secure. It might be much better to create instead an environment variable that only exists in production. That way, the developers don&amp;rsquo;t have access to the keys to the production database and so on. &lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s try it out. Heres the java code fo the example. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;&lt;br/&gt;package com.example.configuration.envvars;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.core.env.Environment;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        // simulate program arguments&#xD;
+        String[] actualArgs = new String[]{&amp;quot;spring.datasource.url=jdbc:postgres://localhost/some-prod-db&amp;quot;};&#xD;
+        SpringApplication.run(ConfigurationApplication.class, actualArgs);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(Environment environment) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;our database URL connection will be &amp;quot; + environment.getProperty(&amp;quot;spring.datasource.url&amp;quot;));&#xD;
+        };&#xD;
+    }&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Before you run it, be sure to either export an environment variable in the shell that you use to run your application or to specify a program argument. I simulate the latter - the program arguments - by intercepting the &lt;code&gt;public static void main(String [] args)&lt;/code&gt; that we pass into the Spring Boot application here. You can also specify an env variable like this: &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;export SPRING_DATASOURCE_URL=some-arbitrary-value&#xD;
+mvn -DskipTests=true spring-boot:run 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the program multiple times, trying out the different approaches, and you will see the values in the output. There&amp;rsquo;s no autoconfiguration in the application that will connect to a database, so we&amp;rsquo;re using this property as an example. The URL doesn&amp;rsquo;t have to be a valid URL (at least not until you add Spring&amp;rsquo;s JDBC support and a JDBC driver to the classpath).&lt;/p&gt;
+&lt;p&gt;Spring Boot is &lt;em&gt;very&lt;/em&gt; flexible in its sourcing of the values. It doesn&amp;rsquo;t care if you do &lt;code&gt;SPRING_DATASOURCE_URL&lt;/code&gt;, &lt;code&gt;spring.datasource.url&lt;/code&gt;, etc. Spring Boot calls this &lt;em&gt;relaxed binding&lt;/em&gt;. It allows you to do things in a way that&amp;rsquo;s most natural for different environments, while still working for Spring Boot.&lt;/p&gt;
+&lt;p&gt;This idea - of externalizing configuration for an application from the environment - is not new. It&amp;rsquo;s well understood and described in the &lt;a href="https://12factor.net/config"&gt;12-factor manifesto&lt;/a&gt;. The 12-factor manifesto says that environment-specific config should live in that environment, not in the code itself. This is because we want one build for all the environments. Things that change should be external. So far, we&amp;rsquo;ve seen that Spring Boot can pull in configuration from the command line arguments (program arguments), and environment variables. It can also read configuration coming from JOpt. It can come even from a JNDI context if you happen to be running in an application server with one of those around! &lt;/p&gt;
+&lt;p&gt;Spring Boots&amp;rsquo;s ability o pull in any environment variable is beneficial here. It&amp;rsquo;s also more secure than using program arguments because the program arguments will show up in the output of operating system tools. Environment variables are a better fit.&lt;/p&gt;
+&lt;p&gt;So far, we&amp;rsquo;ve seent hat Spring Boot can pull in configuration from a lot of different places. It knows about profiles, it knows about &lt;code&gt;.yml.&lt;/code&gt; and &lt;code&gt;.properties&lt;/code&gt;. It&amp;rsquo;s pretty flexible! But what if it doesn&amp;rsquo;t know how to do what you want it to do? You can easily reach its new tricks using a custom &lt;code&gt;PropertySource&amp;lt;T&amp;gt;&lt;/code&gt;. You might want to do something like this if you wish to, for example, to integrate your application with the configuration you&amp;rsquo;re storing in an external database or a directory or some other things about which Spring Boot doesn&amp;rsquo;t automatically know. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;&lt;br/&gt;package com.example.configuration.propertysource;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.boot.builder.SpringApplicationBuilder;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.core.env.PropertySource;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        new SpringApplicationBuilder()&#xD;
+            .sources(ConfigurationApplication.class)&#xD;
+            .initializers(context -&amp;gt; context&#xD;
+                .getEnvironment()&#xD;
+                .getPropertySources()&#xD;
+                .addLast(new BootifulPropertySource())&#xD;
+            )&#xD;
+            .run(args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(@Value(&amp;quot;${bootiful-message}&amp;quot;) String bootifulMessage) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from custom PropertySource: &amp;quot; + bootifulMessage);&#xD;
+        };&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+class BootifulPropertySource extends PropertySource&amp;lt;String&amp;gt; {&#xD;
+&#xD;
+    BootifulPropertySource() {&#xD;
+        super(&amp;quot;bootiful&amp;quot;);&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public Object getProperty(String name) {&#xD;
+&#xD;
+        if (name.equalsIgnoreCase(&amp;quot;bootiful-message&amp;quot;)) {&#xD;
+            return &amp;quot;Hello from &amp;quot; + BootifulPropertySource.class.getSimpleName() + &amp;quot;!&amp;quot;;&#xD;
+        }&#xD;
+&#xD;
+        return null;&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The example above is the safest way to register a &lt;code&gt;PropertySource&lt;/code&gt; early enough on that everything that needs it will be able to find it. You can also do it at runtime when Spring has started wiring objects together, and you have access to configured objects, but I wouldn&amp;rsquo;t be sure that this will work in every situation. Heres how that might look. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.propertysource;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Autowired;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+import org.springframework.core.env.ConfigurableEnvironment;&#xD;
+import org.springframework.core.env.PropertySource;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(@Value(&amp;quot;${bootiful-message}&amp;quot;) String bootifulMessage) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from custom PropertySource: &amp;quot; + bootifulMessage);&#xD;
+        };&#xD;
+    }&#xD;
+&#xD;
+    @Autowired&#xD;
+    void contributeToTheEnvironment(ConfigurableEnvironment environment) {&#xD;
+        environment.getPropertySources().addLast(new BootifulPropertySource());&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+class BootifulPropertySource extends PropertySource&amp;lt;String&amp;gt; {&#xD;
+&#xD;
+    BootifulPropertySource() {&#xD;
+        super(&amp;quot;bootiful&amp;quot;);&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public Object getProperty(String name) {&#xD;
+&#xD;
+        if (name.equalsIgnoreCase(&amp;quot;bootiful-message&amp;quot;)) {&#xD;
+            return &amp;quot;Hello from &amp;quot; + BootifulPropertySource.class.getSimpleName() + &amp;quot;!&amp;quot;;&#xD;
+        }&#xD;
+&#xD;
+        return null;&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thus far, we&amp;rsquo;ve looked almost entirely at how to source property values from elsewhere. Still, we haven&amp;rsquo;t talked about what becomes of the Strings once they&amp;rsquo;re in our working memory and available for use in the application. Most of the time, they&amp;rsquo;re just strings, and we can use them as-is. Sometimes, however, it&amp;rsquo;s useful to turn them into other types of values - ints, Dates, doubles, etc. this work - turning strings into things - could be the topic of a whole other Spring Tips video and perhaps one ill do soon. Suffice it to say that there are a lot of interrelated pieces there - the &lt;code&gt;ConversionService&lt;/code&gt;, &lt;code&gt;Converter&amp;lt;T&amp;gt;&lt;/code&gt;s, Spring Boot&amp;rsquo;s &lt;code&gt;Binder&lt;/code&gt;s, and so much more. For common cases, this will just work. You can, for example, specify a property &lt;code&gt;server.port = 8080&lt;/code&gt; and then inject it into your application as an int:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Value(&amp;quot;${server.port}&amp;quot;) int port
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It might be helpful to have these values bound to an object automatically. This is precisely what Spring Boots &lt;code&gt;ConfigutationProperties&lt;/code&gt; do for you. Let&amp;rsquo;s see this in action. &lt;/p&gt;
+&lt;p&gt;Ley&amp;rsquo;s say that ou ave an application.properties file with the following property:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint property"&gt;bootiful.message = Hello from a @ConfiguratinoProperties 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then you can run the application and see that the configuration value has been bound to the object for us: &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.cp;&#xD;
+&#xD;
+import lombok.Data;&#xD;
+import lombok.RequiredArgsConstructor;&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.boot.context.properties.ConfigurationProperties;&#xD;
+import org.springframework.boot.context.properties.ConstructorBinding;&#xD;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+@EnableConfigurationProperties(BootifulProperties.class)&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+    &#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(BootifulProperties bootifulProperties) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from @ConfigurationProperties &amp;quot; + bootifulProperties.getMessage());&#xD;
+        };&#xD;
+    }&#xD;
+ &#xD;
+}&#xD;
+&#xD;
+@Data&#xD;
+@RequiredArgsConstructor&#xD;
+@ConstructorBinding&#xD;
+@ConfigurationProperties(&amp;quot;bootiful&amp;quot;)&#xD;
+class BootifulProperties {&#xD;
+    private final String message;&#xD;
+}&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;@Data&lt;/code&gt; and &lt;code&gt;@RequiredArgsConstructor&lt;/code&gt; annotations on the &lt;code&gt;BootifulProperties&lt;/code&gt; object come from Lombok. &lt;code&gt;@Data&lt;/code&gt; synthesizes getters for final fields and getters and setters for non-final fields. &lt;code&gt;@RequiredArgsConstructor&lt;/code&gt; synthesizes a constructor for all the final fields int he class. The result is an object that&amp;rsquo;s immutable once constructed through constructor initialization. Spring boot&amp;rsquo;s ConfigurationProperties mechanism doesn&amp;rsquo;t know about immutable objects by default; you need to use the &lt;code&gt;@ConstructorBinding&lt;/code&gt; annotation, a reasonably new addition to Spring Boot, to make it do the right thing here. This is even more useful in other programming languages like Kotlin (&lt;code&gt;data class ...&lt;/code&gt;) and Scala (&lt;code&gt;case class ...&lt;/code&gt;), which have syntax sugar for creating immutable objects.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve seen that Spring can load configuration adjacent to the application &lt;code&gt;.jar&lt;/code&gt;, and that it can load the configuration from environment variables and program arguments. It&amp;rsquo;s not hard o get information into a Spring Boot application, but its sort of piecemeal. It&amp;rsquo;s hard to version control environment variables or to secure program arguments. &lt;/p&gt;
+&lt;p&gt;To solve some of these problems, the Spring Cloud team built the spring CLou COnfigu Server. The Spring Cloud Config Server is an HTTP API that fronts a backend storage engine. The storage s pluggable, with the most common being a Git repository, though there is support for others as well. These include SUbversion, a local file system, and even &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-config-server-mongodb"&gt;MongDB&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to set up a new Spring Cloud Config Server. Go to the Spring Initializr and choose &lt;code&gt;Config Server&lt;/code&gt; and then click &lt;code&gt;Generate&lt;/code&gt;. Open it in your favorite IDE.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to need to do two things to make it work: first, we must use an annotation and then provide a configuration value to point it to the Git repository with our configuration file. Here are the &lt;code&gt;application.properties&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.cloud.config.server.git.uri=https://github.com/joshlong/greetings-config-repository.git&#xD;
+server.port=8888
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And here&amp;rsquo;s what your main class should look like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configserver;&#xD;
+&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.cloud.config.server.EnableConfigServer;&#xD;
+&#xD;
+@EnableConfigServer&#xD;
+@SpringBootApplication&#xD;
+public class ConfigServerApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigServerApplication.class, args);&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the application - &lt;code&gt;mvn spring-boot:run&lt;/code&gt; or just run the application in your favorite IDe. It&amp;rsquo;s now available. It&amp;rsquo;ll act as a proxy to the Git configuration in the Github repository. Other clients can then use the Spring Cloud Config Client to pull their configuration in from the Spring Cloud Config Server, which will, in turn, pull it in from the Gi repository. Note: I&amp;rsquo;m making this as insecure as possible for ease of the demo, ut you can and should secure both links in the chain - from the config client to the config server, and from the config server to the git repository. Spring Cloud Config Server, the Spring Cloud Config Client, and Github all work well together, and securely. &lt;/p&gt;
+&lt;p&gt;Now, go back to the build for our configuration app and makes rue to uncomment the Spring Cloud Config Client dependency. To start the Spring Cloud Config Server, it&amp;rsquo;ll need to have some - you guessed it! - configuration. A classic chicken and egg problem. This configuration needs to be evaluated earlier, before the rest of the configuration. You can put this configuration in a file called &lt;code&gt;bootstrap.properties&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll need to identify your application to give it a name so that when it connects to the Spring Cloud Config Server, it will know which configuration to provide us. The name we specify here will be matched to a property file in the Git repository. Here&amp;rsquo;s what you should put in the file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;spring.cloud.config.uri=http://localhost:8888&#xD;
+spring.application.name=bootiful
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;now we can read any value we want in the git repository in the &lt;code&gt;bootiful.properties&lt;/code&gt; file whose contents are:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;message-from-config-server = Hello, Spring Cloud Config Server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can pull that configuration file in like this: &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.configclient;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(@Value(&amp;quot;${message-from-config-server}&amp;quot;) String configServer) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from the Spring Cloud Config Server: &amp;quot; + configServer);&#xD;
+        };&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should see the value in the output. Not bad! The Spring Cloud Config Server does a lot of cool stuff for us. It can encrypt values for us. It can help version out properties. One of my favorite things is that you can change the configuration independent of the change to the codebase. You can use that in conjunction with the Spring Cloud &lt;code&gt;@RefreshScope&lt;/code&gt; to dynamically reconfigure an application after it started running. (I should do a video on the refresh scope and its many myriad uses&amp;hellip;) The Spring Cloud Config Server is among the most popular Spring Cloud modules for a reason - it can be used with monoliths and microservices alike. &lt;/p&gt;
+&lt;p&gt;The Spring Cloud Config Server can encrypt values in the property files if you configure it appropriately. It works. A lot of folks also use Hashicorp&amp;rsquo;s excellent Vault product, which is a much more fully-featured offering for security. Vault can secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets, and other sensitive data using a UI, CLI, or HTTP API. You can also use this easily as a property source using the Spring Cloud Vault project. Uncomment the Sring Cloud Vault dependency from the build, and let us look at setting up Hashicorp Vault. &lt;/p&gt;
+&lt;p&gt;Download the latest version and then run the following commands. I&amp;rsquo;m assuming a Linux or Unix-like environment. It should be fairly straightforward to translate to Windows, though. I won&amp;rsquo;t try to explain everything about Vault; I&amp;rsquo;d refer you to the excellent Getting Statted guides for &lt;a href="https://learn.hashicorp.com/vault/getting-started/install"&gt;Hashicorp Vault&lt;/a&gt;, instead. Here&amp;rsquo;s the least-secure, but quickest, the way I know to get this all set up and working. First, run the Vault server. I&amp;rsquo;m providing a root token here, but you would typically use the token provided by Vault on startup. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;export VAULT_ADDR=&amp;quot;https://localhost:8200&amp;quot;&#xD;
+export VAULT_SKIP_VERIFY=true&#xD;
+export VAULT_TOKEN=00000000-0000-0000-0000-000000000000&#xD;
+vault server --dev --dev-root-token-id=&amp;quot;00000000-0000-0000-0000-000000000000&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once that&amp;rsquo;s up, in another shell, install some values into the Vault server, like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;export VAULT_ADDR=&amp;quot;http://localhost:8200&amp;quot;&#xD;
+export VAULT_SKIP_VERIFY=true&#xD;
+export VAULT_TOKEN=00000000-0000-0000-0000-000000000000&#xD;
+vault kv put secret/bootiful message-from-vault-server=&amp;quot;Hello Spring Cloud Vault&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That puts the key &lt;code&gt;message-from-vault-server&lt;/code&gt; with a value &lt;code&gt;Hello Spring Cloud Vault&lt;/code&gt; into the Vault service. Now, let&amp;rsquo;s change our application to connect to that Vault instance to read the secure values. We&amp;rsquo;ll need a bootstrap.properties, just as with the Spring Cloud Config Client. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=bootiful&#xD;
+spring.cloud.vault.token=${VAULT_TOKEN}&#xD;
+spring.cloud.vault.scheme=http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, you can use the property just like any other configuration values. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.configuration.vault;&#xD;
+&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.beans.factory.annotation.Value;&#xD;
+import org.springframework.boot.ApplicationRunner;&#xD;
+import org.springframework.boot.SpringApplication;&#xD;
+import org.springframework.boot.autoconfigure.SpringBootApplication;&#xD;
+import org.springframework.context.annotation.Bean;&#xD;
+&#xD;
+@Log4j2&#xD;
+@SpringBootApplication&#xD;
+public class ConfigurationApplication {&#xD;
+&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(ConfigurationApplication.class, args);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    ApplicationRunner applicationRunner(@Value(&amp;quot;${message-from-vault-server:}&amp;quot;) String valueFromVaultServer) {&#xD;
+        return args -&amp;gt; {&#xD;
+            log.info(&amp;quot;message from the Spring Cloud Vault Server : &amp;quot; + valueFromVaultServer);&#xD;
+        };&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, before you run this, make sure also to have the same three environment variables we used in the tow interactions with the &lt;code&gt;vault&lt;/code&gt; CLI configured: &lt;code&gt;VAULT_TOKEN&lt;/code&gt;, &lt;code&gt;VAULT_SKIP_VERIFY&lt;/code&gt;, and &lt;code&gt;VAULT_ADDR&lt;/code&gt;. Then run it, and you should see reflected on the console the value that you write to Hashicorp Vault. &lt;/p&gt;&lt;h2&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;Hopefully, you&amp;rsquo;ve learned something about the colorful and compelling world of configuration in SPring. With this information under your belt, you&amp;rsquo;re now better prepared to use the other projects that support property resolution. Armed with this knowledge of how this works, you&amp;rsquo;re ready to integrate configuration from different Spring integrations, of which there are a &lt;em&gt;ton&lt;/em&gt;! You might use the Spring Cloud Netflix&amp;rsquo; Archaius integration, or the Configmaps integration with Spring Cloud Kubernetes, or the Spring Cloud GCP&amp;rsquo;s Google Runtime Configuration API integration, or Spring Cloud Azure&amp;rsquo;s Microsoft Azure Key Vault integration, etc.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve only mentioned a few offerings here, but it doesn&amp;rsquo;t matter if the list is exhaustive, their use will be the same if the integration is correct: the cloud&amp;rsquo;s the limit! &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tools 4.6.1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/22/spring-tools-4-6-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2020-04-22:4038</id>
+    <updated>2020-04-22T18:55:43Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.6.1 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: Spring yaml validation doesn&amp;rsquo;t understand the &amp;ldquo;&amp;lt;&amp;lt;:&amp;rdquo; syntax (&lt;a href="https://github.com/spring-projects/sts4/issues/440"&gt;#440&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: YAML Property completion: Superclass properties not detected in case of List or Map (&lt;a href="https://github.com/spring-projects/sts4/issues/449"&gt;#449&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: improved performance for content-assist for Spring XML config files&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; bugfix: Quick Fix for unknown properties broken (&lt;a href="https://github.com/spring-projects/sts4/issues/442"&gt;#442&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: early access builds on Eclipse 2020-06 milestone builds available&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: reduced timeout for ls-based content-assist for the Java Editor, so broken or slow language server behavior should not damage JDT content-assist experience anymore&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: vastly reduced communication traffic around classpath changes between Eclipse and the Spring Boot language server&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: async retrieval of properties of remote apps in boot dashboard to avoid UI freezes or delays&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: org.eclipse.mylyn.wikitext.markdown required to update to 4.6.0 (&lt;a href="https://github.com/spring-projects/sts4/issues/429"&gt;#429&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: remote targets in boot dashboard always re-appeared after deleting them&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: errors being logged at language server startup, related LSP4E rename handler&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt;: Visual Studio Code extensions now available from the &lt;a href="https://open-vsx.org"&gt;https://open-vsx.org&lt;/a&gt; marketplace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-04-23-461-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-04-23-461-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.6.2 is scheduled to be released in late May 2020.&lt;/p&gt;
+&lt;p&gt;Enjoy and stay healthy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring HATEOAS brings you new ways to configure clients</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/22/spring-hateoas-brings-you-new-ways-to-configure-clients" />
@@ -1276,38 +1737,6 @@ Sending setting for 5-second interval.&#xD;
     <updated>2020-04-03T03:18:50Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to fellow cloud native at &lt;a href="http://twitter.com/vmware"&gt;VMWare (@VMWare)&lt;/a&gt; and &lt;a href="http://twitter.com/KubernetesIO"&gt;Kubernetes (@KubernetesIO)&lt;/a&gt; co-creator &lt;a href="http://twitter.com/jbeda"&gt;Joe Beda (@jbeda)&lt;/a&gt;&lt;/p&gt;
 &lt;iframe title="Kubernetes co-creator Joe Beda " src="https://www.podbean.com/media/player/9fnpv-d80cd8?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.3.1, 5.2.3, 5.1.9, 5.0.15, 4.2.15 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/02/spring-security-5-3-1-5-2-3-5-1-9-5-0-15-4-2-15-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2020-03-31:4018</id>
-    <updated>2020-04-02T14:00:41Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 5.3.1 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.1.RELEASE"&gt;release notes&lt;/a&gt;),  5.2.3 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.2.3.RELEASE"&gt;release notes&lt;/a&gt;), 5.1.9 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.1.9.RELEASE"&gt;release notes&lt;/a&gt;) , 5.0.15 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.0.15.RELEASE"&gt;release notes&lt;/a&gt;), 4.2.15 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/4.2.15.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Batch 4.2.2 and 4.1.4 available now!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/01/spring-batch-4-2-2-and-4-1-4-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mahmoud Ben Hassine</name>
-    </author>
-    <id>tag:spring.io,2020-04-02:4022</id>
-    <updated>2020-04-01T14:00:00Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce the release of Spring Batch 4.2.2 and 4.1.4 with bug fixes and documentation updates. Please find the complete list of changes in the release notes: &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.2.2.RELEASE"&gt;4.2.2&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.1.4.RELEASE"&gt;4.1.4&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As we &lt;a href="https://spring.io/blog/2019/12/04/spring-batch-4-0-4-4-1-3-and-4-2-1-available-now"&gt;announced earlier&lt;/a&gt;, version 4.1.4 is the last release of the 4.1 line. Please upgrade to version 4.2.2 at your earliest convenience as this is the primary active branch for the moment and which will be supported until the end of 2020.&lt;/p&gt;
-&lt;p&gt;The next feature release will be 4.3, with a GA planned for October 2020, aligned with Spring Framework 5.3 and Spring Boot 2.4. This release is expected to be the last feature branch of Spring Batch 4.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

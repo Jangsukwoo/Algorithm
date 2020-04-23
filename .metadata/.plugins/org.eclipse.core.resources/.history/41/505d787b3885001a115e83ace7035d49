@@ -1,0 +1,16 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 미로탈출하기
+ * 17:00 ~
+ * 탈출 가능한 칸의 수 ?
+ */
+public class 미로탈출하기 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		
+	}
+}
