@@ -5,7 +5,49 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-23T09:40:49Z</updated>
+  <updated>2020-04-24T01:13:58Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Linux Kernel Hacker Steve Rostedt on what our busy Spring applications look like from the Kernel's perspective</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/24/a-bootiful-podcast-linux-kernel-hacker-steve-rostedt-on-what-our-busy-spring-applications-look-like-from-the-kernel-s-perspective" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-24:4041</id>
+    <updated>2020-04-24T01:13:58Z</updated>
+    <content type="html">&lt;iframe title="Linux Kernel hacker and Real Time patch founder Steve Rostedt on how the kernel sees our busy Spring applications" src="https://www.podbean.com/media/player/ethav-da3d69?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Linux kernel hacker and Linux Real-Time patch founder Steve Rostedt on observing the Linux kernel and on what it sees when it looks at our busy Java and Spring applications. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Steve is on IRC on #LINUX-RT on OFT&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://LWN.net"&gt;LWN.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.5.0.RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/23/spring-cloud-data-flow-2-5-0-rc1-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ilayaperumal Gopinathan</name>
+    </author>
+    <id>tag:spring.io,2020-04-23:4040</id>
+    <updated>2020-04-23T17:38:28Z</updated>
+    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the first milestone release of 2.5.0.RC1.&lt;/p&gt;
+&lt;p&gt;This first release candidate of 2.5.0 adds some bug fixes and the following features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+  &lt;p&gt;Support application &lt;code&gt;metadata&lt;/code&gt; as part of the &lt;code&gt;Container&lt;/code&gt; images. Before this release, we only supported application property &lt;a href="https://dataflow.spring.io/docs/2.5.0.SNAPSHOT/feature-guides/general/application-metadata/#metadata-container-image-label"&gt;whitelisting&lt;/a&gt; when using a maven artifact.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;Support for &lt;code&gt;Azure AD&lt;/code&gt; integration using OAuth 2.0. Spring Cloud Data Flow, Spring Cloud Skipper servers along with the Spring Cloud Data Flow shell can be &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/2.5.0.RC1/reference/htmlsingle/#identity-providers"&gt;configured&lt;/a&gt; to integrate with Azure AD for authentication and authorization.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;Removal of Scheduler task launcher component when scheduling tasks. In Spring Cloud Data Flow 2.3.x, the scheduling of tasks was designed to have an intermediate scheduler task launcher component to enhance the continuous deployment user experience. Since this component added some additional complexities and overhead on Kubernetes, the 2.5.x release removed this intermediary task launcher. We also added a &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/dataflow-migrate-schedules"&gt;migration tool&lt;/a&gt; to migrate the schedules from 2.3.x and 2.4.x &lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;Unification of Kubernetes Scheduler properties. This &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer-kubernetes/issues/331"&gt;feature&lt;/a&gt; lets the user configure any supported/applicable task deployment properties at the time of scheduling them as well.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are wrapping up the 2.5.0 GA related changes and looking forward to sharing the GA announcement soon!&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stack Overflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Configuration</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/23/spring-tips-configuration" />
@@ -1701,42 +1743,6 @@ Sending setting for 5-second interval.&#xD;
 &lt;p&gt;The channeling stops when the subscription&amp;rsquo;s disposable object is disposed of by the client.&lt;/p&gt;&lt;h3&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h3&gt;
 &lt;p&gt;If you followed the whole series, you&amp;rsquo;ve now seen all four of &lt;a href="https://rsocket.io/"&gt;RSocket&amp;rsquo;s&lt;/a&gt; interaction models in action: &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;request&lt;/a&gt;-&lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;response&lt;/a&gt;, &lt;a href="https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget"&gt;fire-and-forget&lt;/a&gt;, &lt;a href="https://spring.io/blog/2020/03/23/getting-started-with-rsocket-spring-boot-request-stream"&gt;request-stream&lt;/a&gt;, and now channels too.&lt;/p&gt;
 &lt;p&gt;With these four communication styles at your disposal, you&amp;rsquo;re far less likely to encounter one of those pesky &amp;lsquo;mismatched abstraction&amp;rsquo; scenarios we discussed at the beginning. With RSocket in your toolbox, you¡¯ll have a flexible, low friction, high-performance messaging protocol you can use in your software ? one that¡¯s purpose-built for microservice architectures.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.3.0.M4 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-04-03:4024</id>
-    <updated>2020-04-03T11:42:02Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the fourth milestone of Spring Boot 2.3 has been released and is available from &lt;a href="https://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This release closes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.M4"&gt;99 issues and pull requests&lt;/a&gt;. Thanks to all those who have contributed.&lt;/p&gt;
-&lt;p&gt;Highlights of this milestone include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for &lt;a href="https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot"&gt;liveness and readiness probes&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Improved support for &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M4-Release-Notes#building-oci-images"&gt;building OCI images&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Improved support for &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M4-Release-Notes#building-layered-jars-1"&gt;building layered jars&lt;/a&gt;, including customization when using Gradle.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-M4-Release-Notes"&gt;Spring Boot 2.3 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;2.3.0.M4 is the last 2.3 milestone with 2.3.0.RC1 scheduled for release in three weeks&amp;rsquo; time. All being well, 2.3.0.RELEASE will then follow a couple of weeks after that in early May.&lt;/p&gt;
-&lt;p&gt;If you want to get started with 2.3 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.M4/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Kubernetes co-creator Joe Beda</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/03/a-bootiful-podcast-kubernetes-co-creator-joe-beda" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-04-03:4023</id>
-    <updated>2020-04-03T03:18:50Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to fellow cloud native at &lt;a href="http://twitter.com/vmware"&gt;VMWare (@VMWare)&lt;/a&gt; and &lt;a href="http://twitter.com/KubernetesIO"&gt;Kubernetes (@KubernetesIO)&lt;/a&gt; co-creator &lt;a href="http://twitter.com/jbeda"&gt;Joe Beda (@jbeda)&lt;/a&gt;&lt;/p&gt;
-&lt;iframe title="Kubernetes co-creator Joe Beda " src="https://www.podbean.com/media/player/9fnpv-d80cd8?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
