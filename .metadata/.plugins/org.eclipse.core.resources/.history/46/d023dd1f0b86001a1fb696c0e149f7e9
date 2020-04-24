@@ -1,0 +1,21 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 18:00
+ */
+public class 보호필름 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int D,W,K;//두께,가로,합격기준 K
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++){
+			st = new StringTokenizer(br.readLine());
+		}
+	}
+}

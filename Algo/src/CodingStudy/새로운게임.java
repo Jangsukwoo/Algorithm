@@ -114,7 +114,6 @@ public class 새로운게임 {
 	}
 	private static ArrayList<Horse> getHorseListToRedGround(int currentHorseIdx, int cr, int cc, int nr, int nc) {
 		ArrayList<Horse> redlist = new ArrayList<Horse>();
-		
 		for(int i=currentHorseIdx;i<horseMap[cr][cc].size();i++){
 			horseMap[cr][cc].get(i).row=nr;
 			horseMap[cr][cc].get(i).col=nc;//바꿔주고

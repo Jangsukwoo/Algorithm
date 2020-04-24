@@ -1,7 +1,0 @@
-package CodingStudyHW;
-
-public class 차량정비소 {
-	public static void main(String[] args) {
-
-	}
-}
