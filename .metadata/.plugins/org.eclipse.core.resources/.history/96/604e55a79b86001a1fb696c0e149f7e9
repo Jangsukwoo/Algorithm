@@ -1,0 +1,29 @@
+package CodingTest;
+
+import java.util.HashSet;
+
+/*
+ * 현카
+ *  사이버코딩
+ *  정당한 참가자수 구하기
+ */
+public class Cybercoding {
+	static boolean[] check;
+	static HashSMap<String,Integer> ipmap;
+	public static void main(String[] args) {
+		
+	}
+    public static int solution(String[] ip_addrs, String[] langs, int[] scores) {
+    	check = new boolean[ip_addrs.length];
+    	ipset = new HashSMap<String,Intege>();
+    	for(int i=0;i<ip_addrs.length;i++) {
+    		if(!ipset.contains(ip_addrs[i])) ipset.add(ip_addrs[i]);
+    	}
+    	
+    	int duplicationIP;
+    	for(int i=0;i<)
+    	
+    	int answer = -1;
+        return answer;
+    }
+}

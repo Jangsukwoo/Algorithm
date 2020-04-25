@@ -1,0 +1,9 @@
+package BAEKJOON;
+
+public class 연료채우기 {
+	static int N;//주유소 개수
+	
+	public static void main(String[] args) {
+
+	}
+}

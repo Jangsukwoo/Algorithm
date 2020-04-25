@@ -1,0 +1,19 @@
+package CodingTest;
+/*
+ * 현카
+ * 10:06~
+ * 0~만
+ * 만~2만
+ * 2만~5만
+ * 5만~10만
+ * 10만~
+ */
+public class ShoppingCenter {
+	public static void main(String[] args) {
+		solution(new String[] {"2019/01/30 5000", "2019/04/05 10000", "2019/06/10 20000", "2019/08/15 50000", "2019/12/01 100000"});
+	}
+    public int[] solution(String[] purchase) {
+        int[] answer = {};
+        return answer;
+    }
+}
