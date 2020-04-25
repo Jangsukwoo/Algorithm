@@ -1,0 +1,30 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class 숫자의신 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,K;
+	static int max;
+	static ArrayList<String> numlist;
+	public static void main(String[] args) throws IOException {
+		setData();
+		
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		K = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
+		numlist =  new ArrayList<String>();
+		for(int i=0;i<K;i++) {
+			String sv = br.readLine();
+			int value = Integer.parseInt(br.readLine());
+			if(max<value) max = value;
+		}
+	}
+}
