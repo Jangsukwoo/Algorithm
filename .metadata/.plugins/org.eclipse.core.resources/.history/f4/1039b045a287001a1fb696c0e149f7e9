@@ -1,0 +1,9 @@
+package CodingStudyHW;
+
+public class 불 {
+	static int R,C;
+	static char[][] maze;
+	public static void main(String[] args) {
+
+	}
+}

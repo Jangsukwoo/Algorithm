@@ -1,0 +1,40 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+
+public class 불 {
+	static int R,C;
+	static char[][] maze;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static class JF{
+		int jihunrow;
+		int jihuncol;
+		int firerow;
+		int firecol;
+		int id;
+		public JF(int jihunrow, int jihuncol, int firerow, int firecol, int id) {
+			this.jihunrow = jihunrow;
+			this.jihuncol = jihuncol;
+			this.firerow = firerow;
+			this.firecol = firecol;
+			this.id = id;
+		}
+		
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		for(int row=0;row<R;row++) {
+			maze[row] = br.readLine().toCharArray();
+		}
+	}
+}

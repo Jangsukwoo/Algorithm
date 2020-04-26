@@ -1,0 +1,13 @@
+package CodingStudyHW;
+
+import java.io.BufferedReader;
+
+
+public class 불 {
+	static int R,C;
+	static char[][] maze;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+
+	}
+}
