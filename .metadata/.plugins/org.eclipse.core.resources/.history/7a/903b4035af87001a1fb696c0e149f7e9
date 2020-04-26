@@ -1,0 +1,10 @@
+package CodingStudyHW;
+/*
+ * 
+ */
+public class 아기상어 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}
