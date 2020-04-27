@@ -10,7 +10,19 @@ class Bomb{
 		second=s;
 	}
 }
+/*
+4 5 1000
+.O..O
+...O.
+.....
+.O...
+
+2 2 8
+O.
+.O
+ */
 public class 봄버맨{
+	
 	static int dr[] = {-1,0,1,0};
 	static int dc[] = {0,1,0,-1};
 	static int R,C,N;
@@ -50,11 +62,22 @@ public class 봄버맨{
 			explosion(); //폭발
 			if(second%2==0) fill(); //짝수초면 빈칸은 폭탄채우기
 			second++; //시간증가
-            
+            view();
 		}
 	}
 	
     
+	private static void view() {
+		for(int row=0;row<R;row++) {
+			for(int col=0;col<C;col++) {
+				System.out.print(map[row][col]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+
+
 	private static void decrease() {
 		int size = bomblist.size();
 		Bomb temp;

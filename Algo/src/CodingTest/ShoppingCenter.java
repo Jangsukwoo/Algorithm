@@ -56,6 +56,7 @@ public class ShoppingCenter {
 			else if(day[i]>=20000 && day[i]<50000) gold++;
 			else if(day[i]>=50000 && day[i]<100000) platinum++;
 			else if(day[i]>=100000) diamond++;
+			System.out.println(i+"일" + "누적금액:"+day[i]);
 		}
 		
 		int[] answer = new int []{bronze,silver,gold,platinum,diamond};
