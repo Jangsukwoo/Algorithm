@@ -29,21 +29,36 @@ public class 미로탈출하기 {
 		setData();
 		dfsAll();
 		System.out.println(answer);
+	
+	}
+
+	private static void view() {
+		for(int row=0;row<R;row++) {
+			for(int col=0;col<C;col++) {
+				System.out.print(memo[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 
 	private static void dfsAll() {
 		for(int row=0;row<R;row++) {
 			for(int col=0;col<C;col++){
+				System.out.println("다음칸");
 				answer+=dfs(row,col);
 			}
 		}
+		view();
 	}
 
 	private static int dfs(int cr, int cc) {
-		if(rangeCheck(cr,cc)){//탈출 성공
+		view();
+		if(rangeCheck(cr,cc)){//탈출 성공했으면 1이 리턴 시작
 			return 1;
 		}
-		if(memo[cr][cc]!=-1) return memo[cr][cc];
+		if(memo[cr][cc]!=-1) return memo[cr][cc];  //-1이 아니라는건 0이든 1일거임 0이라는건 뱅뱅 돌아서 다시 왔다는 거
+		//-1이면, 즉 안가본 땅이면
 		memo[cr][cc] = 0; //0이라고 밟음
 		int dir = getDirection(maze[cr][cc]);
 		int nr = cr+dr[dir];
