@@ -56,14 +56,6 @@ public class 숫자의신 {
 	}
 
 	private static void getMaxValue() { 
-		
-		/*
-		 * 입력받을 때 구한 K개의 숫자중 가장 큰 숫자가 자리수도 크고(붙이게되면 가장 길어지고) 가장 큰 숫자이므로 
-		 * 해당 max값에 해당하는 숫자가 나타난 위치부터 복사해서 이어 붙인다.
-		 * 여기서 boolean을 둔 이유는
-		 * 문제에서 숫자가 중복으로 들어올 수 있다는 조건 떄문에
-		 * K개의 숫자 중 2222,2222로 중복으로 들어온다면 또 다시 이어붙이게 되니 이를 방지하기 위함이다. 
-		 */
 		boolean flag=false;
 		for(int i=0;i<K;i++) {
 			answer+=numlist[i];
@@ -75,4 +67,5 @@ public class 숫자의신 {
 			}
 		}
 	}
+
 }
