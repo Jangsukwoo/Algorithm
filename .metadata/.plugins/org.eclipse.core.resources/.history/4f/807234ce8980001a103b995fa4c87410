@@ -1,9 +1,0 @@
-package BAEKJOON;
-
-public class 보물 {
-	static int[] seriesA;
-	static int[] seriesB;
-	public static void main(String[] args) {
-
-	}
-}

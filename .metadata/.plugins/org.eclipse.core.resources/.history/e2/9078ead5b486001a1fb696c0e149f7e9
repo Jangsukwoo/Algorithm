@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 연료채우기 {
-	public static void main(String[] args) {
-
-	}
-}
