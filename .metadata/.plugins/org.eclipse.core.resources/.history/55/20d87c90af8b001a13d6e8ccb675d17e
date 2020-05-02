@@ -54,23 +54,8 @@ public class 낚시왕 {
 					break;
 				}
 			}
-			System.out.println(col);
-			System.out.println("이동전");
-			view();
 			moveShark();//상어들 이동
-			System.out.println("이동후");
-			view();
 		}
-	}
-
-	private static void view() {
-		for(int row=1;row<=R;row++) {
-			for(int col=1;col<=C;col++) {
-				System.out.print(aquariumPQueue[row][col].size()+" ");
-			}
-			System.out.println();
-		}
-		System.out.println();
 	}
 
 	private static void moveShark(){

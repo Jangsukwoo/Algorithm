@@ -59,7 +59,7 @@ public class 낚시왕 {
 			view();
 			moveShark();//상어들 이동
 			System.out.println("이동후");
-			view();
+			moveShark();
 		}
 	}
 
