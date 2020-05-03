@@ -1,0 +1,64 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+
+public class 안전영역 {
+	static int N;
+	static int maxHeight;
+	static int[][] zone;
+	static int maxArea;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static boolean[][] visit;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		rain();
+	}
+	private static void rain(){
+		//비내리는 양에 대한 모든 조사
+		for(int rainfall=1;rainfall<=maxHeight;rainfall++) {
+			bfsAll(rainfall);
+		}
+	}
+	private static void bfsAll(int rainfall){
+		q.clear();
+		visit = new boolean[N][N];
+		int areacnt=0;
+		for(int row=0;row<N;row++){
+			for(int col=0;col<N;col++) {
+				if(zone[row][col]>rainfall && visit[row][col]==false){
+					areacnt++;
+					insertQueue(row,col);
+					bfs(rainfall);
+				}
+			}
+		}
+	}
+	private static void bfs(int rainfall) {
+		while(!q.isEmpty()) {
+			int size = q.size();
+		}
+	}
+	private static void insertQueue(int row, int col) {
+		q.add(new int[] {row,col});
+		visit[row][col] = true;
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		zone = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				zone[row][col] = Integer.parseInt(st.nextToken());
+				if(zone[row][col]>maxHeight) maxHeight = zone[row][col];
+			}
+		}
+	}
+}

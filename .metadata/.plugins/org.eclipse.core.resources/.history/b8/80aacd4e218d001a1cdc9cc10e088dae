@@ -1,0 +1,14 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+public class 안전영역 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static 
+	public static void main(String[] args) {
+
+	}
+}

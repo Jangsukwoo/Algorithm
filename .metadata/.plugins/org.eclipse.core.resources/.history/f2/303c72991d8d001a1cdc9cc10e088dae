@@ -195,8 +195,10 @@ public class 성곽 {
 		directionlist[12].dc = new int[] {0,-1};
 		directionlist[13].dr = new int[] {-1};
 		directionlist[13].dc = new int[] {0};
+
 		directionlist[14].dr = new int[] {0};
 		directionlist[14].dc = new int[] {-1};
+
 		directionlist[15].dr = new int[] {};
 		directionlist[15].dc = new int[] {};
 	}
