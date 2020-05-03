@@ -56,6 +56,15 @@ public class 나무재테크 {
 		getAnswer();
 		System.out.println(answer);
 	}
+	private static void view() {
+		for(int row=1;row<=N;row++) {
+			for(int col=1;col<=N;col++) {
+				System.out.print(treeList[row][col].size()+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	private static void getAnswer() {
 		for(int row=1;row<=N;row++) {
 			for(int col=1;col<=N;col++) {

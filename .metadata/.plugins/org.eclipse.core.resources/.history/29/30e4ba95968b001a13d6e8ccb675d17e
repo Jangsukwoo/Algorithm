@@ -1,9 +1,0 @@
-package BAEKJOON;
-/*
- * 
- */
-public class Bitmap {
-	public static void main(String[] args) {
-
-	}
-}

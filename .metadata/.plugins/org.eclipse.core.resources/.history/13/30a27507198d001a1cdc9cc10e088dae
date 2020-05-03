@@ -1,0 +1,30 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * 17:30~
+ */
+public class 빙산_BFS {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int R,C;
+	static int[][] sea;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		for(int row=0;row<R;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<C;col++) {
+				sea[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

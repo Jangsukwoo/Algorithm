@@ -1,0 +1,15 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class 빙산_BFS {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		
+	}
+}
