@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /*
- * 17:30~ 18:00
+ * 17:30~
  */
 public class 빙산_BFS {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
