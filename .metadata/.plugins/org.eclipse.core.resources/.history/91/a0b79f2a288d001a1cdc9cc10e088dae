@@ -1,0 +1,52 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/*
+ * 19:15
+ */
+public class 토마토2 {
+	static int R,C,H;
+	static int[][][] box;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static boolean[][][] visit;
+	public static void main(String[] args) throws IOException {
+		setData();
+		farming();
+	}
+	private static void farming() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		H = Integer.parseInt(st.nextToken());
+		box = new int[R][C][H];
+		visit = new boolean[R][C][H];
+		
+		for(int h=0;h<H;h++) {
+			for(int row=0;row<R;row++) {
+				st = new StringTokenizer(br.readLine());
+				for(int col=0;col<C;col++) {
+					box[row][col][h] = Integer.parseInt(st.nextToken());
+					if(box[row][col][h]==1) {
+						insertQueue(row,col,h);
+					}
+				}
+			}
+		}
+	}
+	private static void insertQueue(int row, int col, int h) {
+		q.add(new int[] {row,col,h});
+		visit[row][col][h] = true;
+	}	
+}
