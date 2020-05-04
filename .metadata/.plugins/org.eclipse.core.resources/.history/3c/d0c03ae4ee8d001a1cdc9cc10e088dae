@@ -1,0 +1,18 @@
+package BAEKJOON;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 미로탐색_dfs {
+	static char[][] maze;
+	static int N,M;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		st = new StringTokenizer(br.readLine());
+	}
+}
