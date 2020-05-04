@@ -62,7 +62,6 @@ public class 모의_숫자만들기 {
 				permutation(cnt+1);
 				visit[i] = false;
 			}
-
 		}
 	}
 	private static void calculation(){

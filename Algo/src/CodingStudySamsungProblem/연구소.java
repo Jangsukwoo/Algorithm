@@ -28,7 +28,6 @@ public class 연구소 {
 	static ArrayList<int[]> virusList;
 	static int wallListSize;
 	static int[] pickWall = new int[3];
-	static boolean[] pickVisit;
 	static boolean[][] virusVisit;
 	static int[] dr = {-1,0,1,0};
 	static int[] dc = {0,1,0,-1};
@@ -43,14 +42,10 @@ public class 연구소 {
 			return;
 		}
 		for(int i=idx;i<wallListSize;i++){
-			if(pickVisit[i] == false) {
-				pickVisit[i] = true;
 				pickWall[depth] = i;
 				nCr(i+1,depth+1);
-				pickVisit[i] = false;
 			}
 		}
-	}
 	private static void setWall() {
 		copyMap();
 
@@ -122,6 +117,5 @@ public class 연구소 {
 			}
 		}
 		wallListSize = wallList.size(); //n, r=3
-		pickVisit = new boolean[wallListSize];
 	}
 }

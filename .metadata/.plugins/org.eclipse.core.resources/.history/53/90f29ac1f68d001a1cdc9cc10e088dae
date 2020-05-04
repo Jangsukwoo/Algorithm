@@ -1,0 +1,9 @@
+package BAEKJOON;
+
+public class N과M_1{
+	static int N;
+	static int M;
+	public static void main(String[] args) {
+
+	}
+}

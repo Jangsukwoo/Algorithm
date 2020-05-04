@@ -1,0 +1,36 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+/*
+ * 순열 
+ */
+public class N과M_1{
+	static int N;
+	static int M;
+	static int[] pick;
+	static boolean[] visit;
+	public static void main(String[] args) {
+		setData();
+		dfs(0);
+	}
+	private static void dfs(int depth){
+		if(depth==M) {
+			return;
+		}
+		for(int num=1;num<=N;num++){
+			if(visit[num]==false) {
+				visit[num] = true;
+				dfs(depth+1);
+				visit[num] = false;
+			}
+		}
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		M = sc.nextInt();
+		pick = new int[M];
+		visit = new boolean[N+1];
+	}
+}
