@@ -1,0 +1,17 @@
+package BAEKJOON;
+/*
+ * 17:15~
+ * N By M 격자판
+ * . : 이동 가능
+ * # : 벽
+ * 열쇠 : a~f 열쇠
+ * 문 : A~F 
+ * 0 : 민식이 위치
+ * 1 : 출구
+ * 
+ */
+public class 달이차오른다가자 {
+	public static void main(String[] args) {
+
+	}
+}
