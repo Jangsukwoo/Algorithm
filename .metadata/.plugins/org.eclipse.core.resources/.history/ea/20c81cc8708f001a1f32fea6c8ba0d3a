@@ -1,0 +1,16 @@
+package 구현;
+/*
+ * 17:00~~
+ * N by M
+ * J : 정글
+ * O : 바다
+ * I : 얼음
+ * 
+ */
+
+public class 행성탐사 {
+	static int M,N;
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,53 @@
+package 구현;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 17:00~~
+ * N by M
+ * J : 정글
+ * O : 바다
+ * I : 얼음
+ * DP?
+ * 
+ * 2차원 구간 합 문제
+ */
+
+public class 행성탐사 {
+	static int R,C,K;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static char[][] map;
+	static Planet planet;
+	static class Planet{
+		int[][] jungle;
+		int[][] sea;
+		int[][] ice;
+		public Planet(int[][] jungle, int[][] sea, int[][] ice) {
+			this.jungle = jungle;
+			this.sea = sea;
+			this.ice = ice;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		map = new char[R+1][C+1];
+		planet = new Planet(new int[R+1][C+1],new int[R+1][C+1],new int[R+1][C+1]);
+		K = Integer.parseInt(br.readLine());
+		for(int row=1;row<=R;row++){
+			String read = br.readLine();
+			for(int col=1;col<=C;col++) {
+				map[row][col] = read.charAt(col-1);
+			}
+		}
+		
+	}
+}

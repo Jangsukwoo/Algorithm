@@ -15,10 +15,9 @@ import java.util.StringTokenizer;
 1 1 4 4
 
 
-2 1
+2 2
 1 2
-3 4
-1 1 2 2 
+3 4 
  * 
  */
 public class 동적계획법_3일차_구간합구하기5 {
@@ -45,17 +44,8 @@ public class 동적계획법_3일차_구간합구하기5 {
 				matrix[row][col] = Integer.parseInt(st.nextToken());
 				colDP[row][col]+=colDP[row-1][col]+matrix[row][col];
 			}	
+
 		}
-		view();
-	}
-	private static void view() {
-		for(int row=1;row<=N;row++) {
-			for(int col=1;col<=N;col++) {
-				System.out.print (colDP[row][col]+" ");
-			}	
-			System.out.println();
-		}
-		System.out.println();
 	}
 	private static void output() throws IOException {
 		for(int i=0,rs,re,cs,ce;i<M;i++) {
@@ -71,6 +61,6 @@ public class 동적계획법_3일차_구간합구하기5 {
 		bw.flush();
 		bw.close();
 	}
-	
+
 }
 

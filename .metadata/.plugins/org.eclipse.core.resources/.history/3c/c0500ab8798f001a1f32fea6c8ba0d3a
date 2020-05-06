@@ -18,7 +18,7 @@ import java.util.StringTokenizer;
 2 1
 1 2
 3 4
-1 1 2 2 
+1 1  2 2 
  * 
  */
 public class 동적계획법_3일차_구간합구하기5 {
