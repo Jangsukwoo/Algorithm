@@ -29,8 +29,6 @@ import java.util.StringTokenizer;
 100 0 0
 50 50 50
 151 0 0
-
-흠..그냥 전부 비교해서 푸는 문제였다... O(N^4) ~ O(N^3)
  */
 public class 용감한용사진수 {
 	static int N,K;//병사수, 이겨야할 수
