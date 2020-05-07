@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="CodingStudyHW.별자리만들기.EdgeBetweenStar"/>
-    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.virtual_parse_stack"/>
     <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="sun.tools.jconsole.AboutDialog"/>
     <fullyQualifiedTypeName name="CodingStudyHW.최소비용구하기"/>
@@ -28,8 +26,6 @@
     <fullyQualifiedTypeName name="BAEKJOON.연료채우기.GasStation"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-    <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
     <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
     <fullyQualifiedTypeName name="CodingStudyHW.불.JF"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
@@ -53,11 +49,15 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="구현.행성탐사.Planet"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="com.sun.imageio.spi.OutputStreamImageOutputStreamSpi"/>
+    <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 </qualifiedTypeNameHistroy>

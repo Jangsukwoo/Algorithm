@@ -1,0 +1,12 @@
+package 구현;
+/*
+ * 18:00
+ * 진수가 적어도 K명의 병사를 이길 수 있는
+ * 최소의 스탯포인트
+ */
+public class 용감한용사진수 {
+	static int N,K;
+	public static void main(String[] args) {
+
+	}
+}
