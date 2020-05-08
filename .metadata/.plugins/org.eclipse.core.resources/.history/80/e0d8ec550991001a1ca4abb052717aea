@@ -1,0 +1,15 @@
+package 프로그래머스;
+
+public class 스킬체크1_2 {
+	
+	  public String[] solution(int n, int[] arr1, int[] arr2) {
+	      String[] answer = {};
+	      answer = new String[n];
+	      
+	      for(int row=0;row<n;row++){
+	    	  String binary = Integer.toBinaryString(arr1);
+	    	  
+	      }
+	      return answer;
+	  }
+}

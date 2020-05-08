@@ -1,0 +1,11 @@
+package 프로그래머스;
+
+public class 스킬체크1_1 {
+	public static void main(String[] args) {
+
+	}
+    public int solution(int num) {
+        int answer = 0;
+        return answer;
+    }
+}

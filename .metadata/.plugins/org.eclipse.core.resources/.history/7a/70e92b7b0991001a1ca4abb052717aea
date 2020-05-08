@@ -1,0 +1,18 @@
+package 프로그래머스;
+
+public class 스킬체크1_2 {
+	
+	  public String[] solution(int n, int[] arr1, int[] arr2) {
+	      String[] answer = {};
+	      answer = new String[n];
+	      
+	      for(int row=0;row<n;row++){
+	    	  String binary1 = Integer.toBinaryString(arr1[row]);
+	    	  String binary2 = Integer.toBinaryString(arr2[row]);
+	    	  for(int col=0;col<n;col++) {
+	    		  if(binary1.charAt(col)=='1' || binary2.charAt(col)=='1')
+	    	  }
+	      }
+	      return answer;
+	  }
+}
