@@ -36,8 +36,7 @@ import java.util.StringTokenizer;
 
 17:30
 
-숫자에 대해서 주변에 지뢰를 설치하는 방식으로 하니 계속 틀렸다.
-지뢰가 설치 가능한 지점에서 인접한 숫자를 보고 0이 아니면 하나씩 까주는 방식으로 하니 통과되었다 흑
+
  */
 public class 지뢰찾기 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
