@@ -1,0 +1,12 @@
+package 구현;
+
+public class 달팽이 {
+	static int n,m;
+	public static void main(String[] args) {
+		setData();
+	}
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}
