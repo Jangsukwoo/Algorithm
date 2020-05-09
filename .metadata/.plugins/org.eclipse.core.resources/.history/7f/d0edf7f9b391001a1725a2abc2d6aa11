@@ -1,0 +1,13 @@
+package CodingTest;
+
+public class Keypad{
+	static char[][] keypad;
+	public static void main(String[] args) {
+
+	}
+	public String solution(int[] numbers, String hand) {
+	        String answer = "";
+	        
+	        return answer;
+	}
+}

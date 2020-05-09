@@ -1,0 +1,59 @@
+package CodingTest;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class apeach {
+	static HashSet<String> gemSet;
+	static HashMap<String,Integer> gemMap;
+	static int maxsize;
+	public int[] solution(String[] gems){
+		gemSet = new HashSet<String>();
+		for(String data : gems) {
+			gemSet.add(data);
+			gemMap.put(data,0);
+		}
+		maxsize= gemSet.size();
+
+		int[] answer =new int[2];
+		int size=0;
+		int length =0;
+		int startIdx = 0;
+		int endIdx = 0;
+		int maxlength=0;
+		int maxStart=0;
+		int minLength = Integer.MAX_VALUE;
+		/*
+		 * 적어도 한개 이상 포함하는 가장 짧은 구간 
+		 */
+		 while(endIdx<gems.length){
+			 if(size==maxsize){
+				 while(true){//스타트 포인터 앞으로 당겨본다
+					 String data2 = gems[startIdx];
+					 int value2 = gemMap.get(data2);
+					 if(value2==1){//1이면 다시 찾으로 뒤로 가야함 
+						gemMap.put(data2, value2-1);
+						size--;
+						startIdx++;
+						break;
+					 }else {			 
+						
+						gemMap.put(data2, value2-1);
+						minLength = Math.min(minLength,(endIdx-startIdx-1));
+						answer[0] = startIdx;
+						answer[1] = endIdx;
+						System.out.println(startIdx+" "+endIdx);
+						startIdx++;
+					 }
+				 }
+			 }
+			 String data = gems[endIdx];
+			 int value = gemMap.get(data);
+			 gemMap.put(data,value+1);
+			 endIdx++;
+			 if(value==0) size++;
+			 length++;
+		 }
+		 return answer;
+	}
+}

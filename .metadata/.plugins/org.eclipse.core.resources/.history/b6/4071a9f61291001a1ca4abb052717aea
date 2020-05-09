@@ -1,8 +1,0 @@
-package 구현;
-
-public class 달팽이 {
-	static int n,m;
-	public static void main(String[] args) {
-
-	}
-}

@@ -1,0 +1,28 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class Keypad{
+	static ArrayList<int[]> keyPosition = new ArrayList<int[]>();
+	static int[] right;
+	static int[] left
+	public static void main(String[] args) {
+		setKeypad();
+	}
+	private static void setKeypad() {
+		keyPosition.add(new int[] {4,2});
+		keyPosition.add(new int[] {1,1});
+		keyPosition.add(new int[] {1,2});
+		keyPosition.add(new int[] {1,3});
+		keyPosition.add(new int[] {2,1});
+		keyPosition.add(new int[] {2,2});
+		keyPosition.add(new int[] {2,3});
+		keyPosition.add(new int[] {3,1});
+		keyPosition.add(new int[] {3,2});
+		keyPosition.add(new int[] {3,3});
+	}
+	public String solution(int[] numbers, String hand) {
+	        String answer = "";
+	        return answer;
+	}
+}

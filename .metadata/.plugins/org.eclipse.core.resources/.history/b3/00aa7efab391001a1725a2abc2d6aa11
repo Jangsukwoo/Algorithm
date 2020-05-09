@@ -1,0 +1,18 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class Keypad{
+	static ArrayList<int[]> keyPosition = new ArrayList<int[]>(;)
+	public static void main(String[] args) {
+		setKeypad();
+	}
+	private static void setKeypad() {
+		
+	}
+	public String solution(int[] numbers, String hand) {
+	        String answer = "";
+	        
+	        return answer;
+	}
+}
