@@ -1,0 +1,7 @@
+package 구현;
+
+public class 개미 {
+	public static void main(String[] args) {
+
+	}
+}
