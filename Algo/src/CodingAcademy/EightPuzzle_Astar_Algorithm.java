@@ -53,6 +53,8 @@ import java.util.StringTokenizer;
 #34
 285
 716
+
+1차원을 2차원 배열로 표현하는 방법 알아두기
  */
 public class EightPuzzle_Astar_Algorithm {
 	static int T;
@@ -60,11 +62,10 @@ public class EightPuzzle_Astar_Algorithm {
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringTokenizer st;
 	static char[][] board;
-	static char[][] goal;
 	static int[] dr = {-1,0,1,0};
 	static int[] dc = {0,1,0,-1};
-	static HashMap<Integer,Integer> visitMap = new HashMap<>();
-	static HashSet<Integer> impossibleSet =  new HashSet<Integer>();
+	static HashMap<Integer,Integer> visitMap = new HashMap<>(); //이미 봤던 모양은 또 보지않기위해 key값으로 방문 여부 체크 
+	static HashSet<Integer> impossibleSet =  new HashSet<Integer>(); //memoization
 	static PriorityQueue<Node> pq = new PriorityQueue<>(new Comparator<Node>() {
 		@Override
 		public int compare(Node o1, Node o2){
@@ -74,8 +75,8 @@ public class EightPuzzle_Astar_Algorithm {
 	});
 	static class Node{
 		String board;
-		int g;
-		int f;
+		int g; //g(x)
+		int f; //f(x)
 		public Node(String data,int g,int f) {
 			this.board = data;
 			this.g=g;
@@ -87,10 +88,11 @@ public class EightPuzzle_Astar_Algorithm {
 		for(int testcase=1;testcase<=T;testcase++) {
 			br.readLine();//빈라인 read처리
 			setData(); //Input
-			astarAlgorithm();
-			if(visitMap.containsKey(Integer.parseInt("123456789"))){
+			astarAlgorithm(); //AstarAlgorithm
+			if(visitMap.containsKey(Integer.parseInt("123456789"))) {
 				bw.write((int) visitMap.get(Integer.parseInt("123456789"))+"\n");
-			}else {
+				
+			}else {//불가능하다는 판단이 나온 경우, 지나온 과정 모든 것이 불가능한 결과로 가는 과정이므로 Memoization 
 				for(Integer key : visitMap.keySet()) impossibleSet.add(key);
 				bw.write("impossible"+"\n");
 			}
@@ -102,9 +104,11 @@ public class EightPuzzle_Astar_Algorithm {
 		while(!pq.isEmpty()) {
 			Node currentNode = pq.poll();
 			String numberBoard = currentNode.board;
-			int sharpIndex = numberBoard.indexOf("9");
+			int sharpIndex = numberBoard.indexOf("9"); //빈공간의 위치 인덱스
 			int cr = sharpIndex/3;
 			int cc = sharpIndex%3;
+			
+			//불가능한 케이스로 메모가 되어있는 경우 더이상 진행하지 않고 즉시 끝낸다.
 			if(impossibleSet.contains(Integer.parseInt(numberBoard))) return;
 			
 			String data = "";
@@ -116,25 +120,30 @@ public class EightPuzzle_Astar_Algorithm {
 					next = swap(cr,cc,nr,nc,next); //swap
 					data = next.toString();
 					//heuristic logic
-					int heuristic = getHeuristicValue(data);
+					int heuristic = getHeuristicValue(data); //h(x) 휴리스틱 function 
 					if(visitMap.containsKey(Integer.parseInt(data))) continue; //이미 본 케이스면 건너뛴다.
 					else {
-						//f = g+h
+						//f = g+h (현재 depth + 휴리스틱 값)
 						pq.add(new Node(data,currentNode.g+1,(currentNode.g+heuristic)));
 						visitMap.put(Integer.parseInt(data),currentNode.g+1);
 					}
 				}
 			}
+			/*
+			 *
+			 */
+			
 			//조사 후 
-			if(visitMap.containsKey(Integer.parseInt("123456789"))) {
-				return; //찾았으면 끝냄 
-			}
+			if(visitMap.containsKey(Integer.parseInt("123456789"))) return; //찾았으면 끝냄 
+			
 		}
 	}
 	private static int getHeuristicValue(String data){
+		//이미 목표 위치에 있는 숫자가 많을수록 더 가치있다고 판단하였다.   
+		//Manhattan Distance나 다른 어떤 가치 판단 로직을 세워 더 효율적인 휴리스틱 펑션을 만들어도 된다.
 		int count = 0;
 		for(int i=0;i<data.length();i++) {
-			if("123456789".charAt(i)!=data.charAt(i)) count++;
+			if("123456789".charAt(i)!=data.charAt(i)) count++;//같은 위치에 같은 숫자면 conut++
 		}
 		return count;
 	}
@@ -152,13 +161,13 @@ public class EightPuzzle_Astar_Algorithm {
 	}
 	private static void setData() throws IOException {
 		board = new char[3][3];
-		visitMap.clear();
+		visitMap.clear(); //새로운 케이스에 대한 초기화
 		pq.clear();
 		String boardStr="";
 		for(int row=0;row<3;row++) {
 			board[row] = br.readLine().toCharArray();
 			for(int col=0;col<3;col++) {
-				if(board[row][col]=='#') board[row][col] = '9';
+				if(board[row][col]=='#') board[row][col] = '9'; //빈공간을 숫자 9로 치환한다. Integer.parseInt를 쓰기위함
 				boardStr+=board[row][col];
 			}
 		}

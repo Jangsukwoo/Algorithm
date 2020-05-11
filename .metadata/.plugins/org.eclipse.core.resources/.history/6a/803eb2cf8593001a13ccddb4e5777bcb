@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
@@ -55,6 +56,8 @@ public class 퍼즐 {
 			int sharpIndex = numberBoard.indexOf("9");
 			int cr = sharpIndex/3;
 			int cc = sharpIndex%3;
+			if(impossibleSet.contains(Integer.parseInt(numberBoard))) return;
+
 			String data = "";
 			for(int dir=0;dir<4;dir++){//move UP,RIGHT,LEFT,DOWN
 				int nr = cr+dr[dir];
