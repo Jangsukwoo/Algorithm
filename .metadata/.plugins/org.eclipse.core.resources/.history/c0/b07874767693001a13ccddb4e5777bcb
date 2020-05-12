@@ -1,7 +1,0 @@
-package CodingAcademy;
-
-public class EightPuzzle_Astar_Algorithm {
-	public static void main(String[] args) {
-
-	}
-}

@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 단지번호붙이기_dfs {
-	public static void main(String[] args) {
-
-	}
-}

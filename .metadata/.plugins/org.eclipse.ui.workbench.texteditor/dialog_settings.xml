@@ -9,6 +9,7 @@
 		<item key="isRegEx" value="true"/>
 		<list key="findhistory">
 			<item value="sys"/>
+			<item value="pq"/>
 			<item value="set"/>
 			<item value="test"/>
 			<item value=";;"/>
@@ -22,7 +23,6 @@
 			<item value="maxtime"/>
 			<item value="jewerly"/>
 			<item value="num"/>
-			<item value="value"/>
 		</list>
 		<list key="replacehistory">
 			<item value="cctvN.col"/>

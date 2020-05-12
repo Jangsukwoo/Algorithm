@@ -1,9 +1,0 @@
-package BAEKJOON;
-
-public class 미로탐색_dfs {
-	static char[][] maze;
-	static int N,M;
-	public static void main(String[] args) {
-		
-	}
-}

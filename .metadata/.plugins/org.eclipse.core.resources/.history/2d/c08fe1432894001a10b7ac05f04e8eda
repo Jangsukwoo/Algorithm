@@ -1,0 +1,35 @@
+package Simulation;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class PuyoPuyo {
+	static char[][] field = new char[12][6];
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static boolean[][] visit;
+	static int adjCount;
+	static boolean cascadeExplosionFlag;
+	static int cascade;
+	public static void main(String[] args) {
+		setData();
+		play();
+	}
+	private static void play() {
+		while(true) {	
+			explosion();
+		}
+	}
+	private static void explosion() {
+		
+	}
+	private static void setData() {
+		Scanner sc = new Scanner(System.in);
+		for(int row=0;row<12;row++) {
+			String readLine = sc.nextLine();
+			field[row] = readLine.toCharArray();
+		}
+	}
+}

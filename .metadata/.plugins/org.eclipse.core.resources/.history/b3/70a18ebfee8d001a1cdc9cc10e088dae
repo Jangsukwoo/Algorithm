@@ -1,7 +1,0 @@
-package BAEKJOON;
-
-public class 미로탐색_dfs {
-	public static void main(String[] args) {
-		
-	}
-}
