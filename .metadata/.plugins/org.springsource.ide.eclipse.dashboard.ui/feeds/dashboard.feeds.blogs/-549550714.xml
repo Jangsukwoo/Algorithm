@@ -5,7 +5,190 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-12T13:14:00Z</updated>
+  <updated>2020-05-13T14:43:56Z</updated>
+  <entry>
+    <title>Introduction to Azure Spring Cloud with IntelliJ IDEA</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/13/introduction-to-azure-spring-cloud-with-intellij-idea" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Andy Clement</name>
+    </author>
+    <id>tag:spring.io,2020-05-01:4052</id>
+    <updated>2020-05-13T14:43:56Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/services/spring-cloud/"&gt;Azure Spring Cloud&lt;/a&gt;?is a new Platform as a Service offering for Microservices apps. It is a fully managed service jointly built, operated, and supported by Pivotal and Microsoft to simplify spring boot based microservices development and management. In this blog, we will walk through how you can accelerate your development with Azure Spring Cloud and IntelliJ IDEA.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="requirements"&gt;&lt;a class="anchor" href="#requirements"&gt;&lt;/a&gt;Requirements&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You will need a few things prepared before following the upcoming sections:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.jetbrains.com/idea/download/#section=windows"&gt;IntelliJ IDEA, Community/Ultimate Edition, version 2020.1/2019.3 installed&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/free/"&gt;An Azure Account&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in"&gt;Azure Toolkit for IntelliJ installed and signed-in&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal#provision-a-service-instance-on-the-azure-portal"&gt;An Azure Spring Cloud instance provisioned&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="prepare-your-spring-application"&gt;&lt;a class="anchor" href="#prepare-your-spring-application"&gt;&lt;/a&gt;Prepare your Spring application&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First, let&amp;#8217;s start from a simple &lt;a href="https://github.com/spring-guides/gs-spring-boot"&gt;sample Spring Boot project&lt;/a&gt;, one of the &lt;a href="https://spring.io/guides"&gt;Spring Getting Started Guides&lt;/a&gt;.  We need to clone the repository:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;git clone git@github.com:spring-guides/gs-spring-boot.git&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And import the final form of the project, contained in the &lt;code&gt;complete&lt;/code&gt; subfolder of that clone:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency.png" alt="Imported Project"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To enable Azure Spring Cloud features (discovery service, config server, etc) a set of &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment"&gt;dependencies&lt;/a&gt; is needed. The Azure Toolkit for IntelliJ will help with that. Right-click on the project and select &lt;strong&gt;Azure &amp;#8594; Add Azure Spring Cloud dependency&lt;/strong&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency-2.png" alt="Add Azure Spring Cloud dependency"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A set of dependencies will be added to the &lt;code&gt;pom.xml&lt;/code&gt;. The version is calculated based on existing dependencies in the pom, but feel free to edit them if you know what you are doing. Then, click &lt;strong&gt;Import Changes&lt;/strong&gt; on the bottom right to resolve dependencies automatically.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency-3.png" alt="Resolving adding dependencies"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Except the &lt;code&gt;spring-cloud-starter-azure-spring-cloud-client&lt;/code&gt;, the dependencies added are not hard requirements. They are recommended to enable the full Azure Spring Cloud feature set including Eureka, Config Server, monitoring, distributed tracing, etc. Let¡¯s add the discovery client annotation in your &lt;code&gt;Application.java&lt;/code&gt;, so that the application will be discoverable via a Eureka server once deployed to Azure Spring Cloud.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/add-annotation.png" alt="Add annotation"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="deploy-your-app-to-azure-spring-cloud"&gt;&lt;a class="anchor" href="#deploy-your-app-to-azure-spring-cloud"&gt;&lt;/a&gt;Deploy your app to Azure Spring Cloud&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now, let¡¯s go ahead and deploy the app to Azure Spring Cloud. With the help of Azure Toolkit for IntelliJ IDEA, this will be super easy. Right-click on the project and select &lt;strong&gt;Azure &amp;#8594; Deploy to Azure Spring Cloud&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy.png" alt="App deployment"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In the pop-up configuration window, select the right subscription and Azure Spring Cloud instance you have provisioned; create a new app named &lt;strong&gt;demo&lt;/strong&gt; and enable &lt;strong&gt;Public Endpoint&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy-config.png" alt="Configuring deployment" width="626" height="725"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Click &lt;strong&gt;Run&lt;/strong&gt; and you will see the app built and deployed in a few minutes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy-log.png" alt="Configuring deployment"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The application should immediately be accessible via the URL printed to the console. Congratulations for your first Azure Spring Cloud app deployed from IntelliJ IDEA!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/access-endpoint.png" alt="Accessing the application"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="view-your-app-status-and-logs"&gt;&lt;a class="anchor" href="#view-your-app-status-and-logs"&gt;&lt;/a&gt;View your app status and logs&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To manage your Spring Cloud app, navigate to your Azure Explorer panel on the left and find the app just deployed under Spring Cloud nodes. Right-click on the app, select &lt;strong&gt;Show Properties&lt;/strong&gt; and you will see the tap show up on the right. Here you can perform common actions like restart/delete/scale/editing JVM options and modifying environment variables. Take a closer look at the Instances details and you can see that the app now has one instance running and registered to Eureka server since the discover status is UP. For further operations, select &lt;strong&gt;Open in Portal&lt;/strong&gt; in the right-click menu to explore more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/app-properties.png" alt="App properties"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It¡¯s also super easy to stream the logs to your IDEA. Right-click on your app in the explorer, select &lt;strong&gt;Streaming Logs&lt;/strong&gt;, select the instance in the pop-up windows and then you will see logs showing up soon. For a full logs analysis experience, explore Azure Spring Cloud¡¯s seamless &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/diagnostic-services"&gt;integration&lt;/a&gt; with Azure Monitor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/aclement/20200511/log-stream.png" alt="Log Streaming"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="learn-more-about-java-on-azure"&gt;&lt;a class="anchor" href="#learn-more-about-java-on-azure"&gt;&lt;/a&gt;Learn more about Java on Azure&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To learn more about Java on Azure, Azure Spring Cloud and Azure tools for Java developers, check out the links below!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/"&gt;Java on Azure Developer Center&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/"&gt;Azure Spring Cloud Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/fundamentals/"&gt;Azure Tools for Java developers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And follow for &lt;a href="https://twitter.com/JavaAtMicrosoft"&gt;Twitter&lt;/a&gt; the latest news about Java on Azure.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>CVE reports published for Spring Security</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Eleftheria Stein-Kousathana</name>
+    </author>
+    <id>tag:spring.io,2020-05-13:4070</id>
+    <updated>2020-05-13T13:55:24Z</updated>
+    <content type="html">&lt;p&gt;We have released Spring Security 5.3.2, 5.2.4, 5.1.10, 5.0.16 and 4.2.16 to address the following CVE reports:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407: Signature Wrapping Vulnerability with spring-security-saml2-service-provider&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408: Dictionary attack with Spring Security queryable text encryptor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please review the information in the CVE report and upgrade immediately.&lt;/p&gt;
+&lt;p&gt;Spring Boot users should upgrade to &lt;a href="https://spring.io/blog/2020/05/07/spring-boot-2-2-7-available-now"&gt;2.2.7&lt;/a&gt; or &lt;a href="https://spring.io/blog/2020/05/07/spring-boot-2-1-14-available-now"&gt;2.1.14&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Neumann goes GA</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/12/spring-data-neumann-goes-ga" />
@@ -535,9 +718,10 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
       <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2020-05-07:4062</id>
-    <updated>2020-05-07T16:31:53Z</updated>
+    <updated>2020-05-07T16:31:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.7 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.7.RELEASE"&gt;80 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.7.RELEASE"&gt;80 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h3&gt;
+&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.2.4.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -550,9 +734,10 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
       <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2020-05-07:4063</id>
-    <updated>2020-05-07T16:08:46Z</updated>
+    <updated>2020-05-07T16:08:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.14 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.14.RELEASE"&gt;61 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.14.RELEASE"&gt;61 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h3&gt;
+&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.1.10.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.14.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -567,6 +752,9 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
     <id>tag:spring.io,2020-05-06:4056</id>
     <updated>2020-05-07T12:00:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE 2020-05-13:&lt;/strong&gt; The following versions of Spring Security address &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;CVE-2020-5407 and CVE-2020-5408&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
 &lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 5.3.2 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.2.RELEASE"&gt;release notes&lt;/a&gt;),  5.2.4 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.2.4.RELEASE"&gt;release notes&lt;/a&gt;), 5.1.10 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.1.10.RELEASE"&gt;release notes&lt;/a&gt;) , 5.0.16 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.0.16.RELEASE"&gt;release notes&lt;/a&gt;), 4.2.16 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/4.2.16.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
@@ -871,132 +1059,6 @@ $ ls -l target/*.zip&#xD;
     <updated>2020-05-01T03:36:37Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to the founder of - among other things - Feign, JCloud, and Spring Cloud Sleuth - &lt;a href="https://twitter.com/adrianfcole"&gt;Adrian Cole (@adrianfcole)&lt;/a&gt; about distributed tracing, Zipkin, and more. &lt;/p&gt;
 &lt;iframe title="Adrian Cole, founder or co-founder of Feign, JClouds, and Spring Cloud Sleuth and major contributor to OpenZipkin" src="https://www.podbean.com/media/player/ser7i-db042c?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring for Apache Kafka 2.5.0 Release Candidate</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/30/spring-for-apache-kafka-2-5-0-release-candidate" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Gary Russell</name>
-    </author>
-    <id>tag:spring.io,2020-04-30:4049</id>
-    <updated>2020-04-30T20:46:56Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;2.5.0.RC1&lt;/code&gt; release candidate is now avaialable in the &lt;a href="https://repo.spring.io/milestone"&gt;Spring milestone repo&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Highlights:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;kafka-clients&lt;/code&gt; 2.5.0 (alignment of version numbers is coincidental).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for re-committing retryable offset commit exceptions for retained partitions when using cooperative rebalancing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for the new "fetch-offset-request" procuder fencing (when brokers are 2.5 or higher), requiring fewer producers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for static group membership.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;More integration with Micrometer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Optional Delivery Attempts header.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;RecoveringBatchErrorHandler&lt;/code&gt; can commit a partial batch and replay from failed record in a batch (with cooperation of the listener); this is now the default for a batch listener.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Default error handler for record listener is now the &lt;code&gt;SeekToCurrentErrorHandler&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Overridable producer properties in the &lt;code&gt;KafkaTemplate&lt;/code&gt; allowing multiple templates to use the same producer factory.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Simple &lt;code&gt;String&lt;/code&gt; serializer and deserializer are now provided.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;More flexibility to determin the type to create in the &lt;code&gt;JsonDeserializer&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://docs.spring.io/spring-kafka/docs/2.5.0.RC1/reference/html/#whats-new-part"&gt;Reference manual "What&amp;#8217;s New?"&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The final release will be published shortly before the upcoming Spring Boot 2.3 GA release; please try out the candidate.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-kafka/docs/2.5.0.RC1/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration 5.3 RC1, 5.2.6 &amp; 5.1.10 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/04/30/spring-integration-5-3-rc1-5-2-6-5-1-10-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2020-04-30:4048</id>
-    <updated>2020-04-30T18:28:54Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I¡¯m pleased to announce the &lt;a href="https://github.com/spring-projects/spring-integration/releases/tag/v5.3.0.RC"&gt;first&lt;/a&gt; (and the last) release candidate for Spring Integration &lt;code&gt;5.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release ships several bug fixes, a bunch of new features and improvements and will be picked up by Spring Boot &lt;code&gt;2.3 RC1&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/milestone"&gt;milestone repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile 'org.springframework.integration:spring-integration-core:5.3.0.RC1'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="the-most-important-new-features-are"&gt;&lt;a class="anchor" href="#the-most-important-new-features-are"&gt;&lt;/a&gt;The most important new features are:&lt;/h3&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;MongoDbChangeStreamMessageProducer&lt;/code&gt; - a reactive &lt;code&gt;MessageProducerSupport&lt;/code&gt; implementation for the Spring Data &lt;code&gt;ReactiveMongoOperations.changeStream(String, ChangeStreamOptions, Class)&lt;/code&gt; API.
-This component produces a &lt;code&gt;Flux&lt;/code&gt; of messages with a &lt;code&gt;body&lt;/code&gt; of &lt;code&gt;ChangeStreamEvent&lt;/code&gt; as the payload by default and some change stream related headers (see &lt;code&gt;MongoHeaders&lt;/code&gt;).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;ReactiveMessageSourceProducer&lt;/code&gt; - a reactive implementation of the &lt;code&gt;MessageProducerSupport&lt;/code&gt; to wrap a provided &lt;code&gt;MessageSource&lt;/code&gt; into a &lt;code&gt;Flux&lt;/code&gt; for on demand &lt;code&gt;receive()&lt;/code&gt; calls.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;ReceiveMessageAdvice&lt;/code&gt; - a former &lt;code&gt;AbstractMessageSourceAdvice&lt;/code&gt; is graduated now to more common advice approach which can be used also for the &lt;code&gt;PollableChannel.receive()&lt;/code&gt; proxying.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;TcpOutboundGateway&lt;/code&gt; now can work in an &lt;code&gt;async&lt;/code&gt; mode - you&amp;#8217;ll get an actual reply from the returned &lt;code&gt;Future&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;We also have applied a GitHub default community health.
-Check this out when you try to raise a new issue &lt;a href="https://github.com/spring-projects/spring-integration/issues/new/choose!" class="bare"&gt;https://github.com/spring-projects/spring-integration/issues/new/choose!&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See &lt;code&gt;What&amp;#8217;s New?&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/5.3.0.RC1/reference/html/whats-new.html#whats-new"&gt;Reference Manual&lt;/a&gt; for more information.
-Also see a blog post for the previous &lt;a href="https://spring.io/blog/2020/03/11/spring-integration-5-3-milestone-3-available"&gt;Milestone 3&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We¡¯re looking forward to your feedback for upcoming GA in May!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition to this &lt;code&gt;5.3 RC1&lt;/code&gt; we also have released maintenance versions - &lt;code&gt;5.2.6&lt;/code&gt; &amp;amp; &lt;code&gt;5.1.10&lt;/code&gt; with some bug fixes and upgrades.
-Based on Spring Integration &lt;code&gt;5.3 RC1&lt;/code&gt; and Spring for Apache Kafka &lt;code&gt;2.5 RC1&lt;/code&gt; a &lt;code&gt;spring-integration-kafka-3.3.0.RC1&lt;/code&gt; was also released to pick up improvements and new feature from its "parents".&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
