@@ -5,7 +5,48 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-14T22:24:22Z</updated>
+  <updated>2020-05-15T11:50:48Z</updated>
+  <entry>
+    <title>Spring Boot 2.3.0 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-05-14:4072</id>
+    <updated>2020-05-15T11:50:48Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Boot team and everyone that has contributed, I am pleased to announce that Spring Boot 2.3.0 has been released and is available now from &lt;a href="https://repo.spring.io/release/"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This release adds a significant number of new features and improvements. For full &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#upgrading-from-spring-boot-22"&gt;upgrade instructions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#new-and-noteworthy"&gt;new and noteworthy&lt;/a&gt; features please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes"&gt;release notes&lt;/a&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#what-rsquo-s-new-in-2-3" class="anchor" name="what-rsquo-s-new-in-2-3"&gt;&lt;/a&gt;What&amp;rsquo;s new in 2.3&lt;/h1&gt;&lt;h2&gt;&lt;a href="#dependency-upgrades" class="anchor" name="dependency-upgrades"&gt;&lt;/a&gt;Dependency upgrades&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.3 moves to new versions of several Spring projects:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Neumann&lt;/li&gt;
+  &lt;li&gt;Spring HATEOAS 1.1&lt;/li&gt;
+  &lt;li&gt;Spring Integration 5.3&lt;/li&gt;
+  &lt;li&gt;Spring Kafka 2.5&lt;/li&gt;
+  &lt;li&gt;Spring Security 5.3&lt;/li&gt;
+  &lt;li&gt;Spring Session Dragonfruit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We¡¯ve also upgraded to the latest stable releases of other third-party libraries wherever possible. Some of the more notable third-party dependency upgrades in this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cassandra Driver 4.6&lt;/li&gt;
+  &lt;li&gt;Couchbase Client 3.0&lt;/li&gt;
+  &lt;li&gt;Elasticsearch 7.6&lt;/li&gt;
+  &lt;li&gt;Kafka 2.5&lt;/li&gt;
+  &lt;li&gt;Micrometer 1.5&lt;/li&gt;
+  &lt;li&gt;MongoDB 4.0&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#java-14-support" class="anchor" name="java-14-support"&gt;&lt;/a&gt;Java 14 support&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.3 supports Java 14 while also remaining compatible with Java 11 and 8.&lt;/p&gt;&lt;h2&gt;&lt;a href="#docker-support" class="anchor" name="docker-support"&gt;&lt;/a&gt;Docker support&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.3 adds some interesting new features that can help you package up your Spring Boot application into Docker images.&lt;br/&gt;Support for building Docker images using &lt;a href="https://buildpacks.io"&gt;Cloud Native Buildpacks&lt;/a&gt; and has been added to the Maven and Gradle plugins via the &lt;code&gt;spring-boot:build-image&lt;/code&gt; goal and the &lt;code&gt;bootBuildImage&lt;/code&gt; task. The &lt;a href="https://paketo.io/"&gt;Paketo&lt;/a&gt; Java buildpack is used by default to create images.&lt;/p&gt;
+&lt;p&gt;Also, support for building jar files with contents separated into layers has been added to the Maven and Gradle plugins.&lt;/p&gt;&lt;h2&gt;&lt;a href="#graceful-shutdown" class="anchor" name="graceful-shutdown"&gt;&lt;/a&gt;Graceful shutdown&lt;/h2&gt;
+&lt;p&gt;Graceful shutdown is supported with all four embedded web servers (Jetty, Reactor Netty, Tomcat, and Undertow) and with both reactive and Servlet-based web applications. When a grace period is configured, upon shutdown, the web server will no longer permit new requests and will wait for up to the grace period for active requests to complete.&lt;/p&gt;&lt;h2&gt;&lt;a href="#liveness-and-readiness-probes" class="anchor" name="liveness-and-readiness-probes"&gt;&lt;/a&gt;Liveness and Readiness probes&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.3 has built-in knowledge of the availability of your application, tracking whether it is alive and whether it is ready to handle traffic. Check &lt;a href="https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot"&gt;this blog post&lt;/a&gt; for more details.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-data-neumann" class="anchor" name="spring-data-neumann"&gt;&lt;/a&gt;Spring Data Neumann&lt;/h2&gt;
+&lt;p&gt;Spring Boot 2.3 ships with &lt;a href="https://spring.io/blog/2020/05/12/spring-data-neumann-goes-ga"&gt;Spring Data Neumann&lt;/a&gt; that contains numerous major version and driver upgrades. This release also adds GA support for R2DBC.&lt;/p&gt;&lt;h2&gt;&lt;a href="#other-changes" class="anchor" name="other-changes"&gt;&lt;/a&gt;Other changes&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a whole host of other changes and improvements that are documented in the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes"&gt;release notes&lt;/a&gt;. You can also find a list of deprecated classes and methods that we plan to remove in the next version.&lt;/p&gt;&lt;h1&gt;&lt;a href="#thank-you" class="anchor" name="thank-you"&gt;&lt;/a&gt;Thank you&lt;/h1&gt;
+&lt;p&gt;We want to take this opportunity to again thank all our users and contributors. We&amp;rsquo;ve now had over &lt;a href="https://github.com/spring-projects/spring-boot/graphs/contributors"&gt;680 people&lt;/a&gt; submit code, and there have been over &lt;a href="https://github.com/spring-projects/spring-boot/commits/master"&gt;26000 commits&lt;/a&gt; to the project.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask at &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;on Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>VMWare COO Sanjay Poonen</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/14/vmware-coo-sanjay-poonen" />
@@ -351,11 +392,11 @@
   &lt;p&gt;If you&amp;rsquo;ve been following the &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;series&lt;/a&gt;, you can code along by following the directions below. The code is also available to download from &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
 &lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#step-1-update-spring-boot-and-rsocket" class="anchor" name="step-1-update-spring-boot-and-rsocket"&gt;&lt;/a&gt;Step 1: Update Spring Boot and RSocket&lt;/h2&gt;
 &lt;p&gt;First, some housekeeping. &lt;a href="https://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt; and the &lt;a href="https://github.com/rsocket/rsocket-java"&gt;RSocket Java&lt;/a&gt; library were both updated recently. These updates include the usual round of bug fixes, enhancements, and deprecations, so it&amp;rsquo;s in our interest to upgrade. &lt;/p&gt;
-&lt;p&gt;Working in the &lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt; section of the Maven &lt;code&gt;pom.xml&lt;/code&gt;, change the &lt;code&gt;spring-boot-starter-parent&lt;/code&gt; to version &lt;code&gt;2.2.7.RELEASE&lt;/code&gt; as shown below. You&amp;rsquo;ll need to do this twice, as you have two separate projects ? &lt;code&gt;rsocket-client&lt;/code&gt; and &lt;code&gt;rsocket-server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Working in the &lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt; section of the Maven &lt;code&gt;pom.xml&lt;/code&gt;, change the &lt;code&gt;spring-boot-starter-parent&lt;/code&gt; to version &lt;code&gt;2.3.0.RELEASE&lt;/code&gt; as shown below. You&amp;rsquo;ll need to do this twice, as you have two separate projects ? &lt;code&gt;rsocket-client&lt;/code&gt; and &lt;code&gt;rsocket-server&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;parent&amp;gt;&#xD;
   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
   &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;2.2.7.RELEASE&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;2.3.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
   &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;&#xD;
 &amp;lt;/parent&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1001,77 +1042,6 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
   &lt;li&gt;&lt;a href="https://developer.aliyun.com/live/2700"&gt;China&amp;rsquo;s largest Java User Group is presenting a live broadcast series on Spring&lt;/a&gt;. I spoke on April 30th, and there are some more interesting talks coming up - don&amp;rsquo;t miss them!&lt;/li&gt;
   &lt;li&gt;Why are the curly braces required for &lt;a href="https://mail.openjdk.java.net/pipermail/amber-dev/2020-April/005899.html"&gt;a minimal &lt;code&gt;record&lt;/code&gt; declaration in Java 14&lt;/a&gt;?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Function Native Images</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/04/spring-cloud-function-native-images" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Dave Syer</name>
-    </author>
-    <id>tag:spring.io,2020-05-04:4053</id>
-    <updated>2020-05-04T13:25:00Z</updated>
-    <content type="html">&lt;p&gt;Here&amp;rsquo;s the latest graph of memory versus billing for Spring Cloud Function on AWS Lambda. It shows the billing metric GBsec as a function of memory allocation in Lambda for two custom runtimes, one in plain Java and one using a &lt;a href="https://www.graalvm.org/docs/reference-manual/native-image/"&gt;GraalVM native image&lt;/a&gt;, as described recently in this blog by &lt;a href="https://spring.io/blog/2020/04/09/spring-graal-native-0-6-0-released"&gt;Andy Clement&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRWYdp_BpzQg7nA9P7xi9bjTapxu6cYrLi7PFvBmnnKM2zCuVuYzAh25KpFuz0hX0fqJyo1nJO5fyN/pubchart?oid=918725258&amp;format=image" alt="aws-billing-3.x" /&gt;&lt;/p&gt;
-&lt;p&gt;In both cases the functionality is identical (a simple POJO-POJO function), and they both show only the results for cold start. Warm starts, where the function was already active when the request came in, were much faster and cheaper (except for the smallest memory setting they all cost the same because there is a minimum charge for all functions in AWS). You can see that the native images start up very fast and that they are more than two times cheaper to run than the regular JVM. The fastest startup was in the 1000MB container - it only took 19ms to start the app, but it took AWS 700ms to prepare the container, so it was billed at 800ms. In fact, all of the cold starts were billed at 800ms for the native image. For the regular JVM the fastest startup was also in the 1000MB container at 300ms, but it was billed at 2200ms.&lt;/p&gt;
-&lt;p&gt;For comparison, here&amp;rsquo;s the a similar graph that I published over a year ago when Spring Cloud Function reached its 2.0 release. It showed significant improvements over the 1.x version, and also featured the custom runtime which I am using again here (so the orange bars are the equivalent of the red bars in the graph above):&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRWYdp_BpzQg7nA9P7xi9bjTapxu6cYrLi7PFvBmnnKM2zCuVuYzAh25KpFuz0hX0fqJyo1nJO5fyN/pubchart?oid=459598255&amp;format=image" alt="aws-billing" /&gt;&lt;/p&gt;
-&lt;p&gt;The custom runtime in the regular JVM is roughly the same in version 3.x, but you can use it at lower memory settings because of Spring Boot optimizations that have been released since then.&lt;/p&gt;&lt;h2&gt;&lt;a href="#building-the-sample" class="anchor" name="building-the-sample"&gt;&lt;/a&gt;Building the Sample&lt;/h2&gt;
-&lt;p&gt;The sample app was taken from the &lt;a href="https://github.com/spring-projects-experimental/spring-graal-native/tree/master/spring-graal-native-samples/function-aws"&gt;Spring Graal Native Feature&lt;/a&gt;, but modified to be a function of POJO to POJO, forcing Spring to do some extra work. So compared to the sample in Github I modified the function:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;class Foobar implements Function&amp;lt;Foo, Foo&amp;gt; {&#xD;
-&#xD;
-	@Override&#xD;
-	public Foo apply(Foo input) {&#xD;
-		System.err.println(&amp;quot;HI: &amp;quot; + input.getName());&#xD;
-		return new Foo(&amp;quot;hi &amp;quot; + input.getName() + &amp;quot;!&amp;quot;);&#xD;
-	}&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;where the &lt;code&gt;Foo&lt;/code&gt; is defined like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;class Foo {&#xD;
-	private String name;&#xD;
-&#xD;
-	public String getName() {&#xD;
-		return name;&#xD;
-	}&#xD;
-&#xD;
-	public void setName(String name) {&#xD;
-		this.name = name;&#xD;
-	}&#xD;
-&#xD;
-	public Foo(String name) {&#xD;
-		this.name = name;&#xD;
-	}&#xD;
-&#xD;
-	Foo() {&#xD;
-	}&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and the function is registered in the main application:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;	@Override&#xD;
-	public void initialize(GenericApplicationContext context) {&#xD;
-		context.registerBean(&amp;quot;foobar&amp;quot;, FunctionRegistration.class,&#xD;
-				() -&amp;gt; new FunctionRegistration&amp;lt;&amp;gt;(new Foobar())&#xD;
-						.type(FunctionType.from(Foo.class).to(Foo.class)));&#xD;
-	}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note that I am using the &lt;a href="https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function"&gt;functional bean registration style&lt;/a&gt;, although it doesn&amp;rsquo;t make much difference for such a simple application.&lt;/p&gt;
-&lt;p&gt;I also had to modify the tests to make sure they work with the new POJO signature. You could just delete the tests and the &lt;code&gt;verify.sh&lt;/code&gt; to avoid having to do that, if you just want something quick to work. If you want to see what I did look at the &lt;a href="https://github.com/dsyer/spring-graal-feature/tree/foo/spring-graal-native-samples/function-aws"&gt;foo branch&lt;/a&gt; in my fork.&lt;/p&gt;
-&lt;p&gt;Then I built the application in the same way as the other samples. This creates the native image and dumps it in the &lt;code&gt;target&lt;/code&gt; directory:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ./build.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;It also creates a &lt;code&gt;.zip&lt;/code&gt; file to upload to AWS. This one is the regular JVM version:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ls -l target/*.zip&#xD;
--rw-rw-r-- 1 dsyer dsyer 32577121 Apr 21 09:37 target/function-aws-0.0.1-SNAPSHOT-java-zip.zip
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and then this creates a &lt;code&gt;.zip&lt;/code&gt; file for the native image:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ./mvnw package -P native&#xD;
-$ ls -l target/*.zip&#xD;
--rw-rw-r-- 1 dsyer dsyer 32577121 Apr 21 09:37 target/function-aws-0.0.1-SNAPSHOT-java-zip.zip&#xD;
--rw-rw-r-- 1 dsyer dsyer 26284838 Apr 21 09:28 target/function-aws-0.0.1-SNAPSHOT-native-zip.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Using Spring Cloud Function is a very convenient way to develop functions that run on AWS and other platforms. If you also use the experimental Spring Graal Native Feature project to compile the result to a native binary executable they can run faster than the same application on a regular JVM. Note that there is &lt;a href="https://github.com/spring-projects-experimental/spring-graal-native/tree/master/spring-graal-native-samples/function-netty"&gt;another sample&lt;/a&gt; in the Spring Graal Native Feature project that makes a function into a standalone web application (there is also a functional bean registration version of the same sample). You can run that on a lot of platforms that allow you to &amp;ldquo;bring your own container&amp;rdquo;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

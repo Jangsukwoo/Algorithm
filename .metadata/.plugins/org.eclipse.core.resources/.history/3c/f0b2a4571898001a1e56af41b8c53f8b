@@ -1,0 +1,18 @@
+package 구현;
+
+import java.util.ArrayList;
+
+/*
+ * 제일 크게 지나갈 수 있는 다리만 지나가야함
+ * 가능한 모든 중량에서 중량을 하나 선택하고
+ * bfs로 탐색이 가능한지 검증
+ * 중량의 범위는 1부터 10억이니 이분탐색으로 정한다.
+ */
+public class 중량제한 {
+	static int maxWeight;
+	static boolean[] visit;
+	static ArrayList<Integer>[] adjList;
+	public static void main(String[] args) {
+
+	}
+}
