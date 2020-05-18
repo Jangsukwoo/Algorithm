@@ -72,6 +72,7 @@ public class 단어퍼즐 {
 		if(findFlag) return;
 		if(depth==data.length() && findFlag==false){
 			answer++;
+			System.out.println(data);
 			findFlag = true;
 			return;
 		}

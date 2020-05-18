@@ -55,8 +55,8 @@ public class 단어퍼즐 {
 		for(int i=0;i<wordlist.length;i++){
 			String data = wordlist[i];
 			findFlag = false;
-			for(int row=0;row<5;row++) {//퍼즐 탐색
-				for(int col=0;col<5;col++){
+			for(int row=0;row<4;row++) {//퍼즐 탐색
+				for(int col=0;col<4;col++){
 					if(Trie.root.children[puzzle[row][col]-'A']!=null && data.charAt(0)==puzzle[row][col]){//갈 수 있으면 
 						visit[row][col] = true;
 						dfs(row,col,1,Trie.root.children[puzzle[row][col]-'A'],data); //트라이 노드를 줘서 자식을 직접 확인해봄
@@ -68,14 +68,14 @@ public class 단어퍼즐 {
 			}
 		}
 	}
-	private static void dfs(int row, int col, int depth, TrieNode current,String data){
-		if(findFlag) return;
-		if(depth==data.length() && findFlag==false){
+	private static void dfs(int row, int col, int depth, TrieNode current,String data) {//어떻게 탐색할까...
+		if(depth==data.length()){//맨 끝 노드면서 아직 Hit 안된거면
 			answer++;
 			findFlag = true;
+			System.out.println(data);
 			return;
 		}
-		if(depth < data.length()) {
+		if(depth<8){//단어는 최대 8글자
 			for(int dir=0;dir<8;dir++) {
 				int nr = row+dr[dir];
 				int nc = col+dc[dir];
@@ -101,9 +101,7 @@ public class 단어퍼즐 {
 		 * 66.113.2.158
 		 * 
 		 */
-		
 		URL url = new URL("https://d2gd6pc034wcta.cloudfront.net/data/1165.zip");
-		//URL url = new URL("http://66.113.2.158/TESTDATA/coggle.zip");
 		StringBuilder sb = new StringBuilder();
 		InputStream in = new BufferedInputStream(url.openStream(), 1024*4);
 		ZipInputStream stream = new ZipInputStream(in);
