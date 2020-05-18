@@ -5,7 +5,297 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-15T11:50:48Z</updated>
+  <updated>2020-05-18T11:54:17Z</updated>
+  <entry>
+    <title>What's new in Spring Data (Klara Dan von) Neumann?</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Christoph Strobl</name>
+    </author>
+    <id>tag:spring.io,2020-04-20:4034</id>
+    <updated>2020-05-18T11:54:17Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data Neumann is the first release to follow the new six-month cadence. The reduced timeframe lets us deliver new features more often, which is key in enabling you to move faster. The release itself ships with a bunch of new stuff and includes important (potentially breaking) upgrades of several store.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="major-version-upgrades"&gt;&lt;a class="anchor" href="#major-version-upgrades"&gt;&lt;/a&gt;Major Version Upgrades&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Several store modules, as listed below, required a major version bump due to potentially breaking changes in either their exposed API or their drivers:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data JDBC 2.0 (was 1.1 before)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data MongoDB 3.0 (was 2.2 before)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data for Apache Cassandra 3.0 (was 2.2 before)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data Couchbase 4.0 (was 3.2 before)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data Elasticsearch 4.0 (was 3.2 before)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Before moving on to &lt;a href="#new-features"&gt;selected new features&lt;/a&gt; let&amp;#8217;s break down some those API changes. If in doubt, please visit the &lt;em&gt;Upgrading&lt;/em&gt; sections of the modules reference documentation.
+And, for those worried because the upgrade would be too painful right now, the previous &lt;a href="https://spring.io/blog/2019/10/01/spring-data-moore-goes-ga"&gt;Moore&lt;/a&gt; release train will still be around and will receive updates for another twelve months.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;JDBC&lt;/strong&gt;
+Every SQL store comes with its very own specialties that required specific treatment. To better support this, a couple of changes had to be made, resulting a major version bump for the module. Now, by default, the &lt;code&gt;AbstractJdbcConfiguration&lt;/code&gt; will try to determine the database specific &lt;code&gt;Dialect&lt;/code&gt; from the provided &lt;code&gt;DataSource&lt;/code&gt; or registered &lt;code&gt;DialectResolver&lt;/code&gt;. Out of the box, the JDBC modules ships with dialects for  H2, HSQLDB, MySQL, Postgres, MariaDB, Microsoft SqlServer and DB2.
+Spring Data JDBC now also by default quotes all table names and columns.
+While this might force you to adapt either your &lt;code&gt;CREATE TABLE&lt;/code&gt; statements or your &lt;code&gt;@Column&lt;/code&gt; annotations it gives greater flexibility when choosing those names.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;MongoDB&lt;/strong&gt;
+Spring Data MongoDB picks up the MongoDB Java and reactive streams 4.0 driver generation that lets you choose the desired methodology without having to have the other on the path. Therefore, both the sync as well as the reactive MongoDB driver are now optional dependencies that need to be added manually.
+With the new drivers, some of the already deprecated API has finally been removed, impacting exposed configuration classes like &lt;code&gt;AbstractMongoConfiguration&lt;/code&gt; and XML namespace elements provided by the Spring Data implementation. We summarized public facing changes in the &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.0.RELEASE/reference/html/#upgrading.2-3"&gt;Upgrading Section&lt;/a&gt; of the reference documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;Apache Cassandra&lt;/strong&gt;
+The long overdue upgrade to the Apache Cassandra 4.0 driver generation, with not only its new package and data structure but also changed behavior in cluster and session handling, leads to extensive changes in configuration that will bleed into user configuration when using the XML namespace or more complex scenarios than just the default setup with &lt;code&gt;AbstractCassandraConfiguration&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;Couchbase&lt;/strong&gt;
+The Couchbase module follows the Couchbase SDK and upgrades from Version 3.x to 4.x which includes automatic index management and transaction support. Read the full story in their &lt;a href="https://blog.couchbase.com/announcing-spring-data-couchbase-4-0/"&gt;Blog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;Elasticsearch&lt;/strong&gt;
+The release adds support for the HTTP Client API, SSL, and Proxy support, along with extensive internal changes that included streamlining and removing of (deprecated) API, which required a major version bump. The Elasticsearch module now ships a &lt;code&gt;Document&lt;/code&gt; covering &lt;code&gt;Get-&lt;/code&gt;, &lt;code&gt;Index-&lt;/code&gt; and &lt;code&gt;Search-Requests&lt;/code&gt; allowing the mapping layer to use types like &lt;code&gt;SearchHit&lt;/code&gt;, &lt;code&gt;SearchHits&lt;/code&gt; and &lt;code&gt;SearchPage&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Having the stage set, let&amp;#8217;s move on to a selection of new features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features"&gt;&lt;a class="anchor" href="#new-features"&gt;&lt;/a&gt;Kotlin Coroutines Repositories&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Neumann release completes the story that already started with &lt;a href="https://spring.io/blog/2019/10/08/what-s-new-in-spring-data-moore"&gt;Moore&lt;/a&gt;, introducing first class support for &lt;a href="https://kotlinlang.org/docs/reference/coroutines-overview.html"&gt;Kotlin Coroutines&lt;/a&gt; by adding support for dedicated Coroutines repositories to supporting store modules.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The coroutines support is backed by Spring Data¡¯s reactive repository support. Therefore, it&amp;#8217;s possible to either invoke reactive query methods or have native suspended functions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;interface StudentRepository : CoroutineCrudRepository&amp;lt;Student, String&amp;gt; {
+
+    suspend fun findOne(id: String): User
+
+    fun findByLastname(firstname: String): Flow&amp;lt;Student&amp;gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.commons.primary"&gt;&lt;a class="anchor" href="#new-features.commons.primary"&gt;&lt;/a&gt;&lt;code&gt;@Primary&lt;/code&gt; Repositories and the &lt;code&gt;search&lt;/code&gt; Keyword&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These two rather small improvements relieve pain with the repository bean lookup and the finder method naming, as we now elevate the &lt;code&gt;@Primary&lt;/code&gt; annotation from the scanned repository bean definition to the one created for the repository factory, which helps the container to untangle repository wiring in some scenarios.
+The additional &lt;code&gt;search&lt;/code&gt; prefix can be used as an alias to the well-known &lt;code&gt;find&lt;/code&gt; keyword, which now accepts a &lt;code&gt;search¡¦By¡¦&lt;/code&gt; pattern for queries like &lt;code&gt;searchByFirstname&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Though designed to target stores like Elasticsearch, let&amp;#8217;s move on and put that new &lt;code&gt;search¡¦By¡¦&lt;/code&gt; pattern to use with the hot-off-the-press query derivation support of Spring Data R2DBC.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.r2dbc"&gt;&lt;a class="anchor" href="#new-features.r2dbc"&gt;&lt;/a&gt;R2DBC Query Derivation&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Until now, Spring Data R2DBC made heavy use of the &lt;code&gt;@Query&lt;/code&gt; annotation on repository finder methods when it came to usage, apart from the defaults provided through the &lt;code&gt;*.Repository&lt;/code&gt; interfaces. The Neumann release now closes the gap with many other module implementations by adding method name query derivation, as shown in the snippet below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;interface StudentRepository extends ReactiveCrudRepository&amp;lt;Student, Long&amp;gt; {
+
+	Flux&amp;lt;Student&amp;gt; searchByLastname(String lastname); &lt;b class="conum"&gt;(1)&lt;/b&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="colist arabic"&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Equivalent to &lt;code&gt;@Query("select id, firstname, lastname
+from customer c
+where c.lastname = :lastname")&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.jdbc"&gt;&lt;a class="anchor" href="#new-features.jdbc"&gt;&lt;/a&gt;Paging and Query Derivation support for JDBC&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Sticking with the relational stores for a bit longer, Spring Data JDBC 2.0 ships with an even broader range of supported databases. We now run our integration tests with H2, HSQLDB, MySQL, MariaDB, PostgreSQL and DB2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For these databases we support query derivation and pagination.
+Making repositories like the following possible:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;interface StudentRepository extends PagingAndSortingRepository&amp;lt;Student, Long&amp;gt; {
+
+	Page&amp;lt;Student&amp;gt; findByLastname(String lastname);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With that we&amp;#8217;re moving on to the space of NoSQL stores, starting with MongoDB and it&amp;#8217;s new way of modifying docments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.mongodb"&gt;&lt;a class="anchor" href="#new-features.mongodb"&gt;&lt;/a&gt;MongoDB Update Aggregations&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;An important enhancement (which did not quite make into the Moore release and now profits from the shortened release cycle) lets you use an &lt;a href="https://docs.mongodb.com/manual/core/aggregation-pipeline/"&gt;Aggregation Pipeline&lt;/a&gt; for update operations. By doing so, the update can contain more complex statements, such as conditions based on actual field values, as shown below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;AggregationUpdate update = Aggregation.newUpdate()
+    .set("average").toValue(ArithmeticOperators.valueOf("tests").avg())
+    .set("grade").toValue(ConditionalOperators.switchCases(
+        when(valueOf("average").greaterThanEqualToValue(90)).then("A"),
+        when(valueOf("average").greaterThanEqualToValue(80)).then("B"),
+        when(valueOf("average").greaterThanEqualToValue(70)).then("C"),
+        when(valueOf("average").greaterThanEqualToValue(60)).then("D"))
+        .defaultTo("F")
+    );
+
+template.update(Student.class)
+    .apply(update)
+    .all();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Already thinking about the next release, Spring Data MongoDB would surely benefit from a feature recently already added to other modules: support for embedded objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.cassandra"&gt;&lt;a class="anchor" href="#new-features.cassandra"&gt;&lt;/a&gt;Embedded Type Support for Apache Cassandra&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Apache Cassandra, as a table-centric datastore that keeps its data in columns, now gets support for embedded type mapping, which was already available for  &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.entity-persistence.embedded-entities"&gt;Spring Data JDBC&lt;/a&gt;. Embedded entities are used to design value objects in the Java domain model whose properties are flattened out into the table.
+In the following example, &lt;code&gt;Student.name&lt;/code&gt; is annotated with &lt;code&gt;@Embedded&lt;/code&gt;, which triggers that all properties of &lt;code&gt;Name&lt;/code&gt; are folded into the student table, which consists of three columns (&lt;code&gt;student_id&lt;/code&gt;, &lt;code&gt;firstname&lt;/code&gt;, and &lt;code&gt;lastname&lt;/code&gt;):&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public class Student {
+
+    @PrimaryKey("student_id")
+    private String studentId;
+
+    @Embedded(onEmpty = USE_NULL)
+    Name name;
+}
+
+public class Name {
+    private String firstname;
+    private String lastname;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.elasticsearch"&gt;&lt;a class="anchor" href="#new-features.elasticsearch"&gt;&lt;/a&gt;Auditing with Elasticsearch&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As the existence of an &lt;code&gt;id&lt;/code&gt; is not a sufficient criterion to determine if an entity is new in Elasticsearch, additional information needs to be provided through the &lt;code&gt;isNew()&lt;/code&gt; method when implementing `Persistable, as shown below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Document(indexName = "person")
+public class Person implements Persistable&amp;lt;Long&amp;gt; {
+
+    @Id private Long id;
+    private String lastName;
+    private String firstName;
+
+    @Field(type = Date)
+    private Instant createdDate;
+    private String createdBy
+
+    @Field(type = Date)
+    private Instant lastModifiedDate;
+    private String lastModifiedBy;
+
+    @Override
+    public boolean isNew() {
+        return id == null || (createdDate == null &amp;amp;&amp;amp; createdBy == null);
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With that in place, adding &lt;code&gt;@EnableElasticsearchAuditing&lt;/code&gt; to the configuration registers all the components required to have it running.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.neo4j"&gt;&lt;a class="anchor" href="#new-features.neo4j"&gt;&lt;/a&gt;Neo4j&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data Neo4j brings support for Neo4j 4.0 parameter syntax by replacing the previously deprecated and now removed placeholder style. It now depends on the latest Neo4j-OGM and Neo4j Java driver for the best experience when working with the newest version of Neo4j.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Though not directly part of the current release train (though it is ready to be picked up by the next one), Neo4j has been busy pushing hard on reactive support for the graph database and its Spring Data integration with &lt;a href="https://neo4j.com/developer/spring-data-neo4j-rx/"&gt;Neo4j RX&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-features.geode"&gt;&lt;a class="anchor" href="#new-features.geode"&gt;&lt;/a&gt;Apache Geode / VMware Tanzu GemFire&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data for Apache Geode and VMware Tanzu GemFire, collectively known as SDG, now combines both the &lt;code&gt;spring-data-geode&lt;/code&gt; and &lt;code&gt;spring-data-gemfire&lt;/code&gt; modules into a single project.  Apache Geode has been upgraded to &lt;code&gt;1.12.0&lt;/code&gt; and GemFire has been upgrade to &lt;code&gt;9.10.0&lt;/code&gt;, which is itself based on Apache Geode &lt;code&gt;1.12&lt;/code&gt;.  Additionally, SDG builds and runs on &lt;code&gt;JDK 8&lt;/code&gt; through &lt;code&gt;JDK 14&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SDG now supports &lt;a href="https://jira.spring.io/browse/DATAGEODE-272"&gt;auto-transaction event publishing&lt;/a&gt;, which translates a GemFire/Geode Cache TransactionEvent into an appropriate ApplicationEvent fired in the context.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is also now possible to &lt;a href="https://jira.spring.io/browse/DATAGEODE-242"&gt;pause event dispatching&lt;/a&gt; on an AEQ configured with SDG.  Also, when building GemFire/Geode Locator-based applications by using SDG&amp;#8217;s &lt;code&gt;@LocatorApplication&lt;/code&gt; application, you can now &lt;a href="https://jira.spring.io/browse/DATAGEODE-272"&gt;configure the Locator to connect to other Locators&lt;/a&gt; thereby forming a highly-available, highly-resilient cluster.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.3.0 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now" />
@@ -995,52 +1285,6 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
   &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=90WRtrbRi0Y"&gt;(2016-10-19) The Kotlin Programming Language&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=MTKlk8_9aAw"&gt;(2016-10-13) Spring Integration&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JjrAmhlTjug"&gt;(2016-10-05) Functional Reactive Endpoints with Spring Framework 5.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 5th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/05/this-week-in-spring-may-5th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-06:4055</id>
-    <updated>2020-05-05T11:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment fo &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you all holding up? Me? I&amp;rsquo;m doing well, thanks. We&amp;rsquo;ve got a ton of stuff to get to so let&amp;rsquo;s! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/04/spring-cloud-function-native-images"&gt;Spring Cloud Function Native Images&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/01/spring-boot-2-3-0-rc1-available-now"&gt;Spring Boot 2.3.0.RC1 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/01/adrian-cole-founder-or-co-founder-of-feign-jclouds-and-spring-cloud-sleuth-and-major-contributor-to-openzipkin"&gt;Adrian Cole, founder or co-founder of Feign, JClouds, and Spring Cloud Sleuth and a major contributor to OpenZipkin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/30/spring-for-apache-kafka-2-5-0-release-candidate"&gt;Spring for Apache Kafka 2.5.0 Release Candidate&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/30/spring-integration-5-3-rc1-5-2-6-5-1-10-available"&gt;Spring Integration 5.3 RC1, 5.2.6 &amp;amp; 5.1.10 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/30/updates-to-spring-versions"&gt;Updates to Spring Versions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/29/spring-tips-the-wavefront-observability-platform"&gt;Spring Tips: The Wavefront Observability Platform&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I loved this blog &lt;a href="https://medium.com/swlh/cqrs-command-query-responsibility-segregation-72db08ee8282"&gt;on CQRS with Spring Boot and Axon&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/fVY0X5QYOm"&gt;How many different ways does VMware Tanzu support hybrid-cloud on #AWS? &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://toparvion.pro/en/post/2020/integraph/"&gt;How to visualize a Spring Integration graph with Neo4j?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://groups.google.com/d/msg/lettuce-redis-client-users/6h96s-FN1lw/HZtnsDj4BQAJ"&gt;LettuceDriver: Lettuce 5.3.0.RELEASE is out now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This Thursday! Learn how to configure @WavefrontHQ for @springboot Starter and explore &lt;a href="https://t.co/XTmXSddNAn"&gt;free dashboards for instant visibility into your applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://techcrunch.com/2020/04/30/cloud-foundry-renews-its-focus-on-developer-experience-as-it-looks-beyond-the-enterprise/"&gt;&amp;ldquo;Developers stick to a few rules and, in return, they can easily push their apps to Cloud Foundry with a single command (¡°cf push¡±) and know that it will run&amp;hellip;&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the Call for Paper for SpringOne 2020 is now up! &lt;a href="https://twitter.com/springcloud/status/1257710332656697344"&gt;Please send proposals!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Get the &lt;a href="https://www.cloudfoundry.org/blog/bi-weekly-round-up-technical-ecosystem-updates-from-cloud-foundry-5-05-20/"&gt;latest updates in the Cloud Foundry community&lt;/a&gt; with this week&amp;rsquo;s Technical Ecosystem roundup including a new Tutorial Hub and updates on #CFSummit going virtual.&lt;/li&gt;
-  &lt;li&gt;Join us today to review how VMware combined #Kubernetes and @cloudfoundry (and more) into a new enterprise application platform: Tanzu Application Service for Kubernetes, now a public beta. &lt;a href="https://t.co/lMNH59a2Xv"&gt;Sign up here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/ZEQaFx6bpD"&gt;SDKMAN 5.8.1 is rolling out, featuring the new &lt;code&gt;sdk env&lt;/code&gt; command for switching SDKs per project.&lt;/a&gt; This is suepr useful: now with one tool you can easily switch Java versions and - even better - you can version control a file in your application that SDKMAN will know about and read to switch to another version of the JDK.&lt;/li&gt;
-  &lt;li&gt;A nice blog on Okta Developer: &lt;a href="https://developer.okta.com/blog/2020/05/04/spring-vault"&gt;Secure Secrets With Spring Cloud Config and Vault &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Have you checked out our new &lt;a href="https://twitter.com/cloudfoundry/status/1257370923797274624"&gt;CloudFoundry tutorial hub yet&lt;/a&gt;? We have a variety of free #cloudnative tutorials built by the community.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1257316593660391424"&gt;Your favorites from the #cloudnative community are going on tour&lt;/a&gt;! Join us virtually for the #SpringOneTour for a mix of presentations, interactive demos, and panel discussions.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.marcobehler.com/guides/spring-mvc"&gt;Spring MVC: Building Web Sites &amp;amp; RESTful services&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://thenewstack.io/service-mesh-is-just-the-tip-of-the-iceberg/"&gt;Service Mesh Is Just the Tip of the Iceberg ? The New Stack&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;An oldie-but-a-goodie: &lt;a href="https://www.baeldung.com/spring-boot-log-groups"&gt;Log Groups in Spring Boot 2.1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Philipp Hauer &lt;a href="https://twitter.com/SpringData/status/1256275605970173953"&gt;just updated his blog about #MongoDB and #Kotlin&lt;/a&gt;. It now also describes a great feature that was added to Spring Data&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.vmware.com/company/news/updates/modern-apps-help-communities-covid-19.html"&gt;How Our Customers Are Using Modern Apps to Help Their Communities through COVID-19&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Want to learn all about Kubernetes? &lt;a href="https://t.co/TLUrJlQfx5"&gt;Check out KubeAcademy, provided for free by VMWare&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The April update of Java on VS Code is out. This update brings you more performance boost, Java 14 support, semantic highlighting, refactoring preview, and some usability improvements.&lt;/li&gt;
-  &lt;li&gt;Check out this early &lt;a href="https://t.co/qijNC0N8A3"&gt;access build to project Loom&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out the early-access release of Mark Heckler&amp;rsquo;s &lt;a href="https://learning.oreilly.com/library/view/spring-boot-up/9781492076971/"&gt;&lt;em&gt;Spring Boot Book&lt;/em&gt;!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://cl4es.github.io/2020/04/27/Zip-Lookups.html"&gt;&amp;ldquo;On the Spring PetClinic application, these improvements have improved startup time by a few hundred milliseconds.&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://developer.aliyun.com/live/2700"&gt;China&amp;rsquo;s largest Java User Group is presenting a live broadcast series on Spring&lt;/a&gt;. I spoke on April 30th, and there are some more interesting talks coming up - don&amp;rsquo;t miss them!&lt;/li&gt;
-  &lt;li&gt;Why are the curly braces required for &lt;a href="https://mail.openjdk.java.net/pipermail/amber-dev/2020-April/005899.html"&gt;a minimal &lt;code&gt;record&lt;/code&gt; declaration in Java 14&lt;/a&gt;?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
