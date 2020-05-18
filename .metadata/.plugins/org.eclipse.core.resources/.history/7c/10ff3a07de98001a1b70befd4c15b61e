@@ -1,0 +1,29 @@
+package CodingAcademy;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+
+import SDS_WEEK1.Trie;
+
+public class 단어퍼즐 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static int w;//단어집의 단어 수
+	static int b;//보글 게임판 수 
+	static Trie BoggleTrie = new Trie();
+	static char[][] boggleBoard = new char[4][4];
+	static boolean[][] visit = new boolean[4][4];
+	static int[] dr = {-1,-1,0,1,1,1,0,-1};
+	static int[] dc = {0,1,1,1,0,-1,-1,-1};
+	//최대 점수, 가장 긴 단어, 찾은 단어의수 
+	static int maxSum;
+	static int maxLength;
+	static int findWordCount;
+	static ArrayList<String> answer;
+	public static void main(String[] args) {
+
+	}
+}
