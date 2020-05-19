@@ -338,15 +338,15 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
-    <title>VMWare COO Sanjay Poonen</title>
+    <title>VMware COO Sanjay Poonen</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/14/vmware-coo-sanjay-poonen" />
     <category term="engineering" label="Engineering" />
     <author>
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2020-05-14:4073</id>
-    <updated>2020-05-14T22:24:22Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to industry legend VMWare COO &lt;a href="http://twitter.com/Spoonen"&gt;Sanjay Poonen (@spoonen)&lt;/a&gt;.&lt;/p&gt;
+    <updated>2020-05-14T22:24:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, VMware¡¯s &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to VMWare COO &lt;a href="http://twitter.com/Spoonen"&gt;Sanjay Poonen (@spoonen)&lt;/a&gt; about app development, Tanzu, Cloud, Networking, and more.&lt;/p&gt;
 &lt;iframe title="VMWare COO Sanjay Poonen" src="https://www.podbean.com/media/player/n9mva-dc7ac0?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>

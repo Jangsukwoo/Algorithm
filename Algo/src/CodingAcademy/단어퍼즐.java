@@ -28,8 +28,6 @@ public class 단어퍼즐 {
 	static boolean findFlag;
 	static class TrieNode{
 		TrieNode[] children = new TrieNode[26];//26개의 알파벳 하나하나의 인덱스를 뜻하는 배열
-		boolean isEnd;
-		boolean isHit;
 	}
 	static class Trie{ //트라이, 문자검색
 		TrieNode root = new TrieNode(); //가장 루트는 빈문자열
@@ -42,16 +40,16 @@ public class 단어퍼즐 {
 				}
 				current = current.children[wordIndex];// 다음 레벨로 넘어가기 위해 생성된 글자가 현재 노드가 된다
 			}
-			current.isEnd = true; //단어의 맨 끝
 		}
 	}
 	public static void main(String[] args) throws IOException{
 		getDictionaryAndsetTrie();
 		setData();
-		find();
+		if(wordlist!=null) find();
 		System.out.println(answer);
 	}
 	private static void find(){
+		//System.out.println("다운로드하여 추출한 단어의 개수 "+wordlist.length);//단어개수
 		for(int i=0;i<wordlist.length;i++){
 			String data = wordlist[i];
 			findFlag = false;
@@ -115,6 +113,7 @@ public class 단어퍼즐 {
 			while ((read = stream.read(buffer, 0, 1024*4)) >= 0) {
 				data = new String(buffer, 0, read);
 				sb.append(data);
+				//System.out.println(data);
 			}
 		}
 		wordlist = sb.toString().split("\n");

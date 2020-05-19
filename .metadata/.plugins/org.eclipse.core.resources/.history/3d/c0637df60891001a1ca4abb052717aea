@@ -1,8 +1,0 @@
-package 프로그래머스;
-
-public class 스킬체크1_2 {
-	  public String[] solution(int n, int[] arr1, int[] arr2) {
-	      String[] answer = {};
-	      return answer;
-	  }
-}

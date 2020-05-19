@@ -9,6 +9,7 @@
 		<item key="isRegEx" value="true"/>
 		<list key="findhistory">
 			<item value="sys"/>
+			<item value="con"/>
 			<item value="pq"/>
 			<item value="set"/>
 			<item value="test"/>
@@ -22,7 +23,6 @@
 			<item value="이동후"/>
 			<item value="maxtime"/>
 			<item value="jewerly"/>
-			<item value="num"/>
 		</list>
 		<list key="replacehistory">
 			<item value="cctvN.col"/>
