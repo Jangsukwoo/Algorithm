@@ -1,9 +1,0 @@
-package 공채대비;
-/*
- * 시작칸에 말 4개
- */
-public class 주사위윷놀이 {
-	public static void main(String[] args) {
-
-	}
-}

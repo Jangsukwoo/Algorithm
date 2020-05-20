@@ -14,9 +14,7 @@ import java.util.StringTokenizer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/*
- * inflate + dflate 활용해보기
- */
+
 public class 단어퍼즐 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -46,6 +44,7 @@ public class 단어퍼즐 {
 		}
 	}
 	public static void main(String[] args) throws IOException{
+		String aa = "333";
 		getDictionaryAndsetTrie();
 		setData();
 		if(wordlist!=null) find();

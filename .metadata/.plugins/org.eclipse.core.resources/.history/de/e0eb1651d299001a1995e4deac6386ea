@@ -94,6 +94,16 @@ public class 연구소3 {
 			time++;
 		}
 	}
+
+	private static void view() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				System.out.print(visit[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	private static void initialization(){
 		visit = new boolean[N][N];
 		q.clear();
@@ -128,15 +138,5 @@ public class 연구소3 {
 			}
 		}
 		pickVirusIdx = new int[M];
-	}
-
-	private static void view() {
-		for(int row=0;row<N;row++) {
-			for(int col=0;col<N;col++) {
-				System.out.print(visit[row][col]+" ");
-			}
-			System.out.println();
-		}
-		System.out.println();
 	}
 }

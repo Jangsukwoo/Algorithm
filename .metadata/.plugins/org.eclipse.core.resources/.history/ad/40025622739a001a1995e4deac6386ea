@@ -14,9 +14,7 @@ import java.util.StringTokenizer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/*
- * inflate + dflate 활용해보기
- */
+
 public class 단어퍼즐 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -30,6 +28,8 @@ public class 단어퍼즐 {
 	static Trie Trie = new Trie();
 	static boolean findFlag;
 	static class TrieNode{
+		String ad = "aaa";
+		
 		TrieNode[] children = new TrieNode[26];//26개의 알파벳 하나하나의 인덱스를 뜻하는 배열
 	}
 	static class Trie{ //트라이, 문자검색

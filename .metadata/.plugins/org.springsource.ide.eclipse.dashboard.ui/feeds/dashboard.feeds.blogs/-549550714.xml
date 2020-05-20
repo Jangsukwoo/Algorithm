@@ -5,7 +5,171 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-18T11:54:17Z</updated>
+  <updated>2020-05-20T09:08:50Z</updated>
+  <entry>
+    <title>Spring Cloud Data Flow 2.5.1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/20/spring-cloud-data-flow-2-5-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2020-05-20:4078</id>
+    <updated>2020-05-20T09:08:50Z</updated>
+    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the release of 2.5.1.&lt;/p&gt;
+&lt;p&gt;This release includes some bug fixes with the some of the notable changes as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;DeploymentProperties parsing fixes.&lt;/li&gt;
+  &lt;li&gt;Removed behaviour for server to attempt to contact dockerhub during a start.&lt;/li&gt;
+  &lt;li&gt;Fixes to dataflow client to re-authorize when oauth client credentials are used.&lt;/li&gt;
+  &lt;li&gt;Liveness and readiness probe changes to kubernetes deployment files.&lt;/li&gt;
+  &lt;li&gt;Upgrades to &lt;code&gt;Spring Boot 2.2.7&lt;/code&gt; and &lt;code&gt;Spring Cloud Hoxton.SR4&lt;/code&gt;. New dependencies from these fixed an issue in &lt;code&gt;Spring Data Rest&lt;/code&gt; which caused repository mappings &lt;a href="https://jira.spring.io/browse/DATAREST-1502"&gt;DATAREST-1502&lt;/a&gt; to stop working and effectively caused UI and Skipper to start behaving erratically in &lt;code&gt;Data Flow 2.5.0&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stack Overflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - May 19th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/19/this-week-in-spring-may-19th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-05-19:4077</id>
+    <updated>2020-05-19T21:56:46Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! What a wonderful, &lt;em&gt;bootiful&lt;/em&gt; week it&amp;rsquo;s been! This last week saw the long-awaited release of Spring Boot 2.3.0! &lt;/p&gt;
+&lt;p&gt;There are a &lt;em&gt;lot&lt;/em&gt; of wonderful features in this release including, but not limited to, Java 14 support, Docker image generation, graceful shutdown, liveliness probes, upgrades to Spring Data Neumann, and so much more. Here are some resources on some of those features. And, also, &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;&lt;em&gt;check out the blog&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;R2DBC support (see this Spring Tips installment on using &lt;a href="https://www.youtube.com/watch?v=fIMdlE5Hvzk"&gt;R2DBC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Docker container image support. See this blog &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;on Docker image generation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Java 14 support. See this Spring Tips installment &lt;a href="https://www.youtube.com/watch?v=mr-7kGy8Yao"&gt;on Java 14&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is &lt;em&gt;also&lt;/em&gt; the version to use if you want to consume the Graal Native Image builder feature. Here&amp;rsquo;s a &lt;a href="https://www.youtube.com/watch?v=u1XJTI1PVLw&amp;feature=emb_title"&gt;Spring Tips video&lt;/a&gt; on that, too.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are, as usual, a &lt;em&gt;ton&lt;/em&gt; of other things worth noting this week, as well, and we&amp;rsquo;ve got a huge roundup to get to so let&amp;rsquo;s get to it. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;No, seriously; did I mention that Spring Boot 2.3 is out?! &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;&lt;strong&gt;Spring Boot 2.3.0 available now&lt;/strong&gt;&lt;/a&gt;!! Go to the Spring Initializr and begin your &lt;a href="http://start.spring.io"&gt;journey to production now&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;And there&amp;rsquo;s a nice integration in &lt;a href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann"&gt; Spring Data (Klara Dan von) Neumann?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#building-docker-images"&gt;Spring Boot Reference Documentation on new docket image support in spring boot 2.3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt; installment, I talk to &lt;a href="https://spring.io/blog/2020/05/14/vmware-coo-sanjay-poonen"&gt;VMWare COO Sanjay Poonen&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/14/spring-session-dragonfruit-release-released"&gt;Spring Session Dragonfruit-RELEASE Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/13/introduction-to-azure-spring-cloud-with-intellij-idea"&gt;Introduction to Azure Spring Cloud with IntelliJ IDEA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;CVE reports published for Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/12/spring-data-neumann-goes-ga"&gt;Spring Data Neumann goes GA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn the &lt;a href="https://t.co/u1rJJMPYnK"&gt;basics of Cloud Native Buildpacks&lt;/a&gt; and a few different ways in which they can be used in Cora Iberkleid&amp;rsquo;s Spring Live talk&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/19/steven-rostedt-talks-linux-kernel-on-the-bootiful-podcast/"&gt;Steven Rostedt Talks Linux Kernel on the ¡°Bootiful Podcast¡±&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Have you submitted your talk for #SpringOne yet? The deadline is tomorrow! &lt;a href="https://t.co/UxT2xhYVUh"&gt;Apply here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://t.co/DoWJhxFTVz"&gt;Happy 25th birthday, Java! &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/swlh/jpa-entity-graphs-with-spring-boot-30cb110ba4f8"&gt;JPA Entity Graphs with Spring Boot - The Startup - Medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;It&amp;rsquo;s time for&amp;hellip; &lt;a href="https://t.co/DpcgISR5Zz"&gt;&lt;em&gt;State of the Loom&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;Targeted to JDK 15: &lt;a href="https://openjdk.java.net/jeps/339"&gt;JEP 339: Edwards-Curve Digital Signature Algorithm (EdDSA)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Also targeted to JDK 15: &lt;a href="https://t.co/a2iRm8TUYu"&gt;JEP 384: Records (Second Preview)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Millions of people use the My VMware portal every month. Turns out &lt;a href="https://twitter.com/VMwareTanzu/status/1262560182854397952"&gt;they rebuilt it as Spring #microservices&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vov/2020/05/14/how-a-refresh-of-the-my-vmware-portal-improved-the-customer-self-service-experience/?src=so_5a314d05e49f5&amp;cid=70134000001SkJn"&gt;How a Refresh of the My VMware Portal Improved the Customer Self-Service Experience - VMware on VMware&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;If Spring Data JDBC doesn&amp;rsquo;t ship with a Dialect for your favourite database, this is how you &lt;a href="https://twitter.com/SpringData/status/1262256854140358662"&gt;may supply your own&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=her_7pa0vrg&amp;feature=share"&gt;A 5 hour case introducing Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/javarevisited/top-10-courses-to-learn-spring-security-and-oauth2-with-spring-boot-for-java-developers-8f0222d6066d"&gt;Top 10 Courses to Learn Spring Security and OAuth2 with Spring Boot for Java Developers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Yesterday we looked at a single &lt;a href="https://twitter.com/RabbitMQ/status/1261365281420718080"&gt;RabbitMQ quorum queue performance&lt;/a&gt;. Today we look at flow control&lt;/li&gt;
+  &lt;li&gt;Our friends at Azure just published the new &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql"&gt;Azure documentation for Spring Data JDBC with MySQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Apache Tomcat on Twitter: &amp;quot;Users of Tomcat 10 should be aware that the package for all specs has changed from &lt;code&gt;javax.*&lt;/code&gt; to &lt;code&gt;jakarta.*&lt;/code&gt;. &lt;a href="https://twitter.com/theapachetomcat/status/1260530953648250880?s=21"&gt;Code changes will almost be certainly required to migrate from Tomcat to Tomcat 10.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://piotrminkowski.com/2020/05/13/a-deep-dive-into-spring-cloud-load-balancer/"&gt;A Deep Dive Into Spring Cloud Load Balancer ? Piotr&amp;rsquo;s TechBlog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot for Apache Geode &amp; VMware GemFire 1.1.7.RELEASE, 1.2.7.RELEASE and 1.3.0.RC1 available!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/19/spring-boot-for-apache-geode-vmware-gemfire-1-1-7-release-1-2-7-release-and-1-3-0-rc1-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2020-05-19:4076</id>
+    <updated>2020-05-19T19:49:43Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring, Apache Geode and VMware GemFire communities, it is my pleasure to announce the release of Spring Boot for Apache Geode &amp;amp; VMware GemFire (SBDG) &lt;code&gt;1.1.7.RELEASE&lt;/code&gt;, &lt;code&gt;1.2.7.RELEASE&lt;/code&gt; and &lt;code&gt;1.3.0.RC1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All bits are &lt;a href="https://search.maven.org/search?q=spring-geode-starter"&gt;available&lt;/a&gt; in &lt;em&gt;Maven Central&lt;/em&gt; with the exception of &lt;code&gt;1.3.0.RC1&lt;/code&gt;, which is &lt;a href="https://repo.spring.io/milestone/org/springframework/geode/spring-geode-starter/1.3.0.RC1/"&gt;available&lt;/a&gt; in &lt;em&gt;Spring&amp;#8217;s Milestone Repository&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SBDG &lt;code&gt;1.1.7.RELEASE&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.1.14.RELEASE&lt;/code&gt;.  SBDG &lt;code&gt;1.2.7.RELEASE&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.2.7.RELEASE&lt;/code&gt; and SBDG &lt;code&gt;1.3.0.RC1&lt;/code&gt; builds on Spring Boot &lt;code&gt;2.3.0.RC1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The easiest way to get started building &lt;em&gt;Spring Boot applications with Apache Geode&lt;/em&gt; is by using &lt;em&gt;Spring Initializer&lt;/em&gt; at &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; either with &lt;a href="https://start.spring.io/#!platformVersion=2.2.7.RELEASE&amp;amp;dependencies=geode"&gt;Spring Boot 2.2.7&lt;/a&gt; or with &lt;a href="https://start.spring.io/\#!platformVersion=2.3.0.RELEASE&amp;amp;dependencies=geode"&gt;Spring Boot 2.3.0&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-new"&gt;&lt;a class="anchor" href="#whats-new"&gt;&lt;/a&gt;Whats&amp;#8217;s New&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The big addition to &lt;code&gt;1.3.0.RC1&lt;/code&gt; is &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.3.x/reference/html5/#geode-data-working"&gt;support&lt;/a&gt; for preloading your application cache Regions with data, formatted as JSON.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is well known that Spring Boot offers &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-database-initialization"&gt;database initialization&lt;/a&gt; for SQL based data stores on startup.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now, SBDG users have the same convenience with a NoSQL data store like Apache Geode.  This &lt;a href="https://docs.spring.io/spring-boot-data-geode-build/1.3.x/reference/html5/#geode-data-working"&gt;support&lt;/a&gt; is very similar to Spring Boot&amp;#8217;s &lt;em&gt;database initialization&lt;/em&gt; approach using &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-initialize-a-database-using-spring-jdbc"&gt;SQL&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="whats-next"&gt;&lt;a class="anchor" href="#whats-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All efforts are focused on getting SBDG &lt;code&gt;1.3.0.RELEASE&lt;/code&gt; out the door!  &lt;code&gt;1.3.0.RELEASE&lt;/code&gt; will be based on Spring Boot &lt;code&gt;2.3.0.RELEASE&lt;/code&gt;, which is already &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;available&lt;/a&gt;!  The release is tentatively &lt;a href="https://spring-calendar.cfapps.io/"&gt;scheduled&lt;/a&gt; for Thursday, May 28th.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, any feedback is welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session for Apache Geode &amp; VMware GemFire 2.1.10.RELEASE, 2.2.4.RELEASE and 2.3.0.RELEASE available!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/19/spring-session-for-apache-geode-vmware-gemfire-2-1-10-release-2-2-4-release-and-2-3-0-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2020-05-19:4075</id>
+    <updated>2020-05-19T19:07:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring, Apache Geode and VMWare GemFire communities, it is my pleasure to announce the release of &lt;em&gt;Spring Session for Apache Geode and VMware GemFire&lt;/em&gt; (SSDG) &lt;code&gt;2.1.10.RELEASE&lt;/code&gt;, &lt;code&gt;2.2.4.RELEASE&lt;/code&gt; and &lt;code&gt;2.3.0.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All bits are &lt;a href="https://search.maven.org/search?q=spring-session-data-geode"&gt;available&lt;/a&gt; in &lt;em&gt;Maven Central&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SSDG 2.1.10.RELEASE is aligned with Spring Boot 2.1.14.RELEASE and can be included by declaring a dependency on &lt;code&gt;org.springframework.geode:spring-geode-starter-session:1.1.7.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SSDG 2.2.4.RELEASE is aligned with Spring Boot 2.2.7.RELEASE and can be included by declaring a dependency on &lt;code&gt;org.springframework.geode:spring-geode-starter-session:1.2.7.RELEASE&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SSDG 2.3.0.RELEASE is aligned with Spring Boot 2.3.0.RELEASE and can be included by declaring a dependency on &lt;code&gt;org.springframework.geode:spring-geode-starter-session:1.3.0.RC1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-session-data-geode/blob/2.3.0.RELEASE/spring-session-data-geode/src/main/resources/changelog.txt#L7-L17"&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As always, feedback is welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>What's new in Spring Data (Klara Dan von) Neumann?</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann" />
@@ -14,7 +178,7 @@
       <name>Christoph Strobl</name>
     </author>
     <id>tag:spring.io,2020-04-20:4034</id>
-    <updated>2020-05-18T11:54:17Z</updated>
+    <updated>2020-05-18T11:54:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;Spring Data Neumann is the first release to follow the new six-month cadence. The reduced timeframe lets us deliver new features more often, which is key in enabling you to move faster. The release itself ships with a bunch of new stuff and includes important (potentially breaking) upgrades of several store.&lt;/p&gt;
 &lt;/div&gt;
@@ -290,7 +454,7 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
 &lt;p&gt;SDG now supports &lt;a href="https://jira.spring.io/browse/DATAGEODE-272"&gt;auto-transaction event publishing&lt;/a&gt;, which translates a GemFire/Geode Cache TransactionEvent into an appropriate ApplicationEvent fired in the context.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;It is also now possible to &lt;a href="https://jira.spring.io/browse/DATAGEODE-242"&gt;pause event dispatching&lt;/a&gt; on an AEQ configured with SDG.  Also, when building GemFire/Geode Locator-based applications by using SDG&amp;#8217;s &lt;code&gt;@LocatorApplication&lt;/code&gt; application, you can now &lt;a href="https://jira.spring.io/browse/DATAGEODE-272"&gt;configure the Locator to connect to other Locators&lt;/a&gt; thereby forming a highly-available, highly-resilient cluster.&lt;/p&gt;
+&lt;p&gt;It is also now possible to &lt;a href="https://jira.spring.io/browse/DATAGEODE-242"&gt;pause event dispatching&lt;/a&gt; on an AEQ configured with SDG.  Also, when building GemFire/Geode Locator-based applications by using SDG&amp;#8217;s &lt;code&gt;@LocatorApplication&lt;/code&gt; annotation, you can now &lt;a href="https://jira.spring.io/browse/DATAGEODE-272"&gt;configure the Locator to connect to other Locators&lt;/a&gt; thereby forming a highly-available, highly-resilient cluster.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -804,7 +968,7 @@ Client 0acc1c60-4bc4-444d-bb82-eb6b510f4168 DISCONNECTED
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As the client connects, it&amp;rsquo;s added to the list of clients, and the console prints its client ID and the status &amp;ldquo;CONNECTED&amp;rdquo;. Then, every 5 seconds, the log shows the client&amp;rsquo;s current &amp;lsquo;free memory&amp;rsquo; reading. Finally, as the client disconnects, it&amp;rsquo;s RSocket channel&amp;rsquo;s status becomes &amp;ldquo;CLOSED&amp;rdquo; and the client is &amp;ldquo;DISCONNECTED.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; process by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window.&lt;/p&gt;&lt;h2&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;The ability to call out to clients in is very powerful. It¡¯s ideal for all kinds of scenarios, including mobile, internet-of-things, or microservices. And because all this can happen over TCP or WebSockets, you already have all the infrastructure you need without resorting to heavyweight solutions like message brokers. &lt;/p&gt;
+&lt;p&gt;The ability to call out to clients is very powerful. It¡¯s ideal for all kinds of scenarios, including mobile, internet-of-things, or microservices. And because all this can happen over TCP or WebSockets, you already have all the infrastructure you need without resorting to heavyweight solutions like message brokers. &lt;/p&gt;
 &lt;p&gt;You covered a lot of ground here. You learned how to turn servers into &amp;lsquo;requesters&amp;rsquo; and clients into &amp;lsquo;responders.&amp;rsquo; You discovered how to listen into connection events. You also learned a little bit about how to handle errors and events coming from rsocket connections. And, although in this exercise, you chose &amp;lsquo;request-stream&amp;rsquo; as your server-client communication, you could use any of the four RSocket interaction modes, depending on your needs. &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
@@ -1120,172 +1284,6 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
 &lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.1.10.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.14.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.3.2, 5.2.4, 5.1.10, 5.0.16, 4.2.16 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/spring-security-5-3-2-5-2-4-5-1-10-5-0-16-4-2-16-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2020-05-06:4056</id>
-    <updated>2020-05-07T12:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;strong&gt;UPDATE 2020-05-13:&lt;/strong&gt; The following versions of Spring Security address &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;CVE-2020-5407 and CVE-2020-5408&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 5.3.2 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.2.RELEASE"&gt;release notes&lt;/a&gt;),  5.2.4 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.2.4.RELEASE"&gt;release notes&lt;/a&gt;), 5.1.10 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.1.10.RELEASE"&gt;release notes&lt;/a&gt;) , 5.0.16 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.0.16.RELEASE"&gt;release notes&lt;/a&gt;), 4.2.16 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/4.2.16.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/current/reference/html5/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring LDAP 2.3.3 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/spring-ldap-2-3-3-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2020-05-06:4057</id>
-    <updated>2020-05-07T12:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring LDAP 2.3.3 (&lt;a href="https://github.com/spring-projects/spring-ldap/releases/tag/2.3.RELEASE"&gt;release notes&lt;/a&gt;). The release delivers bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-ldap/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-ldap/site/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>End-of-Life for Spring Security OAuth</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/end-of-life-for-spring-security-oauth" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Joe Grandja</name>
-    </author>
-    <id>tag:spring.io,2020-05-05:4054</id>
-    <updated>2020-05-07T11:47:33Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;In January 2018, we &lt;a href="https://spring.io/blog/2018/01/30/next-generation-oauth-2-0-support-with-spring-security"&gt;announced&lt;/a&gt; that the &lt;a href="https://spring.io/projects/spring-security-oauth"&gt;Spring Security OAuth&lt;/a&gt; (legacy) project is officially in maintenance mode. Later in November of 2019, we provided an update in the &lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update"&gt;Spring Security OAuth 2.0 Roadmap&lt;/a&gt;, stating that the 2.3.x line will reach end-of-life in March 2020.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The currently supported version branches are 2.4.x and 2.5.x, with the 2.5.0 release scheduled for May 2020, which will be &lt;strong&gt;the final minor release&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To that end, the plan is to provide patch and security fixes for the 2.4.x and 2.5.x line until May 2021. Additionally, security fixes will be supported for the 2.5.x line until May 2022, at which point the project will have reached end-of-life. The same end-of-life timeline applies to the &lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot"&gt;Spring Boot 2 auto-configuration project&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Finally, in May 2022, we intend to ¡°open¡± up the project, so that it can be directly managed by the member(s) in the community.&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Season 7 Recap</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/06/spring-tips-season-7-recap" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-06:4059</id>
-    <updated>2020-05-06T23:40:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to the recap installment for the seventh season of &lt;em&gt;Spring Tips&lt;/em&gt;! I can&amp;rsquo;t believe we&amp;rsquo;re already on season seven! In October of 2020, it&amp;rsquo;ll be 4 straight years of doing these videos. Hopefully, they&amp;rsquo;re helping.&lt;/p&gt;
-&lt;p&gt;Every season consists of 11 episodes and one recap blog post. Sometimes, I&amp;rsquo;ll do an occasional extra episode or I&amp;rsquo;ll do an episode during the interregnum between seasons as the situations sometimes demand. But, for now, I&amp;rsquo;m done for a little while - not as long as last time, for sure! But a little while. I need time to gather my resources, prepare new content, finish the &lt;a href="http://ReactiveSpring.io"&gt;Reactive Spring book&lt;/a&gt;, and produce those new episodes. &lt;/p&gt;
-&lt;p&gt;This is where &lt;em&gt;you&lt;/em&gt; come in, dear reader: what would you like to see in the latest episodes? &lt;a href="http://twitter.com/Starbuxman"&gt;What content would you like me to introduce? Sound off on Twitter (@starbuxman) to me personally&lt;/a&gt; or to the &lt;a href="http://twitter.com/SpringTipsLive"&gt;@SpringTipsLive account&lt;/a&gt; or &lt;a href="mailto:josh@joshlong.com"&gt;by email (josh@joshlong.com)&lt;/a&gt;. I&amp;rsquo;d love to hear from you! Your contributions and ideas are a huge inspiration to me - indeed I do most of the work because of you, the most amazing community on earth Thank you for everything. Thank you for your ideas which help to keep things interesting.&lt;/p&gt;
-&lt;p&gt;I want things to be interesting! I &lt;em&gt;try&lt;/em&gt; to mix things up every now and then. Every season tries to introduce some combination of the following categories of video:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;CONCEPTUAL FUNDAMENTALS&lt;/em&gt;: things that are common to lots of Spring developers (like Java 14, or configuration, or testing reactive applications, or the Kotlin programming language). These videos tend to look at how a theme applies across a number of portfolio projects.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;PROJECT-SPECIFIC INTRODUCTIONS&lt;/em&gt;: I like to introduce projects - projects that people may or may not have heard of - like &lt;em&gt;Spring Cloud Data Flow&lt;/em&gt; or &lt;em&gt;Spring Batch&lt;/em&gt; or &lt;em&gt;Spring Cloud for Alibaba&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;INTEGRATIONS&lt;/em&gt;: I love to introduce integrations for various projects. These are some of my favorite videos to make. I think of them sort of like the Avengers: team-ups make things even more exciting and feasible. These videos look at third party projects that, while they exist independent of the Spring ecosystem, they also happen to work really well with Spring. Examples in this vein include &lt;em&gt;MyBatis&lt;/em&gt; (as a way to map SQL queries to repository methods), &lt;em&gt;JOOQ&lt;/em&gt; (as another way to do SQL-centric queries), &lt;em&gt;Apache Camel&lt;/em&gt; (as another way to support enterprise integration patterns), &lt;em&gt;Flowable&lt;/em&gt; (as another way to do business process management), etc.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;SPECIFIC FEATURES&lt;/em&gt;: I like to look at individual features in a larger umbrella project or theme. I&amp;rsquo;ve done this many times looking at individual features of Spring Boot, Spring Cloud, reactive programming, etc. While I may have done an introduction video to some of these, no video could hope to capture every new feature. So, I do followup videos that dive deeper into some specific features. I did this when looking at distributed locks with &lt;em&gt;Spring Integration&lt;/em&gt;, or coroutines with Spring, &lt;em&gt;Reactor&lt;/em&gt; and &lt;em&gt;Kotlin&lt;/em&gt;, for example.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;NEW AND NOVEL&lt;/em&gt;: I enjoy bringing you information about the new and nice stuff coming from the Spring team and beyond. We saw some of these kinds of videos when we looked at the Spring Graal feature, functional bean registration, functional reactive endpoints, and Spring Cloud Gateway. These videos were all done against milestones or snapshots - I live on the cutting edge so you don&amp;rsquo;t have to! Sometimes my videos end up being obviated by some newer developments, but that&amp;rsquo;s OK - at least you know what&amp;rsquo;s coming and are ready to use them when these projects do finally land.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This season had a little of all of those categories! Also, this season, I tried - wherever possible - to do shorter videos. There are some one-hour-ish long videos in this season, to be sure, but that&amp;rsquo;s because they&amp;rsquo;re more broad in scope. One example that leaps to mind is the one on Configuration.&lt;/p&gt;
-&lt;p&gt;So, here is a list of every video in the Spring Tips series &lt;em&gt;so far&lt;/em&gt;. The first 11 entries are the most recent, from season seven. Enjoy! In the meantime, if you&amp;rsquo;ve binge-watched all these videos, and you still want your fill, check out my weekly roundup of the wonderful and wild world of Springdom - &lt;em&gt;This Week in Spring&lt;/em&gt; - every Tuesday on &lt;a href="http://spring.io/blog"&gt;the Spring blog&lt;/a&gt;. Or, check out my podcast, &lt;a href="http://BootifulPodcast.fm"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt; (@BootifulPodcast)&lt;/a&gt;, with new episodes every Friday available for listening on your favorite podcatcher. &lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=R8RAgTJvbEc"&gt;(2020-04-29) Wavefront&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=PsNNGuLi0ns"&gt;(2020-04-23) Configuration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=u1XJTI1PVLw"&gt;(2020-04-16) Spring Graal Feature&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=1llAwgOKjTY"&gt;(2020-04-07) The Spring Integration Kotlin DSL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Hu5DzNogV0E"&gt;(2020-04-01) The Spring Cloud Cloud Foundry Java Autoconfiguration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FDeOoKRKgkM"&gt;(2020-03-25) Spring Cloud Loadbalancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=PkWiinQCPxQ"&gt;(2020-03-18) Remote File System Integrations with Spring Integration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=mr-7kGy8Yao"&gt;(2020-03-11) Java 14: Can Your Java Do This?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=V1ce8RdTdo0"&gt;(2020-03-04) Kotlin and Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=vwHk8HVQAJE"&gt;(2020-02-26) Apache RocketMQ&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ER-mbWp2xYg"&gt;(2020-02-18) RSocket and Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=firwCHbC7-c"&gt;(2019-06-19) Distributed Locks with Spring Integration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=3xu5xttCrVk"&gt;(2019-06-12) Spring&amp;rsquo;s Support for Kotlin Coroutines&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=D33awJnlhWg"&gt;(2019-06-05) Organizational Consistency in your Spring Boot Applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=0oI_-xBhAK8"&gt;(2019-05-29) Debuggng Reactive Transactions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=9henAE6VUbk"&gt;(2019-05-22) Reactive Transactions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=UJesCn731G4"&gt;(2019-05-15) Spring Batch and Apache Kafka&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ewpJ9EUAz5s"&gt;(2019-05-08) Reactive Web Views&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=s5-leUCti5o"&gt;(2019-04-24) Spring Cloud Circuit Breaker&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=BxHqeq58xrE"&gt;(2019-04-15) RSocket Messaging in Spring Boot 2.2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=vZV2_9KVHJU"&gt;(2019-04-03) Webmvc.fn - the Functional DSL for Spring MVC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=DvO4zLVDkMs"&gt;(2019-03-20) Reactive MySQL Support with JAsync SQL and R2DBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_m4xpHUf55E"&gt;(2019-03-14) Be Lazy and Fast with Spring Boot 2.2.M1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=dmBMs-mubHA"&gt;(2019-02-13) Apache Geode&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=RPmTXiw-dHA"&gt;(2019-02-06) Testing Reactive Code&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=5tlZddM5Jo0"&gt;(2019-01-30) The Reactor Context&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=SLG8gUGvdx4"&gt;(2019-01-23) Reactively Hedging Client Requests with a Service Registry&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=lPy9mc_O_gU"&gt;(2019-01-16) JavaFX&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=43_OLrxU3so"&gt;(2019-01-09) Flowable&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=GDIDSzZLjjg"&gt;(2019-01-02) RSocket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=B60y65wexgI"&gt;(2018-12-26) Alibaba&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=fIMdlE5Hvzk"&gt;(2018-12-19) Reactive SQL Data Access with Spring Data R2DBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=j-QYp8eYRe8"&gt;(2018-12-12) Google Cloud Platform&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=jRgZe7kWDnU"&gt;(2018-12-05) Microsoft Azure&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=-yJ53wzG_lg"&gt;(2018-06-13) Spring Fu&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2E8_0Qxi6Tg"&gt;(2018-06-06) JPA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=TUOwlaqZ0eo"&gt;(2018-05-30) JDBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=-KupcZ3bA-Y"&gt;(2018-05-23) Apache Camel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=E55oAtOhWZU"&gt;(2018-05-16) Project Riff and Spring Cloud Function &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=gSUeGi4sLlA"&gt;(2018-05-09) Spring Security 5 OAuth Clients&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JAdxO1XboJY"&gt;(2018-05-02) Metrics Collection in Spring Boot 2 with Micrometer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=M4Aa45Gpc4w"&gt;(2018-04-25) Spring Statemachine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_M8xoagybzU"&gt;(2018-04-18) Redis &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=EtxD_RzKSwk"&gt;(2018-04-11) The Cloud Foundry Java Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=YPDzcmqwCNo"&gt;(2018-04-04) Spring Cloud Stream Kafka Streams&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=nh2seTeGw5A"&gt;(2017-12-15) Bootiful Banners&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=m-AOu6vzJMQ"&gt;(2017-12-04) Spring Tool Suite 4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=TwVtlNX-2Hs"&gt;(2017-11-29) Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=lTSJCr7xdbM"&gt;(2017-11-22) Bootiful Testing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=arOqTOEtAVA"&gt;(2017-11-15) Spring Boot Build Plugin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=P3yI_YhG5pk"&gt;(2017-11-08) Bootiful Kotlin Redux&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=h6nMjjxJWjk"&gt;(2017-11-01) Spring Shell&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Ki54FB2B25U"&gt;(2017-10-25) Spring Cloud Contract (HTTP)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=deB70lfUJBU"&gt;(2017-10-18) Bootiful JAX-RS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=E_YZwrv-zTk"&gt;(2017-10-11) Bootiful, Reactive Scala&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=GlvyHIqT3K4"&gt;(2017-09-27) Reactive WebSockets with Spring Framework 5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=EoK5a99Bmjc"&gt;(2017-04-05) Creating a Spring Security OAuth Auth Service&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[(2017-03-29) The Spring Framework *Utils Classes](&lt;a href="https://www.youtube.com/watch?v=Zo9e3i8HxX4"&gt;https://www.youtube.com/watch?v=Zo9e3i8HxX4&lt;/a&gt;)
-&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ogqxbFY_dpY"&gt;(2017-03-22) Servlet Container Deployment Options&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=leZdgr-O4LE"&gt;(2017-03-15) the Spring Web Flux Reactive Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2To3_mYT2hc"&gt;(2017-03-08) Server Sent Events (SSE)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Q_P28p7XsbQ"&gt;(2017-03-01) Programmatic Bean Registration in Spring Framework 5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JyythoOXdbU"&gt;(2017-02-22) MyBatis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=j5QqHSIEcPE"&gt;(2017-02-15) JOOQ&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=CFLZJSwbYI0"&gt;(2017-02-08) Distributed Tracing with Zipkin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=x4nBNLoizOc"&gt;(2017-02-01) Spring Batch&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=NONg7xrOhPA"&gt;(2017-01-26) Couchbase&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Sw7I70vjN0E"&gt;(2016-12-14) Demystifying Bootiful Magic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=u1QnlAbCFys"&gt;(2016-12-07) Bootiful Dashboards&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=356eqR8XcqE"&gt;(2016-11-30) JTA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=T9KcS8s0RPs"&gt;(2016-11-23) Cloud Foundry&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=GaHgRw-3K84"&gt;(2016-11-16) Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=HQ00E60kB6c"&gt;(2016-11-09) Spring Cloud Stream&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=O8nIzE99BJY"&gt;(2016-11-02) Spring Aware Beans&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Kc7dDxn9cUg"&gt;(2016-10-27) Circuit Breakers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=90WRtrbRi0Y"&gt;(2016-10-19) The Kotlin Programming Language&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=MTKlk8_9aAw"&gt;(2016-10-13) Spring Integration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JjrAmhlTjug"&gt;(2016-10-05) Functional Reactive Endpoints with Spring Framework 5.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
