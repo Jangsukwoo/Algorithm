@@ -1,0 +1,54 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+/*
+ * 
+ */
+public class 링크와스타트 {
+	static int[][] abilityMap;
+	static boolean[] visit;
+	static int[] startTeam;
+	static int[] linkTeam;
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		nCr(0,0);
+	}
+	private static void nCr(int idx, int r) {
+		if(r==(N/2)){
+			System.out.println(Arrays.toString(startTeam));
+			setLinkTeam();
+			getGapBetweenTeam();
+			return;
+		}
+		for(int i=idx;i<N;i++) {
+			startTeam[r] = i;
+			nCr(i+1, r+1);
+		}
+	}
+	private static void setLinkTeam() {
+		
+	}
+	private static void getGapBetweenTeam() {
+		
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		abilityMap = new int[N][N];
+		startTeam = new int[N/2];
+		linkTeam= new int[N/2];
+		for(int row=0;row<N;row++){
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				abilityMap[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

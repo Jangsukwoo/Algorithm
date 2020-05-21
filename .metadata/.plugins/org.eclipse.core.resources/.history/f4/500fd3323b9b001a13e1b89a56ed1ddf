@@ -1,0 +1,36 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 
+ */
+public class 링크와스타트 {
+	static int[][] abilityMap;
+	static int[] pick;
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		nCr(0,0);
+	}
+	private static void nCr(int idx, int r) {
+		if(r==(N/2)){
+			return;
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		abilityMap = new int[N][N];
+		for(int row=0;row<N;row++){
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				abilityMap[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

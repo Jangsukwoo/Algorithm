@@ -5,7 +5,224 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-20T09:08:50Z</updated>
+  <updated>2020-05-20T16:06:44Z</updated>
+  <entry>
+    <title>Migrating to Spring Data JDBC 2.0</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Jens Schauder</name>
+    </author>
+    <id>tag:spring.io,2020-05-15:4074</id>
+    <updated>2020-05-20T16:06:44Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;With Spring Data JDBC 2.0, we had to introduce some breaking changes.
+The goal of this article is to help in the migration process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="tldr"&gt;&lt;a class="anchor" href="#tldr"&gt;&lt;/a&gt;TL;DR&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="olist arabic"&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;
+&lt;p&gt;Use the default letter casing for custom column and table names or quote the names for table generation exactly as used in the annotations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;AbstractJdbcConfiguration&lt;/code&gt; for custom configuration of the application context.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/a/61854586/66686"&gt;Register a &lt;code&gt;Dialect&lt;/code&gt; if necessary&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Review event-handling code and ensure the data you try to use is not &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="quoting-of-identifiers"&gt;&lt;a class="anchor" href="#quoting-of-identifiers"&gt;&lt;/a&gt;Quoting of Identifiers&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data JDBC 1.x uses table and column names mostly without changing them.
+This causes problems when you use an SQL key word as a property or entity name or when you tried to use some special character in a column name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For this reason Spring Data JDBC 2.0 quotes all identifiers by default.
+This makes the names case-sensitive, at least for most databases.
+Since we also, by default, convert the names generated into the default letter casing used by the database, this should not cause any problems, assuming you used no quotes in the &lt;code&gt;CREATE TABLE&lt;/code&gt; statements, as most people do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For example, consider a &lt;code&gt;Student&lt;/code&gt; entity, as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Student {
+
+    @Id
+    Long id;
+    String name;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A matching table for H2 could look like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-sql" data-lang="sql"&gt;CREATE TABLE STUDENT
+(
+    ID SERIAL PRIMARY KEY,
+    NAME  VARCHAR(30)
+);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;That example is the same as in previous versions of Spring Data JDBC.
+Things change when you specify column or table names explicitly with &lt;code&gt;@Column&lt;/code&gt;, &lt;code&gt;@Table&lt;/code&gt;, or &lt;code&gt;@MappedCollection&lt;/code&gt;.
+In this case, we assume that you specify the name exactly as you want it to be used and, therefore, the table definition has to use quoted identifiers or the names have to use the default letter casing of your database, as in this modified student example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Table("student")
+class Student {
+
+    @Id
+    Long id;
+    @Column("LAST_NAME")
+    String name;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A matching table for H2 could look like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-sql" data-lang="sql"&gt;CREATE TABLE "student" -- &lt;b class="conum"&gt;(1)&lt;/b&gt;
+(
+    ID SERIAL PRIMARY KEY,
+    LAST_NAME  VARCHAR(30) -- &lt;b class="conum"&gt;(2)&lt;/b&gt;
+);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="colist arabic"&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The table name must be quoted, because it is given in lower-case letters but H2 converts unquoted SQL identifiers to upper case by default.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;LAST_NAME&lt;/code&gt; does not have to get quoted because it already uses the default letter casing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See below how to disable the forced quoting if you really want to.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="configuration"&gt;&lt;a class="anchor" href="#configuration"&gt;&lt;/a&gt;Configuration&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you need custom configuration of your &lt;code&gt;ApplicationContext&lt;/code&gt;, it is probably easiest to inherit from
+&lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/jdbc/repository/config/AbstractJdbcConfiguration.html"&gt;&lt;code&gt;org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration&lt;/code&gt;&lt;/a&gt;.
+Other classes with similar names and the same purpose have been removed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In a configuration inherited from &lt;code&gt;AbstractJdbcConfiguration&lt;/code&gt; you may override for example &lt;code&gt;jdbcMappingContext&lt;/code&gt; as follows in order to disable the forced quoting of SQL identifiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="exampleblock"&gt;
+&lt;div class="content"&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+@Override
+public JdbcMappingContext jdbcMappingContext(Optional&amp;lt;NamingStrategy&amp;gt; namingStrategy, JdbcCustomConversions customConversions) {
+
+	JdbcMappingContext mappingContext = super.jdbcMappingContext(namingStrategy, customConversions);
+  mappingContext.setForceQuote(false);
+
+	return mappingContext;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="aggregatechange-and-dbaction-are-immutable"&gt;&lt;a class="anchor" href="#aggregatechange-and-dbaction-are-immutable"&gt;&lt;/a&gt;&lt;code&gt;AggregateChange&lt;/code&gt; and &lt;code&gt;DbAction&lt;/code&gt; are immutable&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You might have encountered these in event handlers or callback methods.
+They have been mutable in the past, but that was almost impossible to use in a meaningful way.
+Also, it was actually impossible to support in a stable way.
+Therefore, it was removed without replacement.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you had a use case where you actually changed those instances, please create an issue in our issue tracker.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="dialects"&gt;&lt;a class="anchor" href="#dialects"&gt;&lt;/a&gt;Dialects&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data JDBC now has a
+&lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/relational/core/dialect/Dialect.html"&gt;&lt;code&gt;Dialect&lt;/code&gt;&lt;/a&gt;
+interface and for the fully supported databases it ships with a matching implementation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you use a different database you&amp;#8217;ll have to&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="olist arabic"&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;
+&lt;p&gt;implement your own &lt;code&gt;Dialect&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;implement a &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/jdbc/repository/config/DialectResolver.JdbcDialectProvider.html"&gt;&lt;code&gt;JdbcDialectProvider&lt;/code&gt;&lt;/a&gt; returning that &lt;code&gt;Dialect&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;register the provider by putting a file &lt;code&gt;spring.factories&lt;/code&gt; in the &lt;code&gt;META-INF&lt;/code&gt; folder of your class path and add the line &lt;code&gt;org.springframework.data.jdbc.repository.config.DialectResolver$JdbcDialectProvider=&amp;lt;fully qualified name of your JdbcDialectProvider&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Someone already wrote a &lt;a href="https://stackoverflow.com/a/61854586/66686"&gt;great answer on Stack Overflow&lt;/a&gt; how to do that before we could get this article out the door.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="streamlined-events"&gt;&lt;a class="anchor" href="#streamlined-events"&gt;&lt;/a&gt;Streamlined events&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Events only offer the ID of an entity if there is no entity available (for example, for delete events).
+If there is an entity available in the event, the ID is not in order, to avoid looking up values that then might not be used.
+Events that before used &lt;code&gt;Optional&lt;/code&gt; values now use nullable values.
+Therefore, you should review your event listeners carefully.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Data Flow 2.5.1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/20/spring-cloud-data-flow-2-5-1-released" />
@@ -510,8 +727,8 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
     </author>
     <id>tag:spring.io,2020-05-14:4073</id>
     <updated>2020-05-14T22:24:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, VMware¡¯s &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to VMWare COO &lt;a href="http://twitter.com/Spoonen"&gt;Sanjay Poonen (@spoonen)&lt;/a&gt; about app development, Tanzu, Cloud, Networking, and more.&lt;/p&gt;
-&lt;iframe title="VMWare COO Sanjay Poonen" src="https://www.podbean.com/media/player/n9mva-dc7ac0?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, VMware¡¯s &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to VMware COO &lt;a href="http://twitter.com/Spoonen"&gt;Sanjay Poonen (@spoonen)&lt;/a&gt; about app development, Tanzu, Cloud, Networking, and more.&lt;/p&gt;
+&lt;iframe title="VMware COO Sanjay Poonen" src="https://www.podbean.com/media/player/n9mva-dc7ac0?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -1268,22 +1485,6 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
 &lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.2.4.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.1.14 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/spring-boot-2-1-14-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-05-07:4063</id>
-    <updated>2020-05-07T16:08:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.14 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.14.RELEASE"&gt;61 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.1.10.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.14.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
