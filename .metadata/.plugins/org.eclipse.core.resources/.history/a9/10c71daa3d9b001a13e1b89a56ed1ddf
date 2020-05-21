@@ -48,6 +48,7 @@ public class 링크와스타트 {
 		}
 	}
 	private static void getGapBetweenTeam(){
+		int gap=0;
 		int startAbility = 0;
 		int linkAbility = 0;
 		for(int i=0;i<startTeam.length;i++) {
