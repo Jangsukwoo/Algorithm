@@ -1,0 +1,14 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 17:35 시작
+ */
+public class 미로탈출 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+	public static void main(String[] args) {
+
+	}
+}
