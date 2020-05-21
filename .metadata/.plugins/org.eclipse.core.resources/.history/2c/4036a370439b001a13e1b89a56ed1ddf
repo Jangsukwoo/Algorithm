@@ -1,0 +1,8 @@
+package 공채대비;
+
+public class 부분수열의합 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}
