@@ -1,0 +1,31 @@
+package CodingTest;
+
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class 플그인턴3 {
+	static int N,M;
+	static Queue<Integer>[] graph;//큐배열
+	static Queue<Integer> q = new LinkedList<>();
+	static int[] indegree;
+	public static void main(String[] args) {
+
+	}
+	private static void topological(){
+		while(!q.isEmpty()){
+			int zeroIndegree = q.poll();
+			 for (int node : graph[zeroIndegree]) {
+	                indegree[node]--;
+	                if(indegree[node]==0){
+	                    q.add(node);
+	                }
+	            }
+		}
+	}
+	public int[] solution(int total_sp, int[][] skills) {
+		int[] answer = {};
+		
+		return answer;
+	}
+}

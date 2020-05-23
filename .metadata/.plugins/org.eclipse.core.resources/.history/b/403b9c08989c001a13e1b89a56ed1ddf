@@ -1,0 +1,15 @@
+package CodingTest;
+
+public class 플그인턴1 {
+	static int[] year = new int[10001];
+	public static void main(String[] args) {
+	}
+    public int solution(int p){
+        int answer = 0;
+        for(int i=0;i<=10000;i++){
+        	
+        }
+        
+        return answer;
+    }
+}

@@ -1,0 +1,18 @@
+package CodingTest;
+
+import java.util.LinkedList;
+
+public class 플그인턴3 {
+	static int N,M;
+	static Queue<Integer>[] graph;//큐배열
+	static Queue<Integer> q = new LinkedList<>();
+	static int[] indegree;
+	public static void main(String[] args) {
+
+	}
+	public int[] solution(int total_sp, int[][] skills) {
+		int[] answer = {};
+		
+		return answer;
+	}
+}

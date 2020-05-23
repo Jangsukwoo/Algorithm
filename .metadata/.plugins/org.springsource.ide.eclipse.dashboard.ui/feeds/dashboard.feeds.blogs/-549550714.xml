@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-20T16:06:44Z</updated>
+  <updated>2020-05-21T23:01:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: JAXB contributor, COM4j, Jenkins and Launchable founder Kohsuke Kawaguchi</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/21/a-bootiful-podcast-jaxb-contributor-com4j-jenkins-and-launchable-founder-kohsuke-kawaguchi" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-05-21:4080</id>
+    <updated>2020-05-21T23:01:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! In today&amp;rsquo;s installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/kohsukekawa"&gt;Kohsuke Kawaguchi (@kohsukekawa)&lt;/a&gt; who needs no introduction - one of the original contributors to JAXB, COM4J, and a host of all sorts of other projects, and is the founder &lt;a href="https://launchableinc.com/"&gt;and CEO of Launchable&lt;/a&gt;. Oh, did I mention he also created &lt;a href="https://www.jenkins.io/"&gt;Jenkins&lt;/a&gt;, the most popular CI server ever? Enjoy!&lt;/p&gt;
+&lt;iframe title="Jenkins founder and Launchable founder Kohsuke Kawaguchi" src="https://www.podbean.com/media/player/a76cw-dd45aa?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Migrating to Spring Data JDBC 2.0</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0" />
@@ -1469,22 +1482,6 @@ Spring Security 5.4.0-M1! You can find the complete details in the &lt;a href="h
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.7 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/spring-boot-2-2-7-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-05-07:4062</id>
-    <updated>2020-05-07T16:31:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.7 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.7.RELEASE"&gt;80 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#important-security-advisory" class="anchor" name="important-security-advisory"&gt;&lt;/a&gt;Important Security Advisory&lt;/h3&gt;
-&lt;p&gt;This version of Spring Boot includes a dependency upgrade to Spring Security &lt;code&gt;5.2.4.RELEASE&lt;/code&gt;. It contains fixes for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5407"&gt;CVE-2020-5407&lt;/a&gt; and &lt;a href="https://tanzu.vmware.com/security/cve-2020-5408"&gt;CVE-2020-5408&lt;/a&gt;, see also &lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;the official announcement&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.7.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

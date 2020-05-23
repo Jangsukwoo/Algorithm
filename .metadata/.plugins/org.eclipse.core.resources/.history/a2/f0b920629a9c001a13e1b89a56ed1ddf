@@ -1,0 +1,12 @@
+package CodingTest;
+
+public class 플그인턴2 {
+	public static void main(String[] args) {
+		solution(11);
+	}
+    public static long solution(long n) {
+        long answer = 0;
+        answer=Long.parseLong(Long.toString(n, 2), 3));
+        return answer;
+    }
+}
