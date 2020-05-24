@@ -1,0 +1,16 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 13:56~
+ */
+public class 새로운게임2{
+	static int N,K;
+	static int[][] chess;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+
+	}
+}

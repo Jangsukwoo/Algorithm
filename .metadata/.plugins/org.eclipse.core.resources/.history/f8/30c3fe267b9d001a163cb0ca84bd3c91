@@ -1,0 +1,11 @@
+package 공채대비;
+/*
+ * 13:56~
+ */
+public class 새로운게임2{
+	static int N,K;
+	static int[][] chess;
+	public static void main(String[] args) {
+
+	}
+}

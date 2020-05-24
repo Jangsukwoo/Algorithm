@@ -1,0 +1,8 @@
+package 공채대비;
+
+public class 게리맨더링2 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}

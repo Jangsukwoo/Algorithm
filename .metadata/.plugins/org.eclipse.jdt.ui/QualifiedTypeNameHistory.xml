@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.graalvm.compiler.lir.alloc.trace.lsra.TraceLinearScanLifetimeAnalysisPhase.Analyser"/>
-    <fullyQualifiedTypeName name="BAEKJOON.연료채우기.GasStation"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
     <fullyQualifiedTypeName name="CodingStudyHW.불.JF"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
@@ -46,18 +42,22 @@
     <fullyQualifiedTypeName name="java.util.zip.ZipFile"/>
     <fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
-    <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.security.acl.Owner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="공채대비.연구소3.Virus"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="공채대비.주사위윷놀이.Horse"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="CodingAcademy.단어퍼즐.Trie"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="javax.crypto.spec.IvParameterSpec"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="공채대비.고돌이와고소미"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="CodingTest.Macarong.Solution"/>
 </qualifiedTypeNameHistroy>

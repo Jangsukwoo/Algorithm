@@ -59,7 +59,11 @@ public class 고돌이와고소미 {
 						ngsc = cgsc;
 					}
 					int dist = Math.abs(ngr-ngsr)+Math.abs(ngc-ngsc);
-					if(rangeCheck(ngr,ngc) && rangeCheck(ngsr,ngsc) && dist>=2 && visit[ngr][ngc][ngsr][ngsc]==false){
+					if(rangeCheck(ngr,ngc) && rangeCheck(ngsr,ngsc) 
+							&& dist>=2 
+							&& visit[ngr][ngc][ngsr][ngsc]==false 
+							&& town[ngr][ngc]!=1
+							&& town[ngsr][ngsc]!=1){
 						q.add(new int[] {ngr,ngc,ngsr,ngsc});
 						visit[ngr][ngc][ngsr][ngsc] = true;
 					}

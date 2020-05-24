@@ -1,0 +1,9 @@
+package 공채대비;
+
+public class 게리맨더링2 {
+	static int N;
+	static int[][] peopel;
+	public static void main(String[] args) {
+
+	}
+}
