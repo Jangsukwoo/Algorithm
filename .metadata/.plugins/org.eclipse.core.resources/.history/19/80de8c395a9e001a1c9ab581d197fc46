@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+import com.sun.java.util.jar.pack.Package.Class.Method;
 
 /*
  * 각자 위치에서 집으로 돌아가는 최단시간
@@ -97,6 +98,8 @@ public class 고돌이와고소미 {
 				town[row][col] = Integer.parseInt(st.nextToken());
 			}
 		}
+		"33".getClass().getde
+		Method method = 
 		q.add(new int[] {godolR,godolC,goSoonR,goSoonC});
 		visit[godolR][godolC][goSoonR][goSoonC] = true;
 	}

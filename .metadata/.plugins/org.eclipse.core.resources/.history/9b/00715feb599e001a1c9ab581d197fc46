@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-
 /*
  * 각자 위치에서 집으로 돌아가는 최단시간
  * 1은 웅덩이 
