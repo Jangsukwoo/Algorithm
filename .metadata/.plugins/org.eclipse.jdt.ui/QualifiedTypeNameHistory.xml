@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="CodingStudyHW.불.JF"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
     <fullyQualifiedTypeName name="CodingStudyHW.아기상어.BabyShark"/>
@@ -47,7 +46,6 @@
     <fullyQualifiedTypeName name="공채대비.연구소3.Virus"/>
     <fullyQualifiedTypeName name="공채대비.주사위윷놀이.Horse"/>
     <fullyQualifiedTypeName name="CodingAcademy.단어퍼즐.Trie"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="javax.crypto.spec.IvParameterSpec"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="CodingTest.Macarong.Solution"/>
+    <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Method"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

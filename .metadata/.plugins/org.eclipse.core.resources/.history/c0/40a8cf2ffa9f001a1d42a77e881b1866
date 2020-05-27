@@ -1,0 +1,12 @@
+package CodingAcademy;
+
+/*
+ * 에라토스테네스의 체
+ * 유성재, 장지윤 학생
+ */
+public class 소수찾기 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}

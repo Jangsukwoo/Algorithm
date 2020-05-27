@@ -5,7 +5,49 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-25T00:00:00Z</updated>
+  <updated>2020-05-27T04:26:08Z</updated>
+  <entry>
+    <title>This Week in Spring - May 26th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/27/this-week-in-spring-may-26th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-05-27:4082</id>
+    <updated>2020-05-27T04:26:08Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re things? My family and I spent the Memorial Day holiday weekend mostly playing video games and trying random new restaurants for delivery. Now, it&amp;rsquo;s back to the grind and there are a &lt;em&gt;ton&lt;/em&gt; of things to look at so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/25/getting-started-with-rsocket-testing-spring-boot-responders"&gt;Getting Started With RSocket: Testing Spring Boot Responders&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s episode of a &lt;em&gt;Bootiful Podcast&lt;/em&gt;, &lt;a href="https://spring.io/blog/2020/05/21/a-bootiful-podcast-jaxb-contributor-com4j-jenkins-and-launchable-founder-kohsuke-kawaguchi"&gt;I talk to JAXB contributor, COM4j, Jenkins and Launchable founder Kohsuke Kawaguchi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0"&gt;Migrating to Spring Data JDBC 2.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/20/spring-cloud-data-flow-2-5-1-released"&gt;Spring Cloud Data Flow 2.5.1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/why-spring"&gt;What can Spring do? Find out&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/26/an-overview-of-apache-tomcat/"&gt;An Overview of Apache Tomcat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I&amp;rsquo;ll be speaking at JPoint later &lt;a href="https://mobile.twitter.com/GregoryKoshelev/status/1264291740678225920"&gt;this summer along with Cay Horstmann and James Gosling.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/didipostman/GenomeSequencing"&gt;didipostman/GenomeSequencing: Spring Batch as genome sequencing solution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://careers.vmware.com/main/jobs/R2007099?lang=en-us"&gt;Senior Software Engineer - Spring, OSS Observability (Remote US or EMEA) in Multiple Locations | main&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/@gtommee97/rest-api-java-spring-boot-and-mongodb-4dffbcabbaf5"&gt;REST API: Java Spring Boot and MongoDB - Thomas Gleason - Medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/@ChamithKodikara/spring-boot-2-quartz-2-scheduler-integration-a8eaaf850805"&gt;Spring Boot 2, Quartz 2 Scheduler Integration - Chamith Kodikara - Medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/21/learnings-from-the-open-source-community/"&gt;We Asked, You Answered: Our Latest Learnings From the Open Source Community&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I wrote about some of the many features in Spring Boot 2.3 that I love. You might enjoy the thread. &lt;a href="https://threadreaderapp.com/thread/1262952005963780099.html"&gt;It&amp;rsquo;s hard to pick any single thing or theme, but I love the features that make my software even more ready for the cloud&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep318target15/"&gt;JEP 318: Remove the Solaris and SPARC Ports - targeted to JDK 15&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep360target15/"&gt;JEP 360: Sealed Classes (Preview) - targeted to JDK 15&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep385candidate/"&gt;New candidate JEP: Deprecate RMI Activation for Removal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;How do I stay current on the latest topics in #opensource? Check out &lt;a href="https://twitter.com/springcentral/status/1263244022157586432"&gt;this interview on the VMware blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;We are pleased to announce the general availability of &lt;a href="https://twitter.com/springcentral/status/1263231830297317377"&gt;Spring Cloud Data Flow 2.5&lt;/a&gt;, with enhancements in performance, enterprise identity management, starter apps as Java functions, and more. &lt;a href="https://t.co/orsMj9Y932"&gt;https://t.co/orsMj9Y932&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/ryanpmorgan/status/1263227874691002375?s=12"&gt;The Spring team is hiring across the globe!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love that Microsoft referenced Spring Cloud &lt;a href="https://twitter.com/brunoborges/status/1263047132618952706"&gt;in this slide on how Microsoft consumes Java&lt;/a&gt; in their Modern Java for &lt;a href="https://mybuild.microsoft.com/sessions/a8f4ac31-c18d-490d-84c3-e69e83ac8926?source=schedule"&gt;cloud developers presentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://t.co/lP8qRu3rN2"&gt;Try free Wavefront for Spring Boot Starter&lt;/a&gt; for your Applications. Get traces, metrics, spanlogs and histograms for free&lt;/li&gt;
+  &lt;li&gt;Let Ben Hale show you how Spring Boot 2.3 simplifies the process of building Docker images for your @springboot apps.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://t.co/Gtypw62SWa"&gt;RabbitMQ 3.8.4 with Erlang 23 compatibility is almost here!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rotnroll666/status/1262418354691805184?s=12"&gt;The backend implementatio for the Apple/Google COVID19 exposure application is built on Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?feature=share&amp;v=hi_zaj3tqec"&gt;The optaplanner Spring Boot started in action.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/05/20/insidejava/"&gt;Announcing Inside.java&lt;/a&gt; - this is a great initiative from the folks at Oracle! I love this. Congrats.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://medium.com/graalvm/graalvm-20-1-7ce7e89f066b"&gt;The new GraalVM release has a &lt;em&gt;ton&lt;/em&gt; of nice, new features in it&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/05/19/jvmcontainerqcon/"&gt;Java in Containers - Part Deux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Getting Started With RSocket: Testing Spring Boot Responders</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/25/getting-started-with-rsocket-testing-spring-boot-responders" />
@@ -147,7 +189,7 @@ assertThat(message.getIndex()).isEqualTo(0);})&#xD;
       <name>Jens Schauder</name>
     </author>
     <id>tag:spring.io,2020-05-15:4074</id>
-    <updated>2020-05-20T16:06:44Z</updated>
+    <updated>2020-05-20T16:06:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;With Spring Data JDBC 2.0, we had to introduce some breaking changes.
 The goal of this article is to help in the migration process.&lt;/p&gt;
@@ -323,7 +365,35 @@ Therefore, it was removed without replacement.&lt;/p&gt;
 interface and for the fully supported databases it ships with a matching implementation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;If you use a different database you&amp;#8217;ll have to&lt;/p&gt;
+&lt;p&gt;Supported databases are:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DB2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HSQLDB&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;H2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MySQL and MariaDB&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Postgres&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL Server&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Oracle support is currently &lt;a href="https://jira.spring.io/browse/DATAJDBC-256"&gt;work in progress&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you use a different database then your application won&amp;#8217;t startup. In that case, you&amp;#8217;ll have to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="olist arabic"&gt;
 &lt;ol class="arabic"&gt;
@@ -541,7 +611,8 @@ Therefore, you should review your event listeners carefully.&lt;/p&gt;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Spring Data JDBC 2.0 (was 1.1 before)&lt;/p&gt;
+&lt;p&gt;Spring Data JDBC 2.0 (was 1.1 before)&lt;br&gt;
+Here&amp;#8217;s the &lt;a href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0"&gt;link to the post that explains migration from Spring Data JDBC 1.1 to 2.0&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Spring Data MongoDB 3.0 (was 2.2 before)&lt;/p&gt;
@@ -1449,41 +1520,6 @@ customer9 has a balance of 108
     <updated>2020-05-07T23:30:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! This week I rant about push-button simple deployments and then talk to our friend and Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, his various contributions to Spring and more.&lt;br/&gt;&lt;!-- A Bootiful Podcast: Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, contributing to Spring and more.--&gt;&lt;/p&gt;
 &lt;iframe title="Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, contributing to Spring and more." src="https://www.podbean.com/media/player/cr5hw-dbb6ff?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Tanzu Observability by Wavefront Spring Boot Starter</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/tanzu-observability-by-wavefront-spring-boot-starter" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-05-07:4060</id>
-    <updated>2020-05-07T17:54:00Z</updated>
-    <content type="html">&lt;p&gt;Spring Boot has a great observability story. With the Actuator, we auto-configure &lt;a href="http://micrometer.io/"&gt;Micrometer&lt;/a&gt;, an application metrics facade that supports numerous monitoring systems. With a few properties, you can start emitting a wide range of metrics out-of-the-box to your favorite monitoring system. And if you need to use distributed tracing, &lt;a href="https://spring.io/projects/spring-cloud-sleuth"&gt;Spring Cloud Sleuth&lt;/a&gt; gets you covered.&lt;/p&gt;
-&lt;p&gt;Tanzu Observability for Wavefront (formerly Wavefront) delivers scalable observability as a service where Spring developers can build analytics-driven dashboards based on multi-sourced data including metrics, traces, histograms, and span logs. &lt;/p&gt;
-&lt;p&gt;The Spring team has been working side-by-side with the Tanzu Observability team on &lt;a href="https://github.com/wavefrontHQ/wavefront-spring-boot"&gt;a starter&lt;/a&gt; for a quick and easy way to get started. The starter also auto-provisions a free, Tanzu Observability account if you don¡¯t already have one . The Tanzu blog has &lt;a href="https://tanzu.vmware.com/content/blog/byo-spring-boot-apps-tanzu-observability-for-free-no-sign-up-needed"&gt;an introduction to using Wavefront with Spring&lt;/a&gt; and a &lt;a href="https://tanzu.vmware.com/content/practitioners-blog/zero-cost-no-sign-up-introducing-tanzu-observability-for-spring-boot-applications"&gt;technical deep-dive&lt;/a&gt;. You can also check out the &lt;a href="https://docs.wavefront.com/wavefront_springboot.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/snicoll/20200507/wavefront.png" alt="Wavefront Dashboard" title="Wavefront Dashboard" /&gt;&lt;/p&gt;
-&lt;p&gt;You can try out this platform by creating a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;: select your favorite build tool, Spring Boot 2.3 and add at least the wavefront entry. You may want to select a web stack although this is not mandatory in any way.&lt;/p&gt;
-&lt;p&gt;Before starting the application, we want to make sure to identify its data later in the Tanzu Observability dashboard. Open &lt;code&gt;application.properties&lt;/code&gt; and add the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;wavefront.application.name=my-demo&#xD;
-wavefront.application.service=test
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you start such an app for the first time, you should see something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;A Wavefront account has been provisioned successfully and the API token has been saved to disk.&#xD;
-&#xD;
-To share this account, make sure the following is added to your configuration:&#xD;
-&#xD;
-	management.metrics.export.wavefront.api-token=xxxx-xxxx-xxxx-xxxx&#xD;
-	management.metrics.export.wavefront.uri=https://wavefront.surf&#xD;
-&#xD;
-Connect to your Wavefront instance using this one-time use link:&#xD;
-https://wavefront.surf/us/example
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An account has been auto-provisioned for you and the necessary configuration has been provided to the auto-configuration in your project. Your new api token has been saved in your home directory and will be reused automatically for any app that¡¯s started on the same machine and user.&lt;/p&gt;
-&lt;p&gt;The single-use login URL is provided every time you start the application. If you don¡¯t have access to the logs of your web application, you can expose the wavefront Actuator endpoint and head over &lt;code&gt;/actuator/wavefront&lt;/code&gt; and you¡¯ll be redirected to your Wavefront dashboard.&lt;/p&gt;
-&lt;p&gt;If you are interested in testing distributed tracing, adding Spring Cloud Sleuth (also available from start.spring.io) lets you emit traces automatically to Wavefront. You can find these in &lt;code&gt;Application &amp;gt; Traces&lt;/code&gt; in your Wavefront dashboard. The Tanzu Observability platform supports other flavors of distributed tracing as well. To learn more about it, check out the &lt;a href="https://docs.wavefront.com/tracing_basics.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The Wavefront Spring Boot starter is in the release candidate phase and we¡¯d love to hear from you. Head over &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;, create a new project with Wavefront and Spring Boot 2.3 and &lt;a href="https://github.com/wavefrontHQ/wavefront-spring-boot/issues"&gt;let us know&lt;/a&gt; if you find any problem.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
