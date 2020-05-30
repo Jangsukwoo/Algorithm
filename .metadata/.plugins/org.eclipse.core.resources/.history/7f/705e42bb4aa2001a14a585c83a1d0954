@@ -1,0 +1,83 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/*
+ * 16:35 시작
+ */
+public class 레이저통신 {
+	static int W,H;
+	static char[][] map;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static boolean[][] visit;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static int endR,endC;
+	public static void main(String[] args) throws IOException {
+		setData();
+		bfs();
+	}
+
+	private static void bfs(){
+		int depth = 0;
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				int[] currentInfo = q.poll();
+				int cr = currentInfo[0];
+				int cc = currentInfo[1];
+				int cd = currentInfo[2];
+				int currentInstall = currentInfo[3];
+				for(int dir=0;dir<4;dir++) {
+					int nr = cr+dr[dir];
+					int nc = cc+dc[dir];
+					if(rangeCheck(nr,nc)) {
+						if(visit[nr][nc]==false && map[nr][nc]!='*'){
+							if(depth==0){//처음이면
+								insertQueue(nr,nc,);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private static boolean rangeCheck(int nr, int nc) {
+		if(nr>=0 && nc<H && nc>=0 && nc<W) return true;
+		return false;
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		W = Integer.parseInt(st.nextToken());
+		H = Integer.parseInt(st.nextToken());
+		map = new char[H][W];
+		visit = new boolean[H][W];
+		boolean flag=false;
+		for(int row=0;row<H;row++) {
+			map[row] = br.readLine().toCharArray();
+			for(int col=0;col<W;col++) {
+				if(map[row][col]=='C' && flag==false) {
+					flag = true;
+					insertQueue(row,col,-1,0);
+				}else if(map[row][col]=='C' && flag) {
+					endR = row;
+					endC = col;
+				}
+			}
+		}
+	}
+
+	private static void insertQueue(int row, int col, int dir, int install) {
+		q.add(new int[] {row,col,-1,0});
+		visit[row][col] = true;
+	}
+}

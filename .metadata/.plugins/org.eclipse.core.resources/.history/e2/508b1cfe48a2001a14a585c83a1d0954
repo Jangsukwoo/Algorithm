@@ -1,0 +1,34 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 16:35 시작
+ */
+public class 레이저통신 {
+	static int W,H;
+	static char[][] map;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static int startR,startC,endR,endC;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		W = Integer.parseInt(st.nextToken());
+		H = Integer.parseInt(st.nextToken());
+		map = new char[H][W];
+		boolean flag=false;
+		for(int row=0;row<H;row++) {
+			map[row] = br.readLine().toCharArray();
+			if()
+		}
+	}
+}

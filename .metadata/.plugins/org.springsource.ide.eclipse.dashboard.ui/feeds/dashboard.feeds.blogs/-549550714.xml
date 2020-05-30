@@ -5,7 +5,520 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-05-27T04:26:08Z</updated>
+  <updated>2020-05-28T23:22:05Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/28/a-bootiful-podcast-dr-malini-bhandaru-on-edgex-and-the-opportunities-for-developers-in-the-iot-space" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-05-28:4086</id>
+    <updated>2020-05-28T23:22:05Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Dr. Malini Bhandaru about EdgeX and the opportunities for developers in the IoT space.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.edgexfoundry.org/"&gt;Edge X&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://fuji-docs.edgexfoundry.org/Ch-GettingStartedDevelopers.html"&gt;Getting started&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.intel.com/content/www/us/en/retail/open-retail-initiative.html"&gt;The Open Retail Initiative&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe title="A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space" src="https://www.podbean.com/media/player/x4a2h-de0a1b?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Security OAuth 2.5.0 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/28/spring-security-oauth-2-5-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2020-05-28:4085</id>
+    <updated>2020-05-28T15:38:44Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce the release of Spring Security OAuth 2.5.0.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="end-of-life-notice"&gt;&lt;a class="anchor" href="#end-of-life-notice"&gt;&lt;/a&gt;&lt;strong&gt;End-of-Life Notice&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The 2.5.0 release is the final minor release.
+See the &lt;a href="https://spring.io/blog/2020/05/07/end-of-life-for-spring-security-oauth"&gt;announcement&lt;/a&gt; for further details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-security-oauth/"&gt;Project Page&lt;/a&gt; |
+&lt;a href="https://github.com/spring-projects/spring-security-oauth/"&gt;GitHub&lt;/a&gt; |
+&lt;a href="https://projects.spring.io/spring-security-oauth/docs/Home.html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security-oauth2"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Fu 0.3.0 and beyond</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/28/spring-fu-0-3-0-and-beyond" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>S?bastien Deleuze</name>
+    </author>
+    <id>tag:spring.io,2020-05-28:4084</id>
+    <updated>2020-05-28T12:46:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I am happy to announce that &lt;a href="https://github.com/spring-projects-experimental/spring-fu/"&gt;Spring Fu&lt;/a&gt; 0.3.0 is available. As a reminder, Spring Fu is an incubator for Spring Boot programmatic configuration using &lt;a href="https://en.wikipedia.org/wiki/Domain-specific_language"&gt;DSLs&lt;/a&gt; in order to configure it explicitly with code in a declarative way, achieving great discoverability thanks to auto-complete.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="jafu-is-back"&gt;&lt;a class="anchor" href="#jafu-is-back"&gt;&lt;/a&gt;JaFu is back!&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This new milestone brings back &lt;a href="https://github.com/spring-projects-experimental/spring-fu/tree/master/jafu"&gt;JaFu&lt;/a&gt; (the Java DSL) in addition to &lt;a href="https://github.com/spring-projects-experimental/spring-fu/tree/master/kofu"&gt;KoFu&lt;/a&gt; (the Kotlin DSL). JaFu was removed in 0.1.0 because at that point, I had not the bandwidth to support both Java and Kotlin DSLs, and in term of API I was not sure that the Java variant was attractive enough to justify such effort, but I have changed my mind for various reasons:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I received a lot of requests to bring it back&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java as a language is moving faster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Getting more control on how configuration is applied is interesting for Java developers as well as Kotlin ones&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Functional approach is naturally very efficient on the JVM and a good fit with &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native"&gt;GraalVM native images&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2 great new contributors have join the team: &lt;a href="https://spring.io/team/aneveu"&gt;Audrey Neveu&lt;/a&gt; with a focus on KoFu and &lt;a href="https://spring.io/team/apoutsma"&gt;Arjen Poutsma&lt;/a&gt; with a focus on JaFu. Welcome to them!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="other-improvements"&gt;&lt;a class="anchor" href="#other-improvements"&gt;&lt;/a&gt;Other improvements&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This new release is also the opportunity for various improvements like a &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;Spring Boot 2.3.0&lt;/a&gt; baseline or API improvements, see the detailed changelog &lt;a href="https://github.com/spring-projects-experimental/spring-fu/milestone/8?closed=1"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Fu 0.3.0 also ships with additional optimizations which enable only the functional Web infrastructure, so on my laptop I get pretty fast startup time on OpenJDK 11: &lt;code&gt;Started Application in 0.673 seconds (JVM running for 0.898)&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="comparing-jafu-and-kofu"&gt;&lt;a class="anchor" href="#comparing-jafu-and-kofu"&gt;&lt;/a&gt;Comparing JaFu and Kofu&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since Spring MVC is now usable in a functional way for both Java and Kotlin, let&amp;#8217;s see what looks like a minimal Spring Boot web application configured with those DSLs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With JaFu:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public class Application {
+
+	public static JafuApplication app = webApplication(a -&amp;gt; a.beans(b -&amp;gt; b
+		.bean(SampleHandler.class)
+		.bean(SampleService.class))
+		.enable(webMvc(w -&amp;gt; w
+			.port(w.profiles().contains("test") ? 8181 : 8080)
+			.router(router -&amp;gt; {
+				SampleHandler handler = w.ref(SampleHandler.class);
+				router
+					.GET("/", handler::hello)
+					.GET("/api", handler::json);
+			}).converters(c -&amp;gt; c
+				.string()
+				.jackson(j -&amp;gt; j.indentOutput(true))))));
+
+	public static void main (String[] args) {
+		app.run(args);
+	}
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With KoFu:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;val app = webApplication {
+	beans {
+		bean&amp;lt;SampleService&amp;gt;()
+		bean&amp;lt;SampleHandler&amp;gt;()
+	}
+	webMvc {
+		port = if (profiles.contains("test")) 8181 else 8080
+		router {
+			val handler = ref&amp;lt;SampleHandler&amp;gt;()
+			GET("/", handler::hello)
+			GET("/api", handler::json)
+		}
+		converters {
+			string()
+			jackson {
+				indentOutput = false
+			}
+		}
+	}
+}
+
+fun main() {
+	app.run()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="configuration-slices"&gt;&lt;a class="anchor" href="#configuration-slices"&gt;&lt;/a&gt;Configuration slices&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The power of this configuration model lies in the fact that you can define your own configuration slices and assemble them as you want. For example, let&amp;#8217;s define 3 configuration slices &lt;code&gt;webConfig&lt;/code&gt;, &lt;code&gt;loggingConfig&lt;/code&gt; and &lt;code&gt;myFeatureConfig&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;val webConfig = configuration {
+    webMvc {
+        // ...
+    }
+}
+
+val loggingConfig = configuration {
+    logging {
+        level = LogLevel.WARN
+    }
+}
+
+val myFeatureConfig = configuration {
+    beans {
+        // ...
+    }
+    cassandra {
+        // ...
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can then use them all for your regular web application:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;val webApp = webApplication {
+    enable(loggingConfig)
+    enable(myFeatureConfig)
+    enable(webConfig)
+}
+
+fun main() {
+    webApp.run()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;But you can also use just a subset for your integration tests for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;@Test
+fun `My feature integration test`() {
+    val testApp = application {
+        enable(loggingConfig)
+        enable(myFeatureConfig)
+    }
+    // ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id="roadmap" class="sect0"&gt;&lt;a class="anchor" href="#roadmap"&gt;&lt;/a&gt;Roadmap&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In term of roadmap, the next &lt;a href="https://github.com/spring-projects-experimental/spring-fu/milestone/10"&gt;0.4.0 milestone&lt;/a&gt; will focus on:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Replacing the &lt;a href="https://github.com/spring-projects-experimental/spring-fu/tree/master/autoconfigure-adapter"&gt;autoconfigure-adapter&lt;/a&gt; module by leveraging &lt;a href="https://github.com/spring-projects-experimental/spring-init/"&gt;spring-init&lt;/a&gt;, an experimental project  created by &lt;a href="https://spring.io/team/dsyer"&gt;Dave Syer&lt;/a&gt; and &lt;a href="https://spring.io/team/aclement"&gt;Andy Clement&lt;/a&gt; which automatically converts Spring Boot auto-configurations to functional bean registration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GraalVM native support without reflection configuration (depends on &lt;a href="https://github.com/oracle/graal/issues/2500"&gt;oracle/graal#2500&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Refined DSL extensibility&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scale-to-zero application sample with JaFu, GraalVM native and &lt;a href="https://knative.dev/"&gt;Knative&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Leverage &lt;a href="https://github.com/spring-projects/spring-framework/milestone/222"&gt;Spring Framework 5.3 M1&lt;/a&gt; to remove by default &lt;a href="https://github.com/spring-projects/spring-framework/issues/25151"&gt;XML&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-framework/issues/25153"&gt;SpEL&lt;/a&gt; support&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Security support via &lt;a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#kotlin-config"&gt;Spring Security 5.3 official Kotlin DSL&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As usual, feedback is welcome. Be aware that we have for now mainly a focus on getting the right software design and APIs rather than an extensive coverage of more features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tools 4.6.2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/28/spring-tools-4-6-2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2020-05-28:4083</id>
+    <updated>2020-05-28T07:58:47Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.6.2 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: additional check to auto-connect live hovers only when actuators are on the project classpath (&lt;a href="https://github.com/spring-projects/sts4/issues/450"&gt;#450&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: added content assist for keys that exist in YAML and properties files (&lt;a href="https://github.com/spring-projects/sts4/issues/427"&gt;#427&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: Yaml editor gives error when using @..@ placeholders (&lt;a href="https://github.com/spring-projects/sts4/issues/190"&gt;#190&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; bugfix: super type hierarchy lookup might fail&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; bugfix: quickly restarting app caused error popup from live hover mechanism to show up&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: early access version of new Spring symbols view&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; performance: fixed several issues that could have caused slowing down source code editing in the Java editor (&lt;a href="https://github.com/spring-projects/sts4/issues/435"&gt;#435&lt;/a&gt;) (&lt;a href="https://github.com/spring-projects/sts4/issues/405"&gt;#405&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: manually registered servlet mapping is missing from live request mapping tab in boot dashboard (&lt;a href="https://github.com/spring-projects/sts4/issues/452"&gt;#452&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: fixed compatibility issue with newer m2e versions that ship with Eclipse 2020-06&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: fixed lots of NPE when scrolling down in live hovers&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode/Theia)&lt;/em&gt; bugfix: Fix null reference when no JVM was found - contributed by &lt;a href="https://github.com/tfriem"&gt;@tfriem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; improvement: add support for set-pipeline step (&lt;a href="https://github.com/spring-projects/sts4/issues/464"&gt;#464&lt;/a&gt;) - contributed by &lt;a href="https://github.com/deepakmohanakrishnan1984"&gt;@deepakmohanakrishnan1984&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-05-28-462-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-05-28-462-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.7.0 is scheduled to be released in late June 2020.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>What's new in Spring Data Elasticsearch 4.0</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/05/27/what-s-new-in-spring-data-elasticsearch-4-0" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2020-05-26:4081</id>
+    <updated>2020-05-27T08:03:18Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;em&gt;This article continues our blog post series on &lt;a href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann"&gt;What&amp;#8217;s new in Spring Data Neumann&lt;/a&gt;. Today&amp;#8217;s installment explains New and Noteworthy in Spring Data Elasticsearch. This blog post was written by &lt;a href="https://twitter.com/sothawo"&gt;P.J. Meisch&lt;/a&gt; who maintains the Spring Data Elasticsearch module.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This release addresses more than 140 issues, with more than 30 bugs fixed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Data Elasticsearch now uses Elasticsearch 7, 7.6.2 in particular. Elasticsearch clusters running on 6.x versions are not supported anymore. The &lt;code&gt;ElasticsearchTemplate&lt;/code&gt; class is deprecated as it uses the &lt;code&gt;TransportClient&lt;/code&gt; to access Elasticsearch, which itself is deprecated since Elasticsearch version 7.+
+Users should switch to &lt;code&gt;ElasticsearchRestTemplate&lt;/code&gt; or &lt;code&gt;ReactiveElasticsearchTemplate&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In general, this release ships with several changes that may require several updates to your code and domain model. You can find the entire migration guide in the &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#elasticsearch-migration-guide-3.2-4.0"&gt;reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="improved-object-mapping-and-entity-definitions"&gt;&lt;a class="anchor" href="#improved-object-mapping-and-entity-definitions"&gt;&lt;/a&gt;Improved object mapping and entity definitions&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A change under the hood was that the mapping between an entity to the JSON document that elasticsearch needs was switched from using Jackson to the &lt;code&gt;MappingElasticsearchConverter&lt;/code&gt;. Now it is possible to define custom names for properties and even different date formats for time-related properties without the problems that used to show up in the previous
+versions. The MappingElasticsearchConverter not only converts entities but is also used when building queries and processing search results. By this the mapping and conversion is consistently applied to the whole storage and search process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;@Field&lt;/code&gt; annotation now supports nearly all of the types that can be used in Elasticsearch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Document(indexName = "person", type = "dummy")
+public class Person implements Persistable&amp;lt;Long&amp;gt; {
+
+    @Nullable @Id
+    private Long id;
+
+    @Nullable @Field(value = "last-name", type = FieldType.Text, fielddata = true)
+    private String lastName;      &lt;b class="conum"&gt;(1)&lt;/b&gt;
+
+    @Nullable @Field(name = "birth-date", type = FieldType.Date, format = DateFormat.basic_date)
+    private LocalDate birthDate;  &lt;b class="conum"&gt;(2)&lt;/b&gt;
+
+    @CreatedDate
+    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
+    private Instant created;      &lt;b class="conum"&gt;(3)&lt;/b&gt;
+
+    // other properties, getter, setter
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="colist arabic"&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;in Elasticsearch this field will be named &lt;em&gt;last-name&lt;/em&gt;, this mapping is handled transparently&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a property for a date without time information&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;another property this time with full date and time information&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="new-return-types"&gt;&lt;a class="anchor" href="#new-return-types"&gt;&lt;/a&gt;New return types&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;As Elasticsearch not only returns the found entities in search results but a lot of additional information as well, new classes are introduced to provide this information, the most important being:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SearchHit&amp;lt;T&amp;gt;&lt;/code&gt; contains the entity and information like the &lt;em&gt;score&lt;/em&gt;, &lt;em&gt;sortvalues&lt;/em&gt;, &lt;em&gt;highlight fields&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SearchHits&amp;lt;T&amp;gt;&lt;/code&gt; contains the &lt;em&gt;maxScore&lt;/em&gt; of a search, returned &lt;em&gt;aggregations&lt;/em&gt;, the &lt;em&gt;totalCount&lt;/em&gt;, and the list of &lt;code&gt;SearchHit&amp;lt;T&amp;gt;&lt;/code&gt; elements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These are returned from the calls to the &lt;code&gt;(Reactive)ElasticsearchOperations&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To use them with repository methods they just need to be defined as the return type (repositories also support paged requests).
+As it is now possible to access highlight values in the &lt;code&gt;SearchHit&lt;/code&gt;,  repository methods can now be configured for highlights like shown in the first method:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Highlight(fields = {@HighlightField(name = "firstName")})
+List&amp;lt;SearchHit&amp;lt;Person&amp;gt;&amp;gt; findByFirstName(String firstName);
+
+Stream&amp;lt;SearchHit&amp;lt;Person&amp;gt;&amp;gt; findByBirthDateAfter(LocalDate date);
+
+SearchHits&amp;lt;Person&amp;gt; findByLastName(String lastName);
+
+SearchPage&amp;lt;Person&amp;gt; searchByLastName(String name, Pageable pageable);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Of course it is still possible to retrieve just the entity by defining the return type as &lt;code&gt;List&amp;lt;Person&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="additional-configuration-options"&gt;&lt;a class="anchor" href="#additional-configuration-options"&gt;&lt;/a&gt;Additional configuration options&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Both the reactive and the non-reactive client can be configured with additional parameters&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SSL support optionally with a custom &lt;code&gt;SSLContext&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Proxy support&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;custom header supplier to dynamically provide headers for each request sent to the cluster&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;pathPrefix&lt;/em&gt; for cases where the Elasticsearch cluster is behind some Loadbalancer or dispatcher&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="entity-callbacks-and-auditing"&gt;&lt;a class="anchor" href="#entity-callbacks-and-auditing"&gt;&lt;/a&gt;Entity callbacks and Auditing&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It now is possible to define Entity callbacks, the followig table shows the supported callbacks:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class="tableblock frame-all grid-all stretch"&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 25%;"&gt;
+&lt;col style="width: 25%;"&gt;
+&lt;col style="width: 50%;"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class="tableblock halign-left valign-top"&gt;Callback&lt;/th&gt;
+&lt;th class="tableblock halign-left valign-top"&gt;Method&lt;/th&gt;
+&lt;th class="tableblock halign-left valign-top"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveBeforeConvertCallback&lt;br&gt;
+BeforeConvertCallback&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onBeforeConvert(T,&lt;br&gt;
+IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked before a domain object is converted to &lt;code&gt;Document&lt;/code&gt;.&lt;br&gt;
+Can return the &lt;code&gt;entity&lt;/code&gt; or a modified entity which then will be converted.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAfterConvertCallback&lt;br&gt;
+AfterConvertCallback&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onAfterConvert(T,&lt;br&gt;
+Document, IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked after a domain object is converted from &lt;code&gt;Document&lt;/code&gt;&lt;br&gt;
+on reading result data from Elasticsearch.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAuditingEntityCallback&lt;br&gt;
+AuditingEntityCallback&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onBeforeConvert(Object,&lt;br&gt;
+IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Marks an auditable entity &lt;em&gt;created&lt;/em&gt; or &lt;em&gt;modified&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAfterSaveCallback&lt;br&gt;
+AfterSaveCallback&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;T onAfterSave(T,&lt;br&gt;
+IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked after a domain object is saved.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Built upon the &lt;code&gt;AuditingEntityCallback&lt;/code&gt; is the support for auditing. By implementing &lt;code&gt;Persistable&amp;lt;T&amp;gt;&lt;/code&gt; and adding annotated properties, these values will be automatically maintained for entities stored in Elasticsearch:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Document(indexName = "person")
+public class Person implements Persistable&amp;lt;Long&amp;gt; {
+
+    @Nullable @Id
+    private Long id;
+
+    @CreatedDate
+    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
+    private Instant created;
+
+    @Nullable @CreatedBy
+    private String createdBy;
+
+    @LastModifiedDate
+    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
+    private Instant lastModified;
+
+    @Nullable @LastModifiedBy
+    private String lastModifiedBy;
+
+    @Nullable
+    public Long getId() { return id; }
+
+    @Override
+    public boolean isNew() { return id == null || (createdBy == null &amp;amp;&amp;amp; created == null); }
+
+    // other properties, getter, setter...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - May 26th, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/05/27/this-week-in-spring-may-26th-2020" />
@@ -624,7 +1137,8 @@ Here&amp;#8217;s the &lt;a href="https://spring.io/blog/2020/05/20/migrating-to-
 &lt;p&gt;Spring Data Couchbase 4.0 (was 3.2 before)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Spring Data Elasticsearch 4.0 (was 3.2 before)&lt;/p&gt;
+&lt;p&gt;Spring Data Elasticsearch 4.0 (was 3.2 before)&lt;br&gt;
+Learn &lt;a href="https://spring.io/blog/2020/05/27/what-s-new-in-spring-data-elasticsearch-4-0"&gt;What&amp;#8217;s new in Spring Data Elasticsearch&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -1199,327 +1713,6 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
   &lt;li&gt;Spring Data Elasticsearch 4.0 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/4.0.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data Couchbase 4.0 GA - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/4.0.0.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.0.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 12th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/12/this-week-in-spring-may-12th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-12:4068</id>
-    <updated>2020-05-12T11:24:37Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I hope you&amp;rsquo;re all doing well, staying safe, taking socially distant walks every day to get some fresh air and exercise, and so on. I&amp;rsquo;m trying my best to stay sane. We just crossed into month three-under quarantine, having gone into quarantine on 11 March 2020. It&amp;rsquo;s pretty crazy to think about how slowly and quickly time has flown. &lt;/p&gt;
-&lt;p&gt;One of the things that makes me happy? Learning new things. This weekly roundup, &lt;em&gt;This Week in Spring&lt;/em&gt;, has always been a lot of fun for me. It&amp;rsquo;s become even more of a privilege in the age of quarantine, having something to learn and soak up. I &lt;em&gt;know&lt;/em&gt; that most of us will get through this, but I&amp;rsquo;ve been very keen on not letting this time go to waste for me. It&amp;rsquo;s &lt;em&gt;exhausting&lt;/em&gt; to live under this quarantine. It&amp;rsquo;s exhausting to be anxious about things. I completely understand the instinct to want to just stay in bed until it all blows over. It&amp;rsquo;s completely normal. You&amp;rsquo;re allowed to be anxious, to worry, to feel despair. I have those days, too. But, I have found it helpful to try to plan activities with my family and to focus on backburner projects. And I find walking to be helpful. My condo&amp;rsquo;s gym is closed because of the coronavirus pandemic. I&amp;rsquo;ve nonetheless found walking, meditation, or really any fairly mindless activity, supports the process of learning. Anyway, that&amp;rsquo;s just me, friends. &lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;ve had particularly good success in the quarantine, I&amp;rsquo;d love to hear what&amp;rsquo;s worked for you. &lt;a href="http://twitter.com/starbuxman"&gt;Sound off on Twitter (@starbuxman)&lt;/a&gt;. Stay safe and healthy friends. &lt;/p&gt;
-&lt;p&gt;Alright, we&amp;rsquo;ve got a lot to get to so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/12/getting-started-with-rsocket-servers-calling-clients"&gt;Getting Started With RSocket: Servers Calling Clients&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/11/spring-cloud-task-2-3-0-m1-is-now-available"&gt;Spring Cloud Task 2.3.0-M1 is now available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/11/spring-security-oauth2-auto-config-2-3-0-rc1-2-2-7-2-1-14-released"&gt;Spring Security OAuth2 Auto-config 2.3.0.RC1, 2.2.7, 2.1.14 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/a-bootiful-podcast-spring-and-java-community-member-edd-mel-ndez-on-his-journey-to-contributing-to-spring"&gt;A Bootiful Podcast: Spring and Java community member Edd? Mel?ndez on his journey to contributing to Spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/tanzu-observability-by-wavefront-spring-boot-starter"&gt;Tanzu Observability by Wavefront Spring Boot Starter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/spring-security-5-4-0-m1-released"&gt;Spring Security 5.4.0-M1 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/spring-boot-2-2-7-available-now"&gt;Spring Boot 2.2.7 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/spring-boot-2-1-14-available-now"&gt;Spring Boot 2.1.14 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/07/end-of-life-for-spring-security-oauth"&gt;End-of-Life for Spring Security OAuth&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/06/spring-tips-season-7-recap"&gt;Spring Tips: Season 7 Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;On a personal note, I am honored to have in the last week have been made a Google Developer Expert for Kotlin. It&amp;rsquo;s a recognition of my contributions to advocating Kotlin. I am humbled by the recognition. Thank you, community, for loving Kotlin as much as I do. I am already a Java Champion, and now a Google Developer Expert for Kotlin. If it was not obvious, I love the JVM ecosystem. I am one of the few Google GDE&amp;rsquo;s on Kotlin on the server-side, and that&amp;rsquo;s entirely because of the vibrant and wonderful community surrounding Spring and their use of Kotlin.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@jaidenashmore/jwt-authentication-in-spring-boot-webflux-6880c96247c7"&gt;JWT Authentication in Spring Boot Webflux - Jaiden Ashmore - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Take a look at how to add trace, logging, and prometheus monitoring to your application to extract essential metrics &lt;a href="https://youtu.be/JqxMTQ2-VIE"&gt;in Ray Tsang&amp;rsquo;s (@saturnism) #SpringLive session&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Want to learn more about @SpringData? Join @habuma at next week&amp;rsquo;s Denver and Boulder JUG meeting for a talk on Essential Spring!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/developer/"&gt;Have you seen the new VMWare Tanzu Developer center?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Hi, my friends! I&amp;rsquo;ll be doing &lt;a href="https://www.meetup.com/CloudDC/events/270504493/?_xtd=gqFyqTMwMDAxMzY1MKFwpmlwaG9uZQ&amp;from=ref"&gt;a presentation on Tuesday, June 9, 2020 for the Cloud DC meetup - please join me!&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=5d_dy7RVcpE"&gt;Develop Spring Boot Microservices on GCP with Spring Cloud GCP - a great talk by Ray Tsang&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this part &lt;a href="https://twitter.com/springcentral/status/1258854443409387524"&gt;of the SpringOne Platform 2019 keynote&lt;/a&gt;: &amp;quot;Originally [Netflix&amp;rsquo;s Java] libraries and frameworks were built in-house. I&amp;rsquo;m very proud to say, as of early 2019, we&amp;rsquo;ve moved our platform almost entirely over to Spring Boot.¡± -Taylor Wicksell, Senior Software Engineer Netflix&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://piotrminkowski.com/2020/03/10/best-practices-for-microservices-on-kubernetes/"&gt;Best Practices For Microservices on Kubernetes ? Piotr&amp;rsquo;s TechBlog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;What you can expect at #SpringOne? Find out and &lt;a href="https://t.co/xX8RBAmxwb"&gt;sign up here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/spring_io/status/1255057313926393857"&gt;Spring I/O on Twitter: &amp;quot;Our main conference has been postponed to October, but that¡¯s too far away! &#x1f4e3; Announcing SPRING I/O BRIDGE, a one-day free virtual event for the Spring community. &#x1f5d3;15th May @ 9am CEST &#x1f449; Register here: https://t.co/vxJT3b&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/swlh/how-to-visualize-a-spring-integration-graph-with-neo4j-61927ba5bb5a"&gt;How to visualize a Spring Integration graph with Neo4j?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/reactive-arch-rsocket-spring-cloud/?itm_campaign=rightbar_v2&amp;itm_source=infoq&amp;itm_medium=presentations_link&amp;itm_content=link_text"&gt;Reactive Architectures with RSocket and Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out this &lt;a href="https://github.com/mmanciop/instana-springboot-starter"&gt;Spring Boot Starter for monitoring your Spring apps with Instana.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/G2cSiOf2IP"&gt;Tanzu Observability for Wavefront&lt;/a&gt; delivers scalable observability as a service where Spring developers can build analytics-driven dashboards based on multi-sourced data including metrics, traces, histograms, and span logs.&lt;/li&gt;
-  &lt;li&gt;We couldn¡¯t go on tour but we¡¯re still bringing the best cloud native Java content. Join us as we kick off the #SpringOneTour virtually. &lt;a href="https://t.co/wCZ0gdJtls"&gt;Sign up here for free&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/07/how-the-open-source-community-around-kubernetes-flourished/"&gt;How the Open Source Community Around Kubernetes Flourished&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is super cool - a Spring Initializr for Alibaba Cloud and Alibab&amp;rsquo;s OSS: &lt;a href="http://start.aliyun.com"&gt;http://start.aliyun.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.codecentric.de/en/2020/05/spring-boot-graalvm/"&gt;Running Spring Boot apps as GraalVM Native Images - codecentric AG Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/BaLJe0WcHz"&gt;It&amp;rsquo;s the EOL for Spring Security OAuth&lt;/a&gt;. (This refers to the separate standalone project called Spring Security OAuth, &lt;em&gt;not&lt;/em&gt; to the integration for OAuth in Spring Security 5 and later.)&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;&lt;a href="https://t.co/hSB5rBtbry"&gt;A spotlight on Text Blocks by @BrianGoetz. (via @InfoQ)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Servers Calling Clients</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/12/getting-started-with-rsocket-servers-calling-clients" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-05-11:4065</id>
-    <updated>2020-05-12T04:30:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Reading Time: about 7 minutes.&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;Coding Time: about 20 minutes.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;ve been following my &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;series&lt;/a&gt; on &lt;a href="https://rsocket.io"&gt;RSocket&lt;/a&gt;, you&amp;rsquo;ve heard me refer to &amp;ldquo;clients and servers&amp;rdquo; many times. But, with RSocket, the line between client and server is &lt;em&gt;blurry&lt;/em&gt;. With Rsocket, servers can send messages to clients, and clients can respond to these requests in the same way a server would.&lt;/p&gt;
-&lt;p&gt;In fact, the &lt;a href="http://rsocket.io/docs/Protocol#terminology"&gt;RSocket docs&lt;/a&gt; don&amp;rsquo;t use the terms &amp;lsquo;client&amp;rsquo; or &amp;lsquo;server.&amp;rsquo; The docs use the terms &amp;lsquo;requester&amp;rsquo; and &amp;lsquo;responder&amp;rsquo; instead. In RSocket, any component can act as a requester, and any component can act as a responder or even both at the same time. In RSocket, all this back-and-forth communication between requesters and responders takes place over a single &amp;lsquo;bi-directional&amp;rsquo; connection.&lt;/p&gt;
-&lt;p&gt;Today, you&amp;rsquo;re going to take advantage of these features by programming your rsocket-client to respond to requests coming from the server. In the server-side code, you&amp;rsquo;ll listen out for client connection events, and when a connection event happens, you&amp;rsquo;ll store the new client in a list of connected clients. You&amp;rsquo;ll also ask every client to stream telemetry messages back to the server for as long as their connection is alive. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If you&amp;rsquo;ve been following the &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;series&lt;/a&gt;, you can code along by following the directions below. The code is also available to download from &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
-&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#step-1-update-spring-boot-and-rsocket" class="anchor" name="step-1-update-spring-boot-and-rsocket"&gt;&lt;/a&gt;Step 1: Update Spring Boot and RSocket&lt;/h2&gt;
-&lt;p&gt;First, some housekeeping. &lt;a href="https://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt; and the &lt;a href="https://github.com/rsocket/rsocket-java"&gt;RSocket Java&lt;/a&gt; library were both updated recently. These updates include the usual round of bug fixes, enhancements, and deprecations, so it&amp;rsquo;s in our interest to upgrade. &lt;/p&gt;
-&lt;p&gt;Working in the &lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt; section of the Maven &lt;code&gt;pom.xml&lt;/code&gt;, change the &lt;code&gt;spring-boot-starter-parent&lt;/code&gt; to version &lt;code&gt;2.3.0.RELEASE&lt;/code&gt; as shown below. You&amp;rsquo;ll need to do this twice, as you have two separate projects ? &lt;code&gt;rsocket-client&lt;/code&gt; and &lt;code&gt;rsocket-server&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;parent&amp;gt;&#xD;
-  &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
-  &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;2.3.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
-  &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;&#xD;
-&amp;lt;/parent&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To refresh your code, run the following command in the root folder of both projects:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;./mvnw clean compile
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now you can move on to the coding task.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-2-add-a-request-response-message-handler-to-the-client" class="anchor" name="step-2-add-a-request-response-message-handler-to-the-client"&gt;&lt;/a&gt;Step 2: Add A Request-Response Message Handler To The Client&lt;/h2&gt;
-&lt;p&gt;The client needs to be able to respond to messages coming from the server. In the &lt;code&gt;rsocket-client&lt;/code&gt; project&amp;rsquo;s &lt;code&gt;RSocketShellClient.java&lt;/code&gt;, add a new inner class called &lt;code&gt;ClientHandler&lt;/code&gt; as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
-class ClientHandler {&#xD;
- &#xD;
- @MessageMapping(&amp;quot;client-status&amp;quot;)&#xD;
- public Flux&amp;lt;String&amp;gt; statusUpdate(String status) {&#xD;
-   log.info(&amp;quot;Connection {}&amp;quot;, status);&#xD;
-   return Flux.interval(Duration.ofSeconds(5)).map(index -&amp;gt; String.valueOf(Runtime.getRuntime().freeMemory()));&#xD;
- }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This class contains a single method called &lt;code&gt;statusUpdate()&lt;/code&gt; decorated with a &lt;code&gt;@MessageMapping&lt;/code&gt; annotation like the ones in the &lt;code&gt;rsocket-server&lt;/code&gt; project. The client uses this class and this method to capture and respond to requests coming in from the server. The response itself is a stream of messages. Every 5 seconds, the client tells the server its current free memory. Think of this as client telemetry data.&lt;/p&gt;
-&lt;p&gt;For this to work, you must &amp;lsquo;register&amp;rsquo; this class with your RSocket connection. You&amp;rsquo;ll do this in the next section.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-3-register-the-clienthandler-in-the-client-s-constructor" class="anchor" name="step-3-register-the-clienthandler-in-the-client-s-constructor"&gt;&lt;/a&gt;Step 3: Register The ClientHandler In The Client¡¯s Constructor&lt;/h2&gt;
-&lt;p&gt;Before the client can respond to messages coming from the server, it must register the &lt;code&gt;ClientHandler&lt;/code&gt; with the RSocket connection. The revised constructor code is listed below. Notice the change to the constructor&amp;rsquo;s method signature to add the &lt;code&gt;RSocketStrategies&lt;/code&gt; variable. Spring supplies this variable to your constructor. Replace your old constructor code, with the new code listed below.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;public RSocketShellClient(RSocketRequester.Builder rsocketRequesterBuilder, RSocketStrategies strategies) {&#xD;
- &#xD;
- // (1)&#xD;
- String client = UUID.randomUUID().toString();&#xD;
- log.info(&amp;quot;Connecting using client ID: {}&amp;quot;, client);&#xD;
-  &#xD;
- // (2)&#xD;
- SocketAcceptor responder = RSocketMessageHandler.responder(strategies, new ClientHandler());&#xD;
-  &#xD;
- // (3) &#xD;
- this.rsocketRequester = rsocketRequesterBuilder&#xD;
- .setupRoute(&amp;quot;shell-client&amp;quot;)&#xD;
- .setupData(client)&#xD;
- .rsocketStrategies(strategies)&#xD;
- .rsocketConnector(connector -&amp;gt; connector.acceptor(responder))&#xD;
- .connectTcp(&amp;quot;localhost&amp;quot;, 7000)&#xD;
- .block();&#xD;
-  &#xD;
- // (4)&#xD;
- this.rsocketRequester.rsocket()&#xD;
- .onClose()&#xD;
- .doOnError(error -&amp;gt; log.warn(&amp;quot;Connection CLOSED&amp;quot;))&#xD;
- .doFinally(consumer -&amp;gt; log.info(&amp;quot;Client DISCONNECTED&amp;quot;))&#xD;
- .subscribe();&#xD;
- }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the code above, you first generate and store a unique ID that identifies this client instance (1). Next, you create a new &lt;code&gt;SocketAcceptor&lt;/code&gt; using the RSocket &lt;code&gt;strategies&lt;/code&gt; plus a new &lt;code&gt;ClientHandler&lt;/code&gt; instance (2). Then use the &lt;code&gt;RSocketRequesterBuilder&lt;/code&gt; to register the new &lt;code&gt;SocketAcceptor&lt;/code&gt; (3). And finally, make sure that disconnection is handled gracefully by handling the RSocket &lt;code&gt;onClose()&lt;/code&gt; events (4). &lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s it for the client-side code. Let&amp;rsquo;s move on to the server-side changes.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-4-remember-clients-on-the-server" class="anchor" name="step-4-remember-clients-on-the-server"&gt;&lt;/a&gt;Step 4: Remember Clients On The Server&lt;/h2&gt;
-&lt;p&gt;The first thing to do in the &lt;code&gt;rsocket-server&lt;/code&gt; project is to create a collection of &lt;code&gt;RSocketRequester&lt;/code&gt; clients by adding a class-level variable to the &lt;code&gt;RSocketController.java&lt;/code&gt; class as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;private final List&amp;lt;RSocketRequester&amp;gt; CLIENTS = new ArrayList&amp;lt;&amp;gt;();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, add a connection handler by adding a new method like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;  @ConnectMapping(&amp;quot;shell-client&amp;quot;)&#xD;
- void connectShellClientAndAskForTelemetry&#xD;
-(RSocketRequester requester, @Payload String client) {&#xD;
- // The code for the method will go HERE&#xD;
- }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;@ConnectMapping&lt;/code&gt; annotation lets you listen to client connection events as they happen. Using this event, you can schedule two pieces of work. The first is to add each new client to the &lt;code&gt;CLIENTS&lt;/code&gt; list. The second is to call out to each client and start their telemetry streams. &lt;/p&gt;
-&lt;p&gt;Add the following code to the method you just created:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;requester.rsocket()&#xD;
-        .onClose() // (1)&#xD;
-        .doFirst(() -&amp;gt; { &#xD;
-            log.info(&amp;quot;Client: {} CONNECTED.&amp;quot;, client);&#xD;
-            CLIENTS.add(requester); // (2)&#xD;
-        })&#xD;
-        .doOnError(error -&amp;gt; { &#xD;
-            log.warn(&amp;quot;Channel to client {} CLOSED&amp;quot;, client); // (3)&#xD;
-        })&#xD;
-        .doFinally(consumer -&amp;gt; { &#xD;
-            CLIENTS.remove(requester);&#xD;
-            log.info(&amp;quot;Client {} DISCONNECTED&amp;quot;, client); // (4)&#xD;
-        })&#xD;
-        .subscribe();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first thing to notice is the call to the &lt;code&gt;requester.rsocket().onClose()&lt;/code&gt; method (1). This method returns a reactive &lt;code&gt;Mono&lt;/code&gt; object, which contains all the callbacks you need. &lt;/p&gt;
-&lt;p&gt;The mono&amp;rsquo;s &lt;code&gt;doFirst()&lt;/code&gt; method gets called &lt;em&gt;before&lt;/em&gt; any calls to &lt;code&gt;subscribe()&lt;/code&gt;, but after the initial creation of the mono. Use this method to add the client&amp;rsquo;s &lt;code&gt;requester&lt;/code&gt; object to the &lt;code&gt;CLIENTS&lt;/code&gt; list (2). &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;This code might feel counter-intuitive ? calling &lt;code&gt;onClose()&lt;/code&gt; while a client&amp;rsquo;s connecting and then using the resulting mono to store a reference to the new client. Sometimes, event-driven API&amp;rsquo;s can feel a bit odd. But think of it as the mono for this RSocket connection sending you an &amp;ldquo;I&amp;rsquo;m alive&amp;rdquo; event. You&amp;rsquo;re using that creation event to trigger the storage of each client&amp;rsquo;s reference in the list.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;RSocket calls the mono&amp;rsquo;s &lt;code&gt;doOnError()&lt;/code&gt; method whenever there is a problem with the connection. This includes situations where the client has chosen to close the connection. You can use the &lt;code&gt;error&lt;/code&gt; variable provided to decide what action to take. In the code above, the error simply gets logged as a warning (3).&lt;/p&gt;
-&lt;p&gt;The mono&amp;rsquo;s &lt;code&gt;doFinally()&lt;/code&gt; method is triggered when the RSocket connection has closed. This method is the ideal place to run the code that removes the client from the list &lt;code&gt;CLIENTS&lt;/code&gt; (4).&lt;/p&gt;
-&lt;p&gt;Finally, &lt;code&gt;subscribe()&lt;/code&gt; activates the reactive code you&amp;rsquo;ve added to the mono and signals that you&amp;rsquo;re ready to process the events.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-5-ask-for-free-memory-readings-from-clients" class="anchor" name="step-5-ask-for-free-memory-readings-from-clients"&gt;&lt;/a&gt;Step 5: Ask For Free Memory Readings From Clients&lt;/h2&gt;
-&lt;p&gt;As each client connects, request a stream of telemetry readings. To do this, working once more in the &lt;code&gt;connectShellClientAndAskForTelemetry()&lt;/code&gt; method, you need to send a request to the &lt;code&gt;client-status&lt;/code&gt; message handler you added earlier. The code for this is as follows: &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;requester.route(&amp;quot;client-status&amp;quot;)&#xD;
-        .data(&amp;quot;OPEN&amp;quot;)&#xD;
-        .retrieveFlux(String.class)&#xD;
-        .doOnNext(s -&amp;gt; log.info(&amp;quot;Client: {} Free Memory: {}.&amp;quot;,client,s))&#xD;
-        .subscribe();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Using the &lt;code&gt;requester&lt;/code&gt;, target the route &lt;code&gt;&amp;quot;client-status&amp;quot;&lt;/code&gt;. Send the string &lt;code&gt;&amp;quot;OPEN&amp;quot;&lt;/code&gt; as the message data, and retrieve a &lt;code&gt;Flux&lt;/code&gt; of type &lt;code&gt;String&lt;/code&gt;. Each string that arrives contains the client&amp;rsquo;s current free memory reading. Log this reading to the console. Finally, don&amp;rsquo;t forget to &lt;code&gt;subscribe()&lt;/code&gt; to activate your reactive code. &lt;/p&gt;&lt;h2&gt;&lt;a href="#step-6-build-and-run-the-rsocket-server" class="anchor" name="step-6-build-and-run-the-rsocket-server"&gt;&lt;/a&gt;Step 6: Build And Run The RSocket Server&lt;/h2&gt;
-&lt;p&gt;It&amp;rsquo;s time to test your code. Open a terminal window and move to the &lt;code&gt;rsocket-server&lt;/code&gt; directory and run the server as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The server starts up on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-7-build-and-run-the-rsocket-client" class="anchor" name="step-7-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 7: Build And Run The RSocket Client&lt;/h2&gt;
-&lt;p&gt;Open a &lt;em&gt;second&lt;/em&gt; terminal window and move to the &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the client as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#how-it-works" class="anchor" name="how-it-works"&gt;&lt;/a&gt;How it Works&lt;/h2&gt;
-&lt;p&gt;Once booted, you&amp;rsquo;ll notice that both the client and the server components have new log entries in the console. In the &lt;code&gt;rsocket-client&lt;/code&gt; window, you&amp;rsquo;ll see log entries showing the unique ID of the client ? in the form of a UUID ? and an &lt;code&gt;&amp;quot;OPEN&amp;quot;&lt;/code&gt; connection status as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;Connecting using client ID: 0acc1c60-4bc4-444d-bb82-eb6b510f4168&#xD;
-Connection OPEN&#xD;
-Started RsocketShellClientApplication in 1.516 seconds (JVM running for 1.814)&#xD;
-shell:&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Wait at least 10 seconds and then type &lt;code&gt;exit&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt. The rsocket-client now disconnects from the server and shuts down.&lt;/p&gt;
-&lt;p&gt;Now switch to the &lt;code&gt;rsocket-server&lt;/code&gt; window. The log entries look something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint txt"&gt;Started RsocketServerApplication in 0.945 seconds (JVM running for 1.248)&#xD;
-Client: 0acc1c60-4bc4-444d-bb82-eb6b510f4168 CONNECTED.&#xD;
-Client: 0acc1c60-4bc4-444d-bb82-eb6b510f4168 Free Memory: 211317712.&#xD;
-Channel to client 0acc1c60-4bc4-444d-bb82-eb6b510f4168 CLOSED&#xD;
-Client 0acc1c60-4bc4-444d-bb82-eb6b510f4168 DISCONNECTED
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As the client connects, it&amp;rsquo;s added to the list of clients, and the console prints its client ID and the status &amp;ldquo;CONNECTED&amp;rdquo;. Then, every 5 seconds, the log shows the client&amp;rsquo;s current &amp;lsquo;free memory&amp;rsquo; reading. Finally, as the client disconnects, it&amp;rsquo;s RSocket channel&amp;rsquo;s status becomes &amp;ldquo;CLOSED&amp;rdquo; and the client is &amp;ldquo;DISCONNECTED.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; process by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window.&lt;/p&gt;&lt;h2&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;The ability to call out to clients is very powerful. It¡¯s ideal for all kinds of scenarios, including mobile, internet-of-things, or microservices. And because all this can happen over TCP or WebSockets, you already have all the infrastructure you need without resorting to heavyweight solutions like message brokers. &lt;/p&gt;
-&lt;p&gt;You covered a lot of ground here. You learned how to turn servers into &amp;lsquo;requesters&amp;rsquo; and clients into &amp;lsquo;responders.&amp;rsquo; You discovered how to listen into connection events. You also learned a little bit about how to handle errors and events coming from rsocket connections. And, although in this exercise, you chose &amp;lsquo;request-stream&amp;rsquo; as your server-client communication, you could use any of the four RSocket interaction modes, depending on your needs. &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Task 2.3.0-M1 is now available!</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/11/spring-cloud-task-2-3-0-m1-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Michael Minella</name>
-    </author>
-    <id>tag:spring.io,2020-05-11:4067</id>
-    <updated>2020-05-11T22:26:52Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce that Spring Cloud Task 2.3.0-M1 is now available on Github and the Spring download repository. Many thanks to all of those who contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s New?&lt;/h2&gt;
-&lt;p&gt;Spring Cloud Task 2.3.0-M1 is intended to be the version of the framework aligned with Spring Boot 2.3. Updates from 2.2.x include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Updates to all dependencies.&lt;/li&gt;
-  &lt;li&gt;Support for specifying a &lt;code&gt;PlatformTransactionManager&lt;/code&gt; to be used by Spring Cloud Task.&lt;/li&gt;
-  &lt;li&gt;A starter for singl-step Spring Batch jobs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Let&amp;rsquo;s walk through these updates in more detail.&lt;/p&gt;&lt;h2&gt;&lt;a href="#update-to-all-dependencies" class="anchor" name="update-to-all-dependencies"&gt;&lt;/a&gt;Update to All Dependencies&lt;/h2&gt;
-&lt;p&gt;As stated earlier, this is first milestone release that brings Spring Cloud Task into alignment with Spring Boot 2.3. This includes updating all dependencies to be in alignment with Spring Boot and Spring Cloud.&lt;/p&gt;&lt;h2&gt;&lt;a href="#support-for-specifying-a-code-platformtransactionmanager-code-to-be-used-by-spring-cloud-task" class="anchor" name="support-for-specifying-a-code-platformtransactionmanager-code-to-be-used-by-spring-cloud-task"&gt;&lt;/a&gt;Support for specifying a &lt;code&gt;PlatformTransactionManager&lt;/code&gt; to be used by Spring Cloud Task&lt;/h2&gt;
-&lt;p&gt;When using more than one &lt;code&gt;DataSource&lt;/code&gt;, Spring Cloud Task provides the ability to specify which &lt;code&gt;DataSource&lt;/code&gt; is to be used by the framework&amp;rsquo;s &lt;code&gt;TaskRepository&lt;/code&gt;. However, previously, there was no easy way to configure which &lt;code&gt;PlatformTransactionManager&lt;/code&gt; to use. This release now exposes updates to allow specific configuration of a &lt;code&gt;PlatformTransactionManager&lt;/code&gt; for the framework to use.&lt;/p&gt;&lt;h2&gt;&lt;a href="#starter-for-single-step-batch-jobs" class="anchor" name="starter-for-single-step-batch-jobs"&gt;&lt;/a&gt;Starter for Single-step Batch Jobs&lt;/h2&gt;
-&lt;p&gt;One area where we are expanding Spring Cloud Task&amp;rsquo;s functionality for 2.3 is the addition of a starter that will let users configure a single-step Spring Batch job through properties alone. This release includes the capabilities to configure a job through properties that can read and write from a flat file through properties. Let&amp;rsquo;s take a look at an example of how this would work.&lt;/p&gt;
-&lt;p&gt;To use this starter, first add it to your Spring Boot based project as a dependency, as shown below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;...&#xD;
-&amp;lt;dependency&amp;gt;&#xD;
-	&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-	&amp;lt;artifactId&amp;gt;spring-cloud-starter-single-step-batch-job&amp;lt;/artifactId&amp;gt;&#xD;
-	&amp;lt;version&amp;gt;2.3.0-M1&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;&#xD;
-...&#xD;
-&amp;lt;repository&amp;gt;&#xD;
-	&amp;lt;id&amp;gt;Spring Milestone&amp;lt;/id&amp;gt;&#xD;
-	&amp;lt;url&amp;gt;https://repo.spring.io/lib-milestones-local/&amp;lt;/url&amp;gt;&#xD;
-&amp;lt;/repository&amp;gt;&#xD;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;...&#xD;
-maven { url &amp;#39;https://repo.spring.io/lib-milestones-local/&amp;#39; }&#xD;
-...&#xD;
-compile &amp;quot;org.springframework.cloud:spring-cloud-starter-single-step-batch-job:2.3.0-M1&amp;quot;&#xD;
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With the starter added to your project (assuming you&amp;rsquo;ve already created the Spring Boot main class with the &lt;code&gt;@EnableBatchProcessing&lt;/code&gt; annotation on it), the only other work you need to do is to configure your job. Say you have the following input file:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;customer1,100&#xD;
-customer2,101&#xD;
-customer3,102&#xD;
-customer4,103&#xD;
-customer5,104&#xD;
-customer6,105&#xD;
-customer7,106&#xD;
-customer8,107&#xD;
-customer9,108
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the above input file, the first column in the CSV is a customer name, and the second column is the balance. If we wanted to configure a job to read in the file and reformat it by reversing the columns, we would create an &lt;code&gt;application.yml&lt;/code&gt;, as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;spring:&#xD;
-  batch:&#xD;
-      job:&#xD;
-        jobName: sample&#xD;
-        stepName: step1&#xD;
-        chunkSize: 5&#xD;
-        flatfilereader:&#xD;
-          delimited: true&#xD;
-          names: customer,number&#xD;
-          name: itemReader&#xD;
-          resource: /input.csv&#xD;
-        flatfilewriter:&#xD;
-          formatted: true&#xD;
-          format: &amp;quot;%s has a balance of %s&amp;quot;&#xD;
-          name: itemWriter&#xD;
-          names: customer,number&#xD;
-          resource: file:///tmp/output.txt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you are familiar with Spring Batch, this configuration should look familiar to you. We begin by defining the name of the job and the name of the step within it. We also provide a chunk size to indicate how many records per transaction to process. From there, we configure an &lt;code&gt;ItemReader&lt;/code&gt; and &lt;code&gt;ItemWriter&lt;/code&gt; (&lt;code&gt;FlatFileItemReader&lt;/code&gt; and &lt;code&gt;FlatFileItemWriter&lt;/code&gt;, respectively) for our step to use. If we want, we can also implement an &lt;code&gt;ItemProcessor&lt;/code&gt;, and the starter will autowire it into our step.&lt;/p&gt;
-&lt;p&gt;With the above configured, our batch job will read our file in and write it out in the requested format. The output from the sample file above would look something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;customer1 has a balance of 100&#xD;
-customer2 has a balance of 101&#xD;
-customer3 has a balance of 102&#xD;
-customer4 has a balance of 103&#xD;
-customer5 has a balance of 104&#xD;
-customer6 has a balance of 105&#xD;
-customer7 has a balance of 106&#xD;
-customer8 has a balance of 107&#xD;
-customer9 has a balance of 108
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This milestone includes auto-configuration for the &lt;code&gt;FlatFileItemReader&lt;/code&gt; and &lt;code&gt;FlatFileItemWriter&lt;/code&gt;. For our GA release (scheduled later this year), we expect to have the following all available as auto-configured options:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;FlatFileItemReader&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;FlatFileItemWriter&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;JdbcPagingItemReader&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;JdbcCursorItemReader&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;JdbcBatchItemWriter&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;KafkaItemReader&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;KafkaItemWriter&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;AmqpItemReader&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;AmqpItemWriter&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If there are others you feel should be on the list, be sure to let us know on Github!&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What Do You Think?&lt;/h2&gt;
-&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://github.com/spring-cloud/spring-cloud-task/issues"&gt;Github&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-cloud-task"&gt;StackOverflow&lt;/a&gt;, &lt;a href="https://gitter.im/spring-cloud/spring-cloud-task"&gt;Gitter&lt;/a&gt;, or directly on Twitter &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-task/"&gt;Spring Cloud Task Home&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-task"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-cloud-task/docs/2.3.0-M1/reference/htmlsingle/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security OAuth2 Auto-config 2.3.0.RC1, 2.2.7, 2.1.14 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/11/spring-security-oauth2-auto-config-2-3-0-rc1-2-2-7-2-1-14-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2020-05-11:4066</id>
-    <updated>2020-05-11T18:57:08Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security OAuth2 Auto-config 2.3.0.RC1 (&lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot/releases/tag/2.3.0.RC1"&gt;release notes&lt;/a&gt;), 2.2.7.RELEASE (&lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot/releases/tag/2.2.7.RELEASE"&gt;release notes&lt;/a&gt;), 2.1.14.RELEASE (&lt;a href="https://github.com/spring-projects/spring-security-oauth2-boot/releases/tag/2.1.14.RELEASE"&gt;release notes&lt;/a&gt;). The release delivers dependency updates to be compatible with the last versions of Spring Boot. Users are encouraged to update to the latest patch release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Spring and Java community member Edd? Mel?ndez on his journey to contributing to Spring</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/07/a-bootiful-podcast-spring-and-java-community-member-edd-mel-ndez-on-his-journey-to-contributing-to-spring" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-08:4064</id>
-    <updated>2020-05-07T23:30:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! This week I rant about push-button simple deployments and then talk to our friend and Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, his various contributions to Spring and more.&lt;br/&gt;&lt;!-- A Bootiful Podcast: Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, contributing to Spring and more.--&gt;&lt;/p&gt;
-&lt;iframe title="Spring and Java community member Edd? Mel?ndez about working in open-source, his journey to Spring and its community, contributing to Spring and more." src="https://www.podbean.com/media/player/cr5hw-dbb6ff?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,0 +1,22 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 16:35 시작
+ */
+public class 레이저통신 {
+	static int W,H;
+	static char[][] map;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	public static void main(String[] args) {
+		setData();
+	}
+
+	private static void setData() {
+		// TODO Auto-generated method stub
+		
+	}
+}
