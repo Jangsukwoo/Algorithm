@@ -1,0 +1,11 @@
+package 공채대비;
+/*
+ * 10:25~
+ * 
+ */
+public class 연결 {
+	static int N,M;
+	public static void main(String[] args) {
+		
+	}
+}

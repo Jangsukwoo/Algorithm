@@ -1,0 +1,42 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 10:25~
+ * 
+ */
+public class 연결 {
+	static int N,M;
+	static int A1R,A1C;
+	static int A2R,A2C;
+	static int B1R,B1C;
+	static int B2R,B2C;
+	static int[][] circuit;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException{
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		circuit = new int[N][M];
+		st = new StringTokenizer(br.readLine());
+		A1C = Integer.parseInt(st.nextToken());
+		A1R = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		A2C = Integer.parseInt(st.nextToken());
+		A2R = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		B1C = Integer.parseInt(st.nextToken());
+		B1R = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		B1C = Integer.parseInt(st.nextToken());
+		B1R = Integer.parseInt(st.nextToken());
+	}
+}

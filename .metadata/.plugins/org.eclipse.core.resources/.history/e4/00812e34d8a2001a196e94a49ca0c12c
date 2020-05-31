@@ -1,0 +1,17 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 9:45 ~
+ */
+public class 낚시왕 {
+	static int R,C,M;//겪자크기,상어 수
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) {
+
+	}
+}

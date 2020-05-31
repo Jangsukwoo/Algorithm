@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 
 /*
  * 16:35 시작
+ * 
+ * 숫자로 방문 판단
  */
 public class 레이저통신 {
 	static int W,H;

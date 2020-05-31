@@ -1,8 +1,0 @@
-package CodingTest;
-
-public class 플그인턴3 {
-    public int[] solution(int total_sp, int[][] skills) {
-        int[] answer = {};
-        return answer;
-    }
-}
