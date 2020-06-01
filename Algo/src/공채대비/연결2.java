@@ -40,6 +40,7 @@ public class 연결2 {
 	static int[] dc = {0,1,0,-1};
 	static Queue<int[]> q;
 	static int end;
+	static boolean flag;
 	static int answer = Integer.MAX_VALUE;
 	static int[][] dist;
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -106,15 +107,16 @@ public class 연결2 {
 					Blength = cd;
 					end++;
 					find = true;
-					continue;
+					return;
 				}
 				for(int dir=0;dir<4;dir++){
 					int nr = cr+dr[dir];
 					int nc = cc+dc[dir];
 					if(rangeCheck(nr,nc)) {
-						if(visitB[nr][nc]==false && visitA[nr][nc]==false){
+						if(visitB[nr][nc]==false && circuit[nr][nc]!=3){
 							q.add(new int[] {nr,nc,length});
 							visitB[nr][nc] = true;
+							circuit[nr][nc] = 2;
 						}
 					}
 				}
@@ -196,14 +198,39 @@ public class 연결2 {
 			}
 			length--;
 		}
+		
+		circuit[A1R][A1C] = 3;
+		flag = false;
+		Alength=0;
+		dfs(A1R,A1C,0);
+		view2();
 		for(int row=0;row<=N;row++) {
 			for(int col=0;col<=M;col++) {
 				if(circuit[row][col]==1) {
-					visitA[row][col] = true;
-				}else visitA[row][col] = false;
+					circuit[row][col] = 0;
+				}
 			}
 		}
 		view2();
+	}
+	private static void dfs(int cr, int cc, int depth){
+		if(flag) return;
+		if(cr==A2R && cc==A2C){
+			Alength=depth;
+			flag = true;
+			return;
+		}
+		for(int dir=0;dir<4;dir++){
+			int nr = cr+dr[dir];
+			int nc = cc+dc[dir];
+			if(flag) continue;
+			if(rangeCheck(nr, nc)){
+				if(circuit[nr][nc]==1 && circuit[nr][nc]!=2){
+					circuit[nr][nc] = 3;
+					dfs(nr,nc,depth+1);
+				}
+			}
+		}
 	}
 	private static boolean rangeCheck(int nr, int nc) {
 		if(nr>=0 && nr<=N && nc>=0 && nc<=M) return true;
@@ -211,8 +238,9 @@ public class 연결2 {
 	}
 	private static void setData() throws IOException{
 		st = new StringTokenizer(br.readLine());
-		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
+		
 		st = new StringTokenizer(br.readLine());
 		A1C = Integer.parseInt(st.nextToken());
 		A1R = Integer.parseInt(st.nextToken());
