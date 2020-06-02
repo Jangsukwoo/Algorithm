@@ -1,0 +1,15 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 19:58~
+ */
+public class 두동전 {
+	static int R,C;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+	public static void main(String[] args) {
+
+	}
+}
