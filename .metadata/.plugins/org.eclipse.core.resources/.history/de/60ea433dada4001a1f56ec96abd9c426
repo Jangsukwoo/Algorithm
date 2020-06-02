@@ -24,7 +24,6 @@ import java.util.StringTokenizer;
 5 4
 
 dfs로 선 긋기 
-ㅠ ㅠ
  */
 public class 연결2 {
 	static int N,M;
@@ -52,14 +51,23 @@ public class 연결2 {
 		setData();
 		
 		connectA();
+		
+		
+		view2();
+		System.out.println("처음결과"+answer);
+		
 		reverseConnectA();
 		connectB();
 		
 		
+		view2();
+		System.out.println("처음결과"+answer);
 		
 		if(end>0) {
 			answer = Math.min(answer,Alength+Blength);
 			end=0;
+			view2();
+			System.out.println("처음결과"+answer);
 		}
 		
 		
@@ -74,6 +82,8 @@ public class 연결2 {
 		
 		if(end>0) {
 			answer = Math.min(answer,Alength+Blength);
+			view2();
+			System.out.println("두번째"+answer);
 		}
 		if(answer!=Integer.MAX_VALUE) System.out.println(answer);
 		else System.out.println("IMPOSSIBLE");
@@ -259,6 +269,7 @@ public class 연결2 {
 			if(rangeCheck(nr, nc)){
 				if(circuit[nr][nc]==1 && circuit[nr][nc]!=2){
 					circuit[nr][nc] = 3;
+					view2();
 					dfs(nr,nc,depth+1);
 				}
 			}

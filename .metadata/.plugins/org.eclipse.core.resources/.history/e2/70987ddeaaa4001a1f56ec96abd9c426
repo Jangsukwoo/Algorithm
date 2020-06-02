@@ -24,7 +24,6 @@ import java.util.StringTokenizer;
 5 4
 
 dfs로 선 긋기 
-ㅠ ㅠ
  */
 public class 연결2 {
 	static int N,M;
@@ -55,11 +54,11 @@ public class 연결2 {
 		reverseConnectA();
 		connectB();
 		
-		
-		
 		if(end>0) {
 			answer = Math.min(answer,Alength+Blength);
 			end=0;
+			view2();
+			System.out.println("처음결과"+answer);
 		}
 		
 		
@@ -74,6 +73,8 @@ public class 연결2 {
 		
 		if(end>0) {
 			answer = Math.min(answer,Alength+Blength);
+			view2();
+			System.out.println("두번째"+answer);
 		}
 		if(answer!=Integer.MAX_VALUE) System.out.println(answer);
 		else System.out.println("IMPOSSIBLE");
@@ -206,36 +207,7 @@ public class 연결2 {
 		flag = false;
 		Alength=0;
 		dfs(A1R,A1C,0);
-		
-		
-		q.clear();
-		q.add(new int[] {A2R,A2C});
-		visit = new boolean[N+1][M+1];
-		visit[A2R][A2C] = true;
-		int depth=0;
-		while(!q.isEmpty()){
-			int size = q.size();
-			for(int i=0;i<size;i++) {
-				int[] current = q.poll();
-				int cr = current[0];
-				int cc = current[1];
-				if(cr==A1R && cc== A1C) {
-					Alength = Math.min(depth,Alength);
-					break;
-				}
-				for(int dir=0;dir<4;dir++){
-					int nr = cr+dr[dir];
-					int nc = cc+dc[dir];
-					if(rangeCheck(nr, nc)){
-						if(circuit[nr][nc]==3 && visit[nr][nc] ==false) {
-							q.add(new int[] {nr,nc});
-							visit[nr][nc] = true;
-						}
-					}
-				}
-			}
-			depth++;
-		}
+		view2();
 		for(int row=0;row<=N;row++) {
 			for(int col=0;col<=M;col++) {
 				if(circuit[row][col]==1) {
@@ -243,10 +215,10 @@ public class 연결2 {
 				}
 			}
 		}
+		view2();
 	}
 	private static void dfs(int cr, int cc, int depth){
 		if(flag) return;
-		
 		if(cr==A2R && cc==A2C){
 			Alength=depth;
 			flag = true;

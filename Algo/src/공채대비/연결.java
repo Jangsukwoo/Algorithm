@@ -83,65 +83,37 @@ public class 연결 {
 		int length = 1;
 		boolean find = false;
 		insertQueue(B1R,B1C,0);
-		if(circuit[B1R][B1C]==1 || circuit[B2R][B2C]==1){//그냥 연결
-			while(!q.isEmpty()){
-				int size = q.size();
-				for(int i=0;i<size;i++){
-					int[] current = q.poll();
-					int cr = current[0];
-					int cc = current[1];
-					int cd = current[2];
-					if(cr==B2R && cc==B2C){
-						Blength = cd;
-						end++;
-						//System.out.println("b연결");
-						//System.out.println(Blength);
-						find = true;
-						continue;
-					}
-					for(int dir=0;dir<4;dir++){
-						int nr = cr+dr[dir];
-						int nc = cc+dc[dir];
-						if(rangeCheck(nr,nc)) {
-							if(visit[nr][nc]==false){
-								insertQueue(nr,nc,length);
-							}
+		while(!q.isEmpty()){
+			int size = q.size();
+			for(int i=0;i<size;i++){
+				int[] current = q.poll();
+				int cr = current[0];
+				int cc = current[1];
+				int cd = current[2];
+				if(cr==B2R && cc==B2C){
+					Blength = cd;
+					end++;
+					//System.out.println("b연결");
+					//System.out.println(Blength);
+					find = true;
+					continue;
+				}
+				for(int dir=0;dir<4;dir++){
+					int nr = cr+dr[dir];
+					int nc = cc+dc[dir];
+					if(rangeCheck(nr,nc)) {
+						if(visit[nr][nc]==false){
+							insertQueue(nr,nc,length);
 						}
 					}
 				}
-				length++;
-				if(length>Blength && find) break;
 			}
-		}else {//피해서 연결 
-			while(!q.isEmpty()){
-				int size = q.size();
-				for(int i=0;i<size;i++){
-					int[] current = q.poll();
-					int cr = current[0];
-					int cc = current[1];
-					int cd = current[2];
-					if(cr==B2R && cc==B2C){
-						Blength = cd;
-						end++;
-						//System.out.println(Blength);
-						find = true;
-						continue;
-					}
-					for(int dir=0;dir<4;dir++){
-						int nr = cr+dr[dir];
-						int nc = cc+dc[dir];
-						if(rangeCheck(nr,nc)) {
-							if(visit[nr][nc]==false && circuit[nr][nc]!=1){
-								insertQueue(nr,nc,length);
-							}
-						}
-					}
-				}
-				length++;
-				if(length>Blength && find) break;
-			}
+			length++;
+			if(length>Blength && find) break;
 		}
+
 	}
+
 	private static void reverseConnectA() {
 		q.clear();
 		visit = new boolean[N+1][M+1];

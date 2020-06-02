@@ -24,7 +24,6 @@ import java.util.StringTokenizer;
 5 4
 
 dfs로 선 긋기 
-ㅠ ㅠ
  */
 public class 연결2 {
 	static int N,M;
