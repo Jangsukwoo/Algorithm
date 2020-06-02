@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 
 /*
  * 19:58~
- * 21:00
  */
 public class 두동전 {
 	static int R,C;
@@ -19,6 +18,7 @@ public class 두동전 {
 	static char[][] map;
 	static int[] dr = {-1,0,1,0};
 	static int[] dc = {0,1,0,-1};
+	static boolean[][][][] visit;
 	static Queue<CoinInformation> q = new LinkedList<CoinInformation>();
 	static int answer;
 	static class CoinInformation{
@@ -35,6 +35,16 @@ public class 두동전 {
 		}
 		 
 	}
+	
+	/*
+6 4
+####
+#o..
+#.##
+####
+#o..
+####
+	 */
 	public static void main(String[] args) throws IOException {
 		setData();
 		bfs();
