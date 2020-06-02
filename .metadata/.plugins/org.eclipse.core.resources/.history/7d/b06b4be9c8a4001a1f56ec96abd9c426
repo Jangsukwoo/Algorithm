@@ -109,6 +109,7 @@ public class 두동전 {
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
 		map = new char[R][C];
+		visit = new boolean[R][C][R][C];
 		boolean flag = false;
 		int coin1r = 0,coin1c = 0,coin2r = 0,coin2c = 0;
 		for(int row=0;row<R;row++) {
