@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
     <fullyQualifiedTypeName name="CodingStudyHW.아기상어.BabyShark"/>
     <fullyQualifiedTypeName name="sun.util.calendar.CalendarUtils"/>
     <fullyQualifiedTypeName name="CodingStudyHW.파이프옮기기2.Pipe"/>
     <fullyQualifiedTypeName name="CodingStudyHW.미생물격리.Microorganism"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.transforms.InvalidTransformException"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="CodingStudy.나무재테크.Tree"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.lang.Deprecated"/>
     <fullyQualifiedTypeName name="CodingStudy.성곽.Direction"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.asm.amd64.AMD64Assembler.SSEOp"/>
@@ -41,11 +38,9 @@
     <fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.security.acl.Owner"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="공채대비.연구소3.Virus"/>
     <fullyQualifiedTypeName name="공채대비.주사위윷놀이.Horse"/>
     <fullyQualifiedTypeName name="CodingAcademy.단어퍼즐.Trie"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="javax.crypto.spec.IvParameterSpec"/>
     <fullyQualifiedTypeName name="공채대비.고돌이와고소미"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
@@ -54,10 +49,15 @@
     <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Method"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="공채대비.낚시왕.Shark"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
