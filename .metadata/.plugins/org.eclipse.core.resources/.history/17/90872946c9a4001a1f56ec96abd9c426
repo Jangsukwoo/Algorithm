@@ -1,0 +1,29 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ * 21:02~
+ * 
+ */
+public class 벽부수고이동하기2 {
+	static int R,C,K;
+	static char[][] map;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		for(int row=0;row<R;row++) {
+			
+		}
+	}
+}

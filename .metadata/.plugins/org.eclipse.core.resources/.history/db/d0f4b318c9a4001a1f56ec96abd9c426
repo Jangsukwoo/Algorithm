@@ -1,0 +1,17 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 21:02~
+ * 
+ */
+public class 벽부수고이동하기2 {
+	static int R,C,K;
+	static char[][] map;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+
+	}
+}
