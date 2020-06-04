@@ -1,0 +1,12 @@
+package 공채대비;
+/*
+ * 18:43~
+ * F(A) A에 물을 가득 채움
+ * E(A) A의 물을 모두 버림
+ */
+public class 물통 {
+
+	public static void main(String[] args) {
+		
+	}
+}

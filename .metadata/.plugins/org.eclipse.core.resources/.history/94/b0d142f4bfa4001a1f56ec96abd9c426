@@ -1,8 +1,0 @@
-package 공채대비;
-
-public class 두동전 {
-	static int R,C;
-	public static void main(String[] args) {
-
-	}
-}
