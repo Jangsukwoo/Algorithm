@@ -1,0 +1,8 @@
+package 공채대비;
+
+public class 숫자고르기 {
+	static int[] child;
+	public static void main(String[] args) {
+
+	}
+}
