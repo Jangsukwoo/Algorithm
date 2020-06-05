@@ -69,6 +69,7 @@ public class 숫자만들기 {
 					nPr(depth+1,oper+"/");
 					break;
 				}
+				
 				operatorCnt[i]++;
 			}
 		}

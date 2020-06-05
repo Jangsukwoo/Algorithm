@@ -35,6 +35,7 @@ public class 숫자만들기 {
 	static int max = Integer.MIN_VALUE;
 	static int min = Integer.MAX_VALUE;
 	static HashSet<String> set;
+	static String operator = "";
 	public static void main(String[] args) throws NumberFormatException, IOException{
 		int T = Integer.parseInt(br.readLine());
 		for(int testcase=1;testcase<=T;testcase++){
@@ -52,24 +53,8 @@ public class 숫자만들기 {
 			}
 			return;
 		}
-		for(int i=0;i<4;i++) {
-			if(operatorCnt[i]>0) {
-				operatorCnt[i]--;
-				switch (i) {
-				case 0:
-					nPr(depth+1,oper+"+");
-					break;
-				case 1:
-					nPr(depth+1,oper+"-");
-					break;
-				case 2:
-					nPr(depth+1,oper+"*");
-					break;
-				case 3:
-					nPr(depth+1,oper+"/");
-					break;
-				}
-				operatorCnt[i]++;
+		for(int i=0;i<(N-1);i++) {
+				nPr(depth+1,oper+operator.charAt(i));
 			}
 		}
 	}
@@ -102,7 +87,9 @@ public class 숫자만들기 {
 		N = Integer.parseInt(br.readLine());
 		operatorCnt = new int[4];
 		set= new HashSet<String>();
+		operator ="";
 		numbers = new int[N];
+		visit = new boolean[N-1];
 		max = Integer.MIN_VALUE;
 		min = Integer.MAX_VALUE;
 		st = new StringTokenizer(br.readLine());
@@ -115,7 +102,20 @@ public class 숫자만들기 {
 		}
 		for(int i=0;i<4;i++) {
 			for(int j=0;j<operatorCnt[i];j++) {
-
+				switch (i) {
+				case 0:
+					operator+="+";
+					break;
+				case 1:
+					operator+="-";
+					break;
+				case 2:
+					operator+="*";
+					break;
+				case 3:
+					operator+="/";
+					break;
+				}
 			}
 		}
 	}
