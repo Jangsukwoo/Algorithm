@@ -1,7 +1,0 @@
-package 공채대비;
-
-public class 물통 {
-	public static void main(String[] args) {
-		
-	}
-}

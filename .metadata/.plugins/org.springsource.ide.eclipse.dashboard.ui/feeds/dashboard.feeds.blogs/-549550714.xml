@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-06-03T02:06:01Z</updated>
+  <updated>2020-06-05T03:16:39Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Kubernetes Release SIG Tim Pepper</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/05/a-bootiful-podcast-kubernetes-release-sig-tim-pepper" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-06-05:4090</id>
+    <updated>2020-06-05T03:16:39Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/pithomit"&gt;Tim Pepper (@pythomit)&lt;/a&gt; from VMware&amp;rsquo;s Open Source Technology Center about Kubernetes and his role on the Kubernetes Release SIG. &lt;/p&gt;
+&lt;p&gt;&lt;iframe title="Kubernetes contributor and Kubernetes Release SIG Chair Tim Pepper" src="https://www.podbean.com/media/player/ihsc7-ded228?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - June 2, 2020</title>
     <link rel="alternate" href="https://spring.io/blog/2020/06/03/this-week-in-spring-june-2-2020" />
@@ -1927,171 +1940,6 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-session/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-session/docs/2.3.0.RELEASE/reference/html5/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-session"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Introduction to Azure Spring Cloud with IntelliJ IDEA</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/13/introduction-to-azure-spring-cloud-with-intellij-idea" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Andy Clement</name>
-    </author>
-    <id>tag:spring.io,2020-05-01:4052</id>
-    <updated>2020-05-13T14:43:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/services/spring-cloud/"&gt;Azure Spring Cloud&lt;/a&gt;?is a new Platform as a Service offering for Microservices apps. It is a fully managed service jointly built, operated, and supported by VMware and Microsoft to simplify spring boot based microservices development and management. In this blog, we will walk through how you can accelerate your development with Azure Spring Cloud and IntelliJ IDEA.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="requirements"&gt;&lt;a class="anchor" href="#requirements"&gt;&lt;/a&gt;Requirements&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You will need a few things prepared before following the upcoming sections:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.jetbrains.com/idea/download/#section=windows"&gt;IntelliJ IDEA, Community/Ultimate Edition, version 2020.1/2019.3 installed&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/free/"&gt;An Azure Account - click here to create a free trial account&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in"&gt;Azure Toolkit for IntelliJ installed and signed-in&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal#provision-a-service-instance-on-the-azure-portal"&gt;An Azure Spring Cloud instance provisioned&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="prepare-your-spring-application"&gt;&lt;a class="anchor" href="#prepare-your-spring-application"&gt;&lt;/a&gt;Prepare your Spring application&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;First, let&amp;#8217;s start from a simple &lt;a href="https://github.com/spring-guides/gs-spring-boot"&gt;sample Spring Boot project&lt;/a&gt;, one of the &lt;a href="https://spring.io/guides"&gt;Spring Getting Started Guides&lt;/a&gt;.  We need to clone the repository:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;git clone git@github.com:spring-guides/gs-spring-boot.git&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;And import the final form of the project, contained in the &lt;code&gt;complete&lt;/code&gt; subfolder of that clone:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency.png" alt="Imported Project"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To enable Azure Spring Cloud features (discovery service, config server, etc) a set of &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment"&gt;dependencies&lt;/a&gt; is needed. The Azure Toolkit for IntelliJ will help with that. Right-click on the project and select &lt;strong&gt;Azure &amp;#8594; Add Azure Spring Cloud dependency&lt;/strong&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency-2.png" alt="Add Azure Spring Cloud dependency"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A set of dependencies will be added to the &lt;code&gt;pom.xml&lt;/code&gt;. The version is calculated based on existing dependencies in the pom, but feel free to edit them if you know what you are doing. Then, click &lt;strong&gt;Import Changes&lt;/strong&gt; on the bottom right to resolve dependencies automatically.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/add-dependency-3.png" alt="Resolving adding dependencies"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Except the &lt;code&gt;spring-cloud-starter-azure-spring-cloud-client&lt;/code&gt;, the dependencies added are not hard requirements. They are recommended to enable the full Azure Spring Cloud feature set including Eureka, Config Server, monitoring, distributed tracing, etc. Let¡¯s add the discovery client annotation in your &lt;code&gt;Application.java&lt;/code&gt;, so that the application will be discoverable via a Eureka server once deployed to Azure Spring Cloud.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/add-annotation.png" alt="Add annotation"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="deploy-your-app-to-azure-spring-cloud"&gt;&lt;a class="anchor" href="#deploy-your-app-to-azure-spring-cloud"&gt;&lt;/a&gt;Deploy your app to Azure Spring Cloud&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now, let¡¯s go ahead and deploy the app to Azure Spring Cloud. With the help of Azure Toolkit for IntelliJ IDEA, this will be super easy. Right-click on the project and select &lt;strong&gt;Azure &amp;#8594; Deploy to Azure Spring Cloud&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy.png" alt="App deployment"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the pop-up configuration window, select the right subscription and Azure Spring Cloud instance you have provisioned; create a new app named &lt;strong&gt;demo&lt;/strong&gt; and enable &lt;strong&gt;Public Endpoint&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy-config.png" alt="Configuring deployment" width="626" height="725"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Click &lt;strong&gt;Run&lt;/strong&gt; and you will see the app built and deployed in a few minutes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/deploy-log.png" alt="Configuring deployment"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The application should immediately be accessible via the URL printed to the console. Congratulations for your first Azure Spring Cloud app deployed from IntelliJ IDEA!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/access-endpoint.png" alt="Accessing the application"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="view-your-app-status-and-logs"&gt;&lt;a class="anchor" href="#view-your-app-status-and-logs"&gt;&lt;/a&gt;View your app status and logs&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To manage your Spring Cloud app, navigate to your Azure Explorer panel on the left and find the app just deployed under Spring Cloud nodes. Right-click on the app, select &lt;strong&gt;Show Properties&lt;/strong&gt; and you will see the tap show up on the right. Here you can perform common actions like restart/delete/scale/editing JVM options and modifying environment variables. Take a closer look at the Instances details and you can see that the app now has one instance running and registered to Eureka server since the discover status is UP. For further operations, select &lt;strong&gt;Open in Portal&lt;/strong&gt; in the right-click menu to explore more.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/app-properties.png" alt="App properties"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It¡¯s also super easy to stream the logs to your IDEA. Right-click on your app in the explorer, select &lt;strong&gt;Streaming Logs&lt;/strong&gt;, select the instance in the pop-up windows and then you will see logs showing up soon. For a full logs analysis experience, explore Azure Spring Cloud¡¯s seamless &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/diagnostic-services"&gt;integration&lt;/a&gt; with Azure Monitor.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://static.spring.io/blog/aclement/20200511/log-stream.png" alt="Log Streaming"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="learn-more-about-java-on-azure"&gt;&lt;a class="anchor" href="#learn-more-about-java-on-azure"&gt;&lt;/a&gt;Learn more about Java on Azure&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To learn more about Java on Azure, Azure Spring Cloud and Azure tools for Java developers, check out the links below!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/"&gt;Java on Azure Developer Center&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/"&gt;Azure Spring Cloud Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/fundamentals/"&gt;Azure Tools for Java developers&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;And follow for &lt;a href="https://twitter.com/JavaAtMicrosoft"&gt;Twitter&lt;/a&gt; the latest news about Java on Azure.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>

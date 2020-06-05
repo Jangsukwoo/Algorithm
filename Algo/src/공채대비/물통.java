@@ -21,6 +21,8 @@ import java.util.StringTokenizer;
  * 만약  
  * A에 남아있는 물의 양이 B에 남아있는 공간보다 많으면
  * B를 꽉채우고 A에 남김 
+ * 
+ * 19:52
  */
 public class 물통 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
