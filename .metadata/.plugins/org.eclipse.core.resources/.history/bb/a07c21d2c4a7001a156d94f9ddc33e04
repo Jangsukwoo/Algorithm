@@ -1,0 +1,33 @@
+package 공채대비;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 수영장만들기 {
+	static int R,C;
+	static int[][] ground;
+	static int[][] 
+	static int maxHeight = 1;
+	static int minHeight = 9;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		ground =  new int[R][C];
+		for(int row=0;row<R;row++) {
+			char[] line = br.readLine().toCharArray();
+			for(int col=0;col<C;col++) {
+				ground[row][col] = Character.getNumericValue(line[col]);
+				if(ground[row][col]>maxHeight) maxHeight=ground[row][col];
+				if(ground[row][col]<minHeight) minHeight=ground[row][col];
+			}
+		}
+	}
+}
