@@ -1,0 +1,15 @@
+package 공채대비;
+
+public class Monster {
+	/*
+	 * 사냥꾼은 0,0에 위치
+	 * 
+	 */
+	public static void main(String[] args) {
+
+	}
+    public int solution(int[][] monsters, int[][] bullets) {
+        int answer = 0;
+        return answer;
+    }
+}

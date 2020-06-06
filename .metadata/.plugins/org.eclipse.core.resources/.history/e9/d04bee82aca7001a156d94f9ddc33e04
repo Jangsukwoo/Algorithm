@@ -1,0 +1,14 @@
+package 공채대비;
+
+public class Monster {
+	/*
+	 * 
+	 */
+	public static void main(String[] args) {
+
+	}
+    public int solution(int[][] monsters, int[][] bullets) {
+        int answer = 0;
+        return answer;
+    }
+}

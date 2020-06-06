@@ -1,0 +1,13 @@
+package 공채대비;
+
+public class moveMachine {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	public static void main(String[] args) {
+
+	}
+    public int solution(String[] moves) {
+        int answer = 0;
+        return answer;
+    }
+}

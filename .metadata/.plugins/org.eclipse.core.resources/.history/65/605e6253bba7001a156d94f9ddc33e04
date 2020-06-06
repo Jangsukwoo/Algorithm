@@ -1,0 +1,12 @@
+package 공채대비;
+
+public class FactorialZeroTailCount {
+	public static void main(String[] args) {
+		System.out.println(solution(124));
+	}
+
+	private static char[] solution(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

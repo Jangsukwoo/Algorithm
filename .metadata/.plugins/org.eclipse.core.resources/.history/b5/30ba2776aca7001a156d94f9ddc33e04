@@ -1,0 +1,10 @@
+package 공채대비;
+
+public class Monster {
+	/*
+	 * 
+	 */
+	public static void main(String[] args) {
+
+	}
+}
