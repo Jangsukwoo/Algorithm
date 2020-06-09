@@ -5,7 +5,36 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-06-05T03:16:39Z</updated>
+  <updated>2020-06-08T12:18:26Z</updated>
+  <entry>
+    <title>Migrating Spring Boot's Build to Gradle</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/08/migrating-spring-boot-s-build-to-gradle" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2020-06-08:4092</id>
+    <updated>2020-06-08T12:18:26Z</updated>
+    <content type="html">&lt;p&gt;We made a fairly significant change to Spring Boot in 2.3.0.M1. It was the first release of the project to be built with Gradle rather than Maven. A &lt;a href="https://twitter.com/phillip_webb/status/1222943872205983744"&gt;thread on Twitter&lt;/a&gt; about the migration had a number of people asking why we switched and the benefits, if any, that we¡¯d seen. This blog post aims to answer those questions.&lt;/p&gt;
+&lt;p&gt;Each project in the Spring portfolio is run in a fairly autonomous manner. We strive for consistency where our users will see it most ? API design, for example ? but choose the tools that best meet the needs of the project for things that are less visible. One example of this is the build system. A change to the build system affects those that contribute to the project but, if we get things right, it has no effect on users. This has led to a mixture of Maven- and Gradle-based builds. For example, Spring Framework has been built with Gradle since 3.2.0.M1 in 2012, whereas Spring Boot began a year later and Spring Cloud shortly after that, both with Maven-based builds. Unlike Spring Boot, Spring Cloud has no plans to switch as Maven continues to meet their needs. In short, if you take only one thing from this blog post it¡¯s that you should choose whatever tool best meets your project¡¯s needs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#why-did-we-switch" class="anchor" name="why-did-we-switch"&gt;&lt;/a&gt;Why Did We Switch?&lt;/h2&gt;
+&lt;p&gt;The Spring Boot team¡¯s primary reason for considering a switch to Gradle was to reduce the time that it takes to build the project. We were becoming frustrated with the length of the feedback loop when making and testing changes. The time spent waiting for builds to complete was adding to the time taken to fix bugs and implement new features. We¡¯d seen the benefits of Gradle¡¯s incremental and parallel builds in other Spring projects and of &lt;a href="https://twitter.com/ankinson/status/1152850155537862657"&gt;Gradle&amp;rsquo;s build cache in a third-party project&lt;/a&gt;. We hoped we could get similar benefits in Spring Boot¡¯s build.&lt;/p&gt;
+&lt;p&gt;We¡¯d tried in the past to make use of Maven¡¯s support for parallel builds. Our attempts failed due to the complexity of Spring Boot¡¯s build, particularly its use of the Invoker Plugin. We worked around this on CI by splitting the build into four pieces. The main core of the project was built first and then three independent pieces were built in parallel. This arrangement helped but CI builds still took an hour or more. Furthermore, as the split structure was specific to CI builds, it didn¡¯t make developers¡¯ local builds any faster.&lt;/p&gt;
+&lt;p&gt;Gradle has an extensive model of the structure of a build, understanding the inputs and outputs of every task and their interdependencies. The promise of this modelling is that it allows tasks to be run in parallel while also being incremental, cached, or avoided altogether. In other words, Gradle aims to minimise the amount of work that is necessary to build any given change and to perform the work that is necessary in parallel. If we had persevered and extensively restructured Spring Boot¡¯s build, building in parallel may have been possible with Maven. And, if we¡¯d used &lt;a href="https://gradle.com/enterprise"&gt;Gradle Enterprise&lt;/a&gt;¡¯s Maven support, we could have enjoyed the benefits of build caching and avoidance as well. However, to fully enjoy the benefits of all four, we felt that we would have to try switching to Gradle.&lt;/p&gt;&lt;h2&gt;&lt;a href="#how-did-we-switch" class="anchor" name="how-did-we-switch"&gt;&lt;/a&gt;How Did We Switch?&lt;/h2&gt;
+&lt;p&gt;One criticism of Gradle that we¡¯d seen was that it led to builds that were harder to maintain and understand than their Maven-based equivalent. Gradle¡¯s flexibility allowed things to be done in subtly different ways even across modules in the same build. We needed to avoid this if the switch was to be successful. Having shipped four Spring Boot 2.3 milestones, its release candidate and its final release with Gradle, it looks like we have succeeded. We haven¡¯t seen any major build problems in the core team or from any of our other contributors.&lt;/p&gt;
+&lt;p&gt;A key feature of Spring Boot is convention over configuration and we applied this approach to the build too. Following the advice to &lt;a href="https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources"&gt;avoid having imperative logic in &lt;code&gt;build.gradle&lt;/code&gt; files&lt;/a&gt;, we wrote several small plugins that can be found in the project¡¯s &lt;a href="https://github.com/spring-projects/spring-boot/tree/d4c7315369e7e9dce6eb1c77e5f23d1e670247c8/buildSrc"&gt;&lt;code&gt;buildSrc&lt;/code&gt;&lt;/a&gt;. For example, we have a &lt;a href="https://github.com/spring-projects/spring-boot/blob/676ff423dd11b85ddffd72dc866ca2fe08faea1e/buildSrc/src/main/java/org/springframework/boot/build/starters/StarterPlugin.java"&gt;starter plugin&lt;/a&gt; that is applied to every Spring Boot starter module, ensuring that they¡¯re all configured, built, and published consistently. We also have a &lt;a href="https://github.com/spring-projects/spring-boot/blob/d4c7315369e7e9dce6eb1c77e5f23d1e670247c8/buildSrc/src/main/java/org/springframework/boot/build/ConventionsPlugin.java"&gt;conventions plugin&lt;/a&gt; that reacts to other plugins being applied and configures things like source code encoding, the use of the JUnit Platform, and compiling with &lt;code&gt;-parameters&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This approach has led to &lt;code&gt;build.gradle&lt;/code&gt; files that are almost completely declarative. Even though we wrote a number of plugins to apply our conventions and to plug gaps in the Gradle ecosystem, the &lt;a href="https://github.com/spring-projects/spring-boot/commit/ce99db19028b54886ae99c1fd916e613a982b65f#diff-c197962302397baf3a4cc36463dce5ea"&gt;commit that migrated to Gradle&lt;/a&gt; removed almost 9500 lines from the code base.&lt;/p&gt;&lt;h2&gt;&lt;a href="#was-the-switch-beneficial" class="anchor" name="was-the-switch-beneficial"&gt;&lt;/a&gt;Was the Switch Beneficial?&lt;/h2&gt;
+&lt;p&gt;In terms of reducing the project¡¯s build time, migrating the build to Gradle has undoubtedly been a success. As noted above, a full Maven-based build was taking an hour or more, both on CI and on developers¡¯ own machines. Over the last four weeks, the mean successful build time with Gradle has been 9 minutes 22 seconds, as shown in the following screenshot:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.spring.io/blog/wilkinsona/20200608/build-time.png" title="Build performance graph from Gradle Enterprise" /&gt;&lt;/p&gt;
+&lt;p&gt;We publish snapshots from our JDK 8 CI build. Focusing on those, &lt;a href="https://ge.spring.io/scans/trends?list.offset=0&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildOutcome=success&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.rootProjectName=spring-boot-build&amp;search.startTimeMax=1591446038913&amp;search.startTimeMin=1589026838912&amp;search.tags=JDK-1.8&amp;search.tags=ci&amp;search.timeZoneId=Europe/Zurich&amp;trends.section=buildTime&amp;trends.timeResolution=day"&gt;it has succeeded 183 times in the past 4 weeks&lt;/a&gt; with a mean build time of 19 minutes 37 seconds. Looking at successful local builds, we can see that there have been &lt;a href="https://ge.spring.io/scans/trends?list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildOutcome=success&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.rootProjectName=spring-boot-build&amp;search.startTimeMax=1591446038913&amp;search.startTimeMin=1589026838912&amp;search.tags=JDK-1.8&amp;search.tags=local&amp;search.timeZoneId=Europe/Zurich&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;273 successful builds in the past 4 weeks&lt;/a&gt; with a mean build time of 2 minutes 30 seconds.&lt;/p&gt;
+&lt;p&gt;Another benefit that had attracted us to Gradle was the experience that &lt;a href="https://twitter.com/ankinson/status/1152850155537862657"&gt;I had enjoyed&lt;/a&gt; when contributing to Testcontainers. We wanted Spring Boot¡¯s contributors to be able to clone and build the project as quickly as possible as well. Thanks to the remote build cache, a clean checkout can be &lt;a href="https://ge.spring.io/s/q5mis5zsh6x5y/performance/build"&gt;built in 3 minutes&lt;/a&gt;. This includes the time spent to download a large number of dependencies.&lt;/p&gt;
+&lt;p&gt;If you¡¯re interested in more details about the build¡¯s performance, there is lots more data available on our public &lt;a href="https://ge.spring.io/"&gt;Gradle Enterprise instance&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Beyond the performance improvements, we¡¯ve also started looking at some of the other data that¡¯s available. For example, we¡¯ve been aware for a while that we have a number of flaky tests. The build fails more often than we¡¯d like because of them and we can now see that reflected in the &lt;a href="https://ge.spring.io/scans/tests?failures.failureClassification=non_verification&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.relativeStartTime=P7D&amp;search.rootProjectName=spring-boot-build&amp;search.timeZoneId=Europe/Zurich&amp;tests.sortField=FAILED&amp;tests.unstableOnly=true&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;Tests dashboard&lt;/a&gt;. We¡¯ve started using Gradle&amp;rsquo;s flaky test mitigation to identify &lt;a href="https://ge.spring.io/scans/tests?failures.failureClassification=non_verification&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.relativeStartTime=P7D&amp;search.rootProjectName=spring-boot-build&amp;search.tags=CI&amp;search.timeZoneId=Europe/Zurich&amp;tests.sortField=FLAKY&amp;tests.unstableOnly=true&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;any flaky tests occurring on CI&lt;/a&gt; and to help us understand if we¡¯ve successfully resolved or worked around the problems.&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We&amp;rsquo;re really pleased with how the migration went and the decrease in build times that we have seen. CI builds are now taking roughly 20 minutes on average, 3-4 times faster than before. Local builds are taking an average of 2 minutes 30 seconds, which is 20-30 times faster than before.&lt;/p&gt;
+&lt;p&gt;I¡¯d like to take this opportunity to thank the Gradle team for their help during the migration and for generously providing us with a Gradle Enterprise license to use with our open source projects. We¡¯re already using it with Spring Framework, Spring Security, and Spring Boot, with other teams planning to start making use of it for their Gradle- and Maven-based builds.&lt;/p&gt;
+&lt;p&gt;I¡¯d also like to thank the maintainers of various third-party plugins that we¡¯re using. They¡¯ve made suggested changes and merged pull requests to improve support for incremental builds and caching. Without them, we would not have been able to achieve the reduction in build times that we have seen.&lt;/p&gt;
+&lt;p&gt;If you¡¯re considering a migration from Maven to Gradle, I hope that knowing a bit more about the Spring Boot team¡¯s experience is useful. If you¡¯re a happy Maven user, please continue using and supporting the tool that¡¯s working well for you.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Kubernetes Release SIG Tim Pepper</title>
     <link rel="alternate" href="https://spring.io/blog/2020/06/05/a-bootiful-podcast-kubernetes-release-sig-tim-pepper" />
@@ -1905,42 +1934,6 @@ public class Person implements Persistable&amp;lt;Long&amp;gt; {
     <updated>2020-05-14T22:24:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, VMware¡¯s &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to VMware COO &lt;a href="http://twitter.com/Spoonen"&gt;Sanjay Poonen (@spoonen)&lt;/a&gt; about app development, Tanzu, Cloud, Networking, and more.&lt;/p&gt;
 &lt;iframe title="VMware COO Sanjay Poonen" src="https://www.podbean.com/media/player/n9mva-dc7ac0?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session Dragonfruit-RELEASE Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/14/spring-session-dragonfruit-release-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Eleftheria Stein-Kousathana</name>
-    </author>
-    <id>tag:spring.io,2020-05-14:4071</id>
-    <updated>2020-05-14T13:05:40Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community I¡¯m pleased to announce the release of Spring Session &lt;code&gt;Dragonfruit-RELEASE&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;Dragonfruit-RELEASE&lt;/code&gt; release is based on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session core modules &lt;code&gt;2.3.0.RELEASE&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session Data Geode &lt;code&gt;2.3.0.RELEASE&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session Data MongoDB &lt;code&gt;2.3.0.RELEASE&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Additional details of these releases can be found in the &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.3.0.RELEASE"&gt;release notes&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-session/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-session/docs/2.3.0.RELEASE/reference/html5/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-session"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -42,7 +42,7 @@ public class 로봇 {
 				int nr = cr;
 				int nc = cc;
 				if(cr==endR && cc==endC && cd ==endD) {
-					answer = comm;
+					answer = currentCommand;
 					return;
 				}
 				for(int k=1;k<=3;k++) {
@@ -63,7 +63,6 @@ public class 로봇 {
 
 				}
 			}
-			comm++;
 		}
 	}
 
