@@ -1,0 +1,16 @@
+package CodingAcademy;
+
+public class 부분집합구하기 {
+	static int[] set = new int[] {1,2,3};
+	static int answer;
+	public static void main(String[] args) {
+		System.out.println(numSubstes(3,2));
+	}
+	private static int numSubstes(int n, int k) {
+		if(k==0) {
+			return 1;
+		}
+		return 0;
+		
+	}
+}
