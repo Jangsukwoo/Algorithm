@@ -132,7 +132,7 @@
       <name>S?bastien Deleuze</name>
     </author>
     <id>tag:spring.io,2020-06-08:4091</id>
-    <updated>2020-06-10T13:52:53Z</updated>
+    <updated>2020-06-10T13:52:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;I would like to use the opportunity of our &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native"&gt;Spring GraalVM Native&lt;/a&gt; 0.7.0 release to give you a status update about our work on Spring Boot native images.&lt;/p&gt;
 &lt;/div&gt;
@@ -220,7 +220,8 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;The detailed changelog is available &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/milestone/3?closed=1"&gt;here&lt;/a&gt;. There are also other improvements that deserve a deeper dive.&lt;/p&gt;
+&lt;p&gt;You can read the &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/milestone/3?closed=1"&gt;detailed changelog&lt;/a&gt; and the
+&lt;a href="https://repo.spring.io/milestone/org/springframework/experimental/spring-graalvm-native-docs/0.7.0/spring-graalvm-native-docs-0.7.0.zip!/reference/index.html"&gt;documentation&lt;/a&gt;. There are also other improvements that deserve a deeper dive.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="sect2"&gt;
 &lt;h3 id="dedicated-functional-spring-applications-support"&gt;&lt;a class="anchor" href="#dedicated-functional-spring-applications-support"&gt;&lt;/a&gt;Dedicated functional Spring applications support&lt;/h3&gt;
@@ -257,9 +258,8 @@ public class SampleConfiguration {
 
     @Override
     public void initialize(GenericApplicationContext context) {
-        context.registerBean(SampleConfiguration.class);
-        context.registerBean(Foo.class, () -&amp;gt; context.getBean(SampleConfiguration.class).foo());
-        context.registerBean(Bar.class, () -&amp;gt; context.getBean(SampleConfiguration.class).bar(context.getBean(Foo.class)));
+        context.registerBean(Foo.class, () -&amp;gt; new Foo());
+        context.registerBean(Bar.class, () -&amp;gt; new Bar(context.getBean(Foo.class)));
     }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -268,7 +268,7 @@ public class SampleConfiguration {
 &lt;p&gt;An interesting characteristic of such lambda-based configuration mechanism is that it requires no GraalVM native reflection configuration since it is natively understood by GraalVM native compiler, including its capability to remove unused code at build time with a per method/field granularity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Notice that the conversion between &lt;code&gt;@Configuration&lt;/code&gt; to functional configuration could be done at build time automatically, as explored in &lt;a href="https://github.com/spring-projects-experimental/spring-init/"&gt;spring-init&lt;/a&gt; project. This opens the door to benefit from functional configuration at infrastructure level while keep using &lt;code&gt;@Configuration&lt;/code&gt; at programming model level.&lt;/p&gt;
+&lt;p&gt;Notice that the conversion from &lt;code&gt;@Configuration&lt;/code&gt; to functional configuration could be done at build time automatically, as explored in &lt;a href="https://github.com/spring-projects-experimental/spring-init/"&gt;spring-init&lt;/a&gt; project. This opens the door to benefit from functional configuration at infrastructure level while keep using &lt;code&gt;@Configuration&lt;/code&gt; at programming model level.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;That&amp;#8217;s why &lt;code&gt;spring-graalvm-native&lt;/code&gt; now supports a &lt;code&gt;functional&lt;/code&gt; mode in addition to the &lt;code&gt;agent&lt;/code&gt; and &lt;code&gt;feature&lt;/code&gt; ones. You can have a look to &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/tree/master/spring-graalvm-native-samples/jafu"&gt;&lt;code&gt;jafu&lt;/code&gt;&lt;/a&gt; and &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/tree/master/spring-graalvm-native-samples/jafu-webmvc"&gt;&lt;code&gt;jafu-webmvc&lt;/code&gt;&lt;/a&gt; samples to see concrete examples of Spring applications running without GraalVM native reflection configuration.&lt;/p&gt;
@@ -382,6 +382,9 @@ public class SampleConfiguration {
 &lt;p&gt;Experiment around &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/issues/164"&gt;removing the need for reflection configuration&lt;/a&gt; via functional bean registration.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;Better Spring Data support.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/issues/154"&gt;Document Visual Studio Code remote container developer experience&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -404,7 +407,7 @@ public class SampleConfiguration {
 &lt;p&gt;Finally, it is worth mentioning that whilst many of the enhancements are being driven from an intent to create optimal native images, these changes will improve not only the native-image story but also how Spring boot applications run on a regular JVM.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Looking forward to your feedback.&lt;/p&gt;
+&lt;p&gt;If you want to learn more you can read the &lt;a href="https://repo.spring.io/milestone/org/springframework/experimental/spring-graalvm-native-docs/0.7.0/spring-graalvm-native-docs-0.7.0.zip!/reference/index.html"&gt;documentation&lt;/a&gt; in order to try it on a simple project or &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native#play-with-the-samples"&gt;play with the samples&lt;/a&gt;. Looking forward to your feedback.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
