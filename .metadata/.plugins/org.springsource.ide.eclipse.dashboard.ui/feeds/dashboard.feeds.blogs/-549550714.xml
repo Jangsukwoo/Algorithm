@@ -5,7 +5,118 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-06-10T14:07:21Z</updated>
+  <updated>2020-06-12T12:25:55Z</updated>
+  <entry>
+    <title>Upcoming Webinar: Bootiful Observability with Tanzu Wavefront by Josh Long and Sushant Dewan</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/12/upcoming-webinar-bootiful-observability-with-tanzu-wavefront-by-josh-long-and-sushant-dewan" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-06-12:4104</id>
+    <updated>2020-06-12T12:25:55Z</updated>
+    <content type="html">&lt;p&gt;Need better insight into your Spring Boot Applications? Join Spring Developer Advocate &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; and Sushant Dewan in a live webinar conversation on June 24th at 10:00 AM PST.&lt;/p&gt;
+&lt;p&gt;Get Tanzu Observability tips on how to understand the impact of your code on your application with application maps, metrics, distributed traces, histograms, and span logs analytics!&lt;/p&gt;
+&lt;p&gt;Register now &lt;a href="https://tanzu.vmware.com/content/webinars/jun-24-tanzu-observability-tips-for-understanding-your-spring-boot-applications"&gt;for this free, virtual event&lt;/a&gt; you won&amp;rsquo;t want to miss. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.3.1 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/12/spring-boot-2-3-1-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2020-06-12:4103</id>
+    <updated>2020-06-12T06:35:17Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.3.1 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.1.RELEASE"&gt;127 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Kubernetes guru Paul Czarkowski</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/11/a-bootiful-podcast-kubernetes-guru-paul-czarkowski" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-06-11:4102</id>
+    <updated>2020-06-11T21:35:59Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of a Bootiful Podcast. In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Kubernetes guru and colleague &lt;a href="http://twitter.com/pczarkowski"&gt;Paul Czarkowski (@pczarkowski)&lt;/a&gt; about Austin, TX BBQ, Kubernetes and so much more. &lt;/p&gt;
+&lt;iframe title="Kubernetes guru Paul Czarkowski" src="https://www.podbean.com/media/player/rmgrf-df8945-pb?from=share&amp;skin=1&amp;share=1&amp;fonts=Helvetica&amp;download=1&amp;version=1&amp;vjs=1&amp;skin=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.6.0-M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/11/spring-cloud-data-flow-2-6-0-m1-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ilayaperumal Gopinathan</name>
+    </author>
+    <id>tag:spring.io,2020-06-11:4101</id>
+    <updated>2020-06-11T17:40:00Z</updated>
+    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the first milestone release of 2.6.0.&lt;/p&gt;
+&lt;p&gt;This 2.6.0-M1 adds some bug fixes and the following features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;Composed Task Runner as SCDF native module&lt;/strong&gt;&lt;br/&gt; Composed Task Runner is now an integral part of SCDF itself and gets registered implicitly while the users who have the custom composed task runner can still override the native one. This enables us to integrate the composed tasks management within the context of Spring Cloud Data Flow. This change also allowed us to provide some additional user experiences when managing composed tasks. .&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;Improvements in task applications management&lt;/strong&gt;&lt;br/&gt;This milestone added some improvements at the backend such as the ability to uniquely identify the task elements inside the composed task, adding task manifest as part of the last ran task definition, ability to cleanup task related resources as part of task definition cleanup along with the SCDF dashboard changes.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;Liveness/Readiness probes for SCDF/Skipper deployments&lt;/strong&gt;&lt;br/&gt;SCDF/Skipper server Kubernetes deployment configuration files are updated with the liveness/readiness probes which can be customized based on the deployment setup.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;Bundling SCDF/Skipper DB schema files&lt;/strong&gt;&lt;br/&gt;The DDL scripts for all the supported databases are now bundled and available in the classpath. For the database administrators who want to setup the database without the flyway activated schema management, this bundle would come in handy.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the upcoming release, we look forward to add wavefront monitoring for stream/task application metrics and task scheduling on multiple platforms etc.,&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stack Overflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.2.4 available now!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/11/spring-batch-4-2-4-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2020-06-11:4097</id>
+    <updated>2020-06-11T15:58:00Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that Spring Batch 4.2.4 has been released with a number of bug fixes and performance improvements. Please find the complete list of changes in the &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.2.4.RELEASE"&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please note that due to a glitch in the release process, we had to bump the patch version from 4.2.3 to 4.2.4. Please upgrade to version 4.2.4 at your earliest convenience as this is the primary active branch for the moment.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.2.8 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/11/spring-boot-2-2-8-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-06-11:4100</id>
+    <updated>2020-06-11T14:56:10Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.8 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.8.RELEASE"&gt;54 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.1.15 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/11/spring-boot-2-1-15-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-06-11:4098</id>
+    <updated>2020-06-11T11:09:08Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.1.15 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.15.RELEASE"&gt;25 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.15.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud App Broker 1.1.1 released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/06/10/spring-cloud-app-broker-1-1-1-released" />
@@ -148,7 +259,7 @@
 &lt;p&gt;The output is a native executable that contains your application with a subset of the JDK and the dependencies required to run it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;In practice the executable would likely be shipped in an highly optimized container image (&lt;code&gt;FROM scratch&lt;/code&gt; Docker images are  supported) which is good fit with K8s.&lt;/p&gt;
+&lt;p&gt;In practice the executable would likely be shipped in an highly optimized container image (&lt;code&gt;FROM scratch&lt;/code&gt; Docker image is supported) with reduced surface attack which is good fit with Kubernetes.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Startup time is almost instant and peak performance is available immediately, allowing support for scale-to-zero (serverless) applications including for regular Spring Boot web applications.&lt;/p&gt;
@@ -176,7 +287,7 @@
 &lt;p&gt;Build time is very long and build memory consumption is high.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Lower throughput and higher latency.&lt;/p&gt;
+&lt;p&gt;Lower throughput and higher latency (&lt;a href="#comment-4948722189"&gt;more details&lt;/a&gt; ).&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -1229,718 +1340,6 @@ fun `My feature integration test`() {
 &lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-05-28-462-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-05-28-462-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Spring Tools 4.7.0 is scheduled to be released in late June 2020.&lt;/p&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>What's new in Spring Data Elasticsearch 4.0</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/27/what-s-new-in-spring-data-elasticsearch-4-0" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-05-26:4081</id>
-    <updated>2020-05-27T08:03:18Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;This article continues our blog post series on &lt;a href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann"&gt;What&amp;#8217;s new in Spring Data Neumann&lt;/a&gt;. Today&amp;#8217;s installment explains New and Noteworthy in Spring Data Elasticsearch. This blog post was written by &lt;a href="https://twitter.com/sothawo"&gt;P.J. Meisch&lt;/a&gt; who maintains the Spring Data Elasticsearch module.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release addresses more than 140 issues, with more than 30 bugs fixed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Data Elasticsearch now uses Elasticsearch 7, 7.6.2 in particular. Elasticsearch clusters running on 6.x versions are not supported anymore. The &lt;code&gt;ElasticsearchTemplate&lt;/code&gt; class is deprecated as it uses the &lt;code&gt;TransportClient&lt;/code&gt; to access Elasticsearch, which itself is deprecated since Elasticsearch version 7.+
-Users should switch to &lt;code&gt;ElasticsearchRestTemplate&lt;/code&gt; or &lt;code&gt;ReactiveElasticsearchTemplate&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In general, this release ships with several changes that may require several updates to your code and domain model. You can find the entire migration guide in the &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#elasticsearch-migration-guide-3.2-4.0"&gt;reference documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="improved-object-mapping-and-entity-definitions"&gt;&lt;a class="anchor" href="#improved-object-mapping-and-entity-definitions"&gt;&lt;/a&gt;Improved object mapping and entity definitions&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A change under the hood was that the mapping between an entity to the JSON document that elasticsearch needs was switched from using Jackson to the &lt;code&gt;MappingElasticsearchConverter&lt;/code&gt;. Now it is possible to define custom names for properties and even different date formats for time-related properties without the problems that used to show up in the previous
-versions. The MappingElasticsearchConverter not only converts entities but is also used when building queries and processing search results. By this the mapping and conversion is consistently applied to the whole storage and search process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;@Field&lt;/code&gt; annotation now supports nearly all of the types that can be used in Elasticsearch.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Document(indexName = "person", type = "dummy")
-public class Person implements Persistable&amp;lt;Long&amp;gt; {
-
-    @Nullable @Id
-    private Long id;
-
-    @Nullable @Field(value = "last-name", type = FieldType.Text, fielddata = true)
-    private String lastName;      &lt;b class="conum"&gt;(1)&lt;/b&gt;
-
-    @Nullable @Field(name = "birth-date", type = FieldType.Date, format = DateFormat.basic_date)
-    private LocalDate birthDate;  &lt;b class="conum"&gt;(2)&lt;/b&gt;
-
-    @CreatedDate
-    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
-    private Instant created;      &lt;b class="conum"&gt;(3)&lt;/b&gt;
-
-    // other properties, getter, setter
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;in Elasticsearch this field will be named &lt;em&gt;last-name&lt;/em&gt;, this mapping is handled transparently&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;a property for a date without time information&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;another property this time with full date and time information&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="new-return-types"&gt;&lt;a class="anchor" href="#new-return-types"&gt;&lt;/a&gt;New return types&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As Elasticsearch not only returns the found entities in search results but a lot of additional information as well, new classes are introduced to provide this information, the most important being:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;SearchHit&amp;lt;T&amp;gt;&lt;/code&gt; contains the entity and information like the &lt;em&gt;score&lt;/em&gt;, &lt;em&gt;sortvalues&lt;/em&gt;, &lt;em&gt;highlight fields&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;SearchHits&amp;lt;T&amp;gt;&lt;/code&gt; contains the &lt;em&gt;maxScore&lt;/em&gt; of a search, returned &lt;em&gt;aggregations&lt;/em&gt;, the &lt;em&gt;totalCount&lt;/em&gt;, and the list of &lt;code&gt;SearchHit&amp;lt;T&amp;gt;&lt;/code&gt; elements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These are returned from the calls to the &lt;code&gt;(Reactive)ElasticsearchOperations&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To use them with repository methods they just need to be defined as the return type (repositories also support paged requests).
-As it is now possible to access highlight values in the &lt;code&gt;SearchHit&lt;/code&gt;,  repository methods can now be configured for highlights like shown in the first method:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Highlight(fields = {@HighlightField(name = "firstName")})
-List&amp;lt;SearchHit&amp;lt;Person&amp;gt;&amp;gt; findByFirstName(String firstName);
-
-Stream&amp;lt;SearchHit&amp;lt;Person&amp;gt;&amp;gt; findByBirthDateAfter(LocalDate date);
-
-SearchHits&amp;lt;Person&amp;gt; findByLastName(String lastName);
-
-SearchPage&amp;lt;Person&amp;gt; searchByLastName(String name, Pageable pageable);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Of course it is still possible to retrieve just the entity by defining the return type as &lt;code&gt;List&amp;lt;Person&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="additional-configuration-options"&gt;&lt;a class="anchor" href="#additional-configuration-options"&gt;&lt;/a&gt;Additional configuration options&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both the reactive and the non-reactive client can be configured with additional parameters&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;SSL support optionally with a custom &lt;code&gt;SSLContext&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Proxy support&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;custom header supplier to dynamically provide headers for each request sent to the cluster&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;pathPrefix&lt;/em&gt; for cases where the Elasticsearch cluster is behind some Loadbalancer or dispatcher&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="entity-callbacks-and-auditing"&gt;&lt;a class="anchor" href="#entity-callbacks-and-auditing"&gt;&lt;/a&gt;Entity callbacks and Auditing&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It now is possible to define Entity callbacks, the followig table shows the supported callbacks:&lt;/p&gt;
-&lt;/div&gt;
-&lt;table class="tableblock frame-all grid-all stretch"&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 25%;"&gt;
-&lt;col style="width: 25%;"&gt;
-&lt;col style="width: 50%;"&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th class="tableblock halign-left valign-top"&gt;Callback&lt;/th&gt;
-&lt;th class="tableblock halign-left valign-top"&gt;Method&lt;/th&gt;
-&lt;th class="tableblock halign-left valign-top"&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveBeforeConvertCallback&lt;br&gt;
-BeforeConvertCallback&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onBeforeConvert(T,&lt;br&gt;
-IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked before a domain object is converted to &lt;code&gt;Document&lt;/code&gt;.&lt;br&gt;
-Can return the &lt;code&gt;entity&lt;/code&gt; or a modified entity which then will be converted.&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAfterConvertCallback&lt;br&gt;
-AfterConvertCallback&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onAfterConvert(T,&lt;br&gt;
-Document, IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked after a domain object is converted from &lt;code&gt;Document&lt;/code&gt;&lt;br&gt;
-on reading result data from Elasticsearch.&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAuditingEntityCallback&lt;br&gt;
-AuditingEntityCallback&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;onBeforeConvert(Object,&lt;br&gt;
-IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Marks an auditable entity &lt;em&gt;created&lt;/em&gt; or &lt;em&gt;modified&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;ReactiveAfterSaveCallback&lt;br&gt;
-AfterSaveCallback&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;&lt;code&gt;T onAfterSave(T,&lt;br&gt;
-IndexCoordinates)&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
-&lt;td class="tableblock halign-left valign-top"&gt;&lt;p class="tableblock"&gt;Invoked after a domain object is saved.&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Built upon the &lt;code&gt;AuditingEntityCallback&lt;/code&gt; is the support for auditing. By implementing &lt;code&gt;Persistable&amp;lt;T&amp;gt;&lt;/code&gt; and adding annotated properties, these values will be automatically maintained for entities stored in Elasticsearch:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Document(indexName = "person")
-public class Person implements Persistable&amp;lt;Long&amp;gt; {
-
-    @Nullable @Id
-    private Long id;
-
-    @CreatedDate
-    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
-    private Instant created;
-
-    @Nullable @CreatedBy
-    private String createdBy;
-
-    @LastModifiedDate
-    @Nullable @Field(type = FieldType.Date, format = DateFormat.basic_date_time)
-    private Instant lastModified;
-
-    @Nullable @LastModifiedBy
-    private String lastModifiedBy;
-
-    @Nullable
-    public Long getId() { return id; }
-
-    @Override
-    public boolean isNew() { return id == null || (createdBy == null &amp;amp;&amp;amp; created == null); }
-
-    // other properties, getter, setter...
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 26th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/27/this-week-in-spring-may-26th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-27:4082</id>
-    <updated>2020-05-27T04:26:08Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re things? My family and I spent the Memorial Day holiday weekend mostly playing video games and trying random new restaurants for delivery. Now, it&amp;rsquo;s back to the grind and there are a &lt;em&gt;ton&lt;/em&gt; of things to look at so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/25/getting-started-with-rsocket-testing-spring-boot-responders"&gt;Getting Started With RSocket: Testing Spring Boot Responders&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s episode of a &lt;em&gt;Bootiful Podcast&lt;/em&gt;, &lt;a href="https://spring.io/blog/2020/05/21/a-bootiful-podcast-jaxb-contributor-com4j-jenkins-and-launchable-founder-kohsuke-kawaguchi"&gt;I talk to JAXB contributor, COM4j, Jenkins and Launchable founder Kohsuke Kawaguchi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0"&gt;Migrating to Spring Data JDBC 2.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/20/spring-cloud-data-flow-2-5-1-released"&gt;Spring Cloud Data Flow 2.5.1 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/why-spring"&gt;What can Spring do? Find out&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/26/an-overview-of-apache-tomcat/"&gt;An Overview of Apache Tomcat&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I&amp;rsquo;ll be speaking at JPoint later &lt;a href="https://mobile.twitter.com/GregoryKoshelev/status/1264291740678225920"&gt;this summer along with Cay Horstmann and James Gosling.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/didipostman/GenomeSequencing"&gt;didipostman/GenomeSequencing: Spring Batch as genome sequencing solution&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://careers.vmware.com/main/jobs/R2007099?lang=en-us"&gt;Senior Software Engineer - Spring, OSS Observability (Remote US or EMEA) in Multiple Locations | main&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@gtommee97/rest-api-java-spring-boot-and-mongodb-4dffbcabbaf5"&gt;REST API: Java Spring Boot and MongoDB - Thomas Gleason - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@ChamithKodikara/spring-boot-2-quartz-2-scheduler-integration-a8eaaf850805"&gt;Spring Boot 2, Quartz 2 Scheduler Integration - Chamith Kodikara - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/21/learnings-from-the-open-source-community/"&gt;We Asked, You Answered: Our Latest Learnings From the Open Source Community&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I wrote about some of the many features in Spring Boot 2.3 that I love. You might enjoy the thread. &lt;a href="https://threadreaderapp.com/thread/1262952005963780099.html"&gt;It&amp;rsquo;s hard to pick any single thing or theme, but I love the features that make my software even more ready for the cloud&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep318target15/"&gt;JEP 318: Remove the Solaris and SPARC Ports - targeted to JDK 15&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep360target15/"&gt;JEP 360: Sealed Classes (Preview) - targeted to JDK 15&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/05/21/jep385candidate/"&gt;New candidate JEP: Deprecate RMI Activation for Removal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;How do I stay current on the latest topics in #opensource? Check out &lt;a href="https://twitter.com/springcentral/status/1263244022157586432"&gt;this interview on the VMware blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;We are pleased to announce the general availability of &lt;a href="https://twitter.com/springcentral/status/1263231830297317377"&gt;Spring Cloud Data Flow 2.5&lt;/a&gt;, with enhancements in performance, enterprise identity management, starter apps as Java functions, and more. &lt;a href="https://t.co/orsMj9Y932"&gt;https://t.co/orsMj9Y932&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/ryanpmorgan/status/1263227874691002375?s=12"&gt;The Spring team is hiring across the globe!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love that Microsoft referenced Spring Cloud &lt;a href="https://twitter.com/brunoborges/status/1263047132618952706"&gt;in this slide on how Microsoft consumes Java&lt;/a&gt; in their Modern Java for &lt;a href="https://mybuild.microsoft.com/sessions/a8f4ac31-c18d-490d-84c3-e69e83ac8926?source=schedule"&gt;cloud developers presentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/lP8qRu3rN2"&gt;Try free Wavefront for Spring Boot Starter&lt;/a&gt; for your Applications. Get traces, metrics, spanlogs and histograms for free&lt;/li&gt;
-  &lt;li&gt;Let Ben Hale show you how Spring Boot 2.3 simplifies the process of building Docker images for your @springboot apps.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/Gtypw62SWa"&gt;RabbitMQ 3.8.4 with Erlang 23 compatibility is almost here!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/rotnroll666/status/1262418354691805184?s=12"&gt;The backend implementatio for the Apple/Google COVID19 exposure application is built on Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?feature=share&amp;v=hi_zaj3tqec"&gt;The optaplanner Spring Boot started in action.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/05/20/insidejava/"&gt;Announcing Inside.java&lt;/a&gt; - this is a great initiative from the folks at Oracle! I love this. Congrats.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/graalvm/graalvm-20-1-7ce7e89f066b"&gt;The new GraalVM release has a &lt;em&gt;ton&lt;/em&gt; of nice, new features in it&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/05/19/jvmcontainerqcon/"&gt;Java in Containers - Part Deux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Testing Spring Boot Responders</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/25/getting-started-with-rsocket-testing-spring-boot-responders" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-05-21:4079</id>
-    <updated>2020-05-25T00:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Reading time: about 6 minutes&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;Coding time: about 15 minutes&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;ve been following this &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;series&lt;/a&gt;, by now, you&amp;rsquo;ll have built a Spring Boot prototype that illustrates many of the features present in &lt;a href="https://rsocket.io"&gt;RSocket&lt;/a&gt;. This code isn¡¯t production code, though; it&amp;rsquo;s a prototype, a stepping stone on your RSocket journey. For production code, I&amp;rsquo;d expect all the usual quality assurance and testing rules to apply. So in this exercise, I&amp;rsquo;ll show you how to write integration tests for RSocket responders, so you can get one step closer to production. &lt;/p&gt;
-&lt;p&gt;But first, what do I mean by integration testing? &lt;/p&gt;
-&lt;p&gt;Integration testing, in this context, means testing the communication back and forth between RSocket requesters and responders. During such a test, it¡¯s important to exercise every layer of the architecture, including the network. &lt;/p&gt;
-&lt;p&gt;But, integration testing can be more expensive than regular unit tests, precisely because you&amp;rsquo;re exercising every layer. They can take longer to run, require multiple components and layers, and can be less predictable. However, &lt;a href="https://martinfowler.com/articles/practical-test-pyramid.html#IntegrationTests"&gt;integration tests&lt;/a&gt; have other benefits, such as checking that your requesters and responders make contact with each other and communicate properly.&lt;/p&gt;
-&lt;p&gt;You¡¯ll also notice that I¡¯m skipping all other forms of testing in this tutorial. To cover every possible kind of test would need a whole book! If you&amp;rsquo;re looking for a more general introduction to testing Spring Boot applications, try &lt;a href="https://www.youtube.com/watch?v=Wpz6b8ZEgcU"&gt;this talk&lt;/a&gt; by Andy Wilkinson, or the &lt;a href="https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/html/spring-boot-features.html#boot-features-testing"&gt;Spring Boot testing documentation&lt;/a&gt;, or search ¡°testing spring applications¡± online.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s enough background; let&amp;rsquo;s start testing! &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If you need to see the code, you¡¯ll find it on &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;GitHub&lt;/a&gt;. If you want to catch up on the articles in the rest of the series, they¡¯re all listed on &lt;a href="https://spring.io/team/benwilcock"&gt;my page&lt;/a&gt; on the Spring website.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#step-1-create-an-integration-test" class="anchor" name="step-1-create-an-integration-test"&gt;&lt;/a&gt;Step 1: Create An Integration Test&lt;/h2&gt;
-&lt;p&gt;In your &lt;code&gt;rsocket-server&lt;/code&gt; project, in the &lt;code&gt;/src/test/java/io/pivotal/rsocketserver/&lt;/code&gt; folder, create a new integration tests class called &lt;code&gt;RSocketClientToServerITest&lt;/code&gt;. The simplest way to do this is often inside your IDE.&lt;/p&gt;
-&lt;p&gt;The suggested naming convention is to end each integration test classname with the suffix &amp;lsquo;ITest.&amp;rsquo; The resulting filename &lt;code&gt;&amp;lt;your-class-name&amp;gt;ITest.java&lt;/code&gt; is easier to read and allows Maven to filter your integration tests ? a technique you&amp;rsquo;ll use later. Be sure to annotate your new class with &lt;code&gt;@SpringBootTest&lt;/code&gt; as follows: &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootTest&#xD;
-public class RSocketClientToServerITest {&#xD;
-  // test code goes here&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;@SpringBootTest&lt;/code&gt; annotation allows Spring Boot to configure everything you need for your test, including RSocket. It saves a lot of time and a great deal of configuration.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-2-open-your-rsocket-connection" class="anchor" name="step-2-open-your-rsocket-connection"&gt;&lt;/a&gt;Step 2: Open Your RSocket Connection&lt;/h2&gt;
-&lt;p&gt;You can use a single RSocket connection for multiple tests by adding an &lt;code&gt;RSocketRequester&lt;/code&gt; as a global class variable like so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;private static RSocketRequester requester;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Before your tests run, you must establish a working connection for this requester. The &lt;code&gt;@BeforeAll&lt;/code&gt; annotation from &lt;a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-classes-and-methods"&gt;JUnit5&lt;/a&gt; is ideal for performing these one-off setup tasks. Add the following method to your class:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @BeforeAll&#xD;
-    public static void setupOnce(@Autowired RSocketRequester.Builder builder, @Value(&amp;quot;${spring.rsocket.server.port}&amp;quot;) Integer port) {&#xD;
-        requester = builder&#xD;
-                .connectTcp(&amp;quot;localhost&amp;quot;, port)&#xD;
-                .block();&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You&amp;rsquo;ll notice that the method signature expects Spring Boot to pass a few items from the Spring application context. The &lt;code&gt;RSocketRequester.Builder&lt;/code&gt; simplifies creating the RSocket connection, and the port number of the responder is required to establish a link. The port number comes from the &lt;code&gt;spring.rsocket.server.port&lt;/code&gt; value in the &lt;code&gt;application.properties&lt;/code&gt; file.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-3-add-a-test" class="anchor" name="step-3-add-a-test"&gt;&lt;/a&gt;Step 3: Add A Test&lt;/h2&gt;
-&lt;p&gt;Now the requester is in place; you&amp;rsquo;re ready to add your first integration test. Two things happen during this test. First, a call from the requester to the responder, with a named route and data attached. And second, verification that the response received behaves exactly as expected. The code looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;     @Test&#xD;
-     public void testRequestGetsResponse() {&#xD;
-         // Send a request message (1)&#xD;
-          Mono&amp;lt;Message&amp;gt; result = requester&#xD;
-                 .route(&amp;quot;request-response&amp;quot;)&#xD;
-                 .data(new Message(&amp;quot;TEST&amp;quot;, &amp;quot;Request&amp;quot;))&#xD;
-                 .retrieveMono(Message.class);&#xD;
- &#xD;
-        // Verify that the response message contains the expected data (2)&#xD;
-        StepVerifier&#xD;
-                  .create(result)&#xD;
-                  .consumeNextWith(message -&amp;gt; { &#xD;
-assertThat(message.getOrigin()).isEqualTo(RSocketController.SERVER); assertThat(message.getInteraction()).isEqualTo(RSocketController.RESPONSE);&#xD;
-assertThat(message.getIndex()).isEqualTo(0);})&#xD;
-                 .verifyComplete();&#xD;
-     }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the first section (1), the route used is &lt;code&gt;&amp;quot;request-response&amp;quot;&lt;/code&gt; and the data is a new &lt;code&gt;Message&lt;/code&gt; object. The result coming from the responder ? your RSocketController ? is a &lt;code&gt;Mono&lt;/code&gt; of type Message.&lt;/p&gt;
-&lt;p&gt;In the second section (2), the &lt;a href="https://projectreactor.io/docs/core/release/reference/#_testing_a_scenario_with_stepverifier"&gt;StepVerifier&lt;/a&gt; class checks that the mono behaves as expected. In the &lt;code&gt;consumeWithNext()&lt;/code&gt; method, a function checks the returning message&amp;rsquo;s contents using &lt;a href="https://assertj.github.io/doc/#assertj-core-assertions-guide"&gt;AssertJ&amp;rsquo;s assertion methods&lt;/a&gt;. The &lt;code&gt;verifyComplete()&lt;/code&gt; method ensures that the interaction completes as expected.&lt;/p&gt;
-&lt;p&gt;Testing the other interactions is done in the same way. Rather than describe the testing of every interaction type here, take a look at the complete test on &lt;a href="https://github.com/benwilcock/spring-rsocket-demo/blob/master/rsocket-server/src/test/java/io/pivotal/rsocketserver/RSocketClientToServerITest.java"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;&lt;h2&gt;&lt;a href="#step-4-close-your-rsocket-connection" class="anchor" name="step-4-close-your-rsocket-connection"&gt;&lt;/a&gt;Step 4: Close Your RSocket Connection&lt;/h2&gt;
-&lt;p&gt;Once the test cycle is complete, you can close any resources that are no longer required. In this case, that means disposing of the RSocket requester. Add a method to do this, and annotate that method with &lt;code&gt;@AfterAll&lt;/code&gt; as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;      @AfterAll&#xD;
-      public static void tearDownOnce() {&#xD;
-          requester.rsocket().dispose();&#xD;
-      }
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#step-5-configure-failsafe" class="anchor" name="step-5-configure-failsafe"&gt;&lt;/a&gt;Step 5: Configure Failsafe&lt;/h2&gt;
-&lt;p&gt;It can take a while to run integration tests, and they can fail for unexpected reasons, like when the network is down. So, it makes sense to isolate your integration tests so you can run them selectively. Maven uses the &lt;a href="https://maven.apache.org/surefire/maven-failsafe-plugin/faq.html#surefire-v-failsafe"&gt;Failsafe plugin&lt;/a&gt; to achieve this.&lt;/p&gt;
-&lt;p&gt;To configure failsafe, in your &lt;code&gt;pom.xml&lt;/code&gt;, add the plugin configuration below. This configuration tells Maven to use failsafe to run all the tests that end with the suffix &amp;lsquo;ITest.java.&amp;rsquo; It also tells Maven to run these tests as part of the &lt;code&gt;integration-test&lt;/code&gt; or &lt;code&gt;verify&lt;/code&gt; lifecycle phases.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;plugins&amp;gt;&#xD;
-&amp;lt;!-- other plugins --&amp;gt;&#xD;
-      &amp;lt;plugin&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;maven-failsafe-plugin&amp;lt;/artifactId&amp;gt;&#xD;
-        &amp;lt;version&amp;gt;2.22.0&amp;lt;/version&amp;gt;&#xD;
-        &amp;lt;executions&amp;gt;&#xD;
-          &amp;lt;execution&amp;gt;&#xD;
-            &amp;lt;goals&amp;gt;&#xD;
-              &amp;lt;goal&amp;gt;integration-test&amp;lt;/goal&amp;gt;&#xD;
-              &amp;lt;goal&amp;gt;verify&amp;lt;/goal&amp;gt;&#xD;
-            &amp;lt;/goals&amp;gt;&#xD;
-          &amp;lt;/execution&amp;gt;&#xD;
-        &amp;lt;/executions&amp;gt;&#xD;
-        &amp;lt;configuration&amp;gt;&#xD;
-          &amp;lt;includes&amp;gt;**/*ITest.java&amp;lt;/includes&amp;gt;&#xD;
-        &amp;lt;/configuration&amp;gt;&#xD;
-      &amp;lt;/plugin&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You&amp;rsquo;ll also want to prevent the integration tests from running alongside your regular unit tests, so add the following surefire configuration to exclude them:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;      &amp;lt;plugin&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt;&#xD;
-        &amp;lt;configuration&amp;gt;&#xD;
-          &amp;lt;excludes&amp;gt;&#xD;
-            &amp;lt;exclude&amp;gt;**/*ITest.java&amp;lt;/exclude&amp;gt;&#xD;
-          &amp;lt;/excludes&amp;gt;&#xD;
-        &amp;lt;/configuration&amp;gt;&#xD;
-      &amp;lt;/plugin&amp;gt;&#xD;
-&amp;lt;!-- other plugins --&amp;gt;&#xD;
-&amp;lt;/plugins&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#step-6-run-your-test" class="anchor" name="step-6-run-your-test"&gt;&lt;/a&gt;Step 6: Run Your Test&lt;/h2&gt;
-&lt;p&gt;You can now run your integration test in the terminal console. Maven uses the &lt;code&gt;integration-test&lt;/code&gt; goal for this purpose. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;./mvnw clean integration-test
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Maven now runs your integration tests, and the results appear in the console.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.582 s - in io.pivotal.rsocketserver.RSocketClientToServerITest&#xD;
-2020-05-19 10:43:27.512 INFO 39250 --- [extShutdownHook] i.p.rsocketserver.RSocketController : Detaching all remaining clients...&#xD;
-2020-05-19 10:43:27.513 INFO 39250 --- [extShutdownHook] i.p.rsocketserver.RSocketController : Shutting down.&#xD;
-[INFO]&#xD;
-[INFO] Results:&#xD;
-[INFO]&#xD;
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0&#xD;
-[INFO]&#xD;
-[INFO] ------------------------------------------------------------------------&#xD;
-[INFO] BUILD SUCCESS&#xD;
-[INFO] ------------------------------------------------------------------------
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#there-rsquo-s-more" class="anchor" name="there-rsquo-s-more"&gt;&lt;/a&gt;There&amp;rsquo;s More!&lt;/h2&gt;
-&lt;p&gt;You can also integration test your client-side responders. The code required is slightly more complicated than the code above. Mostly, this involves creating a fake requester component that contains similar &lt;code&gt;StepVerifier&lt;/code&gt; tests to the ones you&amp;rsquo;ve seen here. Rather than describe the code line by line, I&amp;rsquo;d encourage you to take a look at the &lt;a href="https://github.com/benwilcock/spring-rsocket-demo/blob/master/rsocket-client/src/test/java/io/pivotal/rsocketclient/RSocketServerToClientITest.java"&gt;source code&lt;/a&gt; instead. &lt;/p&gt;&lt;h2&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;Integration testing is a critical component on the path to production. By testing your RSocket responders in this way, you can prevent regressions, check components are communicating properly, and hand them over to your customers with greater confidence.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: JAXB contributor, COM4j, Jenkins and Launchable founder Kohsuke Kawaguchi</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/21/a-bootiful-podcast-jaxb-contributor-com4j-jenkins-and-launchable-founder-kohsuke-kawaguchi" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-21:4080</id>
-    <updated>2020-05-21T23:01:00Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! In today&amp;rsquo;s installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/kohsukekawa"&gt;Kohsuke Kawaguchi (@kohsukekawa)&lt;/a&gt; who needs no introduction - one of the original contributors to JAXB, COM4J, and a host of all sorts of other projects, and is the founder &lt;a href="https://launchableinc.com/"&gt;and CEO of Launchable&lt;/a&gt;. Oh, did I mention he also created &lt;a href="https://www.jenkins.io/"&gt;Jenkins&lt;/a&gt;, the most popular CI server ever? Enjoy!&lt;/p&gt;
-&lt;iframe title="Jenkins founder and Launchable founder Kohsuke Kawaguchi" src="https://www.podbean.com/media/player/a76cw-dd45aa?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Migrating to Spring Data JDBC 2.0</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/20/migrating-to-spring-data-jdbc-2-0" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Jens Schauder</name>
-    </author>
-    <id>tag:spring.io,2020-05-15:4074</id>
-    <updated>2020-05-20T16:06:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;With Spring Data JDBC 2.0, we had to introduce some breaking changes.
-The goal of this article is to help in the migration process.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="tldr"&gt;&lt;a class="anchor" href="#tldr"&gt;&lt;/a&gt;TL;DR&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="olist arabic"&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;
-&lt;p&gt;Use the default letter casing for custom column and table names or quote the names for table generation exactly as used in the annotations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use &lt;code&gt;AbstractJdbcConfiguration&lt;/code&gt; for custom configuration of the application context.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://stackoverflow.com/a/61854586/66686"&gt;Register a &lt;code&gt;Dialect&lt;/code&gt; if necessary&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Review event-handling code and ensure the data you try to use is not &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="quoting-of-identifiers"&gt;&lt;a class="anchor" href="#quoting-of-identifiers"&gt;&lt;/a&gt;Quoting of Identifiers&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Data JDBC 1.x uses table and column names mostly without changing them.
-This causes problems when you use an SQL key word as a property or entity name or when you tried to use some special character in a column name.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For this reason Spring Data JDBC 2.0 quotes all identifiers by default.
-This makes the names case-sensitive, at least for most databases.
-Since we also, by default, convert the names generated into the default letter casing used by the database, this should not cause any problems, assuming you used no quotes in the &lt;code&gt;CREATE TABLE&lt;/code&gt; statements, as most people do.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For example, consider a &lt;code&gt;Student&lt;/code&gt; entity, as follows:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Student {
-
-    @Id
-    Long id;
-    String name;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A matching table for H2 could look like this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-sql" data-lang="sql"&gt;CREATE TABLE STUDENT
-(
-    ID SERIAL PRIMARY KEY,
-    NAME  VARCHAR(30)
-);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;That example is the same as in previous versions of Spring Data JDBC.
-Things change when you specify column or table names explicitly with &lt;code&gt;@Column&lt;/code&gt;, &lt;code&gt;@Table&lt;/code&gt;, or &lt;code&gt;@MappedCollection&lt;/code&gt;.
-In this case, we assume that you specify the name exactly as you want it to be used and, therefore, the table definition has to use quoted identifiers or the names have to use the default letter casing of your database, as in this modified student example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Table("student")
-class Student {
-
-    @Id
-    Long id;
-    @Column("LAST_NAME")
-    String name;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A matching table for H2 could look like this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-sql" data-lang="sql"&gt;CREATE TABLE "student" -- &lt;b class="conum"&gt;(1)&lt;/b&gt;
-(
-    ID SERIAL PRIMARY KEY,
-    LAST_NAME  VARCHAR(30) -- &lt;b class="conum"&gt;(2)&lt;/b&gt;
-);&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The table name must be quoted, because it is given in lower-case letters but H2 converts unquoted SQL identifiers to upper case by default.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;LAST_NAME&lt;/code&gt; does not have to get quoted because it already uses the default letter casing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See below how to disable the forced quoting if you really want to.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="configuration"&gt;&lt;a class="anchor" href="#configuration"&gt;&lt;/a&gt;Configuration&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you need custom configuration of your &lt;code&gt;ApplicationContext&lt;/code&gt;, it is probably easiest to inherit from
-&lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/jdbc/repository/config/AbstractJdbcConfiguration.html"&gt;&lt;code&gt;org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration&lt;/code&gt;&lt;/a&gt;.
-Other classes with similar names and the same purpose have been removed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In a configuration inherited from &lt;code&gt;AbstractJdbcConfiguration&lt;/code&gt; you may override for example &lt;code&gt;jdbcMappingContext&lt;/code&gt; as follows in order to disable the forced quoting of SQL identifiers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="exampleblock"&gt;
-&lt;div class="content"&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
-@Override
-public JdbcMappingContext jdbcMappingContext(Optional&amp;lt;NamingStrategy&amp;gt; namingStrategy, JdbcCustomConversions customConversions) {
-
-	JdbcMappingContext mappingContext = super.jdbcMappingContext(namingStrategy, customConversions);
-  mappingContext.setForceQuote(false);
-
-	return mappingContext;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="aggregatechange-and-dbaction-are-immutable"&gt;&lt;a class="anchor" href="#aggregatechange-and-dbaction-are-immutable"&gt;&lt;/a&gt;&lt;code&gt;AggregateChange&lt;/code&gt; and &lt;code&gt;DbAction&lt;/code&gt; are immutable&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You might have encountered these in event handlers or callback methods.
-They have been mutable in the past, but that was almost impossible to use in a meaningful way.
-Also, it was actually impossible to support in a stable way.
-Therefore, it was removed without replacement.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you had a use case where you actually changed those instances, please create an issue in our issue tracker.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="dialects"&gt;&lt;a class="anchor" href="#dialects"&gt;&lt;/a&gt;Dialects&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Data JDBC now has a
-&lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/relational/core/dialect/Dialect.html"&gt;&lt;code&gt;Dialect&lt;/code&gt;&lt;/a&gt;
-interface and for the fully supported databases it ships with a matching implementation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Supported databases are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;DB2&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;HSQLDB&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;H2&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MySQL and MariaDB&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Postgres&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SQL Server&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Oracle support is currently &lt;a href="https://jira.spring.io/browse/DATAJDBC-256"&gt;work in progress&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you use a different database then your application won&amp;#8217;t startup. In that case, you&amp;#8217;ll have to&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="olist arabic"&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;
-&lt;p&gt;implement your own &lt;code&gt;Dialect&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;implement a &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.0.RELEASE/api/org/springframework/data/jdbc/repository/config/DialectResolver.JdbcDialectProvider.html"&gt;&lt;code&gt;JdbcDialectProvider&lt;/code&gt;&lt;/a&gt; returning that &lt;code&gt;Dialect&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;register the provider by putting a file &lt;code&gt;spring.factories&lt;/code&gt; in the &lt;code&gt;META-INF&lt;/code&gt; folder of your class path and add the line &lt;code&gt;org.springframework.data.jdbc.repository.config.DialectResolver$JdbcDialectProvider=&amp;lt;fully qualified name of your JdbcDialectProvider&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Someone already wrote a &lt;a href="https://stackoverflow.com/a/61854586/66686"&gt;great answer on Stack Overflow&lt;/a&gt; how to do that before we could get this article out the door.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="streamlined-events"&gt;&lt;a class="anchor" href="#streamlined-events"&gt;&lt;/a&gt;Streamlined events&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Events only offer the ID of an entity if there is no entity available (for example, for delete events).
-If there is an entity available in the event, the ID is not in order, to avoid looking up values that then might not be used.
-Events that before used &lt;code&gt;Optional&lt;/code&gt; values now use nullable values.
-Therefore, you should review your event listeners carefully.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.5.1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/20/spring-cloud-data-flow-2-5-1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Janne Valkealahti</name>
-    </author>
-    <id>tag:spring.io,2020-05-20:4078</id>
-    <updated>2020-05-20T09:08:50Z</updated>
-    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the release of 2.5.1.&lt;/p&gt;
-&lt;p&gt;This release includes some bug fixes with the some of the notable changes as follows:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;DeploymentProperties parsing fixes.&lt;/li&gt;
-  &lt;li&gt;Removed behaviour for server to attempt to contact dockerhub during a start.&lt;/li&gt;
-  &lt;li&gt;Fixes to dataflow client to re-authorize when oauth client credentials are used.&lt;/li&gt;
-  &lt;li&gt;Liveness and readiness probe changes to kubernetes deployment files.&lt;/li&gt;
-  &lt;li&gt;Upgrades to &lt;code&gt;Spring Boot 2.2.7&lt;/code&gt; and &lt;code&gt;Spring Cloud Hoxton.SR4&lt;/code&gt;. New dependencies from these fixed an issue in &lt;code&gt;Spring Data Rest&lt;/code&gt; which caused repository mappings &lt;a href="https://jira.spring.io/browse/DATAREST-1502"&gt;DATAREST-1502&lt;/a&gt; to stop working and effectively caused UI and Skipper to start behaving erratically in &lt;code&gt;Data Flow 2.5.0&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stack Overflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 19th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/05/19/this-week-in-spring-may-19th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-05-19:4077</id>
-    <updated>2020-05-19T21:56:46Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! What a wonderful, &lt;em&gt;bootiful&lt;/em&gt; week it&amp;rsquo;s been! This last week saw the long-awaited release of Spring Boot 2.3.0! &lt;/p&gt;
-&lt;p&gt;There are a &lt;em&gt;lot&lt;/em&gt; of wonderful features in this release including, but not limited to, Java 14 support, Docker image generation, graceful shutdown, liveliness probes, upgrades to Spring Data Neumann, and so much more. Here are some resources on some of those features. And, also, &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;&lt;em&gt;check out the blog&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;R2DBC support (see this Spring Tips installment on using &lt;a href="https://www.youtube.com/watch?v=fIMdlE5Hvzk"&gt;R2DBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Docker container image support. See this blog &lt;a href="https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1"&gt;on Docker image generation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Java 14 support. See this Spring Tips installment &lt;a href="https://www.youtube.com/watch?v=mr-7kGy8Yao"&gt;on Java 14&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is &lt;em&gt;also&lt;/em&gt; the version to use if you want to consume the Graal Native Image builder feature. Here&amp;rsquo;s a &lt;a href="https://www.youtube.com/watch?v=u1XJTI1PVLw&amp;feature=emb_title"&gt;Spring Tips video&lt;/a&gt; on that, too.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are, as usual, a &lt;em&gt;ton&lt;/em&gt; of other things worth noting this week, as well, and we&amp;rsquo;ve got a huge roundup to get to so let&amp;rsquo;s get to it. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;No, seriously; did I mention that Spring Boot 2.3 is out?! &lt;a href="https://spring.io/blog/2020/05/15/spring-boot-2-3-0-available-now"&gt;&lt;strong&gt;Spring Boot 2.3.0 available now&lt;/strong&gt;&lt;/a&gt;!! Go to the Spring Initializr and begin your &lt;a href="http://start.spring.io"&gt;journey to production now&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;And there&amp;rsquo;s a nice integration in &lt;a href="https://spring.io/blog/2020/05/18/what-s-new-in-spring-data-klara-dan-von-neumann"&gt; Spring Data (Klara Dan von) Neumann?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#building-docker-images"&gt;Spring Boot Reference Documentation on new docket image support in spring boot 2.3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt; installment, I talk to &lt;a href="https://spring.io/blog/2020/05/14/vmware-coo-sanjay-poonen"&gt;VMWare COO Sanjay Poonen&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/14/spring-session-dragonfruit-release-released"&gt;Spring Session Dragonfruit-RELEASE Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/13/introduction-to-azure-spring-cloud-with-intellij-idea"&gt;Introduction to Azure Spring Cloud with IntelliJ IDEA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/13/cve-reports-published-for-spring-security"&gt;CVE reports published for Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/12/spring-data-neumann-goes-ga"&gt;Spring Data Neumann goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Learn the &lt;a href="https://t.co/u1rJJMPYnK"&gt;basics of Cloud Native Buildpacks&lt;/a&gt; and a few different ways in which they can be used in Cora Iberkleid&amp;rsquo;s Spring Live talk&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/05/19/steven-rostedt-talks-linux-kernel-on-the-bootiful-podcast/"&gt;Steven Rostedt Talks Linux Kernel on the ¡°Bootiful Podcast¡±&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Have you submitted your talk for #SpringOne yet? The deadline is tomorrow! &lt;a href="https://t.co/UxT2xhYVUh"&gt;Apply here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://t.co/DoWJhxFTVz"&gt;Happy 25th birthday, Java! &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/swlh/jpa-entity-graphs-with-spring-boot-30cb110ba4f8"&gt;JPA Entity Graphs with Spring Boot - The Startup - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;It&amp;rsquo;s time for&amp;hellip; &lt;a href="https://t.co/DpcgISR5Zz"&gt;&lt;em&gt;State of the Loom&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;Targeted to JDK 15: &lt;a href="https://openjdk.java.net/jeps/339"&gt;JEP 339: Edwards-Curve Digital Signature Algorithm (EdDSA)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Also targeted to JDK 15: &lt;a href="https://t.co/a2iRm8TUYu"&gt;JEP 384: Records (Second Preview)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Millions of people use the My VMware portal every month. Turns out &lt;a href="https://twitter.com/VMwareTanzu/status/1262560182854397952"&gt;they rebuilt it as Spring #microservices&amp;hellip;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vov/2020/05/14/how-a-refresh-of-the-my-vmware-portal-improved-the-customer-self-service-experience/?src=so_5a314d05e49f5&amp;cid=70134000001SkJn"&gt;How a Refresh of the My VMware Portal Improved the Customer Self-Service Experience - VMware on VMware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;If Spring Data JDBC doesn&amp;rsquo;t ship with a Dialect for your favourite database, this is how you &lt;a href="https://twitter.com/SpringData/status/1262256854140358662"&gt;may supply your own&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=her_7pa0vrg&amp;feature=share"&gt;A 5 hour case introducing Spring Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/javarevisited/top-10-courses-to-learn-spring-security-and-oauth2-with-spring-boot-for-java-developers-8f0222d6066d"&gt;Top 10 Courses to Learn Spring Security and OAuth2 with Spring Boot for Java Developers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Yesterday we looked at a single &lt;a href="https://twitter.com/RabbitMQ/status/1261365281420718080"&gt;RabbitMQ quorum queue performance&lt;/a&gt;. Today we look at flow control&lt;/li&gt;
-  &lt;li&gt;Our friends at Azure just published the new &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql"&gt;Azure documentation for Spring Data JDBC with MySQL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Apache Tomcat on Twitter: &amp;quot;Users of Tomcat 10 should be aware that the package for all specs has changed from &lt;code&gt;javax.*&lt;/code&gt; to &lt;code&gt;jakarta.*&lt;/code&gt;. &lt;a href="https://twitter.com/theapachetomcat/status/1260530953648250880?s=21"&gt;Code changes will almost be certainly required to migrate from Tomcat to Tomcat 10.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://piotrminkowski.com/2020/05/13/a-deep-dive-into-spring-cloud-load-balancer/"&gt;A Deep Dive Into Spring Cloud Load Balancer ? Piotr&amp;rsquo;s TechBlog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -14,8 +14,17 @@ public class 부분집합구하기 {
 		System.out.println(numSubsets(4,4));
 		//nCr(0,0);
 		System.out.println(cnt);
+		
+		System.out.println(getnCr(5,3));
 	}
 	
+	private static int getnCr(int n, int k) {
+		int result=1;
+		for(int i=n;i>=(n-k+1);i--) result*=i;
+		for(int i=k;i>=1;i--) result/=i;
+		return result;
+	}
+
 	private static void nCr(int idx, int depth){
 		if(depth==4){
 			System.out.println(Arrays.toString(pick));

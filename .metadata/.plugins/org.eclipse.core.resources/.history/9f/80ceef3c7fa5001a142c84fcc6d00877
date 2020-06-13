@@ -1,8 +1,0 @@
-package CodingAcademy;
-
-public class 나머지 {
-	static boolean[] = new boolean[1001];
-	public static void main(String[] args) {
-
-	}
-}

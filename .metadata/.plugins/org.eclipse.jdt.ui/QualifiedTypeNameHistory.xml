@@ -33,7 +33,6 @@
     <fullyQualifiedTypeName name="공채대비.낚시왕.Shark"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.transforms.InvalidTransformException"/>
     <fullyQualifiedTypeName name="공채대비.두동전.CoinInformation"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="공채대비.나무재테크.Tree"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
