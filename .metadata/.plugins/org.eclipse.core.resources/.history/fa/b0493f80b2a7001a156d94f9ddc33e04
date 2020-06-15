@@ -1,7 +1,0 @@
-package 공채대비;
-
-public class moveMachine {
-	public static void main(String[] args) {
-
-	}
-}
