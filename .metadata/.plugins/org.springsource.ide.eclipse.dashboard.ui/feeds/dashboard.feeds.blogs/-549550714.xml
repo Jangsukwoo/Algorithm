@@ -5,7 +5,276 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-06-16T23:50:00Z</updated>
+  <updated>2020-06-19T07:56:41Z</updated>
+  <entry>
+    <title>Spring Tools 4.7.0 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/19/spring-tools-4-7-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2020-06-19:4112</id>
+    <updated>2020-06-19T07:56:41Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.7.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; bugfix: automatic live hover detection works again reliably&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; update: Spring Tools 4 for Eclipse distribution updated to Eclipse 2020-06 release&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: added support for multiple instances of symbols view&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: added favorites dropdown to symbols view&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: boot dashboard shows request mappings, beans, and the environment of running apps now if SSH tunnel is enabled for the app on CF&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; update: Support SemVer format in Spring Initializr wizard (&lt;a href="https://github.com/spring-projects/sts4/issues/473"&gt;#473&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: STS 4.6.2 and Eclipse 2020-06 RC1: FrameworkEvent ERROR (&lt;a href="https://github.com/spring-projects/sts4/issues/477"&gt;#477&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; bugfix: select manifest action for cf apps in boot dashboard doesn&amp;rsquo;t show SSH option anymore&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; improvement: Flag to configure the &amp;ldquo;JAVA_HOME or PATH&amp;hellip;&amp;rdquo; message display (&lt;a href="https://github.com/spring-projects/sts4/issues/478"&gt;#478&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; bugfix: green live hovers markers are no longer gone after switching to a different editor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2020-06-18-470-release-incl-language-servers-version-1190"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2020-06-18-470-release-incl-language-servers-version-1190&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.7.1 is scheduled to be released in late July 2020.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Nisha Kumar and Rose Judge on the Linux Foundation's project Tern</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/19/a-bootiful-podcast-nisha-kumar-and-rose-judge-on-the-linux-foundation-s-project-tern" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-06-19:4111</id>
+    <updated>2020-06-19T06:54:29Z</updated>
+    <content type="html">&lt;iframe title="Nisha Kumar and Rose Judge on the Linux Foundation's Tern" src="https://www.podbean.com/media/player/2fmu6-e05e01-pb?from=share&amp;skin=1&amp;share=1&amp;fonts=Helvetica&amp;download=1&amp;version=1&amp;vjs=1&amp;skin=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Nisha Kumar and Rose Judge who work on the Linux Foundation&amp;rsquo;s project Tern. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.linuxfoundation.org/blog/2019/12/tern-1-0-0-is-generally-available/"&gt;Tern from the Linux Foundation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Shift-left_testing"&gt;Shift Left testing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spdx.org/licenses/"&gt;SPDX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spdx/spdx-maven-plugin"&gt;A Maven plugin supporting SPDX&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>What's new in Spring Boot 2.3</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/18/what-s-new-in-spring-boot-2-3" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2020-06-18:4110</id>
+    <updated>2020-06-18T16:17:49Z</updated>
+    <content type="html">&lt;p&gt;Speaker: &lt;a href="http://twitter.com/phillip_webb"&gt;Phil Webb (@phillip_webb)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/WL7U-yGfUXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;h2&gt;&lt;a href="#timecodes" class="anchor" name="timecodes"&gt;&lt;/a&gt;Timecodes&lt;/h2&gt;
+&lt;p&gt;Use the timecodes below if you want to jump to a specific part of the presentation:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=27"&gt;00:27&lt;/a&gt; - Intro&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=119"&gt;01:59&lt;/a&gt; - Creating the Demo&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=241"&gt;04:01&lt;/a&gt; - Building Docker Images with the Spring Boot Plugin&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=561"&gt;09:21&lt;/a&gt; - Building Docker Images with a Dockerfile&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=1000"&gt;16:40&lt;/a&gt; - Customizing Layers&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=1298"&gt;21:38&lt;/a&gt; - Graceful Shutdown&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=1519"&gt;25:19&lt;/a&gt; - Kubernetes Probes&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=1855"&gt;30:55&lt;/a&gt; - Configuration Properties End-to-End Traceability&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://youtu.be/WL7U-yGfUXA?t=1980"&gt;33:00&lt;/a&gt; - Wrap-up and Upgrade Gotchas&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#links" class="anchor" name="links"&gt;&lt;/a&gt;Links&lt;/h2&gt;
+&lt;p&gt;The following links are referenced in the presentation:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Building OCI Images [&lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/html/#build-image"&gt;Maven&lt;/a&gt;|&lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#build-image"&gt;Gradle&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Packaging Layered Jars [&lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/html/#repackage-layers"&gt;Maven&lt;/a&gt;|&lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#packaging-layered-jars"&gt;Gradle&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Customizing Layers [&lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/html/#repackage-layers-configuration"&gt;Maven&lt;/a&gt;|&lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#packaging-layers-configuration"&gt;Gradle&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#writing-the-dockerfile"&gt;Writing a Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes"&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-boot/blob/master/CONTRIBUTING.adoc"&gt;Contributing Instructions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Getting Started With RSocket: Spring Security</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/17/getting-started-with-rsocket-spring-security" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ben Wilcock</name>
+    </author>
+    <id>tag:spring.io,2020-06-16:4106</id>
+    <updated>2020-06-17T15:00:00Z</updated>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Reading time: about 6 minutes&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;Coding time: about 20 minutes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve been following &lt;a href="https://spring.io/team/benwilcock"&gt;my series on RSocket&lt;/a&gt;, you&amp;rsquo;ve already learned how to build client-server applications with Spring Boot. In today&amp;rsquo;s exercise, you&amp;rsquo;re going to learn how to add security to your RSocket applications. &lt;/p&gt;
+&lt;p&gt;The task of securing RSocket applications is greatly simplified when you use Spring Security. &lt;a href="https://spring.io/projects/spring-security"&gt;Spring Security&lt;/a&gt; is a must-have module for any production application. It allows you to easily plugin many different authentication providers and restricts each user&amp;rsquo;s access to your application based on their identity and their role. &lt;/p&gt;
+&lt;p&gt;As you will see, the code required to secure your application is pretty straightforward. But because security is such a &amp;ldquo;cross-cutting&amp;rdquo; concern, the changes do touch a few different parts of the code. It&amp;rsquo;s not difficult to make these changes yourself, but as ever, the full code sample is available on &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; At the time of writing, RSocket¡¯s security extensions are still a work in progress. You can follow their progress &lt;a href="https://github.com/rsocket/rsocket/blob/master/Extensions/Security/Authentication.md"&gt;here&lt;/a&gt;. In this exercise, we¡¯ll be using &lt;a href="https://github.com/rsocket/rsocket/blob/master/Extensions/Security/Simple.md"&gt;Simple Authentication&lt;/a&gt; which carries the warning: ¡°Simple Authentication transmits the username and password in cleartext. Additionally, it does not protect the authenticity or confidentiality of the payload that is transmitted along with it. This means that the Transport that is used should provide both authenticity and confidentiality to protect both the username and password and corresponding payload.¡±&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#step-1-add-the-spring-security-dependencies" class="anchor" name="step-1-add-the-spring-security-dependencies"&gt;&lt;/a&gt;Step 1: Add The Spring Security Dependencies&lt;/h2&gt;
+&lt;p&gt;In the &lt;code&gt;POM.xml&lt;/code&gt; files for the &lt;code&gt;rsocket-client&lt;/code&gt; and &lt;code&gt;rsocket-server&lt;/code&gt; projects, add the following security dependencies:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;       &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-security-rsocket&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-security-messaging&amp;lt;/artifactId&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Together, these dependencies will integrate Spring Security into your RSocket applications. Including the &lt;code&gt;spring-boot-starter-security&lt;/code&gt; package means that much of the configuration happens automatically.&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-2-secure-your-rsocket-server" class="anchor" name="step-2-secure-your-rsocket-server"&gt;&lt;/a&gt;Step 2: Secure Your RSocket Server&lt;/h2&gt;
+&lt;p&gt;Securing your RSocket responders is best done in two stages. First, add a security configuration class, and second, secure your RSocket responder methods.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note: These changes will temporarily break the integration test you added in the &lt;a href="https://spring.io/blog/2020/05/25/getting-started-with-rsocket-testing-spring-boot-responders"&gt;last tutorial&lt;/a&gt;. Don&amp;rsquo;t worry; I&amp;rsquo;ll show you how to fix it again later.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h3&gt;&lt;a href="#2-1-configure-spring-security" class="anchor" name="2-1-configure-spring-security"&gt;&lt;/a&gt;2.1 Configure Spring Security&lt;/h3&gt;
+&lt;p&gt;To customize the configuration of Spring Security, in your &lt;code&gt;rsocket-server&lt;/code&gt; project, add a new class called &lt;code&gt;RSocketSecurityConfig.java&lt;/code&gt; containing the code below. &lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note: The import statements are missing. Ask your IDE to add them for you when prompted.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Configuration // (1)&#xD;
+@EnableRSocketSecurity // (2)&#xD;
+@EnableReactiveMethodSecurity // (3)&#xD;
+public class RSocketSecurityConfig {&#xD;
+&#xD;
+    @Bean // (4)&#xD;
+    RSocketMessageHandler messageHandler(RSocketStrategies strategies) {&#xD;
+&#xD;
+        RSocketMessageHandler handler = new RSocketMessageHandler();&#xD;
+        handler.getArgumentResolverConfigurer().addCustomResolver(new AuthenticationPrincipalArgumentResolver());&#xD;
+        handler.setRSocketStrategies(strategies);&#xD;
+        return handler;&#xD;
+    }&#xD;
+&#xD;
+    @Bean // (5)&#xD;
+    MapReactiveUserDetailsService authentication() {&#xD;
+        //This is NOT intended for production use (it is intended for getting started experience only)&#xD;
+        UserDetails user = User.withDefaultPasswordEncoder()&#xD;
+                .username(&amp;quot;user&amp;quot;)&#xD;
+                .password(&amp;quot;pass&amp;quot;)&#xD;
+                .roles(&amp;quot;USER&amp;quot;)&#xD;
+                .build();&#xD;
+&#xD;
+        UserDetails admin = User.withDefaultPasswordEncoder()&#xD;
+                .username(&amp;quot;test&amp;quot;)&#xD;
+                .password(&amp;quot;pass&amp;quot;)&#xD;
+                .roles(&amp;quot;NONE&amp;quot;)&#xD;
+                .build();&#xD;
+&#xD;
+        return new MapReactiveUserDetailsService(user, admin);&#xD;
+    }&#xD;
+&#xD;
+    @Bean // (6)&#xD;
+    PayloadSocketAcceptorInterceptor authorization(RSocketSecurity security) {&#xD;
+        security.authorizePayload(authorize -&amp;gt;&#xD;
+                authorize&#xD;
+                        .anyExchange().authenticated() // all connections, exchanges.&#xD;
+        ).simpleAuthentication(Customizer.withDefaults());&#xD;
+        return security.build();&#xD;
+    }&#xD;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Specifying &lt;code&gt;@Configuration&lt;/code&gt; (1) tells Spring Boot that this is a configuration class. The &lt;code&gt;@EnableRSocketSecurity&lt;/code&gt; annotation (2) activates Spring&amp;rsquo;s security features for RSocket. Setting &lt;code&gt;@EnableReactiveMethodSecurity&lt;/code&gt; (3) allows you to secure your reactive methods.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;RSocketMessageHandler&lt;/code&gt; bean configured at (4) automatically converts user credentials into a &lt;code&gt;UserDetails&lt;/code&gt; object. The &lt;code&gt;MapReactiveUserDetailsService&lt;/code&gt; bean set at (5) provides Spring with a hardcoded database of users. Providing the user database manually in this way isn&amp;rsquo;t very realistic, but it will suffice for this demo. You can read up on &lt;a href="https://docs.spring.io/spring-security/site/docs/5.3.2.RELEASE/reference/html5/#modules"&gt;how this is done with other identity providers later&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, the &lt;code&gt;PayloadSocketAcceptorInterceptor&lt;/code&gt; bean at (6) specifies what users can do with the application. In this case, users must authenticate before being connected or granted access to any server-side features.&lt;/p&gt;&lt;h3&gt;&lt;a href="#2-2-secure-your-rsocket-methods" class="anchor" name="2-2-secure-your-rsocket-methods"&gt;&lt;/a&gt;2.2 Secure Your RSocket Methods&lt;/h3&gt;
+&lt;p&gt;The user&amp;rsquo;s role governs the methods accessible to them. This &amp;ldquo;role-based access control&amp;rdquo; is configured in this case using Spring Security&amp;rsquo;s &lt;code&gt;@PreAuthorize&lt;/code&gt; annotation. The following code shows an example of this annotation in action ? securing the &amp;ldquo;fire-and-forget&amp;rdquo; message-mapping in the RSocketController class:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @PreAuthorize(&amp;quot;hasRole(&amp;#39;USER&amp;#39;)&amp;quot;) // (1)&#xD;
+    @MessageMapping(&amp;quot;fire-and-forget&amp;quot;)&#xD;
+    public Mono&amp;lt;Void&amp;gt; fireAndForget(final Message request, @AuthenticationPrincipal UserDetails user) { // (2)&#xD;
+        log.info(&amp;quot;Received fire-and-forget request: {}&amp;quot;, request);&#xD;
+        log.info(&amp;quot;Fire-And-Forget initiated by &amp;#39;{}&amp;#39; in the role &amp;#39;{}&amp;#39;&amp;quot;, user.getUsername(), user.getAuthorities());&#xD;
+        return Mono.empty();&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;@PreAuthorize(&amp;quot;hasRole(&amp;#39;USER&amp;#39;)&amp;quot;)&lt;/code&gt; annotation (1) ensures that only users with the authority ¡®ROLE_USER¡¯ are allowed access to this method. In section 2.1 above, you created a user with this role.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re particularly eagle-eyed, you&amp;rsquo;ll have noticed two other changes in the &lt;code&gt;fireAndForget()&lt;/code&gt; method&amp;rsquo;s signature. The first is that the method parameters now include &lt;code&gt;@AuthenticationPrincipal UserDetails user&lt;/code&gt; (2). Spring provides this &lt;code&gt;user&lt;/code&gt; object automatically. Second, the return parameter is now &lt;code&gt;Mono&amp;lt;Void&amp;gt;&lt;/code&gt; rather than a regular &amp;lsquo;void.&amp;rsquo; This change is required because &lt;code&gt;@EnableReactiveMethodSecurity&lt;/code&gt; demands that the return values are from &lt;a href="https://projectreactor.io/docs/core/release/reference/#core-features"&gt;project Reactor&lt;/a&gt; (i.e. Flux or Mono).&lt;/p&gt;&lt;h2&gt;&lt;a href="#step-3-add-security-to-your-client" class="anchor" name="step-3-add-security-to-your-client"&gt;&lt;/a&gt;Step 3: Add Security To Your Client&lt;/h2&gt;
+&lt;p&gt;In the code sample, the client has undergone several code changes. Most of them are not related to security. The majority of the changes simply make the client more comfortable to use when working with a secured server-side RSocket responder. In this section, you&amp;rsquo;ll cover only the security changes. See the &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;code sample&lt;/a&gt; for the additional code.&lt;/p&gt;
+&lt;p&gt;The security changes made to the client-side are all related to how it connects to the RSocket server. The connection code has been moved out of the class constructor and into a new &lt;code&gt;login()&lt;/code&gt; method. This login method expects the user to provide their username and password as they login. These credentials become metadata for the RSocket connection. The code for the login command is below:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;private static final MimeType SIMPLE_AUTH = MimeTypeUtils.parseMimeType(WellKnownMimeType.MESSAGE_RSOCKET_AUTHENTICATION.getString()); // (1)&#xD;
+&#xD;
+@ShellMethod(&amp;quot;Login with your username and password.&amp;quot;)&#xD;
+    public void login(String username, String password) {&#xD;
+        SocketAcceptor responder = RSocketMessageHandler.responder(rsocketStrategies, new ClientHandler());&#xD;
+&#xD;
+        UsernamePasswordMetadata user = new UsernamePasswordMetadata(username, password); // (2)&#xD;
+&#xD;
+        this.rsocketRequester = rsocketRequesterBuilder&#xD;
+                .setupRoute(&amp;quot;shell-client&amp;quot;)&#xD;
+                .setupData(CLIENT_ID)&#xD;
+                .setupMetadata(user, SIMPLE_AUTH) // (3)&#xD;
+                .rsocketStrategies(builder -&amp;gt;&#xD;
+                        builder.encoder(new SimpleAuthenticationEncoder())) // (4)&#xD;
+                .rsocketConnector(connector -&amp;gt; connector.acceptor(responder))&#xD;
+                .connectTcp(&amp;quot;localhost&amp;quot;, 7000)&#xD;
+                .block();&#xD;
+&#xD;
+ // ...connection handling code omitted. See the sample for details.&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This code looks very similar to the old constructor code. The most relevant lines in terms of adding security are as follows:&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;SIMPLE_AUTH&lt;/code&gt; static variable (1) declares how your user object should be encoded when passed as connection metadata. A new &lt;code&gt;UsernamePasswordMetadata&lt;/code&gt; is defined (2), which contains the credentials provided by the user as they login. When connecting (3), the &lt;code&gt;setupMetadata()&lt;/code&gt; method passes the &lt;code&gt;user&lt;/code&gt; object and the encoding mimetype defined at point (1). A new &lt;code&gt;SimpleAuthenticationEncoder&lt;/code&gt; (4) is placed in the &lt;code&gt;RSocketStrategies&lt;/code&gt; used for this connection. This object takes care of encoding the UsernamePasswordMetadata (2) into the correct mimetype (1).&lt;/p&gt;
+&lt;p&gt;Further changes in the sample code allow the user to &lt;code&gt;logout&lt;/code&gt;. This means the user can switch between identities without having to restart the client every time. &lt;/p&gt;&lt;h2&gt;&lt;a href="#step-4-test-the-security-works" class="anchor" name="step-4-test-the-security-works"&gt;&lt;/a&gt;Step 4: Test The Security Works&lt;/h2&gt;
+&lt;p&gt;The moment you added Spring Security&amp;rsquo;s dependencies and your security configuration class, your code became more secure. At the same time, your integration test stopped working because it doesn&amp;rsquo;t respect the new security settings.&lt;/p&gt;
+&lt;p&gt;To fix the &lt;code&gt;RSocketClientToServerITest.java&lt;/code&gt; integration test, modify the &lt;code&gt;setupOnce()&lt;/code&gt; method so that a user object added to the connection metadata. The code required looks very similar to that you just saw in the client&amp;rsquo;s login method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@BeforeAll&#xD;
+    public static void setupOnce(@Autowired RSocketRequester.Builder builder,&#xD;
+                                 @LocalRSocketServerPort Integer port,&#xD;
+                                 @Autowired RSocketStrategies strategies) {&#xD;
+&#xD;
+        SocketAcceptor responder = RSocketMessageHandler.responder(strategies, new ClientHandler());&#xD;
+        credentials = new UsernamePasswordMetadata(&amp;quot;user&amp;quot;, &amp;quot;pass&amp;quot;);&#xD;
+        mimeType = MimeTypeUtils.parseMimeType(WellKnownMimeType.MESSAGE_RSOCKET_AUTHENTICATION.getString());&#xD;
+&#xD;
+        requester = builder&#xD;
+                .setupRoute(&amp;quot;shell-client&amp;quot;)&#xD;
+                .setupData(UUID.randomUUID().toString())&#xD;
+                .setupMetadata(credentials, mimeType)&#xD;
+                .rsocketStrategies(b -&amp;gt;&#xD;
+                        b.encoder(new SimpleAuthenticationEncoder()))&#xD;
+                .rsocketConnector(connector -&amp;gt; connector.acceptor(responder))&#xD;
+                .connectTcp(&amp;quot;localhost&amp;quot;, port)&#xD;
+                .block();&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With the credentials now added to the connection, the test functions correctly. To verify this, at the terminal, navigate to your &lt;code&gt;rsocket-server&lt;/code&gt; folder and run the Maven &lt;code&gt;verify&lt;/code&gt; command. This action will run the revised integration test.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;./mvnw clean verify
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Congratulations. Your integration test now runs and passes once again!&lt;/p&gt;&lt;h2&gt;&lt;a href="#there-rsquo-s-more" class="anchor" name="there-rsquo-s-more"&gt;&lt;/a&gt;There&amp;rsquo;s More&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve included two further integration tests in the &lt;code&gt;rsocket-server&lt;/code&gt; sample code. The first, &lt;code&gt;RSocketClientToSecuredServerITest.java&lt;/code&gt; uses the &lt;code&gt;test&lt;/code&gt; user credentials from the &lt;code&gt;RSocketSecurityConfig&lt;/code&gt; class to confirm that the server-side methods are not accessible to users who don&amp;rsquo;t have the &lt;code&gt;USER&lt;/code&gt; role. The test method code looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @Test&#xD;
+    public void testFireAndForget() {&#xD;
+        // Send a fire-and-forget message&#xD;
+        Mono&amp;lt;Void&amp;gt; result = requester&#xD;
+                .route(&amp;quot;fire-and-forget&amp;quot;)&#xD;
+                .data(new Message(&amp;quot;TEST&amp;quot;, &amp;quot;Fire-And-Forget&amp;quot;))&#xD;
+                .retrieveMono(Void.class);&#xD;
+&#xD;
+        // Assert that the user &amp;#39;test&amp;#39; is DENIED access to the method.&#xD;
+        StepVerifier&#xD;
+                .create(result)&#xD;
+                .verifyErrorMessage(&amp;quot;Denied&amp;quot;); // (1)&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The test asserts that the result of the fire and forget call should be an exception stating that the user is &amp;ldquo;Denied&amp;rdquo; access (1).&lt;/p&gt;
+&lt;p&gt;The other new test asserts that users with fake credentials can&amp;rsquo;t obtain an RSocket connection. The code for this test is in the file &lt;code&gt;RSocketClientDeniedConnectionToSecuredServerITest.java&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And finally, feel free to try the updated &lt;code&gt;rsocket-client&lt;/code&gt; at the command line. You can login using the various credentials and try accessing the server-side methods for yourself. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
+./mvnw clean package spring-boot:run&#xD;
+&#xD;
+# To get help with all the available commands&#xD;
+shell:&amp;gt; help&#xD;
+&#xD;
+# To access to all features.&#xD;
+shell:&amp;gt; login user pass &#xD;
+&#xD;
+# To access no features.&#xD;
+shell:&amp;gt; login test pass&#xD;
+&#xD;
+# To exit the client&#xD;
+shell:&amp;gt; exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;rsquo;s it for this tour of RSocket and Spring Security. I hope you found it useful. You can also see how Josh Long handles the same topic in &lt;a href="https://youtu.be/ER-mbWp2xYg"&gt;this Spring Tips video&lt;/a&gt;. As usual, feel free to like, share, and leave a comment below. For future news and updates, why not &lt;a href="https://twitter.com/benbravo73"&gt;follow me on Twitter&lt;/a&gt;?&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Spring and GraalVM (pt. 2)</title>
     <link rel="alternate" href="https://spring.io/blog/2020/06/16/spring-tips-spring-and-graalvm-pt-2" />
@@ -1021,493 +1290,6 @@ public class SampleConfiguration {
 &lt;p&gt;Spring Framework &lt;code&gt;5.2.7&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.7.RELEASE"&gt;over 44 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.1.16&lt;/code&gt; &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.16.RELEASE"&gt;includes 17 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with corresponding Spring Boot releases (2.3.1, 2.2.8 and 2.1.15).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.7.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Migrating Spring Boot's Build to Gradle</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/06/08/migrating-spring-boot-s-build-to-gradle" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-06-08:4092</id>
-    <updated>2020-06-08T12:18:26Z</updated>
-    <content type="html">&lt;p&gt;We made a fairly significant change to Spring Boot in 2.3.0.M1. It was the first release of the project to be built with Gradle rather than Maven. A &lt;a href="https://twitter.com/phillip_webb/status/1222943872205983744"&gt;thread on Twitter&lt;/a&gt; about the migration had a number of people asking why we switched and the benefits, if any, that we¡¯d seen. This blog post aims to answer those questions.&lt;/p&gt;
-&lt;p&gt;Each project in the Spring portfolio is run in a fairly autonomous manner. We strive for consistency where our users will see it most ? API design, for example ? but choose the tools that best meet the needs of the project for things that are less visible. One example of this is the build system. A change to the build system affects those that contribute to the project but, if we get things right, it has no effect on users. This has led to a mixture of Maven- and Gradle-based builds. For example, Spring Framework has been built with Gradle since 3.2.0.M1 in 2012, whereas Spring Boot began a year later and Spring Cloud shortly after that, both with Maven-based builds. Unlike Spring Boot, Spring Cloud has no plans to switch as Maven continues to meet their needs. In short, if you take only one thing from this blog post it¡¯s that you should choose whatever tool best meets your project¡¯s needs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#why-did-we-switch" class="anchor" name="why-did-we-switch"&gt;&lt;/a&gt;Why Did We Switch?&lt;/h2&gt;
-&lt;p&gt;The Spring Boot team¡¯s primary reason for considering a switch to Gradle was to reduce the time that it takes to build the project. We were becoming frustrated with the length of the feedback loop when making and testing changes. The time spent waiting for builds to complete was adding to the time taken to fix bugs and implement new features. We¡¯d seen the benefits of Gradle¡¯s incremental and parallel builds in other Spring projects and of &lt;a href="https://twitter.com/ankinson/status/1152850155537862657"&gt;Gradle&amp;rsquo;s build cache in a third-party project&lt;/a&gt;. We hoped we could get similar benefits in Spring Boot¡¯s build.&lt;/p&gt;
-&lt;p&gt;We¡¯d tried in the past to make use of Maven¡¯s support for parallel builds. Our attempts failed due to the complexity of Spring Boot¡¯s build, particularly its use of the Invoker Plugin. We worked around this on CI by splitting the build into four pieces. The main core of the project was built first and then three independent pieces were built in parallel. This arrangement helped but CI builds still took an hour or more. Furthermore, as the split structure was specific to CI builds, it didn¡¯t make developers¡¯ local builds any faster.&lt;/p&gt;
-&lt;p&gt;Gradle has an extensive model of the structure of a build, understanding the inputs and outputs of every task and their interdependencies. The promise of this modelling is that it allows tasks to be run in parallel while also being incremental, cached, or avoided altogether. In other words, Gradle aims to minimise the amount of work that is necessary to build any given change and to perform the work that is necessary in parallel. If we had persevered and extensively restructured Spring Boot¡¯s build, building in parallel may have been possible with Maven. And, if we¡¯d used &lt;a href="https://gradle.com/enterprise"&gt;Gradle Enterprise&lt;/a&gt;¡¯s Maven support, we could have enjoyed the benefits of build caching and avoidance as well. However, to fully enjoy the benefits of all four, we felt that we would have to try switching to Gradle.&lt;/p&gt;&lt;h2&gt;&lt;a href="#how-did-we-switch" class="anchor" name="how-did-we-switch"&gt;&lt;/a&gt;How Did We Switch?&lt;/h2&gt;
-&lt;p&gt;One criticism of Gradle that we¡¯d seen was that it led to builds that were harder to maintain and understand than their Maven-based equivalent. Gradle¡¯s flexibility allowed things to be done in subtly different ways even across modules in the same build. We needed to avoid this if the switch was to be successful. Having shipped four Spring Boot 2.3 milestones, its release candidate and its final release with Gradle, it looks like we have succeeded. We haven¡¯t seen any major build problems in the core team or from any of our other contributors.&lt;/p&gt;
-&lt;p&gt;A key feature of Spring Boot is convention over configuration and we applied this approach to the build too. Following the advice to &lt;a href="https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources"&gt;avoid having imperative logic in &lt;code&gt;build.gradle&lt;/code&gt; files&lt;/a&gt;, we wrote several small plugins that can be found in the project¡¯s &lt;a href="https://github.com/spring-projects/spring-boot/tree/d4c7315369e7e9dce6eb1c77e5f23d1e670247c8/buildSrc"&gt;&lt;code&gt;buildSrc&lt;/code&gt;&lt;/a&gt;. For example, we have a &lt;a href="https://github.com/spring-projects/spring-boot/blob/676ff423dd11b85ddffd72dc866ca2fe08faea1e/buildSrc/src/main/java/org/springframework/boot/build/starters/StarterPlugin.java"&gt;starter plugin&lt;/a&gt; that is applied to every Spring Boot starter module, ensuring that they¡¯re all configured, built, and published consistently. We also have a &lt;a href="https://github.com/spring-projects/spring-boot/blob/d4c7315369e7e9dce6eb1c77e5f23d1e670247c8/buildSrc/src/main/java/org/springframework/boot/build/ConventionsPlugin.java"&gt;conventions plugin&lt;/a&gt; that reacts to other plugins being applied and configures things like source code encoding, the use of the JUnit Platform, and compiling with &lt;code&gt;-parameters&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This approach has led to &lt;code&gt;build.gradle&lt;/code&gt; files that are almost completely declarative. Even though we wrote a number of plugins to apply our conventions and to plug gaps in the Gradle ecosystem, the &lt;a href="https://github.com/spring-projects/spring-boot/commit/ce99db19028b54886ae99c1fd916e613a982b65f#diff-c197962302397baf3a4cc36463dce5ea"&gt;commit that migrated to Gradle&lt;/a&gt; removed almost 9500 lines from the code base.&lt;/p&gt;&lt;h2&gt;&lt;a href="#was-the-switch-beneficial" class="anchor" name="was-the-switch-beneficial"&gt;&lt;/a&gt;Was the Switch Beneficial?&lt;/h2&gt;
-&lt;p&gt;In terms of reducing the project¡¯s build time, migrating the build to Gradle has undoubtedly been a success. As noted above, a full Maven-based build was taking an hour or more, both on CI and on developers¡¯ own machines. Over the last four weeks, the mean successful build time with Gradle has been 9 minutes 22 seconds, as shown in the following screenshot:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://static.spring.io/blog/wilkinsona/20200608/build-time.png" title="Build performance graph from Gradle Enterprise" /&gt;&lt;/p&gt;
-&lt;p&gt;We publish snapshots from our JDK 8 CI build. Focusing on those, &lt;a href="https://ge.spring.io/scans/trends?list.offset=0&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildOutcome=success&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.rootProjectName=spring-boot-build&amp;search.startTimeMax=1591446038913&amp;search.startTimeMin=1589026838912&amp;search.tags=JDK-1.8&amp;search.tags=ci&amp;search.timeZoneId=Europe/Zurich&amp;trends.section=buildTime&amp;trends.timeResolution=day"&gt;it has succeeded 183 times in the past 4 weeks&lt;/a&gt; with a mean build time of 19 minutes 37 seconds. Looking at successful local builds, we can see that there have been &lt;a href="https://ge.spring.io/scans/trends?list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildOutcome=success&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.rootProjectName=spring-boot-build&amp;search.startTimeMax=1591446038913&amp;search.startTimeMin=1589026838912&amp;search.tags=JDK-1.8&amp;search.tags=local&amp;search.timeZoneId=Europe/Zurich&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;273 successful builds in the past 4 weeks&lt;/a&gt; with a mean build time of 2 minutes 30 seconds.&lt;/p&gt;
-&lt;p&gt;Another benefit that had attracted us to Gradle was the experience that &lt;a href="https://twitter.com/ankinson/status/1152850155537862657"&gt;I had enjoyed&lt;/a&gt; when contributing to Testcontainers. We wanted Spring Boot¡¯s contributors to be able to clone and build the project as quickly as possible as well. Thanks to the remote build cache, a clean checkout can be &lt;a href="https://ge.spring.io/s/q5mis5zsh6x5y/performance/build"&gt;built in 3 minutes&lt;/a&gt;. This includes the time spent to download a large number of dependencies.&lt;/p&gt;
-&lt;p&gt;If you¡¯re interested in more details about the build¡¯s performance, there is lots more data available on our public &lt;a href="https://ge.spring.io/"&gt;Gradle Enterprise instance&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Beyond the performance improvements, we¡¯ve also started looking at some of the other data that¡¯s available. For example, we¡¯ve been aware for a while that we have a number of flaky tests. The build fails more often than we¡¯d like because of them and we can now see that reflected in the &lt;a href="https://ge.spring.io/scans/tests?failures.failureClassification=non_verification&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.relativeStartTime=P7D&amp;search.rootProjectName=spring-boot-build&amp;search.timeZoneId=Europe/Zurich&amp;tests.sortField=FAILED&amp;tests.unstableOnly=true&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;Tests dashboard&lt;/a&gt;. We¡¯ve started using Gradle&amp;rsquo;s flaky test mitigation to identify &lt;a href="https://ge.spring.io/scans/tests?failures.failureClassification=non_verification&amp;list.size=50&amp;list.sortColumn=startTime&amp;list.sortOrder=desc&amp;search.buildToolType=gradle&amp;search.buildToolType=maven&amp;search.relativeStartTime=P7D&amp;search.rootProjectName=spring-boot-build&amp;search.tags=CI&amp;search.timeZoneId=Europe/Zurich&amp;tests.sortField=FLAKY&amp;tests.unstableOnly=true&amp;trends.section=overview&amp;trends.timeResolution=day"&gt;any flaky tests occurring on CI&lt;/a&gt; and to help us understand if we¡¯ve successfully resolved or worked around the problems.&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We&amp;rsquo;re really pleased with how the migration went and the decrease in build times that we have seen. CI builds are now taking roughly 20 minutes on average, 3-4 times faster than before. Local builds are taking an average of 2 minutes 30 seconds, which is 20-30 times faster than before.&lt;/p&gt;
-&lt;p&gt;I¡¯d like to take this opportunity to thank the Gradle team for their help during the migration and for generously providing us with a Gradle Enterprise license to use with our open source projects. We¡¯re already using it with Spring Framework, Spring Security, and Spring Boot, with other teams planning to start making use of it for their Gradle- and Maven-based builds.&lt;/p&gt;
-&lt;p&gt;I¡¯d also like to thank the maintainers of various third-party plugins that we¡¯re using. They¡¯ve made suggested changes and merged pull requests to improve support for incremental builds and caching. Without them, we would not have been able to achieve the reduction in build times that we have seen.&lt;/p&gt;
-&lt;p&gt;If you¡¯re considering a migration from Maven to Gradle, I hope that knowing a bit more about the Spring Boot team¡¯s experience is useful. If you¡¯re a happy Maven user, please continue using and supporting the tool that¡¯s working well for you.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Kubernetes Release SIG Tim Pepper</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/06/05/a-bootiful-podcast-kubernetes-release-sig-tim-pepper" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-06-05:4090</id>
-    <updated>2020-06-05T03:16:39Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/pithomit"&gt;Tim Pepper (@pythomit)&lt;/a&gt; from VMware&amp;rsquo;s Open Source Technology Center about Kubernetes and his role on the Kubernetes Release SIG. &lt;/p&gt;
-&lt;p&gt;&lt;iframe title="Kubernetes contributor and Kubernetes Release SIG Chair Tim Pepper" src="https://www.podbean.com/media/player/ihsc7-ded228?from=usersite&amp;vjs=1&amp;skin=1&amp;fonts=Helvetica&amp;auto=0&amp;download=1" height="315" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - June 2, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/06/03/this-week-in-spring-june-2-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-06-03:4088</id>
-    <updated>2020-06-03T02:06:01Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans. We&amp;rsquo;ve got a ton of stuff to cover this week so let&amp;rsquo;s get to it.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/01/spring-cloud-greenwich-sr6-hoxton-sr5-and-2020-0-0-m2-aka-ilford-are-available"&gt;Spring Cloud Greenwich.SR6, Hoxton.SR5 and 2020.0.0-M2 (aka Ilford) are Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/28/a-bootiful-podcast-dr-malini-bhandaru-on-edgex-and-the-opportunities-for-developers-in-the-iot-space"&gt;A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/28/spring-security-oauth-2-5-0-released"&gt;Spring Security OAuth 2.5.0 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/28/spring-fu-0-3-0-and-beyond"&gt;Spring Fu 0.3.0 and beyond&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/28/spring-tools-4-6-2-released"&gt;Spring Tools 4.6.2 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/spring-batch-integration.html#remote-partitioning"&gt;Spring Batch Integration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/05/27/what-s-new-in-spring-data-elasticsearch-4-0"&gt;What&amp;rsquo;s new in Spring Data Elasticsearch 4.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2020/06/01/this-month-in-rabbitmq-april-2020-recap/"&gt;This Month in RabbitMQ &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/juliendubois/status/1267599112893091841?s=12"&gt;A really nice thread about using Spring Boot, GraalVM native images, and Azure Functions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.codecentric.de/en/2020/06/spring-boot-graalvm-docker-heroku/"&gt;Running Spring Boot GraalVM Native Images with Docker &amp;amp; Heroku&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://cguntur.me/2020/05/20/understanding-apache-maven-the-series/"&gt;Understanding Apache Maven - a great series by Chandra Guntur&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;New blog post: Static Compilation of Java (and Spring Boot-based) Applications at Alibaba at Scale](&lt;a href="https://medium.com/graalvm/static-compilation-of-java-applications-at-alibaba-at-scale-2944163c92e"&gt;https://medium.com/graalvm/static-compilation-of-java-applications-at-alibaba-at-scale-2944163c92e&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;We are looking for maintainers for the Spring Cloud AWS project to join @maciejwalkowiak in taking the project forward. See this issue to volunteer or comment on the future of the project](&lt;a href="https://t.co/Hm1mXCBphr"&gt;https://t.co/Hm1mXCBphr&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Did you hear? Spring Cloud Data Flow 2.5 is now GA. Check out &lt;a href="https://t.co/gXV2bo3LZq"&gt;the enhancements here&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Greenwich.SR6, Hoxton.SR5 and 2020.0.0-M2 (aka Ilford) are Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/06/01/spring-cloud-greenwich-sr6-hoxton-sr5-and-2020-0-0-m2-aka-ilford-are-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Spencer Gibb</name>
-    </author>
-    <id>tag:spring.io,2020-06-01:4087</id>
-    <updated>2020-06-01T19:03:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the following releases are available today: Service Release 6 (SR6) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud&lt;/a&gt; Greenwich Release Train, Service Release 5 (SR5) of the Spring Cloud Hoxton Release Train and Milestone 2 (M2) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud 2020.0&lt;/a&gt; (code name &lt;code&gt;Ilford&lt;/code&gt;) Release Train. The Greenwich and Hoxton releases can be found in Maven Central &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Greenwich.SR6/"&gt;here&lt;/a&gt; and &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Hoxton.SR5/"&gt;here&lt;/a&gt;. The &lt;code&gt;Ilford&lt;/code&gt; milestone can be found in the &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the individual release notes for more information: &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes"&gt;Greenwich.SR6&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;Hoxton.SR5&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-2020.0-Release-Notes"&gt;2020.0.0-M2&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;hr/&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-greenwich-release-train" class="anchor" name="notable-changes-in-the-greenwich-release-train"&gt;&lt;/a&gt;Notable Changes in the Greenwich Release Train&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://github.com/orgs/spring-cloud/projects/40"&gt;Github project&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Greenwich is compatible with Spring Boot 2.1.x.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2020-5410"&gt;CVE-2020-5410: Directory Traversal with spring-cloud-config-server&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;p&gt;Backports bootstrap property source ordering fix.&lt;/p&gt;
-&lt;p&gt;The following modules were updated as part of Greenwich.SR6:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.1.8.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.1.6.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/74?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Greenwich.SR6&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;buildscript {&#xD;
-  dependencies {&#xD;
-    classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE&amp;quot;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-  imports {&#xD;
-    mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR6&amp;#39;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-  //...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr/&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://github.com/orgs/spring-cloud/projects/38"&gt;Github project&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;Hoxton.SR5 is compatible with both Spring Boot 2.3.x and 2.2.x. Previous Hoxton releases are only compatible with Spring Boot 2.2.x.&lt;/p&gt;
-&lt;p&gt;Spring Cloud CLI was not released as part of Hoxton.SR5, look for a release with Hoxton.SR6.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;p&gt;Support was added for Spring Cloud LoadBalancer.&lt;br/&gt;Please see &lt;a href="https://github.com/spring-cloud/spring-cloud-contract/releases/tag/v2.2.3.RELEASE"&gt;release notes&lt;/a&gt; for information on upgrades and a minor API change in the Spring Cloud Contract Gradle Plugin.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-kubernetes" class="anchor" name="spring-cloud-kubernetes"&gt;&lt;/a&gt;Spring Cloud Kubernetes&lt;/h3&gt;
-&lt;p&gt;Labels were added to the health endpoint.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;p&gt;Builders were added to configure Spring Cloud LoadBalancer as well as pre-configured loadBalancers. LoadBalancer caching mechanism was adjusted to support &lt;code&gt;HealthCheckInstanceListSupplier&lt;/code&gt;. Support was added for non-enumerable property sources. Support was added for a cached random property source so service instance ids with random values will not be redefined during a refresh event.&lt;br/&gt;Please see &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/releases/tag/v2.2.3.RELEASE"&gt;release notes&lt;/a&gt; for information on changes in two property value defaults.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
-&lt;p&gt;Eureka Client now uses the Eureka HTTP API during bootstrap so that instances are not registered then deregistered.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
-&lt;p&gt;Support was added for Consul metadata rather than metadata in tags.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;p&gt;Updated support for Vault Azure MSI authentication.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;p&gt;Added support for custom Host headers.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
-&lt;p&gt;Added a &lt;code&gt;CuratorFrameworkCustomizer&lt;/code&gt; to allow users to customize Curator after auto-configuration.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-bus" class="anchor" name="spring-cloud-bus"&gt;&lt;/a&gt;Spring Cloud Bus&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;@RemoteApplicationEventsScan&lt;/code&gt; results are now cumulative. &lt;code&gt;RefreshRemoteApplicationEvent&lt;/code&gt; is only processed locally if targeted.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;p&gt;Support was added for sorting Spring Data pagination. Support was added to disable parent context of individual feign clients. An &lt;code&gt;ErrorDecoderFactory&lt;/code&gt; was added.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;ExceptionLoggingFilter&lt;/code&gt; was disabled by default.&lt;/p&gt;
-&lt;p&gt;The following modules were updated as part of Hoxton.SR5:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/64?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;1.1.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-kubernetes/milestone/19?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
-      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-cloudfoundry/milestone/15?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/73?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter Build &lt;/td&gt;
-      &lt;td&gt;Hoxton.SR5 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/89?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/48?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/76?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/37?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
-      &lt;td&gt;1.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-zookeeper/milestone/29?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/39?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
-      &lt;td&gt;1.0.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-circuitbreaker/milestone/5?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-bus/milestone/44?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
-      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-security/milestone/24?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/24?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
-      &lt;td&gt;2.2.2.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-aws/milestone/28?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;2.2.3.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/75?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Hoxton.SR5&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;buildscript {&#xD;
-  dependencies {&#xD;
-    classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE&amp;quot;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-  imports {&#xD;
-    mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR5&amp;#39;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-  //...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr/&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-2020-0-release-train" class="anchor" name="notable-changes-in-the-2020-0-release-train"&gt;&lt;/a&gt;Notable Changes in the 2020.0 Release Train&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://github.com/orgs/spring-cloud/projects/39"&gt;Github project&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
-&lt;p&gt;Eureka Client now uses &lt;code&gt;WebClient&lt;/code&gt; or &lt;code&gt;RestTemplate&lt;/code&gt; by default rather than Jersey.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;p&gt;Zipkin dependency was dropped from core.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;p&gt;The Java Route DSL was enhanced to not leak the Route methods. This helps avoid confusion over how the DSL should be used.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;spring.cloud.loadbalancer.health-check.initial-delay&lt;/code&gt; configuration was changed from &lt;code&gt;int&lt;/code&gt; to &lt;code&gt;Duration&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;Targeter&lt;/code&gt; interface and &lt;code&gt;FeignClientFactoryBean&lt;/code&gt; were made public.&lt;/p&gt;
-&lt;p&gt;The following modules were updated as part of 2020.0.0-M2:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;2.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/38?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Circuitbreaker &lt;/td&gt;
-      &lt;td&gt;2.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/65?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter Build &lt;/td&gt;
-      &lt;td&gt;2020.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Build &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;3.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;repositories&amp;gt;&#xD;
-    &amp;lt;repository&amp;gt;&#xD;
-        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
-        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
-        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
-        &amp;lt;snapshots&amp;gt;&#xD;
-            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
-        &amp;lt;/snapshots&amp;gt;&#xD;
-    &amp;lt;/repository&amp;gt;&#xD;
-&amp;lt;/repositories&amp;gt;&#xD;
-&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;2020.0.0-M2&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;buildscript {&#xD;
-  dependencies {&#xD;
-    classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE&amp;quot;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-repositories {&#xD;
-  maven {&#xD;
-    url &amp;#39;https://repo.spring.io/milestone&amp;#39;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-  imports {&#xD;
-    mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:2020.0.0-M2&amp;#39;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-  //...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

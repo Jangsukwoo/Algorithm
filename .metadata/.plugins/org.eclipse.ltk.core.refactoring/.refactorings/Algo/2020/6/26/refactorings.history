@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CodingAcademy.AOV네트워크&apos; to &apos;AOV네트워크_C언어&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;CodingAcademy.AOV네트워크&apos;&#x0D;&#x0A;- Renamed element: &apos;CodingAcademy.AOV네트워크_C언어&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AOV네트워크&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;CodingAcademy{AOV네트워크.java[AOV네트워크" matchStrategy="1" name="AOV네트워크_C언어" qualified="false" references="true" similarDeclarations="false" stamp="1592720314839" textual="false" version="1.0"/>
+</session>
