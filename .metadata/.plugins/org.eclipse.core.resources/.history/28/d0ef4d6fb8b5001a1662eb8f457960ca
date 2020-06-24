@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class Java_Test {
+	class Member{
+		int no;
+		String name;
+		
+	}
+	public static void main(String[] args) {
+	}
+}

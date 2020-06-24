@@ -1,0 +1,20 @@
+package CodingTest;
+
+public class Java_Test {
+	class Member{
+		int no;
+		String name;
+		Member(int no) {
+			super();
+			this.no = no;
+		}
+		Member(int no, String name) {
+			super();
+			this.no = no;
+			this.name = name;
+		}
+
+	}
+	public static void main(String[] args) {
+	}
+}

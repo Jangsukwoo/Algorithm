@@ -5,7 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-06-19T07:56:41Z</updated>
+  <updated>2020-06-23T22:43:00Z</updated>
+  <entry>
+    <title>This Week in Spring - June 23, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/06/23/this-week-in-spring-june-23-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-06-23:4113</id>
+    <updated>2020-06-23T22:43:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! What a week it&amp;rsquo;s been! Tomorrow I&amp;rsquo;ll be presenting a webinar on the easy integration &lt;a href="https://tanzu.vmware.com/content/webinars/jun-24-tanzu-observability-tips-for-understanding-your-spring-boot-applications"&gt;between Spring Boot and Tanzu Wavefront&lt;/a&gt;. Wavefront is an all-in-one, integrated distributed tracing metrics analytics observability platform. Join us tomorrow to learn about observability, about Wavefront, and their integration in the Spring ecosystem with Spring Cloud Sleuth and Micrometer, among other things.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve so many great things to look at this week so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/19/spring-tools-4-7-0-released"&gt;Spring Tools 4.7.0 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/19/a-bootiful-podcast-nisha-kumar-and-rose-judge-on-the-linux-foundation-s-project-tern"&gt;A Bootiful Podcast: Nisha Kumar and Rose Judge on the Linux Foundation&amp;rsquo;s project Tern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/18/what-s-new-in-spring-boot-2-3"&gt;What&amp;rsquo;s new in Spring Boot 2.3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/17/getting-started-with-rsocket-spring-security"&gt;Getting Started With RSocket: Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/16/spring-tips-spring-and-graal-pt-2"&gt;Spring Tips: Spring and Graal (pt. 2)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/06/16/spring-boot-for-apache-geode-vmware-gemfire-1-1-8-release-and-1-2-8-release-available"&gt;Spring Boot for Apache Geode &amp;amp; VMware GemFire 1.1.8.RELEASE and 1.2.8.RELEASE available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/juliendubois/status/1275415716049674241?s=12"&gt;Julien Dubois on an Azure Native Function with Spring Cloud Function&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/06/vmworld-2020-digital-edition.html"&gt;VMworld 2020 Digital Edition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this &lt;a href="https://github.com/spring-projects/spring-data-examples/blob/master/jdbc/jooq/README.adoc"&gt;Spring Data JDBC example demonstrating an integration with JOOQ&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Check out the rewritten getting started guide on &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/"&gt;using Spring Data JPA with Azure Database for MySQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A great post on Okta Developer: &lt;a href="https://developer.okta.com/blog/2020/06/17/angular-docker-spring-boot"&gt;Angular, Docker with a Big Hug from Spring Boot &lt;/a&gt;. Okta&amp;rsquo;s Matt Raible drove the creation of the article. He solicited input from Benoit Sautel (who helped with Gradle), Google&amp;rsquo;s Ray Tsang (who helped with Docker and Jib), Google&amp;rsquo;s James Ward (Kubernetes and Google Cloud), Heroku&amp;rsquo;s Joe Kutner (who helped with Heroku and Docker and buildpacks), and me (I helped with Spring and Cloud Foundry). It was a lot of fun collaborating with so many talented people.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/presentations/ddd-spring-data-jdbc/"&gt;Domain-Driven Design with Relational Databases Using Spring Data JDBC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A great post on the Codecentric AG blog: &lt;a href="https://blog.codecentric.de/en/2020/06/spring-boot-graalvm-native-image-maven-plugin/"&gt;Simplifying Spring Boot GraalVM Native Image builds with the native-image-maven-plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/06/18/java14-preview-api/"&gt;Java 14 - Preview Features and their APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/06/17/sealed-classes/"&gt;Java Feature Spotlight: Sealed Classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tools 4.7.0 released</title>
     <link rel="alternate" href="https://spring.io/blog/2020/06/19/spring-tools-4-7-0-released" />
@@ -1275,21 +1305,6 @@ public class SampleConfiguration {
   &lt;li&gt;A nice look at tools and practices for benchmarking and &lt;a href="https://www.rabbitmq.com/blog/2020/06/04/how-to-run-benchmarks/"&gt;simulating workloads on RabbitMQ installations&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/06/03/dr-bhandaru-talks-edgex-bootiful-podcast/"&gt;What¡¯s Up Doc? Dr. Bhandaru Talks EdgeX on the Bootiful Podcast with Josh Long&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 5.2.7 and 5.1.16 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/06/09/spring-framework-5-2-7-and-5-1-16-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>St?phane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-06-09:4093</id>
-    <updated>2020-06-09T09:19:26Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.2.7&lt;/code&gt; and &lt;code&gt;5.1.16&lt;/code&gt; are available now.&lt;/p&gt;
-&lt;p&gt;Spring Framework &lt;code&gt;5.2.7&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.7.RELEASE"&gt;over 44 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.1.16&lt;/code&gt; &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.16.RELEASE"&gt;includes 17 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with corresponding Spring Boot releases (2.3.1, 2.2.8 and 2.1.15).&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.7.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
