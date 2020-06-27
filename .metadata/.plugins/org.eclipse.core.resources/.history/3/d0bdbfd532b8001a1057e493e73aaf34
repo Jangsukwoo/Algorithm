@@ -1,0 +1,18 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class 넷마1 {
+	static ArrayList<Long> numberset;
+	public static void main(String[] args) {
+		
+	}
+    public long solution(int n) {
+        long answer = 0;
+        numberset = new ArrayList<Long>();
+        for(int m=1;m<=1000;m++) {
+        	for(int k=2;k>)
+        }
+        return answer;
+    }
+}

@@ -1,0 +1,14 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class 넷마1 {
+	static ArrayList<Long> numberset;
+	public static void main(String[] args) {
+		
+	}
+    public long solution(int n) {
+        long answer = 0;
+        return answer;
+    }
+}
