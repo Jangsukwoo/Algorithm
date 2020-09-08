@@ -7,7 +7,6 @@ public class 입국심사 {
 	 * 이진탐색
 	 */
 	static int LIMIT = 1000000000;
-	static int N;
 	public static void main(String[] args){
 		int[] limitArray = new int[100000];
 		
@@ -18,11 +17,7 @@ public class 입국심사 {
 		long answer = solution(LIMIT,limitArray);
 		
 		long endTime =  System.currentTimeMillis();
-		
-		System.out.println("걸린 long 값 처리시간"+(endTime-startTime));
-		
-		double resultTime = (double)(endTime-startTime)/(double)1000;
-		System.out.println("걸린 처리시간"+resultTime);
+		System.out.println("걸린 처리시간"+(endTime-startTime));
 		System.out.println(answer);
 	}
     public static long solution(int n, int[] times) {
@@ -40,19 +35,12 @@ public class 입국심사 {
         		startTime = mid+1;
         	}
         }
-        
         System.out.println("이진탐색 처리 횟수"+binaryCount);
-        
         return startTime;
     }
 	private static long getPeopleCount(int[] times, long mid) {
 		long peopleCount = 0;
-		int n = 0;
-		for(int time : times) {
-			peopleCount+=(mid/time);
-			n++;
-		}
-		System.out.println(n);
+		for(int time : times) peopleCount+=(mid/time);
 		return peopleCount;
 	}
 }

@@ -40,9 +40,7 @@ public class 입국심사 {
         		startTime = mid+1;
         	}
         }
-        
         System.out.println("이진탐색 처리 횟수"+binaryCount);
-        
         return startTime;
     }
 	private static long getPeopleCount(int[] times, long mid) {

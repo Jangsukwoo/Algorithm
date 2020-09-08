@@ -19,7 +19,7 @@ public class 입국심사 {
 		
 		long endTime =  System.currentTimeMillis();
 		
-		System.out.println("걸린 long 값 처리시간"+(endTime-startTime));
+		System.out.println("걸린 long 값 처리시간"+(endTime-startTime);
 		
 		double resultTime = (double)(endTime-startTime)/(double)1000;
 		System.out.println("걸린 처리시간"+resultTime);
@@ -40,9 +40,7 @@ public class 입국심사 {
         		startTime = mid+1;
         	}
         }
-        
         System.out.println("이진탐색 처리 횟수"+binaryCount);
-        
         return startTime;
     }
 	private static long getPeopleCount(int[] times, long mid) {
