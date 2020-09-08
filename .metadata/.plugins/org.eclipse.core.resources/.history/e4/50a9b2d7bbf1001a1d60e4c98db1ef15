@@ -1,0 +1,43 @@
+package 탐색;
+
+import java.util.Arrays;
+
+public class 입국심사 {
+	/*
+	 */
+	public static void main(String[] args) {
+		long answer = solution(6,new int[] {7,10});
+		System.out.println(answer);
+	}
+    public static long solution(int n, int[] times) {
+        long answer = 0;
+        
+        Arrays.sort(times); //오름차순 정렬
+        
+        long startTime = 1;
+        long endTime = Integer.toUnsignedLong(times[times.length-1])*Integer.toUnsignedLong(n);
+        int conut = 1;
+        while(startTime<=endTime){
+        	conut++;
+        	System.out.println("스타트타임"+startTime);
+        	System.out.println("앤드타임"+endTime);
+        	int peopleCount = getPeopleCount(times,endTime);
+        	System.out.println("피플카운트"+peopleCount);
+        	long mid = (startTime+endTime)/2;
+
+        	if(peopleCount>=n){//심사해야하는 사람들 보다 많거나 같으면 계속 진행  
+        		endTime = mid;
+        	}else{//심사해야하는 사람들 보다 적으면 
+        		endTime = mid;
+        	}
+        	if(conut==10) break;
+        }
+        System.out.println(startTime);
+        return answer;
+    }
+	private static int getPeopleCount(int[] times, long endTime) {
+		int peopleCount = 0;
+		for(int time : times) peopleCount+=(endTime/time);
+		return peopleCount;
+	}
+}

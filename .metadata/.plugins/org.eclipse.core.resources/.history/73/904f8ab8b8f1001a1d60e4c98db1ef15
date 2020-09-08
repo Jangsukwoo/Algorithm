@@ -1,0 +1,36 @@
+package 탐색;
+
+import java.util.Arrays;
+
+public class 입국심사 {
+	/*
+	 * 4:55 시작
+	 * 0 0
+	 * 7 
+	 * 7 10 
+	 * 
+	 * 7
+	 * 
+	 * 14 10
+	 * 
+	 * 14
+	 * 
+	 * 21 20
+	 * 
+	 * 
+	 * 14 20
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	public static void main(String[] args) {
+		long answer = solution(6,new int[] {7,10});
+		System.out.println(answer);
+	}
+    public static long solution(int n, int[] times) {
+        long answer = 0;
+        Arrays.sort(times);
+        return answer;
+    }
+}
