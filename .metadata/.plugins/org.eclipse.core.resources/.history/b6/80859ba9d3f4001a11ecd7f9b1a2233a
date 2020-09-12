@@ -1,0 +1,20 @@
+package CodingTest;
+
+import java.util.ArrayList;
+
+public class KAKAOSolution4 {
+	static int V,E;
+	static int startVertax;
+	static ArrayList<int[]>[] adjList;//각 정점에 대해 
+	static int[] dist;
+	static boolean[] visit;
+	static int INF = 987654321;
+	
+	public static void main(String[] args) {
+		
+	}
+	public int solution(int n, int s, int a, int b, int[][] fares) {
+		int answer = 0;
+		return answer;
+	}
+}

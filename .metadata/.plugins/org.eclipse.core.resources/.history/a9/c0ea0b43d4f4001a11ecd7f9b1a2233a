@@ -1,0 +1,45 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
+
+public class KAKAOSolution4 {
+	static int V,E;
+	static int startVertax;
+	static ArrayList<int[]>[] adjList;//인접리스트
+	static PriorityQueue<int[]> pq;
+	static int[] dist;
+	static boolean[] visit;
+	static int INF = 987654321;
+	
+	
+	public static void main(String[] args) {
+		
+	}
+	public int solution(int n, int s, int a, int b, int[][] fares){
+		int answer = 0;
+		initailization(fares);
+		return answer;
+	}
+	private void initailization(int[][] fares) {
+		pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				// TODO Auto-generated method stub
+				return Integer.compare(o1[1],o2[1]);
+			}
+		});
+		for(int i=1;i<=N;i++) {
+			adjList[i] = new ArrayList<int[]>();
+			dist[i] = INF; //초기화
+		}
+		for(int i=0,from,to,cost;i<fares.length;i++) {
+			from = fares[i][0];
+			to = fares[i][1];
+			cost = fares[i][2];
+			adjList[from].add(new int[] {to,cost});
+		}
+	}
+}

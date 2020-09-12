@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class Solution3 {
+	public static void main(String[] args) {
+		
+	}
+    public int[] solution(String[] info, String[] query) {
+        int[] answer = {};
+        return answer;
+    }
+}

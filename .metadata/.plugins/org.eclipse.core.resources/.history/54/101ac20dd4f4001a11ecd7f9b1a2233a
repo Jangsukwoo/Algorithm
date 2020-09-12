@@ -1,0 +1,31 @@
+package CodingTest;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class KAKAOSolution4 {
+	static int V,E;
+	static int startVertax;
+	static ArrayList<int[]>[] adjList;//인접리스트
+	static int[] dist;
+	static boolean[] visit;
+	static int INF = 987654321;
+	static StringTokenizer st;
+	public static void main(String[] args) {
+		
+	}
+	public int solution(int n, int s, int a, int b, int[][] fares){
+		int answer = 0;
+		setAdjList(fares);
+		return answer;
+	}
+	private void setAdjList(int[][] fares) {
+		for(int i=0,from,to,cost;i<fares.length;i++) {
+			st = new StringTokenizer(br.readLine());
+			from = Integer.parseInt(st.nextToken());
+			to = Integer.parseInt(st.nextToken());
+			cost = Integer.parseInt(st.nextToken());
+			adjList[from].add(new int[] {to,cost});
+		}
+	}
+}

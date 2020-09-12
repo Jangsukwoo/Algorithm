@@ -1,7 +1,0 @@
-package 탐색;
-
-public class 음식물피하기 {
-	public static void main(String[] args) {
-
-	}
-}
