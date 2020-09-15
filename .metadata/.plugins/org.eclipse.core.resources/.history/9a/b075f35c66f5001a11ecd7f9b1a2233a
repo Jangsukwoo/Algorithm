@@ -1,0 +1,27 @@
+package CodingTest;
+
+public class 라1 {
+	static int[] numCount = new int[1000002]; 
+	static int max = Integer.MIN_VALUE;
+	public static void main(String[] args) {
+	}
+	public int solution(int[][] boxes) {
+	        int answer=0;
+	        int size = boxes.length; 
+	        for(int i = 0; i<size; i++) {
+	        	numCount[boxes[i][0]]++; 
+	        	numCount[boxes[i][1]]++;
+	           
+	           if(boxes[i][0]>max) max = boxes[i][0]; 
+	           if(boxes[i][1]>max) max = boxes[i][1];
+	        }
+	        
+	        for(int i = 1; i<=max; i++) { 
+	           if(numCount[i]>=2) {
+	              answer -= (numCount[i]/2); //전체 박스의 갯수에서 짝이 맞는 수(1+1완성된 박스)의 값을 빼줌.
+	           }
+	        }
+	       
+	        return answer;
+	    }
+}

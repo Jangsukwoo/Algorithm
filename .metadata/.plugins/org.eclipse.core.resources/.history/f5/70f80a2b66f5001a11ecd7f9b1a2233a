@@ -1,0 +1,27 @@
+package CodingTest;
+
+public class 라1 {
+	static int[] num = new int[1000002]; 
+	static int max = Integer.MIN_VALUE;
+	public static void main(String[] args) {
+	}
+	public int solution(int[][] boxes) {
+	        int answer=0;
+	        int size = boxes.length; 
+	        for(int i = 0; i<size; i++) {
+	           num[boxes[i][0]]++; //어떤숫자가 들어있는지 숫자배열에 체크
+	           num[boxes[i][1]]++;
+	           
+	           if(boxes[i][0]>max) max = boxes[i][0]; //박스에 들어있는 수 중 가장 큰 수 찾기 ->  아래 for문
+	           if(boxes[i][1]>max) max = boxes[i][1];
+	        }
+	        
+	        for(int i = 1; i<=max; i++) { //1~최대수까지 탐색하면서 
+	           if(num[i]>=2) { //박스에 들어있는 수가 2이상 일 때,
+	              answer -= (num[i]/2); //전체 박스의 갯수에서 짝이 맞는 수(1+1완성된 박스)의 값을 빼줌.
+	           }
+	        }
+	       
+	        return answer;
+	    }
+}

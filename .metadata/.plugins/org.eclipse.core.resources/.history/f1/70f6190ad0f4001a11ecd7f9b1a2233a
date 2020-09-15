@@ -1,8 +1,0 @@
-package CodingTest;
-
-public class KAKAOSolution4 {
-	public int solution(int n, int s, int a, int b, int[][] fares) {
-		int answer = 0;
-		return answer;
-	}
-}

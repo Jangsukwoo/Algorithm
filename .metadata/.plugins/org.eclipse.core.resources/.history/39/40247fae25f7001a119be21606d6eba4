@@ -1,0 +1,8 @@
+package SamsungDS;
+
+public class 미친로봇 {
+	static int N;
+	public static void main(String[] args) {
+
+	}
+}

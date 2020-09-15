@@ -1,0 +1,65 @@
+package CodingTest;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class 라3 {
+	
+	static HashMap<String, Boolean> map;
+	static Queue<Data> q = new LinkedList<Data>();
+	static class Data{
+		String stringNum;
+		int num;
+		public Data(String stringNum, int num) {
+			this.stringNum = stringNum;
+			this.num = num;
+		}
+	}
+	public static void main(String[] args) {
+
+	}
+	public static int[] bfs(String stringNumber){
+	    q.add(new Data(stringNumber,0));
+		q.push(St(s,0));
+	    m.insert(make_pair(s,true));
+	    while(!q.empty()){
+	        St cur = q.front(); q.pop();
+	        //cout << cur.s << " " << cur.d << endl;
+	        
+	        if(cur.s.size() == 1) return make_pair(cur.d, atoi(cur.s.c_str()));
+	        
+	        for(int i=1; i<cur.s.size(); i++){
+	            string temp1,temp2;
+	            temp1 = cur.s.substr(0,i);
+	            temp2 = cur.s.substr(i);
+	            
+	            if(temp2[0] == '0') continue;
+	            
+	            int first, second, sum;
+	            first = atoi(temp1.c_str());
+	            second = atoi(temp2.c_str());
+	            sum = first + second;
+	            
+	            if(m.find(to_string(sum)) != m.end()) continue;
+	            
+	            m.insert(make_pair(to_string(sum), true));
+	            q.push(St(to_string(sum),cur.d+1));
+	        }
+	    }
+	    return make_pair(0,0);
+	}
+
+	public static int[] solution(int n){
+	    int[] answer;
+	    
+	    String stringNumber = Integer.toString(n);
+	    
+	    pair<int,int> result = bfs(stringNumber);
+	    
+	    answer.push_back(result.first);
+	    answer.push_back(result.second);
+	    
+	    return answer;
+	}
+}
