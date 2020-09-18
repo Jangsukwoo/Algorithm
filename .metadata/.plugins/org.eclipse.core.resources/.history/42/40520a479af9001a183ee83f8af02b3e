@@ -1,0 +1,81 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class 연구소 {
+	/*
+	 * 0 : 빈칸
+	 * 1 : 벽
+	 * 2 : 바이러스
+	 * 
+	 * 벽은 반드시 3개
+	 */
+	static int R,C;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int answer;
+	static ArrayList<int[]> blankList = new ArrayList<int[]>();
+	static ArrayList<int[]> virusList = new ArrayList<int[]>();
+	static int[][] lab;
+	static int[][] copyLab;
+	static int[] pick = new int[3];
+	static Queue<int[]> q = new LinkedList<int[]>();
+	public static void main(String[] args) throws IOException {
+		setData();
+		nCr(0,0);//조합 dfs
+	}
+	private static void nCr(int idx, int depth) {
+		if(depth==3){ //벽 설치할 자리 3개 선정 끝
+			copyLab(); //맵 복사
+			installWall(); //벽 설치
+			bfs(); //바이러스 확산
+			return;
+		}
+		for(int i=idx;i<blankList.size();i++) {
+			pick[depth] = i;
+			nCr(i+1, depth+1);
+		}
+	}
+	private static void bfs() {
+		
+	}
+	private static void installWall() {
+		for(int i=0;i<3;i++) {
+			int pickNumber = pick[i];
+			int[] RC = blankList.get(pickNumber);
+			int row = RC[0];
+			int col = RC[1];
+			copyLab[row][col] = 1;
+		}
+	}
+	private static void copyLab() {
+		for(int row=0;row<R;row++) {
+			for(int col=0;col<C;col++) {
+				copyLab[rowl[col] = lab[row][col];  
+			}
+		}
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		lab = new int[R][C];
+		for(int row=0;row<R;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<C;col++) {
+				lab[row][col] = Integer.parseInt(st.nextToken());
+				if(lab[row][col]==0) blankList.add(new int[] {row,col});
+				if(lab[row][col]==2) virusList.add(new int[] {row,col});
+			}
+		}
+	}
+}

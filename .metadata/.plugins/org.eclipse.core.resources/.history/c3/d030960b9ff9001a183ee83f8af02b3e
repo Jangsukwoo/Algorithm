@@ -1,0 +1,68 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
+
+public class 아기상어 {
+	static int N;
+	static int[][] aquarium;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static PriorityQueue<Fish> targetList;
+	static StringTokenizer st;
+	static int answer;
+	static boolean impossible;
+	static class BabyShark{
+		int row;
+		int col;
+		int size;
+		int eat;
+		public BabyShark(int row, int col, int size, int eat) {
+			this.row = row;
+			this.col = col;
+			this.size = size;
+			this.eat = eat;
+		}
+	}
+	static class Fish{
+		int row;
+		int col;
+		int manhattanDistance;
+		int size;
+		public Fish(int row, int col, int manhattanDistance, int size) {
+			this.row = row;
+			this.col = col;
+			this.manhattanDistance = manhattanDistance;
+			this.size = size;
+		}
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		simulation();
+	}
+	private static void simulation() {
+		/*
+		 * 1. 먹을 물고기가 있는지?
+		 * 2. 이동결정
+		 * 3. bfs로 이동
+		 */
+		while(true) {
+			
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		aquarium = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				aquarium[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+		targetList = new PriorityQueue<Fish>(new Comparator<Fish>() {
+		})
+	}
+}

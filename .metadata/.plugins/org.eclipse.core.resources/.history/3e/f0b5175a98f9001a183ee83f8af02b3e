@@ -1,0 +1,10 @@
+package SamsungDS;
+
+public class 연구소 {
+	static int N,M;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	public static void main(String[] args) {
+
+	}
+}
