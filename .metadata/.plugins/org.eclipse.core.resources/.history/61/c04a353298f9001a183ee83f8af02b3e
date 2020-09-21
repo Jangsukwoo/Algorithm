@@ -1,8 +1,0 @@
-package SamsungDS;
-
-public class 연구소 {
-	
-	public static void main(String[] args) {
-
-	}
-}

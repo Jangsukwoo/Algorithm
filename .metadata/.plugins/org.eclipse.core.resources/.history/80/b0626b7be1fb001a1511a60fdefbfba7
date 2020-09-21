@@ -1,0 +1,9 @@
+package SamsungDS;
+/*
+ * 1705 시작
+ */
+public class 점프게임 {
+	public static void main(String[] args) {
+
+	}
+}

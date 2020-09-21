@@ -1,8 +1,0 @@
-package SamsungDS;
-
-public class 신기한소수 {
-	static int N;
-	public static void main(String[] args) {
-		
-	}
-}
