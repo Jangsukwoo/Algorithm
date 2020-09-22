@@ -1,0 +1,17 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 특이한자석 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] gearState = new int[4][8];
+	static int rotateSize;
+	static int[] rotateWise = new int[4];
+	static int score;
+	public static void main(String[] args) {
+
+	}
+}

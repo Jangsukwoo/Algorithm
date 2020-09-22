@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="CodingAcademy.단어퍼즐.Trie"/>
-    <fullyQualifiedTypeName name="javax.crypto.spec.IvParameterSpec"/>
     <fullyQualifiedTypeName name="공채대비.고돌이와고소미"/>
     <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Method"/>
     <fullyQualifiedTypeName name="공채대비.낚시왕.Shark"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.transforms.InvalidTransformException"/>
     <fullyQualifiedTypeName name="공채대비.두동전.CoinInformation"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="공채대비.나무재테크.Tree"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="javax.print.DocFlavor.CHAR_ARRAY"/>
     <fullyQualifiedTypeName name="jdk.nashorn.internal.objects.NativeUint16Array"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.Annotation.element_value"/>
@@ -47,17 +43,21 @@
     <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
     <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
     <fullyQualifiedTypeName name="CodingTest.BugsCardCollection"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="SamsungDS.아기상어.BabyShark"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="SamsungDS.아기상어.Fish"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.resources.legacy"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="SamsungDS.미생물격리.MicroOrganism"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="SamsungDS.아기상어.BabyShark"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="SamsungDS.아기상어.Fish"/>
 </qualifiedTypeNameHistroy>

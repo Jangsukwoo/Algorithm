@@ -40,17 +40,13 @@ public class 점프게임 {
 				if(currentPosition<time) continue;
 				nextPosition = currentPosition-1;
 				nextLine = currentLine;
-				
 				if(rangeCheck(nextPosition)
 						&& nextPosition>=time
 						&& visit[nextLine][nextPosition] == false
 						&& line[nextLine][nextPosition]=='1') insertQueue(new int[] {nextLine , nextPosition});
 				//앞으로
-				
-				
 				nextPosition = currentPosition+1;
 				nextLine = currentLine;
-				
 				if(nextPosition>(N-1)) return true;
 				if(rangeCheck(nextPosition)
 						&& nextPosition>=time
@@ -66,7 +62,6 @@ public class 점프게임 {
 						&& visit[nextLine][nextPosition] == false
 						&& line[nextLine][nextPosition]=='1') insertQueue(new int[] {nextLine , nextPosition});
 			}
-
 			time++;
 		}
 		return false;

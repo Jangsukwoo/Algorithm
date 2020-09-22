@@ -5,7 +5,96 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-09-17T22:31:00Z</updated>
+  <updated>2020-09-21T20:18:20Z</updated>
+  <entry>
+    <title>Spring Boot for Apache Geode 1.1.10.RELEASE, 1.2.10.RELEASE, 1.3.4.RELEASE and 1.4.0-M3 available!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/21/spring-boot-for-apache-geode-1-1-10-release-1-2-10-release-1-3-4-release-and-1-4-0-m3-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2020-09-21:4212</id>
+    <updated>2020-09-21T20:18:20Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring and Apache Geode communities, it is my pleasure to announce the release of &lt;em&gt;Spring Boot for Apache Geode&lt;/em&gt; (SBDG) &lt;code&gt;1.1.10.RELEASE&lt;/code&gt;, &lt;code&gt;1.2.10.RELEASE&lt;/code&gt;, &lt;code&gt;1.3.4.RELEASE&lt;/code&gt; and &lt;code&gt;1.4.0-M3&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SBDG &lt;code&gt;1.1.10.RELEASE&lt;/code&gt; is based on Spring Boot &lt;code&gt;2.1.17.RELEASE&lt;/code&gt;, SBDG &lt;code&gt;1.2.10.RELEASE&lt;/code&gt; is based on Spring Boot &lt;code&gt;2.2.10.RELEASE&lt;/code&gt;, SBDG &lt;code&gt;1.3.4.RELEASE&lt;/code&gt; is based on Spring Boot &lt;code&gt;2.3.4.RELEASE&lt;/code&gt; and SBDG &lt;code&gt;1.4.0-M3&lt;/code&gt; is based on Spring Boot &lt;code&gt;2.4.0-M3&lt;/code&gt;.  In addition, SBDG pulls in the latest &lt;a href="https://spring.io/projects/spring-data-geode"&gt;Spring Data&lt;/a&gt;, &lt;a href="https://spring.io/projects/spring-session-data-geode"&gt;Spring Session&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-test-data-geode"&gt;Spring Test&lt;/a&gt; for Apache Geode releases and bits.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Each of these releases includes dependency alignment, documentation revisions and minor improvements.  See the &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/blob/master/spring-geode/src/main/resources/changelog.txt#L7-L82"&gt;changelog&lt;/a&gt; for complete details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+SBDG &lt;code&gt;1.4.0-M3&lt;/code&gt; has been recently rebased on Apache Geode &lt;code&gt;1.13.0&lt;/code&gt;.  Given &lt;a href="https://tanzu.vmware.com/gemfire"&gt;VMware Tanzu GemFire&lt;/a&gt; (formerly known as Pivotal GemFire) is now longer released by VMware, Inc. as a standalone, independently managed solution, SBDG &lt;code&gt;1.4&lt;/code&gt; will no longer ship any &lt;code&gt;spring-gemfire-starter.*&lt;/code&gt; modules. GemFire 9.10 was the last supported, standalone, independently managed version of GemFire, which was based on Apache Geode 1.12.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is very quick and easy to get started with &lt;em&gt;Spring Boot for Apache Geode&lt;/em&gt; by including the base starter (i.e. &lt;code&gt;spring-geode-starter&lt;/code&gt;) or one of the specific starters (e.g. &lt;code&gt;spring-geode-starter-session&lt;/code&gt; when handling Session state management use cases) in your project Maven POM or Gradle build file.  Alternatively, you can go to &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; and include the "&lt;em&gt;Spring for Apache Geode&lt;/em&gt;" dependency, or simply follow this &lt;a href="https://start.spring.io/#!platformVersion=2.3.4.RELEASE&amp;amp;dependencies=geode"&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Feedback on these releases is appreciated and welcomed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-boot-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session for Apache Geode 2.1.11.RELEASE, 2.2.5.RELEASE, 2.3.1.RELEASE &amp; 2.4.0-RC1 available!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/21/spring-session-for-apache-geode-2-1-11-release-2-2-5-release-2-3-1-release-2-4-0-rc1-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2020-09-21:4211</id>
+    <updated>2020-09-21T19:32:01Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring and Apache Geode communities, it is my pleasure to announce the release of &lt;em&gt;Spring Session for Apache Geode&lt;/em&gt; (SSDG) &lt;code&gt;2.1.11.RELEASE&lt;/code&gt;, &lt;code&gt;2.2.5.RELEASE&lt;/code&gt;, &lt;code&gt;2.3.1.RELEASE&lt;/code&gt; and &lt;code&gt;2.4.0-RC1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;SSDG &lt;code&gt;2.1.11.RELEASE&lt;/code&gt; is pulled in by Spring Boot &lt;code&gt;2.1&lt;/code&gt;, SSDG &lt;code&gt;2.2.5.RELEASE&lt;/code&gt; by Spring Boot &lt;code&gt;2.2&lt;/code&gt;, SSDG &lt;code&gt;2.3.1.RELEASE&lt;/code&gt; by Spring Boot &lt;code&gt;2.3&lt;/code&gt; and SSDG &lt;code&gt;2.4.0-RC1&lt;/code&gt; by Spring Boot &lt;code&gt;2.4&lt;/code&gt;.  All of these releases are primarily dependency alignment releases and pick up the latest Spring Data bits on which SSDG is strongly based.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+SSDG &lt;code&gt;2.4.0-RC1&lt;/code&gt; is now based on Apache Geode &lt;code&gt;1.13.0&lt;/code&gt;. Given &lt;a href="https://tanzu.vmware.com/gemfire"&gt;VMware Tanzu GemFire&lt;/a&gt; (formerly known as Pivotal GemFire) is now longer released by VMware, Inc. as a standalone, independently managed solution, SSDG &lt;code&gt;2.4&lt;/code&gt; will no longer ship a &lt;code&gt;spring-session-data-gemfire&lt;/code&gt; module.  GemFire &lt;code&gt;9.10&lt;/code&gt; was the last supported, standalone, independently managed version of GemFire, which was based on Apache Geode &lt;code&gt;1.12&lt;/code&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-session-data-geode/blob/master/spring-session-data-geode/src/main/resources/changelog.txt#L7-L68"&gt;changelog&lt;/a&gt; for complete details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Feedback on these release is welcomed and appreciated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Lightbend CTO Jonas Bon?r on his epic, aspect-oriented, distributed, reactive work</title>
     <link rel="alternate" href="https://spring.io/blog/2020/09/17/a-bootiful-podcast-lightbend-cto-jonas-bon-r-on-his-epic-aspect-oriented-distributed-reactive-work" />
@@ -504,44 +593,6 @@ Artem&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://github.com/spring-io/spring-io-static/raw/master/blog/bwilcock/20201011/state-of-spring-2020-key-findings.png" alt="overview" /&gt;&lt;/p&gt;
 &lt;p&gt;Thanks to everyone that completed the survey. We look forward to making this report an annual event, following the growth, success, and evolution of our community.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://tanzu.vmware.com/content/ebooks/state-of-spring-2020"&gt;Download your copy of &amp;lsquo;The State Of Spring 2020&amp;rsquo; NOW!&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Legendary Spring contributor Rossen Stoyanchev on all things web, reactive and RSocket</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/10/a-bootiful-podcast-legendary-spring-contributor-rossen-stoyanchev-on-all-things-web-reactive-and-rsocket" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-10:4194</id>
-    <updated>2020-09-10T23:06:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment of a &lt;em&gt;Bootiful Podcast&lt;/em&gt;, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about the week that was, his new book &lt;a href="http://ReactiveSpring.io"&gt;&amp;ldquo;Reactive Spring,&amp;rdquo;&lt;/a&gt; and then talks to one of the most senior engineers on the Spring team and a longtime contributor to all things web and reactive - &lt;a href="http://twitter.com/rstoya05"&gt;Rossen Stoyanchev (@rstoya05)&lt;/a&gt;.&lt;/p&gt;
-&lt;iframe title="Legendary Spring contributor Rossen Stoyanchev on all things web, reactive and RSocket " height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/zisid-eb15e0?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.4 goes GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/10/spring-security-5-4-goes-ga" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Josh Cummings</name>
-    </author>
-    <id>tag:spring.io,2020-09-08:4191</id>
-    <updated>2020-09-10T18:58:14Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, it is my pleasure to announce the general availability of Spring Security 5.4. This release is the result of the work that went into &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.4.0-M1"&gt;5.4.0-M1&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.4.0-M2"&gt;5.4.0-M2&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.4.0-RC1"&gt;5.4.0-RC1&lt;/a&gt;, and &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.4.0"&gt;5.4.0&lt;/a&gt;. In combination, they close 250+ tickets.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find the highlights of 5.4 in the &lt;a href="https://docs.spring.io/spring-security/site/docs/5.4.0/reference/html5/#new"&gt;What&amp;#8217;s new&lt;/a&gt; section of the Spring Security reference.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, we look forward to hearing your &lt;a href="https://github.com/spring-projects/spring-security/issues"&gt;feedback&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
-&lt;a href="https://docs.spring.io/spring-security/site/docs/5.4.0/reference/html5/"&gt;Reference&lt;/a&gt;
-| &lt;a href="https://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,0 +1,33 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 특이한자석 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] magnetState = new int[4][8];
+	static int[][] rotateWise;
+	static int K;
+	static int score;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			setData();
+		}
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		K = Integer.parseInt(br.readLine());
+		for(int magnet=0;magnet<4;magnet++) {
+			st = new StringTokenizer(br.readLine());
+			for(int state=0;state<8;state++) {
+				magnetState[magnet][state] = Integer.parseInt(st.nextToken());
+			}
+		}
+		for(int round=0;round<K;round++) {
+			st = new StringTokenizer(br.readLine());
+		}
+	}
+}

@@ -1,7 +1,0 @@
-package SamsungDS;
-
-public class 점프게임 {
-	public static void main(String[] args) {
-
-	}
-}
