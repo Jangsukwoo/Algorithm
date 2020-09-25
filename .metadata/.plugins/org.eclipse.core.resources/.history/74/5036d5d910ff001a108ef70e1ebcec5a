@@ -1,0 +1,13 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class 현수막 {
+	static int[][] banner;
+	static boolean[][] visit;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+
+	}
+}
