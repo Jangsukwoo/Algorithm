@@ -35,22 +35,19 @@ public class TwoDots {
 		visit[cr][cc] = true; //현재 cr,cc 방문처리
 		
 		for(int dir=0;dir<4;dir++){//현재 밟은 땅에서 4방향을 볼건데
-			
 			int nr = cr+dr[dir];
-			int nc = cc+dc[dir]; 
-			
-			if(rangeCheck(nr,nc) && sameCheck(cr,cc,nr,nc)){ //가려는 방향의 다음 땅이 영역 안에있고, 같은 알파벳인 경우
-				
-				if(visit[nr][nc]==false) { //방문을 하지 않은 땅이면
-					visit[nr][nc] = true; //방문 처리 후 
-					dfs(nr,nc,dist+1); //이동
-					visit[nr][nc] = false; //방문 처리 취소
-				}else if(dist>=4 && nr==sr && nc==sc){ //4번 이상 움직였고  시작 지점과 같으면 cycle
-					cycle = true; //cycle true
+			int nc = cc+dc[dir];
+			if(rangeCheck(nr,nc) && sameCheck(cr,cc,nr,nc)){
+				if(visit[nr][nc]==false) {
+					visit[nr][nc] = true;
+					dfs(nr,nc,dist+1);
+					visit[nr][nc] = false;
+				}else if(dist>=4 && nr==tr && nc==tc){
+					cycle = true;
 					break;
 				}
 				
-			}
+			}//영역만족하고 가려는 곳이 같으면
 		}
 	}
 	private static boolean sameCheck(int nr, int nc, int cr, int cc) {

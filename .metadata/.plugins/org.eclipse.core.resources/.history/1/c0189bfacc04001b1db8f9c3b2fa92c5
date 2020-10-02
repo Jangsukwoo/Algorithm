@@ -50,7 +50,7 @@ public class TwoDots {
 					break;
 				}
 				
-			}
+			}//영역만족하고 가려는 곳이 같으면
 		}
 	}
 	private static boolean sameCheck(int nr, int nc, int cr, int cc) {
