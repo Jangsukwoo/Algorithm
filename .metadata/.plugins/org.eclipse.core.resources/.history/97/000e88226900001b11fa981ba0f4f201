@@ -1,0 +1,23 @@
+package CodingTest;
+
+public class 네3{
+	static class Point{
+	      int x;
+	      int y;
+	      int value;
+	      
+	      public Point(int x, int y, int value) {
+	         super();
+	         this.x = x;
+	         this.y = y;
+	         this.value = value;
+	      }
+	   }
+	public static void main(String[] args) {
+		
+	}
+    public int solution(int n, int[][] edges){
+        int answer =0;
+        return answer;
+     }
+}

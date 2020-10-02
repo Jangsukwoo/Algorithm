@@ -5,7 +5,589 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-09-24T22:51:34Z</updated>
+  <updated>2020-10-02T00:36:45Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Long time Spring Framework engineer Arjen Poutsma on Spring's web support, Scala, API Design, Reactive programming and more</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/02/a-bootiful-podcast-long-time-spring-framework-engineer-arjen-poutsma-on-spring-s-web-support-scala-api-design-reactive-programming-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-02:4220</id>
+    <updated>2020-10-02T00:36:45Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;. In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to longtime Spring Framework engineer &lt;a href="http://twitter.com/poutsma"&gt;Arjen Poutsma (@poutsma)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;iframe title="Longtime Spring Framework engineer  Arjen Poutsma on Spring's web support, Scala, API Design, Reactive programming and more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/rvi8t-edf3a9?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Premiering: Cloud Native Java, Redux</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/01/premiering-cloud-native-java-redux" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-01:4219</id>
+    <updated>2020-10-01T08:29:49Z</updated>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/M9GNcAzBk9g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Join Spring developer advocate &lt;a href="http://twitter.com/starbuxman"&gt; Josh Long (@starbuxman) &lt;/a&gt; for a guided tour of a ton of the features, patterns, and principles in Spring Cloud and Spring Boot that support you when building production-optimized, cloud native Java applications&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - September 29th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/29/this-week-in-spring-september-29th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-09-29:4218</id>
+    <updated>2020-09-29T23:01:49Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another awesome week in Spring! Can you believe we&amp;rsquo;re staring down October, 2020 already? I can&amp;rsquo;t. Time sure flies&amp;hellip;. or something. There&amp;rsquo;s a lot to get to so let&amp;rsquo;s get to it.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1311003143359148032"&gt;Spring Cloud LoadBalancer replaces the Netflix Ribbon, provides a pluggable algorithm, reactive support, and extensible configuration.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1310656805991743488"&gt;Interested in knowing about the 10 Itemprocessors that out of the box Spring Batch has? Watch the full session here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/24/sentry-cto-david-cramer-on-automated-error-capture-and-analysis"&gt;Sentry CTO David Cramer on Automated Error Capture and Analysis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/29/spring-cloud-data-flow-2-7-0-m1-and-2-6-3-released"&gt;Spring Cloud Data Flow 2.7.0-M1 and 2.6.3 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://programming.love/spring-is-a-season-of-programming-love-with-josh-long/"&gt;Spring is a season of Programming Love with Josh Long ? Programming Love&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/09/29/steven-rostedt-on-the-linux-kernels-hello-world/"&gt;Steven Rostedt on the Linux Kernel＊s ※Hello World§&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.jetbrains.com/kotlin/2020/09/the-dark-secrets-of-fast-compilation-for-kotlin/?mkt_tok=eyJpIjoiWVRnd1pqUmtZemsyTmpVNSIsInQiOiJqZFJ5Mkg4TWdUSlRwVmJoQTNRNnBjOVlnQlZhZjFKdzhTN3IyNWc1YjF4SGpYU0s1S2ZOT0h2TnhzMXNNdE9cL1ZVbXAzUEFYR09DR1ROU0pzb08yYmN4czBneEZIK3FkeU9uZ3h1TGE4UGpOZnlZb1BMWVZRMURnc256dmduMWcifQ%3D%3D"&gt;The Dark Secrets of Fast Compilation for Kotlin ? Kotlin Blog | JetBrains&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/snicoll/status/1308658297944395776?s=12"&gt;The Wavefront documentation has been updated with more information on Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Happy &lt;a href="https://www.youtube.com/embed/rRGdspXfUU0?start=4"&gt;25th Anniversary NYJavaSIG&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/09/a-customer-community-like-no-other-vmware-champions.html"&gt;A Customer Community Like No Other: VMware Champions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native/pull/287#issuecomment-697256664"&gt;Add Hints and example for Data Neo4j. by michael-simons ﹞ Pull Request #287 ﹞ spring-projects-experimental/spring-graalvm-native&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/29/case-study-remote-file-ingest-with-spring-cloud-data-flow"&gt;Case Study: Remote File Ingest with Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/09/destination-vmworld-vision-innovation-track.html"&gt;Destination VMworld ? Vision &amp;amp; Innovation Track&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://salaboy.com/2020/09/24/kubecon-spring-one-2020-from-monoliths-to-k8s/"&gt;KubeCon &amp;amp; Spring One 2020: From Monoliths to K8s ? Salaboy (Open Source Knowledge)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://appleinsider.com/articles/20/09/22/microsoft-contributes-to-java-port-for-apple-silicon-macs"&gt;Microsoft contributes to Java port for Apple silicon Macs | Appleinsider&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/09/25/new-candidate-jep391/"&gt;New candidate JEP: 391: macOS/AArch64 Port&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/09/25/new-candidate-jep392/"&gt;New candidate JEP: 392: Packaging Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/09/29/new-candidate-jep393/"&gt;New candidate JEP: 393: Foreign-Memory Access API (3rd Incubator)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/09/24/venkat-subramaniam-interview/"&gt;Venkat Subramaniam: Java is changing in a responsible manner&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.7.0-M1 and 2.6.3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/29/spring-cloud-data-flow-2-7-0-m1-and-2-6-3-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ilayaperumal Gopinathan</name>
+    </author>
+    <id>tag:spring.io,2020-09-29:4217</id>
+    <updated>2020-09-29T17:53:12Z</updated>
+    <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the release of 2.7.0-M1 and 2.6.3&lt;/p&gt;
+&lt;p&gt;While the release 2.6.3 has &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.6.3"&gt;the bug fixes&lt;/a&gt;, the first milestone of 2.7.0 has the following enhancements:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SCDF dashboard re-design using VMware Clarity toolkit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SCDF dashboard is re-designed using &lt;a href="https://clarity.design/"&gt;VMware Clarity design system&lt;/a&gt;. This is a complete rewrite of SCDF dashboard GUI to get the benefits of the Clarity design.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spring Boot 2.3.2 Update&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SCDF server components are now updated to use Spring Boot 2.3.2 release.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Wavefront integration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Spring Cloud Data Flow dashboards for streams, tasks and SCDF server components are available in VMware Wavefront dashboards for integrations. The configurations required to setup the wavefront integration are simplified at the SCDF as well. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Deprecation of Helm Hub Chart&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Helm charts for SCDF are now deprecated and moved into &lt;a href="https://github.com/bitnami/charts/tree/master/bitnami/spring-cloud-dataflow"&gt;Bitnami OSS charts&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stack Overflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Case Study: Remote File Ingest with Spring Cloud Data Flow</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/29/case-study-remote-file-ingest-with-spring-cloud-data-flow" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>David Turanski</name>
+    </author>
+    <id>tag:spring.io,2020-09-28:4216</id>
+    <updated>2020-09-29T14:31:55Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;This article is part of a blog series that explores the newly redesigned Spring Cloud Stream applications based on Java Functions. In this chapter, we explore how to use &lt;a href="https://github.com/spring-cloud/stream-applications"&gt;Spring Cloud Stream Applications&lt;/a&gt; and &lt;a href="https://dataflow.spring.io"&gt;Spring Cloud Data Flow&lt;/a&gt; to implement a very common ETL use case: Ingesting files from a remote service. Specifically, we will look at how to ingest files from S3, SFTP, and FTP.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Here is what is included in the blog series to date:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/07/13/introducing-java-functions-for-spring-cloud-stream-applications-part-0"&gt;Introducing Function Based Streaming Applications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/07/20/introducing-java-functions-for-spring-cloud-stream-applications-part-1"&gt;Function Composition with Streaming Applications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/07/27/creating-a-supplier-function-and-generating-spring-cloud-stream-source"&gt;How to Build a Supplier and Source Application&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/08/03/creating-a-function-for-consuming-data-and-generating-spring-cloud-stream-sink-applications"&gt;How to Build a Consumer and Sink Application&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/08/10/case-study-build-and-run-a-streaming-application-using-an-http-source-and-a-jdbc-sink"&gt;Build and Run a Simple Stream Application&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/08/17/case-study-http-request-function-and-processor"&gt;Case Study: HTTP Request Function and Processor&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/08/25/case-study-reading-from-a-file-and-writing-to-mongodb"&gt;Case Study: File Source and MongoDB Sink&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2020/09/10/case-study-relational-database-source-and-file-sink"&gt;Case Study: Relational Database Source and File Sink&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="remote-file-ingest-architecture"&gt;&lt;a class="anchor" href="#remote-file-ingest-architecture"&gt;&lt;/a&gt;Remote File Ingest Architecture&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To put things in perspective, Spring Cloud Data Flow has supported remote file ingest with SFTP for a few years. The fundamental architecture hasn&amp;#8217;t changed since I authored &lt;a href="https://tanzu.vmware.com/content/blog/need-24x7-etl-then-move-to-cloud-native-file-ingest-with-spring-cloud-data-flow"&gt;this post&lt;/a&gt;, but as we shall see, the new stream applications allow a much simpler and more flexible solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/fileingest.png" alt="fileingest"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The file ingest architecture starts with a &lt;em&gt;remote file source&lt;/em&gt; which polls a remote directory and publishes a message for each file it detects.
+The term &lt;em&gt;remote file source&lt;/em&gt; refers to any of source application that provides this functionality. To date, this includes &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/source/s3-source"&gt;Amazon S3 source&lt;/a&gt;, &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/source/sftp-source"&gt;SFTP source&lt;/a&gt;, and &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/source/ftp-source"&gt;FTP source&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Each of these sources may be configured to synchronize files in a remote directory to a local directory. The message payload produced by the underlying &lt;code&gt;Supplier&lt;/code&gt; function, in this case, is the local file path. The output of the supplier is converted to a Task Launch Request along the way. We&amp;#8217;ll explain how this is done later. The request is received by a &lt;code&gt;Task Launcher&lt;/code&gt; sink which posts it to a Data Flow Server, via its REST API, to launch a batch job to ingest the file contents. In the example shown below, the job inserts each line of a CSV file into a database table.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If we&amp;#8217;re running on a cloud platform, such as Kubernetes or Cloud Foundry, we need to configure a shared volume, using NFS for example, so that the task application can access the file that the source downloaded.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is the recommended file ingest architecture using Spring Cloud Data Flow. The following characteristics make it very resilient:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The file ingest job is implemented using Spring Batch. It is well suited for large file processing, in which an interim failure may require the job to restart where it left off - a situation which Spring Batch is specifically designed to handle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/sink/tasklauncher-sink"&gt;Task Launcher sink&lt;/a&gt; uses a &lt;a href="https://spring.io/blog/2018/02/27/spring-cloud-stream-2-0-polled-consumers"&gt;PollableMessageSource&lt;/a&gt; so that it can first confirm that Data Flow can accept a task request before pulling a task launch request from the input queue.  Data Flow is configured with a maximum number of allowed concurrent task executions. The sink, using the Data Flow API, checks this limit has not been reached before accepting the next request. This flow control, similar to back-pressure,  prevents platform resource saturation that can easily occur when, say,  100 files are dropped into the remote directory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The shared volume is required to enable the batch job to continue processing from the last committed transaction,  if necessary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is possible to implement this type of workload without Spring Cloud Data Flow, or Spring Batch for that matter. We&amp;#8217;ll leave that as an exercise for the reader.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="remote-file-sources"&gt;&lt;a class="anchor" href="#remote-file-sources"&gt;&lt;/a&gt;Remote File Sources&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;What do we mean by a remote file source? The Amazon S3, SFTP, and FTP source applications share a common lineage in Spring Integration so behave essentially the same way. For example classes that extend &lt;a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/file/remote/synchronizer/AbstractInboundFileSynchronizer.html"&gt;AbstractInboundFileSynchronizer&lt;/a&gt; are used to synchronize a local directory with a remote directory. The base class includes configuring a &lt;code&gt;FileListFilter&lt;/code&gt; to specify which files to include. Commonly, this is used to pattern match file names. Additionally, this component uses a &lt;a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/metadata/MetadataStore.html"&gt;MetadataStore&lt;/a&gt; used to track what files are in the local directory already, along with last modified time, so that only new or changed files are synchronized. By default the metadata store is an in memory implementation. This means that we may get an event for a file we have already processed when the source restarts.  To address this,  each of these sources may be easily customized to use one of several &lt;a href="https://docs.spring.io/spring-integration/reference/html/meta-data-store.html"&gt;persistent implementations&lt;/a&gt; available. &lt;code&gt;AbstractFileSynchronizer&lt;/code&gt; also supports using a SpEL expression to create the local file name, automatic remote file deletion, and more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Besides file synchronization, each of these sources includes the &lt;code&gt;file.consumer.mode&lt;/code&gt; property which can be one of&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;contents&lt;/code&gt; - The payload is the file contents a byte array&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ref&lt;/code&gt; - The payload is the local file path&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;lines&lt;/code&gt; - Each payload is a line in the file&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition, each source provides a &lt;code&gt;list-only&lt;/code&gt; option, in which the payload contains metadata about the remote file and synchronization is not performed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="sftp-source"&gt;&lt;a class="anchor" href="#sftp-source"&gt;&lt;/a&gt;SFTP Source&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/source/sftp-source"&gt;SFTP Source&lt;/a&gt; consumes files from an SFTP server. Since SFTP is the most commonly used remote file service, this component has the most advanced features. In fact, in the previous generation of stream applications, SFTP was the only source we supported for the file ingest architecture.  As it evolved to support task launch requests,  we ended up implementing a special variant specifically for the file ingest use case. The &lt;code&gt;sftp-datalow&lt;/code&gt; source, designed to work with the &lt;code&gt;tasklauncher-dataflow&lt;/code&gt; sink, embedded code to transform the payload to a task launch request.  In the current release, we have retired this variation in favor of function composition.  Additionally, the sftp source can be set up to poll multiple remote directories, rotating among each. In this configuration, the rotation algorithm can be &lt;code&gt;fair&lt;/code&gt; - each remote directory gets one poll - or not - each remote directory is continually polled until there are no new files. It also supports &lt;code&gt;sftp.supplier.stream=true&lt;/code&gt; which will stream the contents directly without synchronizing to a local directory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="ftp-source"&gt;&lt;a class="anchor" href="#ftp-source"&gt;&lt;/a&gt;FTP Source&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/source/ftp-source"&gt;FTP Source&lt;/a&gt; is very similar to the SFTP source, except that it uses FTP and does not encrypt data in transit, so it is less secure. It provides the same core features, but currently does not support multiple remote directories, &lt;code&gt;list-only&lt;/code&gt;, or &lt;code&gt;stream&lt;/code&gt; mode.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="amazon-s3-source"&gt;&lt;a class="anchor" href="#amazon-s3-source"&gt;&lt;/a&gt;Amazon S3 Source&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-cloud/stream-applications/blob/master/applications/source/s3-source/README.adoc"&gt;Amazon S3 Source&lt;/a&gt; is modelled after the others, and supports the same file consumer modes as well as &lt;code&gt;list-only&lt;/code&gt; mode.  In this case &lt;code&gt;s3.supplier.remote-dir&lt;/code&gt; refers to an S3 bucket.  When using &lt;code&gt;list-only&lt;/code&gt;, the payload contains an &lt;code&gt;S3ObjectSummary&lt;/code&gt; which provides metadata about the S3 object. S3 itself provides a richer set of features than FTP/SFTP.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition to AWS S3, this source can now be used with S3 compatible implementations, such as &lt;a href="https://min.io/product/overview"&gt;Minio&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="the-task-launcher-sink"&gt;&lt;a class="anchor" href="#the-task-launcher-sink"&gt;&lt;/a&gt;The Task Launcher Sink&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In prior releases, this was known as &lt;code&gt;tasklauncher-dataflow&lt;/code&gt; sink. Originally, we also had standalone task launchers, one for each supported platform. These have since been deprecated, in favor of the Data Flow backed implementation, for ease of use, and resilience, as described above.  Accordingly, we dropped "Data Flow" from the name. It is now simply &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/applications/sink/tasklauncher-sink"&gt;tasklauncher-sink&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sink is built on a corresponding &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/functions/function/tasklauncher-function"&gt;tasklauncher-function&lt;/a&gt;, which may be used in any standalone application to send a task launch request to Data Flow. This is implemented as
+&lt;code&gt;Function&amp;lt;LaunchRequest, Optional&amp;lt;Long&amp;gt;&amp;gt;&lt;/code&gt; . &lt;a href="https://github.com/spring-cloud/stream-applications/blob/master/functions/function/tasklauncher-function/src/main/java/org/springframework/cloud/fn/tasklauncher/LaunchRequest.java"&gt;LaunchRequest&lt;/a&gt; is a simple value object that contains, at a minimum, the name of the task to launch. This task must be defined in Data Flow using the same name.  Optionally, the launch request includes command line arguments, and deployment properties. The function returns the unique task ID as a long if the request was submitted. The request will not be submitted if the Data Flow server indicates the task platform has reached its maximum running tasks, the data flow server cannot be reached, or if the request is invalid.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Task Launcher sink invokes its base function from within a scheduled task, triggered by a &lt;a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/util/DynamicPeriodicTrigger.html"&gt;DynamicPeriodicTrigger&lt;/a&gt; which allows updating its period at runtime. In this case, we use it to implement exponential backoff. From an initial period of one second, the trigger will back off, eventually to every 30 seconds if:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;There are no queued launch requests&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The platform is already running the maximum number of tasks&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If either of these conditions changes, the source resets the period to its initial value.
+Of course the initial and maximum trigger period are configurable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The triggered task, checks if the server can except new launch requests, and if so, it polls the input queue, using a &lt;a href="https://spring.io/blog/2018/02/27/spring-cloud-stream-2-0-polled-consumers"&gt;PollableMessageSource&lt;/a&gt;. If there is a request, it will post the request to Data Flow via its REST API.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="creating-a-task-launch-request"&gt;&lt;a class="anchor" href="#creating-a-task-launch-request"&gt;&lt;/a&gt;Creating a task launch request&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The new function-based architecture provides first class support for &lt;a href="https://spring.io/blog/2020/07/20/introducing-java-functions-for-spring-cloud-stream-applications-part-1"&gt;function composition&lt;/a&gt;. As part of this strategy, certain common functions may be composed with any source. Notably, this includes a &lt;a href="https://github.com/spring-cloud/stream-applications/tree/master/functions/function/task-launch-request-function"&gt;task-launch-request-function&lt;/a&gt;.
+This means that any remote file source may now be configured to produce a task launch request. The task launch request function can evaluate SpEL expressions. For example, each task launch request may provide a different file path as a command line argument.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="putting-it-all-together"&gt;&lt;a class="anchor" href="#putting-it-all-together"&gt;&lt;/a&gt;Putting it all together&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Let&amp;#8217;s dive into an example to see how this works. We will use the S3 Source, the Task Launcher Sink, Spring Cloud Data Flow, an S3 compatible service, and a simple Spring Batch application to process the file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To keep it simple, we will run everything locally, using Docker Compose.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="install-spring-cloud-data-flow"&gt;&lt;a class="anchor" href="#install-spring-cloud-data-flow"&gt;&lt;/a&gt;Install Spring Cloud Data Flow&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Create a project directory for this example, open a terminal session, and cd to the project directory. Download the SCDF docker-compose file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;wget -O docker-compose.yml https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/v2.6.1/spring-cloud-dataflow-server/docker-compose.yml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="start-spring-cloud-data-flow"&gt;&lt;a class="anchor" href="#start-spring-cloud-data-flow"&gt;&lt;/a&gt;Start Spring Cloud Data Flow&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Set the Data Flow and Skipper versions, along with the URI to import the latest stream applications.  Then run &lt;code&gt;docker-compose&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;export DATAFLOW_VERSION=2.6.1
+export SKIPPER_VERSION=2.5.1
+export STREAM_APPS_URI=https://repo.spring.io/libs-snapshot-local/org/springframework/cloud/stream/app/stream-applications-descriptor/2020.0.0-SNAPSHOT/stream-applications-descriptor-2020.0.0-SNAPSHOT.stream-apps-kafka-maven
+docker-compose up&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="create-some-data"&gt;&lt;a class="anchor" href="#create-some-data"&gt;&lt;/a&gt;Create some data&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The SCDF &lt;code&gt;docker-compose.yml&lt;/code&gt; mounts the current direcory, so these files are accessible to the containers, under the mount path &lt;code&gt;/root/scdf&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We will use Minio for S3 storage, and will run it in a Docker container to bind to the &lt;code&gt;minio&lt;/code&gt; directory. We will add a data file to &lt;code&gt;minio/mybucket&lt;/code&gt;.  This will act as our remote directory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Let&amp;#8217;s also create a &lt;code&gt;download&lt;/code&gt; directory to act as our shared local directory.
+The &lt;code&gt;download&lt;/code&gt; directory is located on a shared volume that is accessible to any application containers that need it. In this case, the S3 source that downloads files from S3, and the batch application that will ingest the data and write it to a database table. In a production environment, this would be an external persistent volume, such as an NFS mounted directory on a dedicated server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;mkdir -p minio/mybucket
+mkdir download&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Create a data file, &lt;code&gt;name-list.csv&lt;/code&gt; in the S3 bucket location. We happen to have one you can download:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;wget -o minio/mybucket/name-list.csv https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow-samples/master/batch/file-ingest/data/name-list.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This contains lines of &lt;code&gt;firstname&lt;/code&gt;,&lt;code&gt;lastname&lt;/code&gt;. The batch job will insert a row into the &lt;code&gt;people&lt;/code&gt; table for each line in the file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Our project directory should now look like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;.
+戍式式 docker-compose.yml
+戍式式 download
+戌式式 minio
+    戌式式 mybucket
+        戌式式 name-list.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="start-minio"&gt;&lt;a class="anchor" href="#start-minio"&gt;&lt;/a&gt;Start Minio&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We will run Minio, creating a volume mount to bind its container&amp;#8217;s &lt;code&gt;/data&lt;/code&gt; path to the &lt;code&gt;minio&lt;/code&gt; directory.
+This will create an S3 bucket, &lt;code&gt;mybucket&lt;/code&gt; containing &lt;code&gt;name-list.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;docker run --mount type=bind,source="$(pwd)"/minio,target=/data -p 9000:9000 -e "MINIO_ACCESS_KEY=minio" -e "MINIO_SECRET_KEY=minio123" minio/minio server /data&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;At this point, if you like, you can open a browser to &lt;a href="http://localhost:9000" class="bare"&gt;http://localhost:9000&lt;/a&gt; and log in with the above credentials and view the bucket.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="use-data-flow-to-create-the-task-and-stream"&gt;&lt;a class="anchor" href="#use-data-flow-to-create-the-task-and-stream"&gt;&lt;/a&gt;Use Data Flow to create the task and stream&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now that we have set up our local environment, we can orchestrate our file ingest pipeline.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect3"&gt;
+&lt;h4 id="register-the-batch-application"&gt;&lt;a class="anchor" href="#register-the-batch-application"&gt;&lt;/a&gt;Register the batch application&lt;/h4&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We happen to have the application we need, published to the &lt;code&gt;repo.spring.io&lt;/code&gt; Maven repo.
+The source code is &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/batch/file-ingest"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To register this application, open your browser to &lt;a href="http://localhost:9393/dashboard" class="bare"&gt;http://localhost:9393/dashboard&lt;/a&gt; and navigate to the Apps page. Click on &lt;code&gt;Add Application(s)&lt;/code&gt; and register a &lt;code&gt;Task&lt;/code&gt; application, named &lt;code&gt;fileingest&lt;/code&gt; using the URI.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;maven://io.spring.cloud.dataflow.ingest:ingest:1.0.0.BUILD-SNAPSHOT&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Then click on &lt;code&gt;Register the application(s)&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/RegisterTaskApplication.png" alt="RegisterTaskApplication"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect3"&gt;
+&lt;h4 id="create-a-task-definition"&gt;&lt;a class="anchor" href="#create-a-task-definition"&gt;&lt;/a&gt;Create a task definition&lt;/h4&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Once the application is registered, we need to create a task definition which will be referenced in the task launch request. We will name the task &lt;code&gt;fileingest&lt;/code&gt;, the same as the app.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/CreateFileIngestTask.png" alt="CreateFileIngestTask"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect3"&gt;
+&lt;h4 id="create-the-stream"&gt;&lt;a class="anchor" href="#create-the-stream"&gt;&lt;/a&gt;Create the stream&lt;/h4&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now we will create a stream to launch the &lt;code&gt;fileingest&lt;/code&gt; task for each new file in the S3 bucket.
+Since we already have a file in the S3 bucket, we expect it to be downloaded to our shared &lt;code&gt;download&lt;/code&gt; directory. When that happens, a task launch request will be sent to the Task Launcher sink, which will launch the &lt;code&gt;fileingest&lt;/code&gt; task to process it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Select &lt;code&gt;Streams&lt;/code&gt; on the left menu bar and click on &lt;code&gt;Create stream(s)&lt;/code&gt;.  Cut and paste the stream definition, below, into the text area.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+Substitute your host&amp;#8217;s LAN IP address in the S3 endpoint URL. Since &lt;code&gt;localhost&lt;/code&gt; resolves to the container&amp;#8217;s own IP, we need to use the LAN IP. There are various ways to get this value.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;works for me on OS/X.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Also&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;dig +short $(hostname)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;used to work until my employer put my machine on their domain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Here is the stream definition:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;s3 --spring.cloud.function.definition=s3Supplier,taskLaunchRequestFunction --file.consumer.mode=ref --s3.common.endpoint-url=http:&amp;lt;lan-ip-address&amp;gt;:9000 --s3.common.path-style-access=true --s3.supplier.remote-dir=mybucket --s3.supplier.local-dir=/root/scdf/download --cloud.aws.credentials.accessKey=minio --cloud.aws.credentials.secretKey=minio123 --cloud.aws.region.static=us-east-1 --cloud.aws.stack.auto=false --task.launch.request.taskName=fileingest --task.launch.request.argExpressions='localFilePath=payload' | tasklauncher --spring.cloud.dataflow.client.server-uri=http://dataflow-server:9393&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The stream definition is basically &lt;code&gt;s3|tasklauncher&lt;/code&gt; but the S3 source requires some configuration. To break it down:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;spring.cloud.function.definition=s3Supplier,taskLaunchRequestFunction&lt;/code&gt; - the secret sauce for function composition.
+Here, we are using the comma as a composition delimiter, instead of the standard &lt;code&gt;|&lt;/code&gt;. The DSL parser gets confused if the &lt;code&gt;|&lt;/code&gt; is used in this way.
+We are composing &lt;code&gt;s3supplier&lt;/code&gt;,  the primary function for the S3 source, with &lt;code&gt;taskLaunchRequestFunction&lt;/code&gt;, a Function Bean in the application context, available to any of the standard sources, if we care to use it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;file.consumer.mode=ref&lt;/code&gt; - The payload is the path of the downloaded file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;s3.common.endpoint-url&lt;/code&gt; - The S3 service endpoint for our Minio instance. You don&amp;#8217;t need this if you&amp;#8217;re using AWS S3.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;s3.common.oath-style-access=true&lt;/code&gt; - Minio requires this&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;s3.supplier.remote-dir=mybucket&lt;/code&gt; - The S3 bucket our source will monitor&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;3.supplier.local-dir=/root/scdf/download&lt;/code&gt; - The local directory path from the container&amp;#8217;s perspective&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cloud.aws.credentials.accessKey=minio&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cloud.aws.credentials.secretKey=minio123&lt;/code&gt; - The credentials use the &lt;code&gt;spring-cloud-aws&lt;/code&gt; property names directly&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cloud.aws.region.static=us-east-1&lt;/code&gt; - The AWS s3 SDK requires a region, Minio ignores this&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cloud.aws.stack.auto=false&lt;/code&gt; - Don&amp;#8217;t do anything special for AWS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;task.launch.request.taskName=fileingest&lt;/code&gt; - The name of the task to launch. This is required but may be dynamically set via a SpEL expression.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;task.launch.request.argExpressions='localFilePath=payload'&lt;/code&gt; - Each time we launch the task, we want to pass the file location as a command line argument, in this case, our ingest task is looking for an argument named &lt;code&gt;localFilePath&lt;/code&gt;, the value is the message payload evaluated for each message. This path is in the configured local directory, &lt;code&gt;/root/scdf/download/&amp;lt;filename&amp;gt;&lt;/code&gt;. So the batch application can see it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The task launcher sink in this case only needs the Data Flow Server URI. For the sink, running in the skipper container, the host name is &lt;code&gt;dataflow-server&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/CreateFileIngestStream.png" alt="CreateFileIngestStream"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Create the stream and give it a name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect3"&gt;
+&lt;h4 id="deploy-the-stream"&gt;&lt;a class="anchor" href="#deploy-the-stream"&gt;&lt;/a&gt;Deploy the stream&lt;/h4&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Deploy the stream using the &lt;code&gt;play&lt;/code&gt; button.  This opens a page to let you review the configuration and make any changes. Press &lt;code&gt;Deploy stream&lt;/code&gt; at the bottom of the page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect3"&gt;
+&lt;h4 id="verify-the-task-was-launched"&gt;&lt;a class="anchor" href="#verify-the-task-was-launched"&gt;&lt;/a&gt;Verify the task was launched&lt;/h4&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Once the stream is deployed, go to the &lt;code&gt;Tasks&lt;/code&gt; page, eventually (within 30 seconds) you should see the &lt;code&gt;fileingest&lt;/code&gt; task is complete.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/TaskView.png" alt="TaskView"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can also see, the file was copied to the &lt;code&gt;download&lt;/code&gt; directory:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;.
+戍式式 docker-compose.yml
+戍式式 download
+弛?? 戌式式 name-list.csv
+戌式式 minio
+    戌式式 mybucket
+        戌式式 name-list.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;From the &lt;code&gt;Executions&lt;/code&gt; tab you can get more details on the task execution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since this is also a Spring Batch application, you can go to the &lt;code&gt;Jobs&lt;/code&gt; page,  go to &lt;code&gt;ingestJob&lt;/code&gt;, and click on the &lt;code&gt;info&lt;/code&gt; icon to display the Job execution details:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/JobDetails.png" alt="JobDetails" width="100%"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="verify-the-data-in-the-database"&gt;&lt;a class="anchor" href="#verify-the-data-in-the-database"&gt;&lt;/a&gt;Verify the data in the database&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Job details reports it performed 5494 writes. The Data Flow Server configures all task apps' DataSource to use its database to record task and job execution status.
+For this demo, we are using the same DataSource to write the application data.
+We can connect to the &lt;code&gt;dataflow-mysql&lt;/code&gt; container to query the table:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;docker exec -it dataflow-mysql mysql -u root -p&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;login with the password &lt;code&gt;rootpw&lt;/code&gt; and query the table:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;span class="image"&gt;&lt;img src="https://github.com/spring-cloud/stream-applications/raw/gh-pages/img/s3-file-ingest/VerifyData.png" alt="VerifyData" width="50%"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="conclusion"&gt;&lt;a class="anchor" href="#conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you read this far, thank you for your time and attention.
+If you ran the demo, a well deserved Congratulations!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Even in its simplest form, this is a fairly advanced use case for Data Flow.
+Here we provided the Spring Batch application.
+Normally, you would write your own (although the next release of Spring Cloud Task is rumored to include a configurable batch application).
+Other than that, we didn&amp;#8217;t need to write any code to have a fully functional, cloud native, event-driven ETL pipeline to ingest data from S3 to a relational database.
+Being event-driven means new data is ingested and available to users as soon as it arrives, rather than running on a nightly schedule with data available the next day.
+Files may be processed concurrently, with multiple job instances running as needed.
+Since Data Flow limits the number of concurrent tasks running on the platform, this architecture can handle a very high load without exhausting  platform resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A viable alternative for ingesting files from S3 eliminates the need to copy files to a shared file system.
+In this case, the S3 source can be configured as &lt;code&gt;list only=true&lt;/code&gt; so that it will provide the remote S3 path.
+The batch job then connects to S3 and processes the remote file directly.
+This &lt;a href="https://stackoverflow.com/questions/30832041/spring-batch-read-files-from-aws-s3"&gt;Stack Overflow post&lt;/a&gt; gives some hints on how to do this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;When using S/FTP however, this approach is less desirable, since these are file transfer protocols, and direct streaming is limited.
+If you do not use a persistent volume, and the job fails for some reason, you have to start from scratch, likely having to manually rewind from a partially complete state. The implementation of this pipeline with S/FTP is very similar to what we have shown here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="stay-tuned"&gt;&lt;a class="anchor" href="#stay-tuned"&gt;&lt;/a&gt;Stay Tuned&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This post is part of a series of articles on topics related to the new function-based Spring Cloud Stream applications.
+Look for more in coming weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Sentry CTO David Cramer on Automated Error Capture and Analysis</title>
     <link rel="alternate" href="https://spring.io/blog/2020/09/24/sentry-cto-david-cramer-on-automated-error-capture-and-analysis" />
@@ -449,185 +1031,6 @@ Artem&lt;/p&gt;
   &lt;li&gt;Spring Data Elasticsearch 4.1 RC1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/4.1.0-RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.1.0-RC1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.1.0-RC1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.1.0-RC1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data Couchbase 4.1 RC1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/4.1.0-RC1"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.1.0-RC1/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.1.0-RC1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.1.0-RC1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data Neumann SR4, Moore SR10 and Lovelace SR20</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/16/spring-data-neumann-sr4-moore-sr10-and-lovelace-sr20" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-09-16:4200</id>
-    <updated>2020-09-16T12:43:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the Spring Data team, I＊m pleased to announce a round of service releases for the Spring Data Neumann, Moore, and Lovelace release trains. &lt;code&gt;Neumann SR4&lt;/code&gt; ships with &lt;a href="https://jira.spring.io/issues/?filter=17038"&gt;43 tickets fixed&lt;/a&gt;, &lt;code&gt;Moore SR10&lt;/code&gt; ships with &lt;a href="https://jira.spring.io/issues/?filter=17035"&gt;46 tickets fixed&lt;/a&gt;, and, finally, &lt;code&gt;Lovelace SR20&lt;/code&gt; ships with &lt;a href="https://jira.spring.io/issues/?filter=17034"&gt;35 tickets fixed&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The releases ship with mostly bug fixes and dependency upgrades and will be picked up by Spring Boot &lt;code&gt;2.3.4&lt;/code&gt;, &lt;code&gt;2.2.10&lt;/code&gt;, &lt;code&gt;2.1.17&lt;/code&gt; ( respectively) in the coming days.&lt;/p&gt;
-&lt;p&gt;Here are the detailed links to each individual artifact and the reference documentation:&lt;/p&gt;&lt;h2&gt;&lt;a href="#neumann-sr4" class="anchor" name="neumann-sr4"&gt;&lt;/a&gt;Neumann SR4&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 2.0.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/2.0.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/2.0.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 3.0.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/3.0.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/3.0.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 3.0.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/3.0.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.0.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.2.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.2.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.2.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data R2DBC 1.1.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-r2dbc/1.1.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.1.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.3.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.3.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.3.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 4.0.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/4.0.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/4.0.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 4.0.4 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/4.0.4.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.4.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/4.0.4.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#moore-sr10" class="anchor" name="moore-sr10"&gt;&lt;/a&gt;Moore SR10&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 1.1.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.1.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.1.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.1.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Gemfire 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 3.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 3.2.10 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.2.10.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.10.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.10.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#lovelace-sr20" class="anchor" name="lovelace-sr20"&gt;&lt;/a&gt;Lovelace SR20&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Data Commons 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JDBC 1.0.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.0.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data JPA 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Cassandra 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data MongoDB 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Geode 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data for Apache Solr 4.0.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.0.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data KeyValue 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j 5.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data LDAP 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Envers 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data REST 3.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Gemfire 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Redis 2.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Elasticsearch 3.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Couchbase 3.1.20 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.1.20.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.20.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.20.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.20.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Azure in the Enterprise: Azure Object Storage Service and Spring Boot</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/16/azure-in-the-enterprise-azure-object-storage-service-and-spring-boot" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-02:4188</id>
-    <updated>2020-09-16T12:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! I was on the Microsoft Azure YouTube show &lt;em&gt;Azure in the Enterprise&lt;/em&gt; with Lyle Dodge where I did a quick demonstration introducing the Spring for Microsoft Azure support for the Microsoft Azure Object Storage Service. Check it out!&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/d4SfosPWz8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - September 15th, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/16/this-week-in-spring-september-15th-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-16:4199</id>
-    <updated>2020-09-16T05:18:32Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! It&amp;rsquo;s been an absolutely nutty week! It&amp;rsquo;s &lt;em&gt;just&lt;/em&gt; Tuesday and I&amp;rsquo;m beat! &lt;/p&gt;
-&lt;p&gt;Over the weekend I completely refactored the pipeline I used for my just-published book &lt;a href="http://ReactiveSpring.io"&gt;&lt;em&gt;Reactive Spring&lt;/em&gt;&lt;/a&gt; (which, by the way, is now available on Leanpub and on Amazon as digital and paperback editions) and turned it into the turnkey Asciidoctor pipeline I&amp;rsquo;d always wanted but - since I was traveling 650,000 miles a year, speaking at hundreds of conferences or events yearly, writing a 450-page book, releasing weekly blogs, recording a weekly podcast, releasing an almost weekly screencast and, you know, being a member of a wonderful family - I just didn&amp;rsquo;t have the time to do. I&amp;rsquo;d managed to get a Spring Boot-ified Asciidoctor pipeline working. It worked. It produced &lt;code&gt;.epub&lt;/code&gt;, &lt;code&gt;.mobi&lt;/code&gt;, screen-ready &lt;code&gt;.PDF&lt;/code&gt;, prepress-ready &lt;code&gt;.PDF&lt;/code&gt;, and HTML versions on every &lt;code&gt;git push&lt;/code&gt;. But everything was serialized. It was &lt;em&gt;slow&lt;/em&gt;. And inflexible since I got the absolute basic flow working for my needs and nothing more. That all changed this weekend. I present to you &lt;code&gt;http://bootiful-asciidoctor.github.io&lt;/code&gt;. It&amp;rsquo;s all Apache2 licensed open-source. It&amp;rsquo;s a Spring Boot and Spring Batch pipeline. You can deploy the Spring Batch job to your favorite Ci environment and tell it which Git repositories contain your &lt;code&gt;.adoc&lt;/code&gt; files and which contain the code you need to be included. You tell it how you want your produced artifacts - Amazon S3 or checked into a Git repository&amp;rsquo;s branch - and it&amp;rsquo;ll emit those. It&amp;rsquo;s delivered as a Spring Boot autoconfiguration, too, so it publishes events and everything is overridable as &lt;code&gt;@Bean&lt;/code&gt; instances. I am hoping that if folks like it, they&amp;rsquo;ll feel the urge to write their own technical books, and perhaps even some on Spring :-) &lt;/p&gt;
-&lt;p&gt;What else? I recorded a few episodes of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;. Fun. Always fun.&lt;/p&gt;
-&lt;p&gt;Oh! This morning I was on the Microsoft Learn TV conference introducing Azure Spring Cloud along with a bunch of awesome folks from Microsoft and all around the world. That was fun - look for those recordings to be available soon. &lt;/p&gt;
-&lt;p&gt;And I spent today pre-recording a talk - &lt;em&gt;Bootiful Kotliin&lt;/em&gt; - intended for the &lt;a href="http://j4k.io"&gt;J4k.io&lt;/a&gt; conference next month. It took literally 50m to record the talk, and 12h to finesse everything with Adobe Premiere and Adobe Auditon and Adobe InDesign, and Adobe Photoshop so that it worked as I hoped it would. What a journey! But it&amp;rsquo;s done. And a grateful GPU thanks me. &lt;/p&gt;
-&lt;p&gt;And of course, there&amp;rsquo;s the preparation for this amazing week that was. Just look at this list of good stuff! I don&amp;rsquo;t even know where to&amp;hellip; yes I do. That&amp;rsquo;s a fib. I totally know where to start. At the first entry! And the first entry of course is the interview I did with Spring legend and amazing human being Rossen Stoyanchev. He&amp;rsquo;s been an integral part of the Spring team for as long as I can remember and more. He&amp;rsquo;s everything I love about people and about Spring. A modest, patient, friendly genius. You know him - even if you don&amp;rsquo;t &lt;em&gt;know&lt;/em&gt; him - if you&amp;rsquo;ve ever used Spring to do any kind of web programming. Yep. He&amp;rsquo;s &lt;em&gt;that&lt;/em&gt; prolific. Trust me, you&amp;rsquo;re going to want to listen to that episode. It was one of those episodes where I went back for a re-listen! I was there the first time and I still feel like I missed stuff. &lt;/p&gt;
-&lt;p&gt;Anyway my friends, there is a ton of stuff to get to, so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/10/a-bootiful-podcast-legendary-spring-contributor-rossen-stoyanchev-on-all-things-web-reactive-and-rsocket"&gt;A Bootiful Podcast: Legendary Spring contributor Rossen Stoyanchev on all things web, reactive and RSocket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://jdk.java.net/15/"&gt;Java 15 went GA today&lt;/a&gt;! This means that text blocks are officially a thing! They&amp;rsquo;re not hidden behind the preview-feature flags! Get the bits while they&amp;rsquo;re hot!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/15/announcing-inside-java-podcast/"&gt;Announcing the Inside Java Podcast&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/14/azure-in-the-enterprise-azure-cosmos-db-and-spring-boot"&gt;Azure in the Enterprise: Azure Cosmos DB and Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/09/azure-in-the-enterprise-azure-service-bus-and-spring-boot"&gt;Azure in the Enterprise: Azure Service Bus and Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/10/case-study-relational-database-source-and-file-sink"&gt;Case Study: Relational Database Source and File Sink&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?reload=9&amp;v=Y5dcDyeRlDQ&amp;feature=youtu.be"&gt;Deploy Friday: E09 Spring Framework - Java in focus - YouTube. Did I mention I was on the &amp;ldquo;Deploy Friday&amp;rdquo; show not too long ago? The video is up!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/09/10/tuf-enhancing-software-update-security/"&gt;Enhancing Software Update Security With TUF (The Update Framework)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/14/podcast-003/"&gt;Episode 3 ※The State of Java§ with Georges Saab&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/10/elastic-metaspace-jep-proposed-to-target/"&gt;JEP proposed to target JDK 16: 387: Elastic Metaspace&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I presented at my talk &lt;em&gt;Bootiful Testing&lt;/em&gt; for the &lt;a href="https://blog.jetbrains.com/idea/2020/09/jetbrains-technology-day-for-java-bootiful-testing/"&gt;JetBrains Technology Day for Java&lt;/a&gt; and Jetbrains did a nice recap blog on the talk.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2020/09/azure-spring-cloud-ga/?itm_campaign=rightbar_v2&amp;itm_source=infoq&amp;itm_medium=news_link&amp;itm_content=link_text"&gt;Microsoft Announces the General Availability of Azure Spring Cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/15/spring-framework-5-2-9-5-1-18-5-0-19-and-4-3-29-available-now"&gt;Spring Framework 5.2.9, 5.1.18, 5.0.19, and 4.3.29 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/15/spring-framework-5-3-goes-rc1"&gt;Spring Framework 5.3 goes RC1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/10/spring-security-5-4-goes-ga"&gt;Spring Security 5.4 goes GA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/15/spring-vault-2-3-m1-available"&gt;Spring Vault 2.3 M1 available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Um9djPTtPe0"&gt;The Path Towards Spring Boot Native Applications - YouTube&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/15/the-arrival-of-java-15/"&gt;The arrival of Java 15&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/making/status/1305869573548376070"&gt;Toshiaki Maki on Twitter: &amp;ldquo;&#x1f680; rsc 0.6.0 has been released &lt;a href="https://t.co/fww8PQ80ap"&gt;https://t.co/fww8PQ80ap&lt;/a&gt; &#x1f511; Authentication Extension is supported!! @RSocketIO @SpringSecurity &lt;a href="https://t.co/FugKJwAzhB"&gt;https://t.co/FugKJwAzhB&lt;/a&gt; Demo: &lt;a href="https://t.co/gTNpN39mu8"&gt;https://t.co/gTNpN39mu8&lt;/a&gt; Try: brew install making/tap/rsc&amp;rdquo; / Twitter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/11/you-spoke-we-listened-state-of-spring-2020-report-is-here"&gt;You spoke, we listened: State of Spring 2020 report is here!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 5.3 goes RC1</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/15/spring-framework-5-3-goes-rc1" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Juergen Hoeller</name>
-    </author>
-    <id>tag:spring.io,2020-09-15:4197</id>
-    <updated>2020-09-15T15:32:00Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
-&lt;p&gt;On behalf of the development team, it is my pleasure to announce that a feature-complete Spring Framework 5.3 release candidate is available from our &lt;a href="https://repo.spring.io/milestone/org/springframework/spring-framework-bom/5.3.0-RC1/"&gt;milestone repository&lt;/a&gt; now! Check out the list of &lt;a href="https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-Spring-Framework-5.x#whats-new-in-version-53"&gt;new features&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-5.x#upgrading-to-version-53"&gt;upgrade notes&lt;/a&gt; on our GitHub wiki, including several deprecation notes.&lt;/p&gt;
-&lt;p&gt;As the last feature branch of the 5.x generation, we are preparing the 5.3.x line for general availability in late October - with an extended maintenance phase up until 2024. While we strongly encourage appropriate migration steps, all of our deprecated packages are going to remain in place for the entire 5.3.x phase. In terms of Java platform support, the current range is JDK 8-15 but we expect this to grow into JDK 8-17 for our Spring Framework 5.3.x releases next year.&lt;/p&gt;
-&lt;p&gt;Spring supports Java 14/15 records and similar record-style classes now, as a refined variant of constructor-based binding. Spring&amp;rsquo;s core container includes refinements for &lt;a href="https://github.com/spring-projects-experimental/spring-graalvm-native"&gt;native application deployment&lt;/a&gt; and performance optimizations in terms of data structures and concurrent access.&lt;/p&gt;
-&lt;p&gt;This release brings a new &lt;code&gt;spring-r2dbc&lt;/code&gt; module with core &lt;a href="https://r2dbc.io/"&gt;R2DBC&lt;/a&gt; support, including a reactive &lt;code&gt;R2dbcTransactionManager&lt;/code&gt; as well as a reactive &lt;code&gt;DatabaseClient&lt;/code&gt;. Its sister module &lt;code&gt;spring-jdbc&lt;/code&gt; features a new &lt;code&gt;JdbcTransactionManager&lt;/code&gt; (with extended data access exception translation), as well as a &lt;code&gt;DataClassRowMapper&lt;/code&gt; with constructor-based result binding support (covering Java records) and new &lt;code&gt;queryForStream&lt;/code&gt; methods (for lazy result iteration) on our good old &lt;code&gt;JdbcTemplate&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In the web framework, we provide a JSON option with &lt;a href="https://github.com/Kotlin/kotlinx.serialization"&gt;Kotlin multiplatform serialization&lt;/a&gt; now. &lt;code&gt;WebTestClient&lt;/code&gt; allows for performing requests against MockMvc, as a single test client API for mock versus live tests. WebFlux comes with a fully reactive message reader for multipart requests.&lt;/p&gt;
-&lt;p&gt;Please give Spring Framework 5.3 RC1 a try, e.g. as part of the upcoming Spring Boot 2.4 M3 release which will be available on &lt;a href="https://start.spring.io/"&gt;start.spring.io&lt;/a&gt; soon, and let us know about any regressions etc.&lt;/p&gt;
-&lt;p&gt;Cheers,&lt;br/&gt;Juergen&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Vault 2.3 M1 available</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/15/spring-vault-2-3-m1-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2020-09-15:4198</id>
-    <updated>2020-09-15T14:42:46Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;d like to announce the availability of the first Spring Vault milestone release &lt;code&gt;2.3.0-M1&lt;/code&gt; of the 2.3 development line.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Most notable changes in this release are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Support for Vault&amp;#8217;s &lt;a href="https://www.vaultproject.io/docs/secrets/transform"&gt;Transform secrets backend&lt;/a&gt;. Please note that this is an enterprise feature.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A &lt;code&gt;ReactiveVaultEndpointProvider&lt;/code&gt; for non-blocking lookup of &lt;code&gt;VaultEndpoint&lt;/code&gt; that can be used for reactive service discovery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;VaultKeyValueMetadataOperations&lt;/code&gt; for Key-Value metadata interaction.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Updates to our documentations specifically on how to use Vault&amp;#8217;s various secret backends with Spring Vault.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For a complete list of changes see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.3.0-M1/changelog.txt"&gt;2.3.0-M1 changelog&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.3.0-M1/reference/html/"&gt;Documentation for 2.3.0-M1&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

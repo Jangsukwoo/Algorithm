@@ -1,0 +1,8 @@
+package SamsungDS;
+
+public class 색종이붙이기 {
+	static int[][] paper;
+	public static void main(String[] args) {
+
+	}
+}

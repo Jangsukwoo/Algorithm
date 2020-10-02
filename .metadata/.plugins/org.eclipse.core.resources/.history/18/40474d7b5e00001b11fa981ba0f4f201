@@ -1,0 +1,12 @@
+package CodingTest;
+
+public class 네1{
+	public static void main(String[] args) {
+		
+	}
+    public String solution(String m, String k){
+    	StringBuilder sb;
+          String answer = "";
+          return answer;
+  }
+}

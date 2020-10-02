@@ -1,0 +1,11 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+
+public class 색종이붙이기 {
+	static int[][] paper;
+	static BufferedReader br;
+	public static void main(String[] args) {
+		
+	}
+}
