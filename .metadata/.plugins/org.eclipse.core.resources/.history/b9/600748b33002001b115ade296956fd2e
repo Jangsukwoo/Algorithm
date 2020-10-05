@@ -1,8 +1,0 @@
-package 탐색;
-
-public class TwoDots {
-	static int R,C;
-	public static void main(String[] args) {
-
-	}
-}

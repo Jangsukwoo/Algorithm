@@ -1,0 +1,48 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class 신기한소수 {
+	static int N;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static int[] startArray = new int[] {2,3,5,7};
+	static boolean impossible = false;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		for(int s=0;s<startArray.length;s++) {
+			impossible = fals;e
+			int start = startArray[s];
+			int end = 0;
+			
+			start*=Math.pow(10,(N-1));
+			end = (int) (start+Math.pow(10,N-1));
+			start+=1;
+			//System.out.println(start+" "+end);
+			for(int num = start;num<=end;num+=2){//홀수만 확인
+				impossible = false;
+				for(int pos = 0; pos<N;pos++){
+					int checkNum = (int) (num/Math.pow(10,pos));
+					System.out.println(num+" "+checkNum);
+					if(checkNum!=2 && checkNum%2==0) {
+						impossible = true;
+						break;
+					}
+					for(int i=3;i<=Math.sqrt(checkNum);i++) {
+						if(checkNum%i==0){
+							impossible = true;//하나라도 나눠떨어지는게 있으면 true
+							break;
+						}
+					}
+					if(impossible) break;
+				}
+				if(impossible) break;
+				if(impossible==false) System.out.println(num);
+			}
+		}
+	}
+}

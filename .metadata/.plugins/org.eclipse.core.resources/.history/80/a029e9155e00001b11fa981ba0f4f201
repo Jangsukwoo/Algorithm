@@ -1,8 +1,0 @@
-package CodingTest;
-
-class 네1{
-    public String solution(String m, String k){
-          String answer = "";
-          return answer;
-  }
-}

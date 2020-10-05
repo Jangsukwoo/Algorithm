@@ -1,9 +1,0 @@
-package CodingTest;
-
-public class 네1{
-	static StringBuilder sb;
-    public String solution(String m, String k){
-          String answer = "";
-          return answer;
-  }
-}
