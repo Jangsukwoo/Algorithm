@@ -1,0 +1,11 @@
+package SamsungDS;
+
+import java.util.ArrayList;
+
+public class 서울지하철2호선 {
+	static ArrayList<Integer>[] station;
+	static int N;
+	public static void main(String[] args) {
+		
+	}
+}

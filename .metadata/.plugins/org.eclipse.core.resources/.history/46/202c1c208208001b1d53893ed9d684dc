@@ -1,0 +1,18 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class 서울지하철2호선 {
+	static int N;
+	static ArrayList<Integer>[] station;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		N= Integer.parseInt(br.readLine());
+		station = new ArrayList[N];
+	}
+}

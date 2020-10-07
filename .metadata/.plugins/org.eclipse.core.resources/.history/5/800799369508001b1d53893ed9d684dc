@@ -1,0 +1,8 @@
+package 재귀;
+
+public class 별 {
+
+	public static void main(String[] args) {
+
+	}
+}

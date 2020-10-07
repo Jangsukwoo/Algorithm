@@ -1,0 +1,15 @@
+package 재귀;
+
+import java.util.Scanner;
+
+public class 별 {
+	static int N;
+	static int height;
+	static char[][] starMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		height = (int) Math.pow(2,N);
+		starMap = char[1024][1024];
+	}
+}

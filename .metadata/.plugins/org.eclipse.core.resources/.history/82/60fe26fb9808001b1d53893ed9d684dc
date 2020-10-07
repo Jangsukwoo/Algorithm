@@ -1,0 +1,20 @@
+package 재귀;
+
+import java.util.Scanner;
+
+public class 별 {
+	static int N;
+	static int height;
+	static char[][] starMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		int height = (int) Math.pow(2,N);
+		starMap = new char[1024][1024];
+		recursive(0,0,height);
+	}
+	private static void recursive(int i, int j, int height2) {
+		// TODO Auto-generated method stub
+		
+	}
+}

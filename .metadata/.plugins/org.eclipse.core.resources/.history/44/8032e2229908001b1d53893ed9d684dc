@@ -1,0 +1,31 @@
+package 재귀;
+
+import java.util.Scanner;
+
+public class 별 {
+	static int N;
+	static int height;
+	static char[][] starMap;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		N = sc.nextInt();
+		int height = (int) Math.pow(2,N);
+		starMap = new char[1024][1024];
+		recursive(0,0,height);
+		for(int row=0;row<1024;row++) {
+			for(int col=0;col<1024;col++) {
+				System.out.print(starMap[row][col]);
+			}
+		}
+	}
+	private static void recursive(int row, int col, int height) {
+		if(height==1) {
+			starMap[row][col]='*';
+			return;
+		}
+		height/=2;
+		recursive(row+height, col, height);
+		recursive(row,col+height, height);
+		recursive(row+height,col+height,height);
+	}
+}
