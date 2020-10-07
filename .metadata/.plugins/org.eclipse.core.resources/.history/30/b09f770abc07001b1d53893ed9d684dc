@@ -1,0 +1,19 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 보급로 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,M,R,C,L;
+	static int[][] basement;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+	}
+}

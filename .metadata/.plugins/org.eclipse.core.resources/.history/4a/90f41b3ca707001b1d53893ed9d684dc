@@ -1,0 +1,16 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 16:40~
+ */
+public class IQTest {
+	static int N;
+	static int[] series;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		
+	}
+}
