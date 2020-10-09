@@ -1,0 +1,72 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 주사위쌓기 {
+	static int N;
+	static int[] dice;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int Max;
+	static int[][] upside;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		bruteForceDFS();
+	}
+	private static void bruteForceDFS() {
+		/*
+		 * 주사위는 총 10000개
+		 * 1번 주사위부터 차곡 차곡 쌓음
+		 */
+		for(int side=0;side<6;side++) dfs(side,1); //6면에 대해서 첫번째 기준을 정하는 for문
+	}
+	private static void dfs(int side, int stack){
+		if(stack==N){//다 쌓았으면
+			
+			return;
+		}
+		for(int i=0;i<6;i++){
+			if(dice[side]==dice[stack])
+			switch (side) {
+			case 0:
+				break;
+			case 0:
+				break;
+			case 0:
+				break;
+			case 0:
+				break;
+			case 0:
+				break;
+			case 0:
+				break;
+			case 0:
+				break;
+
+			}
+		}
+		
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		dice = new int[6];
+		upside = new int[6][4];//윗면이 0일 때부터 5일때 까지 left, front, rihgt, back 저장
+		upside[0] = new int[] {1,2,3,4};
+		upside[1] = new int[] {5,2,0,4};
+		upside[2] = new int[] {1,5,3,0};
+		upside[3] = new int[] {2,5,4,0};
+		upside[4] = new int[] {3,5,1,0};
+		upside[5] = new int[] {1,4,3,2};
+		//각 면의 하늘방향일 떄 left~back 인덱스 미리 선언 
+		
+		for(int i=0;i<N;i++) {
+			st = new StringTokenizer(br.readLine());
+			for(int j=0;j<6;j++) {
+				dice[j] = Integer.parseInt(st.nextToken());
+			}
+		}
+	}
+}

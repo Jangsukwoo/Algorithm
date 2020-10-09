@@ -1,0 +1,9 @@
+package SamsungDS;
+
+public class 주사위쌓기 {
+	static int N;
+	static int[] dice;
+	public static void main(String[] args) {
+
+	}
+}
