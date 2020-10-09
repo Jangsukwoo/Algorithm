@@ -43,6 +43,7 @@ public class 주사위쌓기 {
 				//이전 주사위의 하늘 방향 값과 쌓을 주사위의 바닥값이 같은게 발견된다면
 				int nextUpside = getNextUpside(currentDiceDownSide);
 				int getMaxSide = 0;
+				//옆면 중 가장 큰값을가지는 옆면으로맞추기
 				for(int i=0;i<4;i++) getMaxSide = Math.max(getMaxSide,dice[stack][upside[nextUpside][i]]);
 				dfs(stack,nextUpside,stack+1,maxSide+getMaxSide);
 				break;
