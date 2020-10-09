@@ -1,0 +1,9 @@
+package SamsungDS;
+
+public class 꽃길 {
+	static int N;
+	static int[][] flower;
+	public static void main(String[] args) {
+
+	}
+}

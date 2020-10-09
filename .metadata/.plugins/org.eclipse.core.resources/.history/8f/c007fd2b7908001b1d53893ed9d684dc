@@ -1,7 +1,0 @@
-package SamsungDS;
-
-public class 서울지하철2호선 {
-	public static void main(String[] args) {
-
-	}
-}
