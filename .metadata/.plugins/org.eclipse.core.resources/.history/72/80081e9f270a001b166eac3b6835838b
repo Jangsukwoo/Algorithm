@@ -1,0 +1,15 @@
+package codingtest20하;
+
+import java.util.StringTokenizer;
+
+public class 쿠2 {
+	static StringTokenizer st;
+	public static void main(String[] args) {
+
+	} 
+	public int solution(int n, String[] customers) {
+        int answer = 0;
+       
+        return answer;
+    }
+}

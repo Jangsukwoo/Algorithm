@@ -1,0 +1,30 @@
+package codingtest20하;
+
+import java.util.Stack;
+
+public class 쿠1 {
+	public static void main(String[] args) {
+		solution(10);
+	}
+	public static int[] solution(int N) {
+		int[] answer = {};
+		for(int num=1;num<=10;num++) {
+			System.out.println("돌");
+			String baseNotation = getBaseNotation(N,num);
+			System.out.println(baseNotation);
+		}
+		return answer;
+	}
+	private static String getBaseNotation(int N, int num) {
+		Stack<Character> stack = new Stack<Character>();
+		String baseNotation ="";
+		while(N>0) {
+			if(N%num>0) stack.add((char)(N%num+55));
+			else stack.add((char) (N%num));
+			N/=num;
+		}
+		while(!stack.isEmpty()) baseNotation+=stack.pop();
+		if(baseNotation.equals("")) baseNotation="0";
+		return baseNotation;
+	}
+}

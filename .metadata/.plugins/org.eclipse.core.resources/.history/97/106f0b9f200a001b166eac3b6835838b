@@ -1,0 +1,14 @@
+package codingtest20하;
+
+import java.util.HashMap;
+
+public class 쿠4 {
+	public static void main(String[] args) {
+
+	}  
+	public int solution(String depar, String hub, String dest, String[][] roads) {
+        int answer = -1;
+        HashMap<String, Integer> locationIdMap = new HashMap<String, Integer>();
+        return answer;
+    }
+}

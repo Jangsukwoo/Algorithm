@@ -1,0 +1,11 @@
+package codingtest20하;
+
+public class 쿠4 {
+	public static void main(String[] args) {
+
+	}  
+	public int solution(String depar, String hub, String dest, String[][] roads) {
+        int answer = -1;
+        return answer;
+    }
+}

@@ -1,0 +1,19 @@
+package codingtest20하;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class 쿠4 {
+	static ArrayList<Integer>[] adjList;
+	public static void main(String[] args) {
+
+	}  
+	public int solution(String depar, String hub, String dest, String[][] roads) {
+        int answer = -1;
+        HashMap<String, Integer> locationIdMap = new HashMap<String, Integer>();
+        locationIdMap.put(depar, 1);
+        locationIdMap.put(hub, 2);
+        locationIdMap.put(depar, 1);
+        return answer;
+    }
+}

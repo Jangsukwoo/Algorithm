@@ -22,18 +22,25 @@ public class 파이프옮기기1 {
 			return;
 		}
 		switch (state) {
+		
 		case 1: //가로로 놓여있는 경우 
+		
 			if(rightCheck(hr,hc)) dfs(hr,hc+1,1);
 			if(rightAndDownCheck(hr,hc)) dfs(hr+1,hc+1,3);
+			
 			break;
 		case 2: //세로로 놓여있는 경우
+			
 			if(downCheck(hr,hc)) dfs(hr+1,hc,2);
 			if(rightAndDownCheck(hr,hc)) dfs(hr+1,hc+1,3);
+			
 			break;
 		case 3: //대각선으로 놓여있는 경우
+			
 			if(rightCheck(hr,hc)) dfs(hr,hc+1,1);
 			if(downCheck(hr,hc)) dfs(hr+1,hc,2);
 			if(rightAndDownCheck(hr,hc)) dfs(hr+1,hc+1,3);
+			
 			break;
 		}
 	}
