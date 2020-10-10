@@ -1,0 +1,11 @@
+package 탐색;
+
+import java.util.Scanner;
+
+public class 숫자판점프 {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+
+	}
+}

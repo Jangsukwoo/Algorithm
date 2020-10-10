@@ -1,0 +1,13 @@
+package 탐색;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class 숫자판점프 {
+	static Scanner sc = new Scanner(System.in);
+	static int[][] board;
+	static HashSet<String> possibleNumberSet;
+	public static void main(String[] args) {
+		board = new int[5][5];
+	}
+}

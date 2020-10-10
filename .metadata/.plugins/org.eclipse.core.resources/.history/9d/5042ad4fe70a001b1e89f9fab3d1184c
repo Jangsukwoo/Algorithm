@@ -1,0 +1,11 @@
+package 탐색;
+
+import java.util.ArrayList;
+
+public class ABCDE {
+	static int N,M; //사람 수 , 친구 관계 수 M
+	static ArrayList<Integer>[] person;
+	public static void main(String[] args) {
+
+	}
+}
