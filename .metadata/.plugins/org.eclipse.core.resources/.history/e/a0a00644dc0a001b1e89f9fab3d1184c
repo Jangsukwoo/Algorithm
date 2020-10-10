@@ -1,12 +1,12 @@
 package SamsungDS;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
-public class 꽃길 {
+
+public class 러시아국기같은깃발 {
 	static int N;
-	static int[][] flower;
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static bu
 	public static void main(String[] args) {
 
 	}

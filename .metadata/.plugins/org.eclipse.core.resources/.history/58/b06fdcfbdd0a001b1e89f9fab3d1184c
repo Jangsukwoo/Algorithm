@@ -1,0 +1,40 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+
+public class 러시아국기같은깃발 {
+	static int N,M;
+	static StringTokenizer st;
+	static int answer;
+	static char[][] colors;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			setData();
+			answer = getMinimumPaintCount();
+			System.out.println("#"+testcase+" "+answer);
+		}
+	}
+	private static int getMinimumPaintCount() {
+		answer = Integer.MAX_VALUE;
+		
+		return 0;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		colors = new char[N][M];
+		for(int row=0;row<N;row++) {
+			String readLine= br.readLine();
+			for(int col=0;col<M;col++) {
+				colors[row][col] = readLine.charAt(col);
+			}
+		}
+	}	
+}
