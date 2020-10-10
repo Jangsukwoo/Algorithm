@@ -1,0 +1,9 @@
+package 탐색;
+
+public class 그림 {
+	static int N,M;
+	
+	public static void main(String[] args) {
+
+	}
+}
