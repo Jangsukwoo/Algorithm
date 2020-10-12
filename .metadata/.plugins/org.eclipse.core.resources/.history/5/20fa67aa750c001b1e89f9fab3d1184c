@@ -98,14 +98,29 @@ public class 차량정비소 {
 	
 			workReceipts();
 			workRepairs();
+//			System.out.println("시간 : "+time);
+//			if(!repairWatingQueue.isEmpty()) {
+//				System.out.println("기다리고있는 정비줄 번호");
+//				System.out.println(repairWatingQueue.peek().id);
+//			}
+//			System.out.println("---");
+//			for(int i=1;i<=K;i++) {
+//				System.out.println("고객번호 "+i);
+//				System.out.println("접수번호 "+customers[i].receiptId);
+//				System.out.println("정비번호 "+customers[i].repairId);
+//				System.out.println();
+//			}
+//			System.out.println("---");
 			time++;
 			
 		}
+		
 		for(int id=1;id<=K;id++) {
 			if(customers[id].receiptId==A && customers[id].repairId==B) {
 				answer+=customers[id].id;
 			}
 		}
+		
 	}
 
 	private static boolean doneCheck() {
@@ -164,6 +179,8 @@ public class 차량정비소 {
 		receipts[assignReceiptId].working = true;
 		receipts[assignReceiptId].remainWorkTime = receipts[assignReceiptId].needWorkTime;
 		currentCustomer.receiptId = assignReceiptId;
+		//System.out.println("담당 접수대: "+assignReceiptId);
+		//System.out.println("담당 고객 번호: "+currentCustomer.id);
 	}
 	private static void assignRepair() {
 		int assignRePairId = 0; //접수될 정비대
@@ -175,6 +192,7 @@ public class 차량정비소 {
 		}
 		Customer currentCustomer = repairWatingQueue.poll();
 		repairs[assignRePairId].customerId = currentCustomer.id;
+		//System.out.println("접수된 고객번호"+currentCustomer.id);
 		repairs[assignRePairId].working = true;
 		repairs[assignRePairId].remainWorkTime = repairs[assignRePairId].needWorkTime;
 		currentCustomer.repairId = assignRePairId;

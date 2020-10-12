@@ -175,6 +175,7 @@ public class 차량정비소 {
 		}
 		Customer currentCustomer = repairWatingQueue.poll();
 		repairs[assignRePairId].customerId = currentCustomer.id;
+		//System.out.println("접수된 고객번호"+currentCustomer.id);
 		repairs[assignRePairId].working = true;
 		repairs[assignRePairId].remainWorkTime = repairs[assignRePairId].needWorkTime;
 		currentCustomer.repairId = assignRePairId;
