@@ -1,0 +1,11 @@
+package SamsungDS;
+
+import java.io.InputStreamReader;
+
+public class 차량정비소 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static 
+	public static void main(String[] args) {
+
+	}
+}

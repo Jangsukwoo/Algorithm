@@ -21,8 +21,11 @@ public class 벌꿀채취 {
 		int T = Integer.parseInt(br.readLine());
 		for(int testcase=1;testcase<=T;testcase++) {
 			setData();
+			
 			setBoxlist();
+			
 			getMaxProfit();
+			
 			System.out.println("#"+testcase+" "+maxProfit);
 		}
 	}
@@ -30,11 +33,13 @@ public class 벌꿀채취 {
 		nCrBox(0,0);//채취장 박스 2개 선택
 	}
 	private static void nCrBox(int idx, int depth) {
-		if(depth==2) {
+		if(depth==2) { //박스 2개 선정 완료
 			if(overlap()) return; //겹치면 끝냄
 			//안겹치면
-			int box1 = getBoxMaxProfit(0);
-			int box2 = getBoxMaxProfit(1);
+			
+			int box1 = getBoxMaxProfit(0); //
+			int box2 = getBoxMaxProfit(1); //
+			
 			maxProfit = Math.max(maxProfit,box1+box2);
 			return;
 		}
@@ -45,10 +50,12 @@ public class 벌꿀채취 {
 	}
 	private static int getBoxMaxProfit(int boxNumber){
 		boxProfit = 0;
+		
 		for(int r=1;r<=M;r++) {
 			pickRoom = new int[r];
 			nCrRoom(0,0,r,boxNumber);
 		}
+		
 		return boxProfit;
 	}
 	private static void nCrRoom(int idx, int depth, int r, int boxNumber) {
