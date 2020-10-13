@@ -1,8 +1,0 @@
-package 탐색;
-
-public class ABCDE {
-	static int N,M; //사람 수 , 친구 관계 수 M
-	public static void main(String[] args) {
-
-	}
-}
