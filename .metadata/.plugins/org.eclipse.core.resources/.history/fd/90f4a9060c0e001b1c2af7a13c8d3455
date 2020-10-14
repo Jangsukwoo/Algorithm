@@ -1,0 +1,112 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class 엘리베이터 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,M;
+	static Elevator[] elevators;
+	static int A,B;
+	static ArrayList<Integer>[] elevatorList;
+	static Queue<String[]> q = new LinkedList<String[]>();
+	static boolean[][] visit;
+	static int answer;
+	static class Elevator{
+		int startFloor;
+		int stopPeriod;
+		public Elevator(int startFloor, int stopPeriod) {
+			this.startFloor = startFloor;
+			this.stopPeriod = stopPeriod;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+		bfs();
+	}
+	private static void bfs() {
+		/*
+		 * 최소 두번 엘리베이터를 타야함	
+		 */
+		int tranlation=1;
+		while(!q.isEmpty()) {
+			int size = q.size();
+			for(int i=0;i<size;i++) {
+				String[] current = q.poll();
+				//String currentElevatorNumber_string = current[0]; //현재 엘리베이터 번호
+				String currentPath = current[1]; //현재 경로
+				String currentElevatorNumber_string = "";
+				for(int j=(currentPath.length()-2);j>=0;j--){
+					if(currentPath.charAt(j)==' ') break;
+					currentElevatorNumber_string+=currentPath.charAt(j);
+				}
+				//System.out.println(currentElevatorNumber_string);
+				
+				int currentElevatorNumber = Integer.parseInt(currentElevatorNumber_string);
+				int start = elevators[currentElevatorNumber].startFloor;
+				int period = elevators[currentElevatorNumber].stopPeriod;
+				if(tranlation>=2) { //두번 이상 갈아 탄 경우
+					int result = B-elevators[currentElevatorNumber].startFloor;
+					if(result==0 || (result>0 && result%elevators[currentElevatorNumber].stopPeriod==0)) {
+						answer = tranlation;
+						System.out.println(answer);
+						System.out.println(currentPath);
+						return;
+					}
+
+					for(int floor=start;floor<=N;floor+=period) {
+						for(int j=0;j<elevatorList[floor].size();j++) {
+							int nextElevator = elevatorList[floor].get(j);
+							if(currentElevatorNumber==nextElevator) continue;
+							String nextElevatorNumber_String = Integer.toString(nextElevator);
+							if(visit[nextElevator][Integer.parseInt(nextElevatorNumber_String)]==false) {
+								q.add(new String[] {nextElevatorNumber_String,currentPath+nextElevatorNumber_String+" "});
+								visit[nextElevator][Integer.parseInt(nextElevatorNumber_String)]=true;
+							}
+						}
+					}
+				}
+				else { //아직 두번 미만 갈아 탄 경우,일단 다른 엘리베이터로 갈아탐
+					for(int floor=start;floor<=N;floor+=period) {
+						for(int j=0;j<elevatorList[floor].size();j++) {
+							int nextElevator = elevatorList[floor].get(j);
+							if(currentElevatorNumber==nextElevator) continue;
+							String nextElevatorNumber_String = Integer.toString(nextElevator);
+							q.add(new String[] {nextElevatorNumber_String,currentPath+nextElevatorNumber_String+" "});
+						}
+					}
+				}
+			}
+			tranlation++;
+		}
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		elevators = new Elevator[M+1];
+		elevatorList = new ArrayList[N+1];
+		visit = new boolean[N+1][M+1];
+		for(int floor=1;floor<=N;floor++) elevatorList[floor] = new ArrayList<Integer>();
+		for(int i=1;i<=M;i++) {
+			st = new StringTokenizer(br.readLine());
+			int start = Integer.parseInt(st.nextToken());
+			int period = Integer.parseInt(st.nextToken());
+			elevators[i] =new Elevator(start, period);
+			for(int floor=start;floor<=N;floor+=period) elevatorList[floor].add(i);
+		}
+
+		st = new StringTokenizer(br.readLine());
+		A = Integer.parseInt(st.nextToken());
+		B = Integer.parseInt(st.nextToken());
+		for(int i=0;i<elevatorList[A].size();i++) {
+			q.add(new String[] {Integer.toString(elevatorList[A].get(i))+" "});
+		}
+	}
+}

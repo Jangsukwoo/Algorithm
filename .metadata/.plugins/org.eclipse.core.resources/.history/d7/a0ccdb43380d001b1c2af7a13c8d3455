@@ -1,0 +1,54 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/*
+ * 18:15~
+ */
+public class 수영대회결승전완탐구현 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int[][] sea;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static int startR,startC,endR,endC;
+	static Queue<int[]> q = new LinkedList<int[]>();
+	static int N;
+	static int minTime;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T = Integer.parseInt(br.readLine());
+		for(int testcase=1;testcase<=T;testcase++) {
+			setData();
+			bfs();
+		}
+	}
+	private static void bfs() {
+		/*
+		 * 0 : 갈 수 있는 땅
+		 * 1 : 장애물
+		 * 2 : 주기 2초 소용돌이
+		 */
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		sea = new int[N][N];
+		for(int row=0;row<N;row++) {
+			st = new StringTokenizer(br.readLine());
+			for(int col=0;col<N;col++) {
+				sea[row][col] = Integer.parseInt(st.nextToken());
+			}
+		}
+		st = new StringTokenizer(br.readLine());
+		startR = Integer.parseInt(st.nextToken());
+		startC = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		endR = Integer.parseInt(st.nextToken());
+		endC = Integer.parseInt(st.nextToken());
+		minTime = Integer.MAX_VALUE;
+	}
+}

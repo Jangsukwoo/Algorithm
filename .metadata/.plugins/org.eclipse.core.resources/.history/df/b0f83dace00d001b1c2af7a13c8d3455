@@ -1,0 +1,7 @@
+package SamsungDS;
+
+public class 엘리베이터 {
+	public static void main(String[] args) {
+
+	}
+}

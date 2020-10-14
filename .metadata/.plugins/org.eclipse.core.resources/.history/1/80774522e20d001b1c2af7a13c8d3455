@@ -1,0 +1,30 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 엘리베이터 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,M;
+	static int[] elevators;
+	static class Elevator{
+		int startFloor;
+		int stopPeriod;
+	}
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		elevators = new int[N];
+		for(int i=0;i<N;i++) {
+			st = new StringTokenizer(br.readLine());
+			elevators[i] =  
+		}
+	}
+}

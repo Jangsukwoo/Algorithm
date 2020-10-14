@@ -5,7 +5,57 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-10-08T21:07:28Z</updated>
+  <updated>2020-10-13T18:24:00Z</updated>
+  <entry>
+    <title>This Week in Spring - October 13th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/13/this-week-in-spring-october-13th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-13:4228</id>
+    <updated>2020-10-13T18:24:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! There&amp;rsquo;s just so much to talk about this week and I scarcely know where to start so let&amp;rsquo;s just get into it.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/08/a-bootiful-podcast-reactor-team-engineer-fellow-java-champion-and-conference-organizer-audrey-neveu"&gt;A Bootiful Podcast: Reactor team engineer, fellow Java Champion, and conference organizer Audrey Neveu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=BZOI2P0zgCQ&amp;feature=share"&gt;A look at the Sentry Spring Boot starter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/theapachetomcat/status/1315584730667143169?s=12"&gt;Apache Tomcat 10.0.0-M9 (alpha) is out&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://useoptic.com/blog/optic-spring-usvc"&gt;Documenting Spring Boot Microservices with Optic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/08/dr-b-talks-about-iot-and-edge-technology-in-open-source/"&gt;Dr. B Talks About IoT and Edge Technology in Open Source and Why It¡¯s Important&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://cloud.google.com/blog/products/containers-kubernetes/google-cloud-now-supports-buildpacks"&gt;Google Cloud now supports buildpacks | Google Cloud Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/10/13/jdk15-security-enhancements/"&gt;JDK 15 Security Enhancements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/10/last-call-vmworld-special-savings-on-training-certification.html"&gt;Last Call: VMworld Special Savings on Training &amp;amp; Certification&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/10/missed-vmworld-2020.html"&gt;Missed VMworld 2020?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/10/09/jep396-candidate/"&gt;New candidate JEP: 395: Records&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/07/spring-cloud-2020-0-0-m4-aka-ilford-is-available"&gt;Spring Cloud 2020.0.0-M4 (aka Ilford) Is Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/13/spring-framework-5-3-0-rc2-available-now"&gt;Spring Framework 5.3.0-RC2 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/08/spring-security-5-4-1-5-3-5-5-2-7-5-1-13-5-0-19-4-2-19-released"&gt;Spring Security 5.4.1, 5.3.5, 5.2.7, 5.1.13, 5.0.19, 4.2.19 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/10/three-vmware-innovations-key-to-successful-digital-transformations.html"&gt;Three VMware Innovations Key to Successful Digital Transformations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/reactiveoss/status/1314225601947951106?s=12"&gt;Why Reactive Principals matter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://t.co/Z3ref2ng4U?amp=1"&gt;The support that was in Spring Cloud Security for token relays has landed in Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1315958484865777665"&gt; Congrats @uaiHebert on your first contribution to Spring Data JDBC!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMwareTanzu/status/1313865426976333833"&gt;Want to learn about modern app development technologies? Look no further than than the #TanzuDeveloper site from VMware. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMwareTanzu/status/1313977261691932674"&gt; Need to bring backing services from Kubernetes to apps running on VMware Tanzu? Download the Tanzu Service Manager &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMwareTanzu/status/1314194428102402048"&gt;Another week, another #TGIK8s! This week Kubernetes co-creator Joe Beda explores Project Antrea. This is an OSS CNI solution built on OVS. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcloud/status/1314741171281895425"&gt;There are quite a few new features in Spring Cloud Contract! &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 5.3.0-RC2 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/13/spring-framework-5-3-0-rc2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2020-10-13:4227</id>
+    <updated>2020-10-13T15:37:09Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that the second release candidate of Spring Framework 5.3 has been released and is available from our &lt;a href="https://repo.spring.io/milestone"&gt;milestone repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.3.0-RC2&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.0-RC2"&gt;38 fixes and improvements&lt;/a&gt; and is our last stop before GA proper scheduled 2 weeks from now.&lt;/p&gt;
+&lt;p&gt;Next up is Spring Boot &lt;code&gt;2.4.0-M4&lt;/code&gt;, stay tuned!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.0-RC2/reference/html"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Reactor team engineer, fellow Java Champion, and conference organizer Audrey Neveu</title>
     <link rel="alternate" href="https://spring.io/blog/2020/10/08/a-bootiful-podcast-reactor-team-engineer-fellow-java-champion-and-conference-organizer-audrey-neveu" />
@@ -1326,38 +1376,6 @@ public FlatFileItemReader&amp;lt;Person&amp;gt; itemReader() {&#xD;
 &lt;p&gt;The most notable change in this release is the deprecation of the Map-based &lt;code&gt;JobRepository&lt;/code&gt; and &lt;code&gt;JobExplorer&lt;/code&gt; implementations. You can find more details about the motivations behind this decision in issue &lt;a href="https://github.com/spring-projects/spring-batch/issues/3780"&gt;#3780&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#feedback-and-contributions" class="anchor" name="feedback-and-contributions"&gt;&lt;/a&gt;Feedback and Contributions&lt;/h2&gt;
 &lt;p&gt;I would like to thank all contributors who made this release possible! We look forward to your feedback on this milestone on &lt;a href="https://twitter.com/springbatch"&gt;Twitter&lt;/a&gt;, &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt;, and &lt;a href="https://github.com/spring-projects/spring-batch/issues/new/choose"&gt;Github&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/4.3.0-RC1/reference/pdf/spring-batch-reference.pdf"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.3.4 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/17/spring-boot-2-3-4-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-09-17:4208</id>
-    <updated>2020-09-17T16:17:20Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.3.4 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.4.RELEASE"&gt;61 bug fixes, enhancements, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;Please note that version of Spring Framework that is used by this release of Spring Boot contains a fix for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5421"&gt;a security vulnerability (CVE-2020-5421)&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.10 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/17/spring-boot-2-2-10-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2020-09-17:4207</id>
-    <updated>2020-09-17T16:17:10Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.10 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.10.RELEASE"&gt;72 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;Please note that version of Spring Framework that is used by this release of Spring Boot contains a fix for &lt;a href="https://tanzu.vmware.com/security/cve-2020-5421"&gt;a security vulnerability (CVE-2020-5421)&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.10.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
