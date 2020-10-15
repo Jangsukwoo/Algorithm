@@ -1,0 +1,15 @@
+package DP;
+
+import java.util.Scanner;
+
+public class 하와와대학생쨩하와이로가는서이와요 {
+	static int n;
+	static int[] memo;
+	static int answer;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		memo = new int[N+1];
+		
+	}
+}
