@@ -1,0 +1,19 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+
+import jdk.internal.jline.internal.InputStreamReader;
+
+/*
+ * 18:00
+ */
+public class 욕심쟁이판다 {
+	static int[][] memo; //dp 배열 
+	static int[][] forest;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	public static void main(String[] args) {
+
+	}
+}

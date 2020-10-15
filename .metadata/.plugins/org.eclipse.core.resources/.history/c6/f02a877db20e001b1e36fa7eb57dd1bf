@@ -1,0 +1,71 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 미로탈출하기 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static char[][] maze;
+	static boolean[][] visit;
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};//상우하좌
+	
+	static StringTokenizer st;
+	static int N,M;
+	public static void main(String[] args) throws IOException {
+		setData();
+		dfsAll();
+	}
+	private static void dfsAll() {
+		/*
+		 * 모든 칸에서 시작해본다.
+		 */
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<M;col++) {
+				visit = new boolean[N][M];
+				dfs(row,col);
+			}
+		}
+	}
+	private static void dfs(int cr, int cc) {
+		int dir=getDirection(cr,cc);
+		
+
+		
+		
+	}
+	private static int getDirection(int cr, int cc) {
+		
+		int dir = 0;
+		
+		switch (maze[cr][cc]) {
+		case 'U':
+			dir = 0;
+			break;
+		case 'R':
+			dir = 1;
+			break;
+		case 'D':
+			dir = 2;
+			break;
+		case 'L':
+			dir = 3;
+			break;
+		}
+		return dir;
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		maze = new char[N][M];
+		for(int row=0;row<N;row++) {
+			String readLine= br.readLine();
+			for(int col=0;col<M;col++) {
+				maze[row][col] = readLine.charAt(col);
+			}
+		}
+	}
+}

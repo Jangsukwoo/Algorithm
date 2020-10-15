@@ -1,0 +1,11 @@
+package SamsungDS;
+
+import java.io.InputStreamReader;
+
+public class 미로탈출하기 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in)));
+	static char[] maze;
+	public static void main(String[] args) {
+
+	}
+}
