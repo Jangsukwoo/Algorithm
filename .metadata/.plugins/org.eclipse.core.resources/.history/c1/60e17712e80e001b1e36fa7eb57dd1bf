@@ -1,0 +1,8 @@
+package DP;
+
+public class 오르막수 {
+	static String number = "0000";
+	public static void main(String[] args) {
+
+	}
+}

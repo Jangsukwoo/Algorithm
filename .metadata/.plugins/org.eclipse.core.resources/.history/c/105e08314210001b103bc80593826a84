@@ -1,0 +1,14 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+
+
+/*
+ * 15:30~
+ */
+public class 청소년상어 {
+	static BufferedReader br = new BufferedReader(new InputStreamAdapter(System.in));
+	public static void main(String[] args) {
+
+	}
+}

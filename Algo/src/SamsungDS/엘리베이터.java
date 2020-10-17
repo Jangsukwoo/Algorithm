@@ -46,6 +46,7 @@ public class 엘리베이터 {
 		}
 		
 		
+		
 	}
 	private static void bfs() {
 		/*

@@ -1,0 +1,30 @@
+package DP;
+
+public class 오르막수 {
+	static String number = "0000";
+	public static void main(String[] args) {
+		int count = 0;
+		while(true) {
+			char a = number.charAt(0);
+			char b = number.charAt(1);
+			char c = number.charAt(2);
+			char d = number.charAt(3);
+			
+			if(a<=b && b<=c && c<=d) {
+				count++;
+				System.out.println(number);
+			}
+			int num = Integer.parseInt(number);
+			num++;
+			String num_string = Integer.toString(num);
+			if(num_string.length()!=4) {
+				int fill = 4-num_string.length();
+				String zero="";
+				for(int i=0;i<fill;i++) {
+					zero+="0";
+				}
+				number = zero+num_string;
+			}
+		}
+	}
+}

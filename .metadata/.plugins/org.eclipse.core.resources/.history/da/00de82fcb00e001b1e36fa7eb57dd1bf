@@ -1,7 +1,0 @@
-package SamsungDS;
-
-public class 미로탈출하기 {
-	public static void main(String[] args) {
-
-	}
-}

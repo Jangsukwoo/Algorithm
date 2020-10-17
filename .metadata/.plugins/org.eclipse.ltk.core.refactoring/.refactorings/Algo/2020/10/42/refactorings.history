@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;DP.오르막수&apos; to &apos;오르막수_OEIS&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;DP.오르막수&apos;&#x0D;&#x0A;- Renamed element: &apos;DP.오르막수_OEIS&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;오르막수&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;DP{오르막수.java[오르막수" matchStrategy="1" name="오르막수_OEIS" qualified="false" references="true" similarDeclarations="false" stamp="1602768765166" textual="false" version="1.0"/>
+</session>
