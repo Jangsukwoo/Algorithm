@@ -1,0 +1,75 @@
+package SamsungDS;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class 컨베이어벨트위의로봇 {
+	static class Robot{
+		int RobotId;
+		int movingWorkId;
+		public Robot(int robotId, int movingWorkId) {
+			RobotId = robotId;
+			this.movingWorkId = movingWorkId;
+		}
+	}
+	static class MovingWork{
+		int robotId;
+		int capacity;
+		int id;
+		int idx;
+		
+	}
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static ArrayList<Robot> robotList;
+	static MovingWork[] movingWorks;
+	static int[] movingWorkId;
+	static int N,K;
+	public static void main(String[] args) {
+		setData();
+		simulation();
+	}
+	
+	private static void simulation() {
+		int time=0;
+		while(true) {
+			moveMovingWork();
+			movingDoneCheck();
+			if(robotList.size()>0) {//이동할로봇이있으면
+				moveRobots();
+			}
+			if(possibleAddRobot()) {//첫번째 컨베이어확인
+				
+			}
+			if(doneCheck()) {
+				
+			}
+			time++;
+		}
+	}
+	private static boolean doneCheck() {
+		return false;
+	}
+
+	private static void movingDoneCheck() {
+		
+	}
+
+	private static boolean possibleAddRobot() {
+		return false;
+	}
+
+	private static void moveRobots() {
+		
+	}
+
+	private static void moveMovingWork() {
+		
+	}
+
+	private static void setData() {
+		st = new StringTokenizer(br.readLine());
+	}
+}

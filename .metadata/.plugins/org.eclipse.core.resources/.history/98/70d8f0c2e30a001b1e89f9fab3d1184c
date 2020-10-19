@@ -1,8 +1,0 @@
-package 탐색;
-
-public class 숫자판점프 {
-	
-	public static void main(String[] args) {
-
-	}
-}

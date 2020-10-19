@@ -1,0 +1,7 @@
+package SamsungDS;
+
+public class 컨베이어벨트위의로봇 {
+	public static void main(String[] args) {
+
+	}
+}

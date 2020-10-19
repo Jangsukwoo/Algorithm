@@ -1,0 +1,22 @@
+package SamsungDS;
+
+public class 컨베이어벨트위의로봇 {
+	static class Robot{
+		int RobotId;
+		int movingWorkId;
+		public Robot(int robotId, int movingWorkId) {
+			RobotId = robotId;
+			this.movingWorkId = movingWorkId;
+		}
+	}
+	static class MovingWork{
+		int robotId;
+		int capacity;
+		int id;
+		int idx;
+		
+	}
+	public static void main(String[] args) {
+
+	}
+}

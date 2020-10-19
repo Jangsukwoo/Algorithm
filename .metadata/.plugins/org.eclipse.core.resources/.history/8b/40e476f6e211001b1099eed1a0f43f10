@@ -1,0 +1,13 @@
+package 구현;
+
+import java.util.Scanner;
+
+public class 지구온난화 {
+	static int R,C;
+	public static void main(String[] args) {
+		Scanner sc = new  Scanner(System.in);
+		R = sc.nextInt();
+		C= sc.nextInt();
+		sc.nextLine();
+	}
+}

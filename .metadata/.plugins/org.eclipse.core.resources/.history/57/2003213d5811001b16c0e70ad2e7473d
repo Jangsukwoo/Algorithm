@@ -1,0 +1,25 @@
+package SamsungDS;
+
+import java.util.ArrayList;
+
+public class 컨베이어벨트위의로봇 {
+	static class Robot{
+		int RobotId;
+		int movingWorkId;
+		public Robot(int robotId, int movingWorkId) {
+			RobotId = robotId;
+			this.movingWorkId = movingWorkId;
+		}
+	}
+	static class MovingWork{
+		int robotId;
+		int capacity;
+		int id;
+		int idx;
+		
+	}
+	static ArrayList<Robot> robotList;
+	public static void main(String[] args) {
+
+	}
+}
