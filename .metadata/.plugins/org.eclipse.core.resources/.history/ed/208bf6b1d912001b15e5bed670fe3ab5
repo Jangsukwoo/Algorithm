@@ -1,0 +1,14 @@
+package CodingTest;
+
+public class 느흐느TEST {
+	static int[] dr = {
+
+	}
+	public static void main(String[] args) {
+
+	}
+	private static void solution(int sizeOfMatrix, int[][] matrix) {
+		// TODO: 이곳에 코드를 작성하세요.
+
+	}
+}

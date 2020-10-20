@@ -1,0 +1,24 @@
+package CodingTest;
+
+public class 느흐느TEST {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static boolean[][] visit;
+	static int answer;
+	static int area;
+	static StringBuilder sb = new StringBuilder();
+	public static void main(String[] args) {
+
+	}
+	private static void solution(int sizeOfMatrix, int[][] matrix) {
+		for(int row=0;row<sizeOfMatrix;row+) {
+			for(int col=0;col<sizeOfMatrix;col++) {
+				if(visit[row][col]==false && matrix[row][col]==1) {
+					answer++;
+					area=0;
+					dfs(row,col);
+				}
+			}
+		}
+	}
+}

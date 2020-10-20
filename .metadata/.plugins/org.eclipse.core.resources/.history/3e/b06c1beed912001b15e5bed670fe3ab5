@@ -1,0 +1,13 @@
+package CodingTest;
+
+public class 느흐느TEST {
+	static int[] dr = {-1,0,1,0};
+	static int[] dc = {0,1,0,-1};
+	static boolean[][] visit;
+	public static void main(String[] args) {
+
+	}
+	private static void solution(int sizeOfMatrix, int[][] matrix) {
+
+	}
+}

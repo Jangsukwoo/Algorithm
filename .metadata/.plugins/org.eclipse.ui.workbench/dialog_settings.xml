@@ -6,8 +6,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item key="dialogHeight" value="-1"/>
-		<item key="dialogWidth" value="-1"/>
+		<item key="dialogHeight" value="802"/>
+		<item key="dialogWidth" value="701"/>
 		<list key="orderedElements">
 		</list>
 		<list key="orderedProviders">
