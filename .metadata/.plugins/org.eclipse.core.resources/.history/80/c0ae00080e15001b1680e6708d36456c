@@ -1,0 +1,121 @@
+package 탐색;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+
+
+public class 양구출작전 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N;
+	static boolean[] visit;
+	static Island[] islands;
+	static ArrayList<Integer>[] adjList;
+	static int[] parent;
+	static boolean[] leafs;
+	static long aliveSheep;
+	static class Island{
+		long sheeps;
+		long wolfs;
+		char type;
+		public Island(long sheeps, long wolfs, char type) {
+			this.sheeps = sheeps;
+			this.wolfs = wolfs;
+			this.type = type;
+		}
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		setData();
+		visit[1] = true;
+		dfs(1);//부모정보 및 리프정보 구하러
+//		for(int number=1;number<=N;number++) {
+//			if(leafs[number]){//리프노드면
+//				dfs2(number,0);
+//			}
+//		}
+		for(int i=1;i<=N;i++) {
+			System.out.println(i+"번째"+" "+islands[i].popular);
+		}
+		System.out.println(islands[1].sheeps);
+	}
+//	private static void dfs2(int number, long sheep) {
+//		if(number==1) {
+//			aliveSheep+=sheep;
+//			return;
+//		}
+//		int parentNumber = parent[number]; 
+//		if(islands[number].type=='S') {
+//			long currentSheeps = islands[number].popular;
+//			islands[number].popular=0;
+//			dfs2(parentNumber,sheep+currentSheeps);
+//		}else if(islands[number].type=='W'){
+//			long newSheep = sheep-islands[number].popular;
+//			if(sheep>=islands[number].popular) islands[number].popular = 0;
+//			else islands[number].popular = islands[number].popular = islands[number].popular-sheep;
+//			if(newSheep<0) newSheep=0;
+//			dfs2(parentNumber,newSheep);
+//		}
+//	}
+	private static long dfs(int currentNumber) {
+		long getSheeps = 0;
+		for(int i=0;i<adjList[currentNumber].size();i++) {
+			int nextNumber = adjList[currentNumber].get(i);
+			if(visit[nextNumber]==false){
+				parent[nextNumber] = currentNumber;//부모 정보 넣고 
+				visit[nextNumber]= true;
+				getSheeps = dfs(nextNumber);
+				
+				if(getSheeps>0){//유입된 양이 한마리 이상이라도 있으면 갱신 해봐야함
+					switch (islands[currentNumber].type) {
+					case 'S'://양이면
+						islands[currentNumber].sheeps+=getSheeps;
+						break;
+					case 'W'://늑대면
+						System.out.println("늑대섬"+currentNumber);
+						System.out.println(getSheeps);
+						getSheeps-=islands[currentNumber].wolfs;
+						if(getSheeps>=islands[currentNumber].wolfs){//유입된 양이 현재 섬에 존재하는 늑대보다 많다면
+							getSheeps = getSheeps-islands[currentNumber].wolfs;
+							islands[currentNumber].sheeps+=getSheeps;
+							islands[currentNumber].wolfs = 0;
+						}
+						else islands[currentNumber].wolfs -= getSheeps;
+						break;
+					}
+				}
+			}
+			if(currentNumber==1) islands[1].sheeps+=getSheeps;
+			System.out.println(currentNumber+"번째 섬 정보 양:"+islands[currentNumber].sheeps+" 늑대:"+islands[currentNumber].wolfs);
+		}
+		return islands[currentNumber].sheeps;
+	}
+	private static void setData() throws NumberFormatException, IOException {
+		N = Integer.parseInt(br.readLine());
+		islands = new Island[N+1];
+		adjList = new ArrayList[N+1];
+		visit = new boolean[N+1];
+		islands[1] = new Island(0,0,'R');
+		leafs = new boolean[N+1];
+		parent = new int[N+1];
+		for(int i=1;i<=N;i++) {
+			adjList[i] = new ArrayList<Integer>();
+			leafs[i] = true;
+		}
+ 		for(int i=2;i<=N;i++) {
+			st = new StringTokenizer(br.readLine());
+			char type = st.nextToken().charAt(0);
+			long popular = Long.parseLong(st.nextToken());
+			int number = Integer.parseInt(st.nextToken());
+			if(type=='S') islands[i] = new Island(popular,0,type);//양,늑대,타입
+			else islands[i] = new Island(0,popular,type);//양,늑대,타입
+			adjList[i].add(number);
+			adjList[number].add(i);
+			parent[i] = number;
+		}
+	}
+}

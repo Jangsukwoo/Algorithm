@@ -63,10 +63,21 @@ public class 기출_인구이동 {
 			allianceMap = new int[N][N];
 			makeAlliance();
 			movePeople();
+			viewPeople();
 			if(flag)break;
 			move++;
 		}
 		System.out.println(move);
+	}
+
+	private static void viewPeople() {
+		for(int row=0;row<N;row++) {
+			for(int col=0;col<N;col++) {
+				System.out.print(people[row][col]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 
 	private static void makeAlliance() {

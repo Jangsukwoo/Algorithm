@@ -5,7 +5,54 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-10-15T23:22:00Z</updated>
+  <updated>2020-10-22T20:47:55Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Optic CEO Aidan Cunniffe on OpenAPI, contract testing, and so much more</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/22/a-bootiful-podcast-optic-ceo-aidan-cunniffe-on-openapi-contract-testing-and-so-much-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-22:4236</id>
+    <updated>2020-10-22T20:47:55Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/UseOptic"&gt;Optic (@UseOptic)&lt;/a&gt; CEO &lt;a href="http://twitter.com/UseOptic"&gt;Aidan Cunniffe (@aidandcunniffe)&lt;/a&gt; about OpenAPI, contract testing, and so much more &lt;/p&gt;
+&lt;p&gt;Get the Spring &lt;/p&gt;
+&lt;p&gt;&lt;iframe title="Optic CEO Aidan Cunniffe on OpenAPI, contract testing, and so much more " height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/q7sjn-f02091?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - October 20, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/10/20/this-week-in-spring-october-20-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-10-20:4235</id>
+    <updated>2020-10-20T19:21:47Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re things? It&amp;rsquo;s been unseasonably warm here in San Francisco so I am writing this from my balcony with a warm cup of coffee and hope in my heart. It is still very hard to believe we&amp;rsquo;re near Halloween, though! Crazy how time flies. There&amp;rsquo;s lots of good stuff to look at this week so let&amp;rsquo;s get to it! Hopefully you can enjoy this week&amp;rsquo;s news from some warm, safe and healthy spot in your life, too.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/15/a-bootiful-podcast-datastax-s-patrick-mcfadin-on-datastax-astra-cassandra-cassandra-data-modeling-patterns-and-more"&gt;A Bootiful Podcast: DataStax&amp;rsquo;s Patrick McFadin on DataStax Astra, Cassandra, Cassandra data modeling patterns, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/shidi/status/1311192880870875136?s=12"&gt;A tutorial on Batch and REST&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/20/history-of-open-source-and-free-software-dirk-swap/"&gt;History of Open Source and Free Software: Dirk &amp;amp; Swap: Conversations on Open Source&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-graphql"&gt;Incubator support for Spring and GraphQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/15/premiering-bootiful-kotlin"&gt;Premiering: Bootiful Kotlin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://inside.java/2020/10/14/jdk16-proposed-schedule/"&gt;Proposed schedule for JDK 16&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/15/spring-authorization-server-0-0-2-available-now"&gt;Spring Authorization Server 0.0.2 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/15/spring-boot-2-4-0-m4-available-now"&gt;Spring Boot 2.4.0-M4 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/14/spring-data-2020-0-rc2-out-now"&gt;Spring Data 2020.0 RC2 out now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/14/spring-integration-5-4-release-candidate-1-available"&gt;Spring Integration 5.4 Release Candidate 1 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.mscharhag.com/spring/security-authorization-bean-methods"&gt;Spring Security: Delegating authorization checks to bean methods&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/developer/tv/code/0005/"&gt;The Road to (Continuous) Delivery with Josh Long | Tanzu.TV | VMware Tanzu Developer Center&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/15/vmware-experts-first-open-source-projects/"&gt;VMware Experts Share Their First Open Source Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/15/vmwares-open-source-shop-of-curiosities-at-all-things-open/"&gt;VMware¡¯s Open Source Shop of Curiosities at All Things Open&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/13/why-open-governance-is-important-for-open-source/"&gt;Why Open Governance Is Important for Open Source | Dirk Hohndel &amp;amp; Swapnil Bhartiya&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2020/10/20/why-use-singleton-for-globalization/"&gt;Why Use Singleton for Globalization? Understanding the Key Benefits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1318622146336190465"&gt;https://twitter.com/JavaAtMicrosoft/status/1318622146336190465 @JavaAtMicrosoft Using #IntelliJ? Don&amp;rsquo;t miss @trisha_gee covering Modern #Java productive features enabled by IntelliJ, and combine that with @rorypreddy&amp;rsquo;s talk on Supercharging Spring Boot ap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/developer/guides/"&gt;Have you checked out the VMware Developer Portal? There are tips on Kubernetes, Spring, CI/CD, remote work, agile, and so much more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://mail.openjdk.java.net/pipermail/valhalla-spec-experts/2020-October/001415.html"&gt;the latest terminology update: primitive objects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.4.0-M4 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2020/10/15/spring-boot-2-4-0-m4-available-now" />
@@ -1319,63 +1366,6 @@ Look for more in coming weeks.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Sentry CTO David Cramer on Automated Error Capture and Analysis</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/24/sentry-cto-david-cramer-on-automated-error-capture-and-analysis" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-24:4215</id>
-    <updated>2020-09-24T22:51:34Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about the wide world of web development with CSS, Figma, AdobeXD and more, and then talks to Sentry CTO &lt;a href="https://twitter.com/zeeg"&gt;David Cramer (@zeeg)&lt;/a&gt; about easy error capture and analysis with Sentry and Spring.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Want to see the worldwide flurry of activity as errors make their way to Sentry? &lt;a href="https://live.sentry.io"&gt;Check this out&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe title="Sentry CTO David Cramer on Automated Error Capture and Analysis" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/mzzb9-ed060b?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - September 22, 2020</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/09/22/this-week-in-spring-september-22-2020" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-09-22:4214</id>
-    <updated>2020-09-22T21:53:17Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another fun-filled and fantastic installment of &lt;em&gt;This Week in Spring&lt;/em&gt; where we review the week that was in the Java ecosystem. It&amp;rsquo;s been quite a week indeed. SOoo many new releases and so many interesting things going on in the larger Spring, Java, Azure, and VMware ecosystems, that we don&amp;rsquo;t have a moment to waste so: onward! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/a-bootiful-podcast-lightbend-cto-jonas-bon-r-on-his-epic-aspect-oriented-distributed-reactive-work"&gt;A Bootiful Podcast: Lightbend CTO Jonas Bon?r on his epic, aspect-oriented, distributed, reactive work&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/17/ask-the-architects/"&gt;Ask the Java Architects Panel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.infoq.com/articles/azure-spring-boot-serverles-dubois/"&gt;Azure + Spring Boot = Serverless - Q&amp;amp;A with Julien Dubois&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/azure-in-the-enterprise-azure-object-storage-service-and-spring-boot"&gt;Azure in the Enterprise: Azure Object Storage Service and Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/09/intels-vmworld-sessions-highlight-modernized-infrastructure-from-edge-to-cloud.html"&gt;Intel¡¯s VMworld Sessions Highlight Modernized Infrastructure from Edge to Cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/17/devlive-java-lang-futures/"&gt;Java Language Futures - Mid 2020 Edition&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/17/keep-java-apps-secure/"&gt;Keeping Your Java Applications Secure - Cryptographic Improvements and Best Practices&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/17/devlive-keynote/"&gt;Keynote - The Future of Java Is Now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/09/microsoft-azure-and-vmware-makes-the-path-to-the-cloud-easier.html"&gt;Microsoft Azure and VMware makes the path to the cloud easier&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2020/09/moving-forward-together-with-dell-technologies-and-vmware-at-vmworld-2020.html"&gt;Moving forward together with Dell Technologies and VMware at VMworld 2020&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/16/jdk-pre-submit-testing-on-github/"&gt;Running JDK pre-submit testing on GitHub&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/spring-batch-4-3-0-rc1-available-now"&gt;Spring Batch 4.3.0-RC1 available now!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/spring-boot-2-1-17-available-now"&gt;Spring Boot 2.1.17 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/spring-boot-2-2-10-available-now"&gt;Spring Boot 2.2.10 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/spring-boot-2-3-4-available-now"&gt;Spring Boot 2.3.4 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/17/spring-boot-2-4-0-m3-available-now"&gt;Spring Boot 2.4.0.M3 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/21/spring-boot-for-apache-geode-1-1-10-release-1-2-10-release-1-3-4-release-and-1-4-0-m3-available"&gt;Spring Boot for Apache Geode 1.1.10.RELEASE, 1.2.10.RELEASE, 1.3.4.RELEASE and 1.4.0-M3 available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/spring-data-2020-0-0-goes-rc1"&gt;Spring Data 2020.0.0 goes RC1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/spring-data-neumann-sr4-moore-sr10-and-lovelace-sr20"&gt;Spring Data Neumann SR4, Moore SR10 and Lovelace SR20&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/spring-integration-5-4-milestone-3-available"&gt;Spring Integration 5.4 Milestone 3 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/spring-rest-docs-2-0-5-release"&gt;Spring REST Docs 2.0.5.RELEASE&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/22/spring-security-saml-extensions-1-x-eol-on-october-6-2021"&gt;Spring Security SAML Extensions 1.x EOL on October 6, 2021&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/21/spring-session-for-apache-geode-2-1-11-release-2-2-5-release-2-3-1-release-2-4-0-rc1-available"&gt;Spring Session for Apache Geode 2.1.11.RELEASE, 2.2.5.RELEASE, 2.3.1.RELEASE &amp;amp; 2.4.0-RC1 available!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/09/16/spring-tools-4-8-0-released"&gt;Spring Tools 4.8.0 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?feature=youtu.be&amp;t=7267&amp;v=QPXNfV9MciI&amp;app=desktop"&gt;Will it scale? Azure Spring Cloud for the win!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/acoliver/status/1305939457946853376?s=12"&gt;Yugabyte - a unique distributed and NoSQL database - has a very promising Spring integratoin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://inside.java/2020/09/22/zgc-new-in-jdk-15/"&gt;ZGC - What¡¯s new in JDK 15&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
