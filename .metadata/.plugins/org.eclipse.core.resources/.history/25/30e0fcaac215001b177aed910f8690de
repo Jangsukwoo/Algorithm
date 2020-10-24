@@ -1,0 +1,114 @@
+package CodingTest;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+class 느흐느20_2 {
+	static int answer=0;
+	private static void solution(int day, int width, int[][] blocks) {
+		/*
+		 * 오전에 벽돌 쌓고
+		 * 오후에 붓는다.
+		 * 
+		 */		
+		answer=0;
+		int maxIdx=0;
+		int maxHeight=0;
+		int[] workSpace = new int[width];
+		/*
+		 * 초기상태 정의
+		 */
+		for(int i=0;i<width;i++) workSpace[i] =blocks[0][i];
+		
+		for(int d=0;d<day;d++) {
+			for(int i=0;i<width;i++) { //제일 높은곳 찾기
+				if(maxHeight<workSpace[i]) {
+					maxHeight = workSpace[i];
+					maxIdx = i;
+				}
+			}
+			System.out.println("왼쪽");
+			leftRecur(maxIdx,workSpace,width);
+			System.out.println(Arrays.toString(workSpace));
+			System.out.println("오른쪽");
+			rightRecur(maxIdx,workSpace,width);
+			System.out.println(Arrays.toString(workSpace));
+			System.out.println("answer"+answer);
+		}
+	}
+/*
+1
+6
+6 2 11 0 3 5
+ */
+	private static void leftRecur(int maxIdx, int[] workSpace, int width) {
+		if(maxIdx-1==-1) return;
+		int currentMaxHeight = workSpace[maxIdx];
+		int leftMaxHeight = currentMaxHeight;
+		int leftMaxHeightIdx=maxIdx;
+		for(int i=maxIdx-1;i>=0;i--) {
+			if(leftMaxHeight<=currentMaxHeight) {
+				leftMaxHeight = workSpace[i];
+				leftMaxHeightIdx = i;
+			}
+		}//왼쪽제일 높은거 찾기
+		for(int i=maxIdx-1;i>leftMaxHeightIdx;i--) {
+			answer+=leftMaxHeight-workSpace[i];
+			workSpace[i]=leftMaxHeight;
+		}
+		leftRecur(leftMaxHeightIdx, workSpace, width);
+	}
+	private static void rightRecur(int maxIdx, int[] workSpace, int width) {
+		if(maxIdx+1==width) return;
+		int currentMaxHeight = workSpace[maxIdx];
+		int rightMaxHeight = currentMaxHeight;
+		int rightMaxHeightIdx=maxIdx;
+		for(int i=maxIdx+1;i<width;i++) {
+			if(rightMaxHeight<=currentMaxHeight) {
+				rightMaxHeight = workSpace[i];
+				rightMaxHeightIdx = i;
+			}
+		}//오른쪽 기준 제일 높은거 찾기
+		System.out.println("오른쪽 제일 높은거"+rightMaxHeight);
+		for(int i=maxIdx+1;i<rightMaxHeightIdx;i++) {
+			answer+=rightMaxHeight-workSpace[i];
+			workSpace[i]=rightMaxHeight;
+		}
+		rightRecur(rightMaxHeightIdx, workSpace, width);
+	}
+
+
+	private static class InputData {
+		int day;
+		int width;
+		int[][] blocks;
+	}
+
+	private static InputData processStdin() {
+		InputData inputData = new InputData();
+
+		try (Scanner scanner = new Scanner(System.in)) {
+			inputData.day = Integer.parseInt(scanner.nextLine().replaceAll("\\s+", ""));      
+			inputData.width = Integer.parseInt(scanner.nextLine().replaceAll("\\s+", ""));
+
+			inputData.blocks = new int[inputData.day][inputData.width];
+			for (int i = 0; i < inputData.day; i++) {
+				String[] buf = scanner.nextLine().trim().replaceAll("\\s+", " ").split(" ");
+				for (int j = 0; j < inputData.width; j++) {
+					inputData.blocks[i][j] = Integer.parseInt(buf[j]);
+				}
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return inputData;
+	}
+
+	public static void main(String[] args) throws Exception {
+		InputData inputData = processStdin();
+
+		solution(inputData.day, inputData.width, inputData.blocks);
+	}
+}
