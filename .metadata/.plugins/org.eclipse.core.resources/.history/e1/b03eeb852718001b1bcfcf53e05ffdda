@@ -1,0 +1,40 @@
+package DP;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+/*
+ * 14:25~
+ */
+public class 태상이의훈련소생활 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,M;
+	static int[] heights;
+	static int[] order;
+	public static void main(String[] args) throws IOException {
+		setData();
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		heights = new int[N+1];
+		order = new int[N+2];
+		st = new StringTokenizer(br.readLine());
+		for(int num = 1 ; num<=N; num++) heights[num] = Integer.parseInt(st.nextToken());
+		for(int i=0;i<M;i++) {
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			int k = Integer.parseInt(st.nextToken());
+			order[a]+=k;
+			order[b+1]-=k;
+		}
+		int acc = 0;
+		for(int num=1;num<=N+1;num++) {
+			
+		}
+	}
+}

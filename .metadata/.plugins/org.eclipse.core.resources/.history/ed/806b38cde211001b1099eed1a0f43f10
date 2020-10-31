@@ -1,7 +1,0 @@
-package 구현;
-
-public class 지구온난화 {
-	public static void main(String[] args) {
-
-	}
-}

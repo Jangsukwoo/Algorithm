@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class 플그윈터2 {
+	public static void main(String[] args) {
+
+	}
+    public String solution(String encrypted_text, String key, int rotation) {
+        String answer = "";
+        return answer;
+    }
+}

@@ -1,0 +1,22 @@
+package CodingTest;
+
+public class 플그윈터2 {
+	public static void main(String[] args) {
+
+	}
+    public String solution(String encrypted_text, String key, int rotation) {
+        String answer = "";
+        String rerotation_text = " ";
+        if(rotation<0) {//음수였으니 오른쪽으로
+    		for(int )
+    	}else if(rotation==0) {
+    		rerotation_text = encrypted_text;
+    	}else if(rotation>0) {//양수였으니 왼쪽으로
+    	
+    	}
+        for(int i=0;i<key.length();i++) {
+        	
+        }
+        return answer;
+    }
+}

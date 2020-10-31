@@ -59,7 +59,6 @@ public class 자료구조_구간합구하기_세그먼트트리 {
 			updateSegmentTree(node*2, start, mid, diff, idx);
 			updateSegmentTree((node*2+1), mid+1, end, diff, idx);
 		}
-
 	}
 	private static void setData() throws IOException {
 		st = new StringTokenizer(br.readLine());
