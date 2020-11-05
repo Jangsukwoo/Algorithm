@@ -1,0 +1,26 @@
+package 탐색;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 모래성 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static char[][] sandCatsle;
+	static int R,C;
+	static int[] dr = {-1,-1,0,1,1,1,0,-1};
+	static int[] dc = {0,1,1,1,0,-1,-1,-1};
+	public static void main(String[] args) throws IOException {
+		setData();
+		
+	}
+	private static void setData() throws IOException {
+		st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		sandCatsle = new char[R][C];
+		for(int row=0;row<R;row++) sandCatsle[row] = br.readLine().toCharArray();
+	}
+}

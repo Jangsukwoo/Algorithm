@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="SamsungDS.아기상어.BabyShark"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="SamsungDS.아기상어.Fish"/>
     <fullyQualifiedTypeName name="SamsungDS.미생물격리.MicroOrganism"/>
     <fullyQualifiedTypeName name="SamsungDS.낚시왕.Shark"/>
@@ -24,9 +22,6 @@
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="SamsungDS.차량정비소.Customer"/>
     <fullyQualifiedTypeName name="SamsungDS.엘리베이터.Elevator"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="jdk.internal.jline.internal.InputStreamReader"/>
     <fullyQualifiedTypeName name="com.sun.imageio.plugins.common.InputStreamAdapter"/>
     <fullyQualifiedTypeName name="SamsungDS.청소년상어.Fish"/>
@@ -53,11 +48,16 @@
     <fullyQualifiedTypeName name="com.sun.tools.javac.resources.legacy"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="javax.print.attribute.standard.PDLOverrideSupported"/>
-    <fullyQualifiedTypeName name="java.lang.Character"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="javax.print.DocFlavor.CHAR_ARRAY"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 </qualifiedTypeNameHistroy>

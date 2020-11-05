@@ -1,9 +1,0 @@
-package codeTest;
-
-public class 포인터테스트 {
-	static int[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] testArray;
-	public static void main(String[] args) {
-		//testArray = new int[5];
-		System.out.println();
-	}
-}

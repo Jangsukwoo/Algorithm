@@ -5,7 +5,204 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-10-30T01:58:36Z</updated>
+  <updated>2020-11-04T12:12:50Z</updated>
+  <entry>
+    <title>Spring Security 5.5.0-M1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/11/04/spring-security-5-5-0-m1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2020-11-03:4252</id>
+    <updated>2020-11-04T12:12:50Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of
+Spring Security 5.5.0-M1! You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.5.0-M1"&gt;release notes&lt;/a&gt; and the highlights below:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="oauth-2-0"&gt;&lt;a class="anchor" href="#oauth-2-0"&gt;&lt;/a&gt;OAuth 2.0&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-5502-oauth2token-interface-for-abstractoauth2token"&gt;&lt;a class="anchor" href="#gh-5502-oauth2token-interface-for-abstractoauth2token"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/5502"&gt;gh-5502&lt;/a&gt; - OAuth2Token interface for AbstractOAuth2Token&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9070-use-lobhandler-in-jdbcoauth2authorizedclientservice"&gt;&lt;a class="anchor" href="#gh-9070-use-lobhandler-in-jdbcoauth2authorizedclientservice"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/pull/9070"&gt;gh-9070&lt;/a&gt; - Use LobHandler in JdbcOAuth2AuthorizedClientService&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-8765-provide-a-r2dbc-implementation-of-reactiveouath2authorizedclientservice"&gt;&lt;a class="anchor" href="#gh-8765-provide-a-r2dbc-implementation-of-reactiveouath2authorizedclientservice"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/pull/8765"&gt;gh-8765&lt;/a&gt; - Provide a R2dbc implementation of ReactiveOuath2AuthorizedClientService&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-7160-jwtdecoders-and-reactivejwtdecoders-should-determine-algorithm-from-jwk-set-endpoint"&gt;&lt;a class="anchor" href="#gh-7160-jwtdecoders-and-reactivejwtdecoders-should-determine-algorithm-from-jwk-set-endpoint"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/7160"&gt;gh-7160&lt;/a&gt; - JwtDecoders and ReactiveJwtDecoders should determine algorithm from JWK Set Endpoint&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="saml"&gt;&lt;a class="anchor" href="#saml"&gt;&lt;/a&gt;SAML&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9177-saml-2-0-asserting-party-metadata-resolution-should-read-signingmethod-elements"&gt;&lt;a class="anchor" href="#gh-9177-saml-2-0-asserting-party-metadata-resolution-should-read-signingmethod-elements"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/9177"&gt;gh-9177&lt;/a&gt; - SAML 2.0 Asserting Party Metadata resolution should read SigningMethod elements&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9131-opensamlauthenticationprovider-should-decrypt-attributes"&gt;&lt;a class="anchor" href="#gh-9131-opensamlauthenticationprovider-should-decrypt-attributes"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/9131"&gt;gh-9131&lt;/a&gt; - OpenSamlAuthenticationProvider should decrypt attributes&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9028-file-based-configuration-for-asserting-party-metadata"&gt;&lt;a class="anchor" href="#gh-9028-file-based-configuration-for-asserting-party-metadata"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/9028"&gt;gh-9028&lt;/a&gt; - File-based Configuration for Asserting Party Metadata&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="testing"&gt;&lt;a class="anchor" href="#testing"&gt;&lt;/a&gt;Testing&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9179-withsecuritycontexttestexecutionlistener-should-support-nested-classes"&gt;&lt;a class="anchor" href="#gh-9179-withsecuritycontexttestexecutionlistener-should-support-nested-classes"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/9179"&gt;gh-9179&lt;/a&gt; - WithSecurityContextTestExecutionListener Should Support Nested Classes&lt;/h5&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="docs"&gt;&lt;a class="anchor" href="#docs"&gt;&lt;/a&gt;Docs&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="sect4"&gt;
+&lt;h5 id="gh-9178-add-webflux-documentation-for-multiple-filter-chains"&gt;&lt;a class="anchor" href="#gh-9178-add-webflux-documentation-for-multiple-filter-chains"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/9178"&gt;gh-9178&lt;/a&gt; - Add WebFlux Documentation for Multiple Filter Chains&lt;/h5&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="https://docs.spring.io/spring-security/site/docs/5.5.0-M1/reference/html5/"&gt;Reference&lt;/a&gt;
+| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - November 3, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/11/03/this-week-in-spring-november-3-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-11-03:4253</id>
+    <updated>2020-11-03T23:05:51Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! I hope you&amp;rsquo;re all doing well, staying safe, healthy and happy. Today&amp;rsquo;s election day here in the US, so I am super happy to have the chance to dive into this week&amp;rsquo;s roundup as a bit of a distraction. We&amp;rsquo;ve got a ton to get through today, so let&amp;rsquo;s! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I really enjoyed last week&amp;rsquo;s &lt;em&gt;A Bootiful Podcast&lt;/em&gt; episode with &lt;a href="https://spring.io/blog/2020/10/29/a-bootiful-podcast-spring-test-framework-lead-and-junit-contributor-sam-brannen"&gt;Spring Test Framework lead and JUnit contributor Sam Brannen&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/11/02/spring-integration-5-4-goes-ga-some-other-integration-releases"&gt;Spring Integration 5.4 goes GA; some other Integration releases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/30/spring-boot-2-4-0-rc1-available-now"&gt;Spring Boot 2.4.0.RC1 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/29/notice-of-permissions-changes-to-repo-spring-io-fall-and-winter-2020"&gt;Notice of Permissions Changes to repo.spring.io, Fall and Winter, 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/morl99/status/1321194714692001792?s=21"&gt;Congrats, Carsten Hoffmann, on your first live-coding presentation, and congrats on starting your work from my second favorite place on the internet: start.spring.io!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/olehdokuka/status/1321385366746767360?s=21"&gt;Oleh Dokuka on Twitter: &amp;ldquo;Woo! &#x1f37e; &#x1f4e2; New RSocket 1.1.0 is GA. It includes, among other things, 10x better performance than before, reworked loadbalance API and implementation, a new &lt;code&gt;RSocketClient&lt;/code&gt; for a better experience, fixes for memory leaks and more&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/29/spring-boot-2-1-18-available-now"&gt;Spring Boot 2.1.18 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/28/spring-data-2020-0-0-goes-ga"&gt;Spring Data 2020.0.0 goes GA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/10/28/spring-data-neumann-sr5-moore-sr11-and-lovelace-sr21-available-now"&gt;Spring Data Neumann SR5, Moore SR11, and Lovelace SR21 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/CapgeminiNL/status/1321409280881401857?s=20"&gt;capgeminiNL on Twitter: &amp;quot;Ready for a night full of tech inspiration? Join us on the .BLD() Tech Talks XXL - Java Night on 17 November! We¡¯ll dive into the future of microservice based architectures together with @wietsesmid @starbuxman. Get your free ticket!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/java/status/1321586704042455040"&gt; Java 16 Update: New JEP Proposed to Target: 394: Pattern Matching for instanceof. Targeted JEP Additions: 380: Unix-Domain Socket Channels and 395: Records &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://springdoc.org/"&gt;springdoc-openapi | Library for OpenAPI 3 with spring-boot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Integration 5.4 goes GA; some other Integration releases</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/11/02/spring-integration-5-4-goes-ga-some-other-integration-releases" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2020-11-02:4251</id>
+    <updated>2020-11-02T16:18:19Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf the team and everybody contributed, it&amp;#8217;s my pleasure to announce that last week we released general availability for Spring Integration &lt;code&gt;5.4&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It can be downloaded from Maven Central:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.integration:spring-integration-core:5.4.0'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Here is a summary of features and improvements for this Spring Integration generation:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;R2DBC channel adapters;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ZeroMQ proxy, message channel and channel adapters;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Redis Streams channel adapters (which are reactive);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;spring-integration-kafka&lt;/code&gt; extension has been moved to the core project and, alongside with an upgrade to the latest Spring for Apache Kafka &lt;code&gt;2.6.2&lt;/code&gt;, includes some improvements;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;RenewableLockRegistry&lt;/code&gt; is implemented for the &lt;code&gt;JdbcLockRegistry&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://docs.spring.io/spring-integration/docs/5.4.0/reference/html/whats-new.html#whats-new"&gt;What&amp;#8217;s New&lt;/a&gt; in documentation for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This version is included into dependency management of Spring Boot &lt;a href="https://spring.io/blog/2020/10/30/spring-boot-2-4-0-rc1-available-now"&gt;&lt;code&gt;2.4.0-RC1&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="other-relevant-releases"&gt;&lt;a class="anchor" href="#other-relevant-releases"&gt;&lt;/a&gt;Other relevant releases&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We also released several maintenance versions and some Spring Integration extensions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Integration &lt;code&gt;5.1.13.RELEASE&lt;/code&gt; - the last release in this generation: has reached its End of Life and goes out of support starting this November;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Integration &lt;code&gt;5.2.9.RELEASE&lt;/code&gt; - includes bug fixes and dependencies upgrades; going to be supported until Spring Boot &lt;code&gt;2.2&lt;/code&gt; generation;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Integration &lt;code&gt;5.3.3.RELEASE&lt;/code&gt; - includes bug fixes and dependencies upgrades; going to be supported until Spring Boot &lt;code&gt;2.3&lt;/code&gt; generation;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;spring-integration-aws-2.3.4.RELEASE&lt;/code&gt; - upgrades, some good contribution and several bug fixes; based on Spring Integration &lt;code&gt;5.3.3.RELEASE&lt;/code&gt; and Spring Cloud AWS &lt;code&gt;2.2.4.RELEASE&lt;/code&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;spring-cloud-stream-binder-aws-kinesis-2.0.3.RELEASE&lt;/code&gt; - some good contributions and upgrades to the latest dependencies;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;spring-integration-cassandra-0.9.0&lt;/code&gt; - based on Spring Integration &lt;code&gt;5.4&lt;/code&gt; and Spring Data &lt;code&gt;2020.0.0&lt;/code&gt;; used by the latest &lt;a href="https://github.com/spring-cloud/stream-applications"&gt;Stream Applications&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;spring-integration-hazelcast-3.0.0&lt;/code&gt; - upgrades to the latest versions of Spring Integration and Hazelcast and respective API incompatibility fixes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See more information in &lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;Spring Integration Extensions&lt;/a&gt; project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Cheers,&amp;#160;&lt;br&gt;
+Artem&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.4.0-RC1 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2020/10/30/spring-boot-2-4-0-rc1-available-now" />
@@ -795,91 +992,6 @@ Finally, we saw how we can easily switch &lt;code&gt;MessageGroupStore&lt;/code&
 &lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.4.0-M4-Release-Notes"&gt;Spring Boot 2.4 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.4.0-M4/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you want to get started with 2.4 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.4.0-M4/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: DataStax's Patrick McFadin on DataStax Astra, Cassandra, Cassandra data modeling patterns, and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/10/15/a-bootiful-podcast-datastax-s-patrick-mcfadin-on-datastax-astra-cassandra-cassandra-data-modeling-patterns-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-10-15:4233</id>
-    <updated>2020-10-15T20:21:55Z</updated>
-    <content type="html">&lt;iframe title="DataStax's Patrick McFadin on DataStax Astra, Cassandra, Cassandra data modeling patterns, and more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/5wk64-ef7548?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about all the wonderful shows he&amp;rsquo;s been at, the epic new support for Kubernetes-ready native images in Spring Boot 2.3 and Spring Boot 2.4, and then he talks to DataStax&amp;rsquo;s own &lt;a href="http://twitter.com/PatrickMcFadin"&gt;Patrick McFadin (@PatrickMcFadin)&lt;/a&gt;, a legend in the JVM and Cassandra communities, and an all around amiable gent. &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Authorization Server 0.0.2 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/10/15/spring-authorization-server-0-0-2-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Joe Grandja</name>
-    </author>
-    <id>tag:spring.io,2020-10-15:4232</id>
-    <updated>2020-10-15T09:57:35Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the general availability of Spring Authorization Server 0.0.2.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can download it from &lt;a href="https://repo.spring.io/release/"&gt;repo.spring.io&lt;/a&gt; and Maven Central by using the module coordinates:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.security.experimental:spring-security-oauth2-authorization-server:0.0.2'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For additional details on this new project, see the &lt;a href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server"&gt;initial announcement&lt;/a&gt; and &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;project page&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The main features delivered in this release are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Proof Key for Code Exchange by OAuth Public Clients (PKCE)&amp;#8201;&amp;#8212;&amp;#8201;&lt;a href="https://tools.ietf.org/html/rfc7636"&gt;RFC 7636&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;User Consent page for OAuth 2.0 Authorization Code Grant&amp;#8201;&amp;#8212;&amp;#8201;&lt;a href="https://tools.ietf.org/html/rfc6749#section-4.1"&gt;RFC 6749&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/releases/tag/0.0.2"&gt;release notes&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/tree/master/samples/boot/oauth2-integration"&gt;sample&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We would love to gather your feedback as we strive to improve and build upon this release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/issues"&gt;GitHub Issues&lt;/a&gt; |  &lt;a href="https://app.zenhub.com/workspaces/authorization-server-5e8f3182b5e8f5841bfc4902/board?repos=248032165"&gt;ZenHub Board&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Premiering: Bootiful Kotlin</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/10/15/premiering-bootiful-kotlin" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2020-10-15:4231</id>
-    <updated>2020-10-15T06:08:44Z</updated>
-    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/nso-sPLfaTk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this talk Spring Developer Advocate, Java Champion, and Kotlin Google Developer Advocate Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) introduces the Kotlin ecosystem, the language, and its application when building server-side Spring applications.&lt;/p&gt;
-&lt;p&gt;This is a roving tour of all things Kotlin, and there&amp;rsquo;s a lot to cover, including:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;building Android applications with Kotlin on mobile devices&lt;/li&gt;
-  &lt;li&gt;building native applications with Kotlin and Kotlin Native ((m)alloc, pointers, and POSIX APIs, oh, my!)&lt;/li&gt;
-  &lt;li&gt;giving existing APIs like the venerable &lt;code&gt;JdbcTemplate&lt;/code&gt; a fresh coat of paint with Kotlin&lt;/li&gt;
-  &lt;li&gt;using Kotlin ecosystem libraries like the Exposed ORM with Spring&lt;/li&gt;
-  &lt;li&gt;using rich DSLs such as those provided for Spring Framework&amp;rsquo;s programmatic bean registration, HTTP endpoints, and for Spring Cloud Gateway&lt;/li&gt;
-  &lt;li&gt;kicking up our reactive applications a notch with coroutines&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
