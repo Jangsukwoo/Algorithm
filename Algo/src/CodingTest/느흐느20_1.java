@@ -29,9 +29,14 @@ public class 느흐느20_1 {
 		  int nextTaggerIdx = 0;		  
 		  HashSet<Character> quickSet = new HashSet<Character>();
 		  char[] seat = new char[numOfAllPlayers-1];
+		  
 		  for(int i=0;i<(numOfAllPlayers-1);i++) seat[i] = (char) ('B'+i);
+		  
 		  for(int i=0;i<namesOfQuickPlayers.length;i++) quickSet.add(namesOfQuickPlayers[i]);
+		  
 		  for(int round=0;round<numOfMovesPerGame.length;round++) {
+			  
+			  
 			  int wise = numOfMovesPerGame[round];
 			  nextTaggerIdx = getNextTaggerIdx(taggerIdx,wise,numOfAllPlayers);
 			  if(!quickSet.contains(seat[nextTaggerIdx])){//다음에 앉으려고 하는 자리가 달리기가 빠른애가 아니면
@@ -43,11 +48,15 @@ public class 느흐느20_1 {
 			  taggerIdx = nextTaggerIdx;
 			  taggers[taggerName-'A'].cnt++;
 		  }
+		  
+		  
 		  for(int i=0;i<numOfAllPlayers-1;i++) {
 			  System.out.println(seat[i]+" "+taggers[seat[i]-'A'].cnt);
 		  }
 		  System.out.println(taggerName+" "+taggers[taggerName-'A'].cnt);
 	  }
+	 
+	 
 	  private static int getNextTaggerIdx(int taggerIdx,int wise, int numOfAllPlayers) {
 		int nextTaggerIdx = taggerIdx;
 		if(wise>0) {
@@ -65,6 +74,8 @@ public class 느흐느20_1 {
 		}
 		return nextTaggerIdx;
 	}
+	  
+	  
 	private static class InputData {
 	    int numOfAllPlayers;
 	    int numOfQuickPlayers;
@@ -72,6 +83,8 @@ public class 느흐느20_1 {
 	    int numOfGames;
 	    int[] numOfMovesPerGame;
 	  }
+	
+	
 	  private static InputData processStdin() {
 	    InputData inputData = new InputData();
 

@@ -9,7 +9,6 @@ public class 느흐느20_2 {
 		/*
 		 * 오전에 벽돌 쌓고
 		 * 오후에 붓는다.
-		 * 
 		 */		
 		answer=0;
 		int maxIdx=0;
