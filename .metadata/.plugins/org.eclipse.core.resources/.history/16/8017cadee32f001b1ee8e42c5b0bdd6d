@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class 이슷20_1 {
+	public static void main(String[] args) {
+		
+	}
+    public static int[] solution(String[] card_numbers) {
+        int[] answer = {};
+        return answer;
+    }
+}
