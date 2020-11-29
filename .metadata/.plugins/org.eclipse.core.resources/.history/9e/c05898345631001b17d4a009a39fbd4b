@@ -1,0 +1,33 @@
+package CodingTest;
+
+import java.util.HashMap;
+import java.util.Stack;
+
+public class 에스티6_재귀 {
+	public static void main(String[] args) {
+		System.out.println(solution(1));
+		System.out.println(solution(-1));
+		System.out.println(solution(-6));
+	}
+    public static String solution(int n) {
+        String answer = "0";
+        
+        HashMap<Integer,Integer> fibonacci = new HashMap<Integer, Integer>();
+        
+        fibonacci.put(0,0);
+        fibonacci.put(1,1); //초항값 세팅
+
+        //2~70
+        for(int num = 2;num<=70;num++) {
+        	int nextValue = fibonacci.get(num-1) + fibonacci.get(num-2);
+        	fibonacci.put(num,nextValue);
+        }
+        //-1~-70
+        for(int num=-1;num>=-70;num--) {
+        	int nextValue = fibonacci.get(num+2) - fibonacci.get(num+1);
+        	fibonacci.put(num, nextValue);
+        }
+        answer = Integer.toString(fibonacci.get(n));
+        return answer;
+    }
+}

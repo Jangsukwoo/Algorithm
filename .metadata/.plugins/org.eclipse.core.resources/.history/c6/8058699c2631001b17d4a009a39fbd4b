@@ -1,0 +1,59 @@
+package CodingTest;
+
+import java.util.HashMap;
+
+
+public class 느흐느고도3 {
+	static int minDiff = Integer.MAX_VALUE;
+	public static void main(String[] args) {
+		System.out.println(solution("aaaabbbbc",5));
+		//System.out.println(solution("a",0));
+	}
+    public static int solution(String s, int n){
+    	
+    	minDiff = Integer.MAX_VALUE;
+    	
+    	HashMap<Character,Integer> countMap = new HashMap<Character, Integer>();
+    
+    	for(int i=0;i<s.length();i++) {
+    		char character = s.charAt(i);
+    		if(countMap.containsKey(character)) {
+    			int count = countMap.get(character);
+    			countMap.put(character, count+1);
+    		}else countMap.put(character, 1);
+    	}
+    	recursive(countMap,n);
+    	
+        return minDiff;
+    }
+	private static void recursive(HashMap<Character, Integer> countMap, int n) {
+		if(n==0) {////n만큼 소진 후 거친정도의 최소값 갱신해보기
+			System.out.println("끝");
+			int min = Integer.MAX_VALUE;
+			int max = 0;
+	    	for(Character key : countMap.keySet()) {
+		    	int count = countMap.get(key);
+		    	max = Math.max(max,count);
+		    	min = Math.min(min,count);
+		    }
+	    	int diff = max-min;
+	    	minDiff = Math.min(minDiff,diff);
+			return;
+		}
+    	for(Character key : countMap.keySet()) {//등장한 알파벳깎아보기
+	    	int getCount = countMap.get(key);
+	    	System.out.println("겟카운트"+getCount);
+	    	int newN = n - getCount;
+	    	int newCount = 0;
+	    	System.out.println("구해진n"+newN);
+	    	if(newN<0) {
+	    		newCount = Math.abs(newN);
+	    		newN = 0;
+	    	}
+	    	System.out.println("새로운 n"+newN);
+	    	countMap.put(key,newCount);
+	    	recursive(countMap,newN);//dfs
+	    	countMap.put(key,getCount);//원상복귀
+	    }
+	}
+}

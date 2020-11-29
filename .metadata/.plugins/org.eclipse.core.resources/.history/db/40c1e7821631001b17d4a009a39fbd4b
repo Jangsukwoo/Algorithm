@@ -1,0 +1,15 @@
+package CodingTest;
+
+public class 느흐느고도1 {
+	static int minCost;
+	static int[] pick;
+	public static void main(String[] args) {
+		
+	}
+    public static int solution(int[] goods){
+    	for(int choose = 1; choose<=3; choose++) {
+    		
+    	}
+    	return 0;
+    }
+}

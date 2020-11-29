@@ -1,0 +1,31 @@
+package CodingTest;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Queue;
+
+public class 느흐느고도2 {
+	static int N;
+	static int minPush = Integer.MAX_VALUE;
+	static int justPush;
+	static boolean[] buttons = new boolean[10];
+	static boolean[] channel = new boolean[1000001];
+	static Queue<int[]> q;
+	static HashSet<Integer> possibleButtons = new LinkedHashSet<Integer>();
+	public static void main(String[] args) {
+		setData();
+		bfs();
+		exceptionConditionCheck();
+		System.out.println(minPush);
+	}
+	private static void setData() {
+		
+	}
+	private static void bfs() {
+		
+	}
+	private static void exceptionConditionCheck() {
+		if(N==100) minPush=0;
+		minPush = Math.min(Math.abs(N-100),minPush);
+	}
+}

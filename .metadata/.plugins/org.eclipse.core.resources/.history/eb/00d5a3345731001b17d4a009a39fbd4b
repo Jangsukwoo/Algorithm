@@ -1,0 +1,32 @@
+package CodingTest;
+
+import java.util.HashMap;
+
+public class 에스티6 {
+	public static void main(String[] args) {
+		System.out.println(solution(1));
+		System.out.println(solution(-1));
+		System.out.println(solution(-6));
+	}
+    public static String solution(int n) {
+        String answer = "0";
+        int[] fibonacciArray = new int[141];
+        HashMap<Integer,Integer> fibonacci = new HashMap<Integer, Integer>();
+        
+        fibonacciArray[70] = 0;
+        fibonacciArray[71] = 1;
+
+        //2~70
+        for(int num = 72;num<=140;num++) {
+        	int nextValue = fibonacciArray[num-1] + fibonacciArray[num-2];
+        	fibonacciArray[num] = nextValue;
+        }
+        //-1~-70
+        for(int num=70;num>=0;num--) {
+        	int nextValue = fibonacciArray[num+1] + fibonacciArray[num+2];
+        	fibonacciArray[num] = nextValue;
+        }
+        answer = Integer.toString(fibonacci.get(n));
+        return answer;
+    }
+}
