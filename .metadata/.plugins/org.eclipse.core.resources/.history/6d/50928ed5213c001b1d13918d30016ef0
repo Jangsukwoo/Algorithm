@@ -1,0 +1,11 @@
+package CodingTest;
+
+public class 현카하3 {
+	public static void main(String[] args) {
+		System.out.println(solution(new String[] {"[403]James", "[404]Azad,Louis,Andy", "[101]Azad,Guard"}, 403));
+	}
+	    public static String[] solution(String[] rooms, int target) {
+        String[] answer = {};
+        return answer;
+    }
+}

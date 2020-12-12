@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 /*
- * 15:40~
+ * 15:40~16:30
  */
 public class 내리칭찬 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,0 +1,22 @@
+package CodingTest;
+
+public class 현카하3 {
+	public static void main(String[] args) {
+		System.out.println(solution(new String[] {"[403]James", "[404]Azad,Louis,Andy", "[101]Azad,Guard"}, 403));
+	}
+	    public static String[] solution(String[] rooms, int target) {
+        String[] answer = {};
+        for(int room=0;room<rooms.length;room++) {
+        	String data = rooms[room];
+        	String[] token = data.split(",");
+        	int roomNumber = 0;
+        	String roomNumber_string = "";
+        	for(int i=0;i<token[0].length;i++) {
+        		if(token[0].charAt(i)>='0' && token[0].charAt(i)<='9') {
+        			
+        		}
+        	}
+        }
+        return answer;
+    }
+}

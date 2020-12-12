@@ -1,0 +1,12 @@
+package CodingTest;
+
+public class 현카하2 {
+
+	public static void main(String[] args) {
+
+	}
+	public String solution(int left, int right, int offset) {
+		String answer = "";
+		return answer;
+	}
+}

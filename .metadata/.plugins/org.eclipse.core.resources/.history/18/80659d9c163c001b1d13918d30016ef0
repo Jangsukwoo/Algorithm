@@ -1,0 +1,12 @@
+package CodingTest;
+
+public class 현카하1 {
+	public static void main(String[] args) {
+		
+	}
+	 public int[] solution(int rows, int columns, int[][] swipes) {
+	        int[] answer = {};
+	        return answer;
+	    }
+}
+   
