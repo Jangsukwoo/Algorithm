@@ -1,0 +1,11 @@
+package 프로그래머스;
+
+public class 스첵1_1 {
+	public static void main(String[] args) {
+
+	}
+    public static String solution(String s) {
+        String answer = "";
+        return answer;
+    }
+}

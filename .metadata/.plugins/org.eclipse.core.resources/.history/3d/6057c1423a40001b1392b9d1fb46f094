@@ -1,0 +1,14 @@
+package 프로그래머스;
+
+import java.util.PriorityQueue;
+
+public class 스첵1_1 {
+	public static void main(String[] args) {
+		
+	}
+    public static String solution(String s) {
+        String answer = "";
+        PriorityQueue<Character> pq = new PriorityQueue<Character>();
+        return answer;
+    }
+}

@@ -1,0 +1,18 @@
+package 프로그래머스;
+
+import java.util.ArrayList;
+
+public class 스첵1_2 {
+	public static void main(String[] args) {
+
+	}
+    public static long solution(long n) {
+        long answer = 0;
+        String n_string = Long.toString(n);
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for(int i=0;i<n_string.length();i++) {
+        	
+        }
+        return answer;
+    }
+}

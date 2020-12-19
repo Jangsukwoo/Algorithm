@@ -1,0 +1,60 @@
+package CodingTest;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class 이투3 {
+	public static void main(String[] args) {
+		solution(new int[] {1,2,3,0,6,5,4}, new int[] {1,2,3,4,5,6,0});
+	}
+	private static int solution(int[] s1, int[] s2) {
+	      int answer = 0;
+	      Queue<int[]> q = new LinkedList<>();
+	      q.add(s1);
+	      int turn = 0;
+	      fin:
+	      while(!q.isEmpty()) {
+	         int size = q.size();
+	         for (int i = 0; i < size; i++) {
+	            
+	            int[] check = q.poll();
+	         
+	            boolean flag = true;
+	            
+	            int length = check.length;
+	            
+	            for (int j = 0; j < length; j++) {
+	               if(s2[j] != check[j]) {
+	                  flag = false; //같지않은경우
+	                  break;
+	               }
+	            }
+	            if (flag) { //같은 경우임
+	               answer = turn;
+	               break fin;
+	            }
+	            
+	            int zero = 0;
+	            for (int j = 0; j < length; j++) {
+	               if(check[j] == 0) {
+	                  zero = j;
+	                  break;
+	               }
+	            }
+	            
+	            for (int j = 0; j < chk.length; j++) {
+	               if(zero != j) {
+	                  int tmp = chk[j];
+	                  chk[j] = 0;
+	                  chk[zero] = tmp;
+	                  q.add(new int[] {chk[0],chk[1],chk[2],chk[3],chk[4],chk[5],chk[6]});
+	                  chk[j] = tmp;
+	                  chk[zero] = 0;
+	               }
+	            }
+	         }
+	         turn++;
+	      }
+	      return answer;
+	   }
+}
