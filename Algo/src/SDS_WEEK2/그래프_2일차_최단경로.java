@@ -11,97 +11,89 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 /*
- * 다익스트라로 구현하되 pq로 구현
+ * 다익스트라 안보고 구현하기
  * 
- * 정점 개수 V, 간선개수 E
- * V<=2만
- * E<=30만
+ * 특정 지점에서 다른 목적 지점까지 가는 최소비용으로 가는 최단경로를 찾는다.
+ * 특정 정점에서 모든 정점까지 최단거리만을 아는 것임.
  * 
- * pq를 써서 ElogV로 푼다.
+ * 특정 정점을 pq에 넣은 후 연결된 엣지들중 가장 비용이 싼 다음 정점이 나올 수 있도록
+ * pq를 쓴다.
  * 
- * 출력해야할 것은 
- * i->j로 가는 모든 최단 경로 값 
+ * ElogV
  * 
- * 제일 빠른길만 그리디하게 찾아서 간다.
+ * 
  */
-public class 그래프_2일차_최단경로 {
+public class 그래프_2일차_최단경로{
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
 	static int V,E;
 	static int startVertax;
 	static ArrayList<int[]>[] edgeList;//각 정점에 대해 
-
 	static int[] dist;
 	static boolean[] visit;
 	static int INF = 987654321;
 	public static void main(String[] args) throws IOException {
-		inputData();
+		setData();
 		dijkstra();
+		getAnswer();
+	}
+	private static void getAnswer() throws IOException {
+		for(int i=1;i<=V;i++) {
+			if(dist[i]==INF) bw.write("INF"+"\n");
+			else bw.write(dist[i]+"\n");
+		}
 		bw.flush();
 		bw.close();
 	}
-
-	private static void inputData() throws IOException {
-		StringTokenizer st;
-		st = new StringTokenizer(br.readLine());
-		V = Integer.parseInt(st.nextToken());
-		E = Integer.parseInt(st.nextToken());
-		dist = new int[V+1];
-		visit = new boolean[V+1];
-		edgeList = new ArrayList[V+1]; //각 정점에 매딜린 자식과 비용 정보 
-		
-		for(int vertax=1;vertax<=V;vertax++) {
-			dist[vertax]=INF;
-			edgeList[vertax] = new ArrayList<>();
-		}
-		
-		st = new StringTokenizer(br.readLine());
-		startVertax = Integer.parseInt(st.nextToken());
-	
-		for(int i=0,from,to,cost;i<E;i++) {
-			st = new StringTokenizer(br.readLine());
-			from = Integer.parseInt(st.nextToken());
-			to = Integer.parseInt(st.nextToken());
-			cost = Integer.parseInt(st.nextToken());
-			edgeList[from].add(new int[] {to,cost}); //cost기준으로 정렬할것임.
-		}//edge정보 구성 
-		
-
-	}
-	private static void dijkstra() throws IOException {
+	private static void dijkstra() {
 		PriorityQueue<int[]> pq= new PriorityQueue<>(new Comparator<int[]>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
 				return Integer.compare(o1[1],o2[1]);
 			}
 		});//cost 기준 pq
+		dist[startVertax] = 0;
+		pq.add(new int[] {startVertax,0});//시작정점
 
-		
-		//경로 찾는 로직 ↓↓↓
-		dist[startVertax] = 0;//시작 정점 자기 자신은 0 
-		pq.add(new int[] {startVertax,0});//시작 정점과 비용
-		while(!pq.isEmpty()) {
-			int[] currentVerTax = pq.poll();//가장 처음 시작된다면 시작 정점이 반환된다. 즉, 자식들을 검사해야할 정점이 나오는 것 
-			
-			if(visit[currentVerTax[0]]==true) continue;//가봤으면 그냥 진행
-
-			visit[currentVerTax[0]] = true;//검사해보지않은 정점에 대해서 
-			
-			for (int[] nextVertax : edgeList[currentVerTax[0]]){//현재 정점에 매달린 자식들을 볼텐데 
-				if(visit[nextVertax[0]]==false){//안가본 곳이면
-					//가는길을 알게되었는데
-					//디플토 세팅값들은 전무 INF니까 비용갱신은 모두 하게됌.
-					dist[nextVertax[0]] = Math.min(dist[nextVertax[0]], dist[currentVerTax[0]]+nextVertax[1]);//가려는 정점이 원래 알고있는것보다 현재에서 가는게 더 가까우면 최단경로값 업데이트
-					pq.add(new int[] {nextVertax[0],dist[nextVertax[0]]});
+		while(!pq.isEmpty()){//한 정점씩 알아가면서 제일 가까운 거리로만감 -> logV
+			int[] currentVertaxInfo = pq.poll();
+			int currentVertaxNumber = currentVertaxInfo[0];
+			if(visit[currentVertaxNumber]==false){
+				visit[currentVertaxNumber] = true; //이제 이 정점에 대한 최단거리는 안다.
+				for(int[] nextVertaxInfo : edgeList[currentVertaxNumber]){//매달려있는 정점들에 대해 - E
+					dist[nextVertaxInfo[0]] = Math.min(dist[nextVertaxInfo[0]],dist[currentVertaxNumber]+nextVertaxInfo[1]);
+					//알고있는 거리보다 지금 거리에서 가는게 더 짧을 때 
+					pq.add(new int[] {nextVertaxInfo[0],dist[nextVertaxInfo[0]]});//지금까지 온 거리?
 				}
 			}
+		} // O(ElogV)
+	}
+	private static void setData() throws IOException {
+		StringTokenizer st;
+		st = new StringTokenizer(br.readLine());
+		V = Integer.parseInt(st.nextToken());
+		E = Integer.parseInt(st.nextToken());
+		dist = new int[V+1];
+		visit = new boolean[V+1];
+		edgeList = new ArrayList[V+1]; //엣지리스트 
+
+		for(int vertax=1;vertax<=V;vertax++) {
+			dist[vertax]=INF;
+			edgeList[vertax] = new ArrayList<>();
 		}
-		//경로 찾는 로직 ↑↑↑
-		
-		//printDataSetting
-		for(int node=1;node<=V;node++) {
-			if(dist[node]==INF) bw.write("INF"+"\n");
-			else bw.write(dist[node]+"\n");
-		}
+
+		st = new StringTokenizer(br.readLine());
+		startVertax = Integer.parseInt(st.nextToken());
+
+		for(int i=0,from,to,cost;i<E;i++) {
+			st = new StringTokenizer(br.readLine());
+			from = Integer.parseInt(st.nextToken());
+			to = Integer.parseInt(st.nextToken());
+			cost = Integer.parseInt(st.nextToken());
+			edgeList[from].add(new int[] {to,cost}); //cost기준으로 정렬된다.
+		}//edge정보 구성 
+
+
 	}
 }

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="i"/>
+		<item key="selection" value="num_string"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="true"/>
 		<list key="findhistory">
+			<item value="num"/>
+			<item value="Num"/>
+			<item value="["/>
 			<item value="test"/>
 			<item value="sys"/>
 			<item value="&apos;x&apos;"/>
@@ -20,11 +23,10 @@
 			<item value="gearState"/>
 			<item value="계산된"/>
 			<item value="Count"/>
-			<item value="count"/>
-			<item value="visit"/>
-			<item value="view"/>
 		</list>
 		<list key="replacehistory">
+			<item value="num_string"/>
+			<item value="{"/>
 			<item value="i"/>
 			<item value="&apos;X&apos;"/>
 			<item value="&apos;O&apos;"/>
@@ -38,8 +40,6 @@
 			<item value="cctvN.row"/>
 			<item value="subject"/>
 			<item value="K"/>
-			<item value="time"/>
-			<item value="value"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
