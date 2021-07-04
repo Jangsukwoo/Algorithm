@@ -2,7 +2,9 @@ package CodingTest;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
-
+/*
+ * ㄴㅇㅂ ㅇㅌ 코드챌린지 1
+ */
 public class 네웹1 {
 	public static void main(String[] args) {
 		System.out.println(solution(new int[] {32000, 18000}, new int[] {1}));

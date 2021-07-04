@@ -3,7 +3,9 @@ package CodingTest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-
+/*
+ * ㄴㅇㅂ ㅇㅌ 코드챌린지 2
+ */
 public class 네웹2 {
 	static ArrayList<String> maxTokens;
 	static int maxTokensize = 0;

@@ -1,5 +1,8 @@
 package CodingTest;
 
+/*
+ * ㄴㅇㅂ ㅇㅌ 코드챌린지 3
+ */
 public class 네웹3 {
 	public static void main(String[] args) {
 		System.out.println(solution("aabcbcd","abc"));
