@@ -1,9 +1,0 @@
-package 구현;
-/*
- * 제일 크게 지나갈 수 있는 다리만 지나가야함
- */
-public class 중량제한 {
-	public static void main(String[] args) {
-
-	}
-}

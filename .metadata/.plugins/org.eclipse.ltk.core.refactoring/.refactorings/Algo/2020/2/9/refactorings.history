@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;CodingStudy.과이맨&apos; to &apos;과외맨&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;CodingStudy.과이맨&apos;&#x0D;&#x0A;- Renamed element: &apos;CodingStudy.과외맨&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;과이맨&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;CodingStudy{과이맨.java[과이맨" matchStrategy="1" name="과외맨" qualified="false" references="true" similarDeclarations="false" stamp="1582526302645" textual="false" version="1.0"/>
-</session>

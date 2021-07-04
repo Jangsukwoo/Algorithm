@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;프로그래머스.tmcpr2_2&apos; to &apos;스첵2_2&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;프로그래머스.tmcpr2_2&apos;&#x0D;&#x0A;- Renamed element: &apos;프로그래머스.스첵2_2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;tmcpr2_2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;프로그래머스{tmcpr2_2.java[tmcpr2_2" matchStrategy="1" name="스첵2_2" qualified="false" references="true" similarDeclarations="false" stamp="1610605277166" textual="false" version="1.0"/>
-</session>

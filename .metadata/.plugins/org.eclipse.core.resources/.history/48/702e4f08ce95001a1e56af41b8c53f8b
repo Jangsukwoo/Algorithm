@@ -1,7 +1,0 @@
-package 구현;
-public class Z {
-	static int N,r,c;
-	public static void main(String[] args) {
-		
-	}
-}

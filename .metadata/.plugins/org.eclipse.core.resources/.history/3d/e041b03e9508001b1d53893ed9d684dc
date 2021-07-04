@@ -1,8 +1,0 @@
-package 재귀;
-
-public class 별 {
-	static int N;
-	public static void main(String[] args) {
-
-	}
-}
